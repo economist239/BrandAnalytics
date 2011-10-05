@@ -1,0 +1,57 @@
+<project name="xfresh-db" default="build">
+    <target name="init">
+        <property file="local.build.properties"/>
+        <property file="build.properties"/>
+
+        <property name="src.dir" location="${project.dir}/src"/>
+        <property name="src.java.dir" location="${src.dir}/java"/>
+
+        <property name="build.dir" location="${project.dir}/build"/>
+        <property name="classes.dir" location="${build.dir}/classes"/>
+        <property name="dist.dir" location="${build.dir}/dist"/>
+
+        <property name="javac.debug" value="on"/>
+        <property name="javac.debuglevel" value="lines"/>
+
+        <fileset id="core-lib" dir="${core.dir}/lib">
+            <include name="**/*.jar"/>
+            <exclude name="junit*.jar"/>
+        </fileset>
+
+        <fileset id="project-lib" dir="${project.dir}/lib">
+            <include name="**/*.jar"/>
+        </fileset>
+
+        <fileset id="xfresh-core" dir="${core.dir}/build/dist" includes="*.jar"/>
+
+        <path id="project.classpath">
+            <fileset refid="core-lib"/>
+            <fileset refid="project-lib"/>
+            <fileset refid="xfresh-core"/>
+        </path>
+    </target>
+
+    <target name="build" depends="init">
+        <mkdir dir="${classes.dir}"/>
+
+        <javac srcdir="${src.java.dir}"
+               destdir="${classes.dir}"
+               classpathref="project.classpath"
+               debug="${javac.debug}"
+               debuglevel="${javac.debuglevel}"/>
+
+        <mkdir dir="${dist.dir}"/>
+
+        <jar
+                destfile="${dist.dir}/xfresh-db.jar"
+                basedir="${classes.dir}"
+                includes="**/*.class"
+                />
+    </target>
+
+    <target name="clean" depends="init">
+        <delete dir="${build.dir}" failonerror="false"/>
+    </target>
+
+    <target name="rebuild" depends="clean, build"/>
+</project>
