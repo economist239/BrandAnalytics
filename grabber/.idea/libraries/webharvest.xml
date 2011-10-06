@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="webharvest">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../webharvest2b1-bin" />
+      <root url="jar://$PROJECT_DIR$/../../webharvest2b1-bin.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../webharvest2b1-bin" recursive="false" />
+  </library>
+</component>
