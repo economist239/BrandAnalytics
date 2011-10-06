@@ -2,9 +2,121 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.ipr" afterPath="$PROJECT_DIR$/BrandAnalytics.ipr" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\base\Request.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\base\RequestYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\ErrorInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\InternalRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\InternalResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\RedirHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\SaxGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\SaxHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\SaxWriter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\SelfSaxWriter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\SelfWriter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\SingleYaletProcessor.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\Yalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\YaletFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\YaletProcessor$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\YaletProcessor$MyXMLSerializer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\YaletProcessor.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\YaletResolver.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\YaletResolvingException.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\YaletSupport.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\impl\DefaultSingleYaletProcessor.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\impl\DefaultYaletSupport.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\impl\SimpleInternalRequest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\impl\SimpleInternalResponse$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\impl\SimpleInternalResponse.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\sax\DefaultSaxGenerator.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\sax\DefaultSaxHandler$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\sax\DefaultSaxHandler$ValueInfo.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\sax\DefaultSaxHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\sax\MapSelfSaxWriter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\servlet\Dispatcher.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\spring\SpringYaletResolver.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\SaxAttributable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Tagable.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$2.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$3.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$4.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$5.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$6.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$7.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$8.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$Attribute$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$Attribute.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler$Tag.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\core\xml\Xmler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\AuthHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\ContentWriter$1.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\ContentWriter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\ExtYaletFilter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\ExtYaletSupport.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\HttpLoader.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\HttpMethodResult.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\LoadedXml.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\auth\AlwaysNoAuthHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\auth\SimpleHttpAuthHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\ext\auth\SimpleParamAuthHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\jetty\JettyServerInitializer.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\jetty\SingleYaletHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\jetty\YaletXmlPageHandler.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\util\DigestUtils.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\util\Starter.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\core\net\sf\xfresh\util\XmlUtil.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\db\net\sf\xfresh\db\AbstractDbYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\db\net\sf\xfresh\db\Cell.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\db\net\sf\xfresh\db\QueryYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\db\net\sf\xfresh\db\Record.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\db\net\sf\xfresh\db\RecordMapper.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\frontend\beans.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\frontend\log4j.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\frontend\ru\brandanalyst\frontend\DBConnector.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\frontend\ru\brandanalyst\frontend\model\Brand.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\frontend\ru\brandanalyst\frontend\model\GeneralManager.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\frontend\ru\brandanalyst\frontend\model\Graph.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\frontend\ru\brandanalyst\frontend\yalets\AbstractYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\frontend\ru\brandanalyst\frontend\yalets\SearchYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\frontend\ru\brandanalyst\frontend\yalets\ShowLeftMenuYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\production\frontend\ru\brandanalyst\frontend\yalets\ShowSingleBrandYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\log4j.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\core\DefaultSAXGeneratorTest$A.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\core\DefaultSAXGeneratorTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\core\InternalResponseTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\core\YaletProcessorTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\ext\HttpBlockTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\ext\HttpLoaderTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\ext\JsBlockTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\ext\LoadedXmlTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\jetty\AbstractJettyTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\jetty\JettyServerInitializerTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\mock\AddCookieYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\mock\DoNothingYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\mock\RedirectYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\mock\RemoteAddrYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\mock\RuStringYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\mock\SleepYalet.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\net\sf\xfresh\util\DigestUtilsTest.class" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\proto.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-addcookie.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-app-context.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-auth.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-cookie.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-header.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-http.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-js-0.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-js-1.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-js-2.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-js-3.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-redirect.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-remote-addr.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-ru.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test-timeout.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\test.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\out\test\core\xtest.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/javascripts/bluff.js" afterPath="$PROJECT_DIR$/frontend/src/web/javascripts/bluff.js" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,7 +202,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrandAnalytics.iml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BrandAnalytics.iml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BrandAnalytics.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -108,10 +220,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bluff.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="bluff.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/web/javascripts/bluff.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="700" column="9" selection-start="21916" selection-end="21916" vertical-scroll-proportion="0.3323263">
+            <state line="700" column="9" selection-start="21916" selection-end="21916" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -129,7 +241,7 @@
       <file leaf-file-name="BrandAnalytics.iws" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BrandAnalytics.iws">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="181" column="20" selection-start="8076" selection-end="8076" vertical-scroll-proportion="0.0">
+            <state line="191" column="20" selection-start="8611" selection-end="8611" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -410,22 +522,22 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67064846" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67064846" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -455,7 +567,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="LAST_COMMIT_MESSAGE" value="core" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -468,6 +580,7 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="core" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -497,11 +610,6 @@
         <state line="5" column="13" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BrandAnalytics.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beans.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -509,7 +617,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BrandAnalytics.iws">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="20" selection-start="8076" selection-end="8076" vertical-scroll-proportion="0.0">
+        <state line="191" column="20" selection-start="8611" selection-end="8611" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -523,9 +631,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/web/javascripts/bluff.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="700" column="9" selection-start="21916" selection-end="21916" vertical-scroll-proportion="0.3323263">
+        <state line="700" column="9" selection-start="21916" selection-end="21916" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BrandAnalytics.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
   </component>
