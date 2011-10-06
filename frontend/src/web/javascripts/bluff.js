@@ -525,7 +525,7 @@ Bluff.Base = new JS.Class({
       if (this.maximum_value === null && this.minimum_value === null)
         this.maximum_value = this.minimum_value = data_point;
       
-      // TODO Doesn't work with stacked bar graphs
+      // Doesn't work with stacked bar graphs
       // Original: @maximum_value = _larger_than_max?(data_point, index) ? max(data_point, index) : @maximum_value
       this.maximum_value = this._larger_than_max(data_point) ? data_point : this.maximum_value;
       if (this.maximum_value >= 0) this._has_data = true;

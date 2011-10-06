@@ -224,8 +224,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BrandAnalytics.iml" filepath="$PROJECT_DIR$/BrandAnalytics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../BA_head/BrandAnalyst/core/src/core.iml" filepath="$PROJECT_DIR$/../BA_head/BrandAnalyst/core/src/core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../BA_head/BrandAnalyst/db/db.iml" filepath="$PROJECT_DIR$/../../BA_head/BrandAnalyst/db/db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/src/core.iml" filepath="$PROJECT_DIR$/core/src/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/db/db.iml" filepath="$PROJECT_DIR$/db/db.iml" />
       <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
     </modules>
   </component>
