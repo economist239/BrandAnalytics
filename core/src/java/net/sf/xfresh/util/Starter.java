@@ -14,6 +14,6 @@ public class Starter {
 
     public static void main(final String[] args) {
         log.info("App started");
-        final FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext(new String[]{args[0]});
+        final FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext("./frontend/src/scripts/beans.xml");
     }
 }

@@ -1,8 +1,0 @@
-org.webharvest.definition
-org.webharvest.exception
-org.webharvest.runtime
-org.webharvest.runtime.processors
-org.webharvest.runtime.templaters
-org.webharvest.runtime.variables
-org.webharvest.runtime.web
-org.webharvest.utils

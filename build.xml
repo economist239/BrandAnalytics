@@ -1,0 +1,35 @@
+<project name="BrandAnalytics" default="build" basedir=".">
+   <description>
+       Brand Analytics
+   </description>
+   <!--general paths-->
+   <property name="project.dir" location="."/>
+   <property name="lib.dir" location="${project.dir}/lib"/>
+   <property name="build.dir" location="${project.dir}/build"/>
+   <property name="core.dir" location="${project.dir}/core/"/>
+   <property name="db.dir" location="${project.dir}/db/"/>
+   <property name="frontend.dir" location="${project.dir}/frontend/"/>
+   <!--libs-->
+   <path id="libs">
+       <fileset dir="lib" includes="**/*.jar"/>
+       <fileset dir="${core.dir}/lib" includes="**/*.jar"/>
+       <fileset dir="${db.dir}/lib" includes="**/*.jar"/>
+   </path>
+
+   <target name="init">
+       <mkdir dir="${build.dir}"/>
+       <mkdir dir="${build.dir}/classes"/>
+       <mkdir dir="${lib.dir}"/>
+   </target>
+   <target name="build" depends="init">
+       <javac srcdir="${core.dir}/src/java/" destdir="${build.dir}/classes" debug="true" deprecation="true" optimize="false" includeAntRuntime="false">
+            <classpath refid="libs"/>
+       </javac>
+       <javac srcdir="${db.dir}/src/java/" destdir="${build.dir}/classes" debug="true" deprecation="true" optimize="false" includeAntRuntime="false">
+            <classpath refid="libs"/>
+       </javac>
+       <javac srcdir="${frontend.dir}/src/java" destdir="${build.dir}/classes" debug="true" deprecation="true" optimize="false" includeAntRuntime="false">
+            <classpath refid="libs"/>
+       </javac>
+   </target>
+</project>

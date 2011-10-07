@@ -9,6 +9,7 @@
     <orderEntry type="module" module-name="core" />
     <orderEntry type="module" module-name="db" />
     <orderEntry type="module" module-name="frontend" />
+    <orderEntry type="module" module-name="miner" />
   </component>
 </module>
 

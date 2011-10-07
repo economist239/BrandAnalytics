@@ -2,6 +2,14 @@
 <project version="4">
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
+    <buildFile url="file://$PROJECT_DIR$/build.xml">
+      <additionalClassPath />
+      <antReference projectDefault="true" />
+      <customJdkName value="" />
+      <maximumHeapSize value="128" />
+      <maximumStackSize value="2" />
+      <properties />
+    </buildFile>
   </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
@@ -227,6 +235,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/src/core.iml" filepath="$PROJECT_DIR$/core/src/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/db/db.iml" filepath="$PROJECT_DIR$/db/db.iml" />
       <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/miner/miner.iml" filepath="$PROJECT_DIR$/miner/miner.iml" />
     </modules>
   </component>
   <component name="ProjectReloadState">
@@ -339,7 +348,6 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/BrandAnalytics" vcs="Git" />
   </component>
   <component name="libraryTable">
     <library name="MainLib">
@@ -372,6 +380,14 @@
       <jarDirectory url="file://$PROJECT_DIR$/core/lib/saxon" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/core/lib/spring" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/core/lib/xalan" recursive="false" />
+    </library>
+    <library name="MinerLib">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/miner/lib" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/miner/lib" recursive="false" />
     </library>
   </component>
 </project>
