@@ -2,404 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="core">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\base\Request.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\base\RequestYalet.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\ErrorInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\InternalRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\InternalResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\RedirHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\SaxGenerator.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\SaxHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\SaxWriter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\SelfSaxWriter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\SelfWriter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\SingleYaletProcessor.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\Yalet.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\YaletFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\YaletProcessor$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\YaletProcessor$MyXMLSerializer.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\YaletProcessor.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\YaletResolver.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\YaletResolvingException.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\YaletSupport.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\impl\DefaultSingleYaletProcessor.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\impl\DefaultYaletSupport.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\impl\SimpleInternalRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\impl\SimpleInternalResponse$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\impl\SimpleInternalResponse.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\sax\DefaultSaxGenerator.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\sax\DefaultSaxHandler$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\sax\DefaultSaxHandler$ValueInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\sax\DefaultSaxHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\sax\MapSelfSaxWriter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\servlet\Dispatcher.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\spring\SpringYaletResolver.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\SaxAttributable.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Tagable.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$2.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$3.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$4.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$5.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$6.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$7.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$8.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$Attribute$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$Attribute.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler$Tag.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\core\xml\Xmler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\AuthHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\ContentWriter$1.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\ContentWriter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\ExtYaletFilter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\ExtYaletSupport.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\HttpLoader.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\HttpMethodResult.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\LoadedXml.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\auth\AlwaysNoAuthHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\auth\SimpleHttpAuthHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\ext\auth\SimpleParamAuthHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\jetty\JettyServerInitializer.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\jetty\SingleYaletHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\jetty\YaletXmlPageHandler.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\util\DigestUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\util\Starter.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\classes\net\sf\xfresh\util\XmlUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build\dist\xfresh-core.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\ant.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\copyright\profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\libraries\Unnamed.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\.idea\workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\UserGuide.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\config\config1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\grabber.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\activation.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\bsh.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\commons-cli-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\commons-codec-1.3.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\commons-collections-3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\commons-email-1.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\commons-httpclient-3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\commons-logging.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\commons-net-ftp-2.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\allclasses-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\allclasses-noframe.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\constant-values.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\deprecated-list.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\help-doc.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-1.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-10.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-11.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-12.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-13.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-14.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-15.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-16.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-17.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-18.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-19.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-2.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-20.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-21.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-22.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-23.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-24.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-25.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-3.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-4.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-5.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-6.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-7.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-8.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index-files\index-9.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\index.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\BaseElementDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\CallDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\CallParamDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\CaseDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\ConstantDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\DefinitionResolver.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\ElementInfo.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\EmptyDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\ExitDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\FileDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\FunctionDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\HtmlToXmlDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\HttpDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\HttpHeaderDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\HttpParamDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\IElementDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\IfDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\IncludeDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\LoopDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\RegexpDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\ReturnDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\ScraperConfiguration.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\ScriptDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\TemplateDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\TextDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\TryDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\VarDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\VarDefDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\WebHarvestPluginDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\WhileDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\XPathDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\XQueryDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\XQueryExternalParamDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\XmlNode.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\XmlParser.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\XsltDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\BaseElementDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\CallDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\CallParamDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\CaseDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\ConstantDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\DefinitionResolver.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\ElementInfo.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\EmptyDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\ExitDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\FileDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\FunctionDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\HtmlToXmlDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\HttpDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\HttpHeaderDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\HttpParamDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\IElementDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\IfDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\IncludeDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\LoopDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\RegexpDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\ReturnDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\ScraperConfiguration.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\ScriptDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\TemplateDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\TextDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\TryDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\VarDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\VarDefDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\WebHarvestPluginDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\WhileDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\XPathDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\XQueryDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\XQueryExternalParamDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\XmlNode.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\XmlParser.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\class-use\XsltDef.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\definition\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\BaseException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\ConfigurationException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\DatabaseException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\ErrMsg.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\FileException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\FunctionException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\HttpException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\ParserException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\PluginException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\ScraperXPathException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\ScraperXQueryException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\ScriptException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\TemplateException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\TemplaterException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\VariableException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\XsltException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\BaseException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\ConfigurationException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\DatabaseException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\ErrMsg.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\FileException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\FunctionException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\HttpException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\ParserException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\PluginException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\ScraperXPathException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\ScraperXQueryException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\ScriptException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\TemplateException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\TemplaterException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\VariableException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\class-use\XsltException.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\exception\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\RuntimeConfig.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\Scraper.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\ScraperContext.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\ScraperRuntimeListener.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\class-use\RuntimeConfig.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\class-use\Scraper.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\class-use\ScraperContext.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\class-use\ScraperRuntimeListener.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\BaseProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\BodyProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\CallParamProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\CallProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\CaseProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\ConstantProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\EmptyProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\ExitProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\FileProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\FunctionProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\HtmlToXmlProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\HttpHeaderProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\HttpParamProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\HttpProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\IncludeProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\LoopProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\ProcessorResolver.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\RegexpProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\ReturnProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\ScriptProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\TemplateProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\TextProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\TryProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\VarDefProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\VarProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\WebHarvestPlugin.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\WhileProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\XPathProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\XQueryExpressionPool.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\XQueryProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\XsltProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\BaseProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\BodyProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\CallParamProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\CallProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\CaseProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\ConstantProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\EmptyProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\ExitProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\FileProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\FunctionProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\HtmlToXmlProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\HttpHeaderProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\HttpParamProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\HttpProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\IncludeProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\LoopProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\ProcessorResolver.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\RegexpProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\ReturnProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\ScriptProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\TemplateProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\TextProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\TryProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\VarDefProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\VarProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\WebHarvestPlugin.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\WhileProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\XPathProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\XQueryExpressionPool.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\XQueryProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\class-use\XsltProcessor.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\processors\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\templaters\BaseTemplater.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\templaters\class-use\BaseTemplater.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\templaters\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\templaters\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\templaters\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\templaters\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\EmptyVariable.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\ListVariable.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\NodeVariable.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\Types.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\Variable.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\class-use\EmptyVariable.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\class-use\ListVariable.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\class-use\NodeVariable.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\class-use\Types.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\class-use\Variable.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\variables\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\HttpClientManager.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\HttpInfo.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\HttpParamInfo.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\HttpResponseWrapper.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\IHttpManager.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\class-use\HttpClientManager.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\class-use\HttpInfo.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\class-use\HttpParamInfo.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\class-use\HttpResponseWrapper.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\class-use\IHttpManager.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\runtime\web\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\Catalog.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\ClassLoaderUtil.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\CommonUtil.IntPair.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\CommonUtil.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\Constants.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\KeyValuePair.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\Stack.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\SystemUtilities.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\XmlNodeWrapper.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\XmlUtil.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\XmlValidator.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\Catalog.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\ClassLoaderUtil.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\CommonUtil.IntPair.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\CommonUtil.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\Constants.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\KeyValuePair.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\Stack.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\SystemUtilities.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\XmlNodeWrapper.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\XmlUtil.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\class-use\XmlValidator.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\org\webharvest\utils\package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\overview-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\overview-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\overview-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\package-list" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\resources\Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\resources\inherit.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\serialized-form.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\doc\stylesheet.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\groovy-all-1.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\htmlcleaner.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\js.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\log4j-1.2.13.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\mail.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\saxon9-dom.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\saxon9.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\lib\webharvest2b1-bin\webharvest_2.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\out\production\grabber\grabber\ExactGrabber.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\out\production\grabber\grabber\Grabber.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\out\production\grabber\grabber\GrabberPreAlpha.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\out\production\grabber\grabber\GrabberYandex.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\src\grabber\ExactGrabber.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\src\grabber\Grabber.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\src\grabber\GrabberPreAlpha.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\grabber\src\grabber\GrabberYandex.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iml" afterPath="$PROJECT_DIR$/BrandAnalytics.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.ipr" afterPath="$PROJECT_DIR$/BrandAnalytics.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/util/Starter.java" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/util/Starter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/db.iml" afterPath="$PROJECT_DIR$/db/db.iml" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -409,7 +12,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="ChangesViewManager" flattened_view="false" show_ignored="true" />
   <component name="Commander">
     <leftPanel />
     <rightPanel />
@@ -463,15 +66,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BrandAnalytics.ipr" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BrandAnalytics.ipr">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="362" column="51" selection-start="19571" selection-end="19571" vertical-scroll-proportion="-6.769231">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="miner.iml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/miner.iml">
           <provider selected="true" editor-type-id="text-editor">
@@ -481,8 +75,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log4j.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/miner/src/scripts/log4j.xml">
+      <file leaf-file-name="frontend.iml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/frontend.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -490,10 +84,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GrabberYandex.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GrabberYandex.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="81" selection-start="489" selection-end="489" vertical-scroll-proportion="0.5726744">
+            <state line="20" column="81" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BrandAnalytics.iws" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BrandAnalytics.iws">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="167" column="21" selection-start="7840" selection-end="7842" vertical-scroll-proportion="48.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BrandAnalytics.ipr" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/BrandAnalytics.ipr">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="236" column="106" selection-start="13765" selection-end="13771" vertical-scroll-proportion="-3.8846154">
               <folding />
             </state>
           </provider>
@@ -526,22 +138,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GrabberPreAlpha.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GrabberPreAlpha.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="11" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
+            <state line="30" column="19" selection-start="758" selection-end="758" vertical-scroll-proportion="0.77034885">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpringYaletResolver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/spring/SpringYaletResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="3" selection-start="2411" selection-end="2411" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -579,8 +182,9 @@
         <option value="$PROJECT_DIR$/miner/miner.iml" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/ExactGrabber.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/Grabber.java" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java" />
+        <option value="$PROJECT_DIR$/BrandAnalytics.iws" />
+        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java" />
       </list>
     </option>
   </component>
@@ -667,6 +271,78 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -677,20 +353,36 @@
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="139" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="157" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="154" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="159" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="828" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="833" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="154" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="152" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="project.propVCSSupport.VCSs.Git" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
-    <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RunManager" selected="Application.MinerStarter">
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -859,17 +551,17 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67235494" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3890785" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4215017" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.67235494" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969605" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67064846" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.67064846" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -936,11 +628,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/db.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="51" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="19" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0" />
@@ -964,20 +651,6 @@
     <entry file="file://$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/spring/SpringYaletResolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="3" selection-start="2411" selection-end="2411" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BrandAnalytics.ipr">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="362" column="51" selection-start="19571" selection-end="19571" vertical-scroll-proportion="-6.769231">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/miner.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="57" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/scripts/log4j.xml">
@@ -1015,19 +688,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java">
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="11" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="20" column="81" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java">
+    <entry file="file://$PROJECT_DIR$/miner/miner.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="81" selection-start="489" selection-end="489" vertical-scroll-proportion="0.5726744">
+        <state line="6" column="57" selection-start="354" selection-end="354" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/frontend.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BrandAnalytics.ipr">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="236" column="106" selection-start="13765" selection-end="13771" vertical-scroll-proportion="-3.8846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BrandAnalytics.iws">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="167" column="21" selection-start="7840" selection-end="7842" vertical-scroll-proportion="48.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="19" selection-start="758" selection-end="758" vertical-scroll-proportion="0.77034885">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1088,6 +789,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
