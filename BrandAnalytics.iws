@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="simple db wrapper added (no script)">
-      <change type="DELETED" beforePath="C:\BrandAnalytics\mainlog.log" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\minerlog.log" afterPath="" />
+    <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/InfoSource.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Mention.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/mapper/ArticleMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/mapper/MentionMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/ArticleProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/MentionProvider.java" />
+      <change type="DELETED" beforePath="C:\BrandAnalytics\storage\src\java\ru\brandanalyst\storage\ArticleMapper.java" afterPath="" />
+      <change type="MOVED" beforePath="C:\BrandAnalytics\storage\src\java\ru\brandanalyst\storage\BrandMapper.java" afterPath="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/mapper/BrandMapper.java" />
+      <change type="MOVED" beforePath="C:\BrandAnalytics\storage\src\java\ru\brandanalyst\storage\DataStore.java" afterPath="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,28 +78,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DBConnector.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/DBConnector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="frontend.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/frontend.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="45" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BrandMapper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/BrandMapper.java">
+        <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/mapper/BrandMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="69" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0">
+            <state line="20" column="0" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,46 +89,83 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArticleMapper.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/ArticleMapper.java">
+      <file leaf-file-name="ArticleMapper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/mapper/ArticleMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="26" selection-start="206" selection-end="206" vertical-scroll-proportion="0.45132744">
+            <state line="15" column="13" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MentionMapper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/mapper/MentionMapper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="175" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MentionProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/MentionProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="135" selection-start="1631" selection-end="1631" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Article.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="46" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataStore.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/DataStore.java">
+      <file leaf-file-name="InfoSource.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/InfoSource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="73" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.0">
+            <state line="60" column="27" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.xsl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/web/index.xsl">
+      <file leaf-file-name="BrandProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="81" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="17" column="0" selection-start="388" selection-end="1639" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="search.xsl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/web/search.xsl">
+      <file leaf-file-name="ArticleProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/ArticleProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="44" column="5" selection-start="1548" selection-end="1548" vertical-scroll-proportion="-14.384615">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.xsl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/web/common.xsl">
+      <file leaf-file-name="Mention.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Mention.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="14" selection-start="275" selection-end="289" vertical-scroll-proportion="0.0">
+            <state line="14" column="54" selection-start="342" selection-end="342" vertical-scroll-proportion="0.4601227">
               <folding />
             </state>
           </provider>
@@ -145,16 +174,7 @@
       <file leaf-file-name="Brand.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="16" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Brand.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/model/Brand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="5" selection-start="112" selection-end="723" vertical-scroll-proportion="0.0">
+            <state line="56" column="21" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,22 +194,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java" />
-        <option value="$PROJECT_DIR$/BrandAnalytics.iws" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/ExactGrabber.java" />
-        <option value="$PROJECT_DIR$/miner/configs/config1.xml" />
-        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/DBWrapper.java" />
-        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/BrandProvider.java" />
-        <option value="$PROJECT_DIR$/frontend/frontend.iml" />
-        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java" />
         <option value="$PROJECT_DIR$/frontend/src/scripts/beans.xml" />
-        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/DataStore.java" />
         <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java" />
         <option value="$PROJECT_DIR$/frontend/src/web/index.xsl" />
+        <option value="$PROJECT_DIR$/frontend/src/web/inde1x.xsl" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/InfoSource.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Mention.java" />
+        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/DataStore.java" />
+        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/BrandProvider.java" />
+        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/ArticleMapper.java" />
+        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/MentionMapper.java" />
+        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/ArticleProvider.java" />
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" />
         <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/BrandMapper.java" />
-        <option value="$PROJECT_DIR$/frontend/src/web/inde1x.xsl" />
+        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/MentionProvider.java" />
+        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/MentionProvider.java" />
       </list>
     </option>
   </component>
@@ -302,6 +322,12 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.brandanalyst.mapper" />
+      <recent name="ru.brandanalyst.storage.provider" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.FrontendStarter">
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -491,7 +517,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33788395" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36006826" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3447099" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.67235494" order="4" side_tool="false" content_ui="tabs" />
@@ -502,7 +528,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.67235494" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969605" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26139817" sideWeight="0.66211605" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26139817" sideWeight="0.63993174" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32764506" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -570,55 +596,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/src/java/net/sf/xfresh/db/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/src/java/net/sf/xfresh/db/QueryYalet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="236" selection-end="236" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/src/java/net/sf/xfresh/db/RecordMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="83" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="56" selection-start="2468" selection-end="2468" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="43" selection-start="950" selection-end="950" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="68" selection-start="433" selection-end="433" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/DBConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="239" selection-end="239" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/frontend.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="45" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0">
@@ -638,46 +615,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/web/common.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="14" selection-start="275" selection-end="289" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/DataStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="73" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/web/index.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="81" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0">
+        <state line="13" column="81" selection-start="512" selection-end="512" vertical-scroll-proportion="0.41154563">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/BrandMapper.java">
+    <entry file="file://$PROJECT_DIR$/frontend/src/web/common.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="69" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0">
+        <state line="7" column="14" selection-start="275" selection-end="289" vertical-scroll-proportion="0.15458015">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/mapper/ArticleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/ArticleMapper.java">
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="206" selection-end="206" vertical-scroll-proportion="0.45132744">
+        <state line="23" column="46" selection-start="652" selection-end="652" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/InfoSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="27" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="21" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/mapper/BrandMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="699" selection-end="699" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="388" selection-end="1639" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/MentionProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="135" selection-start="1631" selection-end="1631" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/mapper/MentionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="175" selection-start="676" selection-end="676" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/ArticleProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="5" selection-start="1548" selection-end="1548" vertical-scroll-proportion="-14.384615">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Mention.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="54" selection-start="342" selection-end="342" vertical-scroll-proportion="0.4601227">
           <folding />
         </state>
       </provider>

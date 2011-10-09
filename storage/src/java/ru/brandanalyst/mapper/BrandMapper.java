@@ -1,4 +1,4 @@
-package ru.brandanalyst.storage;
+package ru.brandanalyst.mapper;
 
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import ru.brandanalyst.core.model.Brand;
@@ -15,6 +15,6 @@ import java.sql.SQLException;
  */
 public class BrandMapper implements ParameterizedRowMapper<Brand> {
     public Brand mapRow(ResultSet resultSet, int i) throws SQLException {
-        return new Brand(Integer.parseInt(resultSet.getString("brand_id")), resultSet.getString("name"),resultSet.getString("description"));
+        return new Brand(Integer.parseInt(resultSet.getString("brand_id")), resultSet.getString("name"),resultSet.getString("description"),resultSet.getString("website"),resultSet.getString("branch"));
     }
 }

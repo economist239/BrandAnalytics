@@ -1,4 +1,4 @@
-package ru.brandanalyst.storage;
+package ru.brandanalyst.storage.provider;
 
 /**
  * Created by IntelliJ IDEA.
@@ -9,26 +9,29 @@ package ru.brandanalyst.storage;
  */
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.core.model.*;
+import ru.brandanalyst.mapper.BrandMapper;
 
 import java.util.List;
 
-public class DataStore {
+public class BrandProvider {
     private SimpleJdbcTemplate jdbcTemplate;
     private BrandMapper brandMapper;
 
-    public DataStore(SimpleJdbcTemplate jdbcTemplate) {
+    public BrandProvider(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
         brandMapper = new BrandMapper();
     }
 
     public void cleanDataStore() {
-        jdbcTemplate.update("TRUNCATE TABLE Brand"); //????
+        jdbcTemplate.update("TRUNCATE TABLE Brand");
     }
 
     public void writeBrandToDataStore(Brand brand) {
-        jdbcTemplate.update("INSERT INTO Brand (brand_id, name, description, website, additional_info) VALUES(?, ?, ?,'ddd','ddd');", brand.getId(), brand.getName(),
+        try {
+            jdbcTemplate.update("INSERT INTO Brand (brand_id, name, description, website, additional_info) VALUES(?, ?, ?,'ddd','ddd');", brand.getId(), brand.getName(),
                 brand.getDescription());
+        } catch (Exception e) {}
     }
 
     public void writeListOfBrandsToDataStore(List<Brand> brands) {
@@ -45,8 +48,5 @@ public class DataStore {
     public Brand getBrandById(int brand_id) {
         List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE brand_id = " + Integer.toString(brand_id) , brandMapper);
         return list.get(0);
-    }
-    public List<Brand> getAllBrandsFromDataStore() {
-        return jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand ORDER BY brand_id", brandMapper);
     }
 }

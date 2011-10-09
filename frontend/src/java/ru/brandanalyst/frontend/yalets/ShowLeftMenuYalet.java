@@ -4,7 +4,7 @@ import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.db.AbstractDbYalet;
 import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.storage.DataStore;
+import ru.brandanalyst.storage.provider.BrandProvider;
 
 public class ShowLeftMenuYalet extends AbstractDbYalet {
 
@@ -16,7 +16,7 @@ public class ShowLeftMenuYalet extends AbstractDbYalet {
 //	}
 
 //        res.add(manager.getAllBrands());
-        DataStore dataStore = new DataStore(jdbcTemplate);
+        BrandProvider dataStore = new BrandProvider(jdbcTemplate);
         dataStore.cleanDataStore();
         Brand b1 = new Brand(1,"1","1");
         dataStore.writeBrandToDataStore(b1);
