@@ -1,0 +1,3 @@
+main 2011-10-09 18:33:21,800 INFO XML parsed in 317ms. IN org.webharvest.definition.XmlParser
+main 2011-10-09 18:33:24,106 INFO VarDefProcessor starts processing... IN 1318170803488
+main 2011-10-09 18:33:24,111 INFO     HttpProcessor starts processing... IN 1318170803488

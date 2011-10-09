@@ -36,33 +36,26 @@
     <bean id="singleYaletProcessor" class="net.sf.xfresh.core.impl.DefaultSingleYaletProcessor"/>
 
     <!--Yalets-->
-  <!---  <bean id="MainYalet" class="ru.yandex.auto.clusterizer.yalets.MainYalet"/>
-    <bean id="ParserYalet" class="ru.yandex.auto.clusterizer.yalets.ParserYalet"/>
-    <bean id="ViewAllDataStoreYalet" class="ru.yandex.auto.clusterizer.yalets.ViewAllDataStoreYalet"/>
-    <bean id="ViewClustersYalet" class="ru.yandex.auto.clusterizer.yalets.ViewClustersYalet"/>     -->
-    <bean id="showLeftMenuYalet" class="ru.brandanalyst.frontend.yalets.ShowLeftMenuYalet">
-        <property name="manager" ref="manager"/>
-    </bean>
+    <bean id="showLeftMenuYalet" class="ru.brandanalyst.frontend.yalets.ShowLeftMenuYalet"/>
     <bean id="showSingleBrandYalet" class="ru.brandanalyst.frontend.yalets.ShowSingleBrandYalet">
         <property name="manager" ref="manager"/>
     </bean>
     <bean id="searchYalet" class="ru.brandanalyst.frontend.yalets.SearchYalet">
         <property name="manager" ref="manager"/>
     </bean>
-    <!--<bean id="manager" class="net.sf.xfresh.basket.model.AttractionManager"/>-->
-    <bean id="manager" class="ru.brandanalyst.frontend.model.GeneralManager"/>
-    </beans>
 
+    <bean id="manager" class="ru.brandanalyst.frontend.model.GeneralManager"/>
 
     <!--DB conf-->
- <!--   <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
+    <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/cars?useUnicode=true&amp;characterEncoding=utf8"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/brandanalyticsdb?useUnicode=true&amp;characterEncoding=utf8"/>
         <property name="username" value="root"/>
-        <property name="password" value=""/>
+        <property name="password" value="root"/>
         <property name="validationQuery" value="select 1"/>
     </bean>
 
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
         <constructor-arg ref="dataSource"/>
-    </bean>    -->
+    </bean>
+</beans>

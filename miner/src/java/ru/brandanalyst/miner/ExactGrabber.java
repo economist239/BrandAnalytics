@@ -1,8 +1,6 @@
 package ru.brandanalyst.miner;
 //
 
-//
-
 /**
  *
  * @author Александр

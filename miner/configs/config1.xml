@@ -4,8 +4,8 @@
 <!-- http://search.twitter.com/search.json?q=%40twitterapi -->
 <!-- http://news.yandex.ru/computers.rss -->
 <var-def name="NewsYandexComputers">
-	
-		<http url="http://news.yandex.ru/computers.rss" />
+
+    <http url="http://news.yandex.ru/computers.rss" />
 	
 </var-def>
 
