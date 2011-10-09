@@ -34,8 +34,8 @@ public class MentionProvider {
     }
 
     public void writeListOfMentionsToDataStore(List<Mention> mentions) {
-        for (Mention b : mentions) {
-            writeMentionToDataStore(b);
+        for (Mention m : mentions) {
+            writeMentionToDataStore(m);
         }
     }
 
