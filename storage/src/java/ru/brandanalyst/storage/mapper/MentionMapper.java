@@ -1,4 +1,4 @@
-package ru.brandanalyst.mapper;
+package ru.brandanalyst.storage.mapper;
 
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import ru.brandanalyst.core.model.Mention;

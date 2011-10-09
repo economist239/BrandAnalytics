@@ -10,7 +10,7 @@ package ru.brandanalyst.storage.provider;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.model.*;
-import ru.brandanalyst.mapper.BrandMapper;
+import ru.brandanalyst.storage.mapper.BrandMapper;
 
 import java.util.List;
 
