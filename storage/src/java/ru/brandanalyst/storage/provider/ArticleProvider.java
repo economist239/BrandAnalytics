@@ -14,6 +14,8 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class ArticleProvider {
+    private SimpleJdbcTemplate jdbcTemplateDirty;
+    private SimpleJdbcTemplate jdbcTemplatePure;
     private SimpleJdbcTemplate jdbcTemplate;
     private ArticleMapper articleMapper;
 

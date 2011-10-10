@@ -232,7 +232,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BrandAnalytics.iml" filepath="$PROJECT_DIR$/BrandAnalytics.iml" />
-      <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/src/core.iml" filepath="$PROJECT_DIR$/core/src/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/db/db.iml" filepath="$PROJECT_DIR$/db/db.iml" />
       <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
@@ -354,52 +353,33 @@
     <mapping directory="" vcs="Git" />
   </component>
   <component name="libraryTable">
-    <library name="MainLib">
+    <library name="lib">
       <CLASSES>
-        <root url="jar://$PROJECT_DIR$/core/lib/junit-4.0.jar!/" />
-        <root url="jar://$PROJECT_DIR$/core/lib/log4j-1.2.15.jar!/" />
-        <root url="jar://$PROJECT_DIR$/db/lib/commons-collections.jar!/" />
-        <root url="jar://$PROJECT_DIR$/db/lib/spring-dao.jar!/" />
-        <root url="jar://$PROJECT_DIR$/db/lib/spring-jdbc.jar!/" />
-        <root url="jar://$PROJECT_DIR$/db/lib/commons-dbcp-1.2.2.jar!/" />
-        <root url="jar://$PROJECT_DIR$/db/lib/commons-pool.jar!/" />
-        <root url="jar://$PROJECT_DIR$/db/lib/mysql-connector-java-5.1.12-bin.jar!/" />
-        <root url="jar://$PROJECT_DIR$/db/lib/spring-support.jar!/" />
-        <root url="file://$PROJECT_DIR$/core/lib/rhino" />
-        <root url="file://$PROJECT_DIR$/core/lib/jetbrains" />
-        <root url="file://$PROJECT_DIR$/core/lib/jakarta-commons" />
-        <root url="file://$PROJECT_DIR$/core/lib/jetty" />
-        <root url="file://$PROJECT_DIR$/core/lib/saxon" />
-        <root url="file://$PROJECT_DIR$/core/lib/spring" />
-        <root url="file://$PROJECT_DIR$/core/lib/httpclient" />
-        <root url="file://$PROJECT_DIR$/core/lib/xalan" />
+        <root url="file://$PROJECT_DIR$/lib" />
+        <root url="file://$PROJECT_DIR$/lib/saxon" />
+        <root url="file://$PROJECT_DIR$/lib/jakarta-commons" />
+        <root url="file://$PROJECT_DIR$/lib/httpclient" />
+        <root url="file://$PROJECT_DIR$/lib/webharvest" />
+        <root url="file://$PROJECT_DIR$/lib/rhino" />
+        <root url="file://$PROJECT_DIR$/lib/spring" />
+        <root url="file://$PROJECT_DIR$/lib/jetty" />
+        <root url="file://$PROJECT_DIR$/lib/jetbrains" />
+        <root url="file://$PROJECT_DIR$/lib/xfresh" />
+        <root url="file://$PROJECT_DIR$/lib/xalan" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/core/lib/httpclient" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/core/lib/jakarta-commons" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/core/lib/jetbrains" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/core/lib/jetty" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/core/lib/rhino" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/core/lib/saxon" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/core/lib/spring" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/core/lib/xalan" recursive="false" />
-    </library>
-    <library name="MinerLib">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/miner/lib" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/miner/lib" recursive="false" />
-    </library>
-    <library name="Storage">
-      <CLASSES>
-        <root url="file://$PROJECT_DIR$/storage/lib" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES />
-      <jarDirectory url="file://$PROJECT_DIR$/storage/lib" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/httpclient" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/jakarta-commons" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/jetbrains" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/jetty" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/rhino" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/saxon" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/spring" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/webharvest" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/xalan" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/xfresh" recursive="false" />
     </library>
   </component>
 </project>

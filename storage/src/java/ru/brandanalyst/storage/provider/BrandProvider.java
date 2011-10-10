@@ -15,7 +15,7 @@ import ru.brandanalyst.storage.mapper.BrandMapper;
 import java.util.List;
 
 public class BrandProvider {
-    private SimpleJdbcTemplate jdbcTemplate;
+    private SimpleJdbcTemplate jdbcTemplate; //
     private BrandMapper brandMapper;
 
     public BrandProvider(SimpleJdbcTemplate jdbcTemplate) {

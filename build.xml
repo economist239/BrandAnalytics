@@ -1,35 +1,107 @@
-<project name="BrandAnalytics" default="build" basedir=".">
-   <description>
-       Brand Analytics
-   </description>
-   <!--general paths-->
-   <property name="project.dir" location="."/>
-   <property name="lib.dir" location="${project.dir}/lib"/>
-   <property name="build.dir" location="${project.dir}/build"/>
-   <property name="core.dir" location="${project.dir}/core/"/>
-   <property name="db.dir" location="${project.dir}/db/"/>
-   <property name="frontend.dir" location="${project.dir}/frontend/"/>
-   <!--libs-->
-   <path id="libs">
-       <fileset dir="lib" includes="**/*.jar"/>
-       <fileset dir="${core.dir}/lib" includes="**/*.jar"/>
-       <fileset dir="${db.dir}/lib" includes="**/*.jar"/>
-   </path>
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BrandAnalytic" default="all" basedir=".">
+    <description>
+        Brandillooo!!
+    </description>
 
-   <target name="init">
-       <mkdir dir="${build.dir}"/>
-       <mkdir dir="${build.dir}/classes"/>
-       <mkdir dir="${lib.dir}"/>
-   </target>
-   <target name="build" depends="init">
-       <javac srcdir="${core.dir}/src/java/" destdir="${build.dir}/classes" debug="true" deprecation="true" optimize="false" includeAntRuntime="false">
+    <!--main paths-->
+    <property name="project.dir" location="."/>
+    <property name="lib.dir" location="${project.dir}/lib"/>
+
+    <!-- classpath -->
+    <path id="libs">
+        <fileset dir="lib" includes="**/*.jar"/>
+        <fileset dir="build" includes="**/*.class"/>
+    </path>
+
+    <property name="build.dir" location="${project.dir}/build"/>
+    <property name="src.core.dir" location="${project.dir}/core/src/java/"/>
+    <property name="src.miner.dir" location="${project.dir}/miner/src/java/"/>
+    <property name="src.frontend.dir" location="${project.dir}/frontend/src/java/"/>
+    <property name="src.storage.dir" location="${project.dir}/storage/src/java/"/>
+
+    <target name="init">
+        <echo>BRANDILLO installing..!</echo>
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.dir}/classes"/>
+        <mkdir dir="${build.dir}/minerconfigs"/>
+        <delete>
+            <fileset dir="${build.dir}" includes="brandillo_miner.jar"/>
+        </delete>
+    </target>
+
+    <target name="core" depends="init">
+        <javac srcdir="${src.core.dir}"
+               destdir="${build.dir}/classes"
+               debug="true"
+               deprecation="true"
+               optimize="false"
+               includeAntRuntime="false">
             <classpath refid="libs"/>
-       </javac>
-       <javac srcdir="${db.dir}/src/java/" destdir="${build.dir}/classes" debug="true" deprecation="true" optimize="false" includeAntRuntime="false">
+        </javac>
+    </target>
+
+    <target name="storage" depends="init,core">
+        <javac srcdir="${src.storage.dir}"
+               destdir="${build.dir}/classes"
+               debug="true"
+               deprecation="true"
+               optimize="false"
+               includeAntRuntime="false">
             <classpath refid="libs"/>
-       </javac>
-       <javac srcdir="${frontend.dir}/src/java" destdir="${build.dir}/classes" debug="true" deprecation="true" optimize="false" includeAntRuntime="false">
+        </javac>
+    </target>
+
+    <target name="miner" depends="init,core,storage">
+        <javac srcdir="${src.miner.dir}"
+               destdir="${build.dir}/classes"
+               debug="true"
+               deprecation="true"
+               optimize="false"
+               includeAntRuntime="false">
             <classpath refid="libs"/>
-       </javac>
-   </target>
+        </javac>
+
+        <copy todir="${build.dir}/minerconfigs">
+            <fileset dir="${project.dir}/miner/configs" includes="**/*.*"/>
+        </copy>
+    </target>
+
+    <target name="frontend" depends="init,core,storage">
+        <javac srcdir="${src.frontend.dir}"
+               destdir="${build.dir}/classes"
+               debug="true"
+               deprecation="true"
+               optimize="false"
+               includeAntRuntime="false">
+            <classpath refid="libs"/>
+        </javac>
+
+        <copy todir="${build.dir}/web">
+            <fileset dir="${project.dir}/frontend/src/web" includes="**/*.*"/>
+        </copy>
+
+        <copy todir="${build.dir}/scripts">
+            <fileset dir="${project.dir}/frontend/src/scripts" includes="**/*.*"/>
+        </copy>
+    </target>
+
+
+    <target name="all" depends="core,miner,frontend">
+        <chmod file="${project.dir}/start.sh" perm="+x"/>
+
+        <copy todir="${build.dir}/lib">
+            <fileset dir="${lib.dir}" includes="**/*.*" excludes="xfresh/xfresh-core.jar"/>
+        </copy>
+
+        <copy todir="${build.dir}">
+            <fileset dir="${lib.dir}/xfresh/" excludes="xfresh-db.jar"/>
+        </copy>
+
+        <jar destfile="${build.dir}/brandillo_miner.jar">
+            <fileset dir="${build.dir}/classes" includes="**/*.class"/>
+        </jar>
+        <echo>BRANDILLO installing complete!</echo>
+    </target>
 </project>
+

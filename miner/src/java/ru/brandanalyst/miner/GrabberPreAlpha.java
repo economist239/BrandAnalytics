@@ -29,7 +29,7 @@ public class GrabberPreAlpha {
     //      fis.read(b);
     //      fos.write(b);
         //markov?=)
-            GrabberYandex grabberYandex = new GrabberYandex();
+            GrabberYandex grabberYandex = new GrabberYandex(args[0]);
             System.out.println(grabberYandex.grab()[0]);
     //   }
     //   catch(IOException ioe){

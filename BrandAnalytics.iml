@@ -5,11 +5,10 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="MainLib" level="project" />
-    <orderEntry type="module" module-name="core" />
-    <orderEntry type="module" module-name="db" />
     <orderEntry type="module" module-name="frontend" />
     <orderEntry type="module" module-name="miner" />
+    <orderEntry type="module" module-name="core" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
 
