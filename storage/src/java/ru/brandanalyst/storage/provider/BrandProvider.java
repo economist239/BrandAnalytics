@@ -49,4 +49,8 @@ public class BrandProvider {
         List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE brand_id = " + Integer.toString(brand_id) , brandMapper);
         return list.get(0);
     }
+    public List<Brand> getAllBrands() {
+        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand", brandMapper);
+        return list;
+    }
 }
