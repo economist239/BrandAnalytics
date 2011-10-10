@@ -60,8 +60,5 @@ public class Brand {
     public void setBranch(String branch) {
         this.branch = branch;
     }
-    public Brand[] getAllBrands() {
-        Brand[] list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand, brandMapper");
-        return list;
-    }
+    
 }
