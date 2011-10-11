@@ -2,180 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/lucene-core-3.0.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/xfresh/xfresh-core.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/xfresh/xfresh-db.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/scripts/beansbuild.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/start.sh" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\backend\backend.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\build.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\lib\jakarta-commons\commons-logging.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\lib\saxon\saxon9he.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\base\Request.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\base\RequestYalet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\ErrorInfo.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\InternalRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\InternalResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\RedirHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\SaxGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\SaxHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\SaxWriter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\SelfSaxWriter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\SelfWriter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\SingleYaletProcessor.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\Yalet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\YaletFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\YaletProcessor.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\YaletResolver.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\YaletResolvingException.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\YaletSupport.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\impl\DefaultSingleYaletProcessor.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\impl\DefaultYaletSupport.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\impl\SimpleInternalRequest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\impl\SimpleInternalResponse.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\sax\DefaultSaxGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\sax\DefaultSaxHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\sax\MapSelfSaxWriter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\servlet\Dispatcher.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\spring\SpringYaletResolver.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\xml\SaxAttributable.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\xml\Tagable.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\core\xml\Xmler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\ext\AuthHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\ext\ContentWriter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\ext\ExtYaletFilter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\ext\ExtYaletSupport.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\ext\HttpLoader.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\ext\HttpMethodResult.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\ext\LoadedXml.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\ext\auth\AlwaysNoAuthHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\ext\auth\SimpleHttpAuthHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\ext\auth\SimpleParamAuthHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\jetty\JettyServerInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\jetty\SingleYaletHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\jetty\YaletXmlPageHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\util\DigestUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\util\Starter.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\java\net\sf\xfresh\util\XmlUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\log4j.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\core\DefaultSAXGeneratorTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\core\InternalResponseTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\core\YaletProcessorTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\ext\HttpBlockTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\ext\HttpLoaderTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\ext\JsBlockTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\ext\LoadedXmlTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\jetty\AbstractJettyTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\jetty\JettyServerInitializerTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\mock\AddCookieYalet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\mock\DoNothingYalet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\mock\RedirectYalet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\mock\RemoteAddrYalet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\mock\RuStringYalet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\mock\SleepYalet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\net\sf\xfresh\util\DigestUtilsTest.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\proto.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-3.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-addcookie.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-app-context.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-auth.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-cookie.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-cookie.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-header.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-header.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-http.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-js-0.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-js-1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-js-1.xsl" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-js-2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-js-3.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-js-3.xsl" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-redirect.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-remote-addr.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-ru.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-ru.xsl" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test-timeout.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\test.xsl" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\test\xtest.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\core\src\web\WEB-INF\web.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\db\build.properties" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\db\build.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\db\db.iml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\db\lib\mysql-connector-java-5.1.12-bin.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\db\src\java\net\sf\xfresh\db\AbstractDbYalet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\db\src\java\net\sf\xfresh\db\Cell.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\db\src\java\net\sf\xfresh\db\QueryYalet.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\db\src\java\net\sf\xfresh\db\Record.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\db\src\java\net\sf\xfresh\db\RecordMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\miner\lib\log4j-1.2.13.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\miner\src\scripts\log4j.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\storage\lib\commons-collections.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\storage\lib\commons-dbcp-1.2.2.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\storage\lib\commons-pool.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\storage\lib\spring-dao.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\storage\lib\spring-jdbc.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\BrandAnalytics\storage\lib\spring-support.jar" afterPath="" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\httpclient\commons-logging-1.0.4.jar" afterPath="$PROJECT_DIR$/lib/httpclient/commons-logging-1.0.4.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\httpclient\httpclient-4.0-beta2.jar" afterPath="$PROJECT_DIR$/lib/httpclient/httpclient-4.0-beta2.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\httpclient\httpcore-4.0.jar" afterPath="$PROJECT_DIR$/lib/httpclient/httpcore-4.0.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\httpclient\httpcore-nio-4.0.jar" afterPath="$PROJECT_DIR$/lib/httpclient/httpcore-nio-4.0.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\httpclient\httpmime-4.0-beta2.jar" afterPath="$PROJECT_DIR$/lib/httpclient/httpmime-4.0-beta2.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\jakarta-commons\commons-lang.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-lang.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\jetbrains\annotations.jar" afterPath="$PROJECT_DIR$/lib/jetbrains/annotations.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\jetty\jetty-6.1.22.jar" afterPath="$PROJECT_DIR$/lib/jetty/jetty-6.1.22.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\jetty\jetty-util-6.1.22.jar" afterPath="$PROJECT_DIR$/lib/jetty/jetty-util-6.1.22.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\jetty\servlet-api-2.5-20081211.jar" afterPath="$PROJECT_DIR$/lib/jetty/servlet-api-2.5-20081211.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\junit-4.0.jar" afterPath="$PROJECT_DIR$/lib/junit-4.0.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\log4j-1.2.15.jar" afterPath="$PROJECT_DIR$/lib/log4j-1.2.15.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\rhino\js.jar" afterPath="$PROJECT_DIR$/lib/rhino/js.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\spring\spring-beans.jar" afterPath="$PROJECT_DIR$/lib/spring/spring-beans.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\spring\spring-context.jar" afterPath="$PROJECT_DIR$/lib/spring/spring-context.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\spring\spring-core.jar" afterPath="$PROJECT_DIR$/lib/spring/spring-core.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\spring\spring-mock.jar" afterPath="$PROJECT_DIR$/lib/spring/spring-mock.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\spring\spring-web.jar" afterPath="$PROJECT_DIR$/lib/spring/spring-web.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\xalan\serializer.jar" afterPath="$PROJECT_DIR$/lib/xalan/serializer.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\xalan\xalan.jar" afterPath="$PROJECT_DIR$/lib/xalan/xalan.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\core\lib\xalan\xercesImpl.jar" afterPath="$PROJECT_DIR$/lib/xalan/xercesImpl.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\db\lib\commons-collections.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-collections.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\db\lib\commons-dbcp-1.2.2.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-dbcp-1.2.2.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\db\lib\commons-pool.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-pool.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\db\lib\spring-dao.jar" afterPath="$PROJECT_DIR$/lib/spring/spring-dao.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\db\lib\spring-jdbc.jar" afterPath="$PROJECT_DIR$/lib/spring/spring-jdbc.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\db\lib\spring-support.jar" afterPath="$PROJECT_DIR$/lib/spring/spring-support.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\activation.jar" afterPath="$PROJECT_DIR$/lib/webharvest/activation.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\bsh.jar" afterPath="$PROJECT_DIR$/lib/webharvest/bsh.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\commons-cli-1.1.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-cli-1.1.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\commons-codec-1.3.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-codec-1.3.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\commons-collections-3.1.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-collections-3.1.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\commons-email-1.1.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-email-1.1.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\commons-httpclient-3.1.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-httpclient-3.1.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\commons-logging.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-logging.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\commons-net-ftp-2.0.jar" afterPath="$PROJECT_DIR$/lib/jakarta-commons/commons-net-ftp-2.0.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\groovy-all-1.0.jar" afterPath="$PROJECT_DIR$/lib/webharvest/groovy-all-1.0.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\htmlcleaner.jar" afterPath="$PROJECT_DIR$/lib/webharvest/htmlcleaner.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\js.jar" afterPath="$PROJECT_DIR$/lib/webharvest/js.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\mail.jar" afterPath="$PROJECT_DIR$/lib/webharvest/mail.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\saxon9-dom.jar" afterPath="$PROJECT_DIR$/lib/saxon/saxon9-dom.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\saxon9.jar" afterPath="$PROJECT_DIR$/lib/saxon/saxon9.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\miner\lib\webharvest_2.jar" afterPath="$PROJECT_DIR$/lib/webharvest/webharvest_2.jar" />
-      <change type="MOVED" beforePath="C:\BrandAnalytics\storage\lib\mysql-connector-java-5.1.18-bin.jar" afterPath="$PROJECT_DIR$/lib/mysql-connector-java-5.1.18-bin.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iml" afterPath="$PROJECT_DIR$/BrandAnalytics.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.ipr" afterPath="$PROJECT_DIR$/BrandAnalytics.ipr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/searcher/src/ru/brandanalyst/searcher/Searcher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/core.iml" afterPath="$PROJECT_DIR$/core/src/core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/frontend.iml" afterPath="$PROJECT_DIR$/frontend/frontend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexer/indexer.iml" afterPath="$PROJECT_DIR$/indexer/indexer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/miner.iml" afterPath="$PROJECT_DIR$/miner/miner.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/ArticleProvider.java" afterPath="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/ArticleProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java" afterPath="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/storage.iml" afterPath="$PROJECT_DIR$/storage/storage.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" afterPath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/searcher.iml" afterPath="$PROJECT_DIR$/searcher/searcher.iml" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -239,28 +69,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BrandAnalytics.ipr" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BrandAnalytics.ipr">
+      <file leaf-file-name="Searcher.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/searcher/src/ru/brandanalyst/searcher/Searcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="215" column="61" selection-start="12527" selection-end="12527" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="33" column="8" selection-start="1343" selection-end="1343" vertical-scroll-proportion="0.97686374">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GrabberPreAlpha.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java">
+      <file leaf-file-name="Brand.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="0" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beans.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beans.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="59" column="27" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -269,64 +92,10 @@
       <file leaf-file-name="Indexer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="46" selection-start="2077" selection-end="2077" vertical-scroll-proportion="0.0">
+            <state line="28" column="4" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Test.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Test.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="20" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Brand.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="21" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BrandProvider.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="27" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beansbuild.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beansbuild.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="9" selection-start="97" selection-end="97" vertical-scroll-proportion="0.120567374">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="indexer.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/indexer/indexer.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="start.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/start.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="28" selection-end="449" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -345,7 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/MentionProvider.java" />
         <option value="$PROJECT_DIR$/storage/storage.iml" />
         <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/ArticleProvider.java" />
         <option value="$PROJECT_DIR$/core/src/java/net/sf/xfresh/util/Starter.java" />
@@ -359,8 +127,9 @@
         <option value="$PROJECT_DIR$/indexer/src/java/Test.java" />
         <option value="$PROJECT_DIR$/indexer/src/java/Indexer.java" />
         <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java" />
-        <option value="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
         <option value="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Test.java" />
+        <option value="$PROJECT_DIR$/searcher/src/ru/brandanalyst/searcher/Searcher.java" />
+        <option value="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
       </list>
     </option>
   </component>
@@ -401,7 +170,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="PackagesPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -413,6 +182,94 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="searcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="searcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ru.brandanalyst.searcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="indexer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="indexer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ru.brandanalyst.indexer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ru.brandanalyst.core.model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -431,46 +288,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="searcher" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="139" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="157" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="157" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="154" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="159" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="833" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="828" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="833" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="152" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -487,8 +336,8 @@
     <property name="options.lastSelected" value="Errors" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -510,6 +359,24 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="XSLT" factoryName="XSLT">
       <option name="myOutputFile" />
       <option name="myOpenOutputFile" value="false" />
@@ -524,24 +391,6 @@
       <OutputType value="CONSOLE" save-to-file="false" />
       <FileType name="XML" />
       <JdkChoice value="FROM_MODULE" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -667,7 +516,7 @@
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
     <option name="FORCE_UPDATE" value="false" />
-    <configuration useDefault="true">C:\Users\1\AppData\Roaming\Subversion</configuration>
+    <configuration useDefault="true">C:\Users\kimank\AppData\Roaming\Subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
   </component>
   <component name="TaskManager">
@@ -699,25 +548,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-4" y="-4" width="1288" height="764" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4129693" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32970452" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19274376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.81399316" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3890785" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3088737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30793157" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.67235494" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39969605" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32142857" sideWeight="0.5870307" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32601625" sideWeight="0.6702955" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21672355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19274376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -783,117 +632,103 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="790" column="0" selection-start="30725" selection-end="30725" vertical-scroll-proportion="36.168118">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jetty/jetty-util-6.1.22.jar!/org/mortbay/thread/QueuedThreadPool.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="0" selection-start="3807" selection-end="3807" vertical-scroll-proportion="5.63253">
-          <folding />
-        </state>
+        <state line="111" column="0" selection-start="3807" selection-end="3807" vertical-scroll-proportion="5.63253" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jetty/jetty-6.1.22.jar!/org/mortbay/io/nio/SelectChannelEndPoint.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="0" selection-start="2816" selection-end="2816" vertical-scroll-proportion="3.379518">
-          <folding />
-        </state>
+        <state line="67" column="0" selection-start="2816" selection-end="2816" vertical-scroll-proportion="3.379518" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jetty/jetty-6.1.22.jar!/org/mortbay/jetty/HttpConnection.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="28" selection-start="6176" selection-end="6176" vertical-scroll-proportion="-13.84">
-          <folding />
-        </state>
+        <state line="136" column="28" selection-start="6176" selection-end="6176" vertical-scroll-proportion="-13.84" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="65" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="24" column="65" selection-start="685" selection-end="685" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="33" selection-start="3252" selection-end="3252" vertical-scroll-proportion="0.0">
+        <state line="96" column="33" selection-start="3252" selection-end="3252" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="20" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="27" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="759" selection-end="759" vertical-scroll-proportion="0.36567163">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/BrandAnalytics.ipr">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="61" selection-start="12527" selection-end="12527" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/start.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="28" selection-end="449" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/indexer/indexer.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="21" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="20" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="46" selection-start="2077" selection-end="2077" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="27" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0">
+        <state line="337" column="44" selection-start="18404" selection-end="18404" vertical-scroll-proportion="0.043701798">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beansbuild.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="9" selection-start="97" selection-end="97" vertical-scroll-proportion="0.120567374">
+        <state line="2" column="9" selection-start="97" selection-end="97" vertical-scroll-proportion="0.043701798">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/indexer/indexer.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="152" selection-end="152" vertical-scroll-proportion="0.12686567">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="28" selection-end="449" vertical-scroll-proportion="0.16915423">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="4" selection-start="942" selection-end="942" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="27" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searcher/src/ru/brandanalyst/searcher/Searcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="8" selection-start="1343" selection-end="1343" vertical-scroll-proportion="0.97686374">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -949,12 +784,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>indexer</last-edited>
+          <last-edited>searcher</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

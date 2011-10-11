@@ -28,9 +28,9 @@ import java.util.List;
  */
 public class Indexer {
 
+    public IndexSearcher indexSearcher;
     IndexWriter writer;
     RAMDirectory indexDirectory;
-    IndexSearcher indexSearcher;
     SimpleJdbcTemplate jdbcTemplate;
 
     public Indexer(String dbName){
