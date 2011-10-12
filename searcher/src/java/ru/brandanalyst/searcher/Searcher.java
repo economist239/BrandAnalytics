@@ -5,12 +5,15 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
+import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
+import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.Version;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.indexer.Indexer;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,22 +27,36 @@ import java.util.logging.Filter;
  */
 public class Searcher {
 
-    final int MAX_DOC = 1234567890;
+    private final int MAX_DOC = 10;
 
-    //method return list of all name of brand find by keyword text
+    private String indexDir;
+    private IndexSearcher indexSearcher;
 
-    public List<String> searchByDescription(Indexer indexer, String text) throws ParseException, IOException {
+    void setIndexDir(String indexDir) {
+        this.indexDir = indexDir;
+    }
+
+    void afterPropertiesSet() throws Exception {
+        indexSearcher = new IndexSearcher(new SimpleFSDirectory(new File(indexDir)));
+    }
+
+    public List<Brand> searchByDescription(Indexer indexer, String query) throws ParseException, IOException {
 
         Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_30); // your can change version
         QueryParser parser = new QueryParser(Version.LUCENE_30,"description",analyzer);
-        Query search = parser.parse(text);
-        ScoreDoc[] hits = indexer.indexSearcher.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter
-        List<String> lst = new ArrayList<String>();
+        Query search = parser.parse(query);
+
+        ScoreDoc[] hits = indexSearcher.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter
+
+        List<Brand> lst = new ArrayList<Brand>();
         for(int i = 0 ; i < hits.length ; i++ ){
-            Document doc = indexer.indexSearcher.doc(hits[i].doc);
-            lst.add(doc.get("name"));
+            Document doc = indexSearcher.doc(hits[i].doc);
+            lst.add(brandMap(doc));
         }
         return  lst;
+    }
 
+    private Brand brandMap(Document doc) {
+        return new Brand(Integer.parseInt(doc.get("brand_id")), doc.get("name"),doc.get("description"),doc.get("website"),doc.get("branch"));
     }
 }

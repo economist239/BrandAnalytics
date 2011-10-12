@@ -1,4 +1,4 @@
-package ru.brandanalyst.storage.mapper;
+package ru.brandanalyst.core.db.mapper;
 
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import ru.brandanalyst.core.model.Article;

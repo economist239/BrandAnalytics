@@ -1,8 +1,8 @@
-package ru.brandanalyst.storage.provider;
+package ru.brandanalyst.core.db.provider;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.storage.mapper.ArticleMapper;
+import ru.brandanalyst.core.db.mapper.ArticleMapper;
 
 import java.util.List;
 

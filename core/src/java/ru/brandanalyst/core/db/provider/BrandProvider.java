@@ -1,4 +1,4 @@
-package ru.brandanalyst.storage.provider;
+package ru.brandanalyst.core.db.provider;
 
 /**
  * Created by IntelliJ IDEA.
@@ -9,8 +9,8 @@ package ru.brandanalyst.storage.provider;
  */
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.model.*;
-import ru.brandanalyst.storage.mapper.BrandMapper;
+import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.core.db.mapper.BrandMapper;
 
 import java.util.List;
 
