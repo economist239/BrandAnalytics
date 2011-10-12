@@ -30,11 +30,14 @@ public class Searcher {
         QueryParser parser = new QueryParser(Version.LUCENE_30,"description",analyzer);
         Query search = parser.parse(text);
         ScoreDoc[] hits = indexer.indexSearcher.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter
+        
         List<String> lst = new ArrayList<String>();
+        
         for(int i = 0 ; i < hits.length ; i++ ){
             Document doc = indexer.indexSearcher.doc(hits[i].doc);
             lst.add(doc.get("name"));
         }
+
         return  lst;
     }
 }
