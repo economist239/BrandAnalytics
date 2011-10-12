@@ -20,8 +20,8 @@ public class GrabberYandex implements Grabber {
     public String[] grab() {
         String[] sp = new String[1];
         try {
-         //   ScraperConfiguration config = new ScraperConfiguration("miner/configs/config1.xml");
-            ScraperConfiguration config = new ScraperConfiguration(cfg);
+            ScraperConfiguration config = new ScraperConfiguration("miner/configs/config1.xml");
+         //   ScraperConfiguration config = new ScraperConfiguration(cfg);
             Scraper scraper = new Scraper(config, ".");
             scraper.setDebug(true);
             scraper.execute();
