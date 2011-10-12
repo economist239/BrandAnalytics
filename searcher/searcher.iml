@@ -19,6 +19,7 @@
     </orderEntry>
     <orderEntry type="module" module-name="core" />
     <orderEntry type="module" module-name="indexer" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
 

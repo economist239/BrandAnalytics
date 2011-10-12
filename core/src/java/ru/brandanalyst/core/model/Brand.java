@@ -8,24 +8,24 @@ package ru.brandanalyst.core.model;
  * To change this template use File | Settings | File Templates.
  */
 public class Brand {
-    private int id;
+    private long id;
     private String name;
     private String description;
     private String website;
     private String branch;
 
-    public Brand(int id, String name, String description, String website, String branch) {
+    public Brand(long id, String name, String description, String website, String branch) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.website = website;
         this.branch = branch;
     }
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -32,15 +32,15 @@ public class Searcher {
     private String indexDir;
     private IndexSearcher indexSearcher;
 
-    void setIndexDir(String indexDir) {
+    public void setIndexDir(String indexDir) {
         this.indexDir = indexDir;
     }
 
-    void afterPropertiesSet() throws Exception {
+    public void afterPropertiesSet() throws Exception {
         indexSearcher = new IndexSearcher(new SimpleFSDirectory(new File(indexDir)));
     }
 
-    public List<Brand> searchByDescription(Indexer indexer, String query) throws ParseException, IOException {
+    public List<Brand> searchByDescription(String query) throws ParseException, IOException {
 
         Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_30); // your can change version
         QueryParser parser = new QueryParser(Version.LUCENE_30,"description",analyzer);
@@ -57,6 +57,6 @@ public class Searcher {
     }
 
     private Brand brandMap(Document doc) {
-        return new Brand(Integer.parseInt(doc.get("brand_id")), doc.get("name"),doc.get("description"),doc.get("website"),doc.get("branch"));
+        return new Brand(Long.parseLong(doc.get("id")), doc.get("name"),doc.get("description"),doc.get("website"),doc.get("branch"));
     }
 }
