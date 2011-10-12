@@ -1,15 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="indexer added (tnx to Kolya)">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/indexer/src/ru/brandanalyst/indexer/Indexer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/searcher/src/ru/brandanalyst/searcher/Searcher.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.ipr" afterPath="$PROJECT_DIR$/BrandAnalytics.ipr" />
+    <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/xfresh-core.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/xfresh-db.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/base/Request.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/base/RequestYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/ErrorInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/InternalRequest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/InternalResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/RedirHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/SaxGenerator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/SaxHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/SaxWriter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/SelfSaxWriter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/SelfWriter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/SingleYaletProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/Yalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/YaletFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/YaletProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/YaletResolver.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/YaletResolvingException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/YaletSupport.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/impl/DefaultSingleYaletProcessor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/impl/DefaultYaletSupport.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/impl/SimpleInternalRequest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/impl/SimpleInternalResponse.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/sax/DefaultSaxGenerator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/sax/DefaultSaxHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/sax/MapSelfSaxWriter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/servlet/Dispatcher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/spring/SpringYaletResolver.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/xml/SaxAttributable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/xml/Tagable.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/xml/Xmler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/ext/AuthHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/ext/ContentWriter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/ext/ExtYaletFilter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/ext/ExtYaletSupport.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/ext/HttpLoader.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/ext/HttpMethodResult.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/ext/LoadedXml.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/ext/auth/AlwaysNoAuthHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/ext/auth/SimpleHttpAuthHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/ext/auth/SimpleParamAuthHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/jetty/JettyServerInitializer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/jetty/SingleYaletHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/jetty/YaletXmlPageHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/util/DigestUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/util/Starter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/util/XmlUtil.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/log4j.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/core/DefaultSAXGeneratorTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/core/InternalResponseTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/core/YaletProcessorTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/ext/HttpBlockTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/ext/HttpLoaderTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/ext/JsBlockTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/ext/LoadedXmlTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/jetty/AbstractJettyTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/jetty/JettyServerInitializerTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/AddCookieYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/DoNothingYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/RedirectYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/RemoteAddrYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/RuStringYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/SleepYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/util/DigestUtilsTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/proto.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-3.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-addcookie.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-app-context.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-auth.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-cookie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-cookie.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-header.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-header.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-http.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-js-0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-js-1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-js-1.xsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-js-2.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-js-3.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-js-3.xsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-redirect.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-remote-addr.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-ru.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-ru.xsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test-timeout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/test.xsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/test/xtest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/web/WEB-INF/web.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/searcher.iml" afterPath="$PROJECT_DIR$/searcher/searcher.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start.sh" afterPath="$PROJECT_DIR$/start.sh" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,15 +159,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="InfoSource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/InfoSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="26" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Searcher.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -100,10 +177,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrandAnalytics.ipr" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BrandAnalytics.ipr" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BrandAnalytics.ipr">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="234" column="108" selection-start="13571" selection-end="13571" vertical-scroll-proportion="0.70454544">
+            <state line="234" column="108" selection-start="13571" selection-end="13571" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test-js-0.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/test/test-js-0.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="15" selection-start="54" selection-end="54" vertical-scroll-proportion="0.040983606">
               <folding />
             </state>
           </provider>
@@ -339,6 +425,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -357,57 +444,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="139" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="157" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="154" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="159" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="828" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="833" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="828" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="152" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -424,8 +478,8 @@
     <property name="options.lastSelected" value="Errors" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -447,24 +501,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="XSLT" factoryName="XSLT">
       <option name="myOutputFile" />
       <option name="myOpenOutputFile" value="false" />
@@ -479,6 +515,24 @@
       <OutputType value="CONSOLE" save-to-file="false" />
       <FileType name="XML" />
       <JdkChoice value="FROM_MODULE" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -636,25 +690,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="8" y="24" width="1366" height="773" extended-state="6" />
+    <frame x="0" y="-5" width="1366" height="773" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34394905" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34235668" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.043247346" sideWeight="0.656051" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39908952" sideWeight="0.6544586" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.67235494" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32245827" sideWeight="0.656051" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.043247346" sideWeight="0.656051" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21656051" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38853502" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30414012" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.67235494" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39908952" sideWeight="0.6544586" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31942338" sideWeight="0.6576433" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21656051" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19274376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30414012" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -684,7 +738,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="indexer added (tnx to Kolya)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ant builder" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -702,6 +756,7 @@
     <MESSAGE value="simple db wrapper added (no script)" />
     <MESSAGE value="simple db wrapper + script  (not final)" />
     <MESSAGE value="indexer added (tnx to Kolya)" />
+    <MESSAGE value="ant builder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -767,9 +822,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="31" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="28" column="31" selection-start="1000" selection-end="1000" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/start.sh">
@@ -794,7 +847,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/BrandAnalytics.ipr">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="234" column="108" selection-start="13571" selection-end="13571" vertical-scroll-proportion="0.70454544">
+        <state line="234" column="108" selection-start="13571" selection-end="13571" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/test/test-js-0.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="15" selection-start="54" selection-end="54" vertical-scroll-proportion="0.040983606">
           <folding />
         </state>
       </provider>
