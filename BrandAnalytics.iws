@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.ipr" afterPath="$PROJECT_DIR$/BrandAnalytics.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" afterPath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
-    </list>
+    <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="" />
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,7 +67,7 @@
       <file leaf-file-name="Searcher.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/searcher/src/ru/brandanalyst/searcher/Searcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="22" selection-start="1832" selection-end="1832" vertical-scroll-proportion="0.9264069">
+            <state line="29" column="22" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.5519481">
               <folding />
             </state>
           </provider>
@@ -80,7 +76,7 @@
       <file leaf-file-name="Brand.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="27" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0">
+            <state line="59" column="27" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -89,7 +85,7 @@
       <file leaf-file-name="Indexer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="0" selection-start="2063" selection-end="2063" vertical-scroll-proportion="0.0">
+            <state line="65" column="40" selection-start="2573" selection-end="2573" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -123,8 +119,8 @@
         <option value="$PROJECT_DIR$/indexer/src/java/Indexer.java" />
         <option value="$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java" />
         <option value="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Test.java" />
-        <option value="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
         <option value="$PROJECT_DIR$/searcher/src/ru/brandanalyst/searcher/Searcher.java" />
+        <option value="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
       </list>
     </option>
   </component>
@@ -183,82 +179,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="BrandAnalytics" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="searcher" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="searcher" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru.brandanalyst.searcher" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="indexer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="indexer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru.brandanalyst.indexer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ru.brandanalyst.core.model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -652,16 +572,6 @@
         <state line="96" column="33" selection-start="3252" selection-end="3252" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="20" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/src/java/ru/brandanalyst/storage/provider/BrandProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="27" selection-start="1708" selection-end="1708" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beans.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -677,11 +587,6 @@
         <state line="337" column="44" selection-start="18404" selection-end="18404" vertical-scroll-proportion="0.043701798" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beansbuild.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="9" selection-start="97" selection-end="97" vertical-scroll-proportion="0.043701798" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/indexer/indexer.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="152" selection-end="152" vertical-scroll-proportion="0.12686567" />
@@ -694,19 +599,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="27" selection-start="1247" selection-end="1247" vertical-scroll-proportion="0.0" />
+        <state line="59" column="27" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="2063" selection-end="2063" vertical-scroll-proportion="0.0">
+        <state line="65" column="40" selection-start="2573" selection-end="2573" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/searcher/src/ru/brandanalyst/searcher/Searcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="22" selection-start="1832" selection-end="1832" vertical-scroll-proportion="0.9264069">
+        <state line="29" column="22" selection-start="1021" selection-end="1021" vertical-scroll-proportion="0.5519481">
           <folding />
         </state>
       </provider>
