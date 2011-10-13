@@ -2,7 +2,12 @@ package ru.brandanalyst.frontend.yalets;
 
 import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
+import net.sf.xfresh.core.Yalet;
 import net.sf.xfresh.core.xml.Xmler;
+import ru.brandanalyst.frontend.services.SearchManager;
+import ru.brandanalyst.frontend.models.BrandForWeb;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,12 +16,36 @@ import net.sf.xfresh.core.xml.Xmler;
  * Time: 3:45
  * To change this template use File | Settings | File Templates.
  */
-public class SearchYalet extends AbstractYalet {
+public class SearchYalet implements Yalet {
+
+    SearchManager searchManager;
+
+    public void setSearchManager(SearchManager searchManager) {
+        this.searchManager = searchManager;
+    }
 
     public void process(InternalRequest req, InternalResponse res) {
 	    String query = req.getParameter("query");
-        Xmler.Tag ans = Xmler.tag("answer", "Убейтесь, ничего не работает. Query: " + query);
-        res.add(ans);
+
+        if (query.isEmpty()) {
+            Xmler.Tag ans = Xmler.tag("answer", "Пустой запрос. Query: " + query);
+            res.add(ans);
+            return;
+        }
+
+        List<BrandForWeb> brandIssuance = searchManager.getSearchResultByBrand(query);
+
+        if(brandIssuance != null) {
+            if(brandIssuance.size() != 0) {
+                res.add(brandIssuance);
+            } else {
+                Xmler.Tag ans = Xmler.tag("answer", "Ничего не найдено. Query: " + query);
+                res.add(ans);
+            }
+        } else {
+            Xmler.Tag ans = Xmler.tag("answer", "Убейтесь, все сломалось, ничего не работает или слишком сложный запрос. Query: " + query);
+            res.add(ans);
+        }
     }
 
 }

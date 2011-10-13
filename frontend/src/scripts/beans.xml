@@ -2,7 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
         "http://www.springframework.org/dtd/spring-beans.dtd">
 
-<beans default-autowire="byName">
+<beans default-autowire="byName" default-init-method="getReadyForSearch" >
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 
@@ -42,7 +42,12 @@
 
     <bean id="searchYalet" class="ru.brandanalyst.frontend.yalets.SearchYalet"/>
 
-    <bean id="manager" class="ru.brandanalyst.frontend.model.GeneralManager"/>
+    <!--Searcher conf-->
+    <bean id="searchManager" class="ru.brandanalyst.frontend.services.SearchManager"/>
+
+    <bean id="searcher" class="ru.brandanalyst.searcher.Searcher">
+        <property name="indexDir" value="index/"/>
+    </bean>
 
     <!--DB conf-->
     <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
