@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @author Александр
  */
-public class GrabberYandex implements Grabber {
+public class GrabberYandex extends GrabberScriptUser implements Grabber {
     GrabberYandex() {
     }
 
