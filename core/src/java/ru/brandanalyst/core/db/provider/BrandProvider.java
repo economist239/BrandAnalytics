@@ -29,8 +29,8 @@ public class BrandProvider {
 
     public void writeBrandToDataStore(Brand brand) {
         try{
-            jdbcTemplate.update("INSERT INTO Brand (brand_id, name, description, website, branch) VALUES(?, ?, ?,'ddd','ddd');", brand.getId(), brand.getName(),
-                brand.getDescription());
+            jdbcTemplate.update("INSERT INTO Brand (brand_id, name, description, website, branch) VALUES(?, ?, ?,?,?);", brand.getId(), brand.getName(),
+                brand.getDescription(),brand.getWebsite(),brand.getBranch());
         } catch (Exception e) {}
     }
 

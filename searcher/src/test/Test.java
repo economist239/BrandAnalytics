@@ -28,15 +28,18 @@ public class Test {    //this is worked test for lucene index and search
         BrandProvider dataStore = new BrandProvider(jdbcTemplate);
 
         dataStore.cleanDataStore();
-        Brand b1 = new Brand(1,"Microsoft","Microsoft makes bad software","","");
+        Brand b1 = new Brand(4,"Gazprom","Gazprom is russian gasoline gaint","www.gazprom.ru","industry");
         dataStore.writeBrandToDataStore(b1);
-        b1 = new Brand(3,"Apple","Apple and Microsoft compscicenter","","");
+        b1 = new Brand(1,"Microsoft","Microsoft makes bad software","www.microsoft.com","IT");
         dataStore.writeBrandToDataStore(b1);
-        b1 = new Brand(2,"Google","Google is better than other search machines","","");
+        b1 = new Brand(3,"Apple","Apple makes software too and i-production","www.apple.com","IT");
+        dataStore.writeBrandToDataStore(b1);
+        b1 = new Brand(2,"Google","Google is better than other search machines","www.google.com","IT");
         dataStore.writeBrandToDataStore(b1);
 
+
         Indexer ind = new Indexer();
-        ind.setDirectory("indexdir/");
+        ind.setDirectory("index/");
         ind.setJdbcTemplate(jdbcTemplate);
         try{
             ind.afterPropertiesSet();
@@ -45,22 +48,21 @@ public class Test {    //this is worked test for lucene index and search
         }
 
         Searcher searcher = new Searcher();
-        searcher.setIndexDir("indexdir/");
+        searcher.setIndexDir("index/");
         try{
-            searcher.afterPropertiesSet();
+            searcher.getReadyForSearch();
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         try{
-            List<Brand> lst = searcher.searchByDescription("Microsoft");
+            List<Brand> lst = searcher.searchByDescription("gaint");
             for(Brand b: lst) {
                 System.out.println(b.getDescription());
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
 
     }
 }

@@ -1,17 +1,18 @@
 package ru.brandanalyst.indexer;
 
-import org.apache.commons.dbcp.BasicDataSource;
-import org.apache.lucene.analysis.Analyzer;
+import org.springframework.beans.factory.InitializingBean;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.store.RAMDirectory;
+import org.apache.lucene.queryParser.ParseException;
+import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.Version;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.core.db.provider.BrandProvider;
+
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -21,60 +22,70 @@ import java.util.List;
  * Date: 10.10.11
  * Time: 22:55
  */
-public class Indexer {
 
-    public IndexSearcher indexSearcher;
-    IndexWriter writer;
-    RAMDirectory indexDirectory;
-    SimpleJdbcTemplate jdbcTemplate;
-    public BrandProvider brandProvider;
+//TODO article indexing to another index dir.
 
-    public Indexer(String dbName){
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");    //initialize database
-        dataSource.setUrl("jdbc:mysql://localhost:3306/brandanalyticsdb?useUnicode=true&amp;characterEncoding=utf8");
-        dataSource.setUsername("root");
-        dataSource.setPassword("root");
-        dataSource.setValidationQuery("select 1");
-        jdbcTemplate = new SimpleJdbcTemplate(dataSource);
+public class Indexer implements InitializingBean {
+
+    private IndexWriter writer;
+    private SimpleJdbcTemplate jdbcTemplate;
+    private String directory;
+
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void index(){ // method initialize IndexWriter
+    public void setDirectory(String directory) {
+        this.directory = directory;
+    }
 
-        indexDirectory = new RAMDirectory();
-        Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_30); // used standart analyzer (your can change)
-        try {
-            writer = new IndexWriter(indexDirectory,analyzer, IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+    public void afterPropertiesSet() { // method initialize IndexWriter
 
-        brandProvider = new BrandProvider(jdbcTemplate);
+        try{
+            SimpleFSDirectory indexDirectory = new SimpleFSDirectory(new File(directory));
+            writer = new IndexWriter(indexDirectory, new StandardAnalyzer(Version.LUCENE_30), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
 
-        List<Brand> brandList = brandProvider.getAllBrands();
-        for(Brand brand:brandList){ //add to pre'index all brand's
-            Document doc = createDocument(brand.getId(),brand.getName(),brand.getDescription());
-            try {
-                writer.addDocument(doc);
-            } catch (IOException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-            }
-        }
-        try {
+
+            brandIndex(writer);
+
             writer.optimize();
             writer.close();
-            indexSearcher = new IndexSearcher(indexDirectory,true); // create index :)
+            System.out.println("Index created.");
+
         } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
+            System.out.println("Cannot create index");
         }
     }
 
-    private Document createDocument(Long id,String title,String content) { //create document with two fields name and description
+    private void brandIndex(IndexWriter writer) {
+
+        System.out.println("indexing brands");
+        BrandProvider brandProvider = new BrandProvider(jdbcTemplate);
+
+        List<Brand> brandList = brandProvider.getAllBrands();
+
+        try{
+            for(Brand brand:brandList){ //add to pre'index all brand's
+                Document doc = createDocument(brand);
+                writer.addDocument(doc);
+            }
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private Document createDocument(Brand b) { //create document
+
         Document doc = new Document();
-        doc.add(new Field("id",id.toString(), Field.Store.YES, Field.Index.NO));
-        doc.add(new Field("name",title, Field.Store.YES, Field.Index.NOT_ANALYZED));  // create name
-        doc.add(new Field("description",content,Field.Store.YES, Field.Index.ANALYZED));  //create description
+
+        doc.add(new Field("brand_id",Long.toString(b.getId()), Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.add(new Field("name",b.getName(), Field.Store.YES, Field.Index.ANALYZED));  // create name
+        doc.add(new Field("description",b.getDescription(),Field.Store.YES, Field.Index.ANALYZED));  //create description
+        doc.add(new Field("website",b.getWebsite(),Field.Store.YES, Field.Index.ANALYZED));
+        doc.add(new Field("branch",b.getBranch(),Field.Store.YES, Field.Index.ANALYZED));
         return doc;
     }
+
+
 }
 

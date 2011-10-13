@@ -15,7 +15,7 @@ create table BrandStats(
 
 drop table if exists Brand;
 create table Brand(
-	brand_id int primary key not null,
+	id int primary key not null,
 	name varchar(100) not null,
 	description varchar(1000),
 	website varchar(400),
@@ -26,23 +26,23 @@ drop table if exists Mention;
 create table Mention(
 	brand_id int primary key not null,
 	article_id int not null,
-	opinion varchar(100) not null
+	opinion double not null
 );
 
 drop table if exists Article;
 create table Article(
-	article_id int not null,
-	info_source_id int not null,
+	id int not null,
+	infosource_id int not null,
 	title varchar(500) not null,
 	content varchar(3000) not null,
 	author varchar(100),
 	timestmp timestamp,
-	constraint article_uk unique (article_id, info_source_id)
 );
 
 drop table if exists InfoSource;
 create table InfoSource(
-	info_source_id int primary key not null,
+	id int primary key not null,
+	type int not null;
 	title varchar(100) not null,
 	description varchar(1000),
 	website varchar(100)	
