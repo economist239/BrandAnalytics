@@ -7,31 +7,34 @@ package ru.brandanalyst.miner;
 import org.webharvest.runtime.*;
 import org.webharvest.definition.ScraperConfiguration;
 
+import java.util.ArrayList;
+import java.util.List;
+
+
 /**
  * @author Александр
  */
-public class GrabberYandex implements Grabber {
-    String cfg;
-
-    GrabberYandex(String cfg) {
-        this.cfg = cfg;
+public class GrabberYandex extends GrabberScriptUser implements Grabber {
+    GrabberYandex() {
     }
 
-    public String[] grab() {
-        String[] sp = new String[1];
+    public List<String> grab() {
+        List<String> result = new ArrayList<String>();
         try {
-            ScraperConfiguration config = new ScraperConfiguration("miner/configs/config1.xml");
-         //   ScraperConfiguration config = new ScraperConfiguration(cfg);
+            ScraperConfiguration config = new ScraperConfiguration("config/config1.xml");
             Scraper scraper = new Scraper(config, ".");
-            scraper.setDebug(true);
-            scraper.execute();
-            sp[0] = scraper.getContext().getVar("temp").toString();
+            for(int i=0;i<targetUrls.length;++i){
+                scraper.addVariableToContext("targetUrl",targetUrls[i].toString());
+                scraper.setDebug(true);
+                scraper.execute();
+                result.add(scraper.getContext().getVar("temp").toString());
+            }
+
         } catch (Exception exception) {
-            System.out.println(exception.toString());
+            result.add(exception.toString());
+            return result;
         }
-
-        return sp;
-
+        return result;
     }
 
 }
