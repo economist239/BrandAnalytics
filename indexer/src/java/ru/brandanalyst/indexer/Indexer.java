@@ -6,18 +6,12 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.queryParser.ParseException;
-import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
-import org.apache.lucene.search.Query;
-import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.Version;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.storage.provider.BrandProvider;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -45,22 +39,34 @@ public class Indexer {
         jdbcTemplate = new SimpleJdbcTemplate(dataSource);
     }
 
-    public void index() throws IOException, ParseException { // method initialize IndexWriter
+    public void index(){ // method initialize IndexWriter
 
         indexDirectory = new RAMDirectory();
         Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_30); // used standart analyzer (your can change)
-        writer = new IndexWriter(indexDirectory,analyzer, IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
+        try {
+            writer = new IndexWriter(indexDirectory,analyzer, IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
 
         brandProvider = new BrandProvider(jdbcTemplate);
 
         List<Brand> brandList = brandProvider.getAllBrands();
         for(Brand brand:brandList){ //add to pre'index all brand's
             Document doc = createDocument(brand.getId(),brand.getName(),brand.getDescription());
-            writer.addDocument(doc);
+            try {
+                writer.addDocument(doc);
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
         }
-        writer.optimize();
-        writer.close();
-        indexSearcher = new IndexSearcher(indexDirectory,true); // create index :)
+        try {
+            writer.optimize();
+            writer.close();
+            indexSearcher = new IndexSearcher(indexDirectory,true); // create index :)
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
     }
 
     private Document createDocument(Long id,String title,String content) { //create document with two fields name and description
