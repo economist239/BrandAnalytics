@@ -1,4 +1,4 @@
-package ru.brandanalyst.miner;
+package ru.brandanalyst.miner2;
 
 import twitter4j.*;
 
@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
+
+import static java.lang.System.out;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Obus
@@ -14,7 +17,7 @@ import java.text.SimpleDateFormat;
  * Time: 14:14
  * To change this template use File | Settings | File Templates.
  */
-public class GrabberTwitter implements ExactGrabber{
+public class GrabberTwitter extends ExactGrabber{
 
     private final int ISSUANCE_SIZE = 200;
 
@@ -24,13 +27,13 @@ public class GrabberTwitter implements ExactGrabber{
         this.brandNames = brandNames;
     }
 
-    public List<String> grab(String[] brandNames){
+    public void grab(){                          //тут надо складывать в БД данные
 
         List<String> result = new ArrayList<String>();
         try{
             //TODO: make this piece of shit, named as code, BETTER (get rid of <code>pageNumber</code>, for example)
             Twitter twitter = new TwitterFactory().getInstance();
-            Query query = new Query(brandNames[0]);
+            Query query = new Query(brandNames.get(0));
 
             Calendar cal = new GregorianCalendar();
             query.setSince("2011"+"-"+"10"+"-"+"11");
@@ -52,25 +55,13 @@ public class GrabberTwitter implements ExactGrabber{
                 pageNumber++;
 
             } while (ISSUANCE_SIZE == resultTweets.size());
-            /*for(int i=0;i<brandNames.length;++i){
-            Twitter twitter = new TwitterFactory().getInstance();
-            for(int j=0;j<brandNames.length;++j){
-            Query query = new Query(brandNames[j]);
-            QueryResult queryResult = twitter.search(query);
-            for (Tweet tweet : (List<Tweet>)queryResult.getTweets()) {
-                 result += tweet.getText();
-               }
-            }*/
-
         }
         catch (Exception e){
             e.printStackTrace();
         }
-        return result;
-    }
-    public List<String> grab(String brandName){
-        String[] brandNames = new String[1] ;
-        brandNames[0] = brandName;
-        return grab(brandNames);
+
+        for(String resultString : result){
+                out.println(resultString);
+        }
     }
 }

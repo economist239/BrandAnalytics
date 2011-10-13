@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/searcher/src/ru/brandanalyst/searcher/Searcher.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/ExactGrabber.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/Grabber.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberMain.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberScriptUser.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberTwitter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberYandex.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/ArticleMapper.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/ArticleMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/BrandMapper.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/BrandMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbscript.sql" afterPath="$PROJECT_DIR$/dbscript.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" afterPath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" afterPath="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/src/test/Test.java" afterPath="$PROJECT_DIR$/searcher/src/test/Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/miner.iml" afterPath="$PROJECT_DIR$/miner/miner.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberMain.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberTwitter.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberTwitter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,73 +76,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Searcher.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="1992" selection-end="1992" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Indexer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="49" selection-start="1831" selection-end="1831" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beans.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beans.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="46" selection-start="2085" selection-end="2085" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="beans.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/indexer/src/scripts/beans.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="135" selection-start="150" selection-end="185" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchYalet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="27" selection-start="930" selection-end="930" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search.xsl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/web/search.xsl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GrabberMain.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GrabberMain.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="13" selection-start="379" selection-end="379" vertical-scroll-proportion="-1.2354571">
+            <state line="69" column="26" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GrabberYandex.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java">
+      <file leaf-file-name="GrabberScriptUser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberScriptUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0">
+            <state line="13" column="13" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -150,16 +97,72 @@
       <file leaf-file-name="GrabberTwitter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberTwitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0">
+            <state line="24" column="37" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExactGrabber.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/ExactGrabber.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="24" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/searcher/src/test/Test.java">
+      <file leaf-file-name="Grabber.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/Grabber.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="35" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0">
+            <state line="12" column="22" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GrabberMain.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="102" column="31" selection-start="4150" selection-end="4150" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GrabberScriptUser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberScriptUser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="13" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GrabberTwitter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberTwitter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="77" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GrabberYandex.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="26" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GrabberYandex.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberYandex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="8" selection-start="1086" selection-end="1100" vertical-scroll-proportion="1.0235294">
               <folding />
             </state>
           </provider>
@@ -179,15 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/BrandForSearch.java" />
-        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/BrandForWeb.java" />
-        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowSingleBrandYalet.java" />
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/BrandMapper.java" />
-        <option value="$PROJECT_DIR$/frontend/src/web/search1.xsl" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberPreAlpha.java" />
-        <option value="$PROJECT_DIR$/lib/lucene-core-3.0.3.jar!/org/apache/lucene/store/Lock.class" />
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" />
-        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/SearchManager.java" />
         <option value="$PROJECT_DIR$/BrandAnalytics.iws" />
         <option value="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
         <option value="$PROJECT_DIR$/searcher/src/test/Test.java" />
@@ -195,6 +189,15 @@
         <option value="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" />
         <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java" />
         <option value="$PROJECT_DIR$/frontend/src/web/search.xsl" />
+        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberMain.java" />
+        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberTwitter.java" />
+        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberMain.java" />
+        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberScriptUser.java" />
+        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberYandex.java" />
+        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberTwitter.java" />
+        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/ExactGrabber.java" />
+        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/Grabber.java" />
+        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java" />
       </list>
     </option>
   </component>
@@ -359,11 +362,155 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yalets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -722,22 +869,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-5" width="1366" height="773" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35031846" sideWeight="0.99241275" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24840765" sideWeight="0.9984825" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.6496815" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36464968" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38853502" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30254778" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3020362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32928678" sideWeight="0.63535035" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0" sideWeight="0.6480892" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24430956" sideWeight="0.6496815" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24430956" sideWeight="0.75159234" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35191083" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46019107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -808,67 +955,23 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/miner/configs/config1.xml">
+    <entry file="file://$PROJECT_DIR$/frontend/src/web/search.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BrandAnalytics.iws">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/log4j.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/net/sf/xfresh/jetty/JettyServerInitializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="4" selection-start="615" selection-end="696" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/net/sf/xfresh/jetty/SingleYaletHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="622" selection-end="622" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/net/sf/xfresh/jetty/YaletXmlPageHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="532" selection-end="532" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="49" selection-start="1831" selection-end="1831" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/searcher/src/test/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="35" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/indexer/src/scripts/beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="135" selection-start="150" selection-end="185" vertical-scroll-proportion="0.0">
+        <state line="4" column="0" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1992" selection-end="1992" vertical-scroll-proportion="0.0">
+        <state line="31" column="4" selection-start="977" selection-end="1008" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beans.xml">
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/SearchManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="46" selection-start="2085" selection-end="2085" vertical-scroll-proportion="0.0">
+        <state line="8" column="13" selection-start="244" selection-end="244" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -880,28 +983,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/web/search.xsl">
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/ExactGrabber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0">
+        <state line="15" column="17" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java">
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/Grabber.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberTwitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="267" selection-end="267" vertical-scroll-proportion="0.0">
+        <state line="12" column="17" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="379" selection-end="379" vertical-scroll-proportion="-1.2354571">
+        <state line="69" column="26" selection-start="2493" selection-end="2493" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberTwitter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="37" selection-start="579" selection-end="579" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberScriptUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="26" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/ExactGrabber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="24" selection-start="319" selection-end="319" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberScriptUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="31" selection-start="4150" selection-end="4150" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberTwitter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="77" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/Grabber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="22" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberYandex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="8" selection-start="1086" selection-end="1100" vertical-scroll-proportion="1.0235294">
           <folding />
         </state>
       </provider>
@@ -958,11 +1121,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>searcher</last-edited>
+          <last-edited>miner</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

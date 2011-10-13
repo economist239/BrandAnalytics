@@ -1,4 +1,4 @@
-package ru.brandanalyst.miner;
+package ru.brandanalyst.miner2;
 
 import java.net.URL;
 import java.util.HashSet;

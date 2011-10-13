@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package ru.brandanalyst.miner;
+package ru.brandanalyst.miner2;
 
 import org.webharvest.runtime.*;
 import org.webharvest.definition.ScraperConfiguration;
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * @author Александр
  */
-public class GrabberYandex implements Grabber {
+public class GrabberYandex extends GrabberScriptUser implements Grabber {
     GrabberYandex() {
     }
 
