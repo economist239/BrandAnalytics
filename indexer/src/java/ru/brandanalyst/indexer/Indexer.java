@@ -32,6 +32,7 @@ public class Indexer {
     IndexWriter writer;
     RAMDirectory indexDirectory;
     SimpleJdbcTemplate jdbcTemplate;
+    public BrandProvider brandProvider;
 
     public Indexer(String dbName){
         BasicDataSource dataSource = new BasicDataSource();
@@ -49,11 +50,11 @@ public class Indexer {
         Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_30); // used standart analyzer (your can change)
         writer = new IndexWriter(indexDirectory,analyzer, IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
 
-        BrandProvider brandProvider = new BrandProvider(jdbcTemplate);
+        brandProvider = new BrandProvider(jdbcTemplate);
 
         List<Brand> brandList = brandProvider.getAllBrands();
         for(Brand brand:brandList){ //add to pre'index all brand's
-            Document doc = createDocument(brand.getName(),brand.getDescription());
+            Document doc = createDocument(new Integer(brand.getId()),brand.getName(),brand.getDescription());
             writer.addDocument(doc);
         }
         writer.optimize();
@@ -61,9 +62,9 @@ public class Indexer {
         indexSearcher = new IndexSearcher(indexDirectory,true); // create index :)
     }
 
-    private Document createDocument(String title,String content) { //create document with two fields name and description
+    private Document createDocument(Integer id,String title,String content) { //create document with two fields name and description
         Document doc = new Document();
-        doc.add(new Field("id",title, Field.Store.YES, Field.Index.NO));
+        doc.add(new Field("id",id.toString(), Field.Store.YES, Field.Index.NO));
         doc.add(new Field("name",title, Field.Store.YES, Field.Index.NOT_ANALYZED));  // create name
         doc.add(new Field("description",content,Field.Store.YES, Field.Index.ANALYZED));  //create description
         return doc;
