@@ -25,19 +25,33 @@ import java.util.logging.Filter;
 public class Searcher {
     final int MAX_DOC = 1234567890;
     //method return list of all name of brand find by keyword text
-    public List<String> searchByDescription(Indexer indexer, String text) throws ParseException, IOException {
+    public List<Brand> searchBrandByDescription(Indexer indexer, String text) {
         Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_30); // your can change version
         QueryParser parser = new QueryParser(Version.LUCENE_30,"description",analyzer);
-        Query search = parser.parse(text);
-        ScoreDoc[] hits = indexer.indexSearcher.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter
-        
-        List<String> lst = new ArrayList<String>();
-        
-        for(int i = 0 ; i < hits.length ; i++ ){
-            Document doc = indexer.indexSearcher.doc(hits[i].doc);
-            lst.add(doc.get("name"));
+        Query search = null;
+        try {
+            search = parser.parse(text);
+        } catch (ParseException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+        }
+        ScoreDoc[] hits = new ScoreDoc[0]; // you maybe change null on filter
+        try {
+            hits = indexer.indexSearcher.search(search,null,MAX_DOC).scoreDocs;
+        } catch (IOException e) {
+            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
+        List<Brand> lst = new ArrayList<Brand>();
+        
+        for(int i = 0 ; i < hits.length ; i++ ){
+            Document doc = null;
+            try {
+                doc = indexer.indexSearcher.doc(hits[i].doc);
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+            lst.add(indexer.brandProvider.getBrandById(Integer.parseInt(doc.get("id"))));
+        }
         return  lst;
     }
 }
