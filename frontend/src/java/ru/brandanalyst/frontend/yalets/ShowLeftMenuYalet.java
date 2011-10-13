@@ -4,17 +4,12 @@ import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.db.AbstractDbYalet;
 import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.storage.provider.BrandProvider;
+import ru.brandanalyst.core.db.provider.BrandProvider;
 
 public class ShowLeftMenuYalet extends AbstractDbYalet {
 
     public void process(InternalRequest req, InternalResponse res) {
-//	String str = req.getParameter("id");
-////	if (str != null) {
-//	    res.add(manager.getBrand(Integer.parseInt(str)));
-//	    return;
-//	}
-
+        //our frontend is only just for fan now=)
 //       res.add(manager.getAllBrands());
        BrandProvider dataStore = new BrandProvider(jdbcTemplate);
  //       dataStore.cleanDataStore();

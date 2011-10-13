@@ -14,11 +14,34 @@
         <fileset dir="build" includes="**/*.class"/>
     </path>
 
+    <path id="libs.miner">
+        <fileset dir="lib" includes="webharvest/**/*.jar"/>
+        <fileset dir="lib" includes="jakarta-commons/**/*.jar"/>
+        <fileset dir="lib" includes="saxon/**/*.jar"/>
+        <fileset dir="lib" includes="*.jar"/>
+    </path>
+
+    <path id="libs.core">
+        <fileset dir="lib" includes="jetty/**/*.jar"/>
+        <fileset dir="lib" includes="xfresh/**/*.jar"/>
+        <fileset dir="lib" includes="jetbrains/**/*.jar"/>
+        <fileset dir="lib" includes="httpclient/**/*.jar"/>
+        <fileset dir="lib" includes="rhino/**/*.jar"/>
+        <fileset dir="lib" includes="jakarta-commons/**/*.jar"/>
+        <fileset dir="lib" includes="saxon/**/*.jar"/>
+        <fileset dir="lib" includes="spring/**/*.jar"/>
+        <fileset dir="lib" includes="xalan/**/*.jar"/>
+        <fileset dir="lib" includes="*.jar"/>
+    </path>
+
     <property name="build.dir" location="${project.dir}/build"/>
     <property name="src.core.dir" location="${project.dir}/core/src/java/"/>
     <property name="src.miner.dir" location="${project.dir}/miner/src/java/"/>
     <property name="src.frontend.dir" location="${project.dir}/frontend/src/java/"/>
     <property name="src.storage.dir" location="${project.dir}/storage/src/java/"/>
+
+    <pathconvert pathsep=" " property="miner_libs_manifest" refid="libs.miner"/>
+    <pathconvert pathsep=" " property="core_libs_manifest" refid="libs.core"/>
 
     <target name="init">
         <echo>BRANDILLO installing..!</echo>
@@ -81,6 +104,8 @@
             <fileset dir="${project.dir}/frontend/src/web" includes="**/*.*"/>
         </copy>
 
+        <copy file="start.sh" todir="${build.dir}"/>
+
         <copy todir="${build.dir}/scripts">
             <fileset dir="${project.dir}/frontend/src/scripts" includes="**/*.*"/>
         </copy>
@@ -88,20 +113,48 @@
 
 
     <target name="all" depends="core,miner,frontend">
-        <chmod file="${project.dir}/start.sh" perm="+x"/>
 
         <copy todir="${build.dir}/lib">
             <fileset dir="${lib.dir}" includes="**/*.*" excludes="xfresh/xfresh-core.jar"/>
         </copy>
 
-        <copy todir="${build.dir}">
-            <fileset dir="${lib.dir}/xfresh/" excludes="xfresh-db.jar"/>
-        </copy>
-
         <jar destfile="${build.dir}/brandillo_miner.jar">
             <fileset dir="${build.dir}/classes" includes="**/*.class"/>
+            <manifest>
+                <attribute name="Built-By" value="Brandillo's build.xml"/>
+                <attribute name="Main-Class" value="ru.brandanalyst.miner.GrabberPreAlpha"/>
+                <attribute name="Class-Path" value="${miner_libs_manifest} ${build.dir}/classes/"/>
+            </manifest>
         </jar>
+
+        <jar destfile="${build.dir}/brandillo_core.jar">
+            <fileset dir="${build.dir}/classes" includes="**/*.class"/>
+            <manifest>
+                <attribute name="Built-By" value="Brandillo's build.xml"/>
+                <attribute name="Main-Class" value="net.sf.xfresh.util.Starter"/>
+                <attribute name="Class-Path" value="${core_libs_manifest} ${build.dir}/classes/"/>
+            </manifest>
+        </jar>
+
+        <chmod file="${build.dir}/start.sh" perm="+x"/>
         <echo>BRANDILLO installing complete!</echo>
+    </target>
+
+    <target name="run_frontend">
+        <java dir="${project.dir}" jar="${build.dir}/brandillo_core.jar" fork="true">
+            <jvmarg value="-Xms64m"/>
+            <jvmarg value="-Xmx1750m"/>
+            <arg value="/build/scripts/beans.xml" />
+        </java>
+     <!--   <exec dir="${build.dir}" executable="${build.dir}/start.sh" /> -->
+    </target>
+
+    <target name="run_miner" depends="all" description="miner started">
+        <java dir="${project.dir}" jar="${build.dir}/brandillo_miner.jar" fork="true">
+            <jvmarg value="-Xms64m"/>
+            <jvmarg value="-Xmx1750m"/>
+            <arg value="/resources/miner/" />
+        </java>
     </target>
 </project>
 
