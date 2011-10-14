@@ -16,7 +16,7 @@
             </a></h2>
             <a><xsl:value-of select="description"/><br/></a>
             <a>
-                <xsl:attribute name="href"><xsl:value-of select="website"/></xsl:attribute>
+                <xsl:attribute name="href">http://<xsl:value-of select="website"/></xsl:attribute>
                 visit official website of company<br/>
             </a>
             <hr align="left"/>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-autowire="byName" default-init-method="afterPropertiesSet" >
+    <!--Spring helpers-->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+
+    <!--Miner conf-->
+    <bean class="ru.brandanalyst.miner2.GrabberContainer">
+        <property name="grabberList">
+            <list>
+                <bean class="ru.brandanalyst.miner2.GrabberYandex">
+                    <property name="config" value="./miner/configs/config1.xml"/>
+                </bean>
+            </list>
+        </property>
+        <property name="exactGrabberList">
+            <list>
+                <bean class="ru.brandanalyst.miner2.GrabberTwitter">
+                    <property name="brandNames">
+                        <list>
+                            <value>"Apple"</value>
+                        </list>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <!--DB conf-->
+    <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/BrandAnalyticsDB?useUnicode=true&amp;characterEncoding=utf8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+        <property name="validationQuery" value="select 1"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+
+</beans>

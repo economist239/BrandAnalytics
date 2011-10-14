@@ -1,7 +1,6 @@
 User Guide for Brandillo Project
 
-write in your terminal
-1. ant all - to build project
-2. ant run_frontend - to run frontend. to stop frontend press Ctrl+C in your terminal
-to see startup page write in your browser localhost:8080/
-3. ant run_miner - to run miner
+О запуске проекта из Идеи.
+Надо создать БД со скрипта. В модуле searcher есть тестовый класс, его надо запустить и построить индекс, тк на данный момент UI
+функционирует только с индексом (больше просто ничего интересного нет). У минера есть 2 версии: одна исходная, другая сделана со спрингом.
+Их функциональность абсолютно одинакова.

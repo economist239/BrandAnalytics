@@ -7,6 +7,8 @@ package ru.brandanalyst.miner2;
 
 //
 
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+
 import java.util.List;
 
 /**
@@ -14,6 +16,11 @@ import java.util.List;
  * @author Александр
  */
 public abstract class ExactGrabber {
-    public abstract void setBrandNames(List<String> brandNames);
+    protected SimpleJdbcTemplate jdbcTemplate;
+    protected String config;
+    protected List<String> brandNames;
     public abstract void grab();
+    public abstract void setConfig(String config);
+    public abstract void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate);
+    public abstract void setBrandNames(List<String> brandNames);
 }

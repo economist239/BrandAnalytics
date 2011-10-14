@@ -1,15 +1,14 @@
 package ru.brandanalyst.miner2;
 
+import org.springframework.jdbc.core.JdbcTemplate;
 import twitter4j.*;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.text.SimpleDateFormat;
-
 import static java.lang.System.out;
-
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 /**
  * Created by IntelliJ IDEA.
  * User: Obus
@@ -21,7 +20,13 @@ public class GrabberTwitter extends ExactGrabber{
 
     private final int ISSUANCE_SIZE = 200;
 
-    List<String> brandNames;
+    public void setConfig(String config) {
+        this.config = config;  //not using
+    }
+
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
 
     public void setBrandNames(List<String> brandNames) {
         this.brandNames = brandNames;

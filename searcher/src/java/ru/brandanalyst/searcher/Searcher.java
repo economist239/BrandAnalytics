@@ -42,7 +42,8 @@ public class Searcher {
         try {
             indexSearcher = new IndexSearcher(new SimpleFSDirectory(new File(indexDir)));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Надо бы индекс сначала..");
+        //    e.printStackTrace();
         }
     }
 
