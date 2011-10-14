@@ -5,7 +5,12 @@
 <beans default-autowire="byName" default-init-method="getReadyForSearch" >
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
-<list>
+    <!--Jetty beans-->
+    <bean id="serverInitializer" class="net.sf.xfresh.jetty.JettyServerInitializer">
+        <property name="port" value="8080"/> <!--property's value for nerds =)-->
+        <property name="maxThreads" value="10"/>
+        <property name="handlers">
+             <list>
                 <bean class="net.sf.xfresh.jetty.YaletXmlPageHandler">
                     <property name="resourceBase" value="./frontend/src/web"/>
                 </bean>
@@ -13,12 +18,6 @@
                     <property name="resourceBase" value="./frontend/src/web"/>
                 </bean>
             </list>
-    <!--Jetty beans-->
-    <bean id="serverInitializer" class="net.sf.xfresh.jetty.JettyServerInitializer">
-        <property name="port" value="8080"/> <!--property's value for nerds =)-->
-        <property name="maxThreads" value="10"/>
-        <property name="handlers">
-
         </property>
     </bean>
 
