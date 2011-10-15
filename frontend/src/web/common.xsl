@@ -12,8 +12,19 @@
             <script language="javascript" src="javascripts/js-class.js" type="text/javascript"></script><script language="javascript" src="javascripts/bluff.js" type="text/javascript"></script><script language="javascript" src="javascripts/excanvas.js" type="text/javascript"></script>
         </head>
         <body>
-            <xsl:call-template name="find"/>
-            <xsl:call-template name="main"/>
+            <table class="extTable">
+                <tr>
+                    <xsl:call-template name="find"/>
+                </tr>
+                <tr>
+                    <td>
+                        <xsl:call-template name="main"/>
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+            </table>
         </body>
         </html>
     </xsl:template>

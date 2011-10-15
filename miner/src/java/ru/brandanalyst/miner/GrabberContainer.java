@@ -1,4 +1,4 @@
-package ru.brandanalyst.miner2;
+package ru.brandanalyst.miner;
 
 import java.util.List;
 
@@ -24,6 +24,8 @@ public class GrabberContainer {
 
     public void afterPropertiesSet () {
         System.out.println("miner started");
+
+
         for(Grabber g: grabberList) {
             g.grab();
         }

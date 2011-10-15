@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BrandAnalytic" default="all" basedir=".">
+
+    <path id="libs">
+            <fileset dir="${lib.dir}" includes="**/*.jar"/>
+            <fileset dir="${dist.dir}" includes="**/*.jar"/>
+    </path>
+
+    <property name="src.searcher.dir" location="${project.dir}/searcher/src/java/"/>
+    <pathconvert pathsep=" " property="libs_manifest" refid="libs"/>
+
+    <target name="all">
+
+	<!--class-файлы в папку build/classes-->
+        <javac srcdir="${src.searcher.dir}"
+               destdir="${build.dir}/classes"
+               debug="true"
+               deprecation="true"
+               optimize="false"
+               includeAntRuntime="false">
+            <classpath refid="libs"/>
+        </javac>
+
+	<!--собирается архив с классом, у которого есть метод main в папку dist-->
+        <jar destfile="${dist.dir}/searcher.jar" basedir="${classes.dir}" includes="ru/brandanalyst/searcher/**/*.*">
+            <manifest>
+                <attribute name="Built-By" value="searcher: build.xml"/>
+                <attribute name="Class-Path" value="${libs_manifest}/"/>
+            </manifest>
+        </jar>
+
+	<echo>searcher building complete</echo>
+    </target>
+
+</project>
+

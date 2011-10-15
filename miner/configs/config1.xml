@@ -52,12 +52,14 @@
         			declare variable $text as node() external;
         			let $title := data($doc//title)
         			let $ttext := data($text//p)
+        			let $source := data($text//p/a)
      				let $link := data($doc//link)
      				let $date := data($doc//pubDate)
      				return
      				 	<item>
                     		<title>{$title}</title>
                     		<text>{$ttext}</text>
+                    		<source>{$source}</source>
                     		<date>{$date}</date>                   		
                     		<link>{$link}</link>
                			</item>

@@ -7,20 +7,22 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 
     <!--Miner conf-->
-    <bean class="ru.brandanalyst.miner2.GrabberContainer">
+    <bean class="ru.brandanalyst.miner.GrabberContainer">
         <property name="grabberList">
-            <list>
-                <bean class="ru.brandanalyst.miner2.GrabberYandex">
+           <list>
+                <bean class="ru.brandanalyst.miner.GrabberYandex">
                     <property name="config" value="./miner/configs/config1.xml"/>
                 </bean>
             </list>
         </property>
         <property name="exactGrabberList">
             <list>
-                <bean class="ru.brandanalyst.miner2.GrabberTwitter">
+                <bean class="ru.brandanalyst.miner.GrabberTwitter">
                     <property name="brandNames">
                         <list>
-                            <value>"Apple"</value>
+                            <value>Apple</value>
+                            <value>Microsoft</value>
+                            <value>Apple</value>
                         </list>
                     </property>
                 </bean>

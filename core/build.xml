@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BrandAnalytic" default="all" basedir=".">
+
+    <path id="libs">
+            <fileset dir="${lib.dir}" includes="**/*.jar"/>
+            <fileset dir="${dist.dir}" includes="**/*.jar"/>
+    </path>
+
+    <property name="src.core.dir" location="${project.dir}/core/src/java/"/>
+    <pathconvert pathsep=" " property="libs_manifest" refid="libs"/>
+
+    <target name="all">
+
+	<!--class-файлы в папку build/classes-->
+        <javac srcdir="${src.core.dir}"
+               destdir="${build.dir}/classes"
+               debug="true"
+               deprecation="true"
+               optimize="false"
+               includeAntRuntime="false">
+            <classpath refid="libs"/>
+        </javac>
+
+	<!--собирается архив с классом, у которого есть метод main в папку dist-->
+        <jar destfile="${dist.dir}/core.jar" basedir="${classes.dir}" includes="ru/brandanalyst/core/**/*.* net/sf/xfresh/**/*.*" >
+            <manifest>
+                <attribute name="Built-By" value="core: build.xml"/>
+                <attribute name="Main-Class" value="net.sf.xfresh.util.Starter"/>
+                <attribute name="Class-Path" value="${libs_manifest} ${dist.dir}/searcher.jar"/>
+            </manifest>
+        </jar>
+
+	<echo>core building complete</echo>
+    </target>
+
+</project>
+
