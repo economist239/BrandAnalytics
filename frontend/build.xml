@@ -29,11 +29,15 @@
             </manifest>
         </jar>
 
+        <mkdir dir="${build.dir}/frontend"/>
+        <copy todir="${build.dir}/frontend" overwrite="true">
+            <fileset dir="${project.dir}/frontend" includes="**/*.*" excludes="**/*.java build.xml *.iml"/>
+        </copy>
 	<echo>frontend building complete</echo>
     </target>
 
     <target name="run">
-        <java dir="${project.dir}" jar="${dist.dir}/core.jar" fork="true">
+        <java dir="${build.dir}" jar="${dist.dir}/core.jar" fork="true">
             <jvmarg value="-Xms64m"/>
             <jvmarg value="-Xmx1750m"/>
             <arg value="/frontend/src/scripts/beans.xml" />

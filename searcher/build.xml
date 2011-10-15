@@ -29,6 +29,10 @@
             </manifest>
         </jar>
 
+        <mkdir dir="${build.dir}/frontend"/>
+        <copy todir="${build.dir}/frontend" overwrite="true">
+            <fileset dir="${project.dir}/frontend" includes="**/*.*" excludes="**/*.java build.xml *.iml"/>
+        </copy>
 	<echo>searcher building complete</echo>
     </target>
 
