@@ -30,7 +30,7 @@ public class ArticleProvider {
         try {
             jdbcTemplate.update("INSERT INTO Article (Id, InfosourceId, Title, Content, Link, NumLikes, Tstmp) VALUES(?, ?, ?, ?, ?, ?);", article.getId(), article.getSourceId(),
                 article.getTitle(),article.getContent(),article.getLink(),article.getNumLikes(),article.getTstamp());
-        } catch (Exception e) {}
+        } catch (Exception e) {e.printStackTrace();}
     }
 
     public void writeListOfArticlesToDataStore(List<Article> articles) {
