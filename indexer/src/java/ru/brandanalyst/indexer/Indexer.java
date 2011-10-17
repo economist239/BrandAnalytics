@@ -23,26 +23,24 @@ import java.util.List;
  * Date: 10.10.11
  * Time: 22:55
  */
-
-//TODO article indexing to another index dir.
-
 public class Indexer implements InitializingBean {
 
     private IndexWriter brandwriter;
     private IndexWriter articlewriter;
-    private SimpleJdbcTemplate jdbcTemplateBrand;
-    private SimpleJdbcTemplate jdbcTemplateArticle;
+    private SimpleJdbcTemplate jdbcTemplate;
     private String directoryBrand;
     private String directoryArticle;
 
-    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplateBrand,SimpleJdbcTemplate jdbcTemplateArticle) {
-        this.jdbcTemplateBrand   = jdbcTemplateBrand;
-        this.jdbcTemplateArticle = jdbcTemplateArticle;
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate   = jdbcTemplate;
     }
 
-    public void setDirectory(String directoryBrand,String directoryArticle) {
+    public void setDirectoryBrand(String directoryBrand) {
         this.directoryBrand   = directoryBrand;
-        this.directoryArticle = directoryArticle;
+    }
+
+    public void setDirectoryArticle(String directoryArticle) {
+        this.directoryArticle  = directoryArticle;
     }
 
     public void afterPropertiesSet() { // method initialize IndexWriter
@@ -51,10 +49,13 @@ public class Indexer implements InitializingBean {
             brandwriter = new IndexWriter(indexDirectoryBrand, new StandardAnalyzer(Version.LUCENE_30), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
             SimpleFSDirectory indexDirectoryArticle = new SimpleFSDirectory(new File(directoryArticle));
             articlewriter = new IndexWriter(indexDirectoryArticle, new StandardAnalyzer(Version.LUCENE_30), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
+
             brandIndex(brandwriter);
             articleIndex(articlewriter);
+
             articlewriter.optimize();
             brandwriter.optimize();
+
             articlewriter.close();
             brandwriter.close();
             System.out.println("Index of created.");
@@ -67,9 +68,9 @@ public class Indexer implements InitializingBean {
     private void articleIndex(IndexWriter writer) {
 
         System.out.println("indexing articles");
-        ArticleProvider Provider = new ArticleProvider(jdbcTemplateArticle);
+        ArticleProvider provider = new ArticleProvider(jdbcTemplate);
 
-        List<Article> list = Provider.getAllBrands();
+        List<Article> list = provider.getAllBrands();
 
         try{
             for(Article item:list){ //add to pre'index all brand's
@@ -83,9 +84,9 @@ public class Indexer implements InitializingBean {
     private void brandIndex(IndexWriter writer) {
 
         System.out.println("indexing brands");
-        BrandProvider Provider = new BrandProvider(jdbcTemplateBrand);
+        BrandProvider provider = new BrandProvider(jdbcTemplate);
 
-        List<Brand> list = Provider.getAllBrands();
+        List<Brand> list = provider.getAllBrands();
 
         try{
             for(Brand item:list){ //add to pre'index all brand's
@@ -99,13 +100,14 @@ public class Indexer implements InitializingBean {
     private Document createDocument(Article a) {
         Document doc = new Document();
 
-        doc.add(new Field("id",Long.toString(a.getId()),Field.Store.YES, Field.Index.NOT_ANALYZED));
-        doc.add(new Field("sourceId",Long.toString(a.getSourceId()),Field.Store.YES, Field.Index.NOT_ANALYZED));
-        doc.add(new Field("numLikes",Long.toString(a.getNumLikes()),Field.Store.YES,Field.Index.NOT_ANALYZED));
-        doc.add(new Field("link",a.getLink(),Field.Store.YES,Field.Index.ANALYZED));
-        doc.add(new Field("tstamp",a.getTstamp(),Field.Store.YES,Field.Index.ANALYZED));
-        doc.add(new Field("content",a.getContent(),Field.Store.YES,Field.Index.ANALYZED));
-        doc.add(new Field("title",a.getTitle(),Field.Store.YES,Field.Index.ANALYZED));
+        doc.add(new Field("Id",Long.toString(a.getId()),Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.add(new Field("InfoSourceId",Long.toString(a.getSourceId()),Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.add(new Field("BrandId",Long.toString(a.getSourceId()),Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.add(new Field("NumLikes",Long.toString(a.getNumLikes()),Field.Store.YES,Field.Index.NOT_ANALYZED));
+        doc.add(new Field("Link",a.getLink(),Field.Store.YES,Field.Index.ANALYZED));
+        doc.add(new Field("Tstamp",a.getTstamp(),Field.Store.YES,Field.Index.ANALYZED));
+        doc.add(new Field("Content",a.getContent(),Field.Store.YES,Field.Index.ANALYZED));
+        doc.add(new Field("Title",a.getTitle(),Field.Store.YES,Field.Index.ANALYZED));
 
         return doc;
     }
@@ -113,11 +115,11 @@ public class Indexer implements InitializingBean {
 
         Document doc = new Document();
 
-        doc.add(new Field("id",Long.toString(b.getId()), Field.Store.YES, Field.Index.NOT_ANALYZED));
-        doc.add(new Field("name",b.getName(), Field.Store.YES, Field.Index.ANALYZED));  // create name
-        doc.add(new Field("description",b.getDescription(),Field.Store.YES, Field.Index.ANALYZED));  //create description
-        doc.add(new Field("website",b.getWebsite(),Field.Store.YES, Field.Index.ANALYZED));
-        doc.add(new Field("branchId",Long.toString(b.getBranchId()),Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.add(new Field("Id",Long.toString(b.getId()), Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.add(new Field("Name",b.getName(), Field.Store.YES, Field.Index.ANALYZED));  // create name
+        doc.add(new Field("Description",b.getDescription(),Field.Store.YES, Field.Index.ANALYZED));  //create description
+        doc.add(new Field("Website",b.getWebsite(),Field.Store.YES, Field.Index.ANALYZED));
+        doc.add(new Field("BranchId",Long.toString(b.getBranchId()),Field.Store.YES, Field.Index.NOT_ANALYZED));
         return doc;
     }
 

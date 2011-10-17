@@ -41,8 +41,9 @@ public class Test {    //this is worked test for lucene index and search
         System.out.println(dataStore.getBrandById(3).getDescription());
 
         Indexer ind = new Indexer();
-        ind.setDirectory("index/","article/"); // while not work's sorry... can add base of articles...
-        ind.setJdbcTemplate(jdbcTemplate,null); // set base of brand and base of articles
+        ind.setDirectoryArticle("indexBrand/");
+        ind.setDirectoryArticle("indexArticle/"); // while not work's sorry... can add base of articles...
+        ind.setJdbcTemplate(jdbcTemplate); // set base of brand and base of articles
         try{
             ind.afterPropertiesSet();
         } catch (Exception e) {
