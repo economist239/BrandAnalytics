@@ -38,11 +38,9 @@ public class Test {    //this is worked test for lucene index and search
         b1 = new Brand(2,"Google","Google is better than other search machines","www.google.com",0);
         dataStore.writeBrandToDataStore(b1);
 
-        System.out.println(dataStore.getBrandById(3).getDescription());
-
         Indexer ind = new Indexer();
-        ind.setDirectoryArticle("indexBrand/");
-        ind.setDirectoryArticle("indexArticle/"); // while not work's sorry... can add base of articles...
+        ind.setDirectoryBrand("index_brand/");
+        ind.setDirectoryArticle("index_article/"); // while not work's sorry... can add base of articles...
         ind.setJdbcTemplate(jdbcTemplate); // set base of brand and base of articles
         try{
             ind.afterPropertiesSet();
@@ -52,7 +50,7 @@ public class Test {    //this is worked test for lucene index and search
 
         Searcher searcher = new Searcher();
         searcher.setIndexDirArticle("index_article/");
-        searcher.setIndexDirArticle("index_brand/");
+        searcher.setIndexDirBrand("index_brand/");
         try{
             searcher.getReadyForSearch();
         } catch (Exception e) {
