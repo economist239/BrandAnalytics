@@ -8,7 +8,7 @@ use BAdirty;
 
 drop table if exists Graphs;
 create table Graphs(
-	BrandId int primary key not null auto_increment,
+	BrandId int not null,
 	TickerId int not null,
 	Tstamp timestamp not null,
 	Val double not null

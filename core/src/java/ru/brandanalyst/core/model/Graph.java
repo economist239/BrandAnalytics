@@ -1,5 +1,6 @@
 package ru.brandanalyst.core.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,19 +11,27 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class Graph {
-    private String ticker;
     private List<SingleDot> graph;
+    private String ticker;
 
-    public void Graph(String ticker, List<SingleDot> graph) {
+    public Graph(List<SingleDot> graph) {
         this.graph = graph;
+        this.ticker = "no ticker";
+    }
+
+    public Graph(String ticker) {
+        graph = new ArrayList<SingleDot>();
         this.ticker = ticker;
+    }
+    public List<SingleDot> getGraph() {
+        return graph;
     }
 
     public String getTicker() {
         return ticker;
     }
 
-    public List<SingleDot> getGraph() {
-        return graph;
+    public void addPoint(SingleDot dot) {
+        graph.add(dot);
     }
 }

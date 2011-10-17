@@ -9,10 +9,19 @@ import java.sql.Timestamp;
  * To change this template use File | Settings | File Templates.
  */
 public class SingleDot {
-    Timestamp date;
-    double value;
-    void SingleDot(Timestamp date, double value) {
+    private final Timestamp date;
+    private final double value;
+
+    public SingleDot(Timestamp date, double value) {
         this.date = date;
         this.value = value;
+    }
+
+    public double getValue() {
+        return value;
+    }
+
+    public Timestamp getDate() {
+        return date;
     }
 }
