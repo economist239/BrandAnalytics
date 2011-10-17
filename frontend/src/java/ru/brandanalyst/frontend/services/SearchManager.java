@@ -1,10 +1,11 @@
 package ru.brandanalyst.frontend.services;
 
-import java.util.List;
-import java.util.ArrayList;
 import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.searcher.Searcher;
 import ru.brandanalyst.frontend.models.SimplyBrandForWeb;
+import ru.brandanalyst.searcher.Searcher;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchManager {
     private Searcher searcher;
@@ -17,7 +18,7 @@ public class SearchManager {
 
         try{
             List<SimplyBrandForWeb> brandList = new ArrayList<SimplyBrandForWeb>();
-            for (Brand b: searcher.searchByDescription(query)) {
+            for (Brand b: searcher.searchBrandByDescription(query)) {
                 brandList.add(new SimplyBrandForWeb(b.getName(),b.getDescription(),b.getWebsite()));
             }
             return brandList;
