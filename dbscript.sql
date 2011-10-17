@@ -90,4 +90,6 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Коммерсант", "унылые новости", "kommersant.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Газета.RU", "новости", "gazeta.ru");
 
+INSERT INTO Ticker (TickerName) VALUES("Упоминание в Twitter");
 
+INSERT INTO Brand (Name, Description, Website, BranchId) VALUES("Financial Pyramid","","",1);

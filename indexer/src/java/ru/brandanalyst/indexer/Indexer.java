@@ -1,6 +1,5 @@
 package ru.brandanalyst.indexer;
 
-import org.apache.lucene.analysis.ru.RussianAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
@@ -24,6 +23,9 @@ import java.util.List;
  * Date: 10.10.11
  * Time: 22:55
  */
+
+//TODO article indexing to another index dir.
+
 public class Indexer implements InitializingBean {
 
     private IndexWriter brandwriter;
@@ -47,9 +49,9 @@ public class Indexer implements InitializingBean {
     public void afterPropertiesSet() { // method initialize IndexWriter
         try{
             SimpleFSDirectory indexDirectoryBrand = new SimpleFSDirectory(new File(directoryBrand));
-            brandwriter = new IndexWriter(indexDirectoryBrand, new RussianAnalyzer(Version.LUCENE_30), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
+            brandwriter = new IndexWriter(indexDirectoryBrand, new StandardAnalyzer(Version.LUCENE_30), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
             SimpleFSDirectory indexDirectoryArticle = new SimpleFSDirectory(new File(directoryArticle));
-            articlewriter = new IndexWriter(indexDirectoryArticle, new RussianAnalyzer(Version.LUCENE_30), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
+            articlewriter = new IndexWriter(indexDirectoryArticle, new StandardAnalyzer(Version.LUCENE_30), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
 
             brandIndex(brandwriter);
             articleIndex(articlewriter);
@@ -87,15 +89,14 @@ public class Indexer implements InitializingBean {
         System.out.println("indexing brands");
         BrandProvider provider = new BrandProvider(jdbcTemplate);
 
-        List<Brand> list = provider.getAllBrands();
-
         try{
+            List<Brand> list = provider.getAllBrands();
             for(Brand item:list){ //add to pre'index all brand's
                 Document doc = createDocument(item);
                 writer.addDocument(doc);
             }
         } catch(IOException e) {
-            e.printStackTrace();
+            System.out.println("no brands to index");
         }
     }
     private Document createDocument(Article a) {

@@ -8,7 +8,8 @@
 
     <!--Indexer conf-->
     <bean id="indexer" class="ru.brandanalyst.indexer.Indexer">
-        <property name="directory" value="index/"/>
+        <property name="directoryBrand" value="index_brand/"/>
+        <property name="directoryArticle" value="index_article/"/>
     </bean>
 
     <!--DB conf-->

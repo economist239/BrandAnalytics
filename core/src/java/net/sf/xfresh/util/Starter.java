@@ -16,6 +16,5 @@ public class Starter {
         log.info("App started");
 
         final FileSystemXmlApplicationContext context = new FileSystemXmlApplicationContext(new String[]{args[0]});
-        System.out.println("sdfghjk,");
     }
 }

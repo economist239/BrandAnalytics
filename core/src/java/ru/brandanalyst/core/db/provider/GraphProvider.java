@@ -38,7 +38,7 @@ public class GraphProvider {
 
     public void writeSingleDot(Timestamp Tstamp, double value, long brandId, long tickerId) {
         try{
-            jdbcTemplate.update("INSERT INTO Brand (BrandId, TickerId, Tstamp, Val) VALUES(?,?,?,?);", brandId, tickerId,
+            jdbcTemplate.update("INSERT INTO Graphs (BrandId, TickerId, Tstamp, Val) VALUES(?,?,?,?);", brandId, tickerId,
                 Tstamp, value);
         } catch (Exception e) {e.printStackTrace();}
     }
@@ -50,30 +50,32 @@ public class GraphProvider {
 
         List<Graph> graphList = new ArrayList<Graph>();
 
-        if(!rowSet.wasNull()) {
-            String tickerName = rowSet.getString("TickerName");
-            graphList.add(new Graph(tickerName));
-        } else {
-            System.out.println("No elements");//just for me
+        try{
+            if(rowSet.next()) {
+                String tickerName = rowSet.getString("TickerName");
+                graphList.add(new Graph(tickerName));
+            } else {
+                System.out.println("No elements");//just for me
+                return null;
+            }
+
+            int curGraph = 0;
+            do {
+                Timestamp curTstamp = rowSet.getTimestamp("Tstamp");
+                double curValue = rowSet.getDouble("Val");
+                String curTicker = rowSet.getString("TickerName");
+                if(curTicker.indexOf(graphList.get(curGraph).getTicker()) != 0) {
+                    Graph graph = new Graph(curTicker);
+                    graphList.add(graph);
+                    curGraph++;
+                }
+                graphList.get(curGraph).addPoint(new SingleDot(curTstamp, curValue));
+            } while (rowSet.next());
+            return graphList;
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("can't get graphs from db");
             return null;
         }
-
-        int curGraph = 0;
-        do {
-            Timestamp curTstamp = rowSet.getTimestamp("Tstamp");
-            double curValue = rowSet.getDouble("Val");
-            String curTicker = rowSet.getString("Ticker.TickerName");
-
-            if(curTicker != graphList.get(curGraph).getTicker()) {
-
-            } else {
-                Graph graph = new Graph(curTicker);
-                graphList.add(graph);
-                curGraph++;
-            }
-            graphList.get(curGraph).addPoint(new SingleDot(curTstamp, curValue));
-        } while (!rowSet.next());
-
-        return graphList;
     }
 }
