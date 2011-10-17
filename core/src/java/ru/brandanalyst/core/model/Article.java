@@ -1,5 +1,6 @@
 package ru.brandanalyst.core.model;
 
+import java.sql.Timestamp;
 /**
  * Created by IntelliJ IDEA.
  * User: 1
@@ -14,10 +15,10 @@ public class Article {
     private String title;
     private String content;
     private String link;
-    private String tstamp;
+    private Timestamp tstamp;
     private int numLikes;
 
-    public Article(long id, long brandId, long sourceId, String title, String content, String link, String tstamp, int numLikes) {
+    public Article(long id, long brandId, long sourceId, String title, String content, String link, Timestamp tstamp, int numLikes) {
         this.id = id;
         this.sourceId = sourceId;
         this.title = title;
@@ -76,11 +77,11 @@ public class Article {
         this.link = link;
     }
 
-    public String getTstamp() {
+    public Timestamp getTstamp() {
         return tstamp;
     }
 
-    public void setTstamp(String tstamp) {
+    public void setTstamp(Timestamp tstamp) {
         this.tstamp = tstamp;
     }
 

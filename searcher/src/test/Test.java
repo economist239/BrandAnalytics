@@ -1,13 +1,16 @@
 import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.core.model.Article;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.apache.commons.dbcp.BasicDataSource;
 import ru.brandanalyst.indexer.Indexer;
 import ru.brandanalyst.searcher.Searcher;
 
+import java.sql.Timestamp;
 import java.util.List;
-
+import java.sql.Timestamp;
 /**
  * Created by IntelliJ IDEA.
  * User: dima
@@ -38,6 +41,12 @@ public class Test {    //this is worked test for lucene index and search
         b1 = new Brand(2,"Google","Google is better than other search machines","www.google.com",0);
         dataStore.writeBrandToDataStore(b1);
 
+        ArticleProvider dataStore2 = new ArticleProvider(jdbcTemplate);
+        Article a1 = new Article(4,1,1,"Gazprom crashed","Apple makes software too and i-production","www.lenta.ru",new Timestamp(90,0,0,0,0,0,0),0);
+        dataStore2.writeArticleToDataStore(a1);
+        a1 = new Article(2,1,1,"Microsoft crashed","Apple makes software too and i-production","www.lenta.ru",new Timestamp(90,0,0,0,0,0,0),0);
+        dataStore2.writeArticleToDataStore(a1);
+
         Indexer ind = new Indexer();
         ind.setDirectoryBrand("index_brand/");
         ind.setDirectoryArticle("index_article/"); // while not work's sorry... can add base of articles...
@@ -58,9 +67,9 @@ public class Test {    //this is worked test for lucene index and search
         }
 
         try{
-            List<Brand> lst = searcher.searchBrandByDescription("software");
-            for(Brand b: lst) {
-                System.out.println(b.getDescription());
+            List<Article> lst = searcher.searchArticleByContent("software");
+            for(Article b: lst) {
+                System.out.println(b.getContent());
             }
         } catch (Exception e) {
             e.printStackTrace();

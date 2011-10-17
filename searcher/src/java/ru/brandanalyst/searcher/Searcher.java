@@ -18,6 +18,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Timestamp;
 
 /**
  * Created by IntelliJ IDEA.
@@ -72,11 +73,10 @@ public class Searcher {
 
         Analyzer analyzer;
         analyzer = new RussianAnalyzer(Version.LUCENE_30); // your can change version
-        QueryParser parser = new QueryParser(Version.LUCENE_30,"description",analyzer);
+        QueryParser parser = new QueryParser(Version.LUCENE_30,"Content",analyzer);
         Query search = parser.parse(query);
 
         ScoreDoc[] hits = indexSearcherBrand.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter;
-
         List<Article> lst = new ArrayList<Article>();
         for(int i = 0 ; i < hits.length ; i++ ){
             Document doc = indexSearcherBrand.doc(hits[i].doc);
@@ -101,7 +101,7 @@ public class Searcher {
                 doc.get("Title"),
                 doc.get("Content"),
                 doc.get("Link"),
-                doc.get("Tstamp"),
+                new Timestamp(Long.parseLong(doc.get("Tstamp"))),
                 Integer.parseInt(doc.get("NumLikes"))
         );
     }
