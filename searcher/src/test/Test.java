@@ -16,6 +16,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class Test {    //this is worked test for lucene index and search
+    //this test not work while not add base of articles
     public static void main(String[] args) {
 
         BasicDataSource ds = new BasicDataSource();
@@ -40,8 +41,8 @@ public class Test {    //this is worked test for lucene index and search
         System.out.println(dataStore.getBrandById(3).getDescription());
 
         Indexer ind = new Indexer();
-        ind.setDirectory("index/");
-        ind.setJdbcTemplate(jdbcTemplate);
+        ind.setDirectory("index/","article/"); // while not work's sorry... can add base of articles...
+        ind.setJdbcTemplate(jdbcTemplate,null); // set base of brand and base of articles
         try{
             ind.afterPropertiesSet();
         } catch (Exception e) {
@@ -49,7 +50,7 @@ public class Test {    //this is worked test for lucene index and search
         }
 
         Searcher searcher = new Searcher();
-        searcher.setIndexDir("index/");
+        searcher.setIndexDir("index/","article/");
         try{
             searcher.getReadyForSearch();
         } catch (Exception e) {
@@ -57,7 +58,7 @@ public class Test {    //this is worked test for lucene index and search
         }
 
         try{
-            List<Brand> lst = searcher.searchByDescription("на русском");
+            List<Brand> lst = searcher.searchBrandByDescription("на русском");
             for(Brand b: lst) {
                 System.out.println(b.getDescription());
             }

@@ -1,16 +1,17 @@
 package ru.brandanalyst.indexer;
 
-import org.springframework.beans.factory.InitializingBean;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.Version;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.model.Brand;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,52 +28,86 @@ import java.util.List;
 
 public class Indexer implements InitializingBean {
 
-    private IndexWriter writer;
-    private SimpleJdbcTemplate jdbcTemplate;
-    private String directory;
+    private IndexWriter brandwriter;
+    private IndexWriter articlewriter;
+    private SimpleJdbcTemplate jdbcTemplateBrand;
+    private SimpleJdbcTemplate jdbcTemplateArticle;
+    private String directoryBrand;
+    private String directoryArticle;
 
-    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplateBrand,SimpleJdbcTemplate jdbcTemplateArticle) {
+        this.jdbcTemplateBrand   = jdbcTemplateBrand;
+        this.jdbcTemplateArticle = jdbcTemplateArticle;
     }
 
-    public void setDirectory(String directory) {
-        this.directory = directory;
+    public void setDirectory(String directoryBrand,String directoryArticle) {
+        this.directoryBrand   = directoryBrand;
+        this.directoryArticle = directoryArticle;
     }
 
     public void afterPropertiesSet() { // method initialize IndexWriter
-
         try{
-            SimpleFSDirectory indexDirectory = new SimpleFSDirectory(new File(directory));
-            writer = new IndexWriter(indexDirectory, new StandardAnalyzer(Version.LUCENE_30), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
-
-
-            brandIndex(writer);
-
-            writer.optimize();
-            writer.close();
-            System.out.println("Index created.");
-
+            SimpleFSDirectory indexDirectoryBrand = new SimpleFSDirectory(new File(directoryBrand));
+            brandwriter = new IndexWriter(indexDirectoryBrand, new StandardAnalyzer(Version.LUCENE_30), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
+            SimpleFSDirectory indexDirectoryArticle = new SimpleFSDirectory(new File(directoryArticle));
+            articlewriter = new IndexWriter(indexDirectoryArticle, new StandardAnalyzer(Version.LUCENE_30), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
+            brandIndex(brandwriter);
+            articleIndex(articlewriter);
+            articlewriter.optimize();
+            brandwriter.optimize();
+            articlewriter.close();
+            brandwriter.close();
+            System.out.println("Index of created.");
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Cannot create index");
         }
     }
 
-    private void brandIndex(IndexWriter writer) {
+    private void articleIndex(IndexWriter writer) {
 
-        System.out.println("indexing brands");
-        BrandProvider brandProvider = new BrandProvider(jdbcTemplate);
+        System.out.println("indexing articles");
+        ArticleProvider Provider = new ArticleProvider(jdbcTemplateArticle);
 
-        List<Brand> brandList = brandProvider.getAllBrands();
+        List<Article> list = Provider.getAllBrands();
 
         try{
-            for(Brand brand:brandList){ //add to pre'index all brand's
-                Document doc = createDocument(brand);
+            for(Article item:list){ //add to pre'index all brand's
+                Document doc = createDocument(item);
                 writer.addDocument(doc);
             }
         } catch(IOException e) {
             e.printStackTrace();
         }
+    }
+    private void brandIndex(IndexWriter writer) {
+
+        System.out.println("indexing brands");
+        BrandProvider Provider = new BrandProvider(jdbcTemplateBrand);
+
+        List<Brand> list = Provider.getAllBrands();
+
+        try{
+            for(Brand item:list){ //add to pre'index all brand's
+                Document doc = createDocument(item);
+                writer.addDocument(doc);
+            }
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private Document createDocument(Article a) {
+        Document doc = new Document();
+
+        doc.add(new Field("id",Long.toString(a.getId()),Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.add(new Field("sourceId",Long.toString(a.getSourceId()),Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.add(new Field("numLikes",Long.toString(a.getNumLikes()),Field.Store.YES,Field.Index.NOT_ANALYZED));
+        doc.add(new Field("link",a.getLink(),Field.Store.YES,Field.Index.ANALYZED));
+        doc.add(new Field("tstamp",a.getTstamp(),Field.Store.YES,Field.Index.ANALYZED));
+        doc.add(new Field("content",a.getContent(),Field.Store.YES,Field.Index.ANALYZED));
+        doc.add(new Field("title",a.getTitle(),Field.Store.YES,Field.Index.ANALYZED));
+
+        return doc;
     }
     private Document createDocument(Brand b) { //create document
 
