@@ -57,11 +57,10 @@ public class Searcher {
 
         Analyzer analyzer; // your can change version
         analyzer = new RussianAnalyzer(Version.LUCENE_30);
-        QueryParser parser = new QueryParser(Version.LUCENE_30,"description",analyzer);
+        QueryParser parser = new QueryParser(Version.LUCENE_30,"Description",analyzer);
         Query search = parser.parse(query);
 
         ScoreDoc[] hits = indexSearcherBrand.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter;
-
         List<Brand> lst = new ArrayList<Brand>();
         for(int i = 0 ; i < hits.length ; i++ ){
             Document doc = indexSearcherBrand.doc(hits[i].doc);

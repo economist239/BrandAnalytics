@@ -58,7 +58,7 @@ public class Test {    //this is worked test for lucene index and search
         }
 
         try{
-            List<Brand> lst = searcher.searchBrandByDescription("на русском");
+            List<Brand> lst = searcher.searchBrandByDescription("software");
             for(Brand b: lst) {
                 System.out.println(b.getDescription());
             }
