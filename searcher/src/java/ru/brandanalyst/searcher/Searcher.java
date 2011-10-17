@@ -35,10 +35,13 @@ public class Searcher {
     private IndexSearcher indexSearcherBrand;
     private IndexSearcher indexSearcherArticle;
 
-    public void setIndexDir(String indexDirBrand,String indexDirArticle) {
+    public void setIndexDirBrand(String indexDirBrand) {
         this.indexDirBrand   = indexDirBrand;
+	}
+	
+	public void setIndexDirArticle(String indexDirArticle) {
         this.indexDirArticle = indexDirArticle;
-   }
+	}
 
     public void getReadyForSearch() {
         try {
