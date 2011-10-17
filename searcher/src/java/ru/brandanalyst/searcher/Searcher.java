@@ -2,7 +2,7 @@ package ru.brandanalyst.searcher;
 
 import org.apache.log4j.Logger;
 import org.apache.lucene.analysis.Analyzer;
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
+import org.apache.lucene.analysis.ru.RussianAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
@@ -52,7 +52,8 @@ public class Searcher {
 
     public List<Brand> searchBrandByDescription(String query) throws ParseException, IOException {
 
-        Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_30); // your can change version
+        Analyzer analyzer; // your can change version
+        analyzer = new RussianAnalyzer(Version.LUCENE_30);
         QueryParser parser = new QueryParser(Version.LUCENE_30,"description",analyzer);
         Query search = parser.parse(query);
 
@@ -67,7 +68,8 @@ public class Searcher {
     }
     public List<Article> searchArticleByContent(String query) throws ParseException, IOException {
 
-        Analyzer analyzer = new StandardAnalyzer(Version.LUCENE_30); // your can change version
+        Analyzer analyzer;
+        analyzer = new RussianAnalyzer(Version.LUCENE_30); // your can change version
         QueryParser parser = new QueryParser(Version.LUCENE_30,"description",analyzer);
         Query search = parser.parse(query);
 
