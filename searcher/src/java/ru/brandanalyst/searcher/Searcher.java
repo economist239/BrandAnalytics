@@ -87,22 +87,23 @@ public class Searcher {
     }
     private Brand brandMap(Document doc) {
         return new Brand(
-                Long.parseLong(doc.get("id")),
-                doc.get("name"),
-                doc.get("description"),
-                doc.get("website"),
-                Long.parseLong(doc.get("branchId"))
+                Long.parseLong(doc.get("Id")),
+                doc.get("Name"),
+                doc.get("Description"),
+                doc.get("Website"),
+                Long.parseLong(doc.get("BranchId"))
         );
     }
     private Article articleMap(Document doc) {
         return new Article(
-                Long.parseLong(doc.get("id")),
-                Long.parseLong(doc.get("sourceID")),
-                doc.get("title"),
-                doc.get("content"),
-                doc.get("link"),
-                doc.get("tstamp"),
-                Integer.parseInt(doc.get("numLikes"))
+                Long.parseLong(doc.get("Id")),
+                Long.parseLong(doc.get("BrandId")),
+                Long.parseLong(doc.get("InfoSourceId")),
+                doc.get("Title"),
+                doc.get("Content"),
+                doc.get("Link"),
+                doc.get("Tstamp"),
+                Integer.parseInt(doc.get("NumLikes"))
         );
     }
 }

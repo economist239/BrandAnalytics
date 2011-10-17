@@ -14,7 +14,11 @@ import java.sql.SQLException;
  * To change this template use File | Settings | File Templates.
  */
 public class ArticleMapper implements ParameterizedRowMapper<Article> {
-        public Article mapRow(ResultSet resultSet, int i) throws SQLException {
-        return new Article(Long.parseLong(resultSet.getString("Id")), Long.parseLong(resultSet.getString("InfosourceId")),resultSet.getString("Title"),resultSet.getString("Content"),resultSet.getString("Link"),resultSet.getString("Tstamp"),Integer.parseInt(resultSet.getString("NumLikes")));
+    public Article mapRow(ResultSet resultSet, int i) throws SQLException {
+        try{
+            return new Article(Long.parseLong(resultSet.getString("Id")), Long.parseLong(resultSet.getString("InfosourceId")),resultSet.getString("Title"),resultSet.getString("Content"),resultSet.getString("Link"),resultSet.getString("Tstamp"),Integer.parseInt(resultSet.getString("NumLikes")));
+        } catch (Exception e) {
+            return new Article(Long.parseLong(resultSet.getString("Id")), Long.parseLong(resultSet.getString("InfosourceId")),resultSet.getString("Title"),resultSet.getString("Content"),resultSet.getString("Link"),resultSet.getString("Tstamp"),-1);
+        }
     }
 }

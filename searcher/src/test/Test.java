@@ -51,7 +51,8 @@ public class Test {    //this is worked test for lucene index and search
         }
 
         Searcher searcher = new Searcher();
-        searcher.setIndexDir("index/","article/");
+        searcher.setIndexDirArticle("index_article/");
+        searcher.setIndexDirArticle("index_brand/");
         try{
             searcher.getReadyForSearch();
         } catch (Exception e) {

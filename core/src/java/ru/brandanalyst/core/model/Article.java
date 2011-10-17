@@ -9,6 +9,7 @@ package ru.brandanalyst.core.model;
  */
 public class Article {
     private long id;
+    private long brandId;
     private long sourceId;
     private String title;
     private String content;
@@ -16,7 +17,7 @@ public class Article {
     private String tstamp;
     private int numLikes;
 
-    public Article(long id, long sourceId, String title, String content, String link, String tstamp, int numLikes) {
+    public Article(long id, long brandId, long sourceId, String title, String content, String link, String tstamp, int numLikes) {
         this.id = id;
         this.sourceId = sourceId;
         this.title = title;
@@ -24,6 +25,7 @@ public class Article {
         this.link = link;
         this.tstamp = tstamp;
         this.numLikes = numLikes;
+        this.brandId = brandId;
     }
 
     public long getId() {
@@ -38,8 +40,16 @@ public class Article {
         return sourceId;
     }
 
-    public void setSourceId(int sourceId) {
+    public void setSourceId(long sourceId) {
         this.sourceId = sourceId;
+    }
+
+    public long getBrandId() {
+        return brandId;
+    }
+
+    public void setBrandId(long brandId) {
+        this.sourceId = brandId;
     }
 
     public String getTitle() {
