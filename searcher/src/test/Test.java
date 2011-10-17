@@ -42,9 +42,9 @@ public class Test {    //this is worked test for lucene index and search
         dataStore.writeBrandToDataStore(b1);
 
         ArticleProvider dataStore2 = new ArticleProvider(jdbcTemplate);
-        Article a1 = new Article(4,1,1,"Gazprom crashed","Apple makes software too and i-production","www.lenta.ru",new Timestamp(90,0,0,0,0,0,0),0);
+        Article a1 = new Article(4,1,1,"Gazprom crashed","Apple делает хорошую продукцию","www.lenta.ru",new Timestamp(90,0,0,0,0,0,0),0);
         dataStore2.writeArticleToDataStore(a1);
-        a1 = new Article(2,1,1,"Microsoft crashed","Apple makes software too and i-production","www.lenta.ru",new Timestamp(90,0,0,0,0,0,0),0);
+        a1 = new Article(2,1,1,"Microsoft crashed","Apple не делает хорошую продукцию","www.lenta.ru",new Timestamp(90,0,0,0,0,0,0),0);
         dataStore2.writeArticleToDataStore(a1);
 
         Indexer ind = new Indexer();
@@ -67,13 +67,20 @@ public class Test {    //this is worked test for lucene index and search
         }
 
         try{
-            List<Article> lst = searcher.searchArticleByContent("software");
+            List<Article> lst = searcher.searchArticleByContent("делает");
             for(Article b: lst) {
                 System.out.println(b.getContent());
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        try{
+            List<Brand> lst = searcher.searchBrandByDescription("software");
+            for(Brand b: lst) {
+                System.out.println(b.getDescription());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

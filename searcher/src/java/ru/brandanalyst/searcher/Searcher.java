@@ -29,7 +29,7 @@ import java.sql.Timestamp;
 //TODO method searchByArticles
 public class Searcher {
     private static final Logger log = Logger.getLogger(Searcher.class);
-    private final int MAX_DOC = 10;
+    private final int MAX_DOC = 1000;
 
     private String indexDirBrand;
     private String indexDirArticle;
@@ -57,8 +57,8 @@ public class Searcher {
     public List<Brand> searchBrandByDescription(String query) throws ParseException, IOException {
 
         Analyzer analyzer; // your can change version
-        analyzer = new RussianAnalyzer(Version.LUCENE_30);
-        QueryParser parser = new QueryParser(Version.LUCENE_30,"Description",analyzer);
+        analyzer = new RussianAnalyzer(Version.LUCENE_34);
+        QueryParser parser = new QueryParser(Version.LUCENE_34,"Description",analyzer);
         Query search = parser.parse(query);
 
         ScoreDoc[] hits = indexSearcherBrand.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter;
@@ -72,14 +72,14 @@ public class Searcher {
     public List<Article> searchArticleByContent(String query) throws ParseException, IOException {
 
         Analyzer analyzer;
-        analyzer = new RussianAnalyzer(Version.LUCENE_30); // your can change version
-        QueryParser parser = new QueryParser(Version.LUCENE_30,"Content",analyzer);
+        analyzer = new RussianAnalyzer(Version.LUCENE_34); // your can change version
+        QueryParser parser = new QueryParser(Version.LUCENE_34,"Content",analyzer);
         Query search = parser.parse(query);
 
-        ScoreDoc[] hits = indexSearcherBrand.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter;
+        ScoreDoc[] hits = indexSearcherArticle.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter;
         List<Article> lst = new ArrayList<Article>();
         for(int i = 0 ; i < hits.length ; i++ ){
-            Document doc = indexSearcherBrand.doc(hits[i].doc);
+            Document doc = indexSearcherArticle.doc(hits[i].doc);
             lst.add(articleMap(doc));
         }
         return  lst;

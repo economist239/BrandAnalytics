@@ -45,8 +45,8 @@
     <bean id="searchManager" class="ru.brandanalyst.frontend.services.SearchManager"/>
 
     <bean id="searcher" class="ru.brandanalyst.searcher.Searcher">
-        <property name="indexDir" value="index/"/>
-        <property name="indexDir" value="index/"/>
+        <property name="indexDirBrand" value="index_brand/"/>
+        <property name="indexDirArticle" value="index_article/"/>
     </bean>
 
     <!--DB conf-->
