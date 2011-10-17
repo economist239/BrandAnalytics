@@ -15,6 +15,6 @@ import java.sql.SQLException;
  */
 public class ArticleMapper implements ParameterizedRowMapper<Article> {
         public Article mapRow(ResultSet resultSet, int i) throws SQLException {
-        return new Article(Integer.parseInt(resultSet.getString("id")), Integer.parseInt(resultSet.getString("info_source_id")),resultSet.getString("title"),resultSet.getString("content"),resultSet.getString("author"),resultSet.getString("timestmp"));
+        return new Article(Long.parseLong(resultSet.getString("Id")), Long.parseLong(resultSet.getString("InfosourceId")),resultSet.getString("Title"),resultSet.getString("Content"),resultSet.getString("Link"),resultSet.getString("Tstamp"),Integer.parseInt(resultSet.getString("NumLikes")));
     }
 }

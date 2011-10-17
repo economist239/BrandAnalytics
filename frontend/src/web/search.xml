@@ -2,5 +2,6 @@
 <?xml-stylesheet type="text/xsl" href="search.xsl"?>
 <page>
     <yalet id="search"/>
+    <yalet id="showLeftMenu"/>
 </page>
 

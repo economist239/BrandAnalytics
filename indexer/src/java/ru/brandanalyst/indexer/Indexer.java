@@ -78,11 +78,11 @@ public class Indexer implements InitializingBean {
 
         Document doc = new Document();
 
-        doc.add(new Field("brand_id",Long.toString(b.getId()), Field.Store.YES, Field.Index.NOT_ANALYZED));
+        doc.add(new Field("id",Long.toString(b.getId()), Field.Store.YES, Field.Index.NOT_ANALYZED));
         doc.add(new Field("name",b.getName(), Field.Store.YES, Field.Index.ANALYZED));  // create name
         doc.add(new Field("description",b.getDescription(),Field.Store.YES, Field.Index.ANALYZED));  //create description
         doc.add(new Field("website",b.getWebsite(),Field.Store.YES, Field.Index.ANALYZED));
-        doc.add(new Field("branch",b.getBranch(),Field.Store.YES, Field.Index.ANALYZED));
+        doc.add(new Field("branchId",Long.toString(b.getBranchId()),Field.Store.YES, Field.Index.NOT_ANALYZED));
         return doc;
     }
 

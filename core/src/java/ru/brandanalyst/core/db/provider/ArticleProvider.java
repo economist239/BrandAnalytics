@@ -14,8 +14,6 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class ArticleProvider {
-    private SimpleJdbcTemplate jdbcTemplateDirty;
-    private SimpleJdbcTemplate jdbcTemplatePure;
     private SimpleJdbcTemplate jdbcTemplate;
     private ArticleMapper articleMapper;
 
@@ -30,8 +28,8 @@ public class ArticleProvider {
 
     public void writeArticleToDataStore(Article article) {
         try {
-            jdbcTemplate.update("INSERT INTO Article (article_id, info_source_id, title, content, author, timestmp) VALUES(?, ?, ?, ?, ?, ?);", article.getId(), article.getSourceId(),
-                article.getTitle(),article.getContent(),article.getAuthor(),article.getTimesamp());
+            jdbcTemplate.update("INSERT INTO Article (Id, InfosourceId, Title, Content, Link, NumLikes, Tstmp) VALUES(?, ?, ?, ?, ?, ?);", article.getId(), article.getSourceId(),
+                article.getTitle(),article.getContent(),article.getLink(),article.getNumLikes(),article.getTstamp());
         } catch (Exception e) {}
     }
 
@@ -42,12 +40,17 @@ public class ArticleProvider {
     }
 
     public Article getArticleBySourceId(int sourceId) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM article WHERE info_source_id = ?", new Object[]{sourceId}, articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE InfosourceId = ?", new Object[]{sourceId}, articleMapper);
         return list.get(0);
     }
 
     public Article getArticleById(int article_id) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM article WHERE article_id = " + Integer.toString(article_id) , articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE Id = " + Integer.toString(article_id) , articleMapper);
         return list.get(0);
+    }
+
+    public List<Article> getAllBrands() {
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article", articleMapper);
+        return list;
     }
 }

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.searcher.Searcher;
-import ru.brandanalyst.frontend.models.BrandForWeb;
+import ru.brandanalyst.frontend.models.SimplyBrandForWeb;
 
 public class SearchManager {
     private Searcher searcher;
@@ -13,12 +13,12 @@ public class SearchManager {
         this.searcher = searcher;
     }
 
-    public List<BrandForWeb> getSearchResultByBrand(String query) {
+    public List<SimplyBrandForWeb> getSearchResultByBrand(String query) {
 
         try{
-            List<BrandForWeb> brandList = new ArrayList<BrandForWeb>();
+            List<SimplyBrandForWeb> brandList = new ArrayList<SimplyBrandForWeb>();
             for (Brand b: searcher.searchByDescription(query)) {
-                brandList.add(new BrandForWeb(b.getName(),b.getDescription(),b.getWebsite()));
+                brandList.add(new SimplyBrandForWeb(b.getName(),b.getDescription(),b.getWebsite()));
             }
             return brandList;
         } catch (Exception e) {

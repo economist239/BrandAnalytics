@@ -29,9 +29,9 @@ public class BrandProvider {
 
     public void writeBrandToDataStore(Brand brand) {
         try{
-            jdbcTemplate.update("INSERT INTO Brand (brand_id, name, description, website, branch) VALUES(?, ?, ?,?,?);", brand.getId(), brand.getName(),
-                brand.getDescription(),brand.getWebsite(),brand.getBranch());
-        } catch (Exception e) {}
+            jdbcTemplate.update("INSERT INTO Brand (Id, Name, Description, Website, branchId) VALUES(?,?,?,?,?);", brand.getId(), brand.getName(),
+                brand.getDescription(),brand.getWebsite(),brand.getBranchId());
+        } catch (Exception e) {e.printStackTrace();}
     }
 
     public void writeListOfBrandsToDataStore(List<Brand> brands) {
@@ -41,15 +41,16 @@ public class BrandProvider {
     }
 
     public Brand getBrandByName(String name) {
-        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE name = ?", new Object[]{name}, brandMapper);
+        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Name = ?", new Object[]{name}, brandMapper);
         return list.get(0);
     }
 
-    public Brand getBrandById(int brand_id) {
-        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE brand_id = " + Integer.toString(brand_id) , brandMapper);
+    public Brand getBrandById(long brand_id) {
+        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Id = " + Long.toString(brand_id) , brandMapper);
         return list.get(0);
     }
-    public List<Brand> getAllBrands() {
+
+    public List<Brand> getAllBrands() throws NullPointerException {
         List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand", brandMapper);
         return list;
     }

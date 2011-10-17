@@ -9,18 +9,27 @@ package ru.brandanalyst.core.model;
  */
 public class Brand {
     private long id;
+    private long branchId;
     private String name;
     private String description;
     private String website;
-    private String branch;
 
-    public Brand(long id, String name, String description, String website, String branch) {
+    public Brand(long id, String name, String description, String website, long branchId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.website = website;
-        this.branch = branch;
+        this.branchId = branchId;
     }
+
+    public Brand(long id, String name, String description, String website) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.website = website;
+        this.branchId = -1;
+    }
+
     public long getId() {
         return id;
     }
@@ -53,12 +62,12 @@ public class Brand {
         this.description = description;
     }
 
-    public String getBranch() {
-        return branch;
+    public long getBranchId() {
+        return branchId;
     }
 
-    public void setBranch(String branch) {
-        this.branch = branch;
+    public void setBranch(long branchId) {
+        this.branchId = branchId;
     }
     
 }

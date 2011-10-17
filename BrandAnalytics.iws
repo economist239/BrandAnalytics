@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="miner with usage of spring added to test folder">
+    <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/GraphProvider.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Graph.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/SingleDot.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/GraphForWeb.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/SimplyBrandForWeb.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/LeftMenuManager.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/AbstractYalet.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/MentionMapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/MentionProvider.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Mention.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/core/DefaultSAXGeneratorTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/core/InternalResponseTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/core/YaletProcessorTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/ext/HttpBlockTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/ext/HttpLoaderTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/ext/JsBlockTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/ext/LoadedXmlTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/jetty/AbstractJettyTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/jetty/JettyServerInitializerTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/AddCookieYalet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/DoNothingYalet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/RedirectYalet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/RemoteAddrYalet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/RuStringYalet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/mock/SleepYalet.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/net/sf/xfresh/util/DigestUtilsTest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/proto.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-3.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-addcookie.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-app-context.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-auth.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-cookie.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-cookie.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-header.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-header.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-http.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-js-0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-js-1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-js-1.xsl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-js-2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-js-3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-js-3.xsl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-redirect.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-remote-addr.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-ru.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-ru.xsl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test-timeout.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/test.xsl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/test/xtest.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/start.sh" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/core/src/test/log4j.xml" afterPath="$PROJECT_DIR$/miner/src/scripts/log4j.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.ipr" afterPath="$PROJECT_DIR$/BrandAnalytics.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build.xml" afterPath="$PROJECT_DIR$/core/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/build.xml" afterPath="$PROJECT_DIR$/frontend/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexer/build.xml" afterPath="$PROJECT_DIR$/indexer/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/build.xml" afterPath="$PROJECT_DIR$/miner/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/build.xml" afterPath="$PROJECT_DIR$/searcher/build.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/ArticleMapper.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/ArticleMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/BrandMapper.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/BrandMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ArticleProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ArticleProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbscript.sql" afterPath="$PROJECT_DIR$/dbscript.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/BrandForWeb.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/BrandForWeb.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/SearchManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/SearchManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/scripts/beans.xml" afterPath="$PROJECT_DIR$/frontend/src/scripts/beans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/common.xsl" afterPath="$PROJECT_DIR$/frontend/src/web/common.xsl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/search.xml" afterPath="$PROJECT_DIR$/frontend/src/web/search.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/search.xsl" afterPath="$PROJECT_DIR$/frontend/src/web/search.xsl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" afterPath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexer/src/scripts/beans.xml" afterPath="$PROJECT_DIR$/indexer/src/scripts/beans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberContainer.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberContainer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/scripts/beans.xml" afterPath="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" afterPath="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/src/test/Test.java" afterPath="$PROJECT_DIR$/searcher/src/test/Test.java" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,55 +141,97 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/build.xml">
+      <file leaf-file-name="search.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/web/search.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="11" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0">
+            <state line="4" column="27" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/build.xml">
+      <file leaf-file-name="BrandProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="0" selection-start="1446" selection-end="1710" vertical-scroll-proportion="0.0">
+            <state line="53" column="102" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/miner/build.xml">
+      <file leaf-file-name="SearchYalet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="13" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
+            <state line="40" column="16" selection-start="1218" selection-end="1322" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeftMenuManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/LeftMenuManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShowLeftMenuYalet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="40" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.xsl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/web/search.xsl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="0" selection-start="1010" selection-end="1040" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/indexer/build.xml">
+      <file leaf-file-name="index.xsl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/web/index.xsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1432" selection-end="1432" vertical-scroll-proportion="0.0">
+            <state line="10" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/searcher/build.xml">
+      <file leaf-file-name="common.xsl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/web/common.xsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="88" selection-start="1354" selection-end="1370" vertical-scroll-proportion="0.0">
+            <state line="13" column="12" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build.xml">
+      <file leaf-file-name="dbscript.sql" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dbscript.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="30" selection-start="2202" selection-end="2202" vertical-scroll-proportion="0.20353982">
+            <state line="90" column="75" selection-start="3021" selection-end="3021" vertical-scroll-proportion="1.0414847">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/SearchManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="10" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -140,22 +251,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/miner/configs/config1.xml" />
-        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/ExactGrabber.java" />
-        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/Grabber.java" />
-        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberContainer.java" />
-        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberTwitter.java" />
-        <option value="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner2/GrabberYandex.java" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberTwitter.java" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/ExactGrabber.java" />
-        <option value="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberContainer.java" />
-        <option value="$PROJECT_DIR$/core/build.xml" />
-        <option value="$PROJECT_DIR$/searcher/build.xml" />
-        <option value="$PROJECT_DIR$/frontend/build.xml" />
-        <option value="$PROJECT_DIR$/indexer/build.xml" />
-        <option value="$PROJECT_DIR$/miner/build.xml" />
-        <option value="$PROJECT_DIR$/build.xml" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ArticleProvider.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/DataInizializer.java" />
+        <option value="$PROJECT_DIR$/frontend/src/web/search1.xsl" />
+        <option value="$PROJECT_DIR$/searcher/src/test/Test.java" />
+        <option value="$PROJECT_DIR$/frontend/src/scripts/beans.xml" />
+        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java" />
+        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/SearchManager.java" />
+        <option value="$PROJECT_DIR$/frontend/src/web/search.xml" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" />
+        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/LeftMenuManager.java" />
+        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java" />
+        <option value="$PROJECT_DIR$/frontend/src/scripts/search.xsl" />
+        <option value="$PROJECT_DIR$/frontend/src/web/search.xsl" />
+        <option value="$PROJECT_DIR$/frontend/src/web/common.xsl" />
+        <option value="$PROJECT_DIR$/dbscript.sql" />
       </list>
     </option>
   </component>
@@ -211,88 +322,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Favorites" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <PATH>
@@ -383,10 +412,51 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="BrandAnalytics">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="139" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="157" />
@@ -412,7 +482,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="File.Encoding" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="options.searchVisible" value="true" />
@@ -425,7 +495,7 @@
       <recent name="ru.brandanalyst.storage.provider" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.IndexerStarter">
+  <component name="RunManager" selected="Application.FrontendStarter">
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -565,7 +635,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="searcher" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50391" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -650,26 +726,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-5" width="1366" height="773" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="-5" width="1374" height="744" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2356688" sideWeight="0.9984825" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15098634" sideWeight="0.6990446" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39968154" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23439878" sideWeight="0.9984825" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3500761" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14963205" sideWeight="0.99840766" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39878234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38853502" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3009554" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29680365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32928678" sideWeight="0.63535035" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.7643312" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32852808" sideWeight="0.7643312" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23234624" sideWeight="0.0" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32852808" sideWeight="0.63535035" order="3" side_tool="false" content_ui="combo" x="-1" y="-29" width="433" height="628" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328279" sideWeight="0.7199391" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23199393" sideWeight="0.7656012" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26592356" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2797527" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36464968" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -698,7 +774,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="ant added" />
+    <option name="LAST_COMMIT_MESSAGE" value="db script" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -721,6 +797,7 @@
     <MESSAGE value="search and index fixed. search web gui added" />
     <MESSAGE value="miner with usage of spring added to test folder" />
     <MESSAGE value="ant added" />
+    <MESSAGE value="db script" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -731,7 +808,18 @@
     <buildFile url="file://$PROJECT_DIR$/build.xml">
       <antCommandLine value="" />
       <runInBackground value="true" />
-      <targetFilters />
+      <targetFilters>
+        <filter targetName="miner" isVisible="false" />
+        <filter targetName="run_miner" isVisible="false" />
+        <filter targetName="run_indexer" isVisible="false" />
+        <filter targetName="init" isVisible="false" />
+        <filter targetName="core" isVisible="false" />
+        <filter targetName="run_frontend" isVisible="false" />
+        <filter targetName="frontend" isVisible="false" />
+        <filter targetName="indexer" isVisible="false" />
+        <filter targetName="all" isVisible="false" />
+        <filter targetName="searcher" isVisible="false" />
+      </targetFilters>
       <treeView value="true" />
       <verbose value="true" />
       <viewClosedWhenNoErrors value="false" />
@@ -739,107 +827,120 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/java/net/sf/xfresh/util/Starter.java">
+    <entry file="file://$PROJECT_DIR$/searcher/src/test/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="49" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0" />
+        <state line="59" column="70" selection-start="2271" selection-end="2271" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/configs/config1.xml">
+    <entry file="file://$PROJECT_DIR$/indexer/src/scripts/beans.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="29" selection-start="1617" selection-end="1642" vertical-scroll-proportion="0.7826087">
+        <state line="13" column="4" selection-start="471" selection-end="1130" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/AbstractYalet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="22" selection-start="215" selection-end="215" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowSingleBrandYalet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/scripts/beans.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="47" selection-start="821" selection-end="821" vertical-scroll-proportion="0.03768844">
+        <state line="59" column="90" selection-start="2635" selection-end="2690" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberTwitter.java">
+    <entry file="file://$PROJECT_DIR$/frontend/src/web/index.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="13" selection-start="514" selection-end="514" vertical-scroll-proportion="0.0">
+        <state line="3" column="30" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberYandex.java">
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="29" selection-start="1442" selection-end="1442" vertical-scroll-proportion="0.6781003">
+        <state line="53" column="102" selection-start="1853" selection-end="1853" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/Grabber.java">
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/SearchManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="17" selection-start="246" selection-end="246" vertical-scroll-proportion="0.38265306">
+        <state line="15" column="10" selection-start="398" selection-end="398" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/ExactGrabber.java">
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="17" selection-start="459" selection-end="459" vertical-scroll-proportion="0.61734694">
+        <state line="40" column="16" selection-start="1218" selection-end="1322" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberContainer.java">
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/LeftMenuManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="4" selection-start="733" selection-end="733" vertical-scroll-proportion="0.0">
+        <state line="18" column="0" selection-start="497" selection-end="497" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="40" selection-start="665" selection-end="665" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/web/search.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="27" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/scripts/beans.xml">
+    <entry file="file://$PROJECT_DIR$/frontend/src/web/index.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="50" selection-start="817" selection-end="817" vertical-scroll-proportion="0.62142855">
+        <state line="10" column="0" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/searcher/build.xml">
+    <entry file="file://$PROJECT_DIR$/frontend/src/web/search.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="88" selection-start="1354" selection-end="1370" vertical-scroll-proportion="0.0">
+        <state line="21" column="0" selection-start="1010" selection-end="1040" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/indexer/build.xml">
+    <entry file="file://$PROJECT_DIR$/frontend/src/web/common.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1432" selection-end="1432" vertical-scroll-proportion="0.0">
+        <state line="13" column="12" selection-start="656" selection-end="656" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/build.xml">
+    <entry file="file://$PROJECT_DIR$/dbscript.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="13" selection-start="1413" selection-end="1413" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="11" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1446" selection-end="1710" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="30" selection-start="2202" selection-end="2202" vertical-scroll-proportion="0.20353982">
+        <state line="90" column="75" selection-start="3021" selection-end="3021" vertical-scroll-proportion="1.0414847">
           <folding />
         </state>
       </provider>

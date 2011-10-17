@@ -15,6 +15,6 @@ import java.sql.SQLException;
  */
 public class BrandMapper implements ParameterizedRowMapper<Brand> {
     public Brand mapRow(ResultSet resultSet, int i) throws SQLException {
-        return new Brand(Integer.parseInt(resultSet.getString("brand_id")), resultSet.getString("name"),resultSet.getString("description"),resultSet.getString("website"),resultSet.getString("branch"));
+        return new Brand(Integer.parseInt(resultSet.getString("Id")), resultSet.getString("Name"),resultSet.getString("Description"),resultSet.getString("Website"),Long.parseLong(resultSet.getString("BranchId")));
     }
 }

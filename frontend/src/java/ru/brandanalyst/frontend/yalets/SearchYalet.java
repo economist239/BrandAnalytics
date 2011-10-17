@@ -5,8 +5,7 @@ import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.core.Yalet;
 import net.sf.xfresh.core.xml.Xmler;
 import ru.brandanalyst.frontend.services.SearchManager;
-import ru.brandanalyst.frontend.models.BrandForWeb;
-
+import ru.brandanalyst.frontend.models.SimplyBrandForWeb;
 import java.util.List;
 
 /**
@@ -33,7 +32,7 @@ public class SearchYalet implements Yalet {
             return;
         }
 
-        List<BrandForWeb> brandIssuance = searchManager.getSearchResultByBrand(query);
+        List<SimplyBrandForWeb> brandIssuance = searchManager.getSearchResultByBrand(query);
 
         if(brandIssuance != null) {
             if(brandIssuance.size() != 0) {

@@ -9,20 +9,23 @@ package ru.brandanalyst.core.model;
  */
 public class Article {
     private long id;
-    private int sourceId;
+    private long sourceId;
     private String title;
     private String content;
-    private String author;
-    private String timestamp;
+    private String link;
+    private String tstamp;
+    private int numLikes;
 
-    public Article(int id, int sourceId, String title, String content, String author, String timestamp) {
+    public Article(long id, long sourceId, String title, String content, String link, String tstamp, int numLikes) {
         this.id = id;
         this.sourceId = sourceId;
         this.title = title;
         this.content = content;
-        this.author = author;
-        this.timestamp = timestamp;
+        this.link = link;
+        this.tstamp = tstamp;
+        this.numLikes = numLikes;
     }
+
     public long getId() {
         return id;
     }
@@ -55,19 +58,27 @@ public class Article {
         this.content = content;
     }
 
-    public String getAuthor() {
-        return content;
+    public String getLink() {
+        return link;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthor(String link) {
+        this.link = link;
     }
 
-    public String getTimesamp() {
-        return timestamp;
+    public String getTstamp() {
+        return tstamp;
     }
 
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
+    public void setTstamp(String tstamp) {
+        this.tstamp = tstamp;
+    }
+
+    public int getNumLikes() {
+        return numLikes;
+    }
+
+    public void setNumLikes(int numLikes) {
+        this.numLikes = numLikes;
     }
 }

@@ -4,16 +4,16 @@
     <xsl:include href="common.xsl"/>
 
     <xsl:template name="main">
-        <xsl:apply-templates select="page/data" mode="show"/>
-        <xsl:apply-templates select="page/data/collection" mode="show"/>
+        <xsl:apply-templates select="page/data[@id='search']" mode="show"/>
+        <xsl:apply-templates select="page/data[@id='search']/collection" mode="show"/>
     </xsl:template>
 
-    <xsl:template match="collection" mode="show">
-        <xsl:for-each select="brand-for-web">
-            <h2><a>
+    <xsl:template match="page/data[@id='search']/collection" mode="show">
+        <xsl:for-each select="simply-brand-for-web">
+            <h1><a>
                 <xsl:attribute name="href">showbrand.xml?name=<xsl:value-of select="name"/></xsl:attribute>
                 <xsl:value-of select="name"/><br/>
-            </a></h2>
+            </a></h1>
             <a><xsl:value-of select="description"/><br/></a>
             <a>
                 <xsl:attribute name="href">http://<xsl:value-of select="website"/></xsl:attribute>

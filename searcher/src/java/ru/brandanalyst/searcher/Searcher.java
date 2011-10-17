@@ -64,6 +64,6 @@ public class Searcher {
     }
 
     private Brand brandMap(Document doc) {
-        return new Brand(Long.parseLong(doc.get("brand_id")), doc.get("name"),doc.get("description"),doc.get("website"),doc.get("branch"));
+        return new Brand(Long.parseLong(doc.get("id")), doc.get("name"),doc.get("description"),doc.get("website"),Long.parseLong(doc.get("branchId")));
     }
 }
