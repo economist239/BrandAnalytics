@@ -45,7 +45,6 @@ public class GraphProvider {
 
     public List<Graph> getGraphsByBrandId(long brandId) {
 
-        //получаем список точек отсртирванных по тикеру
         SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId = " + Long.toString(brandId) + " ORDER BY TickerId");
 
         List<Graph> graphList = new ArrayList<Graph>();
@@ -55,7 +54,6 @@ public class GraphProvider {
                 String tickerName = rowSet.getString("TickerName");
                 graphList.add(new Graph(tickerName));
             } else {
-                System.out.println("No elements");//just for me
                 return null;
             }
 

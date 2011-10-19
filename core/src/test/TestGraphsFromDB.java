@@ -29,7 +29,6 @@ public class TestGraphsFromDB {
         Timestamp t = new Timestamp(90, 02, 29, 1, 1, 1, 1);
         double val = 21;
         dataStore.writeSingleDot(t, val, 1, 1);
-        //запись работает
 
         List<Graph> list = dataStore.getGraphsByBrandId(1);
         for(Graph g: list) {

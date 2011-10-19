@@ -50,7 +50,7 @@ public class BrandProvider {
         return list.get(0);
     }
 
-    public List<Brand> getAllBrands() throws NullPointerException {
+    public List<Brand> getAllBrands() {
         List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand", brandMapper);
         return list;
     }
