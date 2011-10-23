@@ -7,7 +7,6 @@
     <property name="build.dir" location="${project.dir}/build"/>
     <property name="classes.dir" location="${build.dir}/classes"/>
     <property name="dist.dir" location="${build.dir}/dist"/>
-
     <!--пути к вложенным билд файлам-->
     <property name="core.build" location="${project.dir}/core/build.xml"/>
     <property name="miner.build" location="${project.dir}/miner/build.xml"/>
@@ -83,5 +82,41 @@
         </java>
     </target>
 
+    <target name="checkstyle">
+
+        <delete file="checkstyle_report.xml"/>
+        <delete file="checkstyle_report.htm"/>
+
+        <taskdef resource="checkstyletask.properties" classpath="${lib.dir}/checkstyle/checkstyle-5.4-all.jar"/>
+        <checkstyle config="${project.dir}/checks.xml"
+              failureProperty="checkstyle.failure"
+              failOnViolation="false">
+        <formatter type="xml" tofile="checkstyle_report.xml"/>
+            <fileset dir="${project.dir}" includes="**/*.java" excludes="**/net/**/*.java **/test/** "/>
+        </checkstyle>
+
+        <xslt in="checkstyle_report.xml" out="checkstyle_report.htm" style="checkstyle-simple.xsl">
+            <outputproperty name="method" value="html"/>
+            <outputproperty name="standalone" value="yes"/>
+            <outputproperty name="encoding" value="iso8859_1"/>
+            <outputproperty name="indent" value="yes"/>
+        </xslt>
+    </target>
+
+    <target name="findbugs">
+
+        <delete file="checkstyle_report.xml"/>
+        <delete file="checkstyle_report.htm"/>
+
+        <taskdef name="findbugs" classpath="${lib.dir}/findbugs/findbugs-ant.jar" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"/>
+
+        <findbugs home="${lib.dir}/findbugs/"
+            output="html"
+            outputFile="findbugs_report.html" >
+            <auxClasspath path="${build.dir}"/>
+            <sourcePath path="${build.dir}" />
+            <class location="${build.dir}" />
+        </findbugs>
+    </target>
 </project>
 

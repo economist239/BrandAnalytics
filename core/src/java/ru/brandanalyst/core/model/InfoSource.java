@@ -5,7 +5,6 @@ package ru.brandanalyst.core.model;
  * User: 1
  * Date: 09.10.11
  * Time: 21:15
- * To change this template use File | Settings | File Templates.
  */
 public class InfoSource {
     private int id;

@@ -11,7 +11,6 @@ import java.util.List;
  * User: 1
  * Date: 09.10.11
  * Time: 22:07
- * To change this template use File | Settings | File Templates.
  */
 public class ArticleProvider {
     private SimpleJdbcTemplate jdbcTemplate;
@@ -39,14 +38,19 @@ public class ArticleProvider {
         }
     }
 
-    public Article getArticleBySourceId(int sourceId) {
+    public Article getArticleBySourceId(long sourceId) {
         List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE InfosourceId = ?", new Object[]{sourceId}, articleMapper);
         return list.get(0);
     }
 
-    public Article getArticleById(int article_id) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE Id = " + Integer.toString(article_id) , articleMapper);
+    public Article getArticleById(long articleId) {
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE Id = " + Long.toString(articleId) , articleMapper);
         return list.get(0);
+    }
+
+    public List<Article> getAllArticlesByBrand(long brandId) {
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE BrandId = " + Long.toString(brandId) , articleMapper);
+        return list;
     }
 
     public List<Article> getAllArticles() {

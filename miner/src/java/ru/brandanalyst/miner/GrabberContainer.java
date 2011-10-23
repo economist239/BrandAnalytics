@@ -9,7 +9,6 @@ import java.util.List;
  * User: dima
  * Date: 10/14/11
  * Time: 11:47 AM
- * To change this template use File | Settings | File Templates.
  */
 public class GrabberContainer {
 
@@ -27,9 +26,7 @@ public class GrabberContainer {
     }
 
     public void afterPropertiesSet () {
-
-        System.out.println("miner started");
-
+        log.info("miner started");
 
         for(Grabber g: grabberList) {
             g.grab();

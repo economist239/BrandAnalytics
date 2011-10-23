@@ -5,7 +5,6 @@ package ru.brandanalyst.core.db.provider;
  * User: 1
  * Date: 09.10.11
  * Time: 17:14
- * To change this template use File | Settings | File Templates.
  */
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;

@@ -15,10 +15,10 @@ public class ShowLeftMenuYalet extends AbstractDbYalet {
 
     public void process(InternalRequest req, InternalResponse res) {
 
-        LeftMenuManager manager = new LeftMenuManager();
+        LeftMenuManager manager = new LeftMenuManager(jdbcTemplate);
 
-        if(manager.getSearchResultByBrand(jdbcTemplate) != null) {
-            res.add(manager.getSearchResultByBrand(jdbcTemplate));
+        if(manager.getSearchResultByBrand() != null) {
+            res.add(manager.getSearchResultByBrand());
         } else {
             Xmler.Tag ans = Xmler.tag("error", "Трололо");
             res.add(ans);

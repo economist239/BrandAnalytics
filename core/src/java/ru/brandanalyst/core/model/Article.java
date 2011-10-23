@@ -6,7 +6,6 @@ import java.sql.Timestamp;
  * User: 1
  * Date: 09.10.11
  * Time: 20:32
- * To change this template use File | Settings | File Templates.
  */
 public class Article {
     private long id;
