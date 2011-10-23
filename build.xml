@@ -105,14 +105,13 @@
 
     <target name="findbugs">
 
-        <delete file="checkstyle_report.xml"/>
-        <delete file="checkstyle_report.htm"/>
+        <delete file="findbugs_report.xml"/>
 
         <taskdef name="findbugs" classpath="${lib.dir}/findbugs/findbugs-ant.jar" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"/>
 
         <findbugs home="${lib.dir}/findbugs/"
-            output="html"
-            outputFile="findbugs_report.html" >
+            output="xml"
+            outputFile="findbugs_report.xml" >
             <auxClasspath path="${build.dir}"/>
             <sourcePath path="${build.dir}" />
             <class location="${build.dir}" />
