@@ -2,8 +2,80 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
+<<<<<<< HEAD
       <change type="MOVED" beforePath="C:\Users\kimank\CS\DM3\BrandAnalytics\analyzer\src\ru\brandanalyst\analyzer\Analyzer.java" afterPath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/Analyzer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/bootstrap.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/forms.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/mixins.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/patterns.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/reset.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/scaffolding.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/tables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/type.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/checkstyle/antlr-2.7.7.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/checkstyle/checkstyle-5.4-all.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/checkstyle/checkstyle-5.4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/checkstyle/commons-beanutils-core-1.8.3.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/checkstyle/commons-cli-1.2.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/checkstyle/commons-logging-1.1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/checkstyle/google-collections-1.0.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/annotations.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/ant.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/asm-3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/asm-analysis-3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/asm-commons-3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/asm-tree-3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/asm-util-3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/asm-xml-3.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/bcel.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/buggy.icns" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/commons-lang-2.4.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/dom4j-1.6.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/findbugs-ant.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/findbugs.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/jFormatString.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/jaxen-1.1.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/jdepend-2.9.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/jsr305.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/findbugs/mysql-connector-java-5.1.7-bin.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/junit-4.10.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/xfresh/xfresh-core.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/checks.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/checkstyle-simple.xsl" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/findbugs_report.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/bootstrap.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/bootstrap.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-alerts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-popover.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-scrollspy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-tabs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-twipsy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-alerts.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-dropdown.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-modal.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-popover.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-scrollspy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-tabs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-twipsy.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/vendor/qunit.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/vendor/qunit.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/raphael/analytics.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/raphael/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/raphael/popup.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/raphael/raphael.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/web/raphael/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,7 +142,31 @@
       <file leaf-file-name="config1.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/configs/config1.xml">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="50" column="103" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0">
+=======
+            <state line="113" column="43" selection-start="4260" selection-end="4260" vertical-scroll-proportion="0.8652968">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Analyzer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyzer/src/ru/brandanalyst/analyzer/Analyzer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="53" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbscript.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dbscript.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="21" selection-start="544" selection-end="544" vertical-scroll-proportion="0.0">
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
               <folding />
             </state>
           </provider>
@@ -130,6 +226,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="ArticleMapper.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/ArticleMapper.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -157,6 +254,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
     </leaf>
   </component>
   <component name="FindManager">
@@ -360,6 +459,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="searcher" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -573,6 +673,11 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -592,6 +697,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -601,6 +707,9 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="yalets" />
+=======
+              <option name="myItemId" value="web" />
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -622,6 +731,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -659,6 +769,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+=======
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bootstrap" />
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -672,6 +789,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -763,16 +881,22 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="core" />
+=======
+              <option name="myItemId" value="frontend" />
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+=======
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -788,6 +912,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< HEAD
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="BrandAnalytics" />
@@ -810,6 +935,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+=======
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
         </subPane>
       </pane>
       <pane id="Favorites" />
@@ -875,7 +1002,117 @@
       <recent name="ru.brandanalyst.storage.provider" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.TestGraphs">
+=======
+  <component name="RestoreUpdateTree">
+    <UpdateInfo date="Moments ago" ActionInfo="_Update">
+      <UpdatedFiles>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated from server" />
+          <option name="myStatusName" value="Changed on server" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CHANGED_ON_SERVER" />
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Updated" />
+            <option name="myStatusName" value="Changed" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="UPDATED" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Created" />
+            <option name="myStatusName" value="Created" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="CREATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/analyzer/analyzer.iml</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/analyzer/src/ru/brandanalyst/analyzer/Analyzer.java</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Deleted" />
+            <option name="myStatusName" value="Deleted" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="true" />
+            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Restored" />
+            <option name="myStatusName" value="Will be restored" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="RESTORED" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Modified" />
+          <option name="myStatusName" value="Modified" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MODIFIED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Skipped" />
+          <option name="myStatusName" value="Skipped" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SKIPPED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with conflicts" />
+          <option name="myStatusName" value="Will be merged with conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with tree conflicts" />
+          <option name="myStatusName" value="Merged with tree conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged" />
+          <option name="myStatusName" value="Will be merged" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Not in repository" />
+          <option name="myStatusName" value="Not in repository" />
+          <option name="mySupportsDeletion" value="true" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UNKNOWN" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally added" />
+          <option name="myStatusName" value="Locally added" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_ADDED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally removed" />
+          <option name="myStatusName" value="Locally removed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_REMOVED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Switched" />
+          <option name="myStatusName" value="Switched" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SWITCHED" />
+        </FILE-GROUP>
+      </UpdatedFiles>
+    </UpdateInfo>
+  </component>
+  <component name="RunManager" selected="Application.FrontendStarter">
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -1138,6 +1375,7 @@
     <frame x="-4" y="-4" width="1288" height="764" extended-state="0" />
     <editor active="false" />
     <layout>
+<<<<<<< HEAD
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21617419" sideWeight="0.9984825" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1145,6 +1383,20 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23234624" sideWeight="0.0" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328279" sideWeight="0.7199391" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32852808" sideWeight="0.63535035" order="3" side_tool="false" content_ui="combo" x="-1" y="-29" width="433" height="628" />
+=======
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23338485" sideWeight="0.9984825" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15098634" sideWeight="0.6990446" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36939722" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39968154" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38794437" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29829985" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32928678" sideWeight="0.63535035" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852808" sideWeight="0.7643312" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33007517" sideWeight="0.76661515" order="0" side_tool="false" content_ui="tabs" />
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2300813" sideWeight="0.7838258" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39878234" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1183,7 +1435,11 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+<<<<<<< HEAD
     <option name="LAST_COMMIT_MESSAGE" value="search fixed" />
+=======
+    <option name="LAST_COMMIT_MESSAGE" value="new libs added" />
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1206,11 +1462,16 @@
     <MESSAGE value="search and index fixed. search web gui added" />
     <MESSAGE value="miner with usage of spring added to test folder" />
     <MESSAGE value="ant added" />
+<<<<<<< HEAD
     <MESSAGE value="db script" />
     <MESSAGE value="xfresh fixed" />
     <MESSAGE value="graphs provider added" />
     <MESSAGE value="indexer fixed" />
     <MESSAGE value="search fixed" />
+=======
+    <MESSAGE value="fixed builder (bugsfinder)" />
+    <MESSAGE value="new libs added" />
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1240,6 +1501,7 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -1256,6 +1518,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/GraphProvider.java">
+=======
+    <entry file="file://$PROJECT_DIR$/core/src/test/TestGraphsFromDB.java">
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="32" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0" />
       </provider>
@@ -1323,9 +1588,31 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="0" selection-start="1211" selection-end="1211" vertical-scroll-proportion="0.7692308">
+=======
+    <entry file="file://$PROJECT_DIR$/dbscript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="21" selection-start="544" selection-end="544" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/src/ru/brandanalyst/analyzer/Analyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="53" selection-start="411" selection-end="411" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="113" column="43" selection-start="4260" selection-end="4260" vertical-scroll-proportion="0.8652968">
+>>>>>>> 70c418e1d0143c7d807c8491ca85b3e6da588315
           <folding />
         </state>
       </provider>
