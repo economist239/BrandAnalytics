@@ -6,7 +6,7 @@
             <fileset dir="${dist.dir}" includes="**/*.jar"/>
     </path>
 
-    <property name="src.analyzer.dir" location="${project.dir}/searcher/src/"/>
+    <property name="src.analyzer.dir" location="${project.dir}/analyzer/src/java/"/>
     <pathconvert pathsep=" " property="libs_manifest" refid="libs"/>
 
     <target name="all">
