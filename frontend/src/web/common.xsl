@@ -8,41 +8,41 @@
         <html>
         <head>
             <title><xsl:text>BrandAnalyst</xsl:text></title>
-            <link type="text/css" rel="stylesheet" href="basket.css"/>
-            <script language="javascript" src="javascripts/js-class.js" type="text/javascript"></script>
-            <script language="javascript" src="javascripts/bluff.js" type="text/javascript"></script>
-            <script language="javascript" src="javascripts/excanvas.js" type="text/javascript"></script>
+
+            <link href="bootstrap/bootstrap.css" rel="stylesheet"/>
+            <style type="text/css">
+                body {
+                    padding-top: 60px;
+                }
+            </style>
         </head>
         <body>
-            <table border="2">
-                <tr>
+            <div class="content" align="center">
+                <div class="page-header">
                     <xsl:call-template name="find"/>
-                </tr>
-                <tr>
-                    <td width="20%" valign="top">
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="sidebar">
+                    <div class="well">
                         <xsl:call-template name="leftmenu"/>
-                    </td>
-                    <td width="60%" valign="top">
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="hero-unit">
                         <xsl:call-template name="main"/>
-                    </td>
-                    <td>
-                        Здесь может быть ваша реклама
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
+            </div>
         </body>
         </html>
     </xsl:template>
 
     <xsl:template name="find">
-        <tr align="center">
-            <td colspan="3">
-                <form method="get" action="/search.xml">
-                    <input type="text" name="query" size="30"/>
-                    <input type="submit" value="побрендить"/>
-                </form>
-            </td>
-        </tr>
+        <form method="get" action="/search.xml" align="center">
+            <input type="text" name="query" size="30"/>
+            <input type="submit" value="побрендить"/>
+        </form>
     </xsl:template>
 
     <xsl:template name="leftmenu">
@@ -51,16 +51,17 @@
     </xsl:template>
 
     <xsl:template match="page/data[@id='showLeftMenu' ]" mode="show">
-        <h3>Все, что есть у нас:</h3>
+        <h5>Все, что есть у нас:</h5>
     </xsl:template>
     <xsl:template match="page/data[@id='showLeftMenu' ]/collection" mode="show">
-        <xsl:for-each select="simply-brand-for-web">
-            <bold><a>
-                <xsl:attribute name="href">showbrand.xml?name=<xsl:value-of select="name"/></xsl:attribute>
-                <xsl:value-of select="name"/>
-            </a></bold><br/>
-            <a><xsl:value-of select="description"/></a> <br/>
-        </xsl:for-each>
+        <ul>
+            <xsl:for-each select="simply-brand-for-web">
+                <li><a>
+                    <xsl:attribute name="href">showbrand.xml?id=<xsl:value-of select="@id"/></xsl:attribute>
+                    <xsl:value-of select="name"/>
+                </a></li>
+            </xsl:for-each>
+        </ul>
     </xsl:template>
 
 </xsl:stylesheet>

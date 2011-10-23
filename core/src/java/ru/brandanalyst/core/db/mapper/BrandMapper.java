@@ -14,11 +14,18 @@ import java.sql.SQLException;
  * To change this template use File | Settings | File Templates.
  */
 public class BrandMapper implements ParameterizedRowMapper<Brand> {
-    public Brand mapRow(ResultSet resultSet, int i) throws SQLException, NumberFormatException {
-        try{
-            return new Brand(Long.parseLong(resultSet.getString("Id")), resultSet.getString("Name"),resultSet.getString("Description"),resultSet.getString("Website"),Long.parseLong(resultSet.getString("BranchId")));
+    public final Brand mapRow(final ResultSet resultSet, final int i) throws SQLException {
+        try {
+            return new Brand(Long.parseLong(resultSet.getString("Id")),
+                resultSet.getString("Name"),
+                resultSet.getString("Description"),
+                resultSet.getString("Website"),
+                Long.parseLong(resultSet.getString("BranchId")));
         } catch (Exception e) {
-            return new Brand(Long.parseLong(resultSet.getString("Id")), resultSet.getString("Name"),resultSet.getString("Description"),resultSet.getString("Website"),-1);
+            return new Brand(Long.parseLong(resultSet.getString("Id")),
+                resultSet.getString("Name"),
+                resultSet.getString("Description"),
+                resultSet.getString("Website"), -1);
         }
     }
 }

@@ -7,7 +7,6 @@ import java.util.ArrayList;
  * User: dima
  * Date: 10/16/11
  * Time: 4:11 PM
- * To change this template use File | Settings | File Templates.
  */
 public class BrandForWeb {
     private String name;
@@ -16,6 +15,7 @@ public class BrandForWeb {
        private String branch;
        private String picturePath;
        private ArrayList<GraphForWeb> graphList;
+       private ArrayList<SimplyArticleForWeb> articleList;
 
        public BrandForWeb(String name, String description, String website, String picturePath, ArrayList<GraphForWeb> graphList) {
            this.name = name;

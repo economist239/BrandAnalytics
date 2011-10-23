@@ -13,18 +13,23 @@ import java.util.List;
  * User: dima
  * Date: 10/16/11
  * Time: 4:10 PM
- * To change this template use File | Settings | File Templates.
  */
 public class LeftMenuManager {
 
-    public List<SimplyBrandForWeb> getSearchResultByBrand(SimpleJdbcTemplate jdbcTemplate) {
+    private final SimpleJdbcTemplate jdbcTemplate;
+
+    public LeftMenuManager(SimpleJdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public List<SimplyBrandForWeb> getSearchResultByBrand() {
 
         BrandProvider brandProvider = new BrandProvider(jdbcTemplate);
 
         try{
             List<SimplyBrandForWeb> brandList = new ArrayList<SimplyBrandForWeb>();
             for (Brand b: brandProvider.getAllBrands()) {
-                brandList.add(new SimplyBrandForWeb(b.getName(),b.getDescription(),b.getWebsite()));
+                brandList.add(new SimplyBrandForWeb(b.getId(),b.getName(),b.getDescription(),b.getWebsite()));
             }
             return brandList;
         } catch (Exception e) {

@@ -6,7 +6,6 @@ import java.sql.Timestamp;
  * User: dima
  * Date: 10/16/11
  * Time: 7:22 PM
- * To change this template use File | Settings | File Templates.
  */
 public class SingleDot {
     private final Timestamp date;

@@ -1,18 +1,17 @@
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+//import org.springframework.util.Assert;
 import ru.brandanalyst.core.db.provider.GraphProvider;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
-
+import junit.framework.Assert;
 import java.sql.Timestamp;
 import java.util.List;
-
 /**
  * Created by IntelliJ IDEA.
  * User: dima
  * Date: 10/17/11
- * Time: 7:25 PM
- * To change this template use File | Settings | File Templates.
+ * Time: 7:25 PM.
  */
 public class TestGraphsFromDB {
 
@@ -38,6 +37,5 @@ public class TestGraphsFromDB {
             System.out.println("конец графика");
 
         }
-
     }
 }

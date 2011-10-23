@@ -14,7 +14,6 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
  * User: Obus
  * Date: 10.10.11
  * Time: 14:14
- * To change this template use File | Settings | File Templates.
  */
 public class GrabberTwitter extends ExactGrabber{
 

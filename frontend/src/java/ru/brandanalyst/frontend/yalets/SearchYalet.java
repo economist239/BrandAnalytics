@@ -13,7 +13,6 @@ import java.util.List;
  * User: dima
  * Date: 04.10.11
  * Time: 3:45
- * To change this template use File | Settings | File Templates.
  */
 public class SearchYalet implements Yalet {
 
