@@ -1,7 +1,6 @@
 package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
-
 import java.util.List;
 
 /**
