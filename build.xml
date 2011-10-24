@@ -13,6 +13,7 @@
     <property name="indexer.build" location="${project.dir}/indexer/build.xml"/>
     <property name="frontend.build" location="${project.dir}/frontend/build.xml"/>
     <property name="searcher.build" location="${project.dir}/searcher/build.xml"/>
+    <property name="analyzer.build" location="${project.dir}/analyzer/build.xml"/>
 
     <!-- classpath -->
     <path id="libs">
@@ -48,6 +49,10 @@
         <ant antfile="${miner.build}"/>
     </target>
 
+    <target name="analyzer" depends="core">
+        <ant antfile="${analyzer.build}"/>
+    </target>
+
     <!--по умолчанию вызывается этот таргет (тут пара строчек лишние, но так понятнее)-->
     <target name="all" depends="init">
         <antcall target="core"/>
@@ -55,6 +60,7 @@
         <antcall target="frontend"/>
         <antcall target="miner"/>
         <antcall target="searcher"/>
+        <antcall target="analyzer"/>
     </target>
 
     <!--для запуска различных модулей испольются следующие таргеты-->
@@ -89,13 +95,13 @@
 
         <taskdef resource="checkstyletask.properties" classpath="${lib.dir}/checkstyle/checkstyle-5.4-all.jar"/>
         <checkstyle config="${project.dir}/checks.xml"
-              failureProperty="checkstyle.failure"
-              failOnViolation="false">
-        <formatter type="xml" tofile="checkstyle_report.xml"/>
+               failureProperty="checkstyle.failure"
+               failOnViolation="false">
+            <formatter type="xml" tofile="checkstyle_report.xml"/>
             <fileset dir="${project.dir}" includes="**/*.java" excludes="**/net/**/*.java **/test/** "/>
         </checkstyle>
 
-        <xslt in="checkstyle_report.xml" out="checkstyle_report.htm" style="checkstyle-simple.xsl">
+        <xslt in="checkstyle_report.xml" out="checkstyle_report.htm" style="checkstyle.xsl">
             <outputproperty name="method" value="html"/>
             <outputproperty name="standalone" value="yes"/>
             <outputproperty name="encoding" value="iso8859_1"/>
@@ -106,6 +112,7 @@
     <target name="findbugs">
 
         <delete file="findbugs_report.xml"/>
+        <delete file="findbugs_report.htm"/>
 
         <taskdef name="findbugs" classpath="${lib.dir}/findbugs/findbugs-ant.jar" classname="edu.umd.cs.findbugs.anttask.FindBugsTask"/>
 
@@ -116,6 +123,13 @@
             <sourcePath path="${build.dir}" />
             <class location="${build.dir}" />
         </findbugs>
+
+        <xslt in="findbugs_report.xml" out="findbugs_report.htm" style="findbugs.xsl">
+            <outputproperty name="method" value="html"/>
+            <outputproperty name="standalone" value="yes"/>
+            <outputproperty name="encoding" value="iso8859_1"/>
+            <outputproperty name="indent" value="yes"/>
+        </xslt>
     </target>
 </project>
 
