@@ -61,6 +61,8 @@
         <antcall target="miner"/>
         <antcall target="searcher"/>
         <antcall target="analyzer"/>
+        <antcall target="checkstyle"/>
+        <antcall target="findbugs"/>
     </target>
 
     <!--для запуска различных модулей испольются следующие таргеты-->
