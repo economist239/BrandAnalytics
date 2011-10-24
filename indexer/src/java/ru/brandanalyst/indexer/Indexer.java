@@ -24,9 +24,6 @@ import java.util.List;
  * Date: 10.10.11
  * Time: 22:55
  */
-
-//TODO article indexing to another index dir.
-
 public class Indexer implements InitializingBean {
 
     private IndexWriter brandwriter;

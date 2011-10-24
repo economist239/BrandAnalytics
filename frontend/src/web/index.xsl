@@ -4,19 +4,7 @@
     <xsl:include href="common.xsl"/>
 
     <xsl:template name="main">
-        <xsl:apply-templates select="page/data" mode="show"/>
+         <h4>Бред Аналитик - инновация настоящего. Парадигма будущего.</h4><br/>
+         <h4>Бред Аналитик - будущее. (Д. А. Медведев)</h4>
     </xsl:template>
-
-
-    <xsl:template match="data" mode="show">
-        <xsl:for-each select="brand">
-           <a>
-              <xsl:attribute name="href">showbrand.xml?id=<xsl:value-of select="@id"/></xsl:attribute>
-              <xsl:value-of select="name"/><br/>
-           </a>
-              
-          <!--  <strong><xsl:value-of select="about"/></strong><br/> -->
-        </xsl:for-each>
-    </xsl:template>
- 
 </xsl:stylesheet>

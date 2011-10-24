@@ -19,7 +19,7 @@ public class SearchManager {
         try{
             List<SimplyBrandForWeb> brandList = new ArrayList<SimplyBrandForWeb>();
             for (Brand b: searcher.searchBrandByDescription(query)) {
-                brandList.add(new SimplyBrandForWeb(b.getName(),b.getDescription(),b.getWebsite()));
+                brandList.add(new SimplyBrandForWeb(b.getId(),b.getName(),b.getDescription(),b.getWebsite()));
             }
             return brandList;
         } catch (Exception e) {

@@ -16,7 +16,6 @@ import java.sql.Timestamp;
  * User: dima
  * Date: 10/12/11
  * Time: 7:09 PM
- * To change this template use File | Settings | File Templates.
  */
 public class Test {    //this is worked test for lucene index and search
     //this test not work while not add base of articles

@@ -1,6 +1,5 @@
 package ru.brandanalyst.core.db.provider;
 
-import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import ru.brandanalyst.core.model.Graph;
@@ -13,7 +12,6 @@ import java.util.ArrayList;
  * User: dima
  * Date: 10/16/11
  * Time: 7:54 PM
- * To change this template use File | Settings | File Templates.
  */
 public class GraphProvider {
     private SimpleJdbcTemplate jdbcTemplate; //
