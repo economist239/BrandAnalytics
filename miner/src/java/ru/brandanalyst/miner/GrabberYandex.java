@@ -1,22 +1,17 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package ru.brandanalyst.miner;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.runtime.*;
 import org.webharvest.definition.ScraperConfiguration;
-
-import java.util.ArrayList;
-import java.util.List;
-
+import ru.brandanalyst.miner.listener.YandexNewsScraperRuntimeListener;
+import org.apache.log4j.Logger;
 
 /**
- * @author Александр
+ * @author Александр Сенов
  */
-//public class GrabberYandex extends GrabberScriptUser implements Grabber {
 public class GrabberYandex extends Grabber {
+
+    private static final Logger log = Logger.getLogger(GrabberYandex.class);
 
     public void setConfig(String config) {
         this.config = config;  //not using    //config = urls + ";" + webharvestconfig // now its = "config/config1.xml"
@@ -27,8 +22,6 @@ public class GrabberYandex extends Grabber {
     }
 
     public void grab() {
-        List<String> result = new ArrayList<String>();
-        result.add("sdad");
         try {
             ScraperConfiguration config = new ScraperConfiguration(this.config);
             Scraper scraper = new Scraper(config, ".");
@@ -39,14 +32,10 @@ public class GrabberYandex extends Grabber {
         } catch (Exception exception) {
             exception.printStackTrace();
         }
-
-        for(String resultString : result){
-        //    out.println(resultString);      //you must simply parse this result and add to db
-        }
     }
     public static void main(String[] args){
         GrabberYandex grabberYandex= new GrabberYandex();
-        grabberYandex.setConfig("miner/configs/config2.xml");
+        grabberYandex.setConfig("./miner/configs/config2.xml");
         grabberYandex.grab();
     }
 

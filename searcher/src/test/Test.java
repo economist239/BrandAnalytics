@@ -13,7 +13,7 @@ import java.util.List;
 import java.sql.Timestamp;
 /**
  * Created by IntelliJ IDEA.
- * User: dima
+ * User: Dmitry Batkovich
  * Date: 10/12/11
  * Time: 7:09 PM
  */

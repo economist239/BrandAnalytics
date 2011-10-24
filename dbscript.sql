@@ -41,7 +41,7 @@ create table Article(
 	BrandId int,
 	InfoSourceId int not null,
 	Title varchar(500),
-	Content varchar(3000) not null,
+	Content varchar(100000) not null,
 	Link varchar(500),
 	NumLikes int,
 	Tstamp timestamp
@@ -92,7 +92,8 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 
 INSERT INTO Ticker (TickerName) VALUES("Упоминание в Twitter");
 
-INSERT INTO Brand (Name, Description, Website, BranchId) VALUES("Financial Pyramid","","",1);
+INSERT INTO Brand (Name, Description, Website, BranchId) VALUES("Apple","Apple - is not Pineapple","http://apple.com",1);
+INSERT INTO Brand (Name, Description, Website, BranchId) VALUES("Microsoft","Apple - is not Astrosoft","http://microsoft.com",1);
 
 drop database if exists BApure;
 create database BApure default character set utf8 collate utf8_bin;
@@ -100,7 +101,7 @@ set character_set_client=utf8;
 set character_set_connection=utf8;
 set character_set_server=utf8;
 
-use BAdirty;
+use BApure;
 
 drop table if exists Graphs;
 create table Graphs(
@@ -137,7 +138,7 @@ create table Article(
 	BrandId int,
 	InfoSourceId int not null,
 	Title varchar(500),
-	Content varchar(3000) not null,
+	Content varchar(100000) not null,
 	Link varchar(500),
 	NumLikes int,
 	Tstamp timestamp
@@ -188,7 +189,8 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 
 INSERT INTO Ticker (TickerName) VALUES("Упоминание в Twitter");
 
-INSERT INTO Brand (Name, Description, Website, BranchId) VALUES("Financial Pyramid","","",1);
+INSERT INTO Brand (Name, Description, Website, BranchId) VALUES("Apple","Apple - is not Pineapple","http://apple.com",1);
+
 
 
 

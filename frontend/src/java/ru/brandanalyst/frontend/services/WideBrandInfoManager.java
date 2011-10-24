@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: dima
+ * User: Dmitry Batkovich
  * Date: 10/19/11
  * Time: 7:34 PM
  */

@@ -2,7 +2,7 @@ package ru.brandanalyst.frontend.models;
 
 /**
  * Created by IntelliJ IDEA.
- * User: dima
+ * User: Dmitry Batkovich
  * Date: 10/20/11
  * Time: 12:54 PM
  */
