@@ -101,6 +101,8 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
     public void onExecutionError(Scraper scraper, Exception e) {
         //To change body of implemented methods use File | Settings | File Templates.
+        if(e!=null) {
         System.out.println(e.getCause());
+        }
     }
 }

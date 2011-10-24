@@ -29,16 +29,17 @@ public class GrabberContainer {
     public void afterPropertiesSet () {
 
         System.out.println("miner started");
-
-
+        if(grabberList!=null){
         for(Grabber g: grabberList) {
             g.grab();
             log.info(g.toString() + " finshed.");
         }
-
+        }
+        if(exactGrabberList!=null)     {
         for(ExactGrabber g: exactGrabberList) {
             g.grab();
             log.info(g.toString() + " finshed.");
+        }
         }
     }
 

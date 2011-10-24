@@ -18,7 +18,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
  */
 public class GrabberTwitter extends ExactGrabber{
 
-    private final int ISSUANCE_SIZE = 100;
+    private static final int ISSUANCE_SIZE = 100;
 
     public void setConfig(String config) {
         this.config = config;  //not using
@@ -41,7 +41,7 @@ public class GrabberTwitter extends ExactGrabber{
             Twitter twitter = new TwitterFactory().getInstance();
             Query query = new Query(brandNames.get(0));
             query.setRpp(ISSUANCE_SIZE);
-            Calendar cal = new GregorianCalendar();
+            //Calendar cal = new GregorianCalendar();
             query.setSince("2010"+"-"+"10"+"-"+"11");
             //query.setSince(new SimpleDateFormat("yyy-MM-dd").format(cal.getTime()));
             query.setLang("ru");
@@ -64,9 +64,10 @@ public class GrabberTwitter extends ExactGrabber{
         catch (Exception e){
             e.printStackTrace();
         }
-
+        if(!result.isEmpty()){
         for(String resultString : result){
                out.println(resultString);
+        }
         }
         }
         else{
