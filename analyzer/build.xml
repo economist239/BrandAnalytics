@@ -33,7 +33,7 @@
         <copy todir="${build.dir}/frontend" overwrite="true">
             <fileset dir="${project.dir}/frontend" includes="**/*.*" excludes="**/*.java build.xml *.iml"/>
         </copy>
-	<echo>searcher building complete</echo>
+	<echo>analyzer building complete</echo>
     </target>
 
 </project>

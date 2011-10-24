@@ -20,7 +20,7 @@ public class WideBrandInfoYalet extends AbstractDbYalet {
 
         WideBrandInfoManager manager = new WideBrandInfoManager(jdbcTemplate);
 
-        if(manager.getBrand(1) != null) {
+        if(manager.getBrand(brandId) != null) {
             res.add(manager.getArticlesForBrand(brandId));
             res.add(manager.getBrand(brandId));
             res.add(manager.getGraphsForBrand(brandId));

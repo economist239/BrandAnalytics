@@ -6,9 +6,8 @@ import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
-
 import java.util.List;
-
+import org.apache.log4j.Logger;
 /**
  * Created by IntelliJ IDEA.
  * User: Nikolaj Karpov
@@ -16,27 +15,35 @@ import java.util.List;
  * Time: 21:10
  */
 public class Analyzer implements InitializingBean{
-    SimpleJdbcTemplate dirty;
-    SimpleJdbcTemplate pure;
-    void setDirty(SimpleJdbcTemplate dirty){
-        this.dirty = dirty;
+    private static final Logger log = Logger.getLogger(Analyzer.class);
+
+    SimpleJdbcTemplate dirtyJdbcTemplate;
+    SimpleJdbcTemplate pureJdbcTemplate;
+
+    void setDirtyJdbcTemplate(SimpleJdbcTemplate dirtyJdbcTemplate){
+        this.dirtyJdbcTemplate = dirtyJdbcTemplate;
     }
-    void setPure(SimpleJdbcTemplate pure){
-        this.pure  = pure;
+
+    void setPureJdbcTemplate(SimpleJdbcTemplate pure){
+        this.pureJdbcTemplate  = pureJdbcTemplate;
     }
+
     public void pushBrandsDirtyToPure(){
-        BrandProvider from = new BrandProvider(dirty);
-        BrandProvider to   = new BrandProvider(pure);
+        BrandProvider from = new BrandProvider(dirtyJdbcTemplate);
+        BrandProvider to   = new BrandProvider(pureJdbcTemplate);
         to.writeListOfBrandsToDataStore(from.getAllBrands());
     }
+
     public void pushArticlesDirtyToPure(){
-        ArticleProvider from = new ArticleProvider(dirty);
-        ArticleProvider to   = new ArticleProvider(pure);
+        ArticleProvider from = new ArticleProvider(dirtyJdbcTemplate);
+        ArticleProvider to   = new ArticleProvider(pureJdbcTemplate);
         to.writeListOfArticlesToDataStore(from.getAllArticles());
     }
+
     public void afterPropertiesSet(){
+        log.info("analyzing started...");
         pushArticlesDirtyToPure();
         pushBrandsDirtyToPure();
-        void AnalyzerTwitter();
+        //AnalyzerTwitter();
     }
 }

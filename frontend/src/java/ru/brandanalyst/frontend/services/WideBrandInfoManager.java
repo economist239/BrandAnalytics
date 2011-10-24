@@ -44,7 +44,7 @@ public class WideBrandInfoManager {
         for(Article a: articles) {
             simplyArticles.add(new SimplyArticleForWeb(a.getTitle(),a.getId(),firstPhrase(a.getContent()),Long.toString(a.getSourceId()),"ya.ru"));
         }
-        return null;
+        return simplyArticles;
     }
 
     private String firstPhrase(String text) {
