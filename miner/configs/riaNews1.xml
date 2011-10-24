@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+<!--<var-def name="riaQueryURL">
+	http://ria.ru/search/?query=apple&amp;p=
+</var-def>	
+
+<var-def name="riaAbsoluteURL">
+	http://ria.ru
+</var-def>	-->
+<var-def name="maxPage">
+	<xpath expression='/html/body/div[@id="layout"]/div[@id="content"]/div[@class="pager centered w-clear"]/div[@class="c"]/ul/li[last()-1]/a/text()'>
+		<html-to-xml>
+		<http url="${riaQueryURL}"/>
+				</html-to-xml>
+	</xpath>
+</var-def>
+<var-def name="riaNewsURLs">
+</var-def>	
+
+<while condition="${maxPage.toInt()>i.toInt()-1}" index="i">
+	<var-def name="riaNewsURLs">
+		<xpath expression='/html/body/div[@id="layout"]/div[@id="content"]/ul[@id="results"]/li/a/@href'>
+			<html-to-xml>
+				<http url="${riaQueryURL}${i.toInt()-1}"/>
+			</html-to-xml>
+		</xpath>
+	</var-def>		
+	
+	<loop item="oneNew" index="j">
+		<list>
+			<var name="riaNewsURLs"/>
+		</list>
+		<body>
+			
+			<case>
+			<if condition="${isUnusualNewsCite.toInt()==0}">
+			<var-def name="oneNewURL">
+				<html-to-xml>
+					<http url="${riaAbsoluteURL}${oneNew}"/>
+				</html-to-xml>
+			</var-def>
+			<empty>
+					<var-def name="tempNewsDate">
+						<xpath expression='/html/body/div[@id="layout"]/div[@id="content"]/div[@id="article"]/div[@class="dt blue"]'>
+							<var name="oneNewURL"/>
+						</xpath>
+					</var-def>
+			
+							
+					
+				</empty>
+			<case>
+			<if  condition ="${isReallyUnusualNewsCite.toInt()==0}">
+			<var-def name="newsDate">
+							
+				<xpath expression="div/text()">
+					<var name="tempNewsDate"/>
+				</xpath>	
+				<xpath expression="div/span/text()">
+					<var name="tempNewsDate"/>
+				</xpath>
+			</var-def>
+			
+			<var-def name="newsFullText">
+				<xpath expression='/html/body/div[@id="layout"]/div[@id="content"]/div[@id="article"]/div[@class="body"]'>
+					<var name="oneNewURL"/>
+				</xpath>
+			</var-def>
+			
+			
+			<var-def name="newsTitle">
+				<xpath expression='/html/body/div[@id="layout"]/div[@id="content"]/h1/strong/text()'>
+					<var name="oneNewURL"/>
+				</xpath>
+			</var-def>
+			</if>
+			</case>
+			</if>
+			
+			<else>
+			<var-def name="oneNewURL">
+				<html-to-xml>
+					<http url="${riaAbsoluteURL}${oneNew}"/>
+				</html-to-xml>
+			</var-def>
+			<var-def name="newsDate">
+				<empty>
+					<var-def name="tempNewsDate">
+							<xpath expression='/html/body/div[@class="all-page"]/div[@class="mainbox"]/div[@class="f-left l-col"]/div[@class="body-left"]/div[@id="article"]/div[@class="data"]'>
+								<var name="oneNewURL"/>
+							</xpath>
+					</var-def>
+				</empty>
+				
+				<xpath expression="div/text()">
+					<var name="tempNewsDate"/>
+				</xpath>	
+				<xpath expression="div/span/text()">
+					<var name="tempNewsDate"/>
+				</xpath>
+			</var-def>
+			
+			<var-def name="newsFullText">
+				<xpath expression='/html/body/div[@class="all-page"]/div[@class="mainbox"]/div[@class="f-left l-col"]/div[@class="body-left"]/div[@id="article"]/div[@class="announce"]'>
+					<var name="oneNewURL"/>
+				</xpath>
+			</var-def>
+			
+			<var-def name="newsTitle">
+				<xpath expression='/html/body/div[@class="all-page"]/div[@class="mainbox"]/div[@class="f-left l-col"]/div[@class="body-left"]/div[@id="article"]/h2/a/text()'>
+					<var name="oneNewURL"/>
+				</xpath>
+			</var-def>
+			
+			</else>
+			</case>
+		</body>
+	</loop>
+</while>
+
+
+
+
+
+
+</config>
