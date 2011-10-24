@@ -18,7 +18,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
  */
 public class GrabberTwitter extends ExactGrabber{
 
-    private final int ISSUANCE_SIZE = 1000;
+    private final int ISSUANCE_SIZE = 100;
 
     public void setConfig(String config) {
         this.config = config;  //not using
@@ -35,11 +35,12 @@ public class GrabberTwitter extends ExactGrabber{
     public void grab(){                          //тут надо складывать в БД данные
 
         List<String> result = new ArrayList<String>();
+        if(brandNames.size()>0){
         try{
             //TODO: make this piece of shit, named as code, BETTER (get rid of <code>pageNumber</code>, for example)
             Twitter twitter = new TwitterFactory().getInstance();
             Query query = new Query(brandNames.get(0));
-
+            query.setRpp(ISSUANCE_SIZE);
             Calendar cal = new GregorianCalendar();
             query.setSince("2010"+"-"+"10"+"-"+"11");
             //query.setSince(new SimpleDateFormat("yyy-MM-dd").format(cal.getTime()));
@@ -67,5 +68,16 @@ public class GrabberTwitter extends ExactGrabber{
         for(String resultString : result){
                out.println(resultString);
         }
+        }
+        else{
+            result.add("No brand names given");
+        }
+    }
+    public static void main(String[] args){
+        GrabberTwitter grabberTwitter = new GrabberTwitter();
+        List<String> testBrandNames = new ArrayList<String>();
+        testBrandNames.add("apple");
+        grabberTwitter.setBrandNames(testBrandNames);
+        grabberTwitter.grab();
     }
 }

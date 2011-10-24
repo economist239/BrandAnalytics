@@ -8,11 +8,8 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.runtime.*;
 import org.webharvest.definition.ScraperConfiguration;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import static java.lang.System.out;
 
 
 /**
@@ -31,19 +28,26 @@ public class GrabberYandex extends Grabber {
 
     public void grab() {
         List<String> result = new ArrayList<String>();
+        result.add("sdad");
         try {
             ScraperConfiguration config = new ScraperConfiguration(this.config);
             Scraper scraper = new Scraper(config, ".");
             scraper.setDebug(true);
+            scraper.addRuntimeListener(new YandexNewsScraperRuntimeListener(this.jdbcTemplate));
             scraper.execute();
-            result.add(scraper.getContext().getVar("temp").toString());
+            //result.add(scraper.getContext().getVar("temp").toString());
         } catch (Exception exception) {
             exception.printStackTrace();
         }
 
         for(String resultString : result){
-            out.println(resultString);      //you must simply parse this result and add to db
+        //    out.println(resultString);      //you must simply parse this result and add to db
         }
+    }
+    public static void main(String[] args){
+        GrabberYandex grabberYandex= new GrabberYandex();
+        grabberYandex.setConfig("miner/configs/config2.xml");
+        grabberYandex.grab();
     }
 
 }
