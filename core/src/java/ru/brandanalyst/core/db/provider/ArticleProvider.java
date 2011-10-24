@@ -27,8 +27,8 @@ public class ArticleProvider {
 
     public void writeArticleToDataStore(Article article) {
         try {
-            jdbcTemplate.update("INSERT INTO Article (InfoSourceId, BrandId, Title, Content, Link, NumLikes, Tstamp) VALUES(?, ?, ?, ?, ?, ?, ?);", article.getBrandId(),
-            article.getSourceId() ,article.getTitle(),article.getContent(),article.getLink(),article.getNumLikes(),article.getTstamp());
+            jdbcTemplate.update("INSERT INTO Article (InfoSourceId, BrandId, Title, Content, Link, NumLikes, Tstamp) VALUES(?, ?, ?, ?, ?, ?, ?);", article.getSourceId(),
+            article.getBrandId() ,article.getTitle(),article.getContent(),article.getLink(),article.getNumLikes(),article.getTstamp());
         } catch (Exception e) {e.printStackTrace();}
     }
 
