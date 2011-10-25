@@ -28,6 +28,21 @@
                 </style>
             </head>
             <body>
+                <div class="topbar" data-scrollspy="scrollspy">
+                    <div class="topbar-inner">
+                        <div class="container">
+                            <a class="brand" href="index.html">Brand Analytics</a>
+                            <ul class="nav">
+                                <li class="active" valign="center">
+                                <p>Бред Аналитик - гомоморфный образ группы изоморфен фактор группе по ядру гомоморфизма
+                                </p>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
 
                 <div class="content" align="center">
                     <div class="page-header" align="center">
@@ -52,19 +67,19 @@
 
     <xsl:template name="find">
         <table border="0" align="center">
-      <!--      <tr align="center">
-                <td id="logo_p1" onclick="location.href='index.xml';">
-                </td>
-                <td align="center">  -->
+            <!--      <tr align="center">
+         <td id="logo_p1" onclick="location.href='index.xml';">
+         </td>
+         <td align="center">  -->
             <div>
-                    <form method="get" action="/search.xml" align="center">
-                        <input class="xlarge" type="text" name="query" size="50"/>
-                        <input class="btn primary" type="submit" value="побрендить"/>
-                    </form>
+                <form method="get" action="/search.xml" align="center">
+                    <input class="xlarge" type="text" name="query" size="50"/>
+                    <input class="btn primary" type="submit" value="побрендить"/>
+                </form>
             </div>
 
-      <!--          </td>
-            </tr> -->
+            <!--          </td>
+           </tr> -->
         </table>
     </xsl:template>
 
