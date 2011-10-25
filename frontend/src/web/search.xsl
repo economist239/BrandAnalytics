@@ -28,7 +28,4 @@
             <xsl:value-of select="answer"/>
         </h4>
     </xsl:template>
-
-
-
 </xsl:stylesheet>

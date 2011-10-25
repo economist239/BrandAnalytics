@@ -38,7 +38,7 @@ public class WideBrandInfoManager {
     public List<SimplyArticleForWeb> getArticlesForBrand(long brandId) {
         List<SimplyArticleForWeb> articlesList = new ArrayList<SimplyArticleForWeb>();
         ArticleProvider articleProvider = new ArticleProvider(jdbcTemplate);
-        List<Article> articles = articleProvider.getAllArticlesByBrand(brandId);
+        List<Article> articles = articleProvider.getTopArticles(brandId, 6);
         List<SimplyArticleForWeb> simplyArticles = new ArrayList<SimplyArticleForWeb>();
         //TODO getting source info by id
         for(Article a: articles) {
@@ -48,7 +48,11 @@ public class WideBrandInfoManager {
     }
 
     private String firstPhrase(String text) {
+        //in runtime listener
         int point = text.indexOf('.');
-        return text.substring(0,point);
+        String t2 = text.substring(point + 1);
+        int p = t2.indexOf('.');
+        return t2.substring(0,p) + "...";
+    //    return text;
     }
 }

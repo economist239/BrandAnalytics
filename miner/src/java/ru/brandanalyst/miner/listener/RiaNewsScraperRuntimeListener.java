@@ -21,7 +21,7 @@ import java.util.Map;
  */
 public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
-    private static final Logger log = Logger.getLogger(ScraperRuntimeListener.class);
+    private static final Logger log = Logger.getLogger(RiaNewsScraperRuntimeListener.class);
 
     protected SimpleJdbcTemplate jdbcTemplate;
     protected ArticleProvider articleProvider;
@@ -70,6 +70,28 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
     }
 
+    private String clearString(String text) {
+        int point = text.indexOf('.');
+        System.out.println(text.substring(point + 1));
+        return text.substring(point + 1);
+
+ /*       int point = text.indexOf('.');
+        text = text.substring(point + 1);
+        int beginIndex = text.indexOf("Добавить видео в блог");
+        if(beginIndex >= 0 ) {
+            System.out.println(text);
+            int endIndex = text.indexOf("Увеличить плеер Добавить видео в блог");
+
+                    System.out.println(text.substring(beginIndex, endIndex + 36));
+                    System.out.println("-------------------------------------------------");
+            return text.replaceFirst(text.substring(beginIndex, endIndex + 36), "");
+
+        } else {
+            System.out.println(text);
+            return text;
+        } */
+    }
+
     public void onProcessorExecutionFinished(Scraper scraper, BaseProcessor baseProcessor, Map map) {
         if("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())){
 
@@ -79,10 +101,11 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             long brandId = ((Variable)scraper.getContext().get("brandId")).toLong();
             Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
             String articleContent = DataTransformator.clearString(newsText.toString());
+            articleContent = clearString(articleContent);
             String articleTitle = newsTitle.toString();
             String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
             Article article = new Article(-1,brandId,6,articleTitle,articleContent,articleLink,articleTimestamp,0);
-            articleProvider.writeArticleToDataStore(article);
+            //articleProvider.writeArticleToDataStore(article);
             log.info("RIA: article added...");
         }
         if("empty".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {

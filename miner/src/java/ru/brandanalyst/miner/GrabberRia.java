@@ -13,11 +13,10 @@ import ru.brandanalyst.miner.listener.RiaNewsScraperRuntimeListener;
  * User: Alexander Senov
  * Date: 23.10.11
  * Time: 11:29
- * To change this template use File | Settings | File Templates.
  */
 public class GrabberRia extends Grabber {
 
-    private static final Logger log = Logger.getLogger(GrabberYandex.class);
+    private static final Logger log = Logger.getLogger(GrabberRia.class);
 
     private static final String searchURL = "http://ria.ru/search/?query=";
     private static final String sourceURL = "http://ria.ru";

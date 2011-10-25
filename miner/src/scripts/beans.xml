@@ -10,10 +10,10 @@
     <bean class="ru.brandanalyst.miner.GrabberContainer">
         <property name="grabberList">
            <list>
-         <!--       <bean class="ru.brandanalyst.miner.GrabberRia">
+                <bean class="ru.brandanalyst.miner.GrabberRia">
                     <property name="config" value="./miner/configs/riaNews1.xml"/>
-                </bean> -->
-                <bean class="ru.brandanalyst.miner.GrabberTwitter"/>
+                </bean>
+            <!--    <bean class="ru.brandanalyst.miner.GrabberTwitter"/>   -->
             </list>
         </property>
     </bean>

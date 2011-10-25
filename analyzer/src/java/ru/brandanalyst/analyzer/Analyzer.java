@@ -24,7 +24,7 @@ public class Analyzer implements InitializingBean{
         this.dirtyJdbcTemplate = dirtyJdbcTemplate;
     }
 
-    void setPureJdbcTemplate(SimpleJdbcTemplate pure){
+    void setPureJdbcTemplate(SimpleJdbcTemplate pureJdbcTemplate){
         this.pureJdbcTemplate  = pureJdbcTemplate;
     }
 

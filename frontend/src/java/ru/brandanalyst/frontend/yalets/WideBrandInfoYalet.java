@@ -27,8 +27,6 @@ public class WideBrandInfoYalet extends AbstractDbYalet {
             res.add(manager.getArticlesForBrand(brandId));
             res.add(manager.getBrand(brandId));
             res.add(manager.getGraphsForBrand(brandId));
-            Xmler.Tag ans = Xmler.tag("error", "Brand not found. id=" + Long.toString(brandId));
-            res.add(ans);
         } else {
             Xmler.Tag ans = Xmler.tag("error", "Brand not found. id=" + Long.toString(brandId));
             res.add(ans);

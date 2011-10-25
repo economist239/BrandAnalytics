@@ -121,9 +121,9 @@
         <findbugs home="${lib.dir}/findbugs/"
             output="xml"
             outputFile="findbugs_report.xml" >
-            <auxClasspath path="${build.dir}"/>
-            <sourcePath path="${build.dir}" />
-            <class location="${build.dir}" />
+            <auxClasspath refid="libs"/>
+            <sourcePath path="${project.dir}" />
+            <class location="${build.dir}/" />
         </findbugs>
 
         <xslt in="findbugs_report.xml" out="findbugs_report.htm" style="findbugs.xsl">
