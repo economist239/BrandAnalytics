@@ -1,9 +1,10 @@
 package ru.brandanalyst.core.db.provider;
 
+import com.mysql.jdbc.log.Log;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.db.mapper.ArticleMapper;
-
+import org.apache.log4j.Logger;
 import java.util.List;
 
 /**
@@ -13,6 +14,8 @@ import java.util.List;
  * Time: 22:07
  */
 public class ArticleProvider {
+    private static final Logger log  = Logger.getLogger(ArticleProvider.class);
+
     private SimpleJdbcTemplate jdbcTemplate;
     private ArticleMapper articleMapper;
 
@@ -30,7 +33,7 @@ public class ArticleProvider {
             jdbcTemplate.update("INSERT INTO Article (InfoSourceId, BrandId, Title, Content, Link, NumLikes, Tstamp) VALUES(?, ?, ?, ?, ?, ?, ?);", article.getSourceId(),
                     article.getBrandId(), article.getTitle(), article.getContent(), article.getLink(), article.getNumLikes(), article.getTstamp());
         } catch (Exception e) {
-            e.printStackTrace();
+            log.info("cannot write article to db");
         }
     }
 

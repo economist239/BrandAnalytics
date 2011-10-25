@@ -1,5 +1,6 @@
 package ru.brandanalyst.frontend.services;
 
+import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
@@ -33,7 +34,6 @@ public class LeftMenuManager {
             }
             return brandList;
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }

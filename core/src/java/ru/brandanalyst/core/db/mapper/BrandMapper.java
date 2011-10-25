@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 /**
  * Created by IntelliJ IDEA.
- * User: 1
+ * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 17:17
  * To change this template use File | Settings | File Templates.

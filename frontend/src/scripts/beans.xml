@@ -41,6 +41,7 @@
 
     <bean id="searchYalet" class="ru.brandanalyst.frontend.yalets.SearchYalet"/>
 
+    <bean id="showArticleYalet" class="ru.brandanalyst.frontend.yalets.ShowArticleYalet"/>
     <!--Searcher conf-->
     <bean id="searchManager" class="ru.brandanalyst.frontend.services.SearchManager"/>
 

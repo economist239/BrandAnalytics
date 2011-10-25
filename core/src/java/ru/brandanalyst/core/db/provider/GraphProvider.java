@@ -7,6 +7,7 @@ import ru.brandanalyst.core.model.SingleDot;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.log4j.Logger;
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -14,6 +15,8 @@ import java.util.ArrayList;
  * Time: 7:54 PM
  */
 public class GraphProvider {
+    private static final Logger log = Logger.getLogger(GraphProvider.class);
+
     private SimpleJdbcTemplate jdbcTemplate; //
 
     public GraphProvider(SimpleJdbcTemplate jdbcTemplate) {
@@ -38,7 +41,9 @@ public class GraphProvider {
         try{
             jdbcTemplate.update("INSERT INTO Graphs (BrandId, TickerId, Tstamp, Val) VALUES(?,?,?,?);", brandId, tickerId,
                 Tstamp, value);
-        } catch (Exception e) {e.printStackTrace();}
+        } catch (Exception e) {
+            log.error("cannot write dot to db");
+        }
     }
 
     public List<Graph> getGraphsByBrandId(long brandId) {
@@ -69,8 +74,7 @@ public class GraphProvider {
             } while (rowSet.next());
             return graphList;
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("can't get graphs from db");
+            log.error("can't get graphs from db");
             return null;
         }
     }

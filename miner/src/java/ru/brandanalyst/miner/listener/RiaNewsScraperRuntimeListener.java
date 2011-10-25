@@ -10,6 +10,8 @@ import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.sql.Timestamp;
 import java.util.Map;
 
@@ -21,6 +23,7 @@ import java.util.Map;
  */
 public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
+    int i = 0;
     private static final Logger log = Logger.getLogger(RiaNewsScraperRuntimeListener.class);
 
     protected SimpleJdbcTemplate jdbcTemplate;
@@ -32,16 +35,20 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
     }
 
     private Timestamp evalTimestamp(String stringDate) {
-        stringDate = stringDate.replace("\n","");
-        stringDate = stringDate.replace(" ","");
+        stringDate = stringDate.replace("\n", "");
+        stringDate = stringDate.replace(" ", "");
         int nano = 0;
         int second = 0;
-        int minute = Integer.parseInt(stringDate.substring(13,15));
-        int hour = Integer.parseInt(stringDate.substring(10,12));
-        int day = Integer.parseInt(stringDate.substring(0,2));
-        int month = Integer.parseInt(stringDate.substring(3,5));
-        int year = Integer.parseInt(stringDate.substring(6,10)) - 1900;
-        Timestamp timestamp = new Timestamp(year,month,day,hour,minute,second,nano);
+        int minute = Integer.parseInt(stringDate.substring(13, 15));
+        int hour = Integer.parseInt(stringDate.substring(10, 12));
+        int day = Integer.parseInt(stringDate.substring(0, 2));
+        int month = Integer.parseInt(stringDate.substring(3, 5));
+        int year = Integer.parseInt(stringDate.substring(6, 10));
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year,month,day,hour,minute);
+        Timestamp timestamp = new Timestamp(calendar.getTime().getTime());
+
         return timestamp;
     }
 
@@ -55,13 +62,12 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
     }
 
     public void onNewProcessorExecution(Scraper scraper, BaseProcessor baseProcessor) {
-        if("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
+        if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
             String oneNew = scraper.getContext().get("oneNew").toString();
-            if(oneNew.substring(1,7).equals("resume")){
-                scraper.addVariableToContext("isUnusualNewsCite",1);
-            }
-            else{
-                scraper.addVariableToContext("isUnusualNewsCite",0);
+            if (oneNew.substring(1, 7).equals("resume")) {
+                scraper.addVariableToContext("isUnusualNewsCite", 1);
+            } else {
+                scraper.addVariableToContext("isUnusualNewsCite", 0);
             }
         }
     }
@@ -72,57 +78,49 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
     private String clearString(String text) {
         int point = text.indexOf('.');
-        System.out.println(text.substring(point + 1));
-        return text.substring(point + 1);
-
- /*       int point = text.indexOf('.');
         text = text.substring(point + 1);
+
         int beginIndex = text.indexOf("Добавить видео в блог");
-        if(beginIndex >= 0 ) {
-            System.out.println(text);
-            int endIndex = text.indexOf("Увеличить плеер Добавить видео в блог");
-
-                    System.out.println(text.substring(beginIndex, endIndex + 36));
-                    System.out.println("-------------------------------------------------");
-            return text.replaceFirst(text.substring(beginIndex, endIndex + 36), "");
-
+        if (beginIndex >= 0) {
+            int endIndex = text.substring(beginIndex + 1).indexOf("Добавить видео в блог");
+            return text.replace(text.substring(beginIndex, beginIndex + endIndex + 36), "");
         } else {
-            System.out.println(text);
             return text;
-        } */
+        }
     }
 
     public void onProcessorExecutionFinished(Scraper scraper, BaseProcessor baseProcessor, Map map) {
-        if("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())){
+        if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
 
-            Variable newsTitle = (Variable)scraper.getContext().get("newsTitle");
-            Variable newsText = (Variable)scraper.getContext().get("newsFullText");
-            Variable newsDate = (Variable)scraper.getContext().get("newsDate");
-            long brandId = ((Variable)scraper.getContext().get("brandId")).toLong();
+            Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
+            Variable newsText = (Variable) scraper.getContext().get("newsFullText");
+            Variable newsDate = (Variable) scraper.getContext().get("newsDate");
+            long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
             Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
             String articleContent = DataTransformator.clearString(newsText.toString());
             articleContent = clearString(articleContent);
             String articleTitle = newsTitle.toString();
             String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
-            Article article = new Article(-1,brandId,6,articleTitle,articleContent,articleLink,articleTimestamp,0);
-            //articleProvider.writeArticleToDataStore(article);
+            Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
+
+            System.out.println(i++);
+            articleProvider.writeArticleToDataStore(article);
             log.info("RIA: article added...");
         }
-        if("empty".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
+        if ("empty".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
 
             String tempNewsDate = scraper.getContext().get("tempNewsDate").toString();
-            if(tempNewsDate.replace(" ","").equals("")) {
-                scraper.addVariableToContext("isReallyUnusualNewsCite",1);
-            }
-            else{
-                scraper.addVariableToContext("isReallyUnusualNewsCite",0);
+            if (tempNewsDate.replace(" ", "").equals("")) {
+                scraper.addVariableToContext("isReallyUnusualNewsCite", 1);
+            } else {
+                scraper.addVariableToContext("isReallyUnusualNewsCite", 0);
             }
         }
     }
 
     public void onExecutionError(Scraper scraper, Exception e) {
-        if(e != null) {
-        System.out.println(e.getCause());
+        if (e != null) {
+            log.error("RiaNewsScraperRuntimeListener error");
         }
     }
 }

@@ -2,11 +2,12 @@ package ru.brandanalyst.core.db.provider;
 
 /**
  * Created by IntelliJ IDEA.
- * User: 1
+ * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 17:14
  */
 
+import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.db.mapper.BrandMapper;
@@ -14,6 +15,8 @@ import ru.brandanalyst.core.db.mapper.BrandMapper;
 import java.util.List;
 
 public class BrandProvider {
+    private static final Logger log  = Logger.getLogger(BrandProvider.class);
+
     private SimpleJdbcTemplate jdbcTemplate; //
     private BrandMapper brandMapper;
 
@@ -30,7 +33,9 @@ public class BrandProvider {
         try{
             jdbcTemplate.update("INSERT INTO Brand (Name, Description, Website, BranchId) VALUES(?,?,?,?);", brand.getName(),
                 brand.getDescription(),brand.getWebsite(),brand.getBranchId());
-        } catch (Exception e) {e.printStackTrace();}
+        } catch (Exception e) {
+            log.error("cannot wrtie brand to db");
+        }
     }
 
     public void writeListOfBrandsToDataStore(List<Brand> brands) {

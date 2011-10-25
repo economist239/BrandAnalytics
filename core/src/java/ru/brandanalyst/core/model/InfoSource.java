@@ -2,7 +2,7 @@ package ru.brandanalyst.core.model;
 
 /**
  * Created by IntelliJ IDEA.
- * User: 1
+ * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 21:15
  */

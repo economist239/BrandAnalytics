@@ -23,7 +23,6 @@ public class SearchManager {
             }
             return brandList;
         } catch (Exception e) {
-            e.printStackTrace();
             return null;
         }
     }

@@ -1,5 +1,6 @@
 package ru.brandanalyst.indexer;
 
+import org.apache.log4j.Logger;
 import org.apache.lucene.analysis.ru.RussianAnalyzer;
 import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
@@ -25,6 +26,8 @@ import java.util.List;
  * Time: 22:55
  */
 public class Indexer implements InitializingBean {
+
+    private static final Logger log = Logger.getLogger(Indexer.class);
 
     private IndexWriter brandwriter;
     private IndexWriter articlewriter;
@@ -58,16 +61,15 @@ public class Indexer implements InitializingBean {
             brandwriter.optimize();
             articlewriter.close();
             brandwriter.close();
-            System.out.println("Index created.");
+            log.info("Index created.");
         } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Cannot create index");
+            log.error("Cannot create index");
         }
     }
 
     private void articleIndex(IndexWriter writer) {
 
-        System.out.println("indexing articles");
+        log.info("indexing articles");
         ArticleProvider provider = new ArticleProvider(jdbcTemplate);
 
         List<Article> list = provider.getAllArticles();
@@ -78,12 +80,12 @@ public class Indexer implements InitializingBean {
                 writer.addDocument(doc);
             }
         } catch(IOException e) {
-            e.printStackTrace();
+            log.error("no articles to index");
         }
     }
     private void brandIndex(IndexWriter writer) {
 
-        System.out.println("indexing brands");
+        log.info("indexing brands");
         BrandProvider provider = new BrandProvider(jdbcTemplate);
 
         try{
@@ -93,7 +95,7 @@ public class Indexer implements InitializingBean {
                 writer.addDocument(doc);
             }
         } catch(IOException e) {
-            System.out.println("no brands to index");
+            log.error("no brands to index");
         }
     }
     private Document createDocument(Article a) {

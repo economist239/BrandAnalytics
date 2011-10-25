@@ -49,8 +49,7 @@ public class Searcher {
             indexSearcherBrand = new IndexSearcher(new SimpleFSDirectory(new File(indexDirBrand)));
             indexSearcherArticle = new IndexSearcher(new SimpleFSDirectory(new File(indexDirArticle)));
         } catch (IOException e) {
-            System.out.println("Надо бы индекс сначала..");
-        //    e.printStackTrace();
+            log.info("Must create index before use UI");
         }
     }
 
