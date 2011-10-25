@@ -1,5 +1,12 @@
 package ru.brandanalyst.frontend.models;
 
+/**
+ * Created by IntelliJ IDEA.
+ * User: Dmitry Batkovich
+ * Date: 10/20/11
+ * Time: 12:54 PM
+ */
+
 public class SimplyBrandForWeb {
        private long id;
        private String name;

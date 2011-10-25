@@ -4,10 +4,13 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
+
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.ArrayList;
+
 import org.apache.log4j.Logger;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -28,19 +31,19 @@ public class GraphProvider {
     }
 
     public void writeGraph(Graph graph, long brandId, long tickerId) {
-         for(SingleDot d: graph.getGraph()) {
-             writeSingleDot(d, brandId, tickerId);
-         }
+        for (SingleDot d : graph.getGraph()) {
+            writeSingleDot(d, brandId, tickerId);
+        }
     }
 
     public void writeSingleDot(SingleDot dot, long brandId, long tickerId) {
-         writeSingleDot(dot.getDate(), dot.getValue(), brandId, tickerId);
+        writeSingleDot(dot.getDate(), dot.getValue(), brandId, tickerId);
     }
 
     public void writeSingleDot(Timestamp Tstamp, double value, long brandId, long tickerId) {
-        try{
+        try {
             jdbcTemplate.update("INSERT INTO Graphs (BrandId, TickerId, Tstamp, Val) VALUES(?,?,?,?);", brandId, tickerId,
-                Tstamp, value);
+                    Tstamp, value);
         } catch (Exception e) {
             log.error("cannot write dot to db");
         }
@@ -52,8 +55,8 @@ public class GraphProvider {
 
         List<Graph> graphList = new ArrayList<Graph>();
 
-        try{
-            if(rowSet.next()) {
+        try {
+            if (rowSet.next()) {
                 String tickerName = rowSet.getString("TickerName");
                 graphList.add(new Graph(tickerName));
             } else {
@@ -65,7 +68,7 @@ public class GraphProvider {
                 Timestamp curTstamp = rowSet.getTimestamp("Tstamp");
                 double curValue = rowSet.getDouble("Val");
                 String curTicker = rowSet.getString("TickerName");
-                if(curTicker.indexOf(graphList.get(curGraph).getTicker()) != 0) {
+                if (curTicker.indexOf(graphList.get(curGraph).getTicker()) != 0) {
                     Graph graph = new Graph(curTicker);
                     graphList.add(graph);
                     curGraph++;

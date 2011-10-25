@@ -6,6 +6,7 @@ import net.sf.xfresh.core.Yalet;
 import net.sf.xfresh.core.xml.Xmler;
 import ru.brandanalyst.frontend.services.SearchManager;
 import ru.brandanalyst.frontend.models.SimplyBrandForWeb;
+
 import java.util.List;
 
 /**
@@ -16,14 +17,14 @@ import java.util.List;
  */
 public class SearchYalet implements Yalet {
 
-    SearchManager searchManager;
+    private SearchManager searchManager;
 
     public void setSearchManager(SearchManager searchManager) {
         this.searchManager = searchManager;
     }
 
     public void process(InternalRequest req, InternalResponse res) {
-	    String query = req.getParameter("query");
+        String query = req.getParameter("query");
 
         if (query.isEmpty()) {
             Xmler.Tag ans = Xmler.tag("answer", "Пустой запрос. Query: " + query);
@@ -33,8 +34,8 @@ public class SearchYalet implements Yalet {
 
         List<SimplyBrandForWeb> brandIssuance = searchManager.getSearchResultByBrand(query);
 
-        if(brandIssuance != null) {
-            if(brandIssuance.size() != 0) {
+        if (brandIssuance != null) {
+            if (brandIssuance.size() != 0) {
                 res.add(brandIssuance);
             } else {
                 Xmler.Tag ans = Xmler.tag("answer", "Ничего не найдено. Query: " + query);

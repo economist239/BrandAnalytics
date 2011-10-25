@@ -11,7 +11,6 @@ import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.sql.Timestamp;
 import java.util.Map;
 
@@ -23,7 +22,7 @@ import java.util.Map;
  */
 public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
-    int i = 0;
+    //private int i = 0;
     private static final Logger log = Logger.getLogger(RiaNewsScraperRuntimeListener.class);
 
     protected SimpleJdbcTemplate jdbcTemplate;
@@ -46,7 +45,7 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
         int year = Integer.parseInt(stringDate.substring(6, 10));
 
         Calendar calendar = Calendar.getInstance();
-        calendar.set(year,month,day,hour,minute);
+        calendar.set(year, month, day, hour, minute);
         Timestamp timestamp = new Timestamp(calendar.getTime().getTime());
 
         return timestamp;
@@ -103,7 +102,7 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
             Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
 
-            System.out.println(i++);
+            //System.out.println(i++);
             articleProvider.writeArticleToDataStore(article);
             log.info("RIA: article added...");
         }

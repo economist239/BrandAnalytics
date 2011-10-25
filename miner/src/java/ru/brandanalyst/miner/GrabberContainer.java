@@ -16,15 +16,15 @@ public class GrabberContainer {
 
     private List<Grabber> grabberList;
 
-    public void setGrabberList (List<Grabber> grabberList) {
+    public void setGrabberList(List<Grabber> grabberList) {
         this.grabberList = grabberList;
     }
 
-    public void afterPropertiesSet () {
+    public void afterPropertiesSet() {
 
         log.info("miner started...");
-        if(grabberList!=null){
-            for(Grabber g: grabberList) {
+        if (grabberList != null) {
+            for (Grabber g : grabberList) {
                 g.grab();
             }
         }

@@ -37,12 +37,12 @@ public class Searcher {
     private IndexSearcher indexSearcherArticle;
 
     public void setIndexDirBrand(String indexDirBrand) {
-        this.indexDirBrand   = indexDirBrand;
-	}
-	
-	public void setIndexDirArticle(String indexDirArticle) {
+        this.indexDirBrand = indexDirBrand;
+    }
+
+    public void setIndexDirArticle(String indexDirArticle) {
         this.indexDirArticle = indexDirArticle;
-	}
+    }
 
     public void getReadyForSearch() {
         try {
@@ -57,32 +57,34 @@ public class Searcher {
 
         Analyzer analyzer; // your can change version
         analyzer = new RussianAnalyzer(Version.LUCENE_34);
-        QueryParser parser = new QueryParser(Version.LUCENE_34,"Description",analyzer);
+        QueryParser parser = new QueryParser(Version.LUCENE_34, "Description", analyzer);
         Query search = parser.parse(query);
 
-        ScoreDoc[] hits = indexSearcherBrand.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter;
+        ScoreDoc[] hits = indexSearcherBrand.search(search, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
         List<Brand> lst = new ArrayList<Brand>();
-        for(int i = 0 ; i < hits.length ; i++ ){
+        for (int i = 0; i < hits.length; i++) {
             Document doc = indexSearcherBrand.doc(hits[i].doc);
             lst.add(brandMap(doc));
         }
-        return  lst;
+        return lst;
     }
+
     public List<Article> searchArticleByContent(String query) throws ParseException, IOException {
 
         Analyzer analyzer;
         analyzer = new RussianAnalyzer(Version.LUCENE_34); // your can change version
-        QueryParser parser = new QueryParser(Version.LUCENE_34,"Content",analyzer);
+        QueryParser parser = new QueryParser(Version.LUCENE_34, "Content", analyzer);
         Query search = parser.parse(query);
 
-        ScoreDoc[] hits = indexSearcherArticle.search(search,null,MAX_DOC).scoreDocs; // you maybe change null on filter;
+        ScoreDoc[] hits = indexSearcherArticle.search(search, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
         List<Article> lst = new ArrayList<Article>();
-        for(int i = 0 ; i < hits.length ; i++ ){
+        for (int i = 0; i < hits.length; i++) {
             Document doc = indexSearcherArticle.doc(hits[i].doc);
             lst.add(articleMap(doc));
         }
-        return  lst;
+        return lst;
     }
+
     private Brand brandMap(Document doc) {
         return new Brand(
                 Long.parseLong(doc.get("Id")),
@@ -92,6 +94,7 @@ public class Searcher {
                 Long.parseLong(doc.get("BranchId"))
         );
     }
+
     private Article articleMap(Document doc) {
         return new Article(
                 Long.parseLong(doc.get("Id")),

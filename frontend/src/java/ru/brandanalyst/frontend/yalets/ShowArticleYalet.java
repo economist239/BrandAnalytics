@@ -15,13 +15,13 @@ import ru.brandanalyst.core.model.Article;
  */
 public class ShowArticleYalet extends AbstractDbYalet {
 
-        public void process(InternalRequest req, InternalResponse res) {
+    public void process(InternalRequest req, InternalResponse res) {
 
         long articleId = req.getLongParameter("id");
 
         ArticleManager manager = new ArticleManager(jdbcTemplate);
         Article article = manager.getArticle(articleId);
-        if(article != null) {
+        if (article != null) {
             res.add(article);
         } else {
             Xmler.Tag ans = Xmler.tag("error", "Трололо");

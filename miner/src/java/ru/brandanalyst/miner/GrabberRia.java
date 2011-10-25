@@ -23,7 +23,7 @@ public class GrabberRia extends Grabber {
 
     @Override
     public void setConfig(String config) {
-        this.config=config;
+        this.config = config;
     }
 
     @Override
@@ -34,14 +34,14 @@ public class GrabberRia extends Grabber {
     @Override
     public void grab() {
         try {
-            for(Brand b : new BrandProvider(jdbcTemplate).getAllBrands()){
+            for (Brand b : new BrandProvider(jdbcTemplate).getAllBrands()) {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.setDebug(true);
                 scraper.addRuntimeListener(new RiaNewsScraperRuntimeListener(this.jdbcTemplate));
-                scraper.addVariableToContext("riaQueryURL",searchURL + b.getName() + "&p=");//"$p" - suffix for result page number
-                scraper.addVariableToContext("riaAbsoluteURL",sourceURL);
-                scraper.addVariableToContext("brandId",Long.toString(b.getId()));
+                scraper.addVariableToContext("riaQueryURL", searchURL + b.getName() + "&p="); //"$p" - suffix for result page number
+                scraper.addVariableToContext("riaAbsoluteURL", sourceURL);
+                scraper.addVariableToContext("brandId", Long.toString(b.getId()));
                 scraper.execute();
             }
             log.error("Ria: succecsful");

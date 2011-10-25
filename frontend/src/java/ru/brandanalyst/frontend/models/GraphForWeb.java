@@ -1,6 +1,5 @@
 package ru.brandanalyst.frontend.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

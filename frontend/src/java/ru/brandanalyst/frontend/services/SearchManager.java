@@ -16,10 +16,10 @@ public class SearchManager {
 
     public List<SimplyBrandForWeb> getSearchResultByBrand(String query) {
 
-        try{
+        try {
             List<SimplyBrandForWeb> brandList = new ArrayList<SimplyBrandForWeb>();
-            for (Brand b: searcher.searchBrandByDescription(query)) {
-                brandList.add(new SimplyBrandForWeb(b.getId(),b.getName(),b.getDescription(),b.getWebsite()));
+            for (Brand b : searcher.searchBrandByDescription(query)) {
+                brandList.add(new SimplyBrandForWeb(b.getId(), b.getName(), b.getDescription(), b.getWebsite()));
             }
             return brandList;
         } catch (Exception e) {

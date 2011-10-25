@@ -6,9 +6,6 @@ import net.sf.xfresh.core.xml.Xmler;
 import net.sf.xfresh.db.AbstractDbYalet;
 import ru.brandanalyst.frontend.services.WideBrandInfoManager;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -23,7 +20,7 @@ public class WideBrandInfoYalet extends AbstractDbYalet {
 
         WideBrandInfoManager manager = new WideBrandInfoManager(jdbcTemplate);
 
-        if(manager.getBrand(brandId) != null) {
+        if (manager.getBrand(brandId) != null) {
             res.add(manager.getArticlesForBrand(brandId));
             res.add(manager.getBrand(brandId));
             res.add(manager.getGraphsForBrand(brandId));

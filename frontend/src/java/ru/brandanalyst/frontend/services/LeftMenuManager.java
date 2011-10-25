@@ -1,6 +1,5 @@
 package ru.brandanalyst.frontend.services;
 
-import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
@@ -27,10 +26,10 @@ public class LeftMenuManager {
 
         BrandProvider brandProvider = new BrandProvider(jdbcTemplate);
 
-        try{
+        try {
             List<SimplyBrandForWeb> brandList = new ArrayList<SimplyBrandForWeb>();
-            for (Brand b: brandProvider.getAllBrands()) {
-                brandList.add(new SimplyBrandForWeb(b.getId(),b.getName(),b.getDescription(),b.getWebsite()));
+            for (Brand b : brandProvider.getAllBrands()) {
+                brandList.add(new SimplyBrandForWeb(b.getId(), b.getName(), b.getDescription(), b.getWebsite()));
             }
             return brandList;
         } catch (Exception e) {

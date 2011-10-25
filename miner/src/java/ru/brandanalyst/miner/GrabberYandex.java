@@ -1,7 +1,7 @@
 package ru.brandanalyst.miner;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import org.webharvest.runtime.*;
+import org.webharvest.runtime.Scraper;
 import org.webharvest.definition.ScraperConfiguration;
 import ru.brandanalyst.miner.listener.YandexNewsScraperRuntimeListener;
 import org.apache.log4j.Logger;
@@ -33,8 +33,9 @@ public class GrabberYandex extends Grabber {
             exception.printStackTrace();
         }
     }
-    public static void main(String[] args){
-        GrabberYandex grabberYandex= new GrabberYandex();
+
+    public static void main(String[] args) {
+        GrabberYandex grabberYandex = new GrabberYandex();
         grabberYandex.setConfig("./miner/configs/config2.xml");
         grabberYandex.grab();
     }

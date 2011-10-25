@@ -17,6 +17,7 @@ import java.util.ArrayList;
  */
 public class WideBrandInfoManager {
 
+    private final static int NUM_ARTICLES = 6;
     private final SimpleJdbcTemplate jdbcTemplate;
 
     public WideBrandInfoManager(SimpleJdbcTemplate jdbcTemplate) {
@@ -29,20 +30,19 @@ public class WideBrandInfoManager {
     }
 
     public List<GraphForWeb> getGraphsForBrand(long brandId) {
-        GraphProvider graphProvider = new GraphProvider(jdbcTemplate);
-        List<Graph> graphList = graphProvider.getGraphsByBrandId(brandId);
+    //    GraphProvider graphProvider = new GraphProvider(jdbcTemplate);
+    //    List<Graph> graphList = graphProvider.getGraphsByBrandId(brandId);
         List<GraphForWeb> graphsList = new ArrayList<GraphForWeb>();
         return graphsList;
     }
 
     public List<SimplyArticleForWeb> getArticlesForBrand(long brandId) {
-        List<SimplyArticleForWeb> articlesList = new ArrayList<SimplyArticleForWeb>();
         ArticleProvider articleProvider = new ArticleProvider(jdbcTemplate);
-        List<Article> articles = articleProvider.getTopArticles(brandId, 6);
+        List<Article> articles = articleProvider.getTopArticles(brandId, NUM_ARTICLES);
         List<SimplyArticleForWeb> simplyArticles = new ArrayList<SimplyArticleForWeb>();
         //TODO getting source info by id
-        for(Article a: articles) {
-            simplyArticles.add(new SimplyArticleForWeb(a.getTitle(),a.getId(),firstPhrase(a.getContent()),Long.toString(a.getSourceId()),"ya.ru"));
+        for (Article a : articles) {
+            simplyArticles.add(new SimplyArticleForWeb(a.getTitle(), a.getId(), firstPhrase(a.getContent()), Long.toString(a.getSourceId()), "ya.ru"));
         }
         return simplyArticles;
     }
@@ -52,7 +52,7 @@ public class WideBrandInfoManager {
         int point = text.indexOf('.');
         String t2 = text.substring(point + 1);
         int p = t2.indexOf('.');
-        return t2.substring(0,p) + "...";
-    //    return text;
+        return t2.substring(0, p) + "...";
+        //    return text;
     }
 }

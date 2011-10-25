@@ -15,7 +15,7 @@ import ru.brandanalyst.core.db.mapper.BrandMapper;
 import java.util.List;
 
 public class BrandProvider {
-    private static final Logger log  = Logger.getLogger(BrandProvider.class);
+    private static final Logger log = Logger.getLogger(BrandProvider.class);
 
     private SimpleJdbcTemplate jdbcTemplate; //
     private BrandMapper brandMapper;
@@ -30,9 +30,9 @@ public class BrandProvider {
     }
 
     public void writeBrandToDataStore(Brand brand) {
-        try{
+        try {
             jdbcTemplate.update("INSERT INTO Brand (Name, Description, Website, BranchId) VALUES(?,?,?,?);", brand.getName(),
-                brand.getDescription(),brand.getWebsite(),brand.getBranchId());
+                    brand.getDescription(), brand.getWebsite(), brand.getBranchId());
         } catch (Exception e) {
             log.error("cannot wrtie brand to db");
         }
@@ -50,7 +50,7 @@ public class BrandProvider {
     }
 
     public Brand getBrandById(long brand_id) {
-        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Id = " + Long.toString(brand_id) , brandMapper);
+        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Id = " + Long.toString(brand_id), brandMapper);
         return list.get(0);
     }
 

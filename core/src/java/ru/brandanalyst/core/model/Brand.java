@@ -68,5 +68,4 @@ public class Brand {
     public void setBranch(long branchId) {
         this.branchId = branchId;
     }
-    
 }

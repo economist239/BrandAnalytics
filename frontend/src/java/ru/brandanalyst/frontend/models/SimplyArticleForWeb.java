@@ -6,6 +6,7 @@ package ru.brandanalyst.frontend.models;
  * Date: 10/20/11
  * Time: 12:54 PM
  */
+
 public class SimplyArticleForWeb {
     private String name;
     private long id;
