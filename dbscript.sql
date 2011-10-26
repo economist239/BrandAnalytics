@@ -89,7 +89,7 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "ФИНАМ","всякая бурда","finam.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Коммерсант", "унылые новости", "kommersant.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Газета.RU", "новости", "gazeta.ru");
-
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Фонтанка.RU", "новости", "fontanka.ru");
 INSERT INTO Ticker (TickerName) VALUES("Упоминание в Twitter");
 
 INSERT INTO Brand (Name, Description, Website, BranchId) VALUES("Apple","Apple - is not Pineapple","http://apple.com",1);

@@ -10,8 +10,8 @@
     <bean class="ru.brandanalyst.miner.GrabberContainer">
         <property name="grabberList">
            <list>
-                <bean class="ru.brandanalyst.miner.GrabberRia">
-                    <property name="config" value="./miner/configs/riaNews1.xml"/>
+                <bean class="ru.brandanalyst.miner.GrabberFontanka">
+                    <property name="config" value="./miner/configs/fontankaNews1.xml"/>
                 </bean>
             <!--    <bean class="ru.brandanalyst.miner.GrabberTwitter"/>   -->
             </list>

@@ -16,7 +16,7 @@
 	</xpath>
 </var-def>
 <var-def name="riaNewsURLs">
-</var-def>	
+</var-def>
 
 <while condition="${maxPage.toInt()>i.toInt()-1}" index="i">
 	<var-def name="riaNewsURLs">

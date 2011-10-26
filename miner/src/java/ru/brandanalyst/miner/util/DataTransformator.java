@@ -22,10 +22,12 @@ public final class DataTransformator {
                 toClear = toClear.replaceFirst(">", " ");
             }
         }
+        toClear = toClear.replaceAll("\n\n","\n");
         toClear = toClear.replaceAll("\t", "");
         toClear = toClear.replaceAll(" {2,}", " ");
         toClear = toClear.replaceAll(" {1,}[.]", ".");
         toClear = toClear.replaceAll(" {1,}[,]", ",");
+        toClear = toClear.replaceAll("  "," ");
         return toClear;
     }
 }

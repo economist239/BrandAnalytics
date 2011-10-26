@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+
+    <!--  <var-def name="maxPage">
+      <xpath expression='/html/body/div[@id="layout"]/div[@id="content"]/div[@class="pager centered w-clear"]/div[@class="c"]/ul/li[last()-1]/a/text()'>
+          <html-to-xml>
+              <http url="${QueryURL}"/>
+          </html-to-xml>
+      </xpath>
+  </var-def>
+  <var-def name="NewsURLs">
+  </var-def>  -->
+    <!--hardcode of number of pages!!-->
+    <while condition="${100>i.toInt()}" index="i">
+        <var-def name="NewsURLs">
+            <xpath expression='/html/body//dl[@class="search-result"]/dd/a/@href'>
+                <html-to-xml>
+                    <http url="${QueryURL}${i.toInt()}"/>
+                </html-to-xml>
+            </xpath>
+        </var-def>
+
+        <loop item="oneNew" index="j">
+            <list>
+                <var name="NewsURLs"/>
+            </list>
+            <body>
+                <var-def name="oneNewURL">
+                    <html-to-xml>
+                        <http url="${AbsoluteURL}${oneNew}"/>
+                    </html-to-xml>
+                </var-def>
+
+                <var-def name="newsDate">
+                    <xpath expression='/html/body//div[@class="newsinfo"]//div/text()'>
+                        <var name="oneNewURL"/>
+                    </xpath>
+                </var-def>
+
+                <var-def name="newsFullText">
+                    <xpath expression='/html/body//div[@class="article"]//p/text()'>
+                        <var name="oneNewURL"/>
+                    </xpath>
+                </var-def>
+
+                <var-def name="newsTitle">
+                    <xpath expression='/html/body//h1/text()'>
+                        <var name="oneNewURL"/>
+                    </xpath>
+                </var-def>
+
+            </body>
+        </loop>
+    </while>
+
+
+</config>

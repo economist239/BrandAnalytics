@@ -22,7 +22,7 @@ import java.util.Map;
  */
 public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
-    //private int i = 0;
+    private int i = 0;
     private static final Logger log = Logger.getLogger(RiaNewsScraperRuntimeListener.class);
 
     protected SimpleJdbcTemplate jdbcTemplate;
@@ -102,8 +102,8 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
             Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
 
-            //System.out.println(i++);
-            articleProvider.writeArticleToDataStore(article);
+            System.out.println(i++);
+            //articleProvider.writeArticleToDataStore(article);
             log.info("RIA: article added...");
         }
         if ("empty".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
