@@ -43,6 +43,9 @@ public class Analyzer implements InitializingBean {
         log.info("analyzing started...");
         pushArticlesDirtyToPure();
         pushBrandsDirtyToPure();
-        //AnalyzerTwitter();
+
+        //makes graph for all articles
+        GraphsAnalyzer graphsAnalyzer = new GraphsAnalyzer(pureJdbcTemplate, dirtyJdbcTemplate);
+        graphsAnalyzer.analyze();
     }
 }
