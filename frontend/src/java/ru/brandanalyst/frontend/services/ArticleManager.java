@@ -9,6 +9,7 @@ import ru.brandanalyst.core.db.provider.ArticleProvider;
  * User: Dmitry Batkovich
  * Date: 10/25/11
  * Time: 11:41 PM
+ * article service (get article from db and push it to yalet)
  */
 public class ArticleManager {
 

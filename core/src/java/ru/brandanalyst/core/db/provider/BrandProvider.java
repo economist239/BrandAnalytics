@@ -5,6 +5,7 @@ package ru.brandanalyst.core.db.provider;
  * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 17:14
+ * this class provides brands from DB
  */
 
 import org.apache.log4j.Logger;

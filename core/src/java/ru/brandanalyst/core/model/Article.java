@@ -6,6 +6,7 @@ import java.sql.Timestamp;
  * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 20:32
+ * general model of article
  */
 public class Article {
     private long id;

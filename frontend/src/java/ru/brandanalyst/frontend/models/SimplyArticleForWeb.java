@@ -5,6 +5,7 @@ package ru.brandanalyst.frontend.models;
  * User: Dmitry Batkovich
  * Date: 10/20/11
  * Time: 12:54 PM
+ * simple model of article for web
  */
 
 public class SimplyArticleForWeb {

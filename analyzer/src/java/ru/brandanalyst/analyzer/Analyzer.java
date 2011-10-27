@@ -29,23 +29,24 @@ public class Analyzer implements InitializingBean {
 
     private final void pushBrandsDirtyToPure() {
         BrandProvider from = new BrandProvider(dirtyJdbcTemplate);
-        BrandProvider to = new BrandProvider(pureJdbcTemplate);
-        to.writeListOfBrandsToDataStore(from.getAllBrands());
+        System.out.print(from.getAllBrands().size());
+//        BrandProvider to = new BrandProvider(pureJdbcTemplate);
+//        to.writeListOfBrandsToDataStore(from.getAllBrands());
     }
 
     private final void pushArticlesDirtyToPure() {
         ArticleProvider from = new ArticleProvider(dirtyJdbcTemplate);
-        ArticleProvider to = new ArticleProvider(pureJdbcTemplate);
-        to.writeListOfArticlesToDataStore(from.getAllArticles());
+//        ArticleProvider to = new ArticleProvider(pureJdbcTemplate);
+//        to.writeListOfArticlesToDataStore(from.getAllArticles());
     }
 
     public final void afterPropertiesSet() {
         log.info("analyzing started...");
-        pushArticlesDirtyToPure();
+    //    pushArticlesDirtyToPure();
         pushBrandsDirtyToPure();
 
         //makes graph for all articles
-        GraphsAnalyzer graphsAnalyzer = new GraphsAnalyzer(pureJdbcTemplate, dirtyJdbcTemplate);
-        graphsAnalyzer.analyze();
+  //      GraphsAnalyzer graphsAnalyzer = new GraphsAnalyzer(pureJdbcTemplate, dirtyJdbcTemplate);
+  //      graphsAnalyzer.analyze();
     }
 }

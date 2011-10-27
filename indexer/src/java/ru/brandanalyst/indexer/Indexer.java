@@ -23,6 +23,7 @@ import java.util.List;
  * User: Nikolaj Karpov
  * Date: 10.10.11
  * Time: 22:55
+ * class of indexer that index articles and brands
  */
 public class Indexer implements InitializingBean {
 

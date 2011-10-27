@@ -11,6 +11,7 @@ import java.sql.SQLException;
  * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 20:26
+ * Mapping article from row of DB
  */
 public class ArticleMapper implements ParameterizedRowMapper<Article> {
     public final Article mapRow(final ResultSet resultSet, final int i) throws SQLException {

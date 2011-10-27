@@ -8,6 +8,7 @@ import java.util.List;
  * User: Dmitry Batkovich
  * Date: 10/16/11
  * Time: 7:18 PM
+ * general model of graph
  */
 public class Graph {
     private List<SingleDot> graph;

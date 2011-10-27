@@ -14,10 +14,10 @@
                 <xsl:attribute name="href">showbrand.xml?id=<xsl:value-of select="@id"/></xsl:attribute>
                 <xsl:value-of select="name"/><br/>
             </a></h2>
-            <h5><xsl:value-of select="description"/></h5>
+            <p><xsl:value-of select="description"/></p>
             <a>
-                <xsl:attribute name="href">http://<xsl:value-of select="website"/></xsl:attribute>
-                visit official website of company<br/>
+                <xsl:attribute name="href"><xsl:value-of select="website"/></xsl:attribute>
+                оффициальный сайт компании<br/>
             </a>
             <hr align="left"/>
         </xsl:for-each>

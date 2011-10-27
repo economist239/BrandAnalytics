@@ -16,6 +16,7 @@ import org.apache.log4j.Logger;
  * User: Dmitry Batkovich
  * Date: 10/16/11
  * Time: 7:54 PM
+ * this class provides graphs from DB
  */
 public class GraphProvider {
     private static final Logger log = Logger.getLogger(GraphProvider.class);
@@ -60,6 +61,7 @@ public class GraphProvider {
                 String tickerName = rowSet.getString("TickerName");
                 graphList.add(new Graph(tickerName));
             } else {
+            //    System.out.println("asdfghjkl;");
                 return null;
             }
 
@@ -75,8 +77,10 @@ public class GraphProvider {
                 }
                 graphList.get(curGraph).addPoint(new SingleDot(curTstamp, curValue));
             } while (rowSet.next());
+            //System.out.println(graphList.size()+"asdzxc");
             return graphList;
         } catch (Exception e) {
+            //            System.out.println("asd980980980");
             log.error("can't get graphs from db");
             return null;
         }

@@ -29,6 +29,26 @@ public class TestGraphsFromDB {
         double val = 21;
         dataStore.writeSingleDot(t, val, 1, 1);
 
+        t = new Timestamp(91, 02, 29, 1, 1, 1, 1);
+        val = 21;
+        dataStore.writeSingleDot(t, val, 1, 1);
+
+        t = new Timestamp(92, 02, 29, 1, 1, 1, 1);
+        val = 22;
+        dataStore.writeSingleDot(t, val, 1, 1);
+
+        t = new Timestamp(93, 02, 29, 1, 1, 1, 1);
+        val = 23;
+        dataStore.writeSingleDot(t, val, 1, 1);
+
+        t = new Timestamp(94, 02, 29, 1, 1, 1, 1);
+        val = 24;
+        dataStore.writeSingleDot(t, val, 1, 1);
+
+        t = new Timestamp(95, 02, 29, 1, 1, 1, 1);
+        val = 25;
+        dataStore.writeSingleDot(t, val, 1, 1);
+
         List<Graph> list = dataStore.getGraphsByBrandId(1);
         for(Graph g: list) {
             for(SingleDot d: g.getGraph()) {

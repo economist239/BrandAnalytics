@@ -25,8 +25,8 @@ import java.sql.Timestamp;
  * User: Nikolaj Karpov
  * Date: 11.10.11
  * Time: 12:24
+ * class of searcher that search by articles and brands
  */
-//TODO method searchByArticles
 public class Searcher {
     private static final Logger log = Logger.getLogger(Searcher.class);
     private final int MAX_DOC = 1000;

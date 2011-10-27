@@ -7,6 +7,7 @@ import org.webharvest.runtime.Scraper;
 import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.miner.listener.FontankaScraperRuntimeListener;
+import ru.brandanalyst.miner.util.DataTransformator;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,13 +40,15 @@ public class GrabberFontanka extends Grabber {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.addRuntimeListener(new FontankaScraperRuntimeListener(jdbcTemplate));
-                scraper.addVariableToContext("QueryURL", beginSearchURL + b.getName() + endSearchURL); //"$p" - suffix for result page number
+                String query = DataTransformator.stringToHexQueryString(b.getName());
+                scraper.addVariableToContext("QueryURL", beginSearchURL + query + endSearchURL); //"$p" - suffix for result page number
                 scraper.addVariableToContext("AbsoluteURL", sourceURL);
                 scraper.addVariableToContext("brandId", Long.toString(b.getId()));
                 scraper.setDebug(true);
                 scraper.execute();
+                log.info("successful processing brand " + b.getName());
             }
-            log.error("Fontanka: succecsful");
+            log.info("Fontanka: succecsful");
         } catch (Exception exception) {
             exception.printStackTrace();
             log.error("cannot process Fontanka");

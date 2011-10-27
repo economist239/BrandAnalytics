@@ -6,6 +6,7 @@ import java.sql.Timestamp;
  * User: Dmitry Batkovich
  * Date: 10/16/11
  * Time: 7:22 PM
+ * general model of one dot
  */
 public class SingleDot {
     private final Timestamp date;

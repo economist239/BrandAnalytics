@@ -5,6 +5,7 @@ package ru.brandanalyst.core.model;
  * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 21:15
+ * general model of infosource
  */
 public class InfoSource {
     private int id;

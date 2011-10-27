@@ -22,7 +22,7 @@ import java.util.Map;
  */
 public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
 
-    //private int i = 0;
+    private int i = 0;
     private static final Logger log = Logger.getLogger(FontankaScraperRuntimeListener.class);
 
     protected SimpleJdbcTemplate jdbcTemplate;
@@ -81,9 +81,8 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
             String articleLink = scraper.getContext().get("AbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
             Article article = new Article(-1, brandId, 10, articleTitle, articleContent, articleLink, articleTimestamp, 0);
 
-            //System.out.println(i++);
             articleProvider.writeArticleToDataStore(article);
-            log.info("Fontanka: article added...");
+            log.info("Fontanka: " + ++i + " article added... title = " + articleTitle);
         }
     }
 

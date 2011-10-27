@@ -25,7 +25,7 @@
         <jar destfile="${dist.dir}/miner.jar" basedir="${classes.dir}" includes="ru/brandanalyst/miner/**/*.*">
             <manifest>
                 <attribute name="Built-By" value="miner: build.xml"/>
-                <attribute name="Class-Path" value="${libs_manifest}/"/>
+                <attribute name="Class-Path" value="${libs_manifest} ${build.dir}/log4j.xml"/>
             </manifest>
         </jar>
 

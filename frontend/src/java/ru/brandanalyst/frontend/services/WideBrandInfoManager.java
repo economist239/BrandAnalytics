@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * User: Dmitry Batkovich
  * Date: 10/19/11
  * Time: 7:34 PM
+ * gets wide information about brand from db
  */
 public class WideBrandInfoManager {
 
@@ -30,10 +31,17 @@ public class WideBrandInfoManager {
     }
 
     public List<GraphForWeb> getGraphsForBrand(long brandId) {
-    //    GraphProvider graphProvider = new GraphProvider(jdbcTemplate);
-    //    List<Graph> graphList = graphProvider.getGraphsByBrandId(brandId);
-        List<GraphForWeb> graphsList = new ArrayList<GraphForWeb>();
-        return graphsList;
+        GraphProvider graphProvider = new GraphProvider(jdbcTemplate);
+        List<Graph> graphList = graphProvider.getGraphsByBrandId(brandId);
+        List<GraphForWeb> simpleGraphsList = new ArrayList<GraphForWeb>();
+        for (Graph g: graphList) {
+            GraphForWeb graphForWeb = new GraphForWeb(g.getTicker());
+            for (SingleDot d: g.getGraph()) {
+                graphForWeb.addDot(d);
+            }
+            simpleGraphsList.add(graphForWeb);
+        }
+        return simpleGraphsList;
     }
 
     public List<SimplyArticleForWeb> getArticlesForBrand(long brandId) {

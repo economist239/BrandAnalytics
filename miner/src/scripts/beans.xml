@@ -10,12 +10,15 @@
     <bean class="ru.brandanalyst.miner.GrabberContainer">
         <property name="grabberList">
            <list>
-                <bean class="ru.brandanalyst.miner.GrabberWikipedia">
+               <bean class="ru.brandanalyst.miner.GrabberWikipedia">
                     <property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>
                 </bean>
-               <!--wikibrands.txt;resources/wikibrands.xml-->
+              <!--&lt;!&ndash;wikibrands.txt;resources/wikibrands.xml&ndash;&gt;-->
             <!--    <bean class="ru.brandanalyst.miner.GrabberTwitter"/>   -->
-            </list>
+       <!--         <bean class="ru.brandanalyst.miner.GrabberRia">
+                    <property name="config" value="miner/configs/riaNews1.xml"/>
+                </bean>   -->
+           </list>
         </property>
     </bean>
 

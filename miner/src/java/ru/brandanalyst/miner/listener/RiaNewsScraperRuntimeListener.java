@@ -102,9 +102,10 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
             Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
 
-            System.out.println(i++);
-            //articleProvider.writeArticleToDataStore(article);
-            log.info("RIA: article added...");
+            articleProvider.writeArticleToDataStore(article);
+            log.info("RIA: " + ++i + " articles added... title = " + articleTitle);
+            if (i / 100 == 0)
+            System.gc();
         }
         if ("empty".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
 

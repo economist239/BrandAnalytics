@@ -7,6 +7,7 @@ import org.webharvest.runtime.Scraper;
 import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.miner.listener.RiaNewsScraperRuntimeListener;
+import ru.brandanalyst.miner.util.DataTransformator;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,12 +40,14 @@ public class GrabberRia extends Grabber {
                 Scraper scraper = new Scraper(config, ".");
                 scraper.setDebug(true);
                 scraper.addRuntimeListener(new RiaNewsScraperRuntimeListener(this.jdbcTemplate));
-                scraper.addVariableToContext("riaQueryURL", searchURL + b.getName() + "&p="); //"$p" - suffix for result page number
+                String query = DataTransformator.stringToQueryString(b.getName());
+                scraper.addVariableToContext("riaQueryURL", searchURL + query + "&p="); //"$p" - suffix for result page number
                 scraper.addVariableToContext("riaAbsoluteURL", sourceURL);
                 scraper.addVariableToContext("brandId", Long.toString(b.getId()));
                 scraper.execute();
+                log.info("successful processing brand " + b.getName());
             }
-            log.error("Ria: succecsful");
+            log.info("Ria: succecsful");
             //result.add(scraper.getContext().getVar("temp").toString());
         } catch (Exception exception) {
             log.error("cannot process Ria");

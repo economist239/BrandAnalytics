@@ -4,8 +4,7 @@
     <xsl:include href="common.xsl"/>
 
     <xsl:template name="main">
-         <h4>Бред Аналитик - инновация настоящего. Парадигма будущего.</h4><br/>
+         <h4>Бренд Аналитик - инновация настоящего, парадигма будущего.</h4><br/>
          <img src="CaptainObvious.jpeg" width="400" height="400"/>
-         <h4>Бред Аналитик - будущее. (Д. А. Медведев)</h4>
     </xsl:template>
 </xsl:stylesheet>

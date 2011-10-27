@@ -1,14 +1,13 @@
 package ru.brandanalyst.miner;
 
-import org.apache.log4j.Logger;
-
 import java.util.List;
-
+import org.apache.log4j.Logger;
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 10/14/11
  * Time: 11:47 AM
+ * container of grabbes that process all grabbers
  */
 public class GrabberContainer {
 

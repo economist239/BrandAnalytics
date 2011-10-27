@@ -13,6 +13,7 @@ import java.util.List;
  * User: Dmitry Batkovich
  * Date: 10/16/11
  * Time: 4:10 PM
+ * left menu service (gets list of article from db)
  */
 public class LeftMenuManager {
 

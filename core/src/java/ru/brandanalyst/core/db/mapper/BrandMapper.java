@@ -11,7 +11,7 @@ import java.sql.SQLException;
  * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 17:17
- * To change this template use File | Settings | File Templates.
+ * Mapping brand from row of DB
  */
 public class BrandMapper implements ParameterizedRowMapper<Brand> {
     public final Brand mapRow(final ResultSet resultSet, final int i) throws SQLException {

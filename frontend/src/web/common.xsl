@@ -18,7 +18,7 @@
                 <script src="raphael/analytics.js"></script>
 
                 <title>
-                    <xsl:text>Бред Аналитик</xsl:text>
+                    <xsl:text>Brand Analytics</xsl:text>
                 </title>
                 <link href="bootstrap/bootstrap.css" rel="stylesheet"/>
                 <style type="text/css">
@@ -31,10 +31,10 @@
                 <div class="topbar" data-scrollspy="scrollspy">
                     <div class="topbar-inner">
                         <div class="container">
-                            <a class="brand" href="index.html">Brand Analytics</a>
+                            <a class="brand" href="index.xml">Brand Analytics</a>
                             <ul class="nav">
                                 <li class="active" valign="center">
-                                <p>Бред Аналитик - гомоморфный образ группы изоморфен фактор группе по ядру гомоморфизма
+                                <p>Инновация настоящего. Парадигма будущего.
                                 </p>
                                 </li>
                             </ul>
@@ -74,7 +74,7 @@
             <div>
                 <form method="get" action="/search.xml" align="center">
                     <input class="xlarge" type="text" name="query" size="50"/>
-                    <input class="btn primary" type="submit" value="побрендить"/>
+                    <input class="btn primary" type="submit" value="поиск"/>
                 </form>
             </div>
 
@@ -89,7 +89,7 @@
     </xsl:template>
 
     <xsl:template match="page/data[@id='showLeftMenu']" mode="show">
-        <h5>Все, что есть у нас:</h5>
+        <h5>Бренды для анализа:</h5>
     </xsl:template>
     <xsl:template match="page/data[@id='showLeftMenu']/collection" mode="show">
         <ul>

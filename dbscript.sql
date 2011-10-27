@@ -90,10 +90,7 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Коммерсант", "унылые новости", "kommersant.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Газета.RU", "новости", "gazeta.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Фонтанка.RU", "новости", "fontanka.ru");
-INSERT INTO Ticker (TickerName) VALUES("Упоминание в Twitter");
-
-INSERT INTO Brand (Name, Description, Website, BranchId) VALUES("Apple","Apple - is not Pineapple","http://apple.com",1);
-INSERT INTO Brand (Name, Description, Website, BranchId) VALUES("Microsoft","Apple - is not Astrosoft","http://microsoft.com",1);
+INSERT INTO Ticker (TickerName) VALUES("Статистика упоминания в новостях");
 
 drop database if exists BApure;
 create database BApure default character set utf8 collate utf8_bin;
@@ -186,10 +183,8 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "ФИНАМ","всякая бурда","finam.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Коммерсант", "унылые новости", "kommersant.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Газета.RU", "новости", "gazeta.ru");
+INSERT INTO Ticker (TickerName) VALUES("Статистика упоминания в новостях");
 
-INSERT INTO Ticker (TickerName) VALUES("Упоминание в Twitter");
-
-INSERT INTO Brand (Name, Description, Website, BranchId) VALUES("Apple","Apple - is not Pineapple","http://apple.com",1);
 
 
 

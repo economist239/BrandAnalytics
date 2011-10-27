@@ -12,6 +12,7 @@ import java.util.List;
  * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 22:07
+ * this class provides articles from DB
  */
 public class ArticleProvider {
     private static final Logger log = Logger.getLogger(ArticleProvider.class);
@@ -64,7 +65,7 @@ public class ArticleProvider {
     }
 
     public List<Article> getTopArticles(long brandId, int topSize) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article ORDER BY Tstamp DESC LIMIT " + topSize, articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE brandId = " + brandId + " ORDER BY Tstamp DESC LIMIT " + topSize, articleMapper);
         return list;
     }
 }

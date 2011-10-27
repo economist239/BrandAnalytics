@@ -22,14 +22,17 @@
             <classpath refid="libs"/>
         </javac>
 
+        <copy file="${project.dir}/core/src/script/log4j.xml" todir="${classes.dir}"/>
 	<!--собирается архив с классом, у которого есть метод main в папку dist-->
-        <jar destfile="${dist.dir}/core.jar" basedir="${classes.dir}" includes="ru/brandanalyst/core/**/*.* net/sf/xfresh/**/*.*" >
+        <jar destfile="${dist.dir}/core.jar" basedir="${classes.dir}" includes="ru/brandanalyst/core/**/*.* net/sf/xfresh/**/*.* log4j.xml">
             <manifest>
                 <attribute name="Built-By" value="core: build.xml"/>
                 <attribute name="Main-Class" value="net.sf.xfresh.util.Starter"/>   <!--это класс который запускается при запуске джарника-->
-                <attribute name="Class-Path" value="${libs_manifest} ${dist.dir}/searcher.jar"/>  <!--его класс пасс-->
+                <attribute name="Class-Path" value="${libs_manifest} ${dist.dir}/searcher.jar ${build.dir}"/>  <!--его класс пасс-->
             </manifest>
         </jar>
+
+        <delete file="${classes.dir}/log4j.xml"/>
 
 	<echo>core building complete</echo>
     </target>

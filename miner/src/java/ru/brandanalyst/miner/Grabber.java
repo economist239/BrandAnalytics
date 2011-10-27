@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 
 /**
  * @author Александр
+ * main single grabber class
  */
 public abstract class Grabber {
     protected SimpleJdbcTemplate jdbcTemplate;

@@ -42,7 +42,7 @@ public class GrabberWikipedia extends Grabber {
             scraper.addRuntimeListener(new WikipediaScraperRuntimeListener(jdbcTemplate));
             scraper.addVariableToContext("inputFile", linksFile);
             scraper.execute();
-            log.error("Wikipedia: succecsful");
+            log.info("Wikipedia: succecsful");
         } catch (Exception exception) {
             exception.printStackTrace();
             log.error("cannot process Wikipedia");

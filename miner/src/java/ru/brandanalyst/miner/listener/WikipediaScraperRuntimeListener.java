@@ -101,7 +101,7 @@ public class WikipediaScraperRuntimeListener implements ScraperRuntimeListener {
             Brand brand = new Brand(-1, brandName, brandDescription, brandWebsite, -1);
 
             brandProvider.writeBrandToDataStore(brand);
-            log.info("Wikipedia: brand added...");
+            log.info("Wikipedia: brand added...name = " + brandName);
         }
     }
 
