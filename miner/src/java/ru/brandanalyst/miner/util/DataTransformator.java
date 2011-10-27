@@ -1,5 +1,7 @@
 package ru.brandanalyst.miner.util;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -8,6 +10,8 @@ package ru.brandanalyst.miner.util;
  * help class to parse data
  */
 public final class DataTransformator {
+
+    public final static long TIME_LIMIT = (long)(13148208) * (long)(100000);
 
     private DataTransformator() {
 

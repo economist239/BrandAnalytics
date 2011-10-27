@@ -18,7 +18,7 @@
     <var-def name="riaNewsURLs">
     </var-def>
 
-    <while condition="${maxPage.toInt()>i.toInt()-1}" index="i">
+    <while condition="${maxPage.toInt()>i.toInt()-1}" index="i"><empty>
         <var-def name="riaNewsURLs">
             <xpath expression='/html/body/div[@id="layout"]/div[@id="content"]/ul[@id="results"]/li/a/@href'>
                 <html-to-xml>
@@ -31,7 +31,7 @@
             <list>
                 <var name="riaNewsURLs"/>
             </list>
-            <body>
+            <body><empty>
 
                 <case>
                     <if condition="${isUnusualNewsCite.toInt()==0}">
@@ -116,9 +116,9 @@
 
                     </else>
                 </case>
-            </body>
+            </empty></body>
         </loop>
-    </while>
+    </empty></while>
 
 
 </config>

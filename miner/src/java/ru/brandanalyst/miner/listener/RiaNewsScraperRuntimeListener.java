@@ -10,7 +10,10 @@ import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.sql.Timestamp;
 import java.util.Map;
 
@@ -36,18 +39,15 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
     private Timestamp evalTimestamp(String stringDate) {
         stringDate = stringDate.replace("\n", "");
         stringDate = stringDate.replace(" ", "");
-        int nano = 0;
-        int second = 0;
-        int minute = Integer.parseInt(stringDate.substring(13, 15));
-        int hour = Integer.parseInt(stringDate.substring(10, 12));
-        int day = Integer.parseInt(stringDate.substring(0, 2));
-        int month = Integer.parseInt(stringDate.substring(3, 5));
-        int year = Integer.parseInt(stringDate.substring(6, 10));
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(year, month, day, hour, minute);
-        Timestamp timestamp = new Timestamp(calendar.getTime().getTime());
-
+        stringDate = stringDate.substring(0,10);
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date;
+        try {
+            date = dateFormat.parse(stringDate);
+        }catch(ParseException e) {
+            date = new Date();
+        }
+        Timestamp timestamp = new Timestamp(date.getTime());
         return timestamp;
     }
 
@@ -100,12 +100,14 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             articleContent = clearString(articleContent);
             String articleTitle = newsTitle.toString();
             String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
-            Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
 
+            if(articleTimestamp.getTime() < DataTransformator.TIME_LIMIT){
+                scraper.stopExecution();
+            }
+
+            Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
             articleProvider.writeArticleToDataStore(article);
             log.info("RIA: " + ++i + " articles added... title = " + articleTitle);
-            if (i / 100 == 0)
-            System.gc();
         }
         if ("empty".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
 
