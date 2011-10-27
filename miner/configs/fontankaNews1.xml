@@ -12,7 +12,7 @@
   <var-def name="NewsURLs">
   </var-def>  -->
     <!--hardcode of number of pages!!-->
-    <while condition="${100>i.toInt()}" index="i">
+    <while condition="${100>i.toInt()}" index="i"><empty>
         <var-def name="NewsURLs">
             <xpath expression='/html/body//dl[@class="search-result"]/dd/a/@href'>
                 <html-to-xml>
@@ -25,7 +25,7 @@
             <list>
                 <var name="NewsURLs"/>
             </list>
-            <body>
+            <body><empty>
                 <var-def name="oneNewURL">
                     <html-to-xml>
                         <http url="${AbsoluteURL}${oneNew}"/>
@@ -50,9 +50,9 @@
                     </xpath>
                 </var-def>
 
-            </body>
+            </empty></body>
         </loop>
-    </while>
+    </empty></while>
 
 
 </config>

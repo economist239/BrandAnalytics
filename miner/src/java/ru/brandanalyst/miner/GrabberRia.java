@@ -34,8 +34,9 @@ public class GrabberRia extends Grabber {
 
     @Override
     public void grab() {
-        try {
-            for (Brand b : new BrandProvider(jdbcTemplate).getAllBrands()) {
+
+        for (Brand b : new BrandProvider(jdbcTemplate).getAllBrands()) {
+            try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.setDebug(true);
@@ -46,11 +47,12 @@ public class GrabberRia extends Grabber {
                 scraper.addVariableToContext("brandId", Long.toString(b.getId()));
                 scraper.execute();
                 log.info("successful processing brand " + b.getName());
+            } catch (Exception exception) {
+                log.error("cannot process Ria. brand name = " + b.getName());
             }
-            log.info("Ria: succecsful");
-            //result.add(scraper.getContext().getVar("temp").toString());
-        } catch (Exception exception) {
-            log.error("cannot process Ria");
         }
+        log.info("Ria: succecsful");
+        //result.add(scraper.getContext().getVar("temp").toString());
+
     }
 }
