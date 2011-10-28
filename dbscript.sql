@@ -41,7 +41,7 @@ create table Article(
 	BrandId int,
 	InfoSourceId int not null,
 	Title varchar(500),
-	Content varchar(100000) not null,
+	Content text not null,
 	Link varchar(500),
 	NumLikes int,
 	Tstamp timestamp
@@ -135,7 +135,7 @@ create table Article(
 	BrandId int,
 	InfoSourceId int not null,
 	Title varchar(500),
-	Content varchar(100000) not null,
+	Content text not null,
 	Link varchar(500),
 	NumLikes int,
 	Tstamp timestamp
