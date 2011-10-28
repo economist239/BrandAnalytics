@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbscript.sql" afterPath="$PROJECT_DIR$/dbscript.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/configs/lentaRu.xml" afterPath="$PROJECT_DIR$/miner/configs/lentaRu.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberLenta.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberLenta.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/LentaScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/LentaScraperRuntimeListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/LentaDataTransformator.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/LentaDataTransformator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/scripts/beans.xml" afterPath="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
     </list>
     <list id="c16d02c9-2f64-4539-9895-fad787085a75" name="Rejected commit: Default" comment="analyzer with beans" />
     <ignored path="BrandAnalytics.iws" />
@@ -120,10 +120,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbscript.sql" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="dbscript.sql" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dbscript.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="137" column="16" selection-start="4208" selection-end="4208" vertical-scroll-proportion="0.5483871">
+            <state line="133" column="70" selection-start="4131" selection-end="4131" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beans.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/miner/src/scripts/beans.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="72" selection-start="1171" selection-end="1171" vertical-scroll-proportion="0.8973607">
               <folding />
             </state>
           </provider>
@@ -133,15 +142,6 @@
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/DataTransformator.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="71" column="12" selection-start="1426" selection-end="2152" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="analyzer.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/analyzer/analyzer.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="11" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -182,7 +182,6 @@
         <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/DataTransformator.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" />
-        <option value="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
         <option value="$PROJECT_DIR$/miner/configs/fontankaNews1.xml" />
         <option value="$PROJECT_DIR$/analyzer/analyzer.iml" />
         <option value="$PROJECT_DIR$/analyzer/src/test/Test.java" />
@@ -195,6 +194,7 @@
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/LentaGrabber.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberLenta.java" />
         <option value="$PROJECT_DIR$/dbscript.sql" />
+        <option value="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
       </list>
     </option>
   </component>
@@ -385,6 +385,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -911,11 +915,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/miner/configs/config1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="108" column="12" selection-start="4189" selection-end="4189" vertical-scroll-proportion="0.0" />
@@ -1004,7 +1003,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dbscript.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="16" selection-start="4208" selection-end="4208" vertical-scroll-proportion="0.5483871">
+        <state line="133" column="70" selection-start="4131" selection-end="4131" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/scripts/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="72" selection-start="1171" selection-end="1171" vertical-scroll-proportion="0.8973607">
           <folding />
         </state>
       </provider>

@@ -18,6 +18,9 @@
                 <bean class="ru.brandanalyst.miner.GrabberRia">
                     <property name="config" value="miner/configs/riaNews1.xml"/>
                 </bean>
+               <bean class="ru.brandanalyst.miner.GrabberLenta">
+                    <property name="config" value="miner/configs/lentaRu.xml"/>
+                </bean>
            </list>
         </property>
     </bean>
