@@ -88,6 +88,11 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
                if (kind==0) articleContent = LentaDataTransformator.clearNewsString(newsText.toString(), articleLink);
                else if (kind==1) articleContent = LentaDataTransformator.clearArticlesString(newsText.toString());
                else articleContent=LentaDataTransformator.clearString(newsText.toString());
+               if (articleContent.isEmpty())
+               {
+                   log.info("Lenta: Invalid structure...");
+                   return;
+               }
                String articleTitle = newsTitle.toString();
                Article article = new Article(-1,brandId,3,articleTitle,articleContent,articleLink,articleTimestamp,0);
                articleProvider.writeArticleToDataStore(article);

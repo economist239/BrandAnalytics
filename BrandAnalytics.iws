@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/configs/lentaRu.xml" afterPath="$PROJECT_DIR$/miner/configs/lentaRu.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberLenta.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberLenta.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/LentaScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/LentaScraperRuntimeListener.java" />
@@ -84,7 +83,7 @@
       <file leaf-file-name="lentaRu.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/configs/lentaRu.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="34" selection-start="1107" selection-end="1165" vertical-scroll-proportion="0.0">
+            <state line="57" column="86" selection-start="1539" selection-end="1587" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -93,7 +92,7 @@
       <file leaf-file-name="LentaDataTransformator.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/LentaDataTransformator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="5" selection-start="2612" selection-end="2612" vertical-scroll-proportion="0.0">
+            <state line="6" column="69" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -102,7 +101,7 @@
       <file leaf-file-name="LentaScraperRuntimeListener.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/LentaScraperRuntimeListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="53" selection-start="3717" selection-end="3717" vertical-scroll-proportion="0.5743243">
+            <state line="77" column="82" selection-start="3523" selection-end="3523" vertical-scroll-proportion="0.5743243">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -190,11 +189,11 @@
         <option value="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/Analyzer.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberRia.java" />
         <option value="$PROJECT_DIR$/miner/configs/lentaRu.xml" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/LentaDataTransformator.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/LentaGrabber.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberLenta.java" />
         <option value="$PROJECT_DIR$/dbscript.sql" />
         <option value="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
+        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/LentaDataTransformator.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/LentaScraperRuntimeListener.java" />
       </list>
     </option>
@@ -965,6 +964,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/src/test/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="74" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dbscript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="134" column="102" selection-start="4145" selection-end="4145" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberLenta.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="0" selection-start="1849" selection-end="1849" vertical-scroll-proportion="0.0">
@@ -981,35 +992,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer/src/test/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="74" selection-start="1016" selection-end="1016" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbscript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="102" selection-start="4145" selection-end="4145" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/miner/configs/lentaRu.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="34" selection-start="1107" selection-end="1165" vertical-scroll-proportion="0.0">
+        <state line="57" column="86" selection-start="1539" selection-end="1587" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/LentaDataTransformator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="5" selection-start="2612" selection-end="2612" vertical-scroll-proportion="0.0">
+        <state line="6" column="69" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/LentaScraperRuntimeListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="53" selection-start="3717" selection-end="3717" vertical-scroll-proportion="0.5743243">
+        <state line="77" column="82" selection-start="3523" selection-end="3523" vertical-scroll-proportion="0.5743243">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
