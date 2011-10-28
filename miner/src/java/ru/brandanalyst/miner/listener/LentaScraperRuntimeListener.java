@@ -71,21 +71,23 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
                if (articleLink.contains("/lib/") || articleLink.contains("/photo/") || articleLink.contains("/online/") || articleLink.contains("/story/") || articleLink.contains("/conf/") || articleLink.contains("/columns/") || !articleLink.contains("http://lenta.ru/"))
                {
                     log.info("Lenta: Proceed...");
-                    System.out.println("Proceed!");
                     return;
                }
                Variable newsTitle = (Variable)scraper.getContext().get("newsTitle");
                Variable newsText = (Variable)scraper.getContext().get("newsFullText");
                Variable newsDate = (Variable)scraper.getContext().get("newsDate");
+               if ((newsTitle.toString().isEmpty()) || (newsText.toString().isEmpty()) || (newsDate.toString().isEmpty()))
+               {
+                   log.info("Lenta: Invalid structure...");
+                   return;
+               }
                long brandId = ((Variable)scraper.getContext().get("brandId")).toLong();
                Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
-               //Timestamp articleTimestamp=new Timestamp(89,5,5,5,5,0,0);
                String articleContent="";
                Integer kind=Integer.parseInt(scraper.getContext().get("kind").toString());
                if (kind==0) articleContent = LentaDataTransformator.clearNewsString(newsText.toString(), articleLink);
                else if (kind==1) articleContent = LentaDataTransformator.clearArticlesString(newsText.toString());
                else articleContent=LentaDataTransformator.clearString(newsText.toString());
-               //else articleContent = newsText.toString();
                String articleTitle = newsTitle.toString();
                Article article = new Article(-1,brandId,3,articleTitle,articleContent,articleLink,articleTimestamp,0);
                articleProvider.writeArticleToDataStore(article);
