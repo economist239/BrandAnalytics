@@ -38,17 +38,19 @@ public class GrabberFontanka extends Grabber {
 
         for (Brand b : new BrandProvider(jdbcTemplate).getAllBrands()) {
             try {
+
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.addRuntimeListener(new FontankaScraperRuntimeListener(jdbcTemplate));
                 String query = DataTransformator.stringToHexQueryString(b.getName());
+
                 scraper.addVariableToContext("QueryURL", beginSearchURL + query + endSearchURL); //"$p" - suffix for result page number
                 scraper.addVariableToContext("AbsoluteURL", sourceURL);
                 scraper.addVariableToContext("brandId", Long.toString(b.getId()));
-                scraper.setDebug(true);
                 scraper.execute();
                 log.info("successful processing brand " + b.getName());
             } catch (Exception exception) {
+                exception.printStackTrace();
                 log.error("cannot process Fontanka brand " + b.getName());
             }
         }

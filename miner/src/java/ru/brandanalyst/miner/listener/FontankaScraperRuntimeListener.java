@@ -76,6 +76,7 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
             Variable newsText = (Variable) scraper.getContext().get("newsFullText");
             Variable newsDate = (Variable) scraper.getContext().get("newsDate");
             long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
+
             Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
 
             if(articleTimestamp.getTime() < DataTransformator.TIME_LIMIT){
