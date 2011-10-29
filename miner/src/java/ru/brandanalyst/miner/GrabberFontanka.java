@@ -20,7 +20,7 @@ public class GrabberFontanka extends Grabber {
     private static final Logger log = Logger.getLogger(GrabberFontanka.class);
 
     private static final String beginSearchURL = "http://www.fontanka.ru/cgi-bin/search.scgi?query=";
-    private static final String endSearchURL = "&fyear=2010&fmon=01&fday=01&tyear=2011&tmon=10&tday=26&rubric=fontanka&sortt=date&offset=";
+    private static final String endSearchURL = "&fyear=2010&fmon=01&fday=01&tyear=2011&tmon=10&tday=30&rubric=fontanka&sortt=date&offset=";
     private static final String sourceURL = "http://fontanka.ru";
 
     @Override
@@ -35,8 +35,9 @@ public class GrabberFontanka extends Grabber {
 
     @Override
     public void grab() {
-        try {
-            for (Brand b : new BrandProvider(jdbcTemplate).getAllBrands()) {
+
+        for (Brand b : new BrandProvider(jdbcTemplate).getAllBrands()) {
+            try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.addRuntimeListener(new FontankaScraperRuntimeListener(jdbcTemplate));
@@ -47,11 +48,10 @@ public class GrabberFontanka extends Grabber {
                 scraper.setDebug(true);
                 scraper.execute();
                 log.info("successful processing brand " + b.getName());
+            } catch (Exception exception) {
+                log.error("cannot process Fontanka brand " + b.getName());
             }
-            log.info("Fontanka: succecsful");
-        } catch (Exception exception) {
-            exception.printStackTrace();
-            log.error("cannot process Fontanka");
         }
+        log.info("Fontanka: succecsful");
     }
 }
