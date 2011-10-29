@@ -45,14 +45,16 @@ public class Analyzer implements InitializingBean {
         try {
             pushBrandsDirtyToPure();
             pushArticlesDirtyToPure();
+            log.info("db connection successful");
         } catch(NullPointerException e) {
             log.error("db connection error");
             System.exit(1);
         }
 
-        //makes graph for all articles
-        //GraphsAnalyzer graphsAnalyzer = new GraphsAnalyzer(pureJdbcTemplate, dirtyJdbcTemplate);
-        //graphsAnalyzer.analyze();
+        //make graphs for all articles
+        GraphsAnalyzer graphsAnalyzer = new GraphsAnalyzer(pureJdbcTemplate, dirtyJdbcTemplate);
+        graphsAnalyzer.analyze();
+
         log.info("analyzing finished succesful");
     }
 

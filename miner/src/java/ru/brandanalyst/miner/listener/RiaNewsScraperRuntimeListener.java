@@ -10,6 +10,7 @@ import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 
+import javax.mail.search.DateTerm;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -95,7 +96,13 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             Variable newsText = (Variable) scraper.getContext().get("newsFullText");
             Variable newsDate = (Variable) scraper.getContext().get("newsDate");
             long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
-            Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
+
+            Timestamp articleTimestamp;
+            try {
+                articleTimestamp = evalTimestamp(newsDate.toString());
+            } catch(NullPointerException e) {
+                articleTimestamp = new Timestamp(new Date().getTime());
+            }
             String articleContent = DataTransformator.clearString(newsText.toString());
             articleContent = clearString(articleContent);
             String articleTitle = newsTitle.toString();

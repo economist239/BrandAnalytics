@@ -73,8 +73,8 @@ window.onload = function () {
         is_label_visible = false,
         leave_timer,
         blanket = r.set();
-    label.push(r.text(60, 12, "24 hits").attr(txt));
-    label.push(r.text(60, 27, "22 September 2008").attr(txt1).attr({fill: color}));
+    label.push(r.text(60, 12, "24 упоминания").attr(txt));
+    label.push(r.text(60, 27, "22 Октябрь 2011").attr(txt1).attr({fill: color}));
     label.hide();
     var frame = r.popup(100, 100, label, "right").attr({fill: "#888", stroke: "#666", "stroke-width": 2, "fill-opacity": .7}).hide();
 
@@ -115,8 +115,8 @@ window.onload = function () {
                 lx = label[0].transform()[0][1] + ppp.dx;
                 ly = label[0].transform()[0][2] + ppp.dy;
                 frame.show().stop().animate(anim);
-                label[0].attr({text: data + " hit" + (data == 1 ? "" : "s")}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible);
-                label[1].attr({text: lbl + " September 2008"}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible);
+                label[0].attr({text: data + " упоминани" + (data == 1 ? "е" : "й")}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible);
+                label[1].attr({text: lbl + " October 2011"}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible);
                 dot.attr("r", 6);
                 is_label_visible = true;
             }, function () {

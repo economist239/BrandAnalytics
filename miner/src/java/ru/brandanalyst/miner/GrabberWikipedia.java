@@ -44,7 +44,6 @@ public class GrabberWikipedia extends Grabber {
             scraper.execute();
             log.info("Wikipedia: succecsful");
         } catch (Exception exception) {
-            exception.printStackTrace();
             log.error("cannot process Wikipedia");
         }
     }

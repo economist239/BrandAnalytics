@@ -90,7 +90,8 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Коммерсант", "унылые новости", "kommersant.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Газета.RU", "новости", "gazeta.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Фонтанка.RU", "новости", "fontanka.ru");
-INSERT INTO Ticker (TickerName) VALUES("Статистика упоминания в новостях");
+
+INSERT INTO Ticker (TickerName) VALUES("Статистика упоминаемости в новостях");
 
 drop database if exists BApure;
 create database BApure default character set utf8 collate utf8_bin;
@@ -183,6 +184,7 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "ФИНАМ","всякая бурда","finam.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Коммерсант", "унылые новости", "kommersant.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Газета.RU", "новости", "gazeta.ru");
+
 INSERT INTO Ticker (TickerName) VALUES("Статистика упоминания в новостях");
 
 
