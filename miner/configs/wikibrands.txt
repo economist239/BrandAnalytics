@@ -2,7 +2,6 @@ http://ru.wikipedia.org/wiki/Apple
 http://ru.wikipedia.org/wiki/Microsoft
 http://ru.wikipedia.org/wiki/Yandex
 http://ru.wikipedia.org/wiki/Google
-http://ru.wikipedia.org/wiki/%CC%E5%E3%E0%D4%EE%ED
 http://ru.wikipedia.org/wiki/Nokia
 http://ru.wikipedia.org/wiki/Hewlett-Packard
 http://ru.wikipedia.org/wiki/Yota
