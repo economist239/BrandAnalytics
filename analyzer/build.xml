@@ -29,9 +29,9 @@
             </manifest>
         </jar>
 
-        <mkdir dir="${build.dir}/frontend"/>
-        <copy todir="${build.dir}/frontend" overwrite="true">
-            <fileset dir="${project.dir}/frontend" includes="**/*.*" excludes="**/*.java build.xml *.iml"/>
+        <mkdir dir="${build.dir}/analyzer"/>
+        <copy todir="${build.dir}/analyzer" overwrite="true">
+            <fileset dir="${project.dir}/analyzer" includes="**/*.*" excludes="**/*.java build.xml *.iml"/>
         </copy>
 	<echo>analyzer building complete</echo>
     </target>
