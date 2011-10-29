@@ -8,7 +8,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
+import ru.brandanalyst.core.time.TimeProperties;
 import org.apache.log4j.Logger;
 
 /**
@@ -23,8 +23,8 @@ public class GraphsAnalyzer {
     private SimpleJdbcTemplate dirtyJdbcTemplate;
     private SimpleJdbcTemplate pureJdbcTemplate;
 
-    public final static long TIME_LIMIT = (long) (13148208) * (long) (100000);
-    private final static long TIME_STEP = 86400000;
+   // public final static long TIME_LIMIT = (long) (13174128) * (long) (100000);
+   // private final static long TIME_STEP = 86400000;
 
     public GraphsAnalyzer(SimpleJdbcTemplate pureJdbcTemplate, SimpleJdbcTemplate dirtyJdbcTemplate) {
         this.dirtyJdbcTemplate = dirtyJdbcTemplate;
@@ -46,7 +46,7 @@ public class GraphsAnalyzer {
         for (Brand b : dirtyBrandProvider.getAllBrands()) {
             pureBrandProvider.writeBrandToDataStore(b);
 
-            for (long t = TIME_LIMIT; t < new Date().getTime(); t += TIME_STEP) {
+            for (long t = TimeProperties.TIME_LIMIT; t < new Date().getTime(); t += TimeProperties.SINGLE_DAY) {
                 graphMap.put(t, 0.0);
             }
 
@@ -62,7 +62,7 @@ public class GraphsAnalyzer {
             try {
                 //map to graph
                 Graph graph = new Graph("");
-                for (long t = TIME_LIMIT; t < new Date().getTime(); t += TIME_STEP) {
+                for (long t = TimeProperties.TIME_LIMIT; t < new Date().getTime(); t += TimeProperties.SINGLE_DAY) {
                     graph.addPoint(new SingleDot(new Timestamp(t), graphMap.get(t)));
 
                 }

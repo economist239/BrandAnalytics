@@ -12,7 +12,8 @@ import ru.brandanalyst.miner.util.DataTransformator;
 public class GrabberLenta extends Grabber {
     private static final Logger log = Logger.getLogger(GrabberLenta.class);
 
-    private static final String searchURL = "http://lenta.ru/search/?query=";
+    private static final String beginSearchURL = "http://lenta.ru/search/?query=";
+    private static final String endSearchURL = "http://lenta.ru/search/?query=";
     private static final String sourceURL = "http://lenta.ru";
 
     @Override
@@ -35,7 +36,7 @@ public class GrabberLenta extends Grabber {
                 scraper.setDebug(true);
                 scraper.addRuntimeListener(new LentaScraperRuntimeListener(this.jdbcTemplate));
                 String query = DataTransformator.stringToHexQueryString(b.getName());
-                scraper.addVariableToContext("lentaQueryURL", searchURL + query + "&page=");//"$page" - suffix for result page number
+                scraper.addVariableToContext("lentaQueryURL", beginSearchURL + query + endSearchURL);//"$page" - suffix for result page number
                 scraper.addVariableToContext("lentaAbsoluteURL", sourceURL);
                 scraper.addVariableToContext("brandId", Long.toString(b.getId()));
                 scraper.execute();

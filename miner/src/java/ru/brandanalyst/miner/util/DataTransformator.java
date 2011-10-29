@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
  */
 public final class DataTransformator {
 
-    public final static long TIME_LIMIT = (long)(13148208) * (long)(100000);
+    public final static long TIME_LIMIT = (long)(13174128) * (long)(100000);
 
     private DataTransformator() {
 

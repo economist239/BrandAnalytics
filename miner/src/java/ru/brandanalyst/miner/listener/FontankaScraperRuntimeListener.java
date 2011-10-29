@@ -11,7 +11,9 @@ import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 
 import java.sql.Timestamp;
-import java.util.Calendar;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -36,17 +38,18 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
     private Timestamp evalTimestamp(String stringDate) {
         stringDate = stringDate.replace("\n", "");
         stringDate = stringDate.replace(" ", "");
+        stringDate = stringDate.substring(0, 10);
 
-        int minute = Integer.parseInt(stringDate.substring(13, 15));
-        int hour = Integer.parseInt(stringDate.substring(10, 12));
-        int day = Integer.parseInt(stringDate.substring(0, 2));
-        int month = Integer.parseInt(stringDate.substring(3, 5));
-        int year = Integer.parseInt(stringDate.substring(6, 10));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        Date date;
+        try {
+            date = dateFormat.parse(stringDate);
+        }catch(ParseException e) {
+            date = new Date();
+        }
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(year, month, day, hour, minute);
-
-        return new Timestamp(calendar.getTime().getTime());
+        Timestamp timestamp = new Timestamp(date.getTime());
+        return timestamp;
     }
 
     public void onExecutionStart(Scraper scraper) {
@@ -75,8 +78,11 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
             long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
             Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
 
+            if(articleTimestamp.getTime() < DataTransformator.TIME_LIMIT){
+                scraper.stopExecution();
+            }
+
             String articleContent = DataTransformator.clearString(newsText.toString());
-            System.out.println(articleContent);
             String articleTitle = newsTitle.toString();
             String articleLink = scraper.getContext().get("AbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
             Article article = new Article(-1, brandId, 10, articleTitle, articleContent, articleLink, articleTimestamp, 0);
