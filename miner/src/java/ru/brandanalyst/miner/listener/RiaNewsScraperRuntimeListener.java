@@ -40,12 +40,12 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
     private Timestamp evalTimestamp(String stringDate) {
         stringDate = stringDate.replace("\n", "");
         stringDate = stringDate.replace(" ", "");
-        stringDate = stringDate.substring(0,10);
+        stringDate = stringDate.substring(0, 10);
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date;
         try {
             date = dateFormat.parse(stringDate);
-        }catch(ParseException e) {
+        } catch (ParseException e) {
             date = new Date();
         }
         Timestamp timestamp = new Timestamp(date.getTime());
@@ -100,21 +100,22 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             Timestamp articleTimestamp;
             try {
                 articleTimestamp = evalTimestamp(newsDate.toString());
-            } catch(NullPointerException e) {
+            } catch (NullPointerException e) {
                 articleTimestamp = new Timestamp(new Date().getTime());
-            }
-            String articleContent = DataTransformator.clearString(newsText.toString());
-            articleContent = clearString(articleContent);
-            String articleTitle = newsTitle.toString();
-            String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
+                String articleContent = DataTransformator.clearString(newsText.toString());
+                articleContent = clearString(articleContent);
+                String articleTitle = newsTitle.toString();
+                String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
 
-            if(articleTimestamp.getTime() < DataTransformator.TIME_LIMIT){
-                scraper.stopExecution();
+                if (articleTimestamp.getTime() < DataTransformator.TIME_LIMIT) {
+                    scraper.stopExecution();
+                }
+
+                Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
+                articleProvider.writeArticleToDataStore(article);
+                log.info("RIA: " + ++i + " articles added... title = " + articleTitle);
             }
 
-            Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
-            articleProvider.writeArticleToDataStore(article);
-            log.info("RIA: " + ++i + " articles added... title = " + articleTitle);
         }
         if ("empty".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
 
