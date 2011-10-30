@@ -13,7 +13,7 @@
                 <bean class="ru.brandanalyst.miner.GrabberWikipedia">
                     <property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>
                 </bean>
-                <!--&lt;!&ndash;wikibrands.txt;resources/wikibrands.xml&ndash;&gt;-->
+                <!--wikibrands.txt;resources/wikibrands.xml-->
                 <!--    <bean class="ru.brandanalyst.miner.GrabberTwitter"/>   -->
 
                 <bean class="ru.brandanalyst.miner.GrabberFontanka">

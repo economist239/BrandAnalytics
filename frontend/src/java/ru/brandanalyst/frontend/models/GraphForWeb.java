@@ -2,8 +2,10 @@ package ru.brandanalyst.frontend.models;
 
 import ru.brandanalyst.core.model.SingleDot;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.*;
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -13,10 +15,10 @@ import java.util.ArrayList;
  */
 public class GraphForWeb {
     private String name;
-    private List<Long> date;
+    private List<Integer> date;
     private List<Double> value;
 
-    public GraphForWeb(String name, List<Long> date, List<Double> value) {
+    public GraphForWeb(String name, List<Integer> date, List<Double> value) {
         this.date = date;
         this.name = name;
         this.value = value;
@@ -24,12 +26,15 @@ public class GraphForWeb {
 
     public GraphForWeb(String name) {
         this.name = name;
-        date = new ArrayList<Long>();
+        date = new ArrayList<Integer>();
         value = new ArrayList<Double>();
     }
 
     public void addDot(SingleDot dot) {
-        date.add(dot.getDate().getTime());
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTimeInMillis(dot.getDate().getTime());
+
+        date.add(calendar.get(GregorianCalendar.DAY_OF_MONTH));
         value.add(dot.getValue());
     }
 
@@ -37,7 +42,7 @@ public class GraphForWeb {
         return name;
     }
 
-    public List<Long> getDate() {
+    public List<Integer> getDate() {
         return date;
     }
 

@@ -42,7 +42,7 @@ public class Analyzer implements InitializingBean {
 
     public final void afterPropertiesSet() {
         log.info("analyzing started...");
-        try {
+   /*     try {
             pushBrandsDirtyToPure();
             pushArticlesDirtyToPure();
             log.info("db connection successful");
@@ -50,7 +50,7 @@ public class Analyzer implements InitializingBean {
             log.error("db connection error");
             System.exit(1);
         }
-
+     */
         //make graphs for all articles
         GraphsAnalyzer graphsAnalyzer = new GraphsAnalyzer(pureJdbcTemplate, dirtyJdbcTemplate);
         graphsAnalyzer.analyze();
