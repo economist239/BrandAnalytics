@@ -56,10 +56,7 @@ public class WideBrandInfoManager {
     }
 
     private String firstPhrase(String text) {
-//        int point = text.indexOf('.');
-//        String t2 = text.substring(point + 1);
-        int p = text.indexOf('.');
+        int p = text.indexOf(". ");
         return text.substring(0, p) + "...";
-        //    return text;
     }
 }
