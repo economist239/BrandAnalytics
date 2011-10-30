@@ -68,7 +68,7 @@ public class GraphsAnalyzer {
                 }
                 pureGraphProvider.writeGraph(graph, b.getId(), 1);
             } catch (NullPointerException e) {
-                log.error("cannot create graph for brand: " + b.getId());
+            //    log.error("cannot create graph for brand: " + b.getId());
             }
         }
         log.info("graph analazing finished succesful");
