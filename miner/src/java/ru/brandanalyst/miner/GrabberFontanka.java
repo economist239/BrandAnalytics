@@ -42,7 +42,7 @@ public class GrabberFontanka extends Grabber {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.addRuntimeListener(new FontankaScraperRuntimeListener(jdbcTemplate));
-                String query = DataTransformator.stringToHexQueryString(b.getName());
+                String query = DataTransformator.stringToQueryString(b.getName());
 
                 System.out.println(b.getName());
                 scraper.addVariableToContext("QueryURL", beginSearchURL + query + endSearchURL); //"$p" - suffix for result page number

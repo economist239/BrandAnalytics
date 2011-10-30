@@ -35,7 +35,7 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
         articleProvider = new ArticleProvider(jdbcTemplate);
     }
 
-    private Timestamp evalTimestamp(String stringDate) {
+    private Timestamp evalTimestamp(String stringDate) throws StringIndexOutOfBoundsException {
         stringDate = stringDate.replace("\n", "");
         stringDate = stringDate.replace(" ", "");
         stringDate = stringDate.substring(0, 10);
@@ -72,6 +72,7 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
     public void onProcessorExecutionFinished(Scraper scraper, BaseProcessor baseProcessor, Map map) {
 
         if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
+            try{
             Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
             Variable newsText = (Variable) scraper.getContext().get("newsFullText");
             Variable newsDate = (Variable) scraper.getContext().get("newsDate");
@@ -90,6 +91,9 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
 
             articleProvider.writeArticleToDataStore(article);
             log.info("Fontanka: " + ++i + " article added... title = " + articleTitle);
+            } catch (Exception e) {
+
+            }
         }
     }
 
