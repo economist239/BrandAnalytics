@@ -33,6 +33,7 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
     private Timestamp evalTimestamp(String stringDate) throws StringIndexOutOfBoundsException {
         stringDate = stringDate.replace("\n", "");
         stringDate = stringDate.replace(" ", "");
+        stringDate = stringDate.replace(",", "");
         stringDate = stringDate.substring(0, 10);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
