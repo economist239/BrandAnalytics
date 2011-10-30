@@ -37,7 +37,7 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
         articleProvider = new ArticleProvider(jdbcTemplate);
     }
 
-    private Timestamp evalTimestamp(String stringDate) {
+    private Timestamp evalTimestamp(String stringDate) throws IndexOutOfBoundsException {
         stringDate = stringDate.replace("\n", "");
         stringDate = stringDate.replace(" ", "");
         stringDate = stringDate.substring(0, 10);
@@ -112,7 +112,7 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
                 Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
                 articleProvider.writeArticleToDataStore(article);
                 log.info("RIA: " + ++i + " articles added... title = " + articleTitle);
-            } catch (NullPointerException e) {
+            } catch (Exception e) {
 
             }
 
