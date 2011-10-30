@@ -12,6 +12,9 @@ import ru.brandanalyst.miner.util.DataTransformator;
 import ru.brandanalyst.miner.util.LentaDataTransformator;
 
 import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
@@ -27,16 +30,20 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
         articleProvider = new ArticleProvider(jdbcTemplate);
     }
 
-    private Timestamp evalTimestamp(String stringDate) {
-        int nano = 0;
-        int second = 0;
-        stringDate = stringDate.replace(" ", "").replace(",", "");
-        int minute = Integer.parseInt(stringDate.substring(13, 15));
-        int hour = Integer.parseInt(stringDate.substring(10, 12));
-        int day = Integer.parseInt(stringDate.substring(0, 2));
-        int month = Integer.parseInt(stringDate.substring(3, 5));
-        int year = Integer.parseInt(stringDate.substring(6, 10)) - 1900;
-        Timestamp timestamp = new Timestamp(year, month - 1, day, hour, minute, second, nano);
+    private Timestamp evalTimestamp(String stringDate) throws StringIndexOutOfBoundsException {
+        stringDate = stringDate.replace("\n", "");
+        stringDate = stringDate.replace(" ", "");
+        stringDate = stringDate.substring(0, 10);
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        Date date;
+        try {
+            date = dateFormat.parse(stringDate);
+        }catch(ParseException e) {
+            date = new Date();
+        }
+
+        Timestamp timestamp = new Timestamp(date.getTime());
         return timestamp;
     }
 
