@@ -37,7 +37,7 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
         articleProvider = new ArticleProvider(jdbcTemplate);
     }
 
-    private Timestamp evalTimestamp(String stringDate) throws IndexOutOfBoundsException {
+    private Timestamp evalTimestamp(String stringDate) throws StringIndexOutOfBoundsException {
         stringDate = stringDate.replace("\n", "");
         stringDate = stringDate.replace(" ", "");
         stringDate = stringDate.substring(0, 10);
