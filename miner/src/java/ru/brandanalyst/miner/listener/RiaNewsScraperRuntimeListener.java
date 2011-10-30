@@ -100,8 +100,6 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             Timestamp articleTimestamp;
             try {
                 articleTimestamp = evalTimestamp(newsDate.toString());
-            } catch (NullPointerException e) {
-                articleTimestamp = new Timestamp(new Date().getTime());
                 String articleContent = DataTransformator.clearString(newsText.toString());
                 articleContent = clearString(articleContent);
                 String articleTitle = newsTitle.toString();
@@ -114,6 +112,8 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
                 Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
                 articleProvider.writeArticleToDataStore(article);
                 log.info("RIA: " + ++i + " articles added... title = " + articleTitle);
+            } catch (NullPointerException e) {
+
             }
 
         }
