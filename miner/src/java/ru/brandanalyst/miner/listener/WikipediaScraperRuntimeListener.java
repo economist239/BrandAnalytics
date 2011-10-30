@@ -93,6 +93,9 @@ public class WikipediaScraperRuntimeListener implements ScraperRuntimeListener {
             String brandWebsite = getWebSite(brandWebsite1, brandWebsite2);
 
             String brandName = ((Variable) scraper.getContext().get("brandName")).toString();
+            if(brandName.indexOf("High Tech") > -1) {
+                brandName = "HTC";
+            }
 
             String brandDescription1 = ((Variable) scraper.getContext().get("brandDescription1")).toString();
             String brandDescription2 = ((Variable) scraper.getContext().get("brandDescription2")).toString();
