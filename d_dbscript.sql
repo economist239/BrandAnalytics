@@ -56,6 +56,13 @@ create table InformationSource(
 	Website varchar(100) not null
 );
 
+drop table if exists Dictionary;
+create table Dictionary(
+	Id int primary key not null auto_increment,
+	BrandId int not null,
+	Term varchar(100) not null
+);
+
 ALTER TABLE Article ADD CONSTRAINT ForArtileInfroSource
 FOREIGN KEY (InfoSourceId)
 REFERENCES InformationSource(Id);
@@ -76,6 +83,10 @@ ALTER TABLE Graphs ADD CONSTRAINT ForGraphsTicker
 FOREIGN KEY (TickerId)
 REFERENCES Ticker(Id);
 
+ALTER TABLE Dictionary ADD CONSTRAINT ForDictionaryBrand
+FOREIGN KEY (Brandid)
+REFERENCES Brand(Id);
+
 INSERT INTO Branch (Name) VALUES("IT: программное обеспечение");
 INSERT INTO Branch (Name) VALUES("мобильная связь");
 INSERT INTO Branch (Name) VALUES("IT: железо");
@@ -93,6 +104,13 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 
 INSERT INTO Ticker (TickerName) VALUES("Статистика упоминаемости в новостях");
 
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Microsoft","Operation Systems","microsoft.com",0);
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Apple","iCorporation","apple.com",2);
+
+INSERT INTO Dictionary (BrandId,Term) VALUES (0,"Jobbs");
+INSERT INTO Dictionary (BrandId,Term) VALUES (0,"iPhone");
+INSERT INTO Dictionary (BrandId,Term) VALUES (1,"Gates");
+INSERT INTO Dictionary (BrandId,Term) VALUES (1,"Windows");
 
 
 
