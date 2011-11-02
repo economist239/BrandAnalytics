@@ -27,7 +27,7 @@ public class DictionaryProvider {
     }
 
     public DictionaryItem getDictionaryItem(long brandId) {
-        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT (BrandId, Brand.Name, Term) FROM Brand INNER JOIN Dictionary ON BrandId = Brand.Id WHERE BrandId = " + Long.toString(brandId) + " ORDER BY BrandId");
+        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT (BrandId, Brand.Name, Term) FROM Dictionary INNER JOIN Brand ON BrandId = Brand.Id WHERE BrandId = " + Long.toString(brandId) + " ORDER BY BrandId");
         DictionaryItem dictItem;
         try {
             if (rowSet.next()) {
@@ -50,7 +50,7 @@ public class DictionaryProvider {
 
     public List<DictionaryItem> getDictionary() {
 
-        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT (BrandId, Brand.Name, Item) FROM DictionaryItem INNER JOIN Ticker ON BrandId = Brand.Id ORDER BY BrandId");
+        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT (BrandId, Brand.Name, Item) FROM Dictionary INNER JOIN Brand ON BrandId = Brand.Id ORDER BY BrandId");
         List<DictionaryItem> dictionary = new ArrayList<DictionaryItem>();
 
         try {
