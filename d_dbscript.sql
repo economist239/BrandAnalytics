@@ -58,7 +58,6 @@ create table InformationSource(
 
 drop table if exists Dictionary;
 create table Dictionary(
-	Id int primary key not null auto_increment,
 	BrandId int not null,
 	Term varchar(100) not null
 );
@@ -84,7 +83,7 @@ FOREIGN KEY (TickerId)
 REFERENCES Ticker(Id);
 
 ALTER TABLE Dictionary ADD CONSTRAINT ForDictionaryBrand
-FOREIGN KEY (Brandid)
+FOREIGN KEY (BrandId)
 REFERENCES Brand(Id);
 
 INSERT INTO Branch (Name) VALUES("IT: программное обеспечение");
