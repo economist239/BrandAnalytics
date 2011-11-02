@@ -115,7 +115,7 @@
       <file leaf-file-name="DictionaryProvider.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/DictionaryProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="52" selection-start="1439" selection-end="1439" vertical-scroll-proportion="0.27918783">
+            <state line="74" column="74" selection-start="2776" selection-end="2776" vertical-scroll-proportion="2.9340103">
               <folding />
             </state>
           </provider>
@@ -1060,11 +1060,6 @@
         <state line="74" column="38" selection-start="2720" selection-end="2720" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberLenta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberContainer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="13" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0" />
@@ -1111,9 +1106,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberLenta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="13" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/DictionaryProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="52" selection-start="1439" selection-end="1439" vertical-scroll-proportion="0.27918783">
+        <state line="74" column="74" selection-start="2776" selection-end="2776" vertical-scroll-proportion="2.9340103">
           <folding />
         </state>
       </provider>

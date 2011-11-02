@@ -72,7 +72,7 @@ public class DictionaryProvider {
                     curBrandId = nextBrandId;
                     curBrandNum++;
                 }
-                dictionary.get(curBrandNum).addItem(rowSet.getString("Item"));
+                dictionary.get(curBrandNum).addItem(rowSet.getString("Term"));
             } while (rowSet.next());
             return dictionary;
         } catch (Exception e) {
