@@ -37,15 +37,23 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
         articleProvider = new ArticleProvider(jdbcTemplate);
     }
 
-    private Timestamp evalTimestamp(String stringDate) throws StringIndexOutOfBoundsException {
-        stringDate = stringDate.replace("\n", "");
-        stringDate = stringDate.replace(" ", "");
-        stringDate = stringDate.substring(0, 10);
+    private Timestamp evalTimestamp(String stringDate) {
+
+        try {
+            stringDate = stringDate.replace("\n", "");
+            stringDate = stringDate.replace(" ", "");
+            stringDate = stringDate.substring(0, 10);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(stringDate);
+        }
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date;
         try {
             date = dateFormat.parse(stringDate);
         } catch (ParseException e) {
+            System.out.println(stringDate);
+            e.printStackTrace();
             date = new Date();
         }
         Timestamp timestamp = new Timestamp(date.getTime());
@@ -98,24 +106,19 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
 
             Timestamp articleTimestamp;
-            try {
-                articleTimestamp = evalTimestamp(newsDate.toString());
-                String articleContent = DataTransformator.clearString(newsText.toString());
-                articleContent = clearString(articleContent);
-                String articleTitle = newsTitle.toString();
-                String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
+            articleTimestamp = evalTimestamp(newsDate.toString());
+            String articleContent = DataTransformator.clearString(newsText.toString());
+            articleContent = clearString(articleContent);
+            String articleTitle = newsTitle.toString();
+            String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
 
-                if (articleTimestamp.getTime() < DataTransformator.TIME_LIMIT) {
-                    scraper.stopExecution();
-                }
-
-                Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
-                articleProvider.writeArticleToDataStore(article);
-                log.info("RIA: " + ++i + " articles added... title = " + articleTitle);
-            } catch (Exception e) {
-
+            if (articleTimestamp.getTime() < DataTransformator.TIME_LIMIT) {
+                scraper.stopExecution();
             }
 
+            Article article = new Article(-1, brandId, 6, articleTitle, articleContent, articleLink, articleTimestamp, 0);
+            articleProvider.writeArticleToDataStore(article);
+            log.info("RIA: " + ++i + " articles added... title = " + articleTitle);
         }
         if ("empty".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
 

@@ -8,6 +8,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
 import ru.brandanalyst.core.time.TimeProperties;
 import org.apache.log4j.Logger;
 
@@ -22,9 +23,6 @@ public class GraphsAnalyzer {
 
     private SimpleJdbcTemplate dirtyJdbcTemplate;
     private SimpleJdbcTemplate pureJdbcTemplate;
-
-   // public final static long TIME_LIMIT = (long) (13174128) * (long) (100000);
-   // private final static long TIME_STEP = 86400000;
 
     public GraphsAnalyzer(SimpleJdbcTemplate pureJdbcTemplate, SimpleJdbcTemplate dirtyJdbcTemplate) {
         this.dirtyJdbcTemplate = dirtyJdbcTemplate;
@@ -52,24 +50,17 @@ public class GraphsAnalyzer {
 
             for (Article a : dirtyArticleProvider.getAllArticlesByBrand(b.getId())) {
                 Timestamp timestamp = a.getTstamp();
-                try{
+                if (graphMap.containsKey(timestamp.getTime())) {
                     graphMap.put(timestamp.getTime(), graphMap.get(timestamp.getTime()) + 1.0);
-                }catch(Exception e) {
-                    log.error("can't process dot");
                 }
                 pureArticleProvider.writeArticleToDataStore(a);
             }
-            try {
-                //map to graph
-                Graph graph = new Graph("");
-                for (long t = TimeProperties.TIME_LIMIT; t < new Date().getTime(); t += TimeProperties.SINGLE_DAY) {
-                    graph.addPoint(new SingleDot(new Timestamp(t), graphMap.get(t)));
-
-                }
-                pureGraphProvider.writeGraph(graph, b.getId(), 1);
-            } catch (NullPointerException e) {
-            //    log.error("cannot create graph for brand: " + b.getId());
+            //map to graph
+            Graph graph = new Graph("");
+            for (long t = TimeProperties.TIME_LIMIT; t < new Date().getTime(); t += TimeProperties.SINGLE_DAY) {
+                graph.addPoint(new SingleDot(new Timestamp(t), graphMap.get(t)));
             }
+            pureGraphProvider.writeGraph(graph, b.getId(), 1);
         }
         log.info("graph analazing finished succesful");
     }
