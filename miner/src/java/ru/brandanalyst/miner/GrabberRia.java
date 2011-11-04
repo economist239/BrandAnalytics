@@ -48,7 +48,6 @@ public class GrabberRia extends Grabber {
                 scraper.execute();
                 log.info("successful processing brand " + b.getName());
             } catch (Exception exception) {
-                exception.printStackTrace();
                 log.error("cannot process Ria. brand name = " + b.getName());
             }
         }

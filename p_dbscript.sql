@@ -41,7 +41,7 @@ create table Article(
 	BrandId int,
 	InfoSourceId int not null,
 	Title varchar(500),
-	Content text not null,
+	Content longtext not null,
 	Link varchar(500),
 	NumLikes int,
 	Tstamp timestamp

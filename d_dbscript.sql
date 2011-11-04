@@ -56,10 +56,16 @@ create table InformationSource(
 	Website varchar(100) not null
 );
 
-drop table if exists Dictionary;
-create table Dictionary(
+drop table if exists BrandDictionary;
+create table BrandDictionary(
 	BrandId int not null,
 	Term varchar(100) not null
+);
+
+drop table if exists SemanticDictionary
+create table SemanticDictionary(
+    Term varchar(50) not null,
+    SemanticValue double not null
 );
 
 ALTER TABLE Article ADD CONSTRAINT ForArtileInfroSource

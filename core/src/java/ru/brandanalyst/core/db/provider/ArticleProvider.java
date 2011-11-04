@@ -16,6 +16,7 @@ import java.util.List;
  */
 public class ArticleProvider {
     private static final Logger log = Logger.getLogger(ArticleProvider.class);
+    private static final int MAX_ARTCILE_LENGHT = 30000;
 
     private SimpleJdbcTemplate jdbcTemplate;
     private ArticleMapper articleMapper;
@@ -30,10 +31,13 @@ public class ArticleProvider {
     }
 
     public void writeArticleToDataStore(Article article) {
+        if(article.getContent().length() > MAX_ARTCILE_LENGHT) article.setContent(article.getContent().substring(0,MAX_ARTCILE_LENGHT));
         try {
             jdbcTemplate.update("INSERT INTO Article (InfoSourceId, BrandId, Title, Content, Link, NumLikes, Tstamp) VALUES(?, ?, ?, ?, ?, ?, ?);", article.getSourceId(),
                     article.getBrandId(), article.getTitle(), article.getContent(), article.getLink(), article.getNumLikes(), article.getTstamp());
         } catch (Exception e) {
+        //    e.printStackTrace();
+        //    System.out.println(article.getContent().length());
             log.info("cannot write article to db");
         }
     }

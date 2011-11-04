@@ -8,12 +8,12 @@ import java.util.ArrayList;
  * Date: 11/2/11
  * Time: 9:45 PM
  */
-public class DictionaryItem {
+public class BrandDictionaryItem {
     private final String term;
     private final long termId;
     private List<String> items;
 
-    public DictionaryItem(String term, long termId) {
+    public BrandDictionaryItem(String term, long termId) {
         this.term = term;
         this.termId = termId;
         items = new ArrayList<String>();

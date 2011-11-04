@@ -53,6 +53,7 @@ public class GraphsAnalyzer {
                 if (graphMap.containsKey(timestamp.getTime())) {
                     graphMap.put(timestamp.getTime(), graphMap.get(timestamp.getTime()) + 1.0);
                 }
+
                 pureArticleProvider.writeArticleToDataStore(a);
             }
             //map to graph

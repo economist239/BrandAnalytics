@@ -1,5 +1,7 @@
 package ru.brandanalyst.core.time;
 
+import java.text.SimpleDateFormat;
+
 /**
  * Created by IntelliJ IDEA.
  * User: dima
