@@ -62,7 +62,7 @@ create table BrandDictionary(
 	Term varchar(100) not null
 );
 
-drop table if exists SemanticDictionary
+drop table if exists SemanticDictionary;
 create table SemanticDictionary(
     Term varchar(50) not null,
     SemanticValue double not null
@@ -88,7 +88,7 @@ ALTER TABLE Graphs ADD CONSTRAINT ForGraphsTicker
 FOREIGN KEY (TickerId)
 REFERENCES Ticker(Id);
 
-ALTER TABLE Dictionary ADD CONSTRAINT ForDictionaryBrand
+ALTER TABLE BrandDictionary ADD CONSTRAINT ForDictionaryBrand
 FOREIGN KEY (BrandId)
 REFERENCES Brand(Id);
 
@@ -112,10 +112,10 @@ INSERT INTO Ticker (TickerName) VALUES("Статистика упоминаем�
 INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Microsoft","Operation Systems","microsoft.com",0);
 INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Apple","iCorporation","apple.com",2);
 
-INSERT INTO Dictionary (BrandId,Term) VALUES (0,"Jobbs");
-INSERT INTO Dictionary (BrandId,Term) VALUES (0,"iPhone");
-INSERT INTO Dictionary (BrandId,Term) VALUES (1,"Gates");
-INSERT INTO Dictionary (BrandId,Term) VALUES (1,"Windows");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (0,"Jobbs");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (0,"iPhone");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"Gates");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"Windows");
 
 
 

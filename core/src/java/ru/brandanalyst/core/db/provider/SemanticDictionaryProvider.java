@@ -32,7 +32,7 @@ public class SemanticDictionaryProvider {
         return list;
     }
 
-    public void setSemanticDictionary(SemanticDictionaryItem item) {
+    public void setSemanticDictionaryItem(SemanticDictionaryItem item) {
         try {
             jdbcTemplate.update("INSERT INTO SemanticDictionary (Term, SemanticValue) VALUES(?,?);", item.getTerm(), item.getSemanticValue());
         } catch (DataAccessException e) {
