@@ -112,9 +112,9 @@ INSERT INTO Ticker (TickerName) VALUES("Статистика упоминаем�
 INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Microsoft","Operation Systems","microsoft.com",0);
 INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Apple","iCorporation","apple.com",2);
 
-INSERT INTO BrandDictionary (BrandId,Term) VALUES (0,"Jobbs");
-INSERT INTO BrandDictionary (BrandId,Term) VALUES (0,"iPhone");
-INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"Gates");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (2,"Джоббс");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (2,"iPhone");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"Гейтс");
 INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"Windows");
 
 

@@ -27,11 +27,11 @@ public class BrandDictionaryProvider {
     }
 
     public BrandDictionaryItem getDictionaryItem(long brandId) {
-        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT (BrandId, Brand.Name, Term) FROM BrandDictionary INNER JOIN Brand ON BrandId = Brand.Id WHERE BrandId = " + Long.toString(brandId) + " ORDER BY BrandId");
+        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT BrandId, Brand.Name, Term FROM BrandDictionary INNER JOIN Brand ON BrandId = Brand.Id WHERE BrandId = " + Long.toString(brandId) + " ORDER BY BrandId");
         BrandDictionaryItem dictItem;
         try {
             if (rowSet.next()) {
-                String brandName = rowSet.getString("Brand.Name");
+                String brandName = rowSet.getString("Name");
                 dictItem = new BrandDictionaryItem(brandName,brandId);
             } else {
                 return null;

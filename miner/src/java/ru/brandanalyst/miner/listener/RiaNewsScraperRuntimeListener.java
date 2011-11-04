@@ -7,7 +7,9 @@ import org.webharvest.runtime.ScraperRuntimeListener;
 import org.webharvest.runtime.processors.BaseProcessor;
 import org.webharvest.runtime.variables.Variable;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.core.db.provider.BrandDictionaryProvider;
 import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.miner.util.DataTransformator;
 
 import javax.mail.search.DateTerm;
@@ -16,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.sql.Timestamp;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -96,14 +99,22 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             return text;
         }
     }
+    public boolean isTitleHaveTerm(List<String> items, String title)
+    {
+        for (String item:items)
+            if (title.toLowerCase().contains(item.toLowerCase())) return true;
+        return false;
+    }
 
     public void onProcessorExecutionFinished(Scraper scraper, BaseProcessor baseProcessor, Map map) {
         if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
 
+            long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
             Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
+            if (!isTitleHaveTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionaryItem(brandId).getItems(),newsTitle.toString())) return;
             Variable newsText = (Variable) scraper.getContext().get("newsFullText");
             Variable newsDate = (Variable) scraper.getContext().get("newsDate");
-            long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
+
 
             Timestamp articleTimestamp;
             articleTimestamp = evalTimestamp(newsDate.toString());
