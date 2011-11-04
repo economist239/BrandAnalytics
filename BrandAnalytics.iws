@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandDictionaryProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandDictionaryProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/d_dbscript.sql" afterPath="$PROJECT_DIR$/d_dbscript.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" />
     </list>
     <list id="c16d02c9-2f64-4539-9895-fad787085a75" name="Rejected commit: Default" comment="analyzer with beans" />
     <ignored path="BrandAnalytics.iws" />
@@ -117,7 +115,7 @@
       <file leaf-file-name="BrandDictionaryProvider.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandDictionaryProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="67" selection-start="1812" selection-end="1812" vertical-scroll-proportion="1.80625">
+            <state line="70" column="77" selection-start="2597" selection-end="2597" vertical-scroll-proportion="1.74375">
               <folding />
             </state>
           </provider>
@@ -186,9 +184,9 @@
         <option value="$PROJECT_DIR$/analyzer/dictionary/positive.txt" />
         <option value="$PROJECT_DIR$/analyzer/dictionary/negative.txt" />
         <option value="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/DictionaryInitialyzer.java" />
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandDictionaryProvider.java" />
         <option value="$PROJECT_DIR$/d_dbscript.sql" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandDictionaryProvider.java" />
       </list>
     </option>
   </component>
@@ -1198,13 +1196,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/d_dbscript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="60" selection-start="3876" selection-end="3876" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="123" column="135" selection-start="4715" selection-end="4715" vertical-scroll-proportion="0.0">
@@ -1212,9 +1203,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/d_dbscript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="60" selection-start="3876" selection-end="3876" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandDictionaryProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="67" selection-start="1812" selection-end="1812" vertical-scroll-proportion="1.80625">
+        <state line="70" column="77" selection-start="2597" selection-end="2597" vertical-scroll-proportion="1.74375">
           <folding />
         </state>
       </provider>

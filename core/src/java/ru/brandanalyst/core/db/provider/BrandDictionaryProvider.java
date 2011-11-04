@@ -50,13 +50,13 @@ public class BrandDictionaryProvider {
 
     public List<BrandDictionaryItem> getDictionary() {
 
-        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT (BrandId, Brand.Name, Item) FROM BrandDictionary INNER JOIN Brand ON BrandId = Brand.Id ORDER BY BrandId");
+        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT BrandId, Brand.Name, Term FROM BrandDictionary INNER JOIN Brand ON BrandId = Brand.Id ORDER BY BrandId");
         List<BrandDictionaryItem> dictionary = new ArrayList<BrandDictionaryItem>();
 
         try {
             long curBrandId;
             if (rowSet.next()) {
-                String brandName = rowSet.getString("Brand.Name");
+                String brandName = rowSet.getString("Name");
                 curBrandId = rowSet.getLong("BrandId");
                 dictionary.add(new BrandDictionaryItem(brandName, curBrandId));
             } else {
@@ -68,7 +68,7 @@ public class BrandDictionaryProvider {
                 long nextBrandId = rowSet.getLong("BrandId");
 
                 if (nextBrandId != curBrandId) {
-                    dictionary.add(new BrandDictionaryItem(rowSet.getString("Brand.Name"), nextBrandId));
+                    dictionary.add(new BrandDictionaryItem(rowSet.getString("Name"), nextBrandId));
                     curBrandId = nextBrandId;
                     curBrandNum++;
                 }
