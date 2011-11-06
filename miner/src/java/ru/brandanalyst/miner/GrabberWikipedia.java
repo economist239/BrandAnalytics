@@ -10,6 +10,7 @@ import ru.brandanalyst.miner.listener.WikipediaScraperRuntimeListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -32,7 +33,7 @@ public class GrabberWikipedia extends Grabber {
     }
 
     @Override
-    public void grab() {
+    public void grab(Date timeLimit) {
         try {
 			String linksFile = config.substring(0, config.indexOf(';'));
 			String configFile = config.substring(config.indexOf(';')+1);

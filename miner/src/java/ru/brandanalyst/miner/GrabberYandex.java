@@ -6,6 +6,8 @@ import org.webharvest.definition.ScraperConfiguration;
 import ru.brandanalyst.miner.listener.YandexNewsScraperRuntimeListener;
 import org.apache.log4j.Logger;
 
+import java.util.Date;
+
 /**
  * @author Александр Сенов
  */
@@ -21,23 +23,16 @@ public class GrabberYandex extends Grabber {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void grab() {
+    public void grab(Date timeLimit) {
         try {
             ScraperConfiguration config = new ScraperConfiguration(this.config);
             Scraper scraper = new Scraper(config, ".");
             scraper.setDebug(true);
-            scraper.addRuntimeListener(new YandexNewsScraperRuntimeListener(this.jdbcTemplate));
+            scraper.addRuntimeListener(new YandexNewsScraperRuntimeListener(this.jdbcTemplate, timeLimit));
             scraper.execute();
             //result.add(scraper.getContext().getVar("temp").toString());
         } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        GrabberYandex grabberYandex = new GrabberYandex();
-        grabberYandex.setConfig("./miner/configs/config2.xml");
-        grabberYandex.grab();
-    }
-
 }

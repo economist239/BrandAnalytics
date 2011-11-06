@@ -10,6 +10,7 @@ import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -21,9 +22,11 @@ import java.util.Map;
 public class YandexNewsScraperRuntimeListener implements ScraperRuntimeListener {
     protected SimpleJdbcTemplate jdbcTemplate;
     protected ArticleProvider articleProvider;
+    private Date timeLimit;
 
-    public YandexNewsScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate) {
+    public YandexNewsScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
         this.jdbcTemplate = jdbcTemplate;
+        this.timeLimit = timeLimit;
         articleProvider = new ArticleProvider(jdbcTemplate);
     }
 

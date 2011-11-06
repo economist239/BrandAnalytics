@@ -23,9 +23,11 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
 
     protected SimpleJdbcTemplate jdbcTemplate;
     protected ArticleProvider articleProvider;
+    private Date timeLimit;
 
-    public LentaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate) {
+    public LentaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
         this.jdbcTemplate = jdbcTemplate;
+        this.timeLimit = timeLimit;
         articleProvider = new ArticleProvider(jdbcTemplate);
     }
 
@@ -85,7 +87,7 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
             Variable newsDate = (Variable) scraper.getContext().get("newsDate");
             Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
 
-            if (articleTimestamp.getTime() < DataTransformator.TIME_LIMIT) {
+            if (articleTimestamp.getTime() < timeLimit.getTime()) {
                 scraper.stopExecution();
             }
             if ((newsTitle.toString().isEmpty()) || (newsText.toString().isEmpty()) || (newsDate.toString().isEmpty())) {

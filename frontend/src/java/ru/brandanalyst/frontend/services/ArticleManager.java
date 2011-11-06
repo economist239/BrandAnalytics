@@ -14,7 +14,7 @@ import ru.brandanalyst.frontend.models.WideArticleForWeb;
  * Time: 11:41 PM
  * article service (get article from db and push it to yalet)
  */
-public class ArticleManager {
+public class  ArticleManager {
 
     private final SimpleJdbcTemplate jdbcTemplate;
 

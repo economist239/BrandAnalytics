@@ -8,6 +8,7 @@ import twitter4j.Query;
 import twitter4j.Tweet;
 import twitter4j.QueryResult;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 import ru.brandanalyst.core.db.provider.BrandProvider;
@@ -34,7 +35,7 @@ public class GrabberTwitter extends Grabber {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public void grab() {
+    public void grab(Date timeLimit) {
 
         Twitter twitter = new TwitterFactory().getInstance();
 

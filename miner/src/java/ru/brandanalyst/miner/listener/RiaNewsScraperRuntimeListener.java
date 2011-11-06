@@ -35,9 +35,11 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
     protected SimpleJdbcTemplate jdbcTemplate;
     protected ArticleProvider articleProvider;
+    private Date timeLimit;
 
-    public RiaNewsScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate) {
+    public RiaNewsScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
         this.jdbcTemplate = jdbcTemplate;
+        this.timeLimit = timeLimit;
         articleProvider = new ArticleProvider(jdbcTemplate);
     }
 
@@ -121,7 +123,7 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             String articleTitle = newsTitle.toString();
             String articleLink = scraper.getContext().get("riaAbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
 
-            if (articleTimestamp.getTime() < DataTransformator.TIME_LIMIT) {
+            if (articleTimestamp.getTime() < timeLimit.getTime()) {
                 scraper.stopExecution();
             }
 

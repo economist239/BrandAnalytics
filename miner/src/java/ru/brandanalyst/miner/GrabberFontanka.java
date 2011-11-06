@@ -9,6 +9,8 @@ import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.miner.listener.FontankaScraperRuntimeListener;
 import ru.brandanalyst.miner.util.DataTransformator;
 
+import java.util.Date;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -34,14 +36,14 @@ public class GrabberFontanka extends Grabber {
     }
 
     @Override
-    public void grab() {
+    public void grab(Date timeLimit) {
 
         for (Brand b : new BrandProvider(jdbcTemplate).getAllBrands()) {
             try {
 
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
-                scraper.addRuntimeListener(new FontankaScraperRuntimeListener(jdbcTemplate));
+                scraper.addRuntimeListener(new FontankaScraperRuntimeListener(jdbcTemplate, timeLimit));
                 String query = DataTransformator.stringToQueryString(b.getName());
                 scraper.addVariableToContext("QueryURL", beginSearchURL + query + endSearchURL); //"$p" - suffix for result page number
                 scraper.addVariableToContext("AbsoluteURL", sourceURL);

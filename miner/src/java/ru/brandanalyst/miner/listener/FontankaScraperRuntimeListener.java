@@ -31,9 +31,11 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
 
     protected SimpleJdbcTemplate jdbcTemplate;
     protected ArticleProvider articleProvider;
+    private Date timeLimit;
 
-    public FontankaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate) {
+    public FontankaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
         this.jdbcTemplate = jdbcTemplate;
+        this.timeLimit = timeLimit;
         articleProvider = new ArticleProvider(jdbcTemplate);
     }
 
@@ -85,7 +87,7 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
 
             Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
 
-            if(articleTimestamp.getTime() < DataTransformator.TIME_LIMIT){
+            if(articleTimestamp.getTime() < timeLimit.getTime()){
                 scraper.stopExecution();
             }
 
