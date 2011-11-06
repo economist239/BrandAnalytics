@@ -34,8 +34,8 @@
                             <a class="brand" href="index.xml">Brand Analytics</a>
                             <ul class="nav">
                                 <li class="active" valign="center">
-                                <p>Инновация настоящего. Парадигма будущего.
-                                </p>
+                                    <p>Инновация настоящего. Парадигма будущего.
+                                    </p>
                                 </li>
                             </ul>
 
@@ -75,6 +75,9 @@
                 <form method="get" action="/search.xml" align="center">
                     <input class="xlarge" type="text" name="query" size="50"/>
                     <input class="btn primary" type="submit" value="поиск"/>
+                    <br/>
+                    <input type="checkbox" name="query_type" value="news"/>
+                    <span>   искать по новостям</span>
                 </form>
             </div>
 

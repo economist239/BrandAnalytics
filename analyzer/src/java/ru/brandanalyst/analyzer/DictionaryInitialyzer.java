@@ -14,6 +14,7 @@ import ru.brandanalyst.core.model.SemanticDictionaryItem;
  * User: Dmitry Batkovich
  * Date: 11/4/11
  * Time: 10:03 AM
+ * @version 1.1
  */
 public class DictionaryInitialyzer {
     private static StringTokenizer stringTokenizer;

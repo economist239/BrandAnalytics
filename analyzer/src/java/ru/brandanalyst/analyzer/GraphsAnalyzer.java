@@ -18,6 +18,7 @@ import org.apache.log4j.Logger;
  * User: Dmitry Batkovich
  * Date: 10/26/11
  * Time: 3:14 PM
+ * @version 1.0
  */
 public class GraphsAnalyzer {
     private static final Logger log = Logger.getLogger(GraphsAnalyzer.class);

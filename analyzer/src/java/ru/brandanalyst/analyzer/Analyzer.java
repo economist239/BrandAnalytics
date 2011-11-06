@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
  * User: Nikolaj Karpov
  * Date: 23.10.11
  * Time: 21:10
- * @verion 1.0
+ * @version 1.0
  */
 public class Analyzer implements InitializingBean {
     private static final Logger log = Logger.getLogger(Analyzer.class);

@@ -43,7 +43,9 @@
 
     <bean id="showArticleYalet" class="ru.brandanalyst.frontend.yalets.ShowArticleYalet"/>
     <!--Searcher conf-->
-    <bean id="searchManager" class="ru.brandanalyst.frontend.services.SearchManager"/>
+    <bean id="brandSearchManager" class="ru.brandanalyst.frontend.services.BrandSearchManager"/>
+
+    <bean id="articleSearchManager" class="ru.brandanalyst.frontend.services.ArticleSearchManager"/>
 
     <bean id="searcher" class="ru.brandanalyst.searcher.Searcher">
         <property name="indexDirBrand" value="index_brand/"/>

@@ -4,8 +4,10 @@ import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.core.Yalet;
 import net.sf.xfresh.core.xml.Xmler;
-import ru.brandanalyst.frontend.services.SearchManager;
+import ru.brandanalyst.frontend.services.BrandSearchManager;
+import ru.brandanalyst.frontend.services.ArticleSearchManager;
 import ru.brandanalyst.frontend.models.SimplyBrandForWeb;
+import ru.brandanalyst.frontend.models.SimplyArticleForWeb;
 
 import java.util.List;
 
@@ -17,14 +19,20 @@ import java.util.List;
  */
 public class SearchYalet implements Yalet {
 
-    private SearchManager searchManager;
+    private BrandSearchManager brandSearchManager;
+    private ArticleSearchManager articleSearchManager;
 
-    public void setSearchManager(SearchManager searchManager) {
-        this.searchManager = searchManager;
+    public void setBrandSearchManager(BrandSearchManager brandSearchManager) {
+        this.brandSearchManager = brandSearchManager;
+    }
+
+    public void setArticleSearchManager(ArticleSearchManager articleSearchManager) {
+        this.articleSearchManager = articleSearchManager;
     }
 
     public void process(InternalRequest req, InternalResponse res) {
         String query = req.getParameter("query");
+        String queryType = req.getParameter("query_type");
 
         if (query.isEmpty()) {
             Xmler.Tag ans = Xmler.tag("answer", "Пустой запрос. Query: " + query);
@@ -32,18 +40,33 @@ public class SearchYalet implements Yalet {
             return;
         }
 
-        List<SimplyBrandForWeb> brandIssuance = searchManager.getSearchResultByBrand(query);
-
-        if (brandIssuance != null) {
-            if (brandIssuance.size() != 0) {
-                res.add(brandIssuance);
+        if (queryType != null) {
+            List<SimplyArticleForWeb> articleIssuance = articleSearchManager.getSearchResultByArticle(query);
+            if (articleIssuance != null) {
+                if (articleIssuance.size() != 0) {
+                    res.add(articleIssuance);
+                } else {
+                    Xmler.Tag ans = Xmler.tag("answer", "Ничего не найдено. Query by articles: " + query);
+                    res.add(ans);
+                }
             } else {
-                Xmler.Tag ans = Xmler.tag("answer", "Ничего не найдено. Query: " + query);
+                Xmler.Tag ans = Xmler.tag("answer", "Убейтесь, все сломалось, ничего не работает или слишком сложный запрос. Query by articles: " + query);
                 res.add(ans);
             }
         } else {
-            Xmler.Tag ans = Xmler.tag("answer", "Убейтесь, все сломалось, ничего не работает или слишком сложный запрос. Query: " + query);
-            res.add(ans);
+            List<SimplyBrandForWeb> brandIssuance = brandSearchManager.getSearchResultByBrand(query);
+
+            if (brandIssuance != null) {
+                if (brandIssuance.size() != 0) {
+                    res.add(brandIssuance);
+                } else {
+                    Xmler.Tag ans = Xmler.tag("answer", "Ничего не найдено. Query by brands: " + query);
+                    res.add(ans);
+                }
+            } else {
+                Xmler.Tag ans = Xmler.tag("answer", "Убейтесь, все сломалось, ничего не работает или слишком сложный запрос. Query by brands: " + query);
+                res.add(ans);
+            }
         }
     }
 
