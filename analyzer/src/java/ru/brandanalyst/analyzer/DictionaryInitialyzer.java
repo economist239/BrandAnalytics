@@ -9,6 +9,7 @@ import ru.brandanalyst.core.db.provider.SemanticDictionaryProvider;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
 
 /**
+ * Класс для инициализации семантического словаря в БД
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 11/4/11
@@ -18,6 +19,10 @@ public class DictionaryInitialyzer {
     private static StringTokenizer stringTokenizer;
     private static BufferedReader in;
 
+    /**
+    * метод инициализирует семантический словарь в БД
+    * @throws IOException
+    */
     public static void main(String[] args) throws IOException {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");

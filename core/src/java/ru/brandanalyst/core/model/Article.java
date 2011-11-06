@@ -2,11 +2,11 @@ package ru.brandanalyst.core.model;
 
 import java.sql.Timestamp;
 /**
+ * Модель новостной статьи
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 20:32
- * general model of article
  */
 public class Article {
     private long id;
@@ -18,6 +18,16 @@ public class Article {
     private Timestamp tstamp;
     private int numLikes;
 
+    /**
+    * @param id идентефикатор статьи
+    * @param brandId индетификатор бренда, о котором данная статья
+    * @param sourceId идентификатор источника
+    * @param title название статьи
+    * @param content такст статьи
+    * @param link ссылка на статью
+    * @param tstamp время публикования
+    * @param numLikes количество лайков
+     */
     public Article(long id, long brandId, long sourceId, String title, String content, String link, Timestamp tstamp, int numLikes) {
         this.id = id;
         this.sourceId = sourceId;
@@ -29,38 +39,62 @@ public class Article {
         this.brandId = brandId;
     }
 
+    /**
+    * @param brandId индетификатор бренда, о котором данная статья
+    * @param sourceId идентификатор источника
+    * @param title название статьи
+    * @param content такст статьи
+    * @param link ссылка на статью
+    * @param tstamp время публикования
+    * @param numLikes количество лайков
+     */
+    public Article(long brandId, long sourceId, String title, String content, String link, Timestamp tstamp, int numLikes) {
+        this.id = (long) -1;
+        this.sourceId = sourceId;
+        this.title = title;
+        this.content = content;
+        this.link = link;
+        this.tstamp = tstamp;
+        this.numLikes = numLikes;
+        this.brandId = brandId;
+    }
+
+    /**
+     *
+     * @return идентификатор статьи
+     */
     public long getId() {
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
+    /**
+     *
+     * @return идентификатор источника
+     */
     public long getSourceId() {
         return sourceId;
     }
 
-    public void setSourceId(long sourceId) {
-        this.sourceId = sourceId;
-    }
-
+    /**
+     *
+     * @return идентификатор бренда, о котором данная статья
+     */
     public long getBrandId() {
         return brandId;
     }
 
-    public void setBrandId(long brandId) {
-        this.sourceId = brandId;
-    }
-
+    /**
+     *
+     * @return название статьи
+     */
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
+    /**
+     *
+     * @return содержание статьи
+     */
     public String getContent() {
         return content;
     }
@@ -69,27 +103,27 @@ public class Article {
         this.content = content;
     }
 
+    /**
+     *
+     * @return ссылка на статью
+     */
     public String getLink() {
         return link;
     }
 
-    public void setAuthor(String link) {
-        this.link = link;
-    }
-
+    /**
+     *
+     * @return дата статьи
+     */
     public Timestamp getTstamp() {
         return tstamp;
     }
 
-    public void setTstamp(Timestamp tstamp) {
-        this.tstamp = tstamp;
-    }
-
+    /**
+     *
+     * @return количество лайков
+     */
     public int getNumLikes() {
         return numLikes;
-    }
-
-    public void setNumLikes(int numLikes) {
-        this.numLikes = numLikes;
     }
 }

@@ -1,11 +1,11 @@
 package ru.brandanalyst.core.model;
 
 /**
+ * Модель бренда
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 17:15
- * general model of brand
  */
 public class Brand {
     private long id;

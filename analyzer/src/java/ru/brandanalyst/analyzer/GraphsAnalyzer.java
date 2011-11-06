@@ -13,6 +13,7 @@ import ru.brandanalyst.core.time.TimeProperties;
 import org.apache.log4j.Logger;
 
 /**
+ * Класс, строящий основные временные ряды по данным из новостных источников
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 10/26/11
@@ -21,14 +22,23 @@ import org.apache.log4j.Logger;
 public class GraphsAnalyzer {
     private static final Logger log = Logger.getLogger(GraphsAnalyzer.class);
 
+    /**шаблон первичной БД*/
     private SimpleJdbcTemplate dirtyJdbcTemplate;
+    /**шаблон вторичной БД*/
     private SimpleJdbcTemplate pureJdbcTemplate;
 
+    /**
+    * @param pureJdbcTemplate шаблон вторичной базы данных
+    * @param dirtyJdbcTemplate шаблон первичной базы данных
+    */
     public GraphsAnalyzer(SimpleJdbcTemplate pureJdbcTemplate, SimpleJdbcTemplate dirtyJdbcTemplate) {
         this.dirtyJdbcTemplate = dirtyJdbcTemplate;
         this.pureJdbcTemplate = pureJdbcTemplate;
     }
 
+    /*
+    * метод, где проводится построение рядов
+    */
     public void analyze() {
 
         log.info("graph analyzing started...");
