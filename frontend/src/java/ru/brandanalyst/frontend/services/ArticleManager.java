@@ -3,6 +3,7 @@ package ru.brandanalyst.frontend.services;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.frontend.models.WideArticleForWeb;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,8 +20,9 @@ public class ArticleManager {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public Article getArticle(long id) {
+    public WideArticleForWeb getArticle(long id) {
         ArticleProvider articleProvider = new ArticleProvider(jdbcTemplate);
-        return articleProvider.getArticleById(id);
+        Article article = articleProvider.getArticleById(id);
+            return new WideArticleForWeb(article.getLink(), article.getTitle(), article.getContent(), "", "", article.getTstamp().toString());
     }
 }

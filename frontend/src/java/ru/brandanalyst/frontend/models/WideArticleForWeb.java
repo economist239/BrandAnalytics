@@ -7,5 +7,44 @@ package ru.brandanalyst.frontend.models;
  * Time: 12:20 AM
  * wide model of article for web
  */
-public class WideArticleForWeb {
+public final class WideArticleForWeb {
+    private final String link;
+    private final String title;
+    private final String content;
+    private final String sourceName;
+    private final String sourceLink;
+    private final String time;
+
+    public WideArticleForWeb(String link, String title, String content, String sourceName, String sourceLink, String time) {
+        this.link = link;
+        this.title = title;
+        this.content = content;
+        this.sourceName = sourceName;
+        this.sourceLink = sourceLink;
+        this.time = time;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getSourceName() {
+        return sourceName;
+    }
+
+    public String getSourceLink() {
+        return sourceLink;
+    }
+
+    public String getTime() {
+        return time;
+    }
 }
