@@ -23,7 +23,7 @@ public class BrandDictionaryProvider {
     }
 
     public void cleanDataStore() {
-        jdbcTemplate.update("TRUNCATE TABLE Dictionary");
+        jdbcTemplate.update("TRUNCATE TABLE BrandDictionary");
     }
 
     public BrandDictionaryItem getDictionaryItem(long brandId) {

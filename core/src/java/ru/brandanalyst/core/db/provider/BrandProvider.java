@@ -50,8 +50,8 @@ public class BrandProvider {
         return list.get(0);
     }
 
-    public Brand getBrandById(long brand_id) {
-        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Id = " + Long.toString(brand_id), brandMapper);
+    public Brand getBrandById(long brandId) {
+        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Id = " + Long.toString(brandId), brandMapper);
         return list.get(0);
     }
 
