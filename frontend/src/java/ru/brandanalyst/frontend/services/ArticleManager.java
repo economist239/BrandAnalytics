@@ -1,8 +1,10 @@
 package ru.brandanalyst.frontend.services;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import ru.brandanalyst.core.db.provider.InformationSourceProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.core.model.InfoSource;
 import ru.brandanalyst.frontend.models.WideArticleForWeb;
 
 /**
@@ -23,6 +25,15 @@ public class ArticleManager {
     public WideArticleForWeb getArticle(long id) {
         ArticleProvider articleProvider = new ArticleProvider(jdbcTemplate);
         Article article = articleProvider.getArticleById(id);
-            return new WideArticleForWeb(article.getLink(), article.getTitle(), article.getContent(), "", "", article.getTstamp().toString());
+
+        InformationSourceProvider informationSourceProvider = new InformationSourceProvider(jdbcTemplate);
+        InfoSource infoSource = informationSourceProvider.getInfoSourceById(article.getSourceId());
+
+        return new WideArticleForWeb(article.getLink(),
+                article.getTitle(),
+                article.getContent(),
+                infoSource.getTitle(),
+                infoSource.getWebsite(),
+                article.getTstamp().toString());
     }
 }
