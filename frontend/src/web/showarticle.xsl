@@ -8,14 +8,24 @@
     </xsl:template>
 
     <xsl:template match="page/data[@id='showArticle']" mode="show">
-        <xsl:for-each select="article">
+        <xsl:for-each select="wide-article-for-web">
             <div class="content">
-                <h3>
-                        <xsl:value-of select="title"/>
-                </h3>
+                <h3><a>
+                    <xsl:attribute name="href"><xsl:value-of select="link"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="title"/>
+                </a></h3>
                 <p>
                     <xsl:value-of select="content"/>
                 </p>
+                <p>
+                Дата публикации: <xsl:value-of select="time"/>
+                </p>
+                <a><xsl:attribute name="href"><xsl:value-of select="source-link"/>
+                    </xsl:attribute>
+                Источник: <xsl:value-of select="source-name"/>
+                </a>
+
             </div>
         </xsl:for-each>
     </xsl:template>

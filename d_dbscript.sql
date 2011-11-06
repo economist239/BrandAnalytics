@@ -96,16 +96,16 @@ INSERT INTO Branch (Name) VALUES("IT: программное обеспечен�
 INSERT INTO Branch (Name) VALUES("мобильная связь");
 INSERT INTO Branch (Name) VALUES("IT: железо");
 
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(0, "Хабрахабр", "социальная сеть и блог", "habrahabr.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(0, "Twitter", "твиты, твиты", "twitter.com");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Лента.ру", "новости", "lenta.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "ИТАР ТАСС", "новости", "itar-tass.com");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "РБК", "новости", "rbc.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "РИА новости", "новости", "ria.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "ФИНАМ","всякая бурда","finam.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Коммерсант", "унылые новости", "kommersant.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Газета.RU", "новости", "gazeta.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Фонтанка.RU", "новости", "fontanka.ru");
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(0, "Хабрахабр", "социальная сеть и блог", "http://habrahabr.ru");
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(0, "Twitter", "твиты, твиты", "http://twitter.com");
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Лента.ру", "новости", "http://lenta.ru");
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "ИТАР ТАСС", "новости", "http://itar-tass.com");
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "РБК", "новости", "http://rbc.ru");
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "РИА новости", "новости", "http://ria.ru");
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "ФИНАМ","всякая бурда","http://finam.ru");
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Коммерсант", "унылые новости", "http://kommersant.ru");
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Газета.RU", "новости", "http://gazeta.ru");
+INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Фонтанка.RU", "новости", "http://fontanka.ru");
 
 INSERT INTO Ticker (TickerName) VALUES("Статистика упоминаемости в новостях");
 
