@@ -9,7 +9,6 @@ import org.webharvest.runtime.variables.Variable;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
-import ru.brandanalyst.miner.util.LentaDataTransformator;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -97,9 +96,9 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
 
             String articleContent = "";
             Integer kind = Integer.parseInt(scraper.getContext().get("kind").toString());
-            if (kind == 0) articleContent = LentaDataTransformator.clearNewsString(newsText.toString(), articleLink);
-            else if (kind == 1) articleContent = LentaDataTransformator.clearArticlesString(newsText.toString());
-            else articleContent = LentaDataTransformator.clearString(newsText.toString());
+            if (kind == 0) articleContent = DataTransformator.clearNewsString(newsText.toString(), articleLink);
+            else if (kind == 1) articleContent = DataTransformator.clearArticlesString(newsText.toString());
+            else articleContent = DataTransformator.clearString(newsText.toString());
             if (articleContent.isEmpty()) {
                 log.info("Lenta: Invalid structure...");
                 return;

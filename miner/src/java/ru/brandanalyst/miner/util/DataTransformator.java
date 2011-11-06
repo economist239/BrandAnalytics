@@ -9,37 +9,29 @@ import java.text.SimpleDateFormat;
  * Time: 6:20 PM
  * help class to parse data
  */
-public final class DataTransformator {
+public abstract class DataTransformator {
 
-    public final static long TIME_LIMIT = (long)(13174128) * (long)(100000);
+    public final static long TIME_LIMIT = (long) (13174128) * (long) (100000);
 
     private DataTransformator() {
 
     }
 
     public static String stringToQueryString(String str) {
-        String query = "";
-        for (int i = 0; i < str.length(); i++) {
-            if ((int)str.charAt(i) == 32) {
-                query += "+";
-                continue;
-            }
-            query += str.charAt(i);
-        }
-        return query;
+        return str.replaceAll(" ", "+");
     }
 
     public static String stringToHexQueryString(String str) {
         String query = "";
         for (int i = 0; i < str.length(); i++) {
-            if ((int)str.charAt(i) > 1000) {
+            if ((int) str.charAt(i) > 1000) {
                 query += charToHex(str.charAt(i));
             }
-            if ((int)str.charAt(i) == 32) {
+            if ((int) str.charAt(i) == 32) {
                 query += "+";
                 continue;
             }
-            if ((int)str.charAt(i) < 1000) {
+            if ((int) str.charAt(i) < 1000) {
                 query += str.charAt(i);
             }
         }
@@ -62,12 +54,12 @@ public final class DataTransformator {
                 toClear = toClear.replaceFirst(">", " ");
             }
         }
-        toClear = toClear.replaceAll("\n"," ");
+        toClear = toClear.replaceAll("\n\n", "\n");
         toClear = toClear.replaceAll("\t", "");
         toClear = toClear.replaceAll(" {2,}", " ");
         toClear = toClear.replaceAll(" {1,}[.]", ".");
         toClear = toClear.replaceAll(" {1,}[,]", ",");
-        toClear = toClear.replaceAll("  "," ");
+        toClear = toClear.replaceAll("  ", " ");
         return toClear;
     }
 }
