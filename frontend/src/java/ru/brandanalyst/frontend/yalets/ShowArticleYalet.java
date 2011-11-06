@@ -4,6 +4,7 @@ import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.core.xml.Xmler;
 import net.sf.xfresh.db.AbstractDbYalet;
+import ru.brandanalyst.frontend.models.WideArticleForWeb;
 import ru.brandanalyst.frontend.services.ArticleManager;
 import ru.brandanalyst.core.model.Article;
 
@@ -20,7 +21,7 @@ public class ShowArticleYalet extends AbstractDbYalet {
         long articleId = req.getLongParameter("id");
 
         ArticleManager manager = new ArticleManager(jdbcTemplate);
-        Article article = manager.getArticle(articleId);
+        WideArticleForWeb article = manager.getArticle(articleId);
         if (article != null) {
             res.add(article);
         } else {
