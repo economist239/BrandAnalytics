@@ -77,7 +77,7 @@
                     <input class="btn primary" type="submit" value="поиск"/>
                     <br/>
                     <input type="checkbox" name="query_type" value="news"/>
-                    <span>   искать по новостям</span>
+                    <span>искать по новостям</span>
                 </form>
             </div>
 
@@ -89,6 +89,40 @@
     <xsl:template name="leftmenu">
         <xsl:apply-templates select="page/data[@id='showLeftMenu' ]" mode="show"/>
         <xsl:apply-templates select="page/data[@id='showLeftMenu' ]/collection" mode="show"/>
+        <br/>
+        <table cellpadding="0" cellspacing="0" border="0" style="font: 0.8em Arial, sans-serif" align="center" valign="center">
+            <tr align="center" valign="center">
+                <td width="116" height="77"
+                    style="border: 0; background:url(https://img.yandex.net/i/money/top-5rub-default.gif) repeat-y; text-align:center; padding: 0;"
+                    align="center" valign="center">
+                    <form style="margin: 0; padding: 0 0 2px;" action="https://money.yandex.ru/donate.xml"
+                          method="post">
+                        <input type="hidden" name="to" value="41001790730047"/>
+                        <input type="hidden" name="s5" value="5rub"/>
+                        <input type="submit" value="Дай пять"/>
+                    </form>
+                </td>
+            </tr>
+            <tr align="center" valign="center">
+                <td width="116" height="38"
+                    style="font-size:13px; color:black;padding: 0; border: 0; background:url(https://img.yandex.net/i/money/bg-default.gif) repeat-y; text-align:center; padding: 5px 0;"
+                    align="center" valign="center">
+                    <b align="center">donate</b>
+                </td>
+            </tr>
+            <tr align="center" valign="center">
+                <td style="padding: 0; border:0;" align="center" valign="center">
+                    <img src="https://img.yandex.net/i/money/bottom-default.gif" width="116" height="40" alt=""
+                         usemap="#button" border="0" align="center" valign="center"/>
+                    <map name="button">
+                        <area alt="Яндекс" coords="38,2,49,21" href="http://www.yandex.ru"/>
+                        <area alt="Яндекс. Деньги" coords="52,1,84,28" href="https://money.yandex.ru"/>
+                        <area alt="Хочу такую же кнопку" coords="17,29,100,40"
+                              href="https://money.yandex.ru/choose-banner.xml"/>
+                    </map>
+                </td>
+            </tr>
+        </table>
     </xsl:template>
 
     <xsl:template match="page/data[@id='showLeftMenu']" mode="show">
