@@ -21,7 +21,7 @@ public final class WideArticleForWeb {
         this.content = content;
         this.sourceName = sourceName;
         this.sourceLink = sourceLink;
-        this.time = time;
+        this.time = time.substring(0,10);
     }
 
     public String getLink() {

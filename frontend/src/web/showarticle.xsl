@@ -18,13 +18,17 @@
                 <p>
                     <xsl:value-of select="content"/>
                 </p>
+                <div align="right">
                 <p>
                 Дата публикации: <xsl:value-of select="time"/>
                 </p>
+                <p>Источник:
                 <a><xsl:attribute name="href"><xsl:value-of select="source-link"/>
                     </xsl:attribute>
-                Источник: <xsl:value-of select="source-name"/>
+                <xsl:value-of select="source-name"/>
                 </a>
+                 </p>
+                </div>
 
             </div>
         </xsl:for-each>
