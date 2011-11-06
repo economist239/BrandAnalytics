@@ -7,8 +7,10 @@ import org.webharvest.runtime.ScraperRuntimeListener;
 import org.webharvest.runtime.processors.BaseProcessor;
 import org.webharvest.runtime.variables.Variable;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.core.db.provider.BrandDictionaryProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
+import ru.brandanalyst.miner.util.StringChecker;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -73,10 +75,11 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
 
         if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
             try{
+            long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
             Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
+            if (!StringChecker.isTitleHaveTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionaryItem(brandId).getItems(), newsTitle.toString())) return;
             Variable newsText = (Variable) scraper.getContext().get("newsFullText");
             Variable newsDate = (Variable) scraper.getContext().get("newsDate");
-            long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
 
             Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
 

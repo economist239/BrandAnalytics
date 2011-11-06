@@ -11,6 +11,7 @@ import ru.brandanalyst.core.db.provider.BrandDictionaryProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.miner.util.DataTransformator;
+import ru.brandanalyst.miner.util.StringChecker;
 
 import javax.mail.search.DateTerm;
 import java.text.ParseException;
@@ -99,19 +100,14 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             return text;
         }
     }
-    public boolean isTitleHaveTerm(List<String> items, String title)
-    {
-        for (String item:items)
-            if (title.toLowerCase().contains(item.toLowerCase())) return true;
-        return false;
-    }
+
 
     public void onProcessorExecutionFinished(Scraper scraper, BaseProcessor baseProcessor, Map map) {
         if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
 
             long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
             Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
-            if (!isTitleHaveTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionaryItem(brandId).getItems(),newsTitle.toString())) return;
+            if (!StringChecker.isTitleHaveTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionaryItem(brandId).getItems(),newsTitle.toString())) return;
             Variable newsText = (Variable) scraper.getContext().get("newsFullText");
             Variable newsDate = (Variable) scraper.getContext().get("newsDate");
 
