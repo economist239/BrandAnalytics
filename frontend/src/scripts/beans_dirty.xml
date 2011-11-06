@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<!--
+I don't recomend to use this beans because it's only for test articles on frontend
+-->
+<beans default-autowire="byName" default-init-method="getReadyForSearch" >
+    <!--Spring helpers-->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+    <!--Jetty beans-->
+    <bean id="serverInitializer" class="net.sf.xfresh.jetty.JettyServerInitializer">
+        <property name="port" value="8081"/> <!--property's value for nerds =)-->
+        <property name="maxThreads" value="10"/>
+        <property name="handlers">
+             <list>
+                <bean class="net.sf.xfresh.jetty.YaletXmlPageHandler">
+                    <property name="resourceBase" value="./frontend/src/web"/>
+                </bean>
+                <bean class="org.mortbay.jetty.handler.ResourceHandler">
+                    <property name="resourceBase" value="./frontend/src/web"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <!--Fresh core beans-->
+    <bean id="yaletProcessor" class="net.sf.xfresh.core.YaletProcessor">
+        <property name="encoding" value="utf-8"/>
+    </bean>
+
+    <bean id="yaletSupport" class="net.sf.xfresh.core.impl.DefaultYaletSupport"/>
+
+    <bean id="yaletResolver" class="net.sf.xfresh.core.spring.SpringYaletResolver"/>
+
+    <bean id="saxGenerator" class="net.sf.xfresh.core.sax.DefaultSaxGenerator"/>
+
+    <bean id="singleYaletProcessor" class="net.sf.xfresh.core.impl.DefaultSingleYaletProcessor"/>
+
+    <!--Yalets-->
+    <bean id="showLeftMenuYalet" class="ru.brandanalyst.frontend.yalets.ShowLeftMenuYalet"/>
+
+    <bean id="wideBrandInfoYalet" class="ru.brandanalyst.frontend.yalets.WideBrandInfoYalet"/>
+
+    <bean id="searchYalet" class="ru.brandanalyst.frontend.yalets.SearchYalet"/>
+
+    <bean id="showArticleYalet" class="ru.brandanalyst.frontend.yalets.ShowArticleYalet"/>
+    <!--Searcher conf-->
+    <bean id="searchManager" class="ru.brandanalyst.frontend.services.SearchManager"/>
+
+    <bean id="searcher" class="ru.brandanalyst.searcher.Searcher">
+        <property name="indexDirBrand" value="index_brand/"/>
+        <property name="indexDirArticle" value="index_article/"/>
+    </bean>
+
+    <!--DB conf-->
+    <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+        <property name="validationQuery" value="select 1"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
+        <constructor-arg ref="dataSource"/>
+    </bean>
+</beans>
