@@ -3,81 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/build.xml" afterPath="$PROJECT_DIR$/analyzer/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/Analyzer.java" afterPath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/Analyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/DictionaryInitialyzer.java" afterPath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/DictionaryInitialyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/GraphsAnalyzer.java" afterPath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/GraphsAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checks.xml" afterPath="$PROJECT_DIR$/checks.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/checkstyle.xsl" afterPath="$PROJECT_DIR$/checkstyle.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/build.xml" afterPath="$PROJECT_DIR$/core/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/base/Request.java" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/base/Request.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/base/RequestYalet.java" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/base/RequestYalet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/sax/DefaultSaxGenerator.java" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/core/sax/DefaultSaxGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/util/XmlUtil.java" afterPath="$PROJECT_DIR$/core/src/java/net/sf/xfresh/util/XmlUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/ArticleMapper.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/ArticleMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/BrandMapper.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/BrandMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/SemanticDictionaryMapper.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/SemanticDictionaryMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ArticleProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ArticleProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandDictionaryProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandDictionaryProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/GraphProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/GraphProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/InformationSourceProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/InformationSourceProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/SemanticDictionaryProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/SemanticDictionaryProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/BrandDictionaryItem.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/BrandDictionaryItem.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Graph.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Graph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/InfoSource.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/InfoSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/SingleDot.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/SingleDot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/time/TimeProperties.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/time/TimeProperties.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/TestGraphsFromDB.java" afterPath="$PROJECT_DIR$/core/src/test/TestGraphsFromDB.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/findbugs.xsl" afterPath="$PROJECT_DIR$/findbugs.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/build.xml" afterPath="$PROJECT_DIR$/frontend/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/GraphForWeb.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/GraphForWeb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/SimplyBrandForWeb.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/SimplyBrandForWeb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/WideArticleForWeb.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/WideArticleForWeb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/ArticleManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/ArticleManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/ArticleSearchManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/ArticleSearchManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/LeftMenuManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/LeftMenuManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/WideBrandInfoManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/WideBrandInfoManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/util/TextConverter.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/util/TextConverter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowArticleYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowArticleYalet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/WideBrandInfoYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/WideBrandInfoYalet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/scripts/beans.xml" afterPath="$PROJECT_DIR$/frontend/src/scripts/beans.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/scripts/beans_dirty.xml" afterPath="$PROJECT_DIR$/frontend/src/scripts/beans_dirty.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/index.html" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/index.html" afterPath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/common.xsl" afterPath="$PROJECT_DIR$/frontend/src/web/common.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/index.xsl" afterPath="$PROJECT_DIR$/frontend/src/web/index.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/raphael/test.html" afterPath="$PROJECT_DIR$/frontend/src/web/raphael/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/search.xsl" afterPath="$PROJECT_DIR$/frontend/src/web/search.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/showarticle.xsl" afterPath="$PROJECT_DIR$/frontend/src/web/showarticle.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/showbrand.xsl" afterPath="$PROJECT_DIR$/frontend/src/web/showbrand.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexer/build.xml" afterPath="$PROJECT_DIR$/indexer/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" afterPath="$PROJECT_DIR$/indexer/src/java/ru/brandanalyst/indexer/Indexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/build.xml" afterPath="$PROJECT_DIR$/miner/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/configs/config1.xml" afterPath="$PROJECT_DIR$/miner/configs/config1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/configs/config2.xml" afterPath="$PROJECT_DIR$/miner/configs/config2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/configs/fontankaNews1.xml" afterPath="$PROJECT_DIR$/miner/configs/fontankaNews1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/configs/lentaRu.xml" afterPath="$PROJECT_DIR$/miner/configs/lentaRu.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/configs/riaNews1.xml" afterPath="$PROJECT_DIR$/miner/configs/riaNews1.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/configs/wikibrands.xml" afterPath="$PROJECT_DIR$/miner/configs/wikibrands.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/Grabber.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/Grabber.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberContainer.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberTwitter.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberTwitter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberWikipedia.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberWikipedia.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/FontankaScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/FontankaScraperRuntimeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/LentaScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/LentaScraperRuntimeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/WikipediaScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/WikipediaScraperRuntimeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/YandexNewsScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/YandexNewsScraperRuntimeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/scripts/beans.xml" afterPath="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/test/MinerUtilTest.java" afterPath="$PROJECT_DIR$/miner/src/test/MinerUtilTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/test/TwitterWrapperToFile.java" afterPath="$PROJECT_DIR$/miner/src/test/TwitterWrapperToFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/build.xml" afterPath="$PROJECT_DIR$/searcher/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" afterPath="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/src/test/Test.java" afterPath="$PROJECT_DIR$/searcher/src/test/Test.java" />
     </list>
     <list id="c16d02c9-2f64-4539-9895-fad787085a75" name="Rejected commit: Default" comment="analyzer with beans" />
     <ignored path="BrandAnalytics.iws" />
@@ -859,7 +784,7 @@
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21156773" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21156773" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15279879" sideWeight="0.7869102" order="0" side_tool="false" content_ui="tabs" />
@@ -870,7 +795,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21835443" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32724506" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24357034" sideWeight="0.78843224" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24357034" sideWeight="0.78843224" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28767124" sideWeight="0.99773073" order="2" side_tool="false" content_ui="tabs" x="0" y="24" width="1366" height="744" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -906,7 +831,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="donate via yandex.money added" />
+    <option name="LAST_COMMIT_MESSAGE" value="javadoc added" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -919,7 +844,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="showbrand xslt fixed&#10;" />
     <MESSAGE value="wide brand info manager fixed&#10;" />
     <MESSAGE value="wikibrands fixed&#10;" />
     <MESSAGE value="ria fixed" />
@@ -944,6 +868,7 @@
     <MESSAGE value="lenta scraper fixed&#10;" />
     <MESSAGE value="time limit for grabbers added" />
     <MESSAGE value="donate via yandex.money added" />
+    <MESSAGE value="javadoc added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
