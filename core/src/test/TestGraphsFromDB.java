@@ -5,8 +5,10 @@ import ru.brandanalyst.core.db.provider.GraphProvider;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
 import junit.framework.Assert;
+
 import java.sql.Timestamp;
 import java.util.List;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -50,8 +52,8 @@ public class TestGraphsFromDB {
         dataStore.writeSingleDot(t, val, 1, 1);
 
         List<Graph> list = dataStore.getGraphsByBrandId(1);
-        for(Graph g: list) {
-            for(SingleDot d: g.getGraph()) {
+        for (Graph g : list) {
+            for (SingleDot d : g.getGraph()) {
                 System.out.println(d.getDate());
             }
             System.out.println("конец графика");

@@ -10,6 +10,7 @@ import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 import ru.brandanalyst.miner.util.LentaDataTransformator;
+
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,8 +22,8 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
     private int i = 0;
     private static final Logger log = Logger.getLogger(LentaScraperRuntimeListener.class);
 
-    protected SimpleJdbcTemplate jdbcTemplate;
-    protected ArticleProvider articleProvider;
+    private SimpleJdbcTemplate jdbcTemplate;
+    private ArticleProvider articleProvider;
     private Date timeLimit;
 
     public LentaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
@@ -41,7 +42,7 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
         Date date;
         try {
             date = dateFormat.parse(stringDate);
-        }catch(ParseException e) {
+        } catch (ParseException e) {
             date = new Date();
         }
 

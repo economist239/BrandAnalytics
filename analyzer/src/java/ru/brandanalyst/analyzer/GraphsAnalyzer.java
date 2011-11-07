@@ -1,8 +1,13 @@
 package ru.brandanalyst.analyzer;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.*;
-import ru.brandanalyst.core.model.*;
+import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.db.provider.GraphProvider;
+import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.core.model.Graph;
+import ru.brandanalyst.core.model.SingleDot;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -18,20 +23,25 @@ import org.apache.log4j.Logger;
  * User: Dmitry Batkovich
  * Date: 10/26/11
  * Time: 3:14 PM
+ *
  * @version 1.0
  */
 public class GraphsAnalyzer {
     private static final Logger log = Logger.getLogger(GraphsAnalyzer.class);
 
-    /**шаблон первичной БД*/
+    /**
+     * шаблон первичной БД
+     */
     private SimpleJdbcTemplate dirtyJdbcTemplate;
-    /**шаблон вторичной БД*/
+    /**
+     * шаблон вторичной БД
+     */
     private SimpleJdbcTemplate pureJdbcTemplate;
 
     /**
-    * @param pureJdbcTemplate шаблон вторичной базы данных
-    * @param dirtyJdbcTemplate шаблон первичной базы данных
-    */
+     * @param pureJdbcTemplate  шаблон вторичной базы данных
+     * @param dirtyJdbcTemplate шаблон первичной базы данных
+     */
     public GraphsAnalyzer(SimpleJdbcTemplate pureJdbcTemplate, SimpleJdbcTemplate dirtyJdbcTemplate) {
         this.dirtyJdbcTemplate = dirtyJdbcTemplate;
         this.pureJdbcTemplate = pureJdbcTemplate;

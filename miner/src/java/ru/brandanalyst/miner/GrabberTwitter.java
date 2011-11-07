@@ -7,6 +7,7 @@ import twitter4j.TwitterFactory;
 import twitter4j.Query;
 import twitter4j.Tweet;
 import twitter4j.QueryResult;
+
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;

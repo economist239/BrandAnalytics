@@ -5,9 +5,11 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
 import ru.brandanalyst.core.db.mapper.SemanticDictionaryMapper;
+
 import java.util.List;
 
 /**
+ * Класс доступа к словарю для эмоциональной окраски текста, использеутся в модуле analyzer
  * Created by IntelliJ IDEA.
  * User: DmitryBatkovich
  * Date: 11/4/11
@@ -23,6 +25,7 @@ public class SemanticDictionaryProvider {
         semanticDictMapper = new SemanticDictionaryMapper();
     }
 
+    @Deprecated
     public void cleanDataStore() {
         jdbcTemplate.update("TRUNCATE TABLE SemanticDictionary");
     }

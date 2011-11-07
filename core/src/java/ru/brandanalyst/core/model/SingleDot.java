@@ -1,6 +1,7 @@
 package ru.brandanalyst.core.model;
 
 import java.sql.Timestamp;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich

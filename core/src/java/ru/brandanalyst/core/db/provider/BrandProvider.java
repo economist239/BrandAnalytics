@@ -26,6 +26,7 @@ public class BrandProvider {
         brandMapper = new BrandMapper();
     }
 
+    @Deprecated
     public void cleanDataStore() {
         jdbcTemplate.update("TRUNCATE TABLE Brand");
     }

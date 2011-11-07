@@ -12,6 +12,7 @@ import ru.brandanalyst.frontend.models.SimplyArticleForWeb;
 import java.util.List;
 
 /**
+ * Ялет отображения поисковой выдачи
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 04.10.11

@@ -1,6 +1,8 @@
 package ru.brandanalyst.analyzer;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileReader;
 import java.util.StringTokenizer;
 
 import org.apache.commons.dbcp.BasicDataSource;
@@ -14,16 +16,20 @@ import ru.brandanalyst.core.model.SemanticDictionaryItem;
  * User: Dmitry Batkovich
  * Date: 11/4/11
  * Time: 10:03 AM
+ *
  * @version 1.1
  */
-public class DictionaryInitialyzer {
+public final class DictionaryInitialyzer {
     private static StringTokenizer stringTokenizer;
     private static BufferedReader in;
 
+    private DictionaryInitialyzer() { }
+
     /**
-    * метод инициализирует семантический словарь в БД
-    * @throws IOException
-    */
+     * метод инициализирует семантический словарь в БД
+     *
+     * @throws IOException
+     */
     public static void main(String[] args) throws IOException {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
@@ -38,7 +44,6 @@ public class DictionaryInitialyzer {
         stringTokenizer = new StringTokenizer(in.readLine());
         while (stringTokenizer.hasMoreTokens()) {
             String term = stringTokenizer.nextToken();
-            System.out.println(term);
             provider.setSemanticDictionaryItem(new SemanticDictionaryItem(term, 1.0));
         }
         in.close();
@@ -47,7 +52,6 @@ public class DictionaryInitialyzer {
         stringTokenizer = new StringTokenizer(in.readLine());
         while (stringTokenizer.hasMoreTokens()) {
             String term = stringTokenizer.nextToken();
-            System.out.println(term);
             provider.setSemanticDictionaryItem(new SemanticDictionaryItem(term, 1.0));
         }
         in.close();

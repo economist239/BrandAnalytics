@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -12,7 +13,7 @@ import ru.brandanalyst.core.model.SemanticDictionaryItem;
  * Time: 9:24 AM
  */
 public class SemanticDictionaryMapper implements ParameterizedRowMapper<SemanticDictionaryItem> {
-        public final SemanticDictionaryItem mapRow(final ResultSet resultSet, final int i) throws SQLException {
+    public final SemanticDictionaryItem mapRow(final ResultSet resultSet, final int i) throws SQLException {
         return new SemanticDictionaryItem(resultSet.getString("Term"), Double.parseDouble(resultSet.getString("SemanticValue")));
     }
 }

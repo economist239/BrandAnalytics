@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
+ * Сервис, предоставляющий широкую информацию о бренде, включая последние новости о нем и анализ графиков
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 10/19/11
@@ -18,6 +19,9 @@ import java.util.ArrayList;
  */
 public class WideBrandInfoManager {
 
+    /**
+     * количество показываемых последних новостей
+     */
     private final static int NUM_ARTICLES = 6;
     private final SimpleJdbcTemplate jdbcTemplate;
 
@@ -30,13 +34,16 @@ public class WideBrandInfoManager {
         return brandProvider.getBrandById(brandId);
     }
 
+    /**
+     * В будущем предполагается виджет, со своим сервисом, который заменит этот метод
+     */
     public List<GraphForWeb> getGraphsForBrand(long brandId) {
         GraphProvider graphProvider = new GraphProvider(jdbcTemplate);
         List<Graph> graphList = graphProvider.getGraphsByBrandId(brandId);
         List<GraphForWeb> simpleGraphsList = new ArrayList<GraphForWeb>();
-        for (Graph g: graphList) {
+        for (Graph g : graphList) {
             GraphForWeb graphForWeb = new GraphForWeb(g.getTicker());
-            for (SingleDot d: g.getGraph()) {
+            for (SingleDot d : g.getGraph()) {
                 graphForWeb.addDot(d);
             }
             simpleGraphsList.add(graphForWeb);

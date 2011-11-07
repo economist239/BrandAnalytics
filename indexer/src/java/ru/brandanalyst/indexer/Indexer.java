@@ -19,11 +19,11 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ * Класс индексирующий бренды и новости одновременно (!!!)
  * Created by IntelliJ IDEA.
  * User: Nikolaj Karpov
  * Date: 10.10.11
  * Time: 22:55
- * class of indexer that index articles and brands
  */
 public class Indexer implements InitializingBean {
 
@@ -47,6 +47,9 @@ public class Indexer implements InitializingBean {
         this.directoryArticle = directoryArticle;
     }
 
+    /**
+     * Основной метод, в котором вызывается индексеры
+     */
     public void afterPropertiesSet() { // method initialize IndexWriter
         try {
             SimpleFSDirectory indexDirectoryBrand = new SimpleFSDirectory(new File(directoryBrand));
@@ -67,6 +70,9 @@ public class Indexer implements InitializingBean {
         }
     }
 
+    /**
+     * индексация новостей
+     */
     private void articleIndex(IndexWriter writer) {
 
         log.info("indexing articles");
@@ -84,6 +90,10 @@ public class Indexer implements InitializingBean {
         }
     }
 
+
+    /**
+     * индексация брендов
+     */
     private void brandIndex(IndexWriter writer) {
 
         log.info("indexing brands");
@@ -100,6 +110,9 @@ public class Indexer implements InitializingBean {
         }
     }
 
+    /**
+     * метод, создающий из новости единицу индекса
+     */
     private Document createDocument(Article a) {
         Document doc = new Document();
 
@@ -115,6 +128,9 @@ public class Indexer implements InitializingBean {
         return doc;
     }
 
+    /**
+     * метод, создающий из бренда единицу индекса
+     */
     private Document createDocument(Brand b) { //create document
 
         Document doc = new Document();

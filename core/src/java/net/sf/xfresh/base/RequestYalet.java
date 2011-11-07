@@ -7,7 +7,7 @@ import net.sf.xfresh.core.InternalResponse;
 /**
  * Date: 29.08.2007
  * Time: 8:49:53
- *
+ * <p/>
  * Shows content of request.
  *
  * @author Nikolay Malevanny nmalevanny@yandex-team.ru

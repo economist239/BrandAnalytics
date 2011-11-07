@@ -4,12 +4,12 @@ import ru.brandanalyst.searcher.Searcher;
 import ru.brandanalyst.frontend.models.SimplyArticleForWeb;
 import ru.brandanalyst.frontend.util.TextConverter;
 import ru.brandanalyst.core.model.Article;
-import sun.plugin.dom.core.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Сервис, производящий поиск новостей по индексу
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 11/6/11

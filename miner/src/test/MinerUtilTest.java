@@ -2,6 +2,7 @@ import org.junit.Test;
 import ru.brandanalyst.miner.util.DataTransformator;
 
 import static junit.framework.Assert.assertEquals;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -18,6 +19,6 @@ public class MinerUtilTest {
 
     @Test
     public void LentaDataTransformatorChecker() {
-    //    assertEquals(StringChecker.isTitleHaveTerm(new ArrayList<String>().add("няшка"),"НяШкА"), "%e3%e0%e7%ef%f0%ee%ec");
+        //    assertEquals(StringChecker.isTitleHaveTerm(new ArrayList<String>().add("няшка"),"НяШкА"), "%e3%e0%e7%ef%f0%ee%ec");
     }
 }

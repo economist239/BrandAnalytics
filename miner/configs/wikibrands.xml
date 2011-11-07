@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <config scriptlang="default_script_lang">
-	<loop item="link" index="i" filter="unique">
+    <loop item="link" index="i" filter="unique">
 
-		<list>
-			<var-def name="URLlist">
-				<tokenize>
-					<file action="read" path="${inputFile}">
-					</file>
-				</tokenize>
-			</var-def>
-		</list>
-		
-		<body>
-			<var-def name="loadedData">
-					<html-to-xml outputtype="pretty">
-					    <http url="${link}"/>
-					</html-to-xml>		
-			</var-def>
-			
-			<var-def name="brandName">
-					<xpath expression="//h1/text()">
-						<var name="loadedData"/>
-					</xpath>	
-			</var-def>
-			<!--rel="nofollow"-->
-			<var-def name="brandWebsite1">
-					<xpath expression="//table[@class='infobox vcard']//a[@title='Сайт']//..//..//td//a/@href">
-						<var name="loadedData"/>
-					</xpath>	
-			</var-def>
+        <list>
+            <var-def name="URLlist">
+                <tokenize>
+                    <file action="read" path="${inputFile}">
+                    </file>
+                </tokenize>
+            </var-def>
+        </list>
+
+        <body>
+            <var-def name="loadedData">
+                <html-to-xml outputtype="pretty">
+                    <http url="${link}"/>
+                </html-to-xml>
+            </var-def>
+
+            <var-def name="brandName">
+                <xpath expression="//h1/text()">
+                    <var name="loadedData"/>
+                </xpath>
+            </var-def>
+            <!--rel="nofollow"-->
+            <var-def name="brandWebsite1">
+                <xpath expression="//table[@class='infobox vcard']//a[@title='Сайт']//..//..//td//a/@href">
+                    <var name="loadedData"/>
+                </xpath>
+            </var-def>
 
             <var-def name="brandWebsite2">
-					<xpath expression="//a[@title='URL']//..//..//td//a/@href">
-						<var name="loadedData"/>
-					</xpath>
-			</var-def>
+                <xpath expression="//a[@title='URL']//..//..//td//a/@href">
+                    <var name="loadedData"/>
+                </xpath>
+            </var-def>
 
-			<var-def name="brandDescription1">
-				<xpath expression="//div[@id='bodyContent']//div[@class='mw-content-ltr']/p[1]">
-						<var name="loadedData"/>
-					</xpath>	
-			</var-def>
+            <var-def name="brandDescription1">
+                <xpath expression="//div[@id='bodyContent']//div[@class='mw-content-ltr']/p[1]">
+                    <var name="loadedData"/>
+                </xpath>
+            </var-def>
 
             <var-def name="brandDescription2">
-				<xpath expression="//div[@id='bodyContent']//div[@class='mw-content-ltr']/p[2]">
-						<var name="loadedData"/>
-					</xpath>
-			</var-def>
+                <xpath expression="//div[@id='bodyContent']//div[@class='mw-content-ltr']/p[2]">
+                    <var name="loadedData"/>
+                </xpath>
+            </var-def>
 
-		</body>
-	</loop>
+        </body>
+    </loop>
 </config>

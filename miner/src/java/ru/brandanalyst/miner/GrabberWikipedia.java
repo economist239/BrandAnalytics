@@ -4,12 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
-import org.webharvest.runtime.variables.Variable;
 import ru.brandanalyst.miner.listener.WikipediaScraperRuntimeListener;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.Date;
 
 /**
@@ -35,8 +30,8 @@ public class GrabberWikipedia extends Grabber {
     @Override
     public void grab(Date timeLimit) {
         try {
-			String linksFile = config.substring(0, config.indexOf(';'));
-			String configFile = config.substring(config.indexOf(';')+1);
+            String linksFile = config.substring(0, config.indexOf(';'));
+            String configFile = config.substring(config.indexOf(';') + 1);
 
             ScraperConfiguration config = new ScraperConfiguration(configFile);
             Scraper scraper = new Scraper(config, ".");

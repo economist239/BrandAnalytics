@@ -7,6 +7,7 @@ import net.sf.xfresh.db.AbstractDbYalet;
 import ru.brandanalyst.frontend.services.WideBrandInfoManager;
 
 /**
+ * Ялет показывающий информацию о бренде
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 10/19/11

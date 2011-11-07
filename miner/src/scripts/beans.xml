@@ -11,15 +11,16 @@
         <property name="grabberList">
             <list>
                 <!--<bean class="ru.brandanalyst.miner.GrabberWikipedia">-->
-                    <!--<property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>-->
+                <!--<property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>-->
                 <!--</bean>-->
                 <!--&lt;!&ndash;wikibrands.txt;resources/wikibrands.xml&ndash;&gt;-->
                 <!--    <bean class="ru.brandanalyst.miner.GrabberTwitter"/>   -->
 
-          <!--      <bean class="ru.brandanalyst.miner.GrabberFontanka">
-                    <property name="config" value="miner/configs/fontankaNews1.xml"/>
-                </bean>
-          -->      <bean class="ru.brandanalyst.miner.GrabberRia">
+                <!--      <bean class="ru.brandanalyst.miner.GrabberFontanka">
+                          <property name="config" value="miner/configs/fontankaNews1.xml"/>
+                      </bean>
+                -->
+                <bean class="ru.brandanalyst.miner.GrabberRia">
                     <property name="config" value="miner/configs/riaNews1.xml"/>
                 </bean>
             </list>

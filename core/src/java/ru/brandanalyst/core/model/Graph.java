@@ -23,6 +23,7 @@ public class Graph {
         graph = new ArrayList<SingleDot>();
         this.ticker = ticker;
     }
+
     public List<SingleDot> getGraph() {
         return graph;
     }

@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  * @author Александр
- * main single grabber class
+ *         main single grabber class
  */
 public abstract class Grabber {
     protected SimpleJdbcTemplate jdbcTemplate;

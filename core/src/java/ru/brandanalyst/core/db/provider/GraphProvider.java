@@ -61,7 +61,7 @@ public class GraphProvider {
                 String tickerName = rowSet.getString("TickerName");
                 graphList.add(new Graph(tickerName));
             } else {
-            //    System.out.println("asdfghjkl;");
+                //    System.out.println("asdfghjkl;");
                 return null;
             }
 

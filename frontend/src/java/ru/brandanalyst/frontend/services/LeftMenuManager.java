@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Сервис, формирующий информацию из БД для левого меню
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 10/16/11
  * Time: 4:10 PM
- * left menu service (gets list of article from db)
  */
 public class LeftMenuManager {
 

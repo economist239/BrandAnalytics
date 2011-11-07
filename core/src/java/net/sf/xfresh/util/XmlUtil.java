@@ -58,7 +58,7 @@ public class XmlUtil {
         AttributesImpl attributes = EMPTY_ATTRIBUTES;
         if (elementAndAttributes.length > 1) {
             attributes = new AttributesImpl();
-            for (int i = 1; i + 1 < elementAndAttributes.length;) {
+            for (int i = 1; i + 1 < elementAndAttributes.length; ) {
                 final String attributeName = elementAndAttributes[i++];
                 final String attributeValue = elementAndAttributes[i++];
                 attributes.addAttribute("", attributeName, attributeName, NULL_TYPE, attributeValue);

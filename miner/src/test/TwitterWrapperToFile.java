@@ -51,8 +51,8 @@ public class TwitterWrapperToFile {
                 for (int i = 0; i < ISSUANCE_SIZE; i++) {
                     String str = resultTweets.get(i).getText();
                     int index = resultTweets.get(i).getText().indexOf("http");
-                    if(index > 0) {
-                        str = str.substring(0,index);
+                    if (index > 0) {
+                        str = str.substring(0, index);
                     }
                     pw.println(str);
                 }

@@ -17,15 +17,15 @@ public class BrandMapper implements ParameterizedRowMapper<Brand> {
     public final Brand mapRow(final ResultSet resultSet, final int i) throws SQLException {
         try {
             return new Brand(Long.parseLong(resultSet.getString("Id")),
-                resultSet.getString("Name"),
-                resultSet.getString("Description"),
-                resultSet.getString("Website"),
-                Long.parseLong(resultSet.getString("BranchId")));
+                    resultSet.getString("Name"),
+                    resultSet.getString("Description"),
+                    resultSet.getString("Website"),
+                    Long.parseLong(resultSet.getString("BranchId")));
         } catch (Exception e) {
             return new Brand(Long.parseLong(resultSet.getString("Id")),
-                resultSet.getString("Name"),
-                resultSet.getString("Description"),
-                resultSet.getString("Website"), -1);
+                    resultSet.getString("Name"),
+                    resultSet.getString("Description"),
+                    resultSet.getString("Website"), -1);
         }
     }
 }

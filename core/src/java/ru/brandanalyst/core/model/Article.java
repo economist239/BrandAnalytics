@@ -1,6 +1,7 @@
 package ru.brandanalyst.core.model;
 
 import java.sql.Timestamp;
+
 /**
  * Модель новостной статьи
  * Created by IntelliJ IDEA.
@@ -19,14 +20,14 @@ public class Article {
     private int numLikes;
 
     /**
-    * @param id идентефикатор статьи
-    * @param brandId индетификатор бренда, о котором данная статья
-    * @param sourceId идентификатор источника
-    * @param title название статьи
-    * @param content такст статьи
-    * @param link ссылка на статью
-    * @param tstamp время публикования
-    * @param numLikes количество лайков
+     * @param id       идентефикатор статьи
+     * @param brandId  индетификатор бренда, о котором данная статья
+     * @param sourceId идентификатор источника
+     * @param title    название статьи
+     * @param content  такст статьи
+     * @param link     ссылка на статью
+     * @param tstamp   время публикования
+     * @param numLikes количество лайков
      */
     public Article(long id, long brandId, long sourceId, String title, String content, String link, Timestamp tstamp, int numLikes) {
         this.id = id;
@@ -40,13 +41,13 @@ public class Article {
     }
 
     /**
-    * @param brandId индетификатор бренда, о котором данная статья
-    * @param sourceId идентификатор источника
-    * @param title название статьи
-    * @param content такст статьи
-    * @param link ссылка на статью
-    * @param tstamp время публикования
-    * @param numLikes количество лайков
+     * @param brandId  индетификатор бренда, о котором данная статья
+     * @param sourceId идентификатор источника
+     * @param title    название статьи
+     * @param content  такст статьи
+     * @param link     ссылка на статью
+     * @param tstamp   время публикования
+     * @param numLikes количество лайков
      */
     public Article(long brandId, long sourceId, String title, String content, String link, Timestamp tstamp, int numLikes) {
         this.id = (long) -1;
@@ -60,7 +61,6 @@ public class Article {
     }
 
     /**
-     *
      * @return идентификатор статьи
      */
     public long getId() {
@@ -68,7 +68,6 @@ public class Article {
     }
 
     /**
-     *
      * @return идентификатор источника
      */
     public long getSourceId() {
@@ -76,7 +75,6 @@ public class Article {
     }
 
     /**
-     *
      * @return идентификатор бренда, о котором данная статья
      */
     public long getBrandId() {
@@ -84,7 +82,6 @@ public class Article {
     }
 
     /**
-     *
      * @return название статьи
      */
     public String getTitle() {
@@ -92,7 +89,6 @@ public class Article {
     }
 
     /**
-     *
      * @return содержание статьи
      */
     public String getContent() {
@@ -104,7 +100,6 @@ public class Article {
     }
 
     /**
-     *
      * @return ссылка на статью
      */
     public String getLink() {
@@ -112,7 +107,6 @@ public class Article {
     }
 
     /**
-     *
      * @return дата статьи
      */
     public Timestamp getTstamp() {
@@ -120,7 +114,6 @@ public class Article {
     }
 
     /**
-     *
      * @return количество лайков
      */
     public int getNumLikes() {

@@ -21,14 +21,18 @@ import java.util.List;
 import java.sql.Timestamp;
 
 /**
+ * Класс, предоставляющий поиск по брендам и новостям
  * Created by IntelliJ IDEA.
  * User: Nikolaj Karpov
  * Date: 11.10.11
  * Time: 12:24
- * class of searcher that search by articles and brands
  */
 public class Searcher {
     private static final Logger log = Logger.getLogger(Searcher.class);
+
+    /**
+     * максимальное количество документов, которые заполняют выдачу
+     */
     private final int MAX_DOC = 1000;
 
     private String indexDirBrand;
@@ -44,6 +48,9 @@ public class Searcher {
         this.indexDirArticle = indexDirArticle;
     }
 
+    /**
+     * Метод, создающий соединение с индексами
+     */
     public void getReadyForSearch() {
         try {
             indexSearcherBrand = new IndexSearcher(new SimpleFSDirectory(new File(indexDirBrand)));
@@ -53,6 +60,12 @@ public class Searcher {
         }
     }
 
+    /**
+     * Поиск по брендам на основе их описания
+     *
+     * @throws ParseException
+     * @throws IOException
+     */
     public List<Brand> searchBrandByDescription(String query) throws ParseException, IOException {
 
         Analyzer analyzer; // your can change version
@@ -69,6 +82,12 @@ public class Searcher {
         return lst;
     }
 
+    /**
+     * Поиск по новостям на основе их содержания
+     *
+     * @throws ParseException
+     * @throws IOException
+     */
     public List<Article> searchArticleByContent(String query) throws ParseException, IOException {
 
         Analyzer analyzer;

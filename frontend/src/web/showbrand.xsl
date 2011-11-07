@@ -53,24 +53,30 @@
 
     <xsl:template match="page/data[@id='wideBrandInfo']/collection[2]" mode="show">
         <xsl:for-each select="graph-for-web">
-        <h3><xsl:value-of select="name"/></h3>
-        <table id="data">
-            <tfoot>
-                <tr>
-                  <xsl:for-each select="date/integer">
-                     <th><xsl:value-of select="text()"/></th>
-                  </xsl:for-each>
-                </tr>
-            </tfoot>
-            <tbody>
-                <tr>
-                    <xsl:for-each select="value/double">
-                    <td><xsl:value-of select="text()"/></td>
-                    </xsl:for-each>
-                </tr>
-            </tbody>
-        </table>
-        <div id="holder" class="1"></div>
+            <h3>
+                <xsl:value-of select="name"/>
+            </h3>
+            <table id="data">
+                <tfoot>
+                    <tr>
+                        <xsl:for-each select="date/integer">
+                            <th>
+                                <xsl:value-of select="text()"/>
+                            </th>
+                        </xsl:for-each>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <xsl:for-each select="value/double">
+                            <td>
+                                <xsl:value-of select="text()"/>
+                            </td>
+                        </xsl:for-each>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="holder" class="1"></div>
         </xsl:for-each>
     </xsl:template>
 

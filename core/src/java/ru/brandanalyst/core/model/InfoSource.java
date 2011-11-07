@@ -21,6 +21,7 @@ public class InfoSource {
         this.description = description;
         this.website = website;
     }
+
     public long getId() {
         return id;
     }

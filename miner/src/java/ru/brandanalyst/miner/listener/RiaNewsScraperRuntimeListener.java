@@ -33,8 +33,8 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
     private int i = 0;
     private static final Logger log = Logger.getLogger(RiaNewsScraperRuntimeListener.class);
 
-    protected SimpleJdbcTemplate jdbcTemplate;
-    protected ArticleProvider articleProvider;
+    private SimpleJdbcTemplate jdbcTemplate;
+    private ArticleProvider articleProvider;
     private Date timeLimit;
 
     public RiaNewsScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
@@ -50,16 +50,12 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             stringDate = stringDate.replace(" ", "");
             stringDate = stringDate.substring(0, 10);
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(stringDate);
         }
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date date;
         try {
             date = dateFormat.parse(stringDate);
         } catch (ParseException e) {
-            System.out.println(stringDate);
-            e.printStackTrace();
             date = new Date();
         }
         Timestamp timestamp = new Timestamp(date.getTime());
@@ -109,7 +105,7 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
             long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
             Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
-            if (!StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionaryItem(brandId).getItems(),newsTitle.toString()))
+            if (!StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionaryItem(brandId).getItems(), newsTitle.toString()))
                 return;
 
             Variable newsText = (Variable) scraper.getContext().get("newsFullText");

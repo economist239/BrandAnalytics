@@ -2,10 +2,11 @@ package ru.brandanalyst.frontend.models;
 
 import ru.brandanalyst.core.model.SingleDot;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.*;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich

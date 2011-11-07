@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Класс для доступа к словарю тех слов, которые ассоциируются с брендами (изпользуется для сбора новостей)
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 11/2/11
@@ -22,6 +23,7 @@ public class BrandDictionaryProvider {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @Deprecated
     public void cleanDataStore() {
         jdbcTemplate.update("TRUNCATE TABLE BrandDictionary");
     }
@@ -32,7 +34,7 @@ public class BrandDictionaryProvider {
         try {
             if (rowSet.next()) {
                 String brandName = rowSet.getString("Name");
-                dictItem = new BrandDictionaryItem(brandName,brandId);
+                dictItem = new BrandDictionaryItem(brandName, brandId);
             } else {
                 return null;
             }

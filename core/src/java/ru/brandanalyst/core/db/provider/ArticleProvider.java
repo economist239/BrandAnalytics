@@ -8,17 +8,23 @@ import org.apache.log4j.Logger;
 import java.util.List;
 
 /**
+ * Класс, предоставляющий доступ к новостям в БД
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 22:07
- * this class provides articles from DB
  */
 public class ArticleProvider {
     private static final Logger log = Logger.getLogger(ArticleProvider.class);
+    /**
+     * максимальная длина новости, записываемой в БД (если новость длиннее, то она обрезается)
+     */
     private static final int MAX_ARTCILE_LENGHT = 30000;
 
     private SimpleJdbcTemplate jdbcTemplate;
+    /**
+     * разметчик для преобразования строки в переменную типа Article
+     */
     private ArticleMapper articleMapper;
 
     public ArticleProvider(SimpleJdbcTemplate jdbcTemplate) {
@@ -26,18 +32,22 @@ public class ArticleProvider {
         articleMapper = new ArticleMapper();
     }
 
+    @Deprecated
     public void cleanDataStore() {
         jdbcTemplate.update("TRUNCATE TABLE Article");
     }
 
     public void writeArticleToDataStore(Article article) {
-        if(article.getContent().length() > MAX_ARTCILE_LENGHT) article.setContent(article.getContent().substring(0,MAX_ARTCILE_LENGHT));
+
+        if (article.getContent().length() > MAX_ARTCILE_LENGHT) {
+            article.setContent(article.getContent().substring(0, MAX_ARTCILE_LENGHT));
+        }
         try {
             jdbcTemplate.update("INSERT INTO Article (InfoSourceId, BrandId, Title, Content, Link, NumLikes, Tstamp) VALUES(?, ?, ?, ?, ?, ?, ?);", article.getSourceId(),
                     article.getBrandId(), article.getTitle(), article.getContent(), article.getLink(), article.getNumLikes(), article.getTstamp());
         } catch (Exception e) {
-        //    e.printStackTrace();
-        //    System.out.println(article.getContent().length());
+            //    e.printStackTrace();
+            //    System.out.println(article.getContent().length());
             log.info("cannot write article to db");
         }
     }
@@ -68,6 +78,9 @@ public class ArticleProvider {
         return list;
     }
 
+    /**
+     * возращает указанное количество самых свежих новостей по данном бренду
+     */
     public List<Article> getTopArticles(long brandId, int topSize) {
         List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE brandId = " + brandId + " ORDER BY Tstamp DESC LIMIT " + topSize, articleMapper);
         return list;

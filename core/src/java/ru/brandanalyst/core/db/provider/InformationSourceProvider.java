@@ -2,9 +2,12 @@ package ru.brandanalyst.core.db.provider;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+
 import java.util.List;
+
 import ru.brandanalyst.core.model.InfoSource;
 import ru.brandanalyst.core.db.mapper.InfoSourceMapper;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -22,6 +25,7 @@ public class InformationSourceProvider {
         infoSourceMapper = new InfoSourceMapper();
     }
 
+    @Deprecated
     public void cleanDataStore() {
         jdbcTemplate.update("TRUNCATE TABLE InformationSource");
     }
@@ -36,7 +40,7 @@ public class InformationSourceProvider {
     }
 
     public void writeListOfInfoSourceToDataStore(List<InfoSource> infoSourceList) {
-        for (InfoSource i: infoSourceList) {
+        for (InfoSource i : infoSourceList) {
             writeInfoSourceToDataStore(i);
         }
     }

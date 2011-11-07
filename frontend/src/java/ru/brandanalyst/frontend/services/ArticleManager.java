@@ -8,13 +8,14 @@ import ru.brandanalyst.core.model.InfoSource;
 import ru.brandanalyst.frontend.models.WideArticleForWeb;
 
 /**
+ * Сервис, извлекающий новости по их идентификатору из БД
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 10/25/11
  * Time: 11:41 PM
  * article service (get article from db and push it to yalet)
  */
-public class  ArticleManager {
+public class ArticleManager {
 
     private final SimpleJdbcTemplate jdbcTemplate;
 

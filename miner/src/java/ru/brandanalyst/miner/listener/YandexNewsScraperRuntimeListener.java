@@ -20,13 +20,11 @@ import java.util.Map;
  * Time: 12:12
  */
 public class YandexNewsScraperRuntimeListener implements ScraperRuntimeListener {
-    protected SimpleJdbcTemplate jdbcTemplate;
-    protected ArticleProvider articleProvider;
-    private Date timeLimit;
+    private SimpleJdbcTemplate jdbcTemplate;
+    private ArticleProvider articleProvider;
 
     public YandexNewsScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
         this.jdbcTemplate = jdbcTemplate;
-        this.timeLimit = timeLimit;
         articleProvider = new ArticleProvider(jdbcTemplate);
     }
 

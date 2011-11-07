@@ -29,8 +29,8 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
     private int i = 0;
     private static final Logger log = Logger.getLogger(FontankaScraperRuntimeListener.class);
 
-    protected SimpleJdbcTemplate jdbcTemplate;
-    protected ArticleProvider articleProvider;
+    private SimpleJdbcTemplate jdbcTemplate;
+    private ArticleProvider articleProvider;
     private Date timeLimit;
 
     public FontankaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
@@ -48,7 +48,7 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
         Date date;
         try {
             date = dateFormat.parse(stringDate);
-        }catch(ParseException e) {
+        } catch (ParseException e) {
             date = new Date();
         }
 
@@ -76,28 +76,28 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
     public void onProcessorExecutionFinished(Scraper scraper, BaseProcessor baseProcessor, Map map) {
 
         if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
-            try{
-            long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
-            Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
-            if (!StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionaryItem(brandId).getItems(), newsTitle.toString()))
-                return;
+            try {
+                long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
+                Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
+                if (!StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionaryItem(brandId).getItems(), newsTitle.toString()))
+                    return;
 
-            Variable newsText = (Variable) scraper.getContext().get("newsFullText");
-            Variable newsDate = (Variable) scraper.getContext().get("newsDate");
+                Variable newsText = (Variable) scraper.getContext().get("newsFullText");
+                Variable newsDate = (Variable) scraper.getContext().get("newsDate");
 
-            Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
+                Timestamp articleTimestamp = evalTimestamp(newsDate.toString());
 
-            if(articleTimestamp.getTime() < timeLimit.getTime()){
-                scraper.stopExecution();
-            }
+                if (articleTimestamp.getTime() < timeLimit.getTime()) {
+                    scraper.stopExecution();
+                }
 
-            String articleContent = DataTransformator.clearString(newsText.toString());
-            String articleTitle = newsTitle.toString();
-            String articleLink = scraper.getContext().get("AbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
-            Article article = new Article(-1, brandId, 10, articleTitle, articleContent, articleLink, articleTimestamp, 0);
+                String articleContent = DataTransformator.clearString(newsText.toString());
+                String articleTitle = newsTitle.toString();
+                String articleLink = scraper.getContext().get("AbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
+                Article article = new Article(-1, brandId, 10, articleTitle, articleContent, articleLink, articleTimestamp, 0);
 
-            articleProvider.writeArticleToDataStore(article);
-            log.info("Fontanka: " + ++i + " article added... title = " + articleTitle);
+                articleProvider.writeArticleToDataStore(article);
+                log.info("Fontanka: " + ++i + " article added... title = " + articleTitle);
             } catch (Exception e) {
 
             }

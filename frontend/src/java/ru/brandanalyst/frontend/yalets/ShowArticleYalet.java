@@ -6,9 +6,9 @@ import net.sf.xfresh.core.xml.Xmler;
 import net.sf.xfresh.db.AbstractDbYalet;
 import ru.brandanalyst.frontend.models.WideArticleForWeb;
 import ru.brandanalyst.frontend.services.ArticleManager;
-import ru.brandanalyst.core.model.Article;
 
 /**
+ * Ялет, показывающий полный тест новости
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 10/25/11

@@ -19,11 +19,11 @@ import java.util.Map;
  * Time: 12:29 PM
  */
 public class WikipediaScraperRuntimeListener implements ScraperRuntimeListener {
-        //private int i = 0;
+    //private int i = 0;
     private static final Logger log = Logger.getLogger(WikipediaScraperRuntimeListener.class);
 
-    protected SimpleJdbcTemplate jdbcTemplate;
-    protected BrandProvider brandProvider;
+    private SimpleJdbcTemplate jdbcTemplate;
+    private BrandProvider brandProvider;
 
     public WikipediaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -57,7 +57,7 @@ public class WikipediaScraperRuntimeListener implements ScraperRuntimeListener {
         }
         int whiteSpace = brandWebsite.indexOf('\n');
         if (whiteSpace > 0) {
-            brandWebsite = brandWebsite.substring(0,whiteSpace);
+            brandWebsite = brandWebsite.substring(0, whiteSpace);
         }
 
         return brandWebsite;
@@ -68,7 +68,7 @@ public class WikipediaScraperRuntimeListener implements ScraperRuntimeListener {
         brandDescription2 = DataTransformator.clearString(brandDescription2);
 
         String brandDescription;
-        if(brandDescription1.indexOf('—') >= 0) {
+        if (brandDescription1.indexOf('—') >= 0) {
             brandDescription = brandDescription1;
         } else {
             brandDescription = brandDescription2;
@@ -93,7 +93,7 @@ public class WikipediaScraperRuntimeListener implements ScraperRuntimeListener {
             String brandWebsite = getWebSite(brandWebsite1, brandWebsite2);
 
             String brandName = ((Variable) scraper.getContext().get("brandName")).toString();
-            if(brandName.indexOf("High Tech") > -1) {
+            if (brandName.indexOf("High Tech") > -1) {
                 brandName = "HTC";
             }
 

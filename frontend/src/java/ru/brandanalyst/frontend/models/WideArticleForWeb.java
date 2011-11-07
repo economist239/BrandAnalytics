@@ -15,13 +15,15 @@ public final class WideArticleForWeb {
     private final String sourceLink;
     private final String time;
 
+    private static final int TIME_STRING_LENGTH = 10;
+
     public WideArticleForWeb(String link, String title, String content, String sourceName, String sourceLink, String time) {
         this.link = link;
         this.title = title;
         this.content = content;
         this.sourceName = sourceName;
         this.sourceLink = sourceLink;
-        this.time = time.substring(0,10);
+        this.time = time.substring(0, TIME_STRING_LENGTH);
     }
 
     public String getLink() {

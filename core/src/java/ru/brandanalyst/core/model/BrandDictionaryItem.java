@@ -2,6 +2,7 @@ package ru.brandanalyst.core.model;
 
 import java.util.List;
 import java.util.ArrayList;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
