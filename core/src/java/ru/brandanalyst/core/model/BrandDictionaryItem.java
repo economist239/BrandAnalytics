@@ -10,13 +10,13 @@ import java.util.ArrayList;
  * Time: 9:45 PM
  */
 public class BrandDictionaryItem {
-    private final String term;
-    private final long termId;
+    private final String brand;
+    private final long brandId;
     private List<String> items;
 
-    public BrandDictionaryItem(String term, long termId) {
-        this.term = term;
-        this.termId = termId;
+    public BrandDictionaryItem(String brand, long brandId) {
+        this.brand = brand;
+        this.brandId = brandId;
         items = new ArrayList<String>();
     }
 
@@ -27,4 +27,9 @@ public class BrandDictionaryItem {
     public List<String> getItems() {
         return items;
     }
+
+    public long getBrandId() {
+        return brandId;
+    }
+
 }

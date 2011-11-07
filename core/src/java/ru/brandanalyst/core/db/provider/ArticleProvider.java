@@ -48,7 +48,7 @@ public class ArticleProvider {
         } catch (Exception e) {
             //    e.printStackTrace();
             //    System.out.println(article.getContent().length());
-            log.info("cannot write article to db");
+            log.error("cannot write article to db",e);
         }
     }
 

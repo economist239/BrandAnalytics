@@ -9,7 +9,9 @@ import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.miner.listener.FontankaScraperRuntimeListener;
 import ru.brandanalyst.miner.util.DataTransformator;
 
+import java.sql.Timestamp;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,12 +20,12 @@ import java.util.Date;
  * Time: 4:13 AM
  */
 public class GrabberFontanka extends Grabber {
-
+    private static final int SEARCH_DAYS=15;
     private static final Logger log = Logger.getLogger(GrabberFontanka.class);
 
-    private static final String beginSearchURL = "http://www.fontanka.ru/cgi-bin/search.scgi?query=";
-    private static final String endSearchURL = "&fyear=2010&fmon=01&fday=01&tyear=2011&tmon=10&tday=30&rubric=fontanka&sortt=date&offset=";
+    private static final String endURL = "/news.html";
     private static final String sourceURL = "http://fontanka.ru";
+    private static final String appendix = "/fontanka/";
 
     @Override
     public void setConfig(String config) {
@@ -37,24 +39,35 @@ public class GrabberFontanka extends Grabber {
 
     @Override
     public void grab(Date timeLimit) {
-
-        for (Brand b : new BrandProvider(jdbcTemplate).getAllBrands()) {
+        GregorianCalendar time=new GregorianCalendar();
+            for (int i=0;i<SEARCH_DAYS;i++)
+            {
+                StringBuilder resultURL=new StringBuilder();
+                resultURL.append(sourceURL);
+                resultURL.append(appendix);
+                resultURL.append(time.get(GregorianCalendar.YEAR));
+                resultURL.append("/");
+                resultURL.append(time.get(GregorianCalendar.MONTH) + 1);
+                resultURL.append("/");
+                resultURL.append(time.get(GregorianCalendar.DAY_OF_MONTH));
+                resultURL.append(endURL);
+                StringBuilder date=new StringBuilder();
+                date.append(time.get(GregorianCalendar.DAY_OF_MONTH));
             try {
-
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.addRuntimeListener(new FontankaScraperRuntimeListener(jdbcTemplate, timeLimit));
-                String query = DataTransformator.stringToQueryString(b.getName());
-                scraper.addVariableToContext("QueryURL", beginSearchURL + query + endSearchURL); //"$p" - suffix for result page number
+                scraper.addVariableToContext("QueryURL", resultURL.toString());
                 scraper.addVariableToContext("AbsoluteURL", sourceURL);
-                scraper.addVariableToContext("brandId", Long.toString(b.getId()));
+                scraper.addVariableToContext("newsDate", time.getTime().toString());
                 scraper.execute();
-                log.info("successful processing brand " + b.getName());
+                log.info("successful processing url "+resultURL);
             } catch (Exception exception) {
                 exception.printStackTrace();
-                log.error("cannot process Fontanka brand " + b.getName());
+                log.error("cannot process Fontanka url " + resultURL);
             }
-        }
+        time.set(GregorianCalendar.DAY_OF_YEAR,time.get(GregorianCalendar.DAY_OF_YEAR)-1);
         log.info("Fontanka: succecsful");
+        }
     }
 }

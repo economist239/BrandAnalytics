@@ -15,7 +15,9 @@ import ru.brandanalyst.miner.util.StringChecker;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -77,10 +79,10 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
 
         if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
             try {
-                long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
                 Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
-                if (!StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionaryItem(brandId).getItems(), newsTitle.toString()))
-                    return;
+                List<Long> brandIds= StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionary(), newsTitle.toString());
+                if (brandIds.isEmpty()) return;
+
 
                 Variable newsText = (Variable) scraper.getContext().get("newsFullText");
                 Variable newsDate = (Variable) scraper.getContext().get("newsDate");
@@ -94,9 +96,11 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
                 String articleContent = DataTransformator.clearString(newsText.toString());
                 String articleTitle = newsTitle.toString();
                 String articleLink = scraper.getContext().get("AbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
-                Article article = new Article(-1, brandId, 10, articleTitle, articleContent, articleLink, articleTimestamp, 0);
-
-                articleProvider.writeArticleToDataStore(article);
+                for (Long brandId:brandIds)
+                {
+                    Article article = new Article(-1, brandId, 10, articleTitle, articleContent, articleLink, articleTimestamp, 0);
+                    articleProvider.writeArticleToDataStore(article);
+                }
                 log.info("Fontanka: " + ++i + " article added... title = " + articleTitle);
             } catch (Exception e) {
 
