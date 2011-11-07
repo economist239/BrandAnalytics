@@ -51,15 +51,13 @@ public class GrabberFontanka extends Grabber {
                 resultURL.append("/");
                 resultURL.append(time.get(GregorianCalendar.DAY_OF_MONTH));
                 resultURL.append(endURL);
-                StringBuilder date=new StringBuilder();
-                date.append(time.get(GregorianCalendar.DAY_OF_MONTH));
+
             try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.addRuntimeListener(new FontankaScraperRuntimeListener(jdbcTemplate, timeLimit));
                 scraper.addVariableToContext("QueryURL", resultURL.toString());
                 scraper.addVariableToContext("AbsoluteURL", sourceURL);
-                scraper.addVariableToContext("newsDate", time.getTime().toString());
                 scraper.execute();
                 log.info("successful processing url "+resultURL);
             } catch (Exception exception) {

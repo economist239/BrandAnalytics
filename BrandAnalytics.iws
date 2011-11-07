@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ArticleProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ArticleProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/BrandDictionaryItem.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/BrandDictionaryItem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/configs/fontankaNews1.xml" afterPath="$PROJECT_DIR$/miner/configs/fontankaNews1.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberFontanka.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberFontanka.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/FontankaScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/FontankaScraperRuntimeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/StringChecker.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/StringChecker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/scripts/beans.xml" afterPath="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
     </list>
     <list id="c16d02c9-2f64-4539-9895-fad787085a75" name="Rejected commit: Default" comment="analyzer with beans" />
     <ignored path="BrandAnalytics.iws" />
@@ -74,10 +70,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FontankaScraperRuntimeListener.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FontankaScraperRuntimeListener.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/FontankaScraperRuntimeListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="61" selection-start="3660" selection-end="3660" vertical-scroll-proportion="0.0">
+            <state line="93" column="87" selection-start="3333" selection-end="3333" vertical-scroll-proportion="0.42696628">
               <folding />
             </state>
           </provider>
@@ -133,7 +129,7 @@
       <file leaf-file-name="fontankaNews1.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/configs/fontankaNews1.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="53" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
+            <state line="42" column="24" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -151,16 +147,16 @@
       <file leaf-file-name="GrabberFontanka.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberFontanka.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="82" selection-start="2485" selection-end="2485" vertical-scroll-proportion="0.0">
+            <state line="52" column="41" selection-start="1855" selection-end="1855" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RiaNewsScraperRuntimeListener.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RiaNewsScraperRuntimeListener.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="116" selection-start="4141" selection-end="4141" vertical-scroll-proportion="0.752809">
+            <state line="115" column="116" selection-start="4141" selection-end="4141" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -188,14 +184,14 @@
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/WikipediaScraperRuntimeListener.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/YandexNewsScraperRuntimeListener.java" />
         <option value="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" />
-        <option value="$PROJECT_DIR$/miner/configs/fontankaNews1.xml" />
         <option value="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ArticleProvider.java" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberFontanka.java" />
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/BrandDictionaryItem.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/StringChecker.java" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/FontankaScraperRuntimeListener.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" />
+        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberFontanka.java" />
+        <option value="$PROJECT_DIR$/miner/configs/fontankaNews1.xml" />
+        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/FontankaScraperRuntimeListener.java" />
       </list>
     </option>
   </component>
@@ -1326,37 +1322,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ArticleProvider.java">
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/StringChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="63" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="13" column="105" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/configs/lentaRu.xml">
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="55" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/configs/fontankaNews1.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="53" selection-start="900" selection-end="900" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberFontanka.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="82" selection-start="2485" selection-end="2485" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
+        <state line="115" column="116" selection-start="4141" selection-end="4141" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1368,6 +1345,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="13" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/configs/lentaRu.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="55" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ArticleProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="63" selection-start="1815" selection-end="1815" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/BrandDictionaryItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="23" selection-start="678" selection-end="678" vertical-scroll-proportion="0.0">
@@ -1375,25 +1373,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/util/StringChecker.java">
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberFontanka.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="105" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="52" column="41" selection-start="1855" selection-end="1855" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/configs/fontankaNews1.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="24" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/FontankaScraperRuntimeListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="61" selection-start="3660" selection-end="3660" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="116" selection-start="4141" selection-end="4141" vertical-scroll-proportion="0.752809">
+        <state line="93" column="87" selection-start="3333" selection-end="3333" vertical-scroll-proportion="0.42696628">
           <folding />
         </state>
       </provider>
