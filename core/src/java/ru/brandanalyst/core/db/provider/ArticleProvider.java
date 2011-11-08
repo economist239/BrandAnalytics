@@ -53,6 +53,7 @@ public class ArticleProvider {
         return list.get(0);
     }
 
+
     public List<Article> getAllArticlesBySourceId(long sourceId) {
         List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE InfosourceId = ?", new Object[]{sourceId}, articleMapper);
         return list;
