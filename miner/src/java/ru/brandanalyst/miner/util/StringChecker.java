@@ -14,4 +14,10 @@ public class StringChecker {
                 if (title.toLowerCase().contains(item.toLowerCase())) result.add(brandItem.getBrandId());
         return result;
     }
+
+    public static boolean hasTerm(BrandDictionaryItem brandItem, String title) {
+        for (String item: brandItem.getItems())
+                if (title.toLowerCase().contains(item.toLowerCase())) return true;
+        return false;
+    }
 }

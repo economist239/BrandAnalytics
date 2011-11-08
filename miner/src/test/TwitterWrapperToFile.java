@@ -30,6 +30,7 @@ public class TwitterWrapperToFile {
         List<String> brandList = new ArrayList<String>();
         brandList.add("Apple");
 
+        brandList.add("Apple");
         for (String b : brandList) {
             try {
                 Query query = new Query(b);
@@ -40,7 +41,7 @@ public class TwitterWrapperToFile {
                 List<Tweet> resultTweets = new ArrayList<Tweet>();
                 QueryResult queryResult;
 
-                PrintWriter pw = new PrintWriter("tweets_apple.txt");
+                PrintWriter pw = new PrintWriter("tweets.txt");
                 int pageNumber = 1;
                 do {
                     query.setPage(pageNumber);

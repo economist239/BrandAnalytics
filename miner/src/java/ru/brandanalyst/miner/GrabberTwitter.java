@@ -2,20 +2,21 @@ package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
-import twitter4j.Twitter;
-import twitter4j.TwitterFactory;
-import twitter4j.Query;
-import twitter4j.Tweet;
-import twitter4j.QueryResult;
+import ru.brandanalyst.core.db.provider.BrandDictionaryProvider;
+import ru.brandanalyst.core.model.BrandDictionaryItem;
+import twitter4j.*;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Timestamp;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Article;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+
+import ru.brandanalyst.miner.util.StringChecker;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,7 +27,8 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 public class GrabberTwitter extends Grabber {
     private static final Logger log = Logger.getLogger(GrabberTwitter.class);
 
-    private static final int ISSUANCE_SIZE = 100;
+    private static final int ISSUANCE_SIZE = 1500;
+    private static final int PAGE_SIZE = 100;
 
     public void setConfig(String config) {
         this.config = config;  //not using
@@ -37,42 +39,59 @@ public class GrabberTwitter extends Grabber {
     }
 
     public void grab(Date timeLimit) {
-
+        log.info("Twitter grabber started...");
         Twitter twitter = new TwitterFactory().getInstance();
 
         List<Brand> brandList = new BrandProvider(jdbcTemplate).getAllBrands();
         ArticleProvider articleProvider = new ArticleProvider(jdbcTemplate);
+        BrandDictionaryProvider dictionaryProvider = new BrandDictionaryProvider(jdbcTemplate);
+
+
+
 
         for (Brand b : brandList) {
-
             try {
-                //TODO: make this piece of shit, named as code, BETTER (get rid of <code>pageNumber</code>, for example)
+                PrintWriter pw = new PrintWriter("tweets.txt");
+                BrandDictionaryItem dictionary = dictionaryProvider.getDictionaryItem(b.getId());
                 Query query = new Query(b.getName());
-                query.setRpp(ISSUANCE_SIZE);
-                //Calendar cal = new GregorianCalendar();
+                query.setRpp(PAGE_SIZE);
                 query.setSince("2011" + "-" + "01" + "-" + "01");
-                //query.setSince(new SimpleDateFormat("yyy-MM-dd").format(cal.getTime()));
                 query.setLang("ru");
-                //query.setRpp(100); // it's ok
+                query.setResultType(Query.MIXED);
 
-                List<Tweet> resultTweets;
+                List<Tweet> resultTweets = new LinkedList<Tweet>();
                 QueryResult queryResult;
                 int pageNumber = 1;
+
+                try {
                 do {
+
                     query.setPage(pageNumber);
                     queryResult = twitter.search(query);
-                    resultTweets = queryResult.getTweets();
-                    for (int i = 0; i < resultTweets.size(); ++i) {
-                        Timestamp articleTimestamp = new Timestamp(resultTweets.get(i).getCreatedAt().getTime());
-                        articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
-                                "", "", resultTweets.get(i).getText(), articleTimestamp, 0));
-                    }
-                    log.info("twitter added for brandId = " + Long.toString(b.getId()));
+                    resultTweets.addAll(queryResult.getTweets());
                     pageNumber++;
+                } while (ISSUANCE_SIZE > resultTweets.size());
+                }catch (TwitterException e) {}
 
-                } while (ISSUANCE_SIZE == resultTweets.size());
-            } catch (Exception e) {
-                log.error("cannot process twitter. brandId = " + Long.toString(b.getId()));
+                Iterator<Tweet> it = resultTweets.iterator();
+                while(it.hasNext()) {
+                    Tweet next = it.next();
+                    if (StringChecker.hasTerm(dictionary, next.getText())) {
+                        String str = next.getText();
+                        int index = next.getText().indexOf("http");
+                        if (index > 0) {
+                            str = str.substring(0, index);
+                        }
+                        pw.println(str);
+                        //             Timestamp articleTimestamp = new Timestamp(resultTweets.get(i).getCreatedAt().getTime());
+                        //articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
+                        //    "", "", resultTweets.get(i).getText(), articleTimestamp, 0));
+                    }
+                }
+                pw.close();
+                log.info("twitter added for brandName = " + b.getName());
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         }
     }

@@ -109,13 +109,32 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 
 INSERT INTO Ticker (TickerName) VALUES("Статистика упоминаемости в новостях");
 
-INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Microsoft","Operation Systems","microsoft.com",0);
-INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Apple","iCorporation","apple.com",2);
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Microsoft","Operation Systems","http://microsoft.com",0);
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Apple","iCorporation","http://apple.com",0);
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Google","Searcher","http://google.com",0);
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Yota","wimax","http://yota.ru",0);
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Яндекс","Searcher","http://yandex.ru",0);
 
-INSERT INTO BrandDictionary (BrandId,Term) VALUES (2,"Джоббс");
-INSERT INTO BrandDictionary (BrandId,Term) VALUES (2,"iPhone");
-INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"Гейтс");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (5,"yandex");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (5,"yndex");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (5,"яндекс");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (4,"ёта");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (4,"йота");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (4,"yta");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (4,"yota");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (3,"google");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (3,"gogle");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (3,"гугл");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (2,"apple");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (2,"aple");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (2,"эйпл");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (2,"эпл");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"microsoft");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"mikrosoft");
 INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"Windows");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"макрософт");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"майкрософт");
+INSERT INTO BrandDictionary (BrandId,Term) VALUES (1,"микрософт");
 
 
 
