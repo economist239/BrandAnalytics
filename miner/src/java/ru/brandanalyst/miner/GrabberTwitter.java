@@ -5,17 +5,14 @@ import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.db.provider.BrandDictionaryProvider;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
 import twitter4j.*;
-
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Article;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-
 import ru.brandanalyst.miner.util.StringChecker;
 
 /**
@@ -30,6 +27,7 @@ public class GrabberTwitter extends Grabber {
     private static final int ISSUANCE_SIZE = 1500;
     private static final int PAGE_SIZE = 100;
 
+    @Deprecated
     public void setConfig(String config) {
         this.config = config;  //not using
     }
@@ -46,58 +44,49 @@ public class GrabberTwitter extends Grabber {
         ArticleProvider articleProvider = new ArticleProvider(jdbcTemplate);
         BrandDictionaryProvider dictionaryProvider = new BrandDictionaryProvider(jdbcTemplate);
 
-        PrintWriter pw;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String stringTimeLimit = dateFormat.format(timeLimit);
 
-        try {
-            pw = new PrintWriter("tweets.txt");
+        for (Brand b : brandList) {
 
+            BrandDictionaryItem dictionary = dictionaryProvider.getDictionaryItem(b.getId());
+            Query query = new Query(b.getName());
+            query.setRpp(PAGE_SIZE);
+            query.setSince(stringTimeLimit);
+            query.setLang("ru");
+            query.setResultType(Query.MIXED);
 
-            for (Brand b : brandList) {
+            List<Tweet> resultTweets = new LinkedList<Tweet>();
+            QueryResult queryResult;
+            int pageNumber = 1;
 
-                BrandDictionaryItem dictionary = dictionaryProvider.getDictionaryItem(b.getId());
-                Query query = new Query(b.getName());
-                query.setRpp(PAGE_SIZE);
-                query.setSince("2011" + "-" + "01" + "-" + "01");
-                query.setLang("ru");
-                query.setResultType(Query.MIXED);
+            try {
+                do {
 
-                List<Tweet> resultTweets = new LinkedList<Tweet>();
-                QueryResult queryResult;
-                int pageNumber = 1;
-
-                try {
-                    do {
-
-                        query.setPage(pageNumber);
-                        queryResult = twitter.search(query);
-                        resultTweets.addAll(queryResult.getTweets());
-                        pageNumber++;
-                    } while (ISSUANCE_SIZE > resultTweets.size());
-                } catch (TwitterException e) {
-                }
-
-                Iterator<Tweet> it = resultTweets.iterator();
-                while (it.hasNext()) {
-                    Tweet next = it.next();
-                    if (StringChecker.hasTerm(dictionary, next.getText())) {
-                        String str = next.getText();
-                        int index = next.getText().indexOf("http");
-                        if (index > 0) {
-                            str = str.substring(0, index);
-                        }
-                        pw.println(str);
-                        //             Timestamp articleTimestamp = new Timestamp(resultTweets.get(i).getCreatedAt().getTime());
-                        //articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
-                        //    "", "", resultTweets.get(i).getText(), articleTimestamp, 0));
-                    }
-                }
-
-                log.info("twitter added for brandName = " + b.getName());
-
+                    query.setPage(pageNumber);
+                    queryResult = twitter.search(query);
+                    resultTweets.addAll(queryResult.getTweets());
+                    pageNumber++;
+                } while (ISSUANCE_SIZE > resultTweets.size());
+            } catch (TwitterException e) {
             }
-            pw.close();
-        } catch (Exception e) {
 
-        }
+            Iterator<Tweet> it = resultTweets.iterator();
+            while (it.hasNext()) {
+                Tweet next = it.next();
+                if (StringChecker.hasTerm(dictionary, next.getText())) {
+                    String str = next.getText();
+                    int index = next.getText().indexOf("http");
+                    if (index >= 0) {
+                        str = str.substring(0, index);
+                    }
+                    Timestamp articleTimestamp = new Timestamp(next.getCreatedAt().getTime());
+                    articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
+                            "", "", next.getText(), articleTimestamp, 0));
+                }
+            }
+            log.info("twitter added for brandName = " + b.getName());
+         }
+        log.info("twitter grabber finished succesful.");
     }
 }
