@@ -1,17 +1,8 @@
-import org.apache.log4j.Logger;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.db.provider.BrandProvider;
-import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.miner.Grabber;
 import twitter4j.*;
 
 import java.io.PrintWriter;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 /**
  * Created by IntelliJ IDEA.

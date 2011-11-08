@@ -1,10 +1,10 @@
 package ru.brandanalyst.miner;
 
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import org.webharvest.runtime.Scraper;
-import org.webharvest.definition.ScraperConfiguration;
-import ru.brandanalyst.miner.listener.YandexNewsScraperRuntimeListener;
 import org.apache.log4j.Logger;
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import org.webharvest.definition.ScraperConfiguration;
+import org.webharvest.runtime.Scraper;
+import ru.brandanalyst.miner.listener.YandexNewsScraperRuntimeListener;
 
 import java.util.Date;
 

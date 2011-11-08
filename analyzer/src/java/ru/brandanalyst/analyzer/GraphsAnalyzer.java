@@ -1,5 +1,6 @@
 package ru.brandanalyst.analyzer;
 
+import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.db.provider.BrandProvider;
@@ -8,14 +9,12 @@ import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
+import ru.brandanalyst.core.time.TimeProperties;
 
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
-import ru.brandanalyst.core.time.TimeProperties;
-import org.apache.log4j.Logger;
 
 /**
  * Класс, строящий основные временные ряды по данным из новостных источников

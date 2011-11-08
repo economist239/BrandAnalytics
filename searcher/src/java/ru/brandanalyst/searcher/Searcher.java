@@ -16,9 +16,9 @@ import ru.brandanalyst.core.model.Brand;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.Timestamp;
 
 /**
  * Класс, предоставляющий поиск по брендам и новостям

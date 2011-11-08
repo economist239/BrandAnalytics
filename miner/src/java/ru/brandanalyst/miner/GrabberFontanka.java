@@ -4,12 +4,8 @@ import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
-import ru.brandanalyst.core.db.provider.BrandProvider;
-import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.miner.listener.FontankaScraperRuntimeListener;
-import ru.brandanalyst.miner.util.DataTransformator;
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -20,7 +16,7 @@ import java.util.GregorianCalendar;
  * Time: 4:13 AM
  */
 public class GrabberFontanka extends Grabber {
-    private static final int SEARCH_DAYS=15;
+    private static final int SEARCH_DAYS = 15;
     private static final Logger log = Logger.getLogger(GrabberFontanka.class);
 
     private static final String endURL = "/news.html";
@@ -39,18 +35,17 @@ public class GrabberFontanka extends Grabber {
 
     @Override
     public void grab(Date timeLimit) {
-        GregorianCalendar time=new GregorianCalendar();
-            for (int i=0;i<SEARCH_DAYS;i++)
-            {
-                StringBuilder resultURL=new StringBuilder();
-                resultURL.append(sourceURL);
-                resultURL.append(appendix);
-                resultURL.append(time.get(GregorianCalendar.YEAR));
-                resultURL.append("/");
-                resultURL.append(time.get(GregorianCalendar.MONTH) + 1);
-                resultURL.append("/");
-                resultURL.append(time.get(GregorianCalendar.DAY_OF_MONTH));
-                resultURL.append(endURL);
+        GregorianCalendar time = new GregorianCalendar();
+        for (int i = 0; i < SEARCH_DAYS; i++) {
+            StringBuilder resultURL = new StringBuilder();
+            resultURL.append(sourceURL);
+            resultURL.append(appendix);
+            resultURL.append(time.get(GregorianCalendar.YEAR));
+            resultURL.append("/");
+            resultURL.append(time.get(GregorianCalendar.MONTH) + 1);
+            resultURL.append("/");
+            resultURL.append(time.get(GregorianCalendar.DAY_OF_MONTH));
+            resultURL.append(endURL);
 
             try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
@@ -59,13 +54,13 @@ public class GrabberFontanka extends Grabber {
                 scraper.addVariableToContext("QueryURL", resultURL.toString());
                 scraper.addVariableToContext("AbsoluteURL", sourceURL);
                 scraper.execute();
-                log.info("successful processing url "+resultURL);
+                log.info("successful processing url " + resultURL);
             } catch (Exception exception) {
                 exception.printStackTrace();
                 log.error("cannot process Fontanka url " + resultURL);
             }
-        time.set(GregorianCalendar.DAY_OF_YEAR,time.get(GregorianCalendar.DAY_OF_YEAR)-1);
-        log.info("Fontanka: succecsful");
+            time.set(GregorianCalendar.DAY_OF_YEAR, time.get(GregorianCalendar.DAY_OF_YEAR) - 1);
+            log.info("Fontanka: succecsful");
         }
     }
 }

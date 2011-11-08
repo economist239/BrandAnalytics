@@ -1,14 +1,14 @@
 package ru.brandanalyst.analyzer;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.FileReader;
-import java.util.StringTokenizer;
-
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.SemanticDictionaryProvider;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
 
 /**
  * Класс для инициализации семантического словаря в БД
@@ -23,7 +23,8 @@ public final class DictionaryInitialyzer {
     private static StringTokenizer stringTokenizer;
     private static BufferedReader in;
 
-    private DictionaryInitialyzer() { }
+    private DictionaryInitialyzer() {
+    }
 
     /**
      * метод инициализирует семантический словарь в БД

@@ -1,9 +1,9 @@
 package ru.brandanalyst.core.db.provider;
 
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.core.db.mapper.ArticleMapper;
 import org.apache.log4j.Logger;
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import ru.brandanalyst.core.db.mapper.ArticleMapper;
+import ru.brandanalyst.core.model.Article;
 
 import java.util.List;
 
@@ -48,7 +48,7 @@ public class ArticleProvider {
         } catch (Exception e) {
             //    e.printStackTrace();
             //    System.out.println(article.getContent().length());
-            log.error("cannot write article to db",e);
+            log.error("cannot write article to db", e);
         }
     }
 

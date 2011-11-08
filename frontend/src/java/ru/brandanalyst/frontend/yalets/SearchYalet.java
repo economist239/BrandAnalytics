@@ -4,10 +4,10 @@ import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.core.Yalet;
 import net.sf.xfresh.core.xml.Xmler;
-import ru.brandanalyst.frontend.services.BrandSearchManager;
-import ru.brandanalyst.frontend.services.ArticleSearchManager;
-import ru.brandanalyst.frontend.models.SimplyBrandForWeb;
 import ru.brandanalyst.frontend.models.SimplyArticleForWeb;
+import ru.brandanalyst.frontend.models.SimplyBrandForWeb;
+import ru.brandanalyst.frontend.services.ArticleSearchManager;
+import ru.brandanalyst.frontend.services.BrandSearchManager;
 
 import java.util.List;
 

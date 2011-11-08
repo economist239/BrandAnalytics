@@ -3,10 +3,11 @@ package ru.brandanalyst.core.db.provider;
 import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.model.SemanticDictionaryItem;
 import ru.brandanalyst.core.db.mapper.SemanticDictionaryMapper;
+import ru.brandanalyst.core.model.SemanticDictionaryItem;
 
 import java.util.List;
+import java.util.HashSet;
 
 /**
  * Класс доступа к словарю для эмоциональной окраски текста, использеутся в модуле analyzer
@@ -30,9 +31,9 @@ public class SemanticDictionaryProvider {
         jdbcTemplate.update("TRUNCATE TABLE SemanticDictionary");
     }
 
-    public List<SemanticDictionaryItem> getSemanticDictionary() {
+    public HashSet<SemanticDictionaryItem> getSemanticDictionary() {
         List<SemanticDictionaryItem> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM SemanticDictionary", semanticDictMapper);
-        return list;
+        return new HashSet<SemanticDictionaryItem>(list);
     }
 
     public void setSemanticDictionaryItem(SemanticDictionaryItem item) {

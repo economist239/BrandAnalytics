@@ -2,10 +2,10 @@ package ru.brandanalyst.frontend.models;
 
 import ru.brandanalyst.core.model.SingleDot;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.

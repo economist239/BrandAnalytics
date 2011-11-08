@@ -1,6 +1,5 @@
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.analyzer.Analyzer;
 
 public class Test {
 

@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
 import ru.brandanalyst.miner.listener.WikipediaScraperRuntimeListener;
+
 import java.util.Date;
 
 /**

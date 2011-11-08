@@ -1,15 +1,14 @@
 package ru.brandanalyst.core.db.provider;
 
+import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
 
 import java.sql.Timestamp;
-import java.util.List;
 import java.util.ArrayList;
-
-import org.apache.log4j.Logger;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.

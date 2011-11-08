@@ -1,11 +1,10 @@
 package ru.brandanalyst.analyzer;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.db.provider.BrandProvider;
-
-import org.apache.log4j.Logger;
 
 /**
  * Класс, в котором выполняется весь анализ

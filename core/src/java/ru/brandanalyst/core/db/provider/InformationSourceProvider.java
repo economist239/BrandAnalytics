@@ -2,11 +2,10 @@ package ru.brandanalyst.core.db.provider;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import ru.brandanalyst.core.db.mapper.InfoSourceMapper;
+import ru.brandanalyst.core.model.InfoSource;
 
 import java.util.List;
-
-import ru.brandanalyst.core.model.InfoSource;
-import ru.brandanalyst.core.db.mapper.InfoSourceMapper;
 
 /**
  * Created by IntelliJ IDEA.

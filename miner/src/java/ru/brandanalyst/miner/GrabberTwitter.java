@@ -1,19 +1,22 @@
 package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.db.provider.BrandDictionaryProvider;
+import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
+import ru.brandanalyst.miner.util.StringChecker;
 import twitter4j.*;
+
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.*;
-
-import ru.brandanalyst.core.db.provider.BrandProvider;
-import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.core.model.Article;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.miner.util.StringChecker;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -48,7 +51,6 @@ public class GrabberTwitter extends Grabber {
         String stringTimeLimit = dateFormat.format(timeLimit);
 
         for (Brand b : brandList) {
-
             BrandDictionaryItem dictionary = dictionaryProvider.getDictionaryItem(b.getId());
             Query query = new Query(b.getName());
             query.setRpp(PAGE_SIZE);
@@ -62,7 +64,6 @@ public class GrabberTwitter extends Grabber {
 
             try {
                 do {
-
                     query.setPage(pageNumber);
                     queryResult = twitter.search(query);
                     resultTweets.addAll(queryResult.getTweets());
@@ -86,7 +87,7 @@ public class GrabberTwitter extends Grabber {
                 }
             }
             log.info("twitter added for brandName = " + b.getName());
-         }
+        }
         log.info("twitter grabber finished succesful.");
     }
 }

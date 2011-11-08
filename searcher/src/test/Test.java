@@ -1,16 +1,14 @@
-import ru.brandanalyst.core.db.provider.BrandProvider;
-import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.model.Article;
-
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.apache.commons.dbcp.BasicDataSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.indexer.Indexer;
 import ru.brandanalyst.searcher.Searcher;
 
 import java.sql.Timestamp;
 import java.util.List;
-import java.sql.Timestamp;
 
 /**
  * Created by IntelliJ IDEA.

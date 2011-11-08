@@ -4,8 +4,8 @@ import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.core.xml.Xmler;
 import net.sf.xfresh.db.AbstractDbYalet;
-import ru.brandanalyst.frontend.services.LeftMenuManager;
 import ru.brandanalyst.frontend.models.SimplyBrandForWeb;
+import ru.brandanalyst.frontend.services.LeftMenuManager;
 
 import java.util.List;
 

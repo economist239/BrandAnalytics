@@ -1,6 +1,9 @@
 package net.sf.xfresh.jetty;
 
-import net.sf.xfresh.core.*;
+import net.sf.xfresh.core.InternalRequest;
+import net.sf.xfresh.core.InternalResponse;
+import net.sf.xfresh.core.SingleYaletProcessor;
+import net.sf.xfresh.core.YaletSupport;
 import org.apache.log4j.Logger;
 import org.apache.xml.serialize.OutputFormat;
 import org.apache.xml.serialize.XMLSerializer;

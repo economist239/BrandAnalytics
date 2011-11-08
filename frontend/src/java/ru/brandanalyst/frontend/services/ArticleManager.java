@@ -1,9 +1,9 @@
 package ru.brandanalyst.frontend.services;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.db.provider.InformationSourceProvider;
 import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.model.InfoSource;
 import ru.brandanalyst.frontend.models.WideArticleForWeb;
 

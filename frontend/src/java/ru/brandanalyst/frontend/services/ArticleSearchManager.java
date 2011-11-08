@@ -1,9 +1,9 @@
 package ru.brandanalyst.frontend.services;
 
-import ru.brandanalyst.searcher.Searcher;
+import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.frontend.models.SimplyArticleForWeb;
 import ru.brandanalyst.frontend.util.TextConverter;
-import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.searcher.Searcher;
 
 import java.util.ArrayList;
 import java.util.List;

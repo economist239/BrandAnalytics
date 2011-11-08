@@ -1,7 +1,5 @@
 package ru.brandanalyst.miner.util;
 
-import java.text.SimpleDateFormat;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich

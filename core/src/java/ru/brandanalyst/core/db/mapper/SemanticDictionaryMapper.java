@@ -1,10 +1,10 @@
 package ru.brandanalyst.core.db.mapper;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  * Created by IntelliJ IDEA.

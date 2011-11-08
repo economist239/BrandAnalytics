@@ -1,12 +1,11 @@
 package ru.brandanalyst.miner;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import org.apache.log4j.Logger;
+
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
-import org.apache.log4j.Logger;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,6 +28,7 @@ public class GrabberContainer {
     public void afterPropertiesSet() {
 
         Date timeLimit;
+        Date now = new Date();
         BufferedReader bufferedReader;
         try {
             bufferedReader = new BufferedReader(new FileReader("miner/config/miner.cfg"));
@@ -45,6 +45,14 @@ public class GrabberContainer {
             for (Grabber g : grabberList) {
                 g.grab(timeLimit);
             }
+        }
+
+        PrintWriter pw;
+        try {
+            pw = new PrintWriter(new File("miner/config/miner.cfg"));
+            pw.write(now.toString());
+        } catch (FileNotFoundException e) {
+            log.error("error in date writtnig");
         }
         log.info("miner finished.");
     }

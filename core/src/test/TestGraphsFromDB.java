@@ -1,13 +1,13 @@
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-//import org.springframework.util.Assert;
 import ru.brandanalyst.core.db.provider.GraphProvider;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
-import junit.framework.Assert;
 
 import java.sql.Timestamp;
 import java.util.List;
+
+//import org.springframework.util.Assert;
 
 /**
  * Created by IntelliJ IDEA.

@@ -1,13 +1,18 @@
 package ru.brandanalyst.frontend.services;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.model.*;
-import ru.brandanalyst.core.db.provider.*;
+import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.db.provider.GraphProvider;
+import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.core.model.Graph;
+import ru.brandanalyst.core.model.SingleDot;
 import ru.brandanalyst.frontend.models.GraphForWeb;
 import ru.brandanalyst.frontend.models.SimplyArticleForWeb;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Сервис, предоставляющий широкую информацию о бренде, включая последние новости о нем и анализ графиков

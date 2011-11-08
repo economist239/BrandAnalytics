@@ -1,8 +1,8 @@
 package net.sf.xfresh.base;
 
-import net.sf.xfresh.core.Yalet;
 import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
+import net.sf.xfresh.core.Yalet;
 
 /**
  * Date: 29.08.2007

@@ -15,7 +15,6 @@ import ru.brandanalyst.miner.util.StringChecker;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -80,7 +79,7 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
         if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
             try {
                 Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
-                List<Long> brandIds= StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionary(), newsTitle.toString());
+                List<Long> brandIds = StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionary(), newsTitle.toString());
                 if (brandIds.isEmpty()) return;
 
 
@@ -94,8 +93,7 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
                 String articleContent = DataTransformator.clearString(newsText.toString());
                 String articleTitle = newsTitle.toString();
                 String articleLink = scraper.getContext().get("AbsoluteURL").toString() + scraper.getContext().get("oneNew").toString();
-                for (Long brandId:brandIds)
-                {
+                for (Long brandId : brandIds) {
                     Article article = new Article(-1, brandId, 10, articleTitle, articleContent, articleLink, articleTimestamp, 0);
                     articleProvider.writeArticleToDataStore(article);
                 }
