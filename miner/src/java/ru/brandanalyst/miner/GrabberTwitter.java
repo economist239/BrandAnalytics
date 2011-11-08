@@ -46,12 +46,14 @@ public class GrabberTwitter extends Grabber {
         ArticleProvider articleProvider = new ArticleProvider(jdbcTemplate);
         BrandDictionaryProvider dictionaryProvider = new BrandDictionaryProvider(jdbcTemplate);
 
+        PrintWriter pw;
+
+        try {
+            pw = new PrintWriter("tweets.txt");
 
 
+            for (Brand b : brandList) {
 
-        for (Brand b : brandList) {
-            try {
-                PrintWriter pw = new PrintWriter("tweets.txt");
                 BrandDictionaryItem dictionary = dictionaryProvider.getDictionaryItem(b.getId());
                 Query query = new Query(b.getName());
                 query.setRpp(PAGE_SIZE);
@@ -64,17 +66,18 @@ public class GrabberTwitter extends Grabber {
                 int pageNumber = 1;
 
                 try {
-                do {
+                    do {
 
-                    query.setPage(pageNumber);
-                    queryResult = twitter.search(query);
-                    resultTweets.addAll(queryResult.getTweets());
-                    pageNumber++;
-                } while (ISSUANCE_SIZE > resultTweets.size());
-                }catch (TwitterException e) {}
+                        query.setPage(pageNumber);
+                        queryResult = twitter.search(query);
+                        resultTweets.addAll(queryResult.getTweets());
+                        pageNumber++;
+                    } while (ISSUANCE_SIZE > resultTweets.size());
+                } catch (TwitterException e) {
+                }
 
                 Iterator<Tweet> it = resultTweets.iterator();
-                while(it.hasNext()) {
+                while (it.hasNext()) {
                     Tweet next = it.next();
                     if (StringChecker.hasTerm(dictionary, next.getText())) {
                         String str = next.getText();
@@ -88,11 +91,13 @@ public class GrabberTwitter extends Grabber {
                         //    "", "", resultTweets.get(i).getText(), articleTimestamp, 0));
                     }
                 }
-                pw.close();
+
                 log.info("twitter added for brandName = " + b.getName());
-            } catch (IOException e) {
-                e.printStackTrace();
+
             }
+            pw.close();
+        } catch (Exception e) {
+
         }
     }
 }
