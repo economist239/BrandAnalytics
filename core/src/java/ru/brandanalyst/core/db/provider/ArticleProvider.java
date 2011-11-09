@@ -59,13 +59,13 @@ public class ArticleProvider {
     }
 
     public Article getArticleBySourceId(long sourceId) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE InfosourceId = ?", new Object[]{sourceId}, articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE InfosourceId = " + sourceId, articleMapper);
         return list.get(0);
     }
 
 
     public List<Article> getAllArticlesBySourceId(long sourceId) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE InfosourceId = ?", new Object[]{sourceId}, articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE InfosourceId = " + sourceId, articleMapper);
         return list;
     }
 

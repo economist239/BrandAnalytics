@@ -104,14 +104,14 @@
         <delete file="checkstyle_report.htm"/>
 
         <taskdef resource="checkstyletask.properties" classpath="${lib.dir}/checkstyle/checkstyle-5.4-all.jar"/>
-        <checkstyle config="${project.dir}/checks.xml"
+        <checkstyle config="/code-validation/checks.xml"
                     failureProperty="checkstyle.failure"
                     failOnViolation="false">
             <formatter type="xml" tofile="checkstyle_report.xml"/>
             <fileset dir="${project.dir}" includes="**/*.java" excludes="**/net/**/*.java **/test/** "/>
         </checkstyle>
 
-        <xslt in="checkstyle_report.xml" out="checkstyle_report.htm" style="checkstyle.xsl">
+        <xslt in="checkstyle_report.xml" out="checkstyle_report.htm" style="code-validation/checkstyle.xsl">
             <outputproperty name="method" value="html"/>
             <outputproperty name="standalone" value="yes"/>
             <outputproperty name="encoding" value="iso8859_1"/>
