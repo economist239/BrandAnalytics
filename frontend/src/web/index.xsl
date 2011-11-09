@@ -3,6 +3,7 @@
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
     <xsl:include href="common.xsl"/>
 
+    <xsl:template name="head"/>
     <xsl:template name="main">
         <h4>Бренд Аналитик - инновация настоящего, парадигма будущего.</h4>
         <br/>

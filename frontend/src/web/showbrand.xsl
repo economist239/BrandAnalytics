@@ -9,6 +9,13 @@
         <xsl:apply-templates select="page/data[@id='wideBrandInfo']/collection[1]" mode="show"/>
     </xsl:template>
 
+    <xsl:template name="head">
+        <script src="raphael/raphael.js"></script>
+        <script src="raphael/popup.js"></script>
+        <script src="raphael/jquery.js"></script>
+        <script src="raphael/analytics.js"></script>
+    </xsl:template>
+
     <xsl:template match="page/data[@id='wideBrandInfo']" mode="show">
         <xsl:for-each select="brand">
             <div class="content">

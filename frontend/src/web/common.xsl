@@ -12,10 +12,7 @@
 
         <html>
             <head>
-                <script src="raphael/raphael.js"></script>
-                <script src="raphael/popup.js"></script>
-                <script src="raphael/jquery.js"></script>
-                <script src="raphael/analytics.js"></script>
+                <xsl:call-template name="head"/>
 
                 <title>
                     <xsl:text>Brand Analytics</xsl:text>

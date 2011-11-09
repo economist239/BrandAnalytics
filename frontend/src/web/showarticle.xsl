@@ -3,6 +3,7 @@
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
     <xsl:include href="common.xsl"/>
 
+    <xsl:template name="head">
     <xsl:template name="main">
         <xsl:apply-templates select="page/data[@id='showArticle']" mode="show"/>
     </xsl:template>
