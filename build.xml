@@ -104,7 +104,7 @@
         <delete file="checkstyle_report.htm"/>
 
         <taskdef resource="checkstyletask.properties" classpath="${lib.dir}/checkstyle/checkstyle-5.4-all.jar"/>
-        <checkstyle config="/code-validation/checks.xml"
+        <checkstyle config="code-validation/checks.xml"
                     failureProperty="checkstyle.failure"
                     failOnViolation="false">
             <formatter type="xml" tofile="checkstyle_report.xml"/>
