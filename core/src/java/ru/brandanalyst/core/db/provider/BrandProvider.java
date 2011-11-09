@@ -47,12 +47,12 @@ public class BrandProvider {
     }
 
     public Brand getBrandByName(String name) {
-        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Name = ?", new Object[]{name}, brandMapper);
+        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Name = " + name, brandMapper);
         return list.get(0);
     }
 
     public Brand getBrandById(long brandId) {
-        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Id = " + Long.toString(brandId), brandMapper);
+        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Id = " + brandId, brandMapper);
         return list.get(0);
     }
 

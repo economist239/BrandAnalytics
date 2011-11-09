@@ -2,16 +2,11 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="frontend" />
-    <orderEntry type="module" module-name="assessor-tool" />
-    <orderEntry type="module" module-name="miner" />
-    <orderEntry type="module" module-name="analyzer" />
-    <orderEntry type="module" module-name="core" />
-    <orderEntry type="module" module-name="indexer" />
-    <orderEntry type="library" name="lib" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">

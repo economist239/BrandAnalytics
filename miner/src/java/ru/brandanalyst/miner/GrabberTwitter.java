@@ -13,10 +13,7 @@ import twitter4j.*;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -59,6 +56,7 @@ public class GrabberTwitter extends Grabber {
             query.setResultType(Query.MIXED);
 
             List<Tweet> resultTweets = new LinkedList<Tweet>();
+
             QueryResult queryResult;
             int pageNumber = 1;
 
@@ -66,6 +64,7 @@ public class GrabberTwitter extends Grabber {
                 do {
                     query.setPage(pageNumber);
                     queryResult = twitter.search(query);
+                    Iterator<Tweet> it = queryResult.getTweets().iterator();
                     resultTweets.addAll(queryResult.getTweets());
                     pageNumber++;
                 } while (ISSUANCE_SIZE > resultTweets.size());
