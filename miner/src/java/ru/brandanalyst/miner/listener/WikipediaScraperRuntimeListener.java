@@ -68,7 +68,7 @@ public class WikipediaScraperRuntimeListener implements ScraperRuntimeListener {
         brandDescription2 = DataTransformator.clearString(brandDescription2);
 
         String brandDescription;
-        if (brandDescription1.indexOf('—') >= 0) {
+        if (brandDescription1.indexOf('-') >= 0) {
             brandDescription = brandDescription1;
         } else {
             brandDescription = brandDescription2;
