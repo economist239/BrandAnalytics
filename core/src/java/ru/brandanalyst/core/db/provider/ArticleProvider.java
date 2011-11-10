@@ -32,7 +32,6 @@ public class ArticleProvider {
         articleMapper = new ArticleMapper();
     }
 
-    @Deprecated
     public void cleanDataStore() {
         jdbcTemplate.update("TRUNCATE TABLE Article");
     }
