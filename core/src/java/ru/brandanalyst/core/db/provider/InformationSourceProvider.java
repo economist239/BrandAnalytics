@@ -16,7 +16,7 @@ import java.util.List;
 public class InformationSourceProvider {
     private static final Logger log = Logger.getLogger(InformationSourceProvider.class);
 
-    private SimpleJdbcTemplate jdbcTemplate; //
+    private SimpleJdbcTemplate jdbcTemplate;
     private InfoSourceMapper infoSourceMapper;
 
     public InformationSourceProvider(SimpleJdbcTemplate jdbcTemplate) {
@@ -31,8 +31,8 @@ public class InformationSourceProvider {
 
     public void writeInfoSourceToDataStore(InfoSource infoSource) {
         try {
-            jdbcTemplate.update("INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(?,?,?,?);", Long.toString(infoSource.getSphereId()),
-                    infoSource.getTitle(), infoSource.getDescription(), infoSource.getWebsite());
+            jdbcTemplate.update("INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(?,?,?,?,?);", Long.toString(infoSource.getSphereId()),
+                    infoSource.getTitle(), infoSource.getDescription(), infoSource.getWebsite(), infoSource.getRssSource());
         } catch (Exception e) {
             log.error("cannot wrtie infoSource to db");
         }

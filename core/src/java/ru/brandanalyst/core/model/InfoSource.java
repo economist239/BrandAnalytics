@@ -13,13 +13,15 @@ public class InfoSource {
     private final String title;
     private final String description;
     private final String website;
+    private final String rssSource;
 
-    public InfoSource(long id, long sphereId, String title, String description, String website) {
+    public InfoSource(long id, long sphereId, String title, String description, String website, String rssSource) {
         this.id = id;
         this.sphereId = sphereId;
         this.title = title;
         this.description = description;
         this.website = website;
+        this.rssSource = rssSource;
     }
 
     public long getId() {
@@ -40,5 +42,9 @@ public class InfoSource {
 
     public String getWebsite() {
         return website;
+    }
+
+    public String getRssSource() {
+        return rssSource;
     }
 }

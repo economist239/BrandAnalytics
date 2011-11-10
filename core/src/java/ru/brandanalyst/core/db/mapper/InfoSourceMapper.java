@@ -18,6 +18,7 @@ public class InfoSourceMapper implements ParameterizedRowMapper<InfoSource> {
                 Long.parseLong(resultSet.getString("TypeId")),
                 resultSet.getString("Title"),
                 resultSet.getString("Description"),
-                resultSet.getString("Website"));
+                resultSet.getString("Website"),
+                resultSet.getString("RSSSource"));
     }
 }

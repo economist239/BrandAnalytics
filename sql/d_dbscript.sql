@@ -53,7 +53,8 @@ create table InformationSource(
 	TypeId int not null,
 	Title varchar(100) not null,
     Description varchar(1000),
-	Website varchar(100) not null
+	Website varchar(100) not null,
+	RSSSource varchar(100)
 );
 
 drop table if exists BrandDictionary;
@@ -98,14 +99,14 @@ INSERT INTO Branch (Name) VALUES("IT: железо");
 
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(0, "Хабрахабр", "социальная сеть и блог", "http://habrahabr.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(0, "Twitter", "твиты, твиты", "http://twitter.com");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Лента.ру", "новости", "http://lenta.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "ИТАР ТАСС", "новости", "http://itar-tass.com");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "РБК", "новости", "http://rbc.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "РИА новости", "новости", "http://ria.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "ФИНАМ","всякая бурда","http://finam.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Коммерсант", "унылые новости", "http://kommersant.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Газета.RU", "новости", "http://gazeta.ru");
-INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Фонтанка.RU", "новости", "http://fontanka.ru");
+INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "Лента.ру", "новости", "http://lenta.ru","http://lenta.ru/rss/");
+INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "ИТАР ТАСС", "новости", "http://itar-tass.com","http://www.itar-tass.com/rss/all.xml");
+INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "РБК", "новости", "http://rbc.ru","");
+INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "РИА новости", "новости", "http://ria.ru","");
+INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "ФИНАМ","всякая бурда","http://finam.ru","");
+INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "Коммерсант", "унылые новости", "http://kommersant.ru","");
+INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "Газета.RU", "новости", "http://gazeta.ru","http://www.gazeta.ru/export/rss/first.xml");
+INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "Фонтанка.RU", "новости", "http://fontanka.ru","http://www.fontanka.ru/fontanka.rss");
 
 INSERT INTO Ticker (TickerName) VALUES("Статистика упоминаемости в новостях");
 
