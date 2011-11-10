@@ -42,17 +42,15 @@ public final class DictionaryInitialyzer {
         SemanticDictionaryProvider provider = new SemanticDictionaryProvider(jdbcTemplate);
 
         in = new BufferedReader(new FileReader("analyzer/dictionary/positive.txt"));
-        stringTokenizer = new StringTokenizer(in.readLine());
-        while (stringTokenizer.hasMoreTokens()) {
-            String term = stringTokenizer.nextToken();
+        while (in.ready()) {
+            String term = in.readLine();
             provider.setSemanticDictionaryItem(new SemanticDictionaryItem(term, 1.0));
         }
         in.close();
 
         in = new BufferedReader(new FileReader("analyzer/dictionary/negative.txt"));
-        stringTokenizer = new StringTokenizer(in.readLine());
-        while (stringTokenizer.hasMoreTokens()) {
-            String term = stringTokenizer.nextToken();
+        while (in.ready()) {
+            String term = in.readLine();
             provider.setSemanticDictionaryItem(new SemanticDictionaryItem(term, 1.0));
         }
         in.close();
