@@ -26,6 +26,12 @@ public class StringChecker {
 //        return false;
         for (int i = 0; i < title.length(); i++) {
             for (int j = i + 1; j < title.length(); j++) {
+                if (brandItem.getItems().contains(title.substring(i, j).toUpperCase())) {
+                    return true;
+                }
+                if (brandItem.getItems().contains(title.substring(i, j).toLowerCase())) {
+                    return true;
+                }
                 if (brandItem.getItems().contains(title.substring(i, j))) {
                     return true;
                 }

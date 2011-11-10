@@ -8,7 +8,9 @@
 
     <!--Miner conf-->
     <bean id="grabberTwitter" class="ru.brandanalyst.miner.GrabberTwitter"/>
-    <bean id="grabberRia" class="ru.brandanalyst.miner.GrabberRia"/>
+    <bean id="grabberRia" class="ru.brandanalyst.miner.GrabberRia">
+        <property name="config" value="./miner/configs/riaNews1.xml"/>
+    </bean>
 
     <!--DB conf-->
     <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
