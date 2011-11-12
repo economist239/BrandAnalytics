@@ -20,7 +20,6 @@ protected SimpleJdbcTemplate jdbcTemplate;
     }
     public void afterPropertiesSet() {
         startParsing();
-        if (jdbcTemplate==null) System.out.println("Null");
     }
     public void startParsing()
     {
