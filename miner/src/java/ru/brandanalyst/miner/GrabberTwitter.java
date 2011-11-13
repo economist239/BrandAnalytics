@@ -56,7 +56,6 @@ public class GrabberTwitter extends Grabber {
             query.setResultType(Query.MIXED);
 
             List<Tweet> resultTweets = new LinkedList<Tweet>();
-
             QueryResult queryResult;
             int pageNumber = 1;
 
@@ -64,29 +63,76 @@ public class GrabberTwitter extends Grabber {
                 do {
                     query.setPage(pageNumber);
                     queryResult = twitter.search(query);
-                    Iterator<Tweet> it = queryResult.getTweets().iterator();
                     resultTweets.addAll(queryResult.getTweets());
                     pageNumber++;
                 } while (ISSUANCE_SIZE > resultTweets.size());
             } catch (TwitterException e) {
             }
-
-            Iterator<Tweet> it = resultTweets.iterator();
-            while (it.hasNext()) {
-                Tweet next = it.next();
-                if (StringChecker.hasTerm(dictionary, next.getText())) {
-                    String str = next.getText();
-                    int index = next.getText().indexOf("http");
-                    if (index >= 0) {
-                        str = str.substring(0, index);
-                    }
-                    Timestamp articleTimestamp = new Timestamp(next.getCreatedAt().getTime());
-                    articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
-                            "", "", next.getText(), articleTimestamp, 0));
-                }
+            Iterator<Map.Entry<String,TweetInfo>> resultIterator =
+                    removeDuplicates(resultTweets,dictionary).entrySet().iterator();
+            while(resultIterator.hasNext()){
+                Map.Entry<String,TweetInfo> next = resultIterator.next();
+                articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
+                        "", "", next.getKey(), next.getValue().getTime(), next.getValue().getNumLikes()));
             }
+
             log.info("twitter added for brandName = " + b.getName());
         }
         log.info("twitter grabber finished succesful.");
+    }
+
+
+    //bad style?
+
+    private Map<String,TweetInfo> removeDuplicates(List<Tweet> resultTweets, BrandDictionaryItem dictionary){
+        Map<String,TweetInfo> tweetsInfoMap = new HashMap<String,TweetInfo>();
+        Iterator<Tweet> it = resultTweets.iterator();
+        while(it.hasNext()){
+            Tweet next = it.next ();
+            if (StringChecker.hasTerm(dictionary, next.getText())) {
+                String str = next.getText().trim();
+                int index = next.getText().indexOf("http");
+                if (index >= 0) {
+                        str = str.substring(0, index);
+                }
+                if(tweetsInfoMap.containsKey(str)){
+                    TweetInfo tweetInfo = tweetsInfoMap.get(str);
+                    tweetInfo.setNumLikes(tweetInfo.getNumLikes() + 1);
+                    tweetsInfoMap.put(str,tweetInfo);
+                }
+                else{
+                    TweetInfo tweetInfo
+                            = new TweetInfo(new Timestamp(next.getCreatedAt().getTime()), 1);
+                    tweetsInfoMap.put(str,tweetInfo);
+                }
+
+            }
+        }
+        return tweetsInfoMap;
+    }
+
+    class TweetInfo{
+        Timestamp time;
+        int numLikes;
+
+        TweetInfo(Timestamp time,int numLikes){
+            this.numLikes = numLikes;
+            this.time = time;
+        }
+        public Timestamp getTime() {
+            return time;
+        }
+
+        public void setTime(Timestamp time) {
+            this.time = time;
+        }
+
+        public int getNumLikes() {
+            return numLikes;
+        }
+
+        public void setNumLikes(int numLikes) {
+            this.numLikes = numLikes;
+        }
     }
 }
