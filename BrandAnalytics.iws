@@ -1,28 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="string checker fixed">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/TickerProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/YouTubeManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowYouTubeYalet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.ipr" afterPath="$PROJECT_DIR$/BrandAnalytics.ipr" />
+    <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="string checker fixed" />
+    <list id="c16d02c9-2f64-4539-9895-fad787085a75" name="Rejected commit: Default" comment="analyzer with beans">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/json_simple-1.1.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assessor-tool/assessor-tool.iml" afterPath="$PROJECT_DIR$/assessor-tool/assessor-tool.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/GraphProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/GraphProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/frontend.iml" afterPath="$PROJECT_DIR$/frontend/frontend.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/WideBrandInfoManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/WideBrandInfoManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/WideBrandInfoYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/WideBrandInfoYalet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/common.xsl" afterPath="$PROJECT_DIR$/frontend/src/web/common.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/showarticle.xsl" afterPath="$PROJECT_DIR$/frontend/src/web/showarticle.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/web/showbrand.xsl" afterPath="$PROJECT_DIR$/frontend/src/web/showbrand.xsl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/RiaNewsScraperRuntimeListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserRSSXML.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserRSSXML.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserStarter.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserStarter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner/MinerGrabbersTest.java" afterPath="$PROJECT_DIR$/miner/src/test/ru/brandanalyst/miner/MinerGrabbersTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/d_dbscript.sql" afterPath="$PROJECT_DIR$/sql/d_dbscript.sql" />
-    </list>
-    <list id="c16d02c9-2f64-4539-9895-fad787085a75" name="Rejected commit: Default" comment="analyzer with beans">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/json_simple-1.1.jar" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1150,7 +1136,7 @@
     <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
     <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="string checker fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="added core for graphs plugin; started join youtube to project" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1163,7 +1149,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="dict initializator added" />
     <MESSAGE value="infosourceprovider added, widearticleforweb added" />
     <MESSAGE value="infosourceprovider added" />
     <MESSAGE value="article manager updated" />
@@ -1188,6 +1173,7 @@
     <MESSAGE value="dict fixed" />
     <MESSAGE value="tests added to miner" />
     <MESSAGE value="string checker fixed" />
+    <MESSAGE value="added core for graphs plugin; started join youtube to project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
