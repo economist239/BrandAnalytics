@@ -26,8 +26,9 @@
             <!--</list>
         </property>
     </bean>-->
-    <bean class="ru.brandanalyst.miner.parser.ParserStarter">
-    </bean>
+    <!--<bean class="ru.brandanalyst.miner.parser.ParserStarter">
+    </bean>-->
+    <bean class="ru.brandanalyst.miner.quote.FinamStarter"/>
 
     <!--DB conf-->
     <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">

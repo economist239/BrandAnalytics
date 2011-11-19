@@ -13,13 +13,15 @@ public class Brand {
     private String name;
     private String description;
     private String website;
+    private String finamName;
 
-    public Brand(long id, String name, String description, String website, long branchId) {
+    public Brand(long id, String name, String description, String website, long branchId, String finamName) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.website = website;
         this.branchId = branchId;
+        this.finamName = finamName;
     }
 
     public Brand(long id, String name, String description, String website) {
@@ -28,6 +30,7 @@ public class Brand {
         this.description = description;
         this.website = website;
         this.branchId = -1;
+        this.finamName="";
     }
 
     public long getId() {
@@ -56,6 +59,10 @@ public class Brand {
 
     public String getWebsite() {
         return website;
+    }
+
+    public String getFinamName() {
+        return finamName;
     }
 
     public void setWebsite(String description) {

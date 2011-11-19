@@ -33,8 +33,8 @@ public class BrandProvider {
 
     public void writeBrandToDataStore(Brand brand) {
         try {
-            jdbcTemplate.update("INSERT INTO Brand (Name, Description, Website, BranchId) VALUES(?,?,?,?);", brand.getName(),
-                    brand.getDescription(), brand.getWebsite(), brand.getBranchId());
+            jdbcTemplate.update("INSERT INTO Brand (Name, Description, Website, BranchId, FinamName) VALUES(?,?,?,?,?);", brand.getName(),
+                    brand.getDescription(), brand.getWebsite(), brand.getBranchId(), brand.getFinamName());
         } catch (Exception e) {
             log.error("cannot wrtie brand to db");
         }
