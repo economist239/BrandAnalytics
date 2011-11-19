@@ -4,6 +4,11 @@ package ru.brandanalyst.miner.quote;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 
+/**
+ * @author OlegPan
+ * This class starts grab from finam
+ */
+
 public class FinamStarter {
     protected SimpleJdbcTemplate jdbcTemplate;
     private static final Logger log = Logger.getLogger(FinamStarter.class);

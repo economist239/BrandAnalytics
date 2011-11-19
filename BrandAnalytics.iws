@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="string checker fixed">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/FinamStarter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java" />
-      <change type="DELETED" beforePath="C:\Programs\CloneRepo\BrandAnalytics\lib\findbugs\commons-lang-2.4.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Programs\CloneRepo\BrandAnalytics\lib\httpclient\httpclient-4.0-beta2.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Programs\CloneRepo\BrandAnalytics\lib\httpclient\httpcore-4.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Programs\CloneRepo\BrandAnalytics\lib\httpclient\httpcore-nio-4.0.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Programs\CloneRepo\BrandAnalytics\lib\httpclient\httpmime-4.0-beta2.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Programs\CloneRepo\BrandAnalytics\lib\jakarta-commons\commons-httpclient-3.1.jar" afterPath="" />
-      <change type="DELETED" beforePath="C:\Programs\CloneRepo\BrandAnalytics\lib\jakarta-commons\commons-lang.jar" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.ipr" afterPath="$PROJECT_DIR$/BrandAnalytics.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assessor-tool/src/java/ru/brandanalyst/assessor/StemmerTester.java" afterPath="$PROJECT_DIR$/assessor-tool/src/java/ru/brandanalyst/assessor/StemmerTester.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/BrandMapper.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/mapper/BrandMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/miner.iml" afterPath="$PROJECT_DIR$/miner/miner.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/WikipediaScraperRuntimeListener.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/WikipediaScraperRuntimeListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserRSSXML.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserRSSXML.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/scripts/beans.xml" afterPath="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" afterPath="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/d_dbscript.sql" afterPath="$PROJECT_DIR$/sql/d_dbscript.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/FinamStarter.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/FinamStarter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java" />
     </list>
     <list id="c16d02c9-2f64-4539-9895-fad787085a75" name="Rejected commit: Default" comment="analyzer with beans" />
     <ignored path="BrandAnalytics.iws" />
@@ -87,11 +69,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GrabberFinam.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GrabberFinam.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="27" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.22666667">
-              <folding />
+            <state line="22" column="0" selection-start="759" selection-end="831" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,10 +125,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinamStarter.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="FinamStarter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/FinamStarter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="67" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
+            <state line="8" column="36" selection-start="195" selection-end="195" vertical-scroll-proportion="0.35051546">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -204,11 +188,11 @@
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/BrandProvider.java" />
         <option value="$PROJECT_DIR$/searcher/src/java/ru/brandanalyst/searcher/Searcher.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/listener/WikipediaScraperRuntimeListener.java" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/FinamStarter.java" />
         <option value="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserRSSXML.java" />
         <option value="$PROJECT_DIR$/sql/d_dbscript.sql" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java" />
+        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/FinamStarter.java" />
       </list>
     </option>
   </component>
@@ -1453,15 +1437,6 @@
         <state line="19" column="13" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/FinamStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="67" selection-start="598" selection-end="598" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Graph.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="13" selection-start="226" selection-end="226" vertical-scroll-proportion="0.0" />
@@ -1476,8 +1451,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="27" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.22666667">
-          <folding />
+        <state line="22" column="0" selection-start="759" selection-end="831" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/FinamStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="36" selection-start="195" selection-end="195" vertical-scroll-proportion="0.35051546">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
