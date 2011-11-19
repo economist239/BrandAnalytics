@@ -20,12 +20,12 @@ public class BrandMapper implements ParameterizedRowMapper<Brand> {
                     resultSet.getString("Name"),
                     resultSet.getString("Description"),
                     resultSet.getString("Website"),
-                    Long.parseLong(resultSet.getString("BranchId")));
+                    Long.parseLong(resultSet.getString("BranchId")),resultSet.getString("FinamName"));
         } catch (Exception e) {
             return new Brand(Long.parseLong(resultSet.getString("Id")),
                     resultSet.getString("Name"),
                     resultSet.getString("Description"),
-                    resultSet.getString("Website"), -1);
+                    resultSet.getString("Website"), -1 ,"");
         }
     }
 }

@@ -110,7 +110,7 @@ public class Searcher {
                 doc.get("Name"),
                 doc.get("Description"),
                 doc.get("Website"),
-                Long.parseLong(doc.get("BranchId"))
+                Long.parseLong(doc.get("BranchId")),""
         );
     }
 

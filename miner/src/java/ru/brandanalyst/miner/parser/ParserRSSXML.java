@@ -66,7 +66,7 @@ public class ParserRSSXML {
             break;
         }
         resultDate.append(dateTokenizer.nextToken());
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyyy");
         Date date;
         try {
             date = dateFormat.parse(resultDate.toString());
