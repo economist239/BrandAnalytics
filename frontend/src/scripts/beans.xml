@@ -43,6 +43,8 @@
     <bean id="searchYalet" class="ru.brandanalyst.frontend.yalets.SearchYalet"/>
 
     <bean id="showArticleYalet" class="ru.brandanalyst.frontend.yalets.ShowArticleYalet"/>
+
+    <bean id="showYouTubeYalet" class="ru.brandanalyst.frontend.yalets.ShowYouTubeYalet"/>
     <!--Searcher conf-->
     <bean id="brandSearchManager" class="ru.brandanalyst.frontend.services.BrandSearchManager"/>
 

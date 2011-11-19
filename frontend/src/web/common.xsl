@@ -52,7 +52,7 @@
                             <xsl:call-template name="leftmenu"/>
                         </div>
                     </div>
-                    <div class="content">
+                    <div class="content" align="center">
                         <!--                    <div class="hero-unit">-->
                         <xsl:call-template name="main"/>
                         <!--          </div>                        -->

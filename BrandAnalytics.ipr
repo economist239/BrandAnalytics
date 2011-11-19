@@ -399,10 +399,12 @@
         <root url="file://$PROJECT_DIR$/lib/jetbrains" />
         <root url="file://$PROJECT_DIR$/lib/xfresh" />
         <root url="file://$PROJECT_DIR$/lib/xalan" />
+        <root url="file://$PROJECT_DIR$/lib/htmlunit" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/htmlunit" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/httpclient" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/jakarta-commons" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/jetbrains" recursive="false" />

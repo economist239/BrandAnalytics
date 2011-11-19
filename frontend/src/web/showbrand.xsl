@@ -5,7 +5,7 @@
 
     <xsl:template name="main">
         <xsl:apply-templates select="page/data[@id='wideBrandInfo']" mode="show"/>
-        <xsl:apply-templates select="page/data[@id='wideBrandInfo']/collection[2]" mode="show"/>
+        <xsl:apply-templates select="page/data[@id='wideBrandInfo']/collection[1]" mode="show"/>
     </xsl:template>
 
     <xsl:template name="head">
@@ -97,7 +97,11 @@
         <hr/>
         <script>
             function youtubePage(){
-            return parent.location.href = document.location.href.substring(0, document.location.href.indexOf("showbrand")) + "showyoutube.xml" + document.location.href.substring(document.location.href.indexOf("?"), document.location.href.indexOf("&amp;"));
+            if (document.location.href.indexOf("&amp;") == -1) {
+            return parent.location.href = document.location.href.substring(0, document.location.href.indexOf("showbrand")) + "showyoutube.xml" + document.location.href.substring(document.location.href.indexOf("?id"), document.location.href.length);
+            } else {
+            return parent.location.href = document.location.href.substring(0, document.location.href.indexOf("showbrand")) + "showyoutube.xml" + document.location.href.substring(document.location.href.indexOf("?id"), document.location.href.indexOf("&amp;"));
+            }
             }
         </script>
         <h3>
