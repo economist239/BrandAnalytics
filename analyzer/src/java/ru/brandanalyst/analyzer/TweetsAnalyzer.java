@@ -3,11 +3,13 @@ package ru.brandanalyst.analyzer;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.db.provider.GraphProvider;
 import ru.brandanalyst.core.db.provider.SemanticDictionaryProvider;
-import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.core.model.SemanticDictionaryItem;
+import ru.brandanalyst.core.model.*;
+import ru.brandanalyst.core.time.TimeProperties;
 
-import java.io.*;
+import java.sql.Timestamp;
 import java.util.*;
 
 /**
@@ -17,18 +19,114 @@ import java.util.*;
  * Date: 06.11.11
  * Time: 10:59
  */
-public class TweetsAnalyzer {
+public class TweetsAnalyzer{
+    private static final int TWEET_SOURCE_ID = 2;
+    private static final int POSITIVE_TICKER_ID = 2;
+    private static final int NEUTRAL_TICKER_ID = 3;
+    private static final int NEGATIVE_TICKER_ID = 4;
     private static final Logger log = Logger.getLogger(Analyzer.class);
-    /**шаблон первичной БД*/
+
+    /**
+     * шаблон первичной БД
+     */
     private SimpleJdbcTemplate dirtyJdbcTemplate;
-        /**
-    * метод устанавливает связь анализатора и первичной базы данных
-    * @param dirtyJdbcTemplate шаблон перичной базы данных
-    */
-    public void setDirtyJdbcTemplate(SimpleJdbcTemplate dirtyJdbcTemplate) {
+    /**
+     * шаблон вторичной БД
+     */
+    private SimpleJdbcTemplate pureJdbcTemplate;
+
+    /**
+     * @param pureJdbcTemplate  шаблон вторичной базы данных
+     * @param dirtyJdbcTemplate шаблон первичной базы данных
+     */
+    public TweetsAnalyzer(SimpleJdbcTemplate pureJdbcTemplate, SimpleJdbcTemplate dirtyJdbcTemplate) {
         this.dirtyJdbcTemplate = dirtyJdbcTemplate;
+        this.pureJdbcTemplate = pureJdbcTemplate;
     }
 
+    /**
+     * метод записывает в базу данных графики упоминаемости брендов
+     * в зависимости от эмоциональности
+     */
+
+    public void analyze(){
+
+        log.info("graph analyzing started...");
+        BrandProvider dirtyBrandProvider = new BrandProvider(dirtyJdbcTemplate);
+        BrandProvider pureBrandProvider = new BrandProvider(pureJdbcTemplate);
+        ArticleProvider dirtyArticleProvider = new ArticleProvider(dirtyJdbcTemplate);
+        ArticleProvider pureArticleProvider = new ArticleProvider(pureJdbcTemplate);
+        GraphProvider pureGraphProvider = new GraphProvider(pureJdbcTemplate);
+        SemanticDictionaryProvider dictionaryProvider = new SemanticDictionaryProvider(dirtyJdbcTemplate);
+
+
+        Map<Long, Double> graphMapPositive = new HashMap<Long, Double>();
+        Map<Long, Double> graphMapNeutral = new HashMap<Long, Double>();
+        Map<Long, Double> graphMapNegative = new HashMap<Long, Double>();
+
+        //counting value
+        Set<SemanticDictionaryItem> dictionary = dictionaryProvider.getSemanticDictionary();
+        for (Brand b : dirtyBrandProvider.getAllBrands()) {
+            List<Article> allArticles = dirtyArticleProvider.getAllArticlesByBrandAndSource(b.getId(),TWEET_SOURCE_ID);
+            List<Article> articlesPositive = new ArrayList<Article>();
+            List<Article> articlesNeutral = new ArrayList<Article>();
+            List<Article> articlesNegative = new ArrayList<Article>();
+
+            for(Article a:allArticles){
+                double value = getSentiment(a,dictionary);
+                if(value > 0){
+                    articlesPositive.add(a);
+                }
+                else if(value < 0){
+                    articlesNegative.add(a);
+                }
+                else{
+                    articlesNeutral.add(a);
+                }
+            }
+            for (long t = TimeProperties.TIME_LIMIT; t < new Date().getTime(); t += TimeProperties.SINGLE_DAY) {
+                graphMapNegative.put(t, 0.0);
+                graphMapNeutral.put(t, 0.0);
+                graphMapPositive.put(t, 0.0);
+            }
+
+            calculateGraphForBrand(b,articlesNegative,graphMapNegative);
+            calculateGraphForBrand(b,articlesNeutral,graphMapNeutral);
+            calculateGraphForBrand(b,articlesPositive,graphMapPositive);
+            //map to graph
+            putGraphToDB(pureGraphProvider,b,graphMapNegative,NEGATIVE_TICKER_ID);
+            putGraphToDB(pureGraphProvider,b,graphMapNeutral,NEUTRAL_TICKER_ID);
+            putGraphToDB(pureGraphProvider,b,graphMapPositive,POSITIVE_TICKER_ID);
+
+        }
+        log.info("graph analazing finished succesful");
+    }
+
+    protected double getSentiment(Article a, Set<SemanticDictionaryItem> dictionary){
+        double result=0;
+        for(SemanticDictionaryItem item:dictionary){
+            int count = countsSubInString(a.getContent(),item.getTerm());
+            if(count > 0){
+                result += count*item.getSemanticValue();
+            }
+        }
+        return result;
+    }
+    protected void calculateGraphForBrand(Brand b, List<Article> articles, Map<Long, Double> graphMap){
+        for (Article a : articles) {
+            Timestamp timestamp = a.getTstamp();
+            if (graphMap.containsKey(timestamp.getTime())) {
+                graphMap.put(timestamp.getTime(), graphMap.get(timestamp.getTime()) + 1.0);
+            }
+        }
+    }
+    protected void putGraphToDB(GraphProvider provider, Brand b, Map<Long, Double> graphMap, int tickerId ){
+        Graph graph = new Graph("");
+            for (long t = TimeProperties.TIME_LIMIT; t < new Date().getTime(); t += TimeProperties.SINGLE_DAY) {
+                graph.addPoint(new SingleDot(new Timestamp(t), graphMap.get(t)));
+            }
+        provider.writeGraph(graph, b.getId(), tickerId);
+    }
 
     /** метод считает количество семантических термов в текстах статей (твитов)
     */
@@ -77,7 +175,7 @@ public class TweetsAnalyzer {
     public List<Article> getTweetsFromDB(){
         if(dirtyJdbcTemplate != null){
             ArticleProvider provider = new ArticleProvider(dirtyJdbcTemplate);
-            int tweeterId = 1 ; //TODO: change 1 to real tweeter id
+            int tweeterId = TWEET_SOURCE_ID ; //TODO: change 1 to real tweeter id
             return provider.getAllArticlesBySourceId(tweeterId);
         }
         return null;

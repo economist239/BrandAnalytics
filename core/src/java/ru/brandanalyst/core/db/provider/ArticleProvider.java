@@ -32,6 +32,7 @@ public class ArticleProvider {
         articleMapper = new ArticleMapper();
     }
 
+    @Deprecated
     public void cleanDataStore() {
         jdbcTemplate.update("TRUNCATE TABLE Article");
     }
@@ -88,6 +89,12 @@ public class ArticleProvider {
      */
     public List<Article> getTopArticles(long brandId, int topSize) {
         List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE brandId = " + brandId + " ORDER BY Tstamp DESC LIMIT " + topSize, articleMapper);
+        return list;
+    }
+
+    public List<Article> getAllArticlesByBrandAndSource(long brandId,long sourceId) {
+        List<Article> list = jdbcTemplate.getJdbcOperations().
+                query("SELECT * FROM Article WHERE BrandId = " + Long.toString(brandId)+" AND SourceId = "+Long.toString(sourceId) , articleMapper);
         return list;
     }
 }

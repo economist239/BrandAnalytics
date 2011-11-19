@@ -62,7 +62,7 @@ public class GraphsAnalyzer {
 
         //counting value
         for (Brand b : dirtyBrandProvider.getAllBrands()) {
-            pureBrandProvider.writeBrandToDataStore(b);
+            pureBrandProvider.writeBrandToDataStore(b); //it shouldn't be here
 
             for (long t = TimeProperties.TIME_LIMIT; t < new Date().getTime(); t += TimeProperties.SINGLE_DAY) {
                 graphMap.put(t, 0.0);

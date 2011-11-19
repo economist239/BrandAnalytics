@@ -90,4 +90,8 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "�
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Коммерсант", "унылые новости", "kommersant.ru");
 INSERT INTO InformationSource (TypeId, Title, Description, Website) VALUES(1, "Газета.RU", "новости", "gazeta.ru");
 
-INSERT INTO Ticker (TickerName) VALUES("Статистика упоминания в новостях");
+INSERT INTO Ticker (TickerName) VALUES("Статистика упоминаний в новостях");
+INSERT INTO Ticker (TickerName) VALUES("Статистика положительных упоминаний в новостях");
+INSERT INTO Ticker (TickerName) VALUES("Статистика нейтральных упоминаний в новостях");
+INSERT INTO Ticker (TickerName) VALUES("Статистика отрицательных упоминаний в новостях");
+
