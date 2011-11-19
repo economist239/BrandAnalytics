@@ -67,9 +67,9 @@
             <!--      <tr align="center">
          <td id="logo_p1" onclick="location.href='index.xml';">
          </td>
-         <td align="center">  -->
+         <td align="center">  //-->
             <div>
-                <form method="get" action="/search.xml" align="center">
+                <form name="1" method="get" action="/search.xml" align="center">
                     <input class="xlarge" type="text" name="query" size="50"/>
                     <input class="btn primary" type="submit" value="поиск"/>
                     <br/>

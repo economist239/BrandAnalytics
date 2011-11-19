@@ -399,7 +399,6 @@
         <root url="file://$PROJECT_DIR$/lib/jetbrains" />
         <root url="file://$PROJECT_DIR$/lib/xfresh" />
         <root url="file://$PROJECT_DIR$/lib/xalan" />
-        <root url="file://$PROJECT_DIR$/lib/jri" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -410,7 +409,6 @@
       <jarDirectory url="file://$PROJECT_DIR$/lib/jetty" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/JRI" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/JRI" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/lib/jri" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/rhino" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/saxon" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/spring" recursive="false" />

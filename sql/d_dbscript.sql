@@ -108,7 +108,11 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) V
 INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "Газета.RU", "новости", "http://gazeta.ru","http://www.gazeta.ru/export/rss/first.xml");
 INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "Фонтанка.RU", "новости", "http://fontanka.ru","http://www.fontanka.ru/fontanka.rss");
 
-INSERT INTO Ticker (TickerName) VALUES("Статистика упоминаемости в новостях");
+INSERT INTO Ticker (TickerName) VALUES("упоминаемость в новостях");
+INSERT INTO Ticker (TickerName) VALUES("эмоциональный фон твиттера");
+INSERT INTO Ticker (TickerName) VALUES("котировки");
+INSERT INTO Ticker (TickerName) VALUES("экспоненциальное сглаживание котировок");
+INSERT INTO Ticker (TickerName) VALUES("сезонная декомозиция котировок");
 
 INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Microsoft","Operation Systems","http://microsoft.com",0);
 INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Apple","iCorporation","http://apple.com",0);

@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.ArticleProvider;
 import ru.brandanalyst.core.db.provider.BrandProvider;
 import ru.brandanalyst.core.db.provider.GraphProvider;
+import ru.brandanalyst.core.db.provider.TickerProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
@@ -13,6 +14,7 @@ import ru.brandanalyst.frontend.models.SimplyArticleForWeb;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Сервис, предоставляющий широкую информацию о бренде, включая последние новости о нем и анализ графиков
@@ -34,6 +36,10 @@ public class WideBrandInfoManager {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    public List<TickerProvider.TickerPair> getTickers() {
+        return new TickerProvider(jdbcTemplate).getTickers();
+    }
+
     public Brand getBrand(long brandId) {
         BrandProvider brandProvider = new BrandProvider(jdbcTemplate);
         return brandProvider.getBrandById(brandId);
@@ -42,18 +48,14 @@ public class WideBrandInfoManager {
     /**
      * В будущем предполагается виджет, со своим сервисом, который заменит этот метод
      */
-    public List<GraphForWeb> getGraphsForBrand(long brandId) {
+    public GraphForWeb getGraphsForBrand(long brandId, long tickerId) {
         GraphProvider graphProvider = new GraphProvider(jdbcTemplate);
-        List<Graph> graphList = graphProvider.getGraphsByBrandId(brandId);
-        List<GraphForWeb> simpleGraphsList = new ArrayList<GraphForWeb>();
-        for (Graph g : graphList) {
-            GraphForWeb graphForWeb = new GraphForWeb(g.getTicker());
-            for (SingleDot d : g.getGraph()) {
+        Graph graph = graphProvider.getGraphByTickerAndBrand(brandId, tickerId);
+        GraphForWeb graphForWeb = new GraphForWeb(graph.getTicker());
+        for (SingleDot d : graph.getGraph()) {
                 graphForWeb.addDot(d);
-            }
-            simpleGraphsList.add(graphForWeb);
-        }
-        return simpleGraphsList;
+         }
+        return graphForWeb;
     }
 
     public List<SimplyArticleForWeb> getArticlesForBrand(long brandId) {

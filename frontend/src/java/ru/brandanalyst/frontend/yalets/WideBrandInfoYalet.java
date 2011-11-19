@@ -19,12 +19,19 @@ public class WideBrandInfoYalet extends AbstractDbYalet {
 
         long brandId = req.getLongParameter("id");
 
+        long tickerId = 1;
+        if (req.getAllParameters().containsKey("ticker_id")) {
+            tickerId = req.getLongParameter("ticker_id");
+        }
+
         WideBrandInfoManager manager = new WideBrandInfoManager(jdbcTemplate);
 
         if (manager.getBrand(brandId) != null) {
             res.add(manager.getArticlesForBrand(brandId));
             res.add(manager.getBrand(brandId));
-            res.add(manager.getGraphsForBrand(brandId));
+            res.add(manager.getTickers());
+            res.add(manager.getGraphsForBrand(brandId, tickerId));
+
         } else {
             Xmler.Tag ans = Xmler.tag("error", "Brand not found. id=" + Long.toString(brandId));
             res.add(ans);

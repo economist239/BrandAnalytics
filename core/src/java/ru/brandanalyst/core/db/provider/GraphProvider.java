@@ -49,6 +49,31 @@ public class GraphProvider {
         }
     }
 
+    public Graph getGraphByTickerAndBrand(long brandId, long tickerId) {
+        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId = " + brandId + " And TickerId = " + tickerId);
+
+        Graph graph;
+        try {
+            if (rowSet.next()) {
+                String tickerName = rowSet.getString("TickerName");
+                graph = new Graph(tickerName);
+            } else {
+                log.error("no graph in db");
+                return null;
+            }
+
+            do {
+                Timestamp curTstamp = rowSet.getTimestamp("Tstamp");
+                double curValue = rowSet.getDouble("Val");
+                graph.addPoint(new SingleDot(curTstamp, curValue));
+            } while (rowSet.next());
+            return graph;
+        } catch (Exception e) {
+            log.error("can't get graph from db", e);
+            return null;
+        }
+    }
+
     public List<Graph> getGraphsByBrandId(long brandId) {
 
         SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId = " + Long.toString(brandId) + " ORDER BY TickerId");
@@ -76,11 +101,9 @@ public class GraphProvider {
                 }
                 graphList.get(curGraph).addPoint(new SingleDot(curTstamp, curValue));
             } while (rowSet.next());
-            //System.out.println(graphList.size()+"asdzxc");
             return graphList;
         } catch (Exception e) {
-            //            System.out.println("asd980980980");
-            log.error("can't get graphs from db");
+            log.error("can't get graphs from db", e);
             return null;
         }
     }
