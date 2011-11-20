@@ -2,7 +2,10 @@ package ru.brandanalyst.frontend.models;
 
 import ru.brandanalyst.core.model.SingleDot;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -38,8 +41,13 @@ public class GraphForWeb {
         return name;
     }
 
-    public List<Long> getDate() {
-        return date;
+    public List<String> getDate() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        List<String> textDateList = new LinkedList();
+        for(long d: date) {
+            textDateList.add(dateFormat.format(new Date(d)));
+        }
+        return textDateList;
     }
 
     public List<Double> getValue() {

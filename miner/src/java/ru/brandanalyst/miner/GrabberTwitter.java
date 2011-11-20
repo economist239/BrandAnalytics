@@ -81,7 +81,7 @@ public class GrabberTwitter extends Grabber {
                     } while (ISSUANCE_SIZE > resultTweets.size());
                 } catch (TwitterException e) {
                     log.info("tweets in day: " + resultTweets.size());
-                //    e.printStackTrace();
+                    //    e.printStackTrace();
                 }
 
                 Iterator<Map.Entry<String, TweetInfo>> resultIterator =
@@ -89,7 +89,7 @@ public class GrabberTwitter extends Grabber {
                 while (resultIterator.hasNext()) {
                     Map.Entry<String, TweetInfo> next = resultIterator.next();
                     articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
-                            "", "", next.getKey(), next.getValue().getTime(), next.getValue().getNumLikes()));
+                            "", "", next.getKey(), getSimpleTime(next.getValue().getTime()), next.getValue().getNumLikes()));
                 }
 
             }
@@ -98,9 +98,11 @@ public class GrabberTwitter extends Grabber {
         log.info("twitter grabber finished succesful.");
     }
 
+    private Timestamp getSimpleTime(Date date) {
+        return new Timestamp((new Date(date.getYear(), date.getMonth(), date.getDay())).getTime());
+    }
 
     //bad style?   - very bad
-
     private Map<String, TweetInfo> removeDuplicates(List<Tweet> resultTweets, BrandDictionaryItem dictionary) {
         Map<String, TweetInfo> tweetsInfoMap = new HashMap<String, TweetInfo>();
         Iterator<Tweet> it = resultTweets.iterator();

@@ -75,7 +75,7 @@
             <table id="data">
                 <tfoot>
                     <tr>
-                        <xsl:for-each select="date/long">
+                        <xsl:for-each select="date/string">
                             <th>
                                 <xsl:value-of select="text()"/>
                             </th>
