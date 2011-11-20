@@ -14,13 +14,14 @@ public class FinamStarter {
     private static final Logger log = Logger.getLogger(FinamStarter.class);
     private final int beginDay=15;
     private final int beginMonth=10;
+    private final int beginYear=2010;
 
         public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
             this.jdbcTemplate = jdbcTemplate;
         }
 
         public void afterPropertiesSet() {
-            new GrabberFinam(jdbcTemplate).grab(beginDay,beginMonth);
+            new GrabberFinam(jdbcTemplate).grab(beginDay,beginMonth,beginYear);
         }
 
 }
