@@ -73,12 +73,15 @@ public class GrabberTwitter extends Grabber {
                 int pageNumber = 1;
 
                 try {
+                    int resultsOnPage;
                     do {
                         query.setPage(pageNumber);
                         queryResult = twitter.search(query);
+                        resultsOnPage = -resultTweets.size();
                         resultTweets.addAll(queryResult.getTweets());
+                        resultsOnPage += resultTweets.size();
                         pageNumber++;
-                    } while (ISSUANCE_SIZE > resultTweets.size());
+                    } while (ISSUANCE_SIZE > resultTweets.size() && resultsOnPage >= PAGE_SIZE);
                 } catch (TwitterException e) {
                     log.info("tweets in day: " + resultTweets.size());
                     //    e.printStackTrace();
