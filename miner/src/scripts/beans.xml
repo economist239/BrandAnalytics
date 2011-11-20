@@ -7,29 +7,28 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 
     <!--Miner conf-->
-    <!--<bean class="ru.brandanalyst.miner.GrabberContainer">
+    <bean class="ru.brandanalyst.miner.GrabberContainer">
         <property name="grabberList">
             <list>
-                <bean class="ru.brandanalyst.miner.GrabberWikipedia">-->
-                <!--<property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>-->
-                <!--</bean>-->
-                <!--&lt;!&ndash;wikibrands.txt;resources/wikibrands.xml&ndash;&gt;-->
-                <!--<bean class="ru.brandanalyst.miner.GrabberTwitter"/>-->
+           <!--     <bean class="ru.brandanalyst.miner.GrabberWikipedia">
+                <property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>
+                </bean>-->
+                <!--wikibrands.txt;resources/wikibrands.xml-->
+                <bean class="ru.brandanalyst.miner.GrabberTwitter"/>
 
-                <!--        <bean class="ru.brandanalyst.miner.GrabberFontanka">
+           <!--             <bean class="ru.brandanalyst.miner.GrabberFontanka">
                                           <property name="config" value="miner/configs/fontankaNews1.xml"/>
                                       </bean>
-                -->
-                <!--<bean class="ru.brandanalyst.miner.GrabberRia">
+                <bean class="ru.brandanalyst.miner.GrabberRia">
                     <property name="config" value="miner/configs/riaNews1.xml"/>
                 </bean>-->
-            <!--</list>
+            </list>
         </property>
-    </bean>-->
+    </bean>
     <!--<bean class="ru.brandanalyst.miner.parser.ParserStarter">
     </bean>-->
-    <bean class="ru.brandanalyst.miner.quote.FinamStarter"/>
-
+    <!--<bean class="ru.brandanalyst.miner.quote.FinamStarter"/>
+-->
     <!--DB conf-->
     <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>

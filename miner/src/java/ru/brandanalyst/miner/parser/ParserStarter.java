@@ -2,7 +2,6 @@ package ru.brandanalyst.miner.parser;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.mapper.InfoSourceMapper;
 import ru.brandanalyst.core.db.provider.InformationSourceProvider;
 import ru.brandanalyst.core.model.InfoSource;
 

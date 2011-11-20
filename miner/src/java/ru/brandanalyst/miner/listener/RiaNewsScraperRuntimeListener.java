@@ -105,6 +105,9 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             Variable newsText = (Variable) scraper.getContext().get("newsFullText");
             Variable newsDate = (Variable) scraper.getContext().get("newsDate");
 
+            if(newsDate == null) {
+                return;
+            }
 
             Timestamp articleTimestamp;
             articleTimestamp = evalTimestamp(newsDate.toString());

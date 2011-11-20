@@ -79,6 +79,11 @@ public class ArticleProvider {
         return list;
     }
 
+    public List<Article> getAllOfficialArticlesByBrand(long brandId) {
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article INNER JOIN InformationSource ON InfoSourceId = InformationSource.Id WHERE BrandId = " + brandId + " AND InformationSource.TypeId = 1", articleMapper);
+        return list;
+    }
+
     public List<Article> getAllArticles() {
         List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article", articleMapper);
         return list;

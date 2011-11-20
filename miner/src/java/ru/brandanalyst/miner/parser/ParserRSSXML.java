@@ -92,6 +92,7 @@ public class ParserRSSXML {
                 Element element=(Element) articles.item(i);
                 String articleTitle=element.getElementsByTagName("title").item(0).getTextContent();
                 List<Long> brandIds = StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionary(), articleTitle);
+
                 if (brandIds.isEmpty()) continue;
                 String articleLink=element.getElementsByTagName("link").item(0).getTextContent();
                 String articleText=element.getElementsByTagName("description").item(0).getTextContent();

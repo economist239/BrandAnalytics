@@ -26,7 +26,8 @@ create table Brand(
 	Name varchar(100) not null,
 	Description varchar(1000),
 	Website varchar(400),
-	BranchId int
+	BranchId int,
+	FinamName varchar(50) default ""
 );
 
 drop table if exists Branch;
@@ -109,6 +110,7 @@ INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) V
 INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(1, "Фонтанка.RU", "новости", "http://fontanka.ru","http://www.fontanka.ru/fontanka.rss");
 
 INSERT INTO Ticker (TickerName) VALUES("упоминаемость в новостях");
+INSERT INTO Ticker (TickerName) VALUES("Цена акций");
 INSERT INTO Ticker (TickerName) VALUES("эмоциональный фон твиттера");
 INSERT INTO Ticker (TickerName) VALUES("котировки");
 INSERT INTO Ticker (TickerName) VALUES("экспоненциальное сглаживание котировок");
@@ -119,6 +121,9 @@ INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Apple","iCorporat
 INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Google","Searcher","http://google.com",0);
 INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Yota","wimax","http://yota.ru",0);
 INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Яндекс","Searcher","http://yandex.ru",0);
+INSERT INTO Brand (Name,Description,WebSite,BranchId,FinamName) VALUES ("M-VIDEO","Shop","http://mvideo.ru",0,"М.видео");
+INSERT INTO Brand (Name,Description,WebSite,BranchId,FinamName) VALUES ("MTS","Mobile","http://mts.ru",0,"МТС-ао");
+
 
 INSERT INTO BrandDictionary (BrandId,Term) VALUES (5,"yandex");
 INSERT INTO BrandDictionary (BrandId,Term) VALUES (5,"yndex");

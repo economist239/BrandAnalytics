@@ -3,8 +3,6 @@ package ru.brandanalyst.frontend.models;
 import ru.brandanalyst.core.model.SingleDot;
 
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -16,10 +14,10 @@ import java.util.List;
  */
 public class GraphForWeb {
     private String name;
-    private List<Integer> date;
+    private List<Long> date;
     private List<Double> value;
 
-    public GraphForWeb(String name, List<Integer> date, List<Double> value) {
+    public GraphForWeb(String name, List<Long> date, List<Double> value) {
         this.date = date;
         this.name = name;
         this.value = value;
@@ -27,15 +25,12 @@ public class GraphForWeb {
 
     public GraphForWeb(String name) {
         this.name = name;
-        date = new ArrayList<Integer>();
+        date = new ArrayList<Long>();
         value = new ArrayList<Double>();
     }
 
     public void addDot(SingleDot dot) {
-        Calendar calendar = new GregorianCalendar();
-        calendar.setTimeInMillis(dot.getDate().getTime());
-
-        date.add(calendar.get(GregorianCalendar.DAY_OF_MONTH));
+        date.add(dot.getDate().getTime());
         value.add(dot.getValue());
     }
 
@@ -43,7 +38,7 @@ public class GraphForWeb {
         return name;
     }
 
-    public List<Integer> getDate() {
+    public List<Long> getDate() {
         return date;
     }
 

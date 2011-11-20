@@ -14,6 +14,7 @@ import ru.brandanalyst.core.time.TimeProperties;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -64,23 +65,23 @@ public class GraphsAnalyzer {
         for (Brand b : dirtyBrandProvider.getAllBrands()) {
             pureBrandProvider.writeBrandToDataStore(b); //it shouldn't be here
 
-            for (long t = TimeProperties.TIME_LIMIT; t < new Date().getTime(); t += TimeProperties.SINGLE_DAY) {
-                graphMap.put(t, 0.0);
-            }
+            for (Article a : dirtyArticleProvider.getAllOfficialArticlesByBrand(b.getId())) {
 
-            for (Article a : dirtyArticleProvider.getAllArticlesByBrand(b.getId())) {
                 Timestamp timestamp = a.getTstamp();
                 if (graphMap.containsKey(timestamp.getTime())) {
                     graphMap.put(timestamp.getTime(), graphMap.get(timestamp.getTime()) + 1.0);
+                } else {
+                    graphMap.put(timestamp.getTime(), 1.0);
                 }
 
                 pureArticleProvider.writeArticleToDataStore(a);
             }
             //map to graph
             Graph graph = new Graph("");
-            for (long t = TimeProperties.TIME_LIMIT; t < new Date().getTime(); t += TimeProperties.SINGLE_DAY) {
-                graph.addPoint(new SingleDot(new Timestamp(t), graphMap.get(t)));
+            for(Long time: graphMap.keySet()) {
+                graph.addPoint(new SingleDot(new Timestamp(time), graphMap.get(time)));
             }
+
             pureGraphProvider.writeGraph(graph, b.getId(), 1);
         }
         log.info("graph analazing finished succesful");

@@ -15,6 +15,8 @@ import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import static ru.brandanalyst.core.time.TimeProperties.SINGLE_DAY;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Александр Сенов
@@ -22,6 +24,8 @@ import java.util.*;
  * Time: 14:14
  */
 public class GrabberTwitter extends Grabber {
+    private static final long TIME_LIMIT = (long) 10;
+
     private static final Logger log = Logger.getLogger(GrabberTwitter.class);
 
     private static final int ISSUANCE_SIZE = 1500;
@@ -45,65 +49,77 @@ public class GrabberTwitter extends Grabber {
         BrandDictionaryProvider dictionaryProvider = new BrandDictionaryProvider(jdbcTemplate);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String stringTimeLimit = dateFormat.format(timeLimit);
+
 
         for (Brand b : brandList) {
             BrandDictionaryItem dictionary = dictionaryProvider.getDictionaryItem(b.getId());
-            Query query = new Query(b.getName());
-            query.setRpp(PAGE_SIZE);
-            query.setSince(stringTimeLimit);
-            query.setLang("ru");
-            query.setResultType(Query.MIXED);
 
-            List<Tweet> resultTweets = new LinkedList<Tweet>();
-            QueryResult queryResult;
-            int pageNumber = 1;
+            for (int i = 0; i < 50; i++) {
+                log.info("days ago: " + i + " brand:" + b.getName());
 
-            try {
-                do {
-                    query.setPage(pageNumber);
-                    queryResult = twitter.search(query);
-                    resultTweets.addAll(queryResult.getTweets());
-                    pageNumber++;
-                } while (ISSUANCE_SIZE > resultTweets.size());
-            } catch (TwitterException e) {
+                String untilTimeLimit = dateFormat.format(new Date().getTime() - ((long) i) * SINGLE_DAY);
+                String sinceTimeLimit = dateFormat.format(new Date().getTime() - ((long) i + 1) * SINGLE_DAY);
+
+                Query query = new Query(b.getName());
+                query.setRpp(PAGE_SIZE);
+
+                query.setSince(sinceTimeLimit);
+                query.setUntil(untilTimeLimit);
+                query.setLang("ru");
+                query.setResultType(Query.MIXED);
+
+                List<Tweet> resultTweets = new LinkedList<Tweet>();
+                QueryResult queryResult;
+                int pageNumber = 1;
+
+                try {
+                    do {
+                        query.setPage(pageNumber);
+                        queryResult = twitter.search(query);
+                        resultTweets.addAll(queryResult.getTweets());
+                        pageNumber++;
+                    } while (ISSUANCE_SIZE > resultTweets.size());
+                } catch (TwitterException e) {
+                    log.info("tweets in day: " + resultTweets.size());
+                //    e.printStackTrace();
+                }
+
+                Iterator<Map.Entry<String, TweetInfo>> resultIterator =
+                        removeDuplicates(resultTweets, dictionary).entrySet().iterator();
+                while (resultIterator.hasNext()) {
+                    Map.Entry<String, TweetInfo> next = resultIterator.next();
+                    articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
+                            "", "", next.getKey(), next.getValue().getTime(), next.getValue().getNumLikes()));
+                }
+
             }
-            Iterator<Map.Entry<String,TweetInfo>> resultIterator =
-                    removeDuplicates(resultTweets,dictionary).entrySet().iterator();
-            while(resultIterator.hasNext()){
-                Map.Entry<String,TweetInfo> next = resultIterator.next();
-                articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
-                        "", "", next.getKey(), next.getValue().getTime(), next.getValue().getNumLikes()));
-            }
-
             log.info("twitter added for brandName = " + b.getName());
         }
         log.info("twitter grabber finished succesful.");
     }
 
 
-    //bad style?
+    //bad style?   - very bad
 
-    private Map<String,TweetInfo> removeDuplicates(List<Tweet> resultTweets, BrandDictionaryItem dictionary){
-        Map<String,TweetInfo> tweetsInfoMap = new HashMap<String,TweetInfo>();
+    private Map<String, TweetInfo> removeDuplicates(List<Tweet> resultTweets, BrandDictionaryItem dictionary) {
+        Map<String, TweetInfo> tweetsInfoMap = new HashMap<String, TweetInfo>();
         Iterator<Tweet> it = resultTweets.iterator();
-        while(it.hasNext()){
-            Tweet next = it.next ();
+        while (it.hasNext()) {
+            Tweet next = it.next();
             if (StringChecker.hasTerm(dictionary, next.getText())) {
                 String str = next.getText().trim();
                 int index = next.getText().indexOf("http");
                 if (index >= 0) {
-                        str = str.substring(0, index);
+                    str = str.substring(0, index);
                 }
-                if(tweetsInfoMap.containsKey(str)){
+                if (tweetsInfoMap.containsKey(str)) {
                     TweetInfo tweetInfo = tweetsInfoMap.get(str);
                     tweetInfo.setNumLikes(tweetInfo.getNumLikes() + 1);
-                    tweetsInfoMap.put(str,tweetInfo);
-                }
-                else{
+                    tweetsInfoMap.put(str, tweetInfo);
+                } else {
                     TweetInfo tweetInfo
                             = new TweetInfo(new Timestamp(next.getCreatedAt().getTime()), 1);
-                    tweetsInfoMap.put(str,tweetInfo);
+                    tweetsInfoMap.put(str, tweetInfo);
                 }
 
             }
@@ -111,14 +127,15 @@ public class GrabberTwitter extends Grabber {
         return tweetsInfoMap;
     }
 
-    class TweetInfo{
+    class TweetInfo {
         Timestamp time;
         int numLikes;
 
-        TweetInfo(Timestamp time,int numLikes){
+        TweetInfo(Timestamp time, int numLikes) {
             this.numLikes = numLikes;
             this.time = time;
         }
+
         public Timestamp getTime() {
             return time;
         }

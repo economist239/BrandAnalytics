@@ -61,7 +61,7 @@ public class MinerGrabbersTest extends AbstractDependencyInjectionSpringContextT
     }
 
     public void testTwitter() throws Exception {
-        grabberTwitter.grab(new Date(new Date().getTime() - 4 * (long) 86400000));
+        grabberTwitter.grab(new Date(new Date().getTime() - (long) 86400000));
         articleProvider.cleanDataStore();
     }
 
