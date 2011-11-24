@@ -43,7 +43,7 @@ public class GrabberFinam {
         tickerProvider= new TickerProvider(jdbcTemplate);
     }
 
-    public void grab(Integer beginDay,Integer beginMonth)
+    public void grab(Integer beginDay,Integer beginMonth, Integer beginYear)
     {
                List<Brand> brands=brandProvider.getAllBrands();
                for (Brand b:brands)
@@ -64,6 +64,8 @@ public class GrabberFinam {
                         month.setSelectedAttribute(beginMonth.toString(),true);
                         HtmlInput day=form.getInputByName("df");
                         day.setValueAttribute(beginDay.toString());
+                        HtmlInput year=form.getInputByName("yf");
+                        year.setValueAttribute(beginYear.toString());
                         HtmlSubmitInput submit = (HtmlSubmitInput) form.getInputByValue("Получить файл");
                         UnexpectedPage uPage= (UnexpectedPage) submit.click();
                         BufferedReader br=new BufferedReader(new InputStreamReader(uPage.getInputStream()));
