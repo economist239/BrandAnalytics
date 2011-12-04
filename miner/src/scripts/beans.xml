@@ -5,21 +5,22 @@
 <beans default-autowire="byName" default-init-method="afterPropertiesSet">
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
-
+    <!--<import resource="classpath:core/src/script/dbdirtyconfig.xml"/>-->
+    <import resource="file:./core/src/script/dbdirtyconfig.xml"/>
     <!--Miner conf-->
     <bean class="ru.brandanalyst.miner.GrabberContainer">
         <property name="grabberList">
             <list>
-           <!--     <bean class="ru.brandanalyst.miner.GrabberWikipedia">
+               <!--<bean class="ru.brandanalyst.miner.GrabberWikipedia">
                 <property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>
-                </bean>-->
+                </bean> -->
                 <!--wikibrands.txt;resources/wikibrands.xml-->
                 <!--<bean class="ru.brandanalyst.miner.GrabberTwitter"/>-->
 
-           <!--             <bean class="ru.brandanalyst.miner.GrabberFontanka">
-                                          <property name="config" value="miner/configs/fontankaNews1.xml"/>
-                                      </bean>
-                <bean class="ru.brandanalyst.miner.GrabberRia">
+                      <!-- <bean class="ru.brandanalyst.miner.GrabberLenta">
+                                          <property name="config" value="miner/configs/lentaRu.xml"/>
+                                      </bean>-->
+                <!--<bean class="ru.brandanalyst.miner.GrabberRia">
                     <property name="config" value="miner/configs/riaNews1.xml"/>
                 </bean>-->
             </list>
@@ -28,17 +29,5 @@
     <!--<bean class="ru.brandanalyst.miner.parser.ParserStarter">
     </bean>-->
     <bean class="ru.brandanalyst.miner.quote.FinamStarter"/>
-    <!--DB conf-->
-    <bean id="dataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
-        <property name="validationQuery" value="select 1"/>
-    </bean>
-
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
-        <constructor-arg ref="dataSource"/>
-    </bean>
 
 </beans>
