@@ -6,8 +6,8 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.w3c.dom.Element;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.db.provider.BrandDictionaryProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.StringChecker;
 
@@ -27,11 +27,11 @@ import java.util.StringTokenizer;
 public class ParserRSSXML {
     private static final Logger log = Logger.getLogger(ParserRSSXML.class);
     protected SimpleJdbcTemplate jdbcTemplate;
-    protected ArticleProvider articleProvider;
+    protected MySQLArticleProvider articleProvider;
 
     public ParserRSSXML(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        articleProvider = new ArticleProvider(jdbcTemplate);
+        articleProvider = new MySQLArticleProvider(jdbcTemplate);
     }
     private Timestamp evalTimestamp(String stringDate) throws StringIndexOutOfBoundsException {
         StringTokenizer dateTokenizer=new StringTokenizer(stringDate);
@@ -91,7 +91,7 @@ public class ParserRSSXML {
             {
                 Element element=(Element) articles.item(i);
                 String articleTitle=element.getElementsByTagName("title").item(0).getTextContent();
-                List<Long> brandIds = StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionary(), articleTitle);
+                List<Long> brandIds = StringChecker.hasTerm(new MySQLBrandDictionaryProvider(jdbcTemplate).getDictionary(), articleTitle);
 
                 if (brandIds.isEmpty()) continue;
                 String articleLink=element.getElementsByTagName("link").item(0).getTextContent();

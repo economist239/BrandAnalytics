@@ -3,8 +3,8 @@ package ru.brandanalyst.analyzer;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 
 /**
  * Класс, в котором выполняется весь анализ
@@ -52,8 +52,8 @@ public class Analyzer implements InitializingBean {
      * @deprecated
      */
     private final void pushBrandsDirtyToPure() {
-        BrandProvider from = new BrandProvider(dirtyJdbcTemplate);
-        BrandProvider to = new BrandProvider(pureJdbcTemplate);
+        MySQLBrandProvider from = new MySQLBrandProvider(dirtyJdbcTemplate);
+        MySQLBrandProvider to = new MySQLBrandProvider(pureJdbcTemplate);
         to.writeListOfBrandsToDataStore(from.getAllBrands());
     }
 
@@ -64,8 +64,8 @@ public class Analyzer implements InitializingBean {
      * @deprecated
      */
     private final void pushArticlesDirtyToPure() {
-        ArticleProvider from = new ArticleProvider(dirtyJdbcTemplate);
-        ArticleProvider to = new ArticleProvider(pureJdbcTemplate);
+        MySQLArticleProvider from = new MySQLArticleProvider(dirtyJdbcTemplate);
+        MySQLArticleProvider to = new MySQLArticleProvider(pureJdbcTemplate);
         to.writeListOfArticlesToDataStore(from.getAllArticles());
     }
 

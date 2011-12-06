@@ -1,7 +1,7 @@
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.indexer.Indexer;
@@ -22,13 +22,13 @@ public class Test {    //this is worked test for lucene index and search
     public static void main(String[] args) {
 
         BasicDataSource ds = new BasicDataSource();
-        ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8");
+        ds.setDriverClassName("com.global.jdbc.Driver");
+        ds.setUrl("jdbc:global://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8");
         ds.setUsername("root");
         ds.setPassword("root");
         ds.setValidationQuery("select 1");
         SimpleJdbcTemplate jdbcTemplate = new SimpleJdbcTemplate(ds);
-        BrandProvider dataStore = new BrandProvider(jdbcTemplate);
+        MySQLBrandProvider dataStore = new MySQLBrandProvider(jdbcTemplate);
 
         dataStore.cleanDataStore();
         Brand b1 = new Brand(4, "Gazprom", "Gazprom is russian gasoline gaint", "www.gazprom.ru", 0);
@@ -40,7 +40,7 @@ public class Test {    //this is worked test for lucene index and search
         b1 = new Brand(2, "Google", "Google is better than other search machines", "www.google.com", 0);
         dataStore.writeBrandToDataStore(b1);
 
-        ArticleProvider dataStore2 = new ArticleProvider(jdbcTemplate);
+        MySQLArticleProvider dataStore2 = new MySQLArticleProvider(jdbcTemplate);
         Article a1 = new Article(4, 1, 1, "Gazprom crashed", "Apple делает хорошую продукцию", "www.lenta.ru", new Timestamp(90, 0, 0, 0, 0, 0, 0), 0);
         dataStore2.writeArticleToDataStore(a1);
         a1 = new Article(2, 1, 1, "Microsoft crashed", "Apple не делает хорошую продукцию", "www.lenta.ru", new Timestamp(90, 0, 0, 0, 0, 0, 0), 0);

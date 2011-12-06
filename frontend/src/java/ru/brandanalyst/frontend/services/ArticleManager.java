@@ -1,8 +1,8 @@
 package ru.brandanalyst.frontend.services;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.db.provider.InformationSourceProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLInformationSourceProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.InfoSource;
 import ru.brandanalyst.frontend.models.WideArticleForWeb;
@@ -24,10 +24,10 @@ public class ArticleManager {
     }
 
     public WideArticleForWeb getArticle(long id) {
-        ArticleProvider articleProvider = new ArticleProvider(jdbcTemplate);
+        MySQLArticleProvider articleProvider = new MySQLArticleProvider(jdbcTemplate);
         Article article = articleProvider.getArticleById(id);
 
-        InformationSourceProvider informationSourceProvider = new InformationSourceProvider(jdbcTemplate);
+        MySQLInformationSourceProvider informationSourceProvider = new MySQLInformationSourceProvider(jdbcTemplate);
         InfoSource infoSource = informationSourceProvider.getInfoSourceById(article.getSourceId());
 
         return new WideArticleForWeb(article.getLink(),

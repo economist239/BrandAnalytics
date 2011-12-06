@@ -1,9 +1,10 @@
-package ru.brandanalyst.core.db.provider;
+package ru.brandanalyst.core.db.provider.mysql;
 
 import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.mapper.SemanticDictionaryMapper;
+import ru.brandanalyst.core.db.provider.global.GlobalSemanticDictinaryProvider;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
 
 import java.util.List;
@@ -16,12 +17,12 @@ import java.util.HashSet;
  * Date: 11/4/11
  * Time: 9:20 AM
  */
-public class SemanticDictionaryProvider {
-    private static final Logger log = Logger.getLogger(SemanticDictionaryProvider.class);
+public class MySQLSemanticDictionaryProvider implements GlobalSemanticDictinaryProvider{
+    private static final Logger log = Logger.getLogger(MySQLSemanticDictionaryProvider.class);
     private SimpleJdbcTemplate jdbcTemplate;
     private SemanticDictionaryMapper semanticDictMapper;
 
-    public SemanticDictionaryProvider(SimpleJdbcTemplate jdbcTemplate) {
+    public MySQLSemanticDictionaryProvider(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
         semanticDictMapper = new SemanticDictionaryMapper();
     }

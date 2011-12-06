@@ -4,6 +4,10 @@ package ru.brandanalyst.miner.quote;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
+
 /**
  * @author OlegPan
  * This class starts grab from finam
@@ -21,7 +25,7 @@ public class FinamStarter {
         }
 
         public void afterPropertiesSet() {
-            new GrabberFinam(jdbcTemplate).grab(beginDay,beginMonth,beginYear);
+           new GrabberFinam(jdbcTemplate).grab(beginDay,beginMonth,beginYear);
         }
 
 }

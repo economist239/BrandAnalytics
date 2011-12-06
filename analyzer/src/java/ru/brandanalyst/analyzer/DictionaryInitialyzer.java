@@ -2,7 +2,7 @@ package ru.brandanalyst.analyzer;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.SemanticDictionaryProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLSemanticDictionaryProvider;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
 
 import java.io.BufferedReader;
@@ -33,13 +33,13 @@ public final class DictionaryInitialyzer {
      */
     public static void main(String[] args) throws IOException {
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8");
+        dataSource.setDriverClassName("com.global.jdbc.Driver");
+        dataSource.setUrl("jdbc:global://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8");
         dataSource.setUsername("root");
         dataSource.setPassword("root");
         dataSource.setValidationQuery("select 1");
         SimpleJdbcTemplate jdbcTemplate = new SimpleJdbcTemplate(dataSource);
-        SemanticDictionaryProvider provider = new SemanticDictionaryProvider(jdbcTemplate);
+        MySQLSemanticDictionaryProvider provider = new MySQLSemanticDictionaryProvider(jdbcTemplate);
 
         in = new BufferedReader(new FileReader("analyzer/dictionary/positive.txt"));
         while (in.ready()) {

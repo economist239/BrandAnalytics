@@ -1,8 +1,9 @@
-package ru.brandanalyst.core.db.provider;
+package ru.brandanalyst.core.db.provider.mysql;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import ru.brandanalyst.core.db.provider.global.GlobalBrandDictionaryProvider;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
 
 import java.util.ArrayList;
@@ -15,11 +16,11 @@ import java.util.List;
  * Date: 11/2/11
  * Time: 9:50 PM
  */
-public class BrandDictionaryProvider {
-    private static final Logger log = Logger.getLogger(BrandDictionaryProvider.class);
+public class MySQLBrandDictionaryProvider implements GlobalBrandDictionaryProvider{
+    private static final Logger log = Logger.getLogger(MySQLBrandDictionaryProvider.class);
     private SimpleJdbcTemplate jdbcTemplate;
 
-    public BrandDictionaryProvider(SimpleJdbcTemplate jdbcTemplate) {
+    public MySQLBrandDictionaryProvider(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

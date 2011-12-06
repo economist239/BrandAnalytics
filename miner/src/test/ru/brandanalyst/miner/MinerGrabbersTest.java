@@ -3,7 +3,9 @@ package ru.brandanalyst.miner;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
-import ru.brandanalyst.core.db.provider.*;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.miner.util.*;
 import java.util.Date;
@@ -17,8 +19,8 @@ public class MinerGrabbersTest extends AbstractDependencyInjectionSpringContextT
 
     private SimpleJdbcTemplate jdbcTemplate;
 
-    private ArticleProvider articleProvider;
-    private BrandProvider brandProvider;
+    private MySQLArticleProvider articleProvider;
+    private MySQLBrandProvider brandProvider;
 
     private GrabberTwitter grabberTwitter;
     private GrabberRia grabberRia;
@@ -38,8 +40,8 @@ public class MinerGrabbersTest extends AbstractDependencyInjectionSpringContextT
     @Required
     public void setJdbcTemplate(final SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        brandProvider = new BrandProvider(jdbcTemplate);
-        articleProvider = new ArticleProvider(jdbcTemplate);
+        brandProvider = new MySQLBrandProvider(jdbcTemplate);
+        articleProvider = new MySQLArticleProvider(jdbcTemplate);
     }
 
     @Required
@@ -71,7 +73,7 @@ public class MinerGrabbersTest extends AbstractDependencyInjectionSpringContextT
     }
 
     public void testUtil() throws Exception {
-        BrandDictionaryProvider brandDictionaryProvider = new BrandDictionaryProvider(jdbcTemplate);
+        MySQLBrandDictionaryProvider brandDictionaryProvider = new MySQLBrandDictionaryProvider(jdbcTemplate);
         List<BrandDictionaryItem> dictionary = brandDictionaryProvider.getDictionary();
         assertTrue(StringChecker.hasTerm(dictionary.get(0), "Microsoft DJhkjdzfvljbfv aofhvkjah"));
         assertFalse(StringChecker.hasTerm(dictionary.get(1), "Microsoft DJhkjdzfvljbfv aofhvkjah"));

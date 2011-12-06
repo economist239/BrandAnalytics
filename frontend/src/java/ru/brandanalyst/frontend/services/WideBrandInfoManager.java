@@ -1,10 +1,10 @@
 package ru.brandanalyst.frontend.services;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.db.provider.BrandProvider;
-import ru.brandanalyst.core.db.provider.GraphProvider;
-import ru.brandanalyst.core.db.provider.TickerProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
@@ -14,7 +14,6 @@ import ru.brandanalyst.frontend.models.SimplyArticleForWeb;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Сервис, предоставляющий широкую информацию о бренде, включая последние новости о нем и анализ графиков
@@ -36,12 +35,12 @@ public class WideBrandInfoManager {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<TickerProvider.TickerPair> getTickers() {
-        return new TickerProvider(jdbcTemplate).getTickers();
+    public List<MySQLTickerProvider.TickerPair> getTickers() {
+        return new MySQLTickerProvider(jdbcTemplate).getTickers();
     }
 
     public Brand getBrand(long brandId) {
-        BrandProvider brandProvider = new BrandProvider(jdbcTemplate);
+        MySQLBrandProvider brandProvider = new MySQLBrandProvider(jdbcTemplate);
         return brandProvider.getBrandById(brandId);
     }
 
@@ -49,7 +48,7 @@ public class WideBrandInfoManager {
      * В будущем предполагается виджет, со своим сервисом, который заменит этот метод
      */
     public GraphForWeb getGraphsForBrand(long brandId, long tickerId) {
-        GraphProvider graphProvider = new GraphProvider(jdbcTemplate);
+        MySQLGraphProvider graphProvider = new MySQLGraphProvider(jdbcTemplate);
         Graph graph = graphProvider.getGraphByTickerAndBrand(brandId, tickerId);
         GraphForWeb graphForWeb = new GraphForWeb(graph.getTicker());
         for (SingleDot d : graph.getGraph()) {
@@ -59,7 +58,7 @@ public class WideBrandInfoManager {
     }
 
     public List<SimplyArticleForWeb> getArticlesForBrand(long brandId) {
-        ArticleProvider articleProvider = new ArticleProvider(jdbcTemplate);
+        MySQLArticleProvider articleProvider = new MySQLArticleProvider(jdbcTemplate);
         List<Article> articles = articleProvider.getTopArticles(brandId, NUM_ARTICLES);
         List<SimplyArticleForWeb> simplyArticles = new ArrayList<SimplyArticleForWeb>();
         //TODO getting source info by id

@@ -6,8 +6,8 @@ import org.webharvest.runtime.Scraper;
 import org.webharvest.runtime.ScraperRuntimeListener;
 import org.webharvest.runtime.processors.BaseProcessor;
 import org.webharvest.runtime.variables.Variable;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.db.provider.BrandDictionaryProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 import ru.brandanalyst.miner.util.StringChecker;
@@ -31,13 +31,13 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
     private static final Logger log = Logger.getLogger(FontankaScraperRuntimeListener.class);
 
     private SimpleJdbcTemplate jdbcTemplate;
-    private ArticleProvider articleProvider;
+    private MySQLArticleProvider articleProvider;
     private Date timeLimit;
 
     public FontankaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
         this.jdbcTemplate = jdbcTemplate;
         this.timeLimit = timeLimit;
-        articleProvider = new ArticleProvider(jdbcTemplate);
+        articleProvider = new MySQLArticleProvider(jdbcTemplate);
     }
 
     private Timestamp evalTimestamp(String stringDate) throws StringIndexOutOfBoundsException {
@@ -79,7 +79,7 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
         if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
             try {
                 Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
-                List<Long> brandIds = StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionary(), newsTitle.toString());
+                List<Long> brandIds = StringChecker.hasTerm(new MySQLBrandDictionaryProvider(jdbcTemplate).getDictionary(), newsTitle.toString());
                 if (brandIds.isEmpty()) return;
 
 

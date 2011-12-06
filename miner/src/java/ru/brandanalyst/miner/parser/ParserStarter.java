@@ -2,7 +2,7 @@ package ru.brandanalyst.miner.parser;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.InformationSourceProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLInformationSourceProvider;
 import ru.brandanalyst.core.model.InfoSource;
 
 import java.util.List;
@@ -23,7 +23,7 @@ protected SimpleJdbcTemplate jdbcTemplate;
     public void startParsing()
     {
         ParserRSSXML parser=new ParserRSSXML(jdbcTemplate);
-        List<InfoSource> infoSources = new InformationSourceProvider(jdbcTemplate).getAllInfoSources();
+        List<InfoSource> infoSources = new MySQLInformationSourceProvider(jdbcTemplate).getAllInfoSources();
         log.info("begin parsing rss");
         for (InfoSource infoSource:infoSources)
         {

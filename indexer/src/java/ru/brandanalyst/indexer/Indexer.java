@@ -9,8 +9,8 @@ import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.Version;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 
@@ -76,7 +76,7 @@ public class Indexer implements InitializingBean {
     private void articleIndex(IndexWriter writer) {
 
         log.info("indexing articles");
-        ArticleProvider provider = new ArticleProvider(jdbcTemplate);
+        MySQLArticleProvider provider = new MySQLArticleProvider(jdbcTemplate);
 
         List<Article> list = provider.getAllArticles();
 
@@ -97,7 +97,7 @@ public class Indexer implements InitializingBean {
     private void brandIndex(IndexWriter writer) {
 
         log.info("indexing brands");
-        BrandProvider provider = new BrandProvider(jdbcTemplate);
+        MySQLBrandProvider provider = new MySQLBrandProvider(jdbcTemplate);
 
         try {
             List<Brand> list = provider.getAllBrands();

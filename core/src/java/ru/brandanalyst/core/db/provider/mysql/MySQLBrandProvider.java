@@ -1,4 +1,4 @@
-package ru.brandanalyst.core.db.provider;
+package ru.brandanalyst.core.db.provider.mysql;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,17 +11,18 @@ package ru.brandanalyst.core.db.provider;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.mapper.BrandMapper;
+import ru.brandanalyst.core.db.provider.global.GlobalBrandProvider;
 import ru.brandanalyst.core.model.Brand;
 
 import java.util.List;
 
-public class BrandProvider {
-    private static final Logger log = Logger.getLogger(BrandProvider.class);
+public class MySQLBrandProvider implements GlobalBrandProvider{
+    private static final Logger log = Logger.getLogger(MySQLBrandProvider.class);
 
     private SimpleJdbcTemplate jdbcTemplate; //
     private BrandMapper brandMapper;
 
-    public BrandProvider(SimpleJdbcTemplate jdbcTemplate) {
+    public MySQLBrandProvider(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
         brandMapper = new BrandMapper();
     }

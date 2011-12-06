@@ -1,13 +1,13 @@
-package ru.brandanalyst.core.db.provider;
+package ru.brandanalyst.core.db.provider.mysql;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import ru.brandanalyst.core.db.provider.global.GlobalTickerProvider;
+import ru.brandanalyst.core.model.TickerPair;
 
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,31 +15,13 @@ import java.util.Map;
  * Date: 11/19/11
  * Time: 2:46 PM
  */
-public class TickerProvider {
-    private static final Logger log = Logger.getLogger(GraphProvider.class);
+public class MySQLTickerProvider implements GlobalTickerProvider{
+    private static final Logger log = Logger.getLogger(MySQLGraphProvider.class);
 
     private SimpleJdbcTemplate jdbcTemplate; //
 
-    public TickerProvider(SimpleJdbcTemplate jdbcTemplate) {
+    public MySQLTickerProvider(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-    }
-
-    public class TickerPair {
-        private final String name;
-        private final long id;
-
-        private TickerPair(String name, long id) {
-            this.name = name;
-            this.id = id;
-        }
-
-        public long getId() {
-            return id;
-        }
-
-        public String getName() {
-            return name;
-        }
     }
 
     public List<TickerPair> getTickers() {

@@ -16,7 +16,7 @@ import java.util.GregorianCalendar;
  * Time: 4:13 AM
  */
 public class GrabberFontanka extends Grabber {
-    private static final int SEARCH_DAYS = 15;
+    private static final int SEARCH_DAYS = 30;
     private static final Logger log = Logger.getLogger(GrabberFontanka.class);
 
     private static final String endURL = "/news.html";

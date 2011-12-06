@@ -5,10 +5,10 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.BrandProvider;
-import ru.brandanalyst.core.db.provider.GraphProvider;
-import ru.brandanalyst.core.db.provider.TickerProvider;
-import ru.brandanalyst.core.db.provider.TickerProvider.TickerPair;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider.TickerPair;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
@@ -19,7 +19,6 @@ import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -30,17 +29,17 @@ import java.util.StringTokenizer;
 public class GrabberFinam {
     private static final Logger log = Logger.getLogger(GrabberFinam.class);
     protected SimpleJdbcTemplate jdbcTemplate;
-    protected GraphProvider graphProvider;
-    protected BrandProvider brandProvider;
-    protected TickerProvider tickerProvider;
+    protected MySQLGraphProvider graphProvider;
+    protected MySQLBrandProvider brandProvider;
+    protected MySQLTickerProvider tickerProvider;
     private final String sourceURL="http://www.finam.ru/analysis/export/default.asp";
     private final String tickerName="котировки";
     public GrabberFinam(SimpleJdbcTemplate jdbcTemplate)
     {
         this.jdbcTemplate = jdbcTemplate;
-        graphProvider= new GraphProvider(jdbcTemplate);
-        brandProvider= new BrandProvider(jdbcTemplate);
-        tickerProvider= new TickerProvider(jdbcTemplate);
+        graphProvider= new MySQLGraphProvider(jdbcTemplate);
+        brandProvider= new MySQLBrandProvider(jdbcTemplate);
+        tickerProvider= new MySQLTickerProvider(jdbcTemplate);
     }
 
     public void grab(Integer beginDay,Integer beginMonth, Integer beginYear)

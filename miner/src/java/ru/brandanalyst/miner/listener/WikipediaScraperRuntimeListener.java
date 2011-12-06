@@ -6,7 +6,7 @@ import org.webharvest.runtime.Scraper;
 import org.webharvest.runtime.ScraperRuntimeListener;
 import org.webharvest.runtime.processors.BaseProcessor;
 import org.webharvest.runtime.variables.Variable;
-import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.miner.util.DataTransformator;
 
@@ -23,11 +23,11 @@ public class WikipediaScraperRuntimeListener implements ScraperRuntimeListener {
     private static final Logger log = Logger.getLogger(WikipediaScraperRuntimeListener.class);
 
     private SimpleJdbcTemplate jdbcTemplate;
-    private BrandProvider brandProvider;
+    private MySQLBrandProvider brandProvider;
 
     public WikipediaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        brandProvider = new BrandProvider(jdbcTemplate);
+        brandProvider = new MySQLBrandProvider(jdbcTemplate);
     }
 
     public void onExecutionStart(Scraper scraper) {

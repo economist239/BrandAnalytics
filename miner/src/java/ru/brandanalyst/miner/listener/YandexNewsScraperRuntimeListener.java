@@ -5,7 +5,7 @@ import org.webharvest.runtime.Scraper;
 import org.webharvest.runtime.ScraperRuntimeListener;
 import org.webharvest.runtime.processors.BaseProcessor;
 import org.webharvest.runtime.variables.Variable;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 
@@ -21,11 +21,11 @@ import java.util.Map;
  */
 public class YandexNewsScraperRuntimeListener implements ScraperRuntimeListener {
     private SimpleJdbcTemplate jdbcTemplate;
-    private ArticleProvider articleProvider;
+    private MySQLArticleProvider articleProvider;
 
     public YandexNewsScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
         this.jdbcTemplate = jdbcTemplate;
-        articleProvider = new ArticleProvider(jdbcTemplate);
+        articleProvider = new MySQLArticleProvider(jdbcTemplate);
     }
 
     public void onExecutionStart(Scraper scraper) {

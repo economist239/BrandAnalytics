@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
-import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.miner.listener.RiaNewsScraperRuntimeListener;
 import ru.brandanalyst.miner.util.DataTransformator;
@@ -37,7 +37,7 @@ public class GrabberRia extends Grabber {
     @Override
     public void grab(Date timeLimit) {
 
-        for (Brand b : new BrandProvider(jdbcTemplate).getAllBrands()) {
+        for (Brand b : new MySQLBrandProvider(jdbcTemplate).getAllBrands()) {
             try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");

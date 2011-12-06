@@ -2,19 +2,16 @@ package ru.brandanalyst.analyzer;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.db.provider.BrandProvider;
-import ru.brandanalyst.core.db.provider.GraphProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
-import ru.brandanalyst.core.time.TimeProperties;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -53,11 +50,11 @@ public class GraphsAnalyzer {
     public void analyze() {
 
         log.info("graph analyzing started...");
-        BrandProvider dirtyBrandProvider = new BrandProvider(dirtyJdbcTemplate);
-        BrandProvider pureBrandProvider = new BrandProvider(pureJdbcTemplate);
-        ArticleProvider dirtyArticleProvider = new ArticleProvider(dirtyJdbcTemplate);
-        ArticleProvider pureArticleProvider = new ArticleProvider(pureJdbcTemplate);
-        GraphProvider pureGraphProvider = new GraphProvider(pureJdbcTemplate);
+        MySQLBrandProvider dirtyBrandProvider = new MySQLBrandProvider(dirtyJdbcTemplate);
+        MySQLBrandProvider pureBrandProvider = new MySQLBrandProvider(pureJdbcTemplate);
+        MySQLArticleProvider dirtyArticleProvider = new MySQLArticleProvider(dirtyJdbcTemplate);
+        MySQLArticleProvider pureArticleProvider = new MySQLArticleProvider(pureJdbcTemplate);
+        MySQLGraphProvider pureGraphProvider = new MySQLGraphProvider(pureJdbcTemplate);
 
         Map<Long, Double> graphMap = new HashMap<Long, Double>(); //out of memory
 

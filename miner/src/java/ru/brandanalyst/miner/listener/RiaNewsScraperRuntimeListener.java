@@ -6,7 +6,7 @@ import org.webharvest.runtime.Scraper;
 import org.webharvest.runtime.ScraperRuntimeListener;
 import org.webharvest.runtime.processors.BaseProcessor;
 import org.webharvest.runtime.variables.Variable;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 
@@ -28,13 +28,13 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
     private static final Logger log = Logger.getLogger(RiaNewsScraperRuntimeListener.class);
 
     private SimpleJdbcTemplate jdbcTemplate;
-    private ArticleProvider articleProvider;
+    private MySQLArticleProvider articleProvider;
     private Date timeLimit;
 
     public RiaNewsScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
         this.jdbcTemplate = jdbcTemplate;
         this.timeLimit = timeLimit;
-        articleProvider = new ArticleProvider(jdbcTemplate);
+        articleProvider = new MySQLArticleProvider(jdbcTemplate);
     }
 
     private Timestamp evalTimestamp(String stringDate) {
@@ -99,7 +99,8 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
             long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
             Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
-            /*if (!StringChecker.hasTerm(new BrandDictionaryProvider(jdbcTemplate).getDictionary(), newsTitle.toString()))
+            System.out.println("Title "+newsTitle);
+            /*if (!StringChecker.hasTerm(new MySQLBrandDictionaryProvider(jdbcTemplate).getDictionary(), newsTitle.toString()))
                 return;*/
 
             Variable newsText = (Variable) scraper.getContext().get("newsFullText");

@@ -1,8 +1,9 @@
-package ru.brandanalyst.core.db.provider;
+package ru.brandanalyst.core.db.provider.mysql;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.mapper.ArticleMapper;
+import ru.brandanalyst.core.db.provider.global.GlobalArticleProvider;
 import ru.brandanalyst.core.model.Article;
 
 import java.util.List;
@@ -14,12 +15,11 @@ import java.util.List;
  * Date: 09.10.11
  * Time: 22:07
  */
-public class ArticleProvider {
-    private static final Logger log = Logger.getLogger(ArticleProvider.class);
+public class MySQLArticleProvider implements GlobalArticleProvider{
+    private static final Logger log = Logger.getLogger(MySQLArticleProvider.class);
     /**
      * максимальная длина новости, записываемой в БД (если новость длиннее, то она обрезается)
      */
-    private static final int MAX_ARTCILE_LENGHT = 30000;
 
     private SimpleJdbcTemplate jdbcTemplate;
     /**
@@ -27,7 +27,7 @@ public class ArticleProvider {
      */
     private ArticleMapper articleMapper;
 
-    public ArticleProvider(SimpleJdbcTemplate jdbcTemplate) {
+    public MySQLArticleProvider(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
         articleMapper = new ArticleMapper();
     }
@@ -39,8 +39,8 @@ public class ArticleProvider {
 
     public void writeArticleToDataStore(Article article) {
 
-        if (article.getContent().length() > MAX_ARTCILE_LENGHT) {
-            article.setContent(article.getContent().substring(0, MAX_ARTCILE_LENGHT));
+        if (article.getContent().length() > MAX_ARTICLE_LENGHT) {
+            article.setContent(article.getContent().substring(0, MAX_ARTICLE_LENGHT));
         }
         try {
             jdbcTemplate.update("INSERT INTO Article (InfoSourceId, BrandId, Title, Content, Link, NumLikes, Tstamp) VALUES(?, ?, ?, ?, ?, ?, ?);", article.getSourceId(),

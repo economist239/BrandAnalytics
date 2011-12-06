@@ -2,9 +2,9 @@ package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.ArticleProvider;
-import ru.brandanalyst.core.db.provider.BrandDictionaryProvider;
-import ru.brandanalyst.core.db.provider.BrandProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
@@ -44,9 +44,9 @@ public class GrabberTwitter extends Grabber {
         log.info("Twitter grabber started...");
         Twitter twitter = new TwitterFactory().getInstance();
 
-        List<Brand> brandList = new BrandProvider(jdbcTemplate).getAllBrands();
-        ArticleProvider articleProvider = new ArticleProvider(jdbcTemplate);
-        BrandDictionaryProvider dictionaryProvider = new BrandDictionaryProvider(jdbcTemplate);
+        List<Brand> brandList = new MySQLBrandProvider(jdbcTemplate).getAllBrands();
+        MySQLArticleProvider articleProvider = new MySQLArticleProvider(jdbcTemplate);
+        MySQLBrandDictionaryProvider dictionaryProvider = new MySQLBrandDictionaryProvider(jdbcTemplate);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 

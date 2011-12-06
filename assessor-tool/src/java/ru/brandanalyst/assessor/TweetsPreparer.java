@@ -207,7 +207,7 @@ public class TweetsPreparer {
         while(it.hasNext()){
             addNearestWords(result,brands,it.next());
         }
-        result = MapUtil.sortAscByValue(result);
+        //result = MapUtil.sortAscByValue(result);
         return result;
     }
     public Map<String,Integer> addNearestWords(Map<String,Integer> result,List<String> brands, String tweet){

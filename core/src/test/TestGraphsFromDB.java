@@ -1,6 +1,6 @@
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.GraphProvider;
+import ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
 
@@ -19,13 +19,13 @@ public class TestGraphsFromDB {
 
     public static void main(String[] args) {
         BasicDataSource ds = new BasicDataSource();
-        ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8");
+        ds.setDriverClassName("com.global.jdbc.Driver");
+        ds.setUrl("jdbc:global://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8");
         ds.setUsername("root");
         ds.setPassword("root");
         ds.setValidationQuery("select 1");
         SimpleJdbcTemplate jdbcTemplate = new SimpleJdbcTemplate(ds);
-        GraphProvider dataStore = new GraphProvider(jdbcTemplate);
+        MySQLGraphProvider dataStore = new MySQLGraphProvider(jdbcTemplate);
 
         Timestamp t = new Timestamp(90, 02, 29, 1, 1, 1, 1);
         double val = 21;
