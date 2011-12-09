@@ -31,13 +31,13 @@ public class Test {    //this is worked test for lucene index and search
         MySQLBrandProvider dataStore = new MySQLBrandProvider(jdbcTemplate);
 
         dataStore.cleanDataStore();
-        Brand b1 = new Brand(4, "Gazprom", "Gazprom is russian gasoline gaint", "www.gazprom.ru", 0);
+        Brand b1 = new Brand(4, "Gazprom", "Gazprom is russian gasoline gaint", "www.gazprom.ru");
         dataStore.writeBrandToDataStore(b1);
-        b1 = new Brand(1, "Microsoft", "Microsoft makes bad software", "www.microsoft.com", 0);
+        b1 = new Brand(1, "Microsoft", "Microsoft makes bad software", "www.microsoft.com");
         dataStore.writeBrandToDataStore(b1);
-        b1 = new Brand(3, "Apple", "Apple makes software too and i-production. На русском", "www.apple.com", 0);
+        b1 = new Brand(3, "Apple", "Apple makes software too and i-production. На русском", "www.apple.com");
         dataStore.writeBrandToDataStore(b1);
-        b1 = new Brand(2, "Google", "Google is better than other search machines", "www.google.com", 0);
+        b1 = new Brand(2, "Google", "Google is better than other search machines", "www.google.com");
         dataStore.writeBrandToDataStore(b1);
 
         MySQLArticleProvider dataStore2 = new MySQLArticleProvider(jdbcTemplate);

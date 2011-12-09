@@ -8,10 +8,10 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider.TickerPair;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
+import ru.brandanalyst.core.model.TickerPair;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

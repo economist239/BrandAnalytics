@@ -5,10 +5,7 @@ import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider;
-import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.core.model.Graph;
-import ru.brandanalyst.core.model.SingleDot;
+import ru.brandanalyst.core.model.*;
 import ru.brandanalyst.frontend.models.GraphForWeb;
 import ru.brandanalyst.frontend.models.SimplyArticleForWeb;
 
@@ -35,7 +32,7 @@ public class WideBrandInfoManager {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<MySQLTickerProvider.TickerPair> getTickers() {
+    public List<TickerPair> getTickers() {
         return new MySQLTickerProvider(jdbcTemplate).getTickers();
     }
 
