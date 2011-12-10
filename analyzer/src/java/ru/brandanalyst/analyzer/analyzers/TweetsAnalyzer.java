@@ -108,34 +108,30 @@ public class TweetsAnalyzer extends AbstractAnalyzer {
      */
     public List<ArticleWordContainer> CountWordsInTweetsAsTriples() {
         log.info("starts tweets opinion analysis ...");
-        if (dirtyJdbcTemplate != null) {
-            MySQLSemanticDictionaryProvider semanticDictionaryProvider = new MySQLSemanticDictionaryProvider(dirtyJdbcTemplate);
+        MySQLSemanticDictionaryProvider semanticDictionaryProvider = new MySQLSemanticDictionaryProvider(dirtyJdbcTemplate);
 
-            Set<SemanticDictionaryItem> dictionary = semanticDictionaryProvider.getSemanticDictionary();
-            Iterator<SemanticDictionaryItem> dictionaryItemIterator = dictionary.iterator();
-            List<Article> articles = getTweetsFromDB();
-            Iterator<Article> articlesIterator = articles.listIterator();
+        Set<SemanticDictionaryItem> dictionary = semanticDictionaryProvider.getSemanticDictionary();
+        Iterator<SemanticDictionaryItem> dictionaryItemIterator = dictionary.iterator();
+        List<Article> articles = getTweetsFromDB();
+        Iterator<Article> articlesIterator = articles.listIterator();
 
-            List<ArticleWordContainer> articleWordCount = new ArrayList<ArticleWordContainer>();
-            SemanticDictionaryItem dictionaryItem;
-            Article article;
-            int count;
-            while (articlesIterator.hasNext()) {
-                article = articlesIterator.next();
-                while (dictionaryItemIterator.hasNext()) {
-                    dictionaryItem = dictionaryItemIterator.next();
-                    count = countsSubInString(article.getContent(), dictionaryItem.getTerm());
-                    if (count > 0) {
-                        articleWordCount.add(new ArticleWordContainer(article.getId(), dictionaryItem, count));
-                    }
+        List<ArticleWordContainer> articleWordCount = new ArrayList<ArticleWordContainer>();
+        SemanticDictionaryItem dictionaryItem;
+        Article article;
+        int count;
+        while (articlesIterator.hasNext()) {
+            article = articlesIterator.next();
+            while (dictionaryItemIterator.hasNext()) {
+                dictionaryItem = dictionaryItemIterator.next();
+                count = countsSubInString(article.getContent(), dictionaryItem.getTerm());
+                if (count > 0) {
+                    articleWordCount.add(new ArticleWordContainer(article.getId(), dictionaryItem, count));
                 }
             }
-            log.info("finish counting semantic word in articles");
-            return articleWordCount;
-        } else {
-            log.error("variable dirtyJdbcTemplate have not been initialized");
-            return null;
         }
+        log.info("finish counting semantic word in articles");
+        return articleWordCount;
+
     }
 
     public int countsSubInString(String target, String sub) {
