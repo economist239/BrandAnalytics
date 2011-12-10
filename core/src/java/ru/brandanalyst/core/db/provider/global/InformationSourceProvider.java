@@ -4,7 +4,7 @@ import ru.brandanalyst.core.model.InfoSource;
 
 import java.util.List;
 
-public interface GlobalInformationSourceProvider {
+public interface InformationSourceProvider {
     @Deprecated
     public void cleanDataStore();
 

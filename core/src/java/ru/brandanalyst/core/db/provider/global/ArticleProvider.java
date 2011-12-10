@@ -4,7 +4,7 @@ import ru.brandanalyst.core.model.Article;
 
 import java.util.List;
 
-public interface GlobalArticleProvider {
+public interface ArticleProvider {
     int MAX_ARTICLE_LENGHT = 30000;
     @Deprecated
     public void cleanDataStore();

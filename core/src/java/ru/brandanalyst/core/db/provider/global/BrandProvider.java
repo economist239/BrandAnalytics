@@ -4,7 +4,7 @@ import ru.brandanalyst.core.model.Brand;
 
 import java.util.List;
 
-public interface GlobalBrandProvider {
+public interface BrandProvider {
     @Deprecated
     public void cleanDataStore();
 

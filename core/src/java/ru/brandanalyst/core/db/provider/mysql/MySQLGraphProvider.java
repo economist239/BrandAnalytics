@@ -3,7 +3,7 @@ package ru.brandanalyst.core.db.provider.mysql;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
-import ru.brandanalyst.core.db.provider.global.GlobalGraphProvider;
+import ru.brandanalyst.core.db.provider.global.GraphProvider;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
 
@@ -18,7 +18,7 @@ import java.util.List;
  * Time: 7:54 PM
  * this class provides graphs from DB
  */
-public class MySQLGraphProvider implements GlobalGraphProvider{
+public class MySQLGraphProvider implements GraphProvider {
     private static final Logger log = Logger.getLogger(MySQLGraphProvider.class);
 
     private SimpleJdbcTemplate jdbcTemplate; //

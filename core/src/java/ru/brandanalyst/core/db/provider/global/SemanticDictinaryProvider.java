@@ -4,7 +4,7 @@ import ru.brandanalyst.core.model.SemanticDictionaryItem;
 
 import java.util.HashSet;
 
-public interface GlobalSemanticDictinaryProvider {
+public interface SemanticDictinaryProvider {
     @Deprecated
     public void cleanDataStore();
 

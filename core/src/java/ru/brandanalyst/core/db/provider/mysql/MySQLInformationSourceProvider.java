@@ -3,7 +3,7 @@ package ru.brandanalyst.core.db.provider.mysql;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.mapper.InfoSourceMapper;
-import ru.brandanalyst.core.db.provider.global.GlobalInformationSourceProvider;
+import ru.brandanalyst.core.db.provider.global.InformationSourceProvider;
 import ru.brandanalyst.core.model.InfoSource;
 
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
  * Date: 11/6/11
  * Time: 12:30 PM
  */
-public class MySQLInformationSourceProvider implements GlobalInformationSourceProvider{
+public class MySQLInformationSourceProvider implements InformationSourceProvider {
     private static final Logger log = Logger.getLogger(MySQLInformationSourceProvider.class);
 
     private SimpleJdbcTemplate jdbcTemplate;

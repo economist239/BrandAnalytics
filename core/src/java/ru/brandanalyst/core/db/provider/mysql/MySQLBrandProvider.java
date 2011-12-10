@@ -11,12 +11,12 @@ package ru.brandanalyst.core.db.provider.mysql;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.mapper.BrandMapper;
-import ru.brandanalyst.core.db.provider.global.GlobalBrandProvider;
+import ru.brandanalyst.core.db.provider.global.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
 
 import java.util.List;
 
-public class MySQLBrandProvider implements GlobalBrandProvider{
+public class MySQLBrandProvider implements BrandProvider {
     private static final Logger log = Logger.getLogger(MySQLBrandProvider.class);
 
     private SimpleJdbcTemplate jdbcTemplate; //

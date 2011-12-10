@@ -4,7 +4,7 @@ import ru.brandanalyst.core.model.TickerPair;
 
 import java.util.List;
 
-public interface GlobalTickerProvider {
+public interface TickerProvider {
 
     public List<TickerPair> getTickers();
 }

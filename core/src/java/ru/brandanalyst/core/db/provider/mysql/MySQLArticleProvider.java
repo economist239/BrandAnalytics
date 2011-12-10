@@ -3,7 +3,7 @@ package ru.brandanalyst.core.db.provider.mysql;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.mapper.ArticleMapper;
-import ru.brandanalyst.core.db.provider.global.GlobalArticleProvider;
+import ru.brandanalyst.core.db.provider.global.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.List;
  * Date: 09.10.11
  * Time: 22:07
  */
-public class MySQLArticleProvider implements GlobalArticleProvider{
+public class MySQLArticleProvider implements ArticleProvider {
     private static final Logger log = Logger.getLogger(MySQLArticleProvider.class);
     /**
      * максимальная длина новости, записываемой в БД (если новость длиннее, то она обрезается)

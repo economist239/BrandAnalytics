@@ -3,7 +3,7 @@ package ru.brandanalyst.core.db.provider.mysql;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
-import ru.brandanalyst.core.db.provider.global.GlobalTickerProvider;
+import ru.brandanalyst.core.db.provider.global.TickerProvider;
 import ru.brandanalyst.core.model.TickerPair;
 
 import java.util.LinkedList;
@@ -15,7 +15,7 @@ import java.util.List;
  * Date: 11/19/11
  * Time: 2:46 PM
  */
-public class MySQLTickerProvider implements GlobalTickerProvider{
+public class MySQLTickerProvider implements TickerProvider {
     private static final Logger log = Logger.getLogger(MySQLGraphProvider.class);
 
     private SimpleJdbcTemplate jdbcTemplate; //

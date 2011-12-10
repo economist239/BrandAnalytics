@@ -7,7 +7,7 @@ import ru.brandanalyst.core.model.SingleDot;
 import java.sql.Timestamp;
 import java.util.List;
 
-public interface GlobalGraphProvider {
+public interface GraphProvider {
 
     public void cleanDataStore();
 

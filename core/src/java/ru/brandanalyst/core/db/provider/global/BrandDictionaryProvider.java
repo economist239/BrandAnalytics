@@ -5,7 +5,7 @@ import ru.brandanalyst.core.model.BrandDictionaryItem;
 
 import java.util.List;
 
-public interface GlobalBrandDictionaryProvider {
+public interface BrandDictionaryProvider {
     @Deprecated
     public void cleanDataStore();
 

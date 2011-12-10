@@ -6,9 +6,15 @@
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 
-    <!--Analyzer conf-->
-    <bean id="analyzer" destroy-method="close" class="ru.brandanalyst.analyzer.Analyzer" lazy-init="false"/>
-
+    <!--AnalyzerProcesser conf-->
+    <bean id="analyzerProcessor" destroy-method="close" class="ru.brandanalyst.analyzer.AnalyzerProcesser" lazy-init="false">
+        <property name="analyzers">
+            <list>
+                <bean class="ru.brandanalyst.analyzer.analyzers.GraphsAnalyzer"/>
+                <bean class="ru.brandanalyst.analyzer.analyzers.GraphsAnalyzer"/>
+            </list>
+        </property>
+    </bean>
     <!--DB configuration-->
     <bean id="dirtyDataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
