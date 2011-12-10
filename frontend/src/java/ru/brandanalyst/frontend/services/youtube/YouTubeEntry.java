@@ -1,6 +1,6 @@
 package ru.brandanalyst.frontend.services.youtube;
 
-import ru.brandanalyst.frontend.models.YouTubeVideo;
+import ru.brandanalyst.core.model.YouTubeVideo;
 
 public class YouTubeEntry {
 	private String href;

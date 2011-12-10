@@ -2,7 +2,7 @@ package ru.brandanalyst.frontend.services;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
-import ru.brandanalyst.frontend.models.YouTubeVideo;
+import ru.brandanalyst.core.model.YouTubeVideo;
 import ru.brandanalyst.frontend.services.youtube.YouTubeEntry;
 import ru.brandanalyst.frontend.services.youtube.YouTubeGrabber;
 import ru.brandanalyst.frontend.services.youtube.YouTubeGrabberException;

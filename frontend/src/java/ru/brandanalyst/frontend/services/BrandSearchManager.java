@@ -1,7 +1,7 @@
 package ru.brandanalyst.frontend.services;
 
 import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.frontend.models.SimplyBrandForWeb;
+import ru.brandanalyst.core.model.simple.SimplyBrandForWeb;
 import ru.brandanalyst.searcher.Searcher;
 
 import java.util.ArrayList;

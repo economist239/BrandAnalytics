@@ -6,8 +6,8 @@ import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider;
 import ru.brandanalyst.core.model.*;
-import ru.brandanalyst.frontend.models.GraphForWeb;
-import ru.brandanalyst.frontend.models.SimplyArticleForWeb;
+import ru.brandanalyst.core.model.simple.GraphForWeb;
+import ru.brandanalyst.core.model.simple.SimplyArticleForWeb;
 
 import java.util.ArrayList;
 import java.util.List;

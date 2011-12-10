@@ -3,7 +3,7 @@ package ru.brandanalyst.frontend.services;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.frontend.models.SimplyBrandForWeb;
+import ru.brandanalyst.core.model.simple.SimplyBrandForWeb;
 
 import java.util.ArrayList;
 import java.util.List;

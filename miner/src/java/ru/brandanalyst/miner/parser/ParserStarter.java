@@ -1,6 +1,7 @@
 package ru.brandanalyst.miner.parser;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.mysql.MySQLInformationSourceProvider;
 import ru.brandanalyst.core.model.InfoSource;
@@ -11,7 +12,7 @@ import java.util.List;
  * @author OlegPan
  * This class defines what rss channels will be used for information retrieving
  */
-public class ParserStarter {
+public class ParserStarter implements InitializingBean {
 protected SimpleJdbcTemplate jdbcTemplate;
     private static final Logger log = Logger.getLogger(ParserStarter.class);
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {

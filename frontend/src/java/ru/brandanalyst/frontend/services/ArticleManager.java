@@ -5,7 +5,7 @@ import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLInformationSourceProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.InfoSource;
-import ru.brandanalyst.frontend.models.WideArticleForWeb;
+import ru.brandanalyst.core.model.simple.WideArticleForWeb;
 
 /**
  * Сервис, извлекающий новости по их идентификатору из БД

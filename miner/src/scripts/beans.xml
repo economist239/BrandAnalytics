@@ -28,6 +28,6 @@
     </bean>
     <!--<bean class="ru.brandanalyst.miner.parser.ParserStarter">
     </bean>-->
-    <bean class="ru.brandanalyst.miner.quote.FinamStarter"/>
+    <bean class="ru.brandanalyst.miner.quote.GrabberFinam"/>
 
 </beans>

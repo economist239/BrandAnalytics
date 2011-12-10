@@ -1,4 +1,4 @@
-package ru.brandanalyst.frontend.util;
+package ru.brandanalyst.core.util;
 
 /**
  * Класс, вырезающий из текста первое предложение.

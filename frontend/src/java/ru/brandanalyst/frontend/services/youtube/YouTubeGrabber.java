@@ -12,7 +12,7 @@ import java.nio.charset.Charset;
 import java.util.*;
 
 public class YouTubeGrabber {
-	private static String[] keywords = {"ad", "add", "adds", "advertisement", "commercial", "�������"};
+	private static String[] keywords = {"ad", "add", "adds", "advertisement", "commercial", "реклама"};
 
 	public static ArrayList<YouTubeEntry> searchYouTubeVideos(String brandName, int maxEntries) throws YouTubeGrabberException {
 

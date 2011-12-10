@@ -1,4 +1,4 @@
-package ru.brandanalyst.frontend.models;
+package ru.brandanalyst.core.model.simple;
 
 import ru.brandanalyst.core.model.SingleDot;
 

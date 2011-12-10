@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b02125ea-51ef-4edd-be6b-1179e523717a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assessor-tool/src/java/ru/brandanalyst/miner/StemmerTester.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assessor-tool/src/java/ru/brandanalyst/assessor/StemmerTester.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/FinamStarter.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/GraphForWeb.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/simple/GraphForWeb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/SimplyArticleForWeb.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/simple/SimplyArticleForWeb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/SimplyBrandForWeb.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/simple/SimplyBrandForWeb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/WideArticleForWeb.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/simple/WideArticleForWeb.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/models/YouTubeVideo.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/YouTubeVideo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/util/TextConverter.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/util/TextConverter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/TweetsAnalyzer.java" afterPath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/TweetsAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assessor-tool/assessor-tool.iml" afterPath="$PROJECT_DIR$/assessor-tool/assessor-tool.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/ArticleManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/ArticleManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/ArticleSearchManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/ArticleSearchManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/BrandSearchManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/BrandSearchManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/LeftMenuManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/LeftMenuManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/WideBrandInfoManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/WideBrandInfoManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/YouTubeManager.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/YouTubeManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/youtube/YouTubeEntry.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/youtube/YouTubeEntry.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/youtube/YouTubeGrabber.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/youtube/YouTubeGrabber.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowArticleYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowArticleYalet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/ShowLeftMenuYalet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserStarter.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserStarter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/scripts/beans.xml" afterPath="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
     </list>
     <list id="c16d02c9-2f64-4539-9895-fad787085a75" name="Rejected commit: Default" comment="analyzer with beans" />
     <ignored path="BrandAnalytics.iws" />
@@ -69,46 +87,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GraphsAnalyzer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/GraphsAnalyzer.java">
+      <file leaf-file-name="GrabberFinam.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="54" selection-start="740" selection-end="740" vertical-scroll-proportion="0.0">
+            <state line="85" column="7" selection-start="4197" selection-end="4197" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TweetsAnalyzer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/TweetsAnalyzer.java">
+      <file leaf-file-name="ParserRSSXML.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserRSSXML.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="38" selection-start="4525" selection-end="4525" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1512#1526#0" expanded="true" />
-                <element signature="e#1585#1599#0" expanded="true" />
-                <element signature="e#1659#1673#0" expanded="true" />
-                <element signature="e#2036#2045#0" expanded="true" />
-                <element signature="e#2106#2115#0" expanded="true" />
-                <element signature="e#2177#2186#0" expanded="true" />
-                <element signature="e#5119#5141#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="assessor-tool.iml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assessor-tool/assessor-tool.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="0" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0">
+            <state line="26" column="13" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TweetsPreparer.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assessor-tool/src/java/ru/brandanalyst/assessor/TweetsPreparer.java">
+      <file leaf-file-name="ParserStarter.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserStarter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="13" selection-start="186" selection-end="186" vertical-scroll-proportion="-8.660848">
+            <state line="14" column="55" selection-start="505" selection-end="505" vertical-scroll-proportion="0.28103045">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beans.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miner/src/scripts/beans.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="57" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -128,12 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" />
-        <option value="$PROJECT_DIR$/searcher/src/test/Test.java" />
-        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/WideBrandInfoManager.java" />
-        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java" />
-        <option value="$PROJECT_DIR$/frontend/src/scripts/beans.xml" />
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/DataHandler.java" />
         <option value="$PROJECT_DIR$/core/src/script/dbpureconfig.xml" />
         <option value="$PROJECT_DIR$/core/src/script/dbdirtyconfig.xml" />
         <option value="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/TweetsAnalyzer.java" />
@@ -144,6 +147,12 @@
         <option value="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/AbstractAnalyzer.java" />
         <option value="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/TweetsAnalyzer.java" />
         <option value="$PROJECT_DIR$/assessor-tool/assessor-tool.iml" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/simple/SimplyBrandForWeb.java" />
+        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/youtube/YouTubeGrabber.java" />
+        <option value="$PROJECT_DIR$/miner/src/scripts/beans.xml" />
+        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/FinamStarter.java" />
+        <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserStarter.java" />
       </list>
     </option>
   </component>
@@ -322,6 +331,116 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -750,7 +869,7 @@
     <frame x="0" y="30" width="1366" height="714" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26833335" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24666667" sideWeight="0.0" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15279879" sideWeight="0.7869102" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23166667" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -761,7 +880,7 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32166666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32594937" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3348554" sideWeight="0.7316667" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3348554" sideWeight="0.75333333" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.185" sideWeight="0.99773073" order="2" side_tool="false" content_ui="tabs" x="0" y="24" width="1366" height="744" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -864,91 +983,17 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/DataHandler.java">
+    <entry file="file://$PROJECT_DIR$/core/src/java/net/sf/xfresh/util/XmlUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="4" selection-start="2049" selection-end="2049" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/script/dbpureconfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="14" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/script/dbdirtyconfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="36" selection-start="879" selection-end="879" vertical-scroll-proportion="0.36723164">
+        <state line="38" column="13" selection-start="1765" selection-end="1765" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberLenta.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0">
+        <state line="30" column="4" selection-start="1051" selection-end="1099" vertical-scroll-proportion="0.78553617">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/d_dbscript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/p_dbscript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assessor-tool/src/java/ru/brandanalyst/miner/StemmerTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="301" selection-end="301" vertical-scroll-proportion="0.033783782">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/scripts/beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="29" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer/src/scripts/beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="81" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/DictionaryInitialyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="19" selection-start="597" selection-end="597" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/AnalyzerProcesser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="9" selection-start="832" selection-end="832" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/AbstractAnalyzer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="725" selection-end="725" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -959,32 +1004,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/TweetsAnalyzer.java">
+    <entry file="file://$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/DictionaryInitialyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="38" selection-start="4525" selection-end="4525" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1512#1526#0" expanded="true" />
-            <element signature="e#1585#1599#0" expanded="true" />
-            <element signature="e#1659#1673#0" expanded="true" />
-            <element signature="e#2036#2045#0" expanded="true" />
-            <element signature="e#2106#2115#0" expanded="true" />
-            <element signature="e#2177#2186#0" expanded="true" />
-            <element signature="e#5119#5141#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assessor-tool/assessor-tool.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="372" selection-end="372" vertical-scroll-proportion="0.0">
+        <state line="36" column="55" selection-start="1092" selection-end="1106" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assessor-tool/src/java/ru/brandanalyst/assessor/TweetsPreparer.java">
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="186" selection-end="186" vertical-scroll-proportion="-8.660848">
+        <state line="30" column="41" selection-start="1014" selection-end="1014" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/script/dbdirtyconfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="114" selection-start="479" selection-end="557" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/youtube/YouTubeGrabber.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="120" selection-start="1762" selection-end="1764" vertical-scroll-proportion="-1.9132231">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/youtube/YouTubeEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="114" selection-end="114" vertical-scroll-proportion="0.11494253">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/services/youtube/HttpRequester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="208" selection-end="208" vertical-scroll-proportion="0.22988506">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/simple/SimplyBrandForWeb.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="13" selection-start="190" selection-end="190" vertical-scroll-proportion="0.26086956">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/YouTubeVideo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="148" selection-end="148" vertical-scroll-proportion="0.20869565">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/SemanticDictionaryItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="147" selection-end="147" vertical-scroll-proportion="0.20869565">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/scripts/beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="57" selection-start="1584" selection-end="1584" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="7" selection-start="4197" selection-end="4197" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserRSSXML.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="13" selection-start="819" selection-end="819" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/parser/ParserStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="55" selection-start="505" selection-end="505" vertical-scroll-proportion="0.28103045">
           <folding />
         </state>
       </provider>

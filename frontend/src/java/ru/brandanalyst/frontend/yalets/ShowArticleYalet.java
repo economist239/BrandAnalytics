@@ -4,7 +4,7 @@ import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.core.xml.Xmler;
 import net.sf.xfresh.db.AbstractDbYalet;
-import ru.brandanalyst.frontend.models.WideArticleForWeb;
+import ru.brandanalyst.core.model.simple.WideArticleForWeb;
 import ru.brandanalyst.frontend.services.ArticleManager;
 
 /**
