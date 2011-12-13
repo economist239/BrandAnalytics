@@ -1,7 +1,6 @@
 package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
 import ru.brandanalyst.miner.listener.FontankaScraperRuntimeListener;
@@ -24,16 +23,6 @@ public class GrabberFontanka extends Grabber {
     private static final String appendix = "/fontanka/";
 
     @Override
-    public void setConfig(String config) {
-        this.config = config;
-    }
-
-    @Override
-    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
-    @Override
     public void grab(Date timeLimit) {
         GregorianCalendar time = new GregorianCalendar();
         for (int i = 0; i < SEARCH_DAYS; i++) {
@@ -50,7 +39,7 @@ public class GrabberFontanka extends Grabber {
             try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
-                scraper.addRuntimeListener(new FontankaScraperRuntimeListener(jdbcTemplate, timeLimit));
+                scraper.addRuntimeListener(new FontankaScraperRuntimeListener(dirtyProvidersHandler, timeLimit));
                 scraper.addVariableToContext("QueryURL", resultURL.toString());
                 scraper.addVariableToContext("AbsoluteURL", sourceURL);
                 scraper.execute();

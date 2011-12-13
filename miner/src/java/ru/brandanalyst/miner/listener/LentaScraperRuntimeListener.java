@@ -1,12 +1,12 @@
 package ru.brandanalyst.miner.listener;
 
 import org.apache.log4j.Logger;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.runtime.Scraper;
 import org.webharvest.runtime.ScraperRuntimeListener;
 import org.webharvest.runtime.processors.BaseProcessor;
 import org.webharvest.runtime.variables.Variable;
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
+import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 import ru.brandanalyst.miner.util.LentaDataTransformator;
@@ -22,14 +22,12 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
     private int i = 0;
     private static final Logger log = Logger.getLogger(LentaScraperRuntimeListener.class);
 
-    private SimpleJdbcTemplate jdbcTemplate;
-    private MySQLArticleProvider articleProvider;
+    private ArticleProvider articleProvider;
     private Date timeLimit;
 
-    public LentaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
-        this.jdbcTemplate = jdbcTemplate;
+    public LentaScraperRuntimeListener(ProvidersHandler providersHandler, Date timeLimit) {
         this.timeLimit = timeLimit;
-        articleProvider = new MySQLArticleProvider(jdbcTemplate);
+        articleProvider = providersHandler.getArticleProvider();
     }
 
     private Timestamp evalTimestamp(String stringDate) throws StringIndexOutOfBoundsException {

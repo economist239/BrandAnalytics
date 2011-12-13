@@ -5,10 +5,10 @@
 <beans default-autowire="byName" default-init-method="afterPropertiesSet">
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
-    <!--<import resource="classpath:core/src/script/dbdirtyconfig.xml"/>-->
-    <import resource="file:./core/src/script/dbdirtyconfig.xml"/>
+    <!--IMPORT DB-->
+    <import resource="file:./core/src/script/dbhandler_dirty.xml"/>
     <!--Miner conf-->
-    <bean class="ru.brandanalyst.miner.GrabberContainer">
+    <bean class="ru.brandanalyst.miner.GrabberHandler">
         <property name="grabberList">
             <list>
                <!--<bean class="ru.brandanalyst.miner.GrabberWikipedia">

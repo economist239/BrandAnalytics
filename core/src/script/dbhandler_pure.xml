@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName" default-init-method="afterPropertiesSet">
+
+    <bean id="pureProvidersHandler" class="ru.brandanalyst.core.db.provider.ProvidersHandler">
+        <property name="articleProvider" value="pureArticleProvider"/>
+        <property name="brandProvider" value="pureBrandProvider"/>
+        <property name="brandDictionaryProvider" value="brandDictionaryProvider"/>
+        <property name="graphProvider" value="pureGraphProvider"/>
+        <property name="informationSourceProvider" value="pureInformationSourceProvider"/>
+        <property name="semanticDictionaryProvider" value="pureSemanticDictionaryProvider"/>
+        <property name="tickerProvider" value="pureTickerProvider"/>
+    </bean>
+    <!--PROVIDERS-->
+    <bean id="pureArticleProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider">
+        <property name="jdbcTemplate" value="pureJdbcTemplate"/>
+    </bean>
+
+    <bean id="pureBrandDictionaryProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider">
+        <property name="jdbcTemplate" value="pureJdbcTemplate"/>
+    </bean>
+
+    <bean id="pureBrandProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider">
+        <property name="jdbcTemplate" value="pureJdbcTemplate"/>
+    </bean>
+
+    <bean id="pureGraphProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider">
+        <property name="jdbcTemplate" value="pureJdbcTemplate"/>
+    </bean>
+
+    <bean id="pureInformationSourceProvider"
+          class="ru.brandanalyst.core.db.provider.mysql.MySQLInformationSourceProvider">
+        <property name="jdbcTemplate" value="pureJdbcTemplate"/>
+    </bean>
+
+    <bean id="pureSemanticDictionaryProvider"
+          class="ru.brandanalyst.core.db.provider.mysql.MySQLSemanticDictionaryProvider">
+        <property name="jdbcTemplate" value="pureJdbcTemplate"/>
+    </bean>
+
+    <bean id="pureTickerProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider">
+        <property name="jdbcTemplate" value="pureJdbcTemplate"/>
+    </bean>
+    <!--DB conf-->
+    <bean id="pureDataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/BApure?useUnicode=true&amp;characterEncoding=utf8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+        <property name="validationQuery" value="select 1"/>
+    </bean>
+    <bean id="pureJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
+        <constructor-arg ref="pureDataSource"/>
+    </bean>
+</beans>

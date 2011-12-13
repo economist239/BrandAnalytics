@@ -19,24 +19,13 @@ public class GrabberLenta extends Grabber {
     private static final String sourceURL = "http://lenta.ru";
 
     @Override
-    public void setConfig(String config) {
-        this.config = config;
-    }
-
-    @Override
-    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
-    @Override
     public void grab(Date timeLimit) {
-
-        for (Brand b : new MySQLBrandProvider(jdbcTemplate).getAllBrands()) {
+        for (Brand b : dirtyProvidersHandler.getBrandProvider().getAllBrands()) {
             try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.setDebug(true);
-                scraper.addRuntimeListener(new LentaScraperRuntimeListener(this.jdbcTemplate, timeLimit));
+                scraper.addRuntimeListener(new LentaScraperRuntimeListener(dirtyProvidersHandler, timeLimit));
                 String query = DataTransformator.stringToHexQueryString(b.getName());
                 scraper.addVariableToContext("lentaQueryURL", beginSearchURL + query + endSearchURL);//"$page" - suffix for result page number
                 scraper.addVariableToContext("lentaAbsoluteURL", sourceURL);
@@ -48,6 +37,5 @@ public class GrabberLenta extends Grabber {
                 log.error("cannot process Lenta. brand name = " + b.getName());
             }
         }
-
     }
 }

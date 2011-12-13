@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName" default-init-method="afterPropertiesSet">
+
+    <bean id="dirtyProvidersHandler" class="ru.brandanalyst.core.db.provider.ProvidersHandler">
+        <property name="articleProvider" value="dirtyArticleProvider"/>
+        <property name="brandProvider" value="dirtyBrandProvider"/>
+        <property name="brandDictionaryProvider" value="brandDictionaryProvider"/>
+        <property name="graphProvider" value="dirtyGraphProvider"/>
+        <property name="informationSourceProvider" value="dirtyInformationSourceProvider"/>
+        <property name="semanticDictionaryProvider" value="dirtySemanticDictionaryProvider"/>
+        <property name="tickerProvider" value="dirtyTickerProvider"/>
+    </bean>
+    <!--PROVIDERS-->
+    <bean id="dirtyArticleProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider">
+        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+    </bean>
+
+    <bean id="dirtyBrandDictionaryProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider">
+        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+    </bean>
+
+    <bean id="dirtyBrandProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider">
+        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+    </bean>
+
+    <bean id="dirtyGraphProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider">
+        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+    </bean>
+
+    <bean id="dirtyInformationSourceProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLInformationSourceProvider">
+        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+    </bean>
+
+    <bean id="dirtySemanticDictionaryProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLSemanticDictionaryProvider">
+        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+    </bean>
+
+    <bean id="dirtyTickerProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider">
+        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+    </bean>
+    <!--DB conf-->
+    <bean id="dirtyDataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+        <property name="validationQuery" value="select 1"/>
+    </bean>
+    <bean id="dirtyJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
+        <constructor-arg ref="dirtyDataSource"/>
+    </bean>
+</beans>

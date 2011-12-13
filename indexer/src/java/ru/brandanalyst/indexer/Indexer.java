@@ -8,9 +8,9 @@ import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.Version;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
+import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
+import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 
@@ -31,12 +31,12 @@ public class Indexer implements InitializingBean {
 
     private IndexWriter brandwriter;
     private IndexWriter articlewriter;
-    private SimpleJdbcTemplate jdbcTemplate;
     private String directoryBrand;
     private String directoryArticle;
+    private ProvidersHandler providersHandler;
 
-    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public void setProvidersHandler(ProvidersHandler providersHandler) {
+        this.providersHandler = providersHandler;
     }
 
     public void setDirectoryBrand(String directoryBrand) {
@@ -76,8 +76,7 @@ public class Indexer implements InitializingBean {
     private void articleIndex(IndexWriter writer) {
 
         log.info("indexing articles");
-        MySQLArticleProvider provider = new MySQLArticleProvider(jdbcTemplate);
-
+        ArticleProvider provider = providersHandler.getArticleProvider();
         List<Article> list = provider.getAllArticles();
 
         try {
@@ -97,7 +96,7 @@ public class Indexer implements InitializingBean {
     private void brandIndex(IndexWriter writer) {
 
         log.info("indexing brands");
-        MySQLBrandProvider provider = new MySQLBrandProvider(jdbcTemplate);
+        BrandProvider provider = providersHandler.getBrandProvider();
 
         try {
             List<Brand> list = provider.getAllBrands();

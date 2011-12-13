@@ -3,7 +3,7 @@ package ru.brandanalyst.core.db.provider.mysql;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.mapper.InfoSourceMapper;
-import ru.brandanalyst.core.db.provider.global.InformationSourceProvider;
+import ru.brandanalyst.core.db.provider.interfaces.InformationSourceProvider;
 import ru.brandanalyst.core.model.InfoSource;
 
 import java.util.List;

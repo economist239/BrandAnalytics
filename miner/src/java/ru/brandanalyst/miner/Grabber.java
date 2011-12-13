@@ -1,6 +1,7 @@
 package ru.brandanalyst.miner;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
 
 import java.util.Date;
 
@@ -9,13 +10,17 @@ import java.util.Date;
  *         main single grabber class
  */
 public abstract class Grabber {
-    protected SimpleJdbcTemplate jdbcTemplate;
+    protected ProvidersHandler dirtyProvidersHandler;
     protected String config;
 
     public abstract void grab(Date timeLimit);
 
-    public abstract void setConfig(String config);
+    public void setDirtyProvidersHandler(ProvidersHandler dirtyProvidersHandler) {
+        this.dirtyProvidersHandler = dirtyProvidersHandler;
+    }
 
-    public abstract void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate);
+    public void setConfig(String config) {
+        this.config = config;
+    }
 }
 

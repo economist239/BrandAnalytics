@@ -1,19 +1,22 @@
 package ru.brandanalyst.miner.listener;
 
 import org.apache.log4j.Logger;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.runtime.Scraper;
 import org.webharvest.runtime.ScraperRuntimeListener;
 import org.webharvest.runtime.processors.BaseProcessor;
 import org.webharvest.runtime.variables.Variable;
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
+import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.miner.util.DataTransformator;
+import ru.brandanalyst.miner.util.StringChecker;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,15 +30,16 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
     private int i = 0;
     private static final Logger log = Logger.getLogger(RiaNewsScraperRuntimeListener.class);
 
-    private SimpleJdbcTemplate jdbcTemplate;
-    private MySQLArticleProvider articleProvider;
-    private Date timeLimit;
+    private ArticleProvider articleProvider;
+    private List<BrandDictionaryItem> dictionary;
 
-    public RiaNewsScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
-        this.jdbcTemplate = jdbcTemplate;
+    public RiaNewsScraperRuntimeListener(ProvidersHandler providersHandler, Date timeLimit) {
         this.timeLimit = timeLimit;
-        articleProvider = new MySQLArticleProvider(jdbcTemplate);
+        articleProvider = providersHandler.getArticleProvider();
+        dictionary = providersHandler.getBrandDictionaryProvider().getDictionary();
     }
+
+    private Date timeLimit;
 
     private Timestamp evalTimestamp(String stringDate) {
 
@@ -99,14 +103,15 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
 
             long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
             Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
-            System.out.println("Title "+newsTitle);
-            /*if (!StringChecker.hasTerm(new MySQLBrandDictionaryProvider(jdbcTemplate).getDictionary(), newsTitle.toString()))
-                return;*/
+
+            if(StringChecker.hasTerm(dictionary, newsTitle.toString()).size() == 0) {
+                return;
+            }
 
             Variable newsText = (Variable) scraper.getContext().get("newsFullText");
             Variable newsDate = (Variable) scraper.getContext().get("newsDate");
 
-            if(newsDate == null) {
+            if (newsDate == null) {
                 return;
             }
 

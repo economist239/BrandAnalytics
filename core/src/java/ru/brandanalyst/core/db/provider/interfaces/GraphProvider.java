@@ -1,4 +1,4 @@
-package ru.brandanalyst.core.db.provider.global;
+package ru.brandanalyst.core.db.provider.interfaces;
 
 
 import ru.brandanalyst.core.model.Graph;

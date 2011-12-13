@@ -1,14 +1,14 @@
 package ru.brandanalyst.miner.listener;
 
 import org.apache.log4j.Logger;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.runtime.Scraper;
 import org.webharvest.runtime.ScraperRuntimeListener;
 import org.webharvest.runtime.processors.BaseProcessor;
 import org.webharvest.runtime.variables.Variable;
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
+import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.miner.util.DataTransformator;
 import ru.brandanalyst.miner.util.StringChecker;
 
@@ -30,14 +30,14 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
     private int i = 0;
     private static final Logger log = Logger.getLogger(FontankaScraperRuntimeListener.class);
 
-    private SimpleJdbcTemplate jdbcTemplate;
-    private MySQLArticleProvider articleProvider;
+    private ArticleProvider articleProvider;
+    private List<BrandDictionaryItem> dictionary;
     private Date timeLimit;
 
-    public FontankaScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
-        this.jdbcTemplate = jdbcTemplate;
+    public FontankaScraperRuntimeListener(ProvidersHandler providersHandler, Date timeLimit) {
         this.timeLimit = timeLimit;
-        articleProvider = new MySQLArticleProvider(jdbcTemplate);
+        articleProvider = providersHandler.getArticleProvider();
+        providersHandler.getBrandDictionaryProvider().getDictionary();
     }
 
     private Timestamp evalTimestamp(String stringDate) throws StringIndexOutOfBoundsException {
@@ -79,9 +79,8 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
         if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
             try {
                 Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
-                List<Long> brandIds = StringChecker.hasTerm(new MySQLBrandDictionaryProvider(jdbcTemplate).getDictionary(), newsTitle.toString());
+                List<Long> brandIds = StringChecker.hasTerm(dictionary, newsTitle.toString());
                 if (brandIds.isEmpty()) return;
-
 
                 Variable newsText = (Variable) scraper.getContext().get("newsFullText");
                 Variable newsDate = (Variable) scraper.getContext().get("newsDate");

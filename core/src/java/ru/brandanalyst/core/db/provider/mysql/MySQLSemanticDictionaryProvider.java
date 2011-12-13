@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.mapper.SemanticDictionaryMapper;
-import ru.brandanalyst.core.db.provider.global.SemanticDictinaryProvider;
+import ru.brandanalyst.core.db.provider.interfaces.SemanticDictinaryProvider;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
 
 import java.util.List;

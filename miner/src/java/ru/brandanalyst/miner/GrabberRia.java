@@ -25,24 +25,13 @@ public class GrabberRia extends Grabber {
     private static final String sourceURL = "http://ria.ru";
 
     @Override
-    public void setConfig(String config) {
-        this.config = config;
-    }
-
-    @Override
-    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
-    @Override
     public void grab(Date timeLimit) {
-
-        for (Brand b : new MySQLBrandProvider(jdbcTemplate).getAllBrands()) {
+        for (Brand b : dirtyProvidersHandler.getBrandProvider().getAllBrands()) {
             try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.setDebug(true);
-                scraper.addRuntimeListener(new RiaNewsScraperRuntimeListener(this.jdbcTemplate, timeLimit));
+                scraper.addRuntimeListener(new RiaNewsScraperRuntimeListener(dirtyProvidersHandler, timeLimit));
                 String query = DataTransformator.stringToQueryString(b.getName());
                 scraper.addVariableToContext("riaQueryURL", searchURL + query + "&p="); //"$p" - suffix for result page number
                 scraper.addVariableToContext("riaAbsoluteURL", sourceURL);
@@ -55,6 +44,5 @@ public class GrabberRia extends Grabber {
         }
         log.info("Ria: succecsful");
         //result.add(scraper.getContext().getVar("temp").toString());
-
     }
 }

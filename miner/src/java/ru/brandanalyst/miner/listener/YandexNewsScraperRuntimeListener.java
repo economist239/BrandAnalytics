@@ -1,11 +1,11 @@
 package ru.brandanalyst.miner.listener;
 
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.runtime.Scraper;
 import org.webharvest.runtime.ScraperRuntimeListener;
 import org.webharvest.runtime.processors.BaseProcessor;
 import org.webharvest.runtime.variables.Variable;
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
+import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.miner.util.DataTransformator;
 
@@ -19,13 +19,12 @@ import java.util.Map;
  * Date: 19.10.11
  * Time: 12:12
  */
+@Deprecated
 public class YandexNewsScraperRuntimeListener implements ScraperRuntimeListener {
-    private SimpleJdbcTemplate jdbcTemplate;
-    private MySQLArticleProvider articleProvider;
+    private ArticleProvider articleProvider;
 
-    public YandexNewsScraperRuntimeListener(SimpleJdbcTemplate jdbcTemplate, Date timeLimit) {
-        this.jdbcTemplate = jdbcTemplate;
-        articleProvider = new MySQLArticleProvider(jdbcTemplate);
+    public YandexNewsScraperRuntimeListener(ProvidersHandler providersHandler, Date timeLimit) {
+        articleProvider = providersHandler.getArticleProvider();
     }
 
     public void onExecutionStart(Scraper scraper) {

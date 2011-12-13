@@ -14,8 +14,8 @@ import java.util.List;
  * Time: 11:47 AM
  * container of grabbes that process all grabbers
  */
-public class GrabberContainer {
-    private static final Logger log = Logger.getLogger(GrabberContainer.class);
+public class GrabberHandler {
+    private static final Logger log = Logger.getLogger(GrabberHandler.class);
     private static final int DATE_STRING_LENGTH = 19;
 
     private List<Grabber> grabberList;

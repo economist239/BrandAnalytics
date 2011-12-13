@@ -1,10 +1,8 @@
 package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
+import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
+import ru.brandanalyst.core.db.provider.interfaces.BrandDictionaryProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
@@ -24,32 +22,20 @@ import static ru.brandanalyst.core.time.TimeProperties.SINGLE_DAY;
  * Time: 14:14
  */
 public class GrabberTwitter extends Grabber {
-    private static final long TIME_LIMIT = (long) 10;
-
     private static final Logger log = Logger.getLogger(GrabberTwitter.class);
 
     private static final int ISSUANCE_SIZE = 1500;
     private static final int PAGE_SIZE = 100;
 
-    @Deprecated
-    public void setConfig(String config) {
-        this.config = config;  //not using
-    }
-
-    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
     public void grab(Date timeLimit) {
         log.info("Twitter grabber started...");
         Twitter twitter = new TwitterFactory().getInstance();
 
-        List<Brand> brandList = new MySQLBrandProvider(jdbcTemplate).getAllBrands();
-        MySQLArticleProvider articleProvider = new MySQLArticleProvider(jdbcTemplate);
-        MySQLBrandDictionaryProvider dictionaryProvider = new MySQLBrandDictionaryProvider(jdbcTemplate);
+        List<Brand> brandList = dirtyProvidersHandler.getBrandProvider().getAllBrands();
+        ArticleProvider articleProvider =  dirtyProvidersHandler.getArticleProvider();
+        BrandDictionaryProvider dictionaryProvider = dirtyProvidersHandler.getBrandDictionaryProvider();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
 
         for (Brand b : brandList) {
             BrandDictionaryItem dictionary = dictionaryProvider.getDictionaryItem(b.getId());
@@ -84,7 +70,6 @@ public class GrabberTwitter extends Grabber {
                     } while (ISSUANCE_SIZE > resultTweets.size() && resultsOnPage >= PAGE_SIZE);
                 } catch (TwitterException e) {
                     log.info("tweets in day: " + resultTweets.size());
-                    //    e.printStackTrace();
                 }
 
                 Iterator<Map.Entry<String, TweetInfo>> resultIterator =
@@ -92,7 +77,7 @@ public class GrabberTwitter extends Grabber {
                 while (resultIterator.hasNext()) {
                     Map.Entry<String, TweetInfo> next = resultIterator.next();
                     articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
-                            "", "", next.getKey(), getSimpleTime(next.getValue().getTime()), next.getValue().getNumLikes()));
+                            "", "", next.getKey(), getSimpleTime(next.getValue().time), next.getValue().numLikes));
                 }
 
             }
@@ -119,7 +104,7 @@ public class GrabberTwitter extends Grabber {
                 }
                 if (tweetsInfoMap.containsKey(str)) {
                     TweetInfo tweetInfo = tweetsInfoMap.get(str);
-                    tweetInfo.setNumLikes(tweetInfo.getNumLikes() + 1);
+                    tweetInfo.numLikes += 1;
                     tweetsInfoMap.put(str, tweetInfo);
                 } else {
                     TweetInfo tweetInfo
@@ -133,28 +118,12 @@ public class GrabberTwitter extends Grabber {
     }
 
     class TweetInfo {
-        Timestamp time;
-        int numLikes;
+        public Timestamp time;
+        public int numLikes;
 
         TweetInfo(Timestamp time, int numLikes) {
             this.numLikes = numLikes;
             this.time = time;
-        }
-
-        public Timestamp getTime() {
-            return time;
-        }
-
-        public void setTime(Timestamp time) {
-            this.time = time;
-        }
-
-        public int getNumLikes() {
-            return numLikes;
-        }
-
-        public void setNumLikes(int numLikes) {
-            this.numLikes = numLikes;
         }
     }
 }

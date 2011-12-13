@@ -19,8 +19,8 @@ public class TestGraphsFromDB {
 
     public static void main(String[] args) {
         BasicDataSource ds = new BasicDataSource();
-        ds.setDriverClassName("com.global.jdbc.Driver");
-        ds.setUrl("jdbc:global://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8");
+        ds.setDriverClassName("com.interfaces.jdbc.Driver");
+        ds.setUrl("jdbc:interfaces://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8");
         ds.setUsername("root");
         ds.setPassword("root");
         ds.setValidationQuery("select 1");

@@ -3,7 +3,7 @@ package ru.brandanalyst.core.db.provider.mysql;
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
-import ru.brandanalyst.core.db.provider.global.TickerProvider;
+import ru.brandanalyst.core.db.provider.interfaces.TickerProvider;
 import ru.brandanalyst.core.model.TickerPair;
 
 import java.util.LinkedList;
