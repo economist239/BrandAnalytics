@@ -3,7 +3,6 @@ package ru.brandanalyst.frontend.yalets;
 import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.core.xml.Xmler;
-import net.sf.xfresh.db.AbstractDbYalet;
 import ru.brandanalyst.core.model.simple.SimplyBrandForWeb;
 import ru.brandanalyst.frontend.services.LeftMenuManager;
 
@@ -20,7 +19,7 @@ public class ShowLeftMenuYalet extends AbstractDbYalet {
 
     public void process(InternalRequest req, InternalResponse res) {
 
-        LeftMenuManager manager = new LeftMenuManager(jdbcTemplate);
+        LeftMenuManager manager = new LeftMenuManager(providersHandler);
 
         List<SimplyBrandForWeb> brandList = manager.getSearchResultByBrand();
         if (brandList != null) {

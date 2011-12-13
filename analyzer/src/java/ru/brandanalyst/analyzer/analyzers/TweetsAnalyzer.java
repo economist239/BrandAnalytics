@@ -1,9 +1,9 @@
 package ru.brandanalyst.analyzer.analyzers;
 
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLSemanticDictionaryProvider;
+import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
+import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
+import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
+import ru.brandanalyst.core.db.provider.interfaces.SemanticDictionaryProvider;
 import ru.brandanalyst.core.model.*;
 import ru.brandanalyst.core.time.TimeProperties;
 
@@ -27,15 +27,18 @@ public class TweetsAnalyzer extends AbstractAnalyzer {
      * метод записывает в базу данных графики упоминаемости брендов
      * в зависимости от эмоциональности
      */
+    private ArticleProvider dirtyArticleProvider;
+    private BrandProvider dirtyBrandProvider;
+    private GraphProvider pureGraphProvider;
+    private SemanticDictionaryProvider dictionaryProvider;
 
     public void analyze() {
 
         log.info("tweets analyzing started...");
-        MySQLBrandProvider dirtyBrandProvider = new MySQLBrandProvider(dirtyJdbcTemplate);
-        MySQLArticleProvider dirtyArticleProvider = new MySQLArticleProvider(dirtyJdbcTemplate);
-        MySQLGraphProvider pureGraphProvider = new MySQLGraphProvider(pureJdbcTemplate);
-        MySQLSemanticDictionaryProvider dictionaryProvider = new MySQLSemanticDictionaryProvider(dirtyJdbcTemplate);
-
+        dirtyBrandProvider = dirtyProvidersHandler.getBrandProvider();
+        dirtyArticleProvider = dirtyProvidersHandler.getArticleProvider();
+        pureGraphProvider = dirtyProvidersHandler.getGraphProvider();
+        dictionaryProvider = dirtyProvidersHandler.getSemanticDictinaryProvider();
 
         Map<Long, Double> graphMapPositive = new HashMap<Long, Double>();
         Map<Long, Double> graphMapNeutral = new HashMap<Long, Double>();
@@ -95,7 +98,7 @@ public class TweetsAnalyzer extends AbstractAnalyzer {
         }
     }
 
-    protected void putGraphToDB(MySQLGraphProvider provider, Brand b, Map<Long, Double> graphMap, int tickerId) {
+    protected void putGraphToDB(GraphProvider provider, Brand b, Map<Long, Double> graphMap, int tickerId) {
         Graph graph = new Graph("");
         for (long t = TimeProperties.TIME_LIMIT; t < new Date().getTime(); t += TimeProperties.SINGLE_DAY) {
             graph.addPoint(new SingleDot(new Timestamp(t), graphMap.get(t)));
@@ -108,9 +111,8 @@ public class TweetsAnalyzer extends AbstractAnalyzer {
      */
     public List<ArticleWordContainer> CountWordsInTweetsAsTriples() {
         log.info("starts tweets opinion analysis ...");
-        MySQLSemanticDictionaryProvider semanticDictionaryProvider = new MySQLSemanticDictionaryProvider(dirtyJdbcTemplate);
 
-        Set<SemanticDictionaryItem> dictionary = semanticDictionaryProvider.getSemanticDictionary();
+        Set<SemanticDictionaryItem> dictionary = dictionaryProvider.getSemanticDictionary();
         Iterator<SemanticDictionaryItem> dictionaryItemIterator = dictionary.iterator();
         List<Article> articles = getTweetsFromDB();
         Iterator<Article> articlesIterator = articles.listIterator();
@@ -145,8 +147,7 @@ public class TweetsAnalyzer extends AbstractAnalyzer {
     }
 
     public List<Article> getTweetsFromDB() {
-        MySQLArticleProvider provider = new MySQLArticleProvider(dirtyJdbcTemplate);
-        return provider.getAllArticlesBySourceId(TWEET_SOURCE_ID);
+        return dirtyArticleProvider.getAllArticlesBySourceId(TWEET_SOURCE_ID);
     }
 
     public class ArticleWordContainer {

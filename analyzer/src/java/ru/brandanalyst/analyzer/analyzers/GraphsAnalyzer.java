@@ -1,8 +1,8 @@
 package ru.brandanalyst.analyzer.analyzers;
 
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider;
+import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
+import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
+import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
@@ -26,11 +26,11 @@ public class GraphsAnalyzer extends AbstractAnalyzer {
     public void analyze() {
 
         log.info("graph analyzing started...");
-        MySQLBrandProvider dirtyBrandProvider = new MySQLBrandProvider(dirtyJdbcTemplate);
-        MySQLBrandProvider pureBrandProvider = new MySQLBrandProvider(pureJdbcTemplate);
-        MySQLArticleProvider dirtyArticleProvider = new MySQLArticleProvider(dirtyJdbcTemplate);
-        MySQLArticleProvider pureArticleProvider = new MySQLArticleProvider(pureJdbcTemplate);
-        MySQLGraphProvider pureGraphProvider = new MySQLGraphProvider(pureJdbcTemplate);
+        BrandProvider dirtyBrandProvider = dirtyProvidersHandler.getBrandProvider();
+        BrandProvider pureBrandProvider = pureProvidersHandler.getBrandProvider();
+        ArticleProvider dirtyArticleProvider = dirtyProvidersHandler.getArticleProvider();
+        ArticleProvider pureArticleProvider = pureProvidersHandler.getArticleProvider();
+        GraphProvider pureGraphProvider = pureProvidersHandler.getGraphProvider();
 
         Map<Long, Double> graphMap = new HashMap<Long, Double>(); //out of memory
 

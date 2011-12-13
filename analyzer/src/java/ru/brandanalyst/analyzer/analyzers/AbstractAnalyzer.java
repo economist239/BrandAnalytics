@@ -1,7 +1,7 @@
 package ru.brandanalyst.analyzer.analyzers;
 
 import org.apache.log4j.Logger;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,15 +12,15 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 public abstract class AbstractAnalyzer {
     protected static final Logger log = Logger.getLogger(AbstractAnalyzer.class);
 
-    protected SimpleJdbcTemplate dirtyJdbcTemplate;
-    protected SimpleJdbcTemplate pureJdbcTemplate;
+    protected ProvidersHandler dirtyProvidersHandler;
+    protected ProvidersHandler pureProvidersHandler;
 
-    public void setDirtyJdbcTemplate(SimpleJdbcTemplate dirtyJdbcTemplate) {
-        this.dirtyJdbcTemplate = dirtyJdbcTemplate;
+    public void setDirtyProvidersHandler(ProvidersHandler dirtyProvidersHandler) {
+        this.dirtyProvidersHandler = dirtyProvidersHandler;
     }
 
-    public void setPureJdbcTemplate(SimpleJdbcTemplate pureJdbcTemplate) {
-        this.pureJdbcTemplate = pureJdbcTemplate;
+    public void setPureProvidersHandler(ProvidersHandler pureProvidersHandler) {
+        this.pureProvidersHandler = pureProvidersHandler;
     }
 
     public abstract void analyze();

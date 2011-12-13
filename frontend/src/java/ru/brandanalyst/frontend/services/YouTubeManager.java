@@ -1,7 +1,6 @@
 package ru.brandanalyst.frontend.services;
 
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.model.YouTubeVideo;
 import ru.brandanalyst.frontend.services.youtube.YouTubeEntry;
 import ru.brandanalyst.frontend.services.youtube.YouTubeGrabber;
@@ -17,16 +16,15 @@ import java.util.List;
  * Date: 11/19/11
  * Time: 8:30 PM
  */
-public class YouTubeManager {
-    private final SimpleJdbcTemplate jdbcTemplate;
+public class YouTubeManager extends AbstractManager {
 
-    public YouTubeManager(SimpleJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public YouTubeManager(ProvidersHandler providersHandler) {
+        super(providersHandler);
     }
 
     public List<YouTubeVideo> getVideosByBrandId(long brandId) {
 
-        String brandName = new MySQLBrandProvider(jdbcTemplate).getBrandById(brandId).getName();
+        String brandName = providersHandler.getBrandProvider().getBrandById(brandId).getName();
 
         try {
             ArrayList<YouTubeEntry> result = YouTubeGrabber.searchYouTubeVideos(brandName, 10);

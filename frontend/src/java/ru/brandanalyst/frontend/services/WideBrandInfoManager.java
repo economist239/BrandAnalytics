@@ -1,9 +1,10 @@
 package ru.brandanalyst.frontend.services;
 
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
+import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
+import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
+import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider;
 import ru.brandanalyst.core.model.*;
 import ru.brandanalyst.core.model.simple.GraphForWeb;
@@ -20,24 +21,24 @@ import java.util.List;
  * Time: 7:34 PM
  * gets wide information about brand from db
  */
-public class WideBrandInfoManager {
+public class WideBrandInfoManager extends AbstractManager {
 
     /**
      * количество показываемых последних новостей
      */
     private final static int NUM_ARTICLES = 6;
-    private final SimpleJdbcTemplate jdbcTemplate;
 
-    public WideBrandInfoManager(SimpleJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public WideBrandInfoManager(ProvidersHandler providersHandler) {
+        super(providersHandler);
     }
 
     public List<TickerPair> getTickers() {
-        return new MySQLTickerProvider(jdbcTemplate).getTickers();
+
+        return providersHandler.getTickerProvider().getTickers();
     }
 
     public Brand getBrand(long brandId) {
-        MySQLBrandProvider brandProvider = new MySQLBrandProvider(jdbcTemplate);
+        BrandProvider brandProvider = providersHandler.getBrandProvider();
         return brandProvider.getBrandById(brandId);
     }
 
@@ -45,7 +46,7 @@ public class WideBrandInfoManager {
      * В будущем предполагается виджет, со своим сервисом, который заменит этот метод
      */
     public GraphForWeb getGraphsForBrand(long brandId, long tickerId) {
-        MySQLGraphProvider graphProvider = new MySQLGraphProvider(jdbcTemplate);
+        GraphProvider graphProvider = providersHandler.getGraphProvider();
         Graph graph = graphProvider.getGraphByTickerAndBrand(brandId, tickerId);
         GraphForWeb graphForWeb = new GraphForWeb(graph.getTicker());
         for (SingleDot d : graph.getGraph()) {
@@ -55,7 +56,7 @@ public class WideBrandInfoManager {
     }
 
     public List<SimplyArticleForWeb> getArticlesForBrand(long brandId) {
-        MySQLArticleProvider articleProvider = new MySQLArticleProvider(jdbcTemplate);
+        ArticleProvider articleProvider = providersHandler.getArticleProvider();
         List<Article> articles = articleProvider.getTopArticles(brandId, NUM_ARTICLES);
         List<SimplyArticleForWeb> simplyArticles = new ArrayList<SimplyArticleForWeb>();
         //TODO getting source info by id

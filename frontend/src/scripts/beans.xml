@@ -5,7 +5,9 @@
 <beans default-autowire="byName" default-init-method="getReadyForSearch">
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
-    <import resource="file:./core/src/script/dbpureconfig.xml"/>
+    <!--DB CONFIG-->
+    <import resource="file:./core/src/script/dbhandler_pure.xml"/>
+    <alias alias="providersHandler" ref="pureProvidersHandler"/>
     <!--Jetty beans-->
     <bean id="serverInitializer" class="net.sf.xfresh.jetty.JettyServerInitializer">
         <property name="port" value="8081"/>

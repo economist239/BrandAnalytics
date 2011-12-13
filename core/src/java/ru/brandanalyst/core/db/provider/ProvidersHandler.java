@@ -31,7 +31,7 @@ public class ProvidersHandler {
         return informationSourceProvider;
     }
 
-    public SemanticDictinaryProvider getSemanticDictinaryProvider() {
+    public SemanticDictionaryProvider getSemanticDictinaryProvider() {
         return semanticDictinaryProvider;
     }
 
@@ -65,7 +65,7 @@ public class ProvidersHandler {
     }
 
     @Required
-    public void setSemanticDictinaryProvider(SemanticDictinaryProvider semanticDictinaryProvider) {
+    public void setSemanticDictinaryProvider(SemanticDictionaryProvider semanticDictinaryProvider) {
         this.semanticDictinaryProvider = semanticDictinaryProvider;
     }
 
@@ -79,7 +79,7 @@ public class ProvidersHandler {
     private BrandDictionaryProvider brandDictionaryProvider;
     private GraphProvider graphProvider;
     private InformationSourceProvider informationSourceProvider;
-    private SemanticDictinaryProvider semanticDictinaryProvider;
+    private SemanticDictionaryProvider semanticDictinaryProvider;
     private TickerProvider tickerProvider;
 
 }

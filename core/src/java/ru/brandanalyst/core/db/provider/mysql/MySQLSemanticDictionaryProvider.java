@@ -4,7 +4,7 @@ import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.mapper.SemanticDictionaryMapper;
-import ru.brandanalyst.core.db.provider.interfaces.SemanticDictinaryProvider;
+import ru.brandanalyst.core.db.provider.interfaces.SemanticDictionaryProvider;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.HashSet;
  * Date: 11/4/11
  * Time: 9:20 AM
  */
-public class MySQLSemanticDictionaryProvider implements SemanticDictinaryProvider {
+public class MySQLSemanticDictionaryProvider implements SemanticDictionaryProvider {
     private static final Logger log = Logger.getLogger(MySQLSemanticDictionaryProvider.class);
     private SimpleJdbcTemplate jdbcTemplate;
     private SemanticDictionaryMapper semanticDictMapper;

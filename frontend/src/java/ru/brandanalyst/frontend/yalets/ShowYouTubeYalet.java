@@ -2,7 +2,6 @@ package ru.brandanalyst.frontend.yalets;
 
 import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
-import net.sf.xfresh.db.AbstractDbYalet;
 import ru.brandanalyst.frontend.services.YouTubeManager;
 
 /**
@@ -16,7 +15,7 @@ public class ShowYouTubeYalet extends AbstractDbYalet {
 
         long brandId = req.getLongParameter("id");
 
-        YouTubeManager manager = new YouTubeManager(jdbcTemplate);
+        YouTubeManager manager = new YouTubeManager(providersHandler);
         res.add(manager.getVideosByBrandId(brandId));
     }
 }

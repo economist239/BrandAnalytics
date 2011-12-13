@@ -1,7 +1,7 @@
 package ru.brandanalyst.frontend.services;
 
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
+import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.simple.SimplyBrandForWeb;
 
@@ -15,17 +15,15 @@ import java.util.List;
  * Date: 10/16/11
  * Time: 4:10 PM
  */
-public class LeftMenuManager {
+public class LeftMenuManager extends AbstractManager {
 
-    private final SimpleJdbcTemplate jdbcTemplate;
-
-    public LeftMenuManager(SimpleJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public LeftMenuManager(ProvidersHandler providersHandler) {
+        super(providersHandler);
     }
 
     public List<SimplyBrandForWeb> getSearchResultByBrand() {
 
-        MySQLBrandProvider brandProvider = new MySQLBrandProvider(jdbcTemplate);
+        BrandProvider brandProvider = providersHandler.getBrandProvider();
 
         try {
             List<SimplyBrandForWeb> brandList = new ArrayList<SimplyBrandForWeb>();

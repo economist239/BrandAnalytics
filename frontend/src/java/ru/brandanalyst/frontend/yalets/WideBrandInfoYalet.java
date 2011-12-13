@@ -3,7 +3,6 @@ package ru.brandanalyst.frontend.yalets;
 import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.core.xml.Xmler;
-import net.sf.xfresh.db.AbstractDbYalet;
 import ru.brandanalyst.frontend.services.WideBrandInfoManager;
 
 /**
@@ -24,7 +23,7 @@ public class WideBrandInfoYalet extends AbstractDbYalet {
             tickerId = req.getLongParameter("ticker_id");
         }
 
-        WideBrandInfoManager manager = new WideBrandInfoManager(jdbcTemplate);
+        WideBrandInfoManager manager = new WideBrandInfoManager(providersHandler);
 
         if (manager.getBrand(brandId) != null) {
             res.add(manager.getArticlesForBrand(brandId));

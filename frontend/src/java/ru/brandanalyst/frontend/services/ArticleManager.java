@@ -1,8 +1,8 @@
 package ru.brandanalyst.frontend.services;
 
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLInformationSourceProvider;
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
+import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
+import ru.brandanalyst.core.db.provider.interfaces.InformationSourceProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.InfoSource;
 import ru.brandanalyst.core.model.simple.WideArticleForWeb;
@@ -15,19 +15,17 @@ import ru.brandanalyst.core.model.simple.WideArticleForWeb;
  * Time: 11:41 PM
  * article service (get article from db and push it to yalet)
  */
-public class ArticleManager {
+public class ArticleManager extends AbstractManager {
 
-    private final SimpleJdbcTemplate jdbcTemplate;
-
-    public ArticleManager(SimpleJdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public ArticleManager(ProvidersHandler providersHandler) {
+        super(providersHandler);
     }
 
     public WideArticleForWeb getArticle(long id) {
-        MySQLArticleProvider articleProvider = new MySQLArticleProvider(jdbcTemplate);
+        ArticleProvider articleProvider = providersHandler.getArticleProvider();
         Article article = articleProvider.getArticleById(id);
 
-        MySQLInformationSourceProvider informationSourceProvider = new MySQLInformationSourceProvider(jdbcTemplate);
+        InformationSourceProvider informationSourceProvider = providersHandler.getInformationSourceProvider();
         InfoSource infoSource = informationSourceProvider.getInfoSourceById(article.getSourceId());
 
         return new WideArticleForWeb(article.getLink(),

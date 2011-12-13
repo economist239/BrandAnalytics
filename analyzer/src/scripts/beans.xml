@@ -5,7 +5,9 @@
 <beans default-autowire="byName">
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
-
+    <!--DB CONFIG-->
+    <import resource="file:./core/src/script/dbhandler_pure.xml"/>
+    <import resource="file:./core/src/script/dbhandler_dirty.xml"/>
     <!--AnalyzerProcesser conf-->
     <bean id="analyzerProcessor" destroy-method="close" class="ru.brandanalyst.analyzer.AnalyzerProcesser" lazy-init="false">
         <property name="analyzers">
