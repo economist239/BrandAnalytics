@@ -2,24 +2,14 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
+    <content url="file://$MODULE_DIR$/../index">
+      <sourceFolder url="file://$MODULE_DIR$/../index/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../index/src/scripts" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../lib/lucene-core-3.0.3.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module" module-name="core" />
-    <orderEntry type="module" module-name="indexer" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="module" module-name="core" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">

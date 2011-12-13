@@ -280,9 +280,8 @@
       <module fileurl="file://$PROJECT_DIR$/assessor-tool/assessor-tool.iml" filepath="$PROJECT_DIR$/assessor-tool/assessor-tool.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/src/core.iml" filepath="$PROJECT_DIR$/core/src/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/indexer/indexer.iml" filepath="$PROJECT_DIR$/indexer/indexer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/indexer/index.iml" filepath="$PROJECT_DIR$/indexer/index.iml" />
       <module fileurl="file://$PROJECT_DIR$/miner/miner.iml" filepath="$PROJECT_DIR$/miner/miner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/searcher/searcher.iml" filepath="$PROJECT_DIR$/searcher/searcher.iml" />
     </modules>
   </component>
   <component name="ProjectReloadState">
@@ -291,7 +290,7 @@
   <component name="ProjectResources">
     <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="1.7" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="RunManager">

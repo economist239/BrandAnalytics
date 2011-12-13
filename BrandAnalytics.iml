@@ -14,7 +14,7 @@
     <orderEntry type="module" module-name="miner" />
     <orderEntry type="module" module-name="analyzer" />
     <orderEntry type="module" module-name="core" />
-    <orderEntry type="module" module-name="indexer" />
+    <orderEntry type="module" module-name="index" />
     <orderEntry type="library" name="lib" level="project" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">

@@ -12,7 +12,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * Author: Olga Bolshakova (obolshakova@yandex-team.ru)
  * Date: 02.01.11 18:09
  */
 public class MinerGrabbersTest extends AbstractDependencyInjectionSpringContextTests {

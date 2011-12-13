@@ -31,7 +31,7 @@
                 <attribute name="Built-By" value="core: build.xml"/>
                 <attribute name="Main-Class" value="net.sf.xfresh.util.Starter"/>
                 <!--это класс который запускается при запуске джарника-->
-                <attribute name="Class-Path" value="${libs_manifest} ${dist.dir}/searcher.jar ${build.dir}"/>
+                <attribute name="Class-Path" value="${libs_manifest} ${dist.dir}/index.jar ${build.dir}"/>
                 <!--его класс пасс-->
             </manifest>
         </jar>

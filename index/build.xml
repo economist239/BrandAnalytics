@@ -6,13 +6,13 @@
         <fileset dir="${dist.dir}" includes="**/*.jar"/>
     </path>
 
-    <property name="src.searcher.dir" location="${project.dir}/searcher/src/java/"/>
+    <property name="src.index.dir" location="${project.dir}/index/src/java/"/>
     <pathconvert pathsep=" " property="libs_manifest" refid="libs"/>
 
     <target name="all">
 
         <!--class-файлы в папку build/classes-->
-        <javac srcdir="${src.searcher.dir}"
+        <javac srcdir="${src.index.dir}"
                destdir="${build.dir}/classes"
                debug="true"
                deprecation="true"
@@ -22,18 +22,18 @@
         </javac>
 
         <!--собирается архив с классом, у которого есть метод main в папку dist-->
-        <jar destfile="${dist.dir}/searcher.jar" basedir="${classes.dir}" includes="ru/brandanalyst/searcher/**/*.*">
+        <jar destfile="${dist.dir}/index.jar" basedir="${classes.dir}" includes="ru/brandanalyst/index/**/*.*">
             <manifest>
-                <attribute name="Built-By" value="searcher: build.xml"/>
+                <attribute name="Built-By" value="index: build.xml"/>
                 <attribute name="Class-Path" value="${libs_manifest}/"/>
             </manifest>
         </jar>
 
-        <mkdir dir="${build.dir}/frontend"/>
-        <copy todir="${build.dir}/frontend" overwrite="true">
-            <fileset dir="${project.dir}/frontend" includes="**/*.*" excludes="**/*.java build.xml *.iml"/>
+        <mkdir dir="${build.dir}/index"/>
+        <copy todir="${build.dir}/index" overwrite="true">
+            <fileset dir="${project.dir}/index" includes="**/*.*" excludes="**/*.java build.xml *.iml"/>
         </copy>
-        <echo>searcher building complete</echo>
+        <echo>core building complete</echo>
     </target>
 
 </project>

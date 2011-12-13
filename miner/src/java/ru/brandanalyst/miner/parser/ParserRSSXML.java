@@ -39,43 +39,42 @@ public class ParserRSSXML {
         StringBuilder resultDate = new StringBuilder();
         dateTokenizer.nextToken();
         resultDate.append(dateTokenizer.nextToken());
-        switch (dateTokenizer.nextToken()) {
-            case "Jan":
+        String month = dateTokenizer.nextToken();
+        if (month.equals("Jan")) {
                 resultDate.append("01");
-                break;
-            case "Feb":
-                resultDate.append("02");
-                break;
-            case "Mar":
-                resultDate.append("03");
-                break;
-            case "Apr":
-                resultDate.append("04");
-                break;
-            case "May":
-                resultDate.append("05");
-                break;
-            case "Jun":
-                resultDate.append("06");
-                break;
-            case "Jul":
-                resultDate.append("07");
-                break;
-            case "Aug":
-                resultDate.append("08");
-                break;
-            case "Sep":
-                resultDate.append("09");
-                break;
-            case "Oct":
-                resultDate.append("10");
-                break;
-            case "Nov":
-                resultDate.append("11");
-                break;
-            case "Dec":
-                resultDate.append("12");
-                break;
+        }
+        if (month.equals("Feb")) {
+            resultDate.append("01");
+        }
+        if (month.equals("Mar")) {
+            resultDate.append("01");
+        }
+        if (month.equals("Apr")) {
+            resultDate.append("01");
+        }
+        if (month.equals("May")) {
+            resultDate.append("01");
+        }
+        if (month.equals("Jun")) {
+            resultDate.append("01");
+        }
+        if (month.equals("Jul")) {
+            resultDate.append("01");
+        }
+        if (month.equals("Aug")) {
+            resultDate.append("01");
+        }
+        if (month.equals("Sep")) {
+            resultDate.append("01");
+        }
+        if (month.equals("Oct")) {
+            resultDate.append("01");
+        }
+        if (month.equals("Nov")) {
+            resultDate.append("01");
+        }
+        if (month.equals("Dec")) {
+            resultDate.append("01");
         }
         resultDate.append(dateTokenizer.nextToken());
         SimpleDateFormat dateFormat = new SimpleDateFormat("ddMMyyyy");

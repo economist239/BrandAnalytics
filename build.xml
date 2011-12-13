@@ -10,9 +10,8 @@
     <!--пути к вложенным билд файлам-->
     <property name="core.build" location="${project.dir}/core/build.xml"/>
     <property name="miner.build" location="${project.dir}/miner/build.xml"/>
-    <property name="indexer.build" location="${project.dir}/indexer/build.xml"/>
+    <property name="index.build" location="${project.dir}/index/build.xml"/>
     <property name="frontend.build" location="${project.dir}/frontend/build.xml"/>
-    <property name="searcher.build" location="${project.dir}/searcher/build.xml"/>
     <property name="analyzer.build" location="${project.dir}/analyzer/build.xml"/>
 
     <!-- classpath -->
@@ -33,15 +32,11 @@
         <ant antfile="${core.build}"/>
     </target>
 
-    <target name="indexer" depends="core">
-        <ant antfile="${indexer.build}"/>
+    <target name="index" depends="core">
+        <ant antfile="${index.build}"/>
     </target>
 
-    <target name="searcher" depends="indexer">
-        <ant antfile="${searcher.build}"/>
-    </target>
-
-    <target name="frontend" depends="searcher">
+    <target name="frontend" depends="index">
         <ant antfile="${frontend.build}"/>
     </target>
 
@@ -56,21 +51,20 @@
     <!--по умолчанию вызывается этот таргет (тут пара строчек лишние, но так понятнее)-->
     <target name="all" depends="init">
         <antcall target="core"/>
-        <antcall target="indexer"/>
+        <antcall target="index"/>
         <antcall target="frontend"/>
         <antcall target="miner"/>
-        <antcall target="searcher"/>
         <antcall target="analyzer"/>
         <antcall target="checkstyle"/>
         <antcall target="findbugs"/>
     </target>
 
     <!--для запуска различных модулей испольются следующие таргеты-->
-    <target name="run_indexer">
+    <target name="run_index">
         <java dir="${build.dir}" jar="${dist.dir}/core.jar" fork="true">
             <jvmarg value="-Xms64m"/>
             <jvmarg value="-Xmx1750m"/>
-            <arg value="/indexer/src/scripts/beans.xml"/>
+            <arg value="/index/src/scripts/beans.xml"/>
         </java>
     </target>
 
