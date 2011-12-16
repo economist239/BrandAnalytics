@@ -13,6 +13,7 @@ public class PositiveSvmWekaClassifier extends SvmWekaClassifier {
     public PositiveSvmWekaClassifier(List<String> variablesId){
         super(variablesId);
     }
+
     @Override
     public void initializeClassifier(){
 

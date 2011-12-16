@@ -30,13 +30,30 @@ public interface Classifier {
      */
     public void loadClassificationModel();
 
-    //TODO: сделать все это нармальна
+    /**
+     * Метод, устанавливающий данные для анализа
+     * @param data - данные для анализа каждый List<Double> - координаты твита в пространстве признаков (слов)
+     */
     public void setDataForAnalyse(List<List<Double>> data);
 
+    /**
+     * инициализируем размерность входных данных для анализа
+     * @param n - размерность входных данных для анализа
+     */
     public void initializeDataForAnalyse(int n);
 
+    /**
+     * добавляет данные для анализа
+     * @param data - данные для анализа каждый List<Double> - координаты твита в пространстве признаков (слов)
+     */
     public void addDataForAnalyse(List<List<Double>> data);
 
+
+    /**
+     * анализирует твит
+     * @param list  - координаты твита в пространстве признаков (слов)
+     * @return результат классификации
+     */
     public double analyse(List<Double> list);
 
 }

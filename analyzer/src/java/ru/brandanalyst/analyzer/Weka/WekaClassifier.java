@@ -28,7 +28,6 @@ public abstract class WekaClassifier implements ru.brandanalyst.analyzer.Global.
     protected List<String> variabalesId;
 
 
-
     public abstract void initializeClassifier();
 
     WekaClassifier(List<String> variablesId){

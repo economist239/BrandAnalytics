@@ -20,7 +20,6 @@ public abstract class SvmWekaClassifier extends WekaClassifier{
         super(variablesId);
     }
 
-
     protected static Instances attributeToNominal(Instances insts)
     {
         FastVector labels = new FastVector();

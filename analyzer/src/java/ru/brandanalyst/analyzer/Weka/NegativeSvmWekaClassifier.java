@@ -9,9 +9,11 @@ import java.util.List;
  * Time: 19:03
  */
 public class NegativeSvmWekaClassifier extends SvmWekaClassifier {
+
     public NegativeSvmWekaClassifier(List<String> variablesId){
         super(variablesId);
     }
+
     @Override
     public void initializeClassifier(){
 
