@@ -1,11 +1,13 @@
 package ru.brandanalyst.analyzer.analyzers;
 
+import ru.brandanalyst.analyzer.util.TweetUtil;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.db.provider.interfaces.SemanticDictionaryProvider;
 import ru.brandanalyst.core.model.*;
 import ru.brandanalyst.core.time.TimeProperties;
+import twitter4j.Tweet;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -79,7 +81,7 @@ public class TweetsAnalyzer extends AbstractAnalyzer {
     protected double getSentiment(Article a, Set<SemanticDictionaryItem> dictionary) {
         double result = 0;
         for (SemanticDictionaryItem item : dictionary) {
-            int count = countsSubInString(a.getContent(), item.getTerm());
+            int count = TweetUtil.countsSubInString(a.getContent(), item.getTerm());
             if (count > 0) {
                 result += count * item.getSemanticValue();
             }
@@ -106,75 +108,8 @@ public class TweetsAnalyzer extends AbstractAnalyzer {
         provider.writeGraph(graph, b.getId(), tickerId);
     }
 
-    /**
-     * метод считает количество семантических термов в текстах статей (твитов)
-     */
-    public List<ArticleWordContainer> CountWordsInTweetsAsTriples() {
-        log.info("starts tweets opinion analysis ...");
 
-        Set<SemanticDictionaryItem> dictionary = dictionaryProvider.getSemanticDictionary();
-        Iterator<SemanticDictionaryItem> dictionaryItemIterator = dictionary.iterator();
-        List<Article> articles = getTweetsFromDB();
-        Iterator<Article> articlesIterator = articles.listIterator();
 
-        List<ArticleWordContainer> articleWordCount = new ArrayList<ArticleWordContainer>();
-        SemanticDictionaryItem dictionaryItem;
-        Article article;
-        int count;
-        while (articlesIterator.hasNext()) {
-            article = articlesIterator.next();
-            while (dictionaryItemIterator.hasNext()) {
-                dictionaryItem = dictionaryItemIterator.next();
-                count = countsSubInString(article.getContent(), dictionaryItem.getTerm());
-                if (count > 0) {
-                    articleWordCount.add(new ArticleWordContainer(article.getId(), dictionaryItem, count));
-                }
-            }
-        }
-        log.info("finish counting semantic word in articles");
-        return articleWordCount;
 
-    }
 
-    public int countsSubInString(String target, String sub) {
-        int count = 0;
-        int indexFrom = 0;
-        while ((indexFrom = target.indexOf(sub, indexFrom)) > 0) {
-            ++count;
-            indexFrom += sub.length();
-        }
-        return count;
-    }
-
-    public List<Article> getTweetsFromDB() {
-        return dirtyArticleProvider.getAllArticlesBySourceId(TWEET_SOURCE_ID);
-    }
-
-    public class ArticleWordContainer {
-        private long articleId;
-        private SemanticDictionaryItem dictionaryItem;// TODO: по-хорошему, для экономии, надо бы иметь id слова
-        private int count;
-
-        public ArticleWordContainer(long articleId, SemanticDictionaryItem dictionaryItem, int count) {
-            this.articleId = articleId;
-            this.count = count;
-            this.dictionaryItem = dictionaryItem;
-        }
-
-        public long getArticleId() {
-            return articleId;
-        }
-
-        public void setArticleId(long articleId) {
-            this.articleId = articleId;
-        }
-
-        public int getCount() {
-            return count;
-        }
-
-        public void setCount(int count) {
-            this.count = count;
-        }
-    }
 }
