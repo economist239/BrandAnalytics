@@ -11,7 +11,7 @@ import ru.brandanalyst.frontend.services.YouTubeManager;
  * Time: 8:29 PM
  */
 public class ShowYouTubeYalet extends AbstractDbYalet {
-     public void process(InternalRequest req, InternalResponse res) {
+    public void process(InternalRequest req, InternalResponse res) {
 
         long brandId = req.getLongParameter("id");
 

@@ -30,7 +30,7 @@ public class Brand {
         this.description = description;
         this.website = website;
         this.branchId = -1;
-        this.finamName="";
+        this.finamName = "";
     }
 
     public long getId() {

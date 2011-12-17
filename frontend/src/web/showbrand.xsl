@@ -43,7 +43,8 @@
             if(document.location.href.indexOf("&amp;") == -1) {
             return parent.location.href = document.location.href +"&amp;ticker_id=" + val;
             } else {
-            return parent.location.href = document.location.href.substring(0, document.location.href.indexOf("ticker")) +"ticker_id=" + val ;
+            return parent.location.href = document.location.href.substring(0, document.location.href.indexOf("ticker"))
+            +"ticker_id=" + val ;
             }
             }
         </script>
@@ -98,9 +99,13 @@
         <script>
             function youtubePage(){
             if (document.location.href.indexOf("&amp;") == -1) {
-            return parent.location.href = document.location.href.substring(0, document.location.href.indexOf("showbrand")) + "showyoutube.xml" + document.location.href.substring(document.location.href.indexOf("?id"), document.location.href.length);
+            return parent.location.href = document.location.href.substring(0,
+            document.location.href.indexOf("showbrand")) + "showyoutube.xml" +
+            document.location.href.substring(document.location.href.indexOf("?id"), document.location.href.length);
             } else {
-            return parent.location.href = document.location.href.substring(0, document.location.href.indexOf("showbrand")) + "showyoutube.xml" + document.location.href.substring(document.location.href.indexOf("?id"), document.location.href.indexOf("&amp;"));
+            return parent.location.href = document.location.href.substring(0,
+            document.location.href.indexOf("showbrand")) + "showyoutube.xml" +
+            document.location.href.substring(document.location.href.indexOf("?id"), document.location.href.indexOf("&amp;"));
             }
             }
         </script>

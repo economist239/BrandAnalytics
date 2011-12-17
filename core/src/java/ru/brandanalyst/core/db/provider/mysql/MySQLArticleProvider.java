@@ -1,8 +1,8 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.mapper.ArticleMapper;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 
@@ -25,11 +25,10 @@ public class MySQLArticleProvider implements ArticleProvider {
     /**
      * разметчик для преобразования строки в переменную типа Article
      */
-    private ArticleMapper articleMapper;
 
-    public MySQLArticleProvider(SimpleJdbcTemplate jdbcTemplate) {
+    @Required
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        articleMapper = new ArticleMapper();
     }
 
     @Deprecated
@@ -59,33 +58,34 @@ public class MySQLArticleProvider implements ArticleProvider {
     }
 
     public Article getArticleBySourceId(long sourceId) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE InfosourceId = " + sourceId, articleMapper);
+        List<Article> list = jdbcTemplate.query("SELECT * FROM Article WHERE InfosourceId = " + sourceId, MappersHolder.ARTICLE_MAPPER);
         return list.get(0);
     }
 
 
     public List<Article> getAllArticlesBySourceId(long sourceId) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE InfosourceId = " + sourceId, articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE InfosourceId = " + sourceId, MappersHolder.ARTICLE_MAPPER);
         return list;
     }
 
     public Article getArticleById(long articleId) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE Id = " + Long.toString(articleId), articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE Id = " + Long.toString(articleId), MappersHolder.ARTICLE_MAPPER);
         return list.get(0);
     }
 
     public List<Article> getAllArticlesByBrand(long brandId) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE BrandId = " + Long.toString(brandId), articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE BrandId = " + Long.toString(brandId), MappersHolder.ARTICLE_MAPPER);
         return list;
     }
 
     public List<Article> getAllOfficialArticlesByBrand(long brandId) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article INNER JOIN InformationSource ON InfoSourceId = InformationSource.Id WHERE BrandId = " + brandId + " AND InformationSource.TypeId = 1", articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article INNER JOIN InformationSource ON InfoSourceId = InformationSource.Id WHERE BrandId = " +
+                brandId + " AND InformationSource.TypeId = 1", MappersHolder.ARTICLE_MAPPER);
         return list;
     }
 
     public List<Article> getAllArticles() {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article", articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article", MappersHolder.ARTICLE_MAPPER);
         return list;
     }
 
@@ -93,13 +93,15 @@ public class MySQLArticleProvider implements ArticleProvider {
      * возращает указанное количество самых свежих новостей по данном бренду
      */
     public List<Article> getTopArticles(long brandId, int topSize) {
-        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE brandId = " + brandId + " ORDER BY Tstamp DESC LIMIT " + topSize, articleMapper);
+        List<Article> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article WHERE brandId = " +
+                brandId + " ORDER BY Tstamp DESC LIMIT " + topSize, MappersHolder.ARTICLE_MAPPER);
         return list;
     }
 
-    public List<Article> getAllArticlesByBrandAndSource(long brandId,long sourceId) {
+    public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId) {
         List<Article> list = jdbcTemplate.getJdbcOperations().
-                query("SELECT * FROM Article WHERE BrandId = " + Long.toString(brandId)+" AND SourceId = "+Long.toString(sourceId) , articleMapper);
+                query("SELECT * FROM Article WHERE BrandId = " + Long.toString(brandId) + " AND SourceId = " +
+                        sourceId, MappersHolder.ARTICLE_MAPPER);
         return list;
     }
 }

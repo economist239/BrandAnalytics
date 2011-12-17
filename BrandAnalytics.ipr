@@ -280,7 +280,7 @@
       <module fileurl="file://$PROJECT_DIR$/assessor-tool/assessor-tool.iml" filepath="$PROJECT_DIR$/assessor-tool/assessor-tool.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/src/core.iml" filepath="$PROJECT_DIR$/core/src/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/frontend/frontend.iml" filepath="$PROJECT_DIR$/frontend/frontend.iml" />
-      <module fileurl="file://$PROJECT_DIR$/indexer/index.iml" filepath="$PROJECT_DIR$/indexer/index.iml" />
+      <module fileurl="file://$PROJECT_DIR$/index/index.iml" filepath="$PROJECT_DIR$/index/index.iml" />
       <module fileurl="file://$PROJECT_DIR$/miner/miner.iml" filepath="$PROJECT_DIR$/miner/miner.iml" />
     </modules>
   </component>
@@ -394,9 +394,14 @@
         <root url="file://$PROJECT_DIR$/lib/xfresh" />
         <root url="file://$PROJECT_DIR$/lib/xalan" />
         <root url="file://$PROJECT_DIR$/lib/htmlunit" />
+        <root url="file://$PROJECT_DIR$/lib" />
+        <root url="file://$PROJECT_DIR$/lib/weka" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="file://$PROJECT_DIR$/lib/weka" />
+      </SOURCES>
+      <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/htmlunit" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/httpclient" recursive="false" />
@@ -409,8 +414,10 @@
       <jarDirectory url="file://$PROJECT_DIR$/lib/saxon" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/spring" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/webharvest" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/weka" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/xalan" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/xfresh" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/weka" recursive="false" type="SOURCES" />
     </library>
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">

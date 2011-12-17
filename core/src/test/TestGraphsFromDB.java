@@ -25,7 +25,8 @@ public class TestGraphsFromDB {
         ds.setPassword("root");
         ds.setValidationQuery("select 1");
         SimpleJdbcTemplate jdbcTemplate = new SimpleJdbcTemplate(ds);
-        MySQLGraphProvider dataStore = new MySQLGraphProvider(jdbcTemplate);
+        MySQLGraphProvider dataStore = new MySQLGraphProvider();
+        dataStore.setJdbcTemplate(jdbcTemplate);
 
         Timestamp t = new Timestamp(90, 02, 29, 1, 1, 1, 1);
         double val = 21;

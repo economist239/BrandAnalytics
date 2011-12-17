@@ -7,7 +7,7 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--DB CONFIG-->
     <import resource="file:./core/src/script/dbhandler_pure.xml"/>
-    <alias alias="providersHandler" ref="pureProvidersHandler"/>
+    <alias alias="providersHandler" name="pureProvidersHandler"/>
     <!--Jetty beans-->
     <bean id="serverInitializer" class="net.sf.xfresh.jetty.JettyServerInitializer">
         <property name="port" value="8081"/>
@@ -48,6 +48,8 @@
     <bean id="showArticleYalet" class="ru.brandanalyst.frontend.yalets.ShowArticleYalet"/>
 
     <bean id="showYouTubeYalet" class="ru.brandanalyst.frontend.yalets.ShowYouTubeYalet"/>
+
+    <bean id="getGraphsYalet" class="ru.brandanalyst.frontend.yalets.GetGraphsYalet"/>
     <!--Searcher conf-->
     <bean id="brandSearchManager" class="ru.brandanalyst.frontend.services.BrandSearchManager"/>
 

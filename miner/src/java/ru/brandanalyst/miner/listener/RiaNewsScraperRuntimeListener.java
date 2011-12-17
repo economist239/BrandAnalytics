@@ -104,7 +104,7 @@ public class RiaNewsScraperRuntimeListener implements ScraperRuntimeListener {
             long brandId = ((Variable) scraper.getContext().get("brandId")).toLong();
             Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
 
-            if(StringChecker.hasTerm(dictionary, newsTitle.toString()).size() == 0) {
+            if (StringChecker.hasTerm(dictionary, newsTitle.toString()).size() == 0) {
                 return;
             }
 

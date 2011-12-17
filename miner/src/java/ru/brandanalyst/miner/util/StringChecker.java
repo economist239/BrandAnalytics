@@ -7,7 +7,8 @@ import java.util.List;
 
 public class StringChecker {
 
-    private StringChecker() { }
+    private StringChecker() {
+    }
 
     public static List<Long> hasTerm(List<BrandDictionaryItem> brandItems, String title) { //O(nl^2)
         List<Long> result = new LinkedList<Long>();

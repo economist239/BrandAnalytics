@@ -21,7 +21,7 @@ public final class TwitterTool {
                 System.out.println(tweet);
                 byte[] read = new byte[1];
                 System.in.read(read);
-                switch ((char)read[0]) {
+                switch ((char) read[0]) {
                     case '1':
                         pw.write("1;;" + tweet + "\n");
                         break;

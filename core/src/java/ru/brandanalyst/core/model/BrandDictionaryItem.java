@@ -1,7 +1,7 @@
 package ru.brandanalyst.core.model;
 
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.

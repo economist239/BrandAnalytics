@@ -1,9 +1,6 @@
 package ru.brandanalyst.miner.parser;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.mysql.MySQLInformationSourceProvider;
 import ru.brandanalyst.core.model.InfoSource;
 import ru.brandanalyst.miner.Grabber;
 

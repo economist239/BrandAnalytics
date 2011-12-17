@@ -1,10 +1,8 @@
 package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.miner.listener.LentaScraperRuntimeListener;
 import ru.brandanalyst.miner.util.DataTransformator;

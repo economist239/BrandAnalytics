@@ -6,8 +6,10 @@ import java.util.List;
 
 public interface ArticleProvider {
     int MAX_ARTICLE_LENGHT = 30000;
+
     @Deprecated
     public void cleanDataStore();
+
     public void writeArticleToDataStore(Article article);
 
     public void writeListOfArticlesToDataStore(List<Article> articles);
@@ -30,5 +32,5 @@ public interface ArticleProvider {
      */
     public List<Article> getTopArticles(long brandId, int topSize);
 
-    public List<Article> getAllArticlesByBrandAndSource(long brandId,long sourceId);
+    public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId);
 }

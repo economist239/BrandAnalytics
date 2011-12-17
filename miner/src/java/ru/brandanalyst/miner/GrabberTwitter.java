@@ -32,7 +32,7 @@ public class GrabberTwitter extends Grabber {
         Twitter twitter = new TwitterFactory().getInstance();
 
         List<Brand> brandList = dirtyProvidersHandler.getBrandProvider().getAllBrands();
-        ArticleProvider articleProvider =  dirtyProvidersHandler.getArticleProvider();
+        ArticleProvider articleProvider = dirtyProvidersHandler.getArticleProvider();
         BrandDictionaryProvider dictionaryProvider = dirtyProvidersHandler.getBrandDictionaryProvider();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");

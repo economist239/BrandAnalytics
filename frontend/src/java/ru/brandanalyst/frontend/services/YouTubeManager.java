@@ -29,7 +29,7 @@ public class YouTubeManager extends AbstractManager {
         try {
             ArrayList<YouTubeEntry> result = YouTubeGrabber.searchYouTubeVideos(brandName, 10);
             List<YouTubeVideo> videos = new LinkedList();
-            for(YouTubeEntry e: result) {
+            for (YouTubeEntry e : result) {
                 videos.add(e.toVideoModel());
             }
             return videos;

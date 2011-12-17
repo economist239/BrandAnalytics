@@ -7,7 +7,8 @@ import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
-import ru.brandanalyst.miner.util.*;
+import ru.brandanalyst.miner.util.StringChecker;
+
 import java.util.Date;
 import java.util.List;
 
@@ -39,8 +40,10 @@ public class MinerGrabbersTest extends AbstractDependencyInjectionSpringContextT
     @Required
     public void setJdbcTemplate(final SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        brandProvider = new MySQLBrandProvider(jdbcTemplate);
-        articleProvider = new MySQLArticleProvider(jdbcTemplate);
+        brandProvider = new MySQLBrandProvider();
+        brandProvider.setJdbcTemplate(jdbcTemplate);
+        articleProvider = new MySQLArticleProvider();
+        articleProvider.setJdbcTemplate(jdbcTemplate);
     }
 
     @Required
@@ -72,7 +75,8 @@ public class MinerGrabbersTest extends AbstractDependencyInjectionSpringContextT
     }
 
     public void testUtil() throws Exception {
-        MySQLBrandDictionaryProvider brandDictionaryProvider = new MySQLBrandDictionaryProvider(jdbcTemplate);
+        MySQLBrandDictionaryProvider brandDictionaryProvider = new MySQLBrandDictionaryProvider();
+        brandDictionaryProvider.setJdbcTemplate(jdbcTemplate);
         List<BrandDictionaryItem> dictionary = brandDictionaryProvider.getDictionary();
         assertTrue(StringChecker.hasTerm(dictionary.get(0), "Microsoft DJhkjdzfvljbfv aofhvkjah"));
         assertFalse(StringChecker.hasTerm(dictionary.get(1), "Microsoft DJhkjdzfvljbfv aofhvkjah"));

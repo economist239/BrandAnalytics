@@ -1,6 +1,5 @@
 import org.junit.Ignore;
 import org.junit.Test;
-
 import org.tartarus.snowball.ext.RussianStemmer;
 
 import java.io.*;

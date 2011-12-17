@@ -2,8 +2,8 @@ package ru.brandanalyst.miner.parser;
 
 
 import org.apache.log4j.Logger;
-import org.w3c.dom.Element;
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
@@ -41,7 +41,7 @@ public class ParserRSSXML {
         resultDate.append(dateTokenizer.nextToken());
         String month = dateTokenizer.nextToken();
         if (month.equals("Jan")) {
-                resultDate.append("01");
+            resultDate.append("01");
         }
         if (month.equals("Feb")) {
             resultDate.append("01");

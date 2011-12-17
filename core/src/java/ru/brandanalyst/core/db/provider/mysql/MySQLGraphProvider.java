@@ -23,24 +23,29 @@ public class MySQLGraphProvider implements GraphProvider {
 
     private SimpleJdbcTemplate jdbcTemplate; //
 
-    public MySQLGraphProvider(SimpleJdbcTemplate jdbcTemplate) {
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @Override
+    @Deprecated
     public void cleanDataStore() {
         jdbcTemplate.update("TRUNCATE TABLE Graphs");
     }
 
+    @Override
     public void writeGraph(Graph graph, long brandId, long tickerId) {
         for (SingleDot d : graph.getGraph()) {
             writeSingleDot(d, brandId, tickerId);
         }
     }
 
+    @Override
     public void writeSingleDot(SingleDot dot, long brandId, long tickerId) {
         writeSingleDot(dot.getDate(), dot.getValue(), brandId, tickerId);
     }
 
+    @Override
     public void writeSingleDot(Timestamp Tstamp, double value, long brandId, long tickerId) {
         try {
             jdbcTemplate.update("INSERT INTO Graphs (BrandId, TickerId, Tstamp, Val) VALUES(?,?,?,?);", brandId, tickerId,
@@ -50,6 +55,7 @@ public class MySQLGraphProvider implements GraphProvider {
         }
     }
 
+    @Override
     public Graph getGraphByTickerAndBrand(long brandId, long tickerId) {
         SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId = " + brandId + " And TickerId = " + tickerId);
 
@@ -75,6 +81,7 @@ public class MySQLGraphProvider implements GraphProvider {
         }
     }
 
+    @Override
     public List<Graph> getGraphsByBrandId(long brandId) {
 
         SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId = " + Long.toString(brandId) + " ORDER BY TickerId");

@@ -4,41 +4,43 @@
 <beans default-autowire="byName" default-init-method="afterPropertiesSet">
 
     <bean id="dirtyProvidersHandler" class="ru.brandanalyst.core.db.provider.ProvidersHandler">
-        <property name="articleProvider" value="dirtyArticleProvider"/>
-        <property name="brandProvider" value="dirtyBrandProvider"/>
-        <property name="brandDictionaryProvider" value="brandDictionaryProvider"/>
-        <property name="graphProvider" value="dirtyGraphProvider"/>
-        <property name="informationSourceProvider" value="dirtyInformationSourceProvider"/>
-        <property name="semanticDictionaryProvider" value="dirtySemanticDictionaryProvider"/>
-        <property name="tickerProvider" value="dirtyTickerProvider"/>
+        <property name="articleProvider" ref="dirtyArticleProvider"/>
+        <property name="brandProvider" ref="dirtyBrandProvider"/>
+        <property name="brandDictionaryProvider" ref="dirtyBrandDictionaryProvider"/>
+        <property name="graphProvider" ref="dirtyGraphProvider"/>
+        <property name="informationSourceProvider" ref="dirtyInformationSourceProvider"/>
+        <property name="semanticDictionaryProvider" ref="dirtySemanticDictionaryProvider"/>
+        <property name="tickerProvider" ref="dirtyTickerProvider"/>
     </bean>
     <!--PROVIDERS-->
     <bean id="dirtyArticleProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider">
-        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+        <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
     </bean>
 
     <bean id="dirtyBrandDictionaryProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider">
-        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+        <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
     </bean>
 
     <bean id="dirtyBrandProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider">
-        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+        <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
     </bean>
 
     <bean id="dirtyGraphProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider">
-        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+        <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
     </bean>
 
-    <bean id="dirtyInformationSourceProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLInformationSourceProvider">
-        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+    <bean id="dirtyInformationSourceProvider"
+          class="ru.brandanalyst.core.db.provider.mysql.MySQLInformationSourceProvider">
+        <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
     </bean>
 
-    <bean id="dirtySemanticDictionaryProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLSemanticDictionaryProvider">
-        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+    <bean id="dirtySemanticDictionaryProvider"
+          class="ru.brandanalyst.core.db.provider.mysql.MySQLSemanticDictionaryProvider">
+        <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
     </bean>
 
     <bean id="dirtyTickerProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider">
-        <property name="jdbcTemplate" value="dirtyJdbcTemplate"/>
+        <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
     </bean>
     <!--DB conf-->
     <bean id="dirtyDataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">

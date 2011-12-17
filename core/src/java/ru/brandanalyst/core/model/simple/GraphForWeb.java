@@ -44,7 +44,7 @@ public class GraphForWeb {
     public List<String> getDate() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         List<String> textDateList = new LinkedList();
-        for(long d: date) {
+        for (long d : date) {
             textDateList.add(dateFormat.format(new Date(d)));
         }
         return textDateList;

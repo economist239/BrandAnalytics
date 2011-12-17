@@ -1,6 +1,7 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import ru.brandanalyst.core.db.provider.interfaces.BrandDictionaryProvider;
@@ -20,15 +21,18 @@ public class MySQLBrandDictionaryProvider implements BrandDictionaryProvider {
     private static final Logger log = Logger.getLogger(MySQLBrandDictionaryProvider.class);
     private SimpleJdbcTemplate jdbcTemplate;
 
-    public MySQLBrandDictionaryProvider(SimpleJdbcTemplate jdbcTemplate) {
+    @Required
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Deprecated
+    @Override
     public void cleanDataStore() {
         jdbcTemplate.update("TRUNCATE TABLE BrandDictionary");
     }
 
+    @Override
     public BrandDictionaryItem getDictionaryItem(long brandId) {
         SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT BrandId, Brand.Name, Term FROM BrandDictionary INNER JOIN Brand ON BrandId = Brand.Id WHERE BrandId = " + Long.toString(brandId) + " ORDER BY BrandId");
         BrandDictionaryItem dictItem;
@@ -51,6 +55,7 @@ public class MySQLBrandDictionaryProvider implements BrandDictionaryProvider {
         }
     }
 
+    @Override
     public List<BrandDictionaryItem> getDictionary() {
 
         SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT BrandId, Brand.Name, Term FROM BrandDictionary INNER JOIN Brand ON BrandId = Brand.Id ORDER BY BrandId");

@@ -3,12 +3,12 @@ package ru.brandanalyst.core.db.provider.mysql;
 import org.apache.log4j.Logger;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.mapper.SemanticDictionaryMapper;
 import ru.brandanalyst.core.db.provider.interfaces.SemanticDictionaryProvider;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
 
-import java.util.List;
 import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Класс доступа к словарю для эмоциональной окраски текста, использеутся в модуле analyzer
@@ -20,11 +20,9 @@ import java.util.HashSet;
 public class MySQLSemanticDictionaryProvider implements SemanticDictionaryProvider {
     private static final Logger log = Logger.getLogger(MySQLSemanticDictionaryProvider.class);
     private SimpleJdbcTemplate jdbcTemplate;
-    private SemanticDictionaryMapper semanticDictMapper;
 
-    public MySQLSemanticDictionaryProvider(SimpleJdbcTemplate jdbcTemplate) {
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        semanticDictMapper = new SemanticDictionaryMapper();
     }
 
     @Deprecated
@@ -32,11 +30,14 @@ public class MySQLSemanticDictionaryProvider implements SemanticDictionaryProvid
         jdbcTemplate.update("TRUNCATE TABLE SemanticDictionary");
     }
 
-    public HashSet<SemanticDictionaryItem> getSemanticDictionary() {
-        List<SemanticDictionaryItem> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM SemanticDictionary", semanticDictMapper);
+    @Override
+    public Set<SemanticDictionaryItem> getSemanticDictionary() {
+        List<SemanticDictionaryItem> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM SemanticDictionary",
+                MappersHolder.SEMANTIC_DICTIONARY_MAPPER);
         return new HashSet<SemanticDictionaryItem>(list);
     }
 
+    @Override
     public void setSemanticDictionaryItem(SemanticDictionaryItem item) {
         try {
             jdbcTemplate.update("INSERT INTO SemanticDictionary (Term, SemanticValue) VALUES(?,?);", item.getTerm(), item.getSemanticValue());

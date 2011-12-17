@@ -20,17 +20,18 @@ public class MySQLTickerProvider implements TickerProvider {
 
     private SimpleJdbcTemplate jdbcTemplate; //
 
-    public MySQLTickerProvider(SimpleJdbcTemplate jdbcTemplate) {
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @Override
     public List<TickerPair> getTickers() {
 
         SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT * FROM Ticker ORDER BY Id");
 
         List<TickerPair> tickers = new LinkedList();
 
-        while(rowSet.next()) {
+        while (rowSet.next()) {
             String name = rowSet.getString("TickerName");
             Long id = rowSet.getLong("Id");
             tickers.add(new TickerPair(name, id));

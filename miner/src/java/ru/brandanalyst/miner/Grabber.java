@@ -1,6 +1,5 @@
 package ru.brandanalyst.miner;
 
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 
 import java.util.Date;

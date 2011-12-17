@@ -2,7 +2,6 @@ package ru.brandanalyst.core.db.provider.mysql;
 
 import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.mapper.InfoSourceMapper;
 import ru.brandanalyst.core.db.provider.interfaces.InformationSourceProvider;
 import ru.brandanalyst.core.model.InfoSource;
 
@@ -18,11 +17,9 @@ public class MySQLInformationSourceProvider implements InformationSourceProvider
     private static final Logger log = Logger.getLogger(MySQLInformationSourceProvider.class);
 
     private SimpleJdbcTemplate jdbcTemplate;
-    private InfoSourceMapper infoSourceMapper;
 
-    public MySQLInformationSourceProvider(SimpleJdbcTemplate jdbcTemplate) {
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        infoSourceMapper = new InfoSourceMapper();
     }
 
     @Deprecated
@@ -30,6 +27,7 @@ public class MySQLInformationSourceProvider implements InformationSourceProvider
         jdbcTemplate.update("TRUNCATE TABLE InformationSource");
     }
 
+    @Override
     public void writeInfoSourceToDataStore(InfoSource infoSource) {
         try {
             jdbcTemplate.update("INSERT INTO InformationSource (TypeId, Title, Description, Website, RSSSource) VALUES(?,?,?,?,?);", Long.toString(infoSource.getSphereId()),
@@ -39,19 +37,24 @@ public class MySQLInformationSourceProvider implements InformationSourceProvider
         }
     }
 
+    @Override
     public void writeListOfInfoSourceToDataStore(List<InfoSource> infoSourceList) {
         for (InfoSource i : infoSourceList) {
             writeInfoSourceToDataStore(i);
         }
     }
 
+    @Override
     public InfoSource getInfoSourceById(long id) {
-        List<InfoSource> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM InformationSource WHERE Id = " + Long.toString(id), infoSourceMapper);
+        List<InfoSource> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM InformationSource WHERE Id = " +
+                Long.toString(id), MappersHolder.INFO_SOURCE_MAPPER);
         return list.get(0);
     }
 
+    @Override
     public List<InfoSource> getAllInfoSources() {
-        List<InfoSource> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM InformationSource", infoSourceMapper);
+        List<InfoSource> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM InformationSource",
+                MappersHolder.INFO_SOURCE_MAPPER);
         return list;
     }
 }

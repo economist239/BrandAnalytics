@@ -1,11 +1,9 @@
 package ru.brandanalyst.frontend.services;
 
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLTickerProvider;
 import ru.brandanalyst.core.model.*;
 import ru.brandanalyst.core.model.simple.GraphForWeb;
 import ru.brandanalyst.core.model.simple.SimplyArticleForWeb;
@@ -50,8 +48,8 @@ public class WideBrandInfoManager extends AbstractManager {
         Graph graph = graphProvider.getGraphByTickerAndBrand(brandId, tickerId);
         GraphForWeb graphForWeb = new GraphForWeb(graph.getTicker());
         for (SingleDot d : graph.getGraph()) {
-                graphForWeb.addDot(d);
-         }
+            graphForWeb.addDot(d);
+        }
         return graphForWeb;
     }
 
