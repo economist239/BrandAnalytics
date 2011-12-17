@@ -9,7 +9,8 @@
     <import resource="file:./core/src/script/dbhandler_pure.xml"/>
     <import resource="file:./core/src/script/dbhandler_dirty.xml"/>
     <!--AnalyzerProcesser conf-->
-    <bean id="analyzerProcessor" destroy-method="close" class="ru.brandanalyst.analyzer.AnalyzerProcesser" lazy-init="false">
+    <bean id="analyzerProcessor" destroy-method="close" class="ru.brandanalyst.analyzer.AnalyzerProcesser"
+          lazy-init="false">
         <property name="analyzers">
             <list>
                 <bean class="ru.brandanalyst.analyzer.analyzers.GraphsAnalyzer"/>

@@ -39,7 +39,8 @@ public final class DictionaryInitialyzer {
         dataSource.setPassword("root");
         dataSource.setValidationQuery("select 1");
         SimpleJdbcTemplate jdbcTemplate = new SimpleJdbcTemplate(dataSource);
-        MySQLSemanticDictionaryProvider provider = new MySQLSemanticDictionaryProvider(jdbcTemplate);
+        MySQLSemanticDictionaryProvider provider = new MySQLSemanticDictionaryProvider();
+        provider.setJdbcTemplate(jdbcTemplate);
 
         in = new BufferedReader(new FileReader("analyzer/dictionary/positive.txt"));
         while (in.ready()) {

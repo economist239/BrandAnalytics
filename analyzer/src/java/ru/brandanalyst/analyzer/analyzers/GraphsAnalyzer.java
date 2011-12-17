@@ -51,7 +51,7 @@ public class GraphsAnalyzer extends AbstractAnalyzer {
             }
             //map to graph
             Graph graph = new Graph("");
-            for(Long time: graphMap.keySet()) {
+            for (Long time : graphMap.keySet()) {
                 graph.addPoint(new SingleDot(new Timestamp(time), graphMap.get(time)));
             }
 

@@ -2,6 +2,7 @@ package ru.brandanalyst.analyzer;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.analyzer.analyzers.AbstractAnalyzer;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class AnalyzerProcesser implements InitializingBean {
     private static final Logger log = Logger.getLogger(AnalyzerProcesser.class);
     private List<AbstractAnalyzer> analyzers;
 
+    @Required
     public void setAnalyzers(List<AbstractAnalyzer> analyzers) {
         this.analyzers = analyzers;
     }
@@ -26,7 +28,7 @@ public class AnalyzerProcesser implements InitializingBean {
     public final void afterPropertiesSet() {
         log.info("analyzing started...");
 
-        for(AbstractAnalyzer a: analyzers) {
+        for (AbstractAnalyzer a : analyzers) {
             a.analyze();
         }
 

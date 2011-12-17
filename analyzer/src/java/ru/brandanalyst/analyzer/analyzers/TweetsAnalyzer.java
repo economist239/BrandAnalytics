@@ -1,13 +1,12 @@
 package ru.brandanalyst.analyzer.analyzers;
 
-import ru.brandanalyst.analyzer.util.TweetUtil;
+import ru.brandanalyst.analyzer.util.VectorableUtil;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.db.provider.interfaces.SemanticDictionaryProvider;
 import ru.brandanalyst.core.model.*;
 import ru.brandanalyst.core.time.TimeProperties;
-import twitter4j.Tweet;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -40,7 +39,7 @@ public class TweetsAnalyzer extends AbstractAnalyzer {
         dirtyBrandProvider = dirtyProvidersHandler.getBrandProvider();
         dirtyArticleProvider = dirtyProvidersHandler.getArticleProvider();
         pureGraphProvider = dirtyProvidersHandler.getGraphProvider();
-        dictionaryProvider = dirtyProvidersHandler.getSemanticDictinaryProvider();
+        dictionaryProvider = dirtyProvidersHandler.getSemanticDictionaryProvider();
 
         Map<Long, Double> graphMapPositive = new HashMap<Long, Double>();
         Map<Long, Double> graphMapNeutral = new HashMap<Long, Double>();
@@ -81,7 +80,7 @@ public class TweetsAnalyzer extends AbstractAnalyzer {
     protected double getSentiment(Article a, Set<SemanticDictionaryItem> dictionary) {
         double result = 0;
         for (SemanticDictionaryItem item : dictionary) {
-            int count = TweetUtil.countsSubInString(a.getContent(), item.getTerm());
+            int count = VectorableUtil.countsSubInString(a.getContent(), item.getTerm());
             if (count > 0) {
                 result += count * item.getSemanticValue();
             }

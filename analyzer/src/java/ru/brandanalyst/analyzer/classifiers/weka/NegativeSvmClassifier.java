@@ -1,4 +1,4 @@
-package ru.brandanalyst.analyzer.Weka;
+package ru.brandanalyst.analyzer.classifiers.weka;
 
 import java.util.List;
 
@@ -6,11 +6,11 @@ import java.util.List;
  * Created by IntelliJ IDEA.
  * User: Alexander Senov
  * Date: 11.12.11
- * Time: 19:02
+ * Time: 19:03
  */
-public class PositiveSvmWekaClassifier extends SvmWekaClassifier {
+public class NegativeSvmClassifier extends SvmClassifier {
 
-    public PositiveSvmWekaClassifier(List<String> variablesId){
+    public NegativeSvmClassifier(List<String> variablesId){
         super(variablesId);
     }
 

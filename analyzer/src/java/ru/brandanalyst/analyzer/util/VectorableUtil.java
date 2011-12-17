@@ -15,30 +15,32 @@ import java.util.Set;
  * Date: 11.12.11
  * Time: 17:05
  */
-public class TweetUtil {
-    public static int countsSubInString(String target,String sub){
-           int count = 0;
-           int indexFrom = 0;
-           while( (indexFrom = target.indexOf(sub,indexFrom)) > 0){
-               ++count;
-               indexFrom += sub.length();
-           }
-           return count;
+// мало ли что захотим векторизовать
+public class VectorableUtil {
+
+    public static int countsSubInString(String target, String sub) {
+        int count = 0;
+        int indexFrom = 0;
+        while ((indexFrom = target.indexOf(sub, indexFrom)) > 0) {
+            ++count;
+            indexFrom += sub.length();
+        }
+        return count;
     }
 
-    public static List<Double> asListOfDoubles(Article a, Set<SemanticDictionaryItem> dictionary){
+    public static List<Double> asVector(Article a, Set<SemanticDictionaryItem> dictionary) {
         List<Double> result = new ArrayList<Double>();
 
-        for(SemanticDictionaryItem item : dictionary){
-            result.add( new Double(countsSubInString(a.getContent(),item.getTerm())) );
+        for (SemanticDictionaryItem item : dictionary) {
+            result.add((double) countsSubInString(a.getContent(), item.getTerm()));
         }
 
-        return  result;
+        return result;
     }
 
 
     /** метод считает количество семантических термов в текстах статей (твитов)
-    */
+     */
     /*
     public List<ArticleWordContainer> CountWordsInTweetsAsTriples(){
 
@@ -59,7 +61,7 @@ public class TweetUtil {
             article = articlesIterator.next();
             while(dictionaryItemIterator.hasNext()){
                 dictionaryItem = dictionaryItemIterator.next();
-                count = TweetUtil.countsSubInString(article.getContent(), dictionaryItem.getTerm());
+                count = VectorableUtil.countsSubInString(article.getContent(), dictionaryItem.getTerm());
                 if(count > 0){
                     articleWordCount.add(new ArticleWordContainer(article.getId(),dictionaryItem,count));
                 }
