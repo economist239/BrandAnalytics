@@ -9,7 +9,7 @@ import org.xml.sax.SAXException;
  */
 public interface SingleYaletProcessor {
 
-    void processYalet(String yaletId, ContentHandler handler,
+    void processYalet(String yaletId, String yaletType, ContentHandler handler,
                       InternalRequest request, InternalResponse response) throws SAXException;
 
 }

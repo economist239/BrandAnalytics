@@ -43,6 +43,7 @@ public class YaletFilter extends XMLFilterImpl {
 
     private static final String YALET_ELEMENT = "yalet";
     private static final String ID_ATTRIBUTE = "id";
+    private static final String TYPE_ATTRIBUTE = "type";
 
     private final SingleYaletProcessor singleYaletProcessor;
 
@@ -51,6 +52,7 @@ public class YaletFilter extends XMLFilterImpl {
 
 
     private String actionId = null;
+    private String actionType = null;
     private boolean doingAction = false;
 
     public YaletFilter(final SingleYaletProcessor singleYaletProcessor,
@@ -67,6 +69,7 @@ public class YaletFilter extends XMLFilterImpl {
         if (!doingAction && YALET_ELEMENT.equalsIgnoreCase(qName)) {
             doingAction = true;
             actionId = atts.getValue(ID_ATTRIBUTE);
+            actionType = atts.getValue(TYPE_ATTRIBUTE);
         } else {
             super.startElement(uri, localName, qName, atts);
         }
@@ -75,14 +78,14 @@ public class YaletFilter extends XMLFilterImpl {
     @Override
     public void endElement(final String uri, final String localName, final String qName) throws SAXException {
         if (doingAction && YALET_ELEMENT.equalsIgnoreCase(qName)) {
-            processYalet(actionId, getContentHandler());
+            processYalet(actionId, actionType, getContentHandler());
             doingAction = false;
         } else {
             super.endElement(uri, localName, qName);
         }
     }
 
-    private void processYalet(final String yaletId, final ContentHandler handler) throws SAXException {
-        singleYaletProcessor.processYalet(yaletId, handler, request, response);
+    private void processYalet(final String yaletId, final String yaletType, final ContentHandler handler) throws SAXException {
+        singleYaletProcessor.processYalet(yaletId, yaletType, handler, request, response);
     }
 }
