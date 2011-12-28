@@ -6,7 +6,6 @@ set character_set_server=utf8;
 
 use BApure;
 
-drop table if exists Graphs;
 create table Graphs(
 	BrandId int not null,
 	TickerId int not null,
@@ -14,13 +13,11 @@ create table Graphs(
 	Val double not null
 );
 
-drop table if exists Ticker;
 create table Ticker(
 	Id int primary key not null auto_increment,
 	TickerName varchar(300) not null
 );
 
-drop table if exists Brand;
 create table Brand(
 	Id int primary key not null auto_increment,
 	Name varchar(100) not null,
@@ -29,13 +26,11 @@ create table Brand(
 	BranchId int
 );
 
-drop table if exists Branch;
 create table Branch(
 	Id int primary key not null auto_increment,
 	Name varchar(100) not null
 );
 
-drop table if exists Article;
 create table Article(
 	Id int primary key not null auto_increment,
 	BrandId int,
@@ -47,7 +42,6 @@ create table Article(
 	Tstamp timestamp
 );
 
-drop table if exists InformationSource;
 create table InformationSource(
 	Id int primary key not null auto_increment,
 	TypeId int not null,

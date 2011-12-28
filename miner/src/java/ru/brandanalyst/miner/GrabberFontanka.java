@@ -39,7 +39,7 @@ public class GrabberFontanka extends Grabber {
             try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
-                scraper.addRuntimeListener(new FontankaScraperRuntimeListener(dirtyProvidersHandler, timeLimit));
+                scraper.addRuntimeListener(new FontankaScraperRuntimeListener(handler, timeLimit));
                 scraper.addVariableToContext("QueryURL", resultURL.toString());
                 scraper.addVariableToContext("AbsoluteURL", sourceURL);
                 scraper.execute();

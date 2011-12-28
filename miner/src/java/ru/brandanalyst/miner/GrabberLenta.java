@@ -18,12 +18,12 @@ public class GrabberLenta extends Grabber {
 
     @Override
     public void grab(Date timeLimit) {
-        for (Brand b : dirtyProvidersHandler.getBrandProvider().getAllBrands()) {
+        for (Brand b : handler.getBrandProvider().getAllBrands()) {
             try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.setDebug(true);
-                scraper.addRuntimeListener(new LentaScraperRuntimeListener(dirtyProvidersHandler, timeLimit));
+                scraper.addRuntimeListener(new LentaScraperRuntimeListener(handler, timeLimit));
                 String query = DataTransformator.stringToHexQueryString(b.getName());
                 scraper.addVariableToContext("lentaQueryURL", beginSearchURL + query + endSearchURL);//"$page" - suffix for result page number
                 scraper.addVariableToContext("lentaAbsoluteURL", sourceURL);

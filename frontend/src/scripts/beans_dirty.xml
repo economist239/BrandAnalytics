@@ -7,7 +7,7 @@ I don't recomend to use this beans because it's only for test articles on fronte
 <beans default-autowire="byName" default-init-method="getReadyForSearch">
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
-    <import resource="file:./core/src/script/dbdirtyconfig.xml"/>
+    <import resource="dbdirtyconfig.xml"/>
     <!--Jetty beans-->
     <bean id="serverInitializer" class="net.sf.xfresh.jetty.JettyServerInitializer">
         <property name="port" value="8081"/>

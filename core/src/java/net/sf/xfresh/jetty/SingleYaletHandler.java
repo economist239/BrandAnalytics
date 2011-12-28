@@ -66,7 +66,7 @@ public class SingleYaletHandler extends AbstractHandler {
         try {
             final PrintWriter writer = res.getWriter();
 
-            singleYaletProcessor.processYalet(realPath, getHandler(writer), internalRequest, internalResponse);
+            singleYaletProcessor.processYalet(realPath, "xml", getHandler(writer), internalRequest, internalResponse);
 
             writer.flush();
             writer.close();

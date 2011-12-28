@@ -23,7 +23,7 @@ public class GrabberWikipedia extends Grabber {
             String configFile = config.substring(config.indexOf(';') + 1);
             ScraperConfiguration config = new ScraperConfiguration(configFile);
             Scraper scraper = new Scraper(config, ".");
-            scraper.addRuntimeListener(new WikipediaScraperRuntimeListener(dirtyProvidersHandler));
+            scraper.addRuntimeListener(new WikipediaScraperRuntimeListener(handler));
             scraper.addVariableToContext("inputFile", linksFile);
             scraper.execute();
             log.info("Wikipedia: succecsful");

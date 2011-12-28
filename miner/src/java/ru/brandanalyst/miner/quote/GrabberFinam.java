@@ -28,20 +28,20 @@ import java.util.StringTokenizer;
  */
 public class GrabberFinam extends Grabber {
     private static final Logger log = Logger.getLogger(GrabberFinam.class);
+
     protected GraphProvider graphProvider;
     protected BrandProvider brandProvider;
     protected TickerProvider tickerProvider;
-    private final String sourceURL = "http://www.finam.ru/analysis/export/default.asp";
-    private final String tickerName = "котировки";
+    private final static String SOURCE_URL = "http://www.finam.ru/analysis/export/default.asp";
+    private final static String TICKER_NAME = "котировки";
 
     public void grab(Date date) {
-        tickerProvider = dirtyProvidersHandler.getTickerProvider();
-        brandProvider = dirtyProvidersHandler.getBrandProvider();
-        graphProvider = dirtyProvidersHandler.getGraphProvider();
-        grab(date.getDay(), date.getMonth(), date.getYear());
+        tickerProvider = handler.getTickerProvider();
+        brandProvider = handler.getBrandProvider();
+        graphProvider = handler.getGraphProvider();
     }
 
-    public void grab(Integer beginDay, Integer beginMonth, Integer beginYear) {
+    private void grab(Integer beginDay, Integer beginMonth, Integer beginYear) {
         List<Brand> brands = brandProvider.getAllBrands();
         for (Brand b : brands) {
             String finamName = b.getFinamName();
@@ -49,7 +49,7 @@ public class GrabberFinam extends Grabber {
             log.info("Getting quote for " + finamName);
             try {
                 WebClient webClient = new WebClient();
-                HtmlPage page = (HtmlPage) webClient.getPage(sourceURL);
+                HtmlPage page = (HtmlPage) webClient.getPage(SOURCE_URL);
                 HtmlForm form = page.getFormByName("chartform");
                 HtmlSelect period = form.getSelectByName("p");
                 period.setSelectedAttribute("8", true);
@@ -67,11 +67,11 @@ public class GrabberFinam extends Grabber {
                 List<TickerPair> tickers = tickerProvider.getTickers();
                 long tickerId = -1;
                 for (TickerPair tp : tickers)
-                    if (tp.getName().equals(tickerName)) {
+                    if (tp.getName().equals(TICKER_NAME)) {
                         tickerId = tp.getId();
                         break;
                     }
-                Graph graph = new Graph(tickerName);
+                Graph graph = new Graph(TICKER_NAME);
                 String oneQuote;
                 while ((oneQuote = br.readLine()) != null) {
                     if (oneQuote.startsWith("<")) continue;

@@ -7,6 +7,7 @@ import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.db.provider.interfaces.SemanticDictionaryProvider;
 import ru.brandanalyst.core.model.*;
 import ru.brandanalyst.core.time.TimeProperties;
+import ru.brandanalyst.core.util.Triple;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -41,6 +42,7 @@ public class TweetsAnalyzer extends AbstractAnalyzer {
         pureGraphProvider = dirtyProvidersHandler.getGraphProvider();
         dictionaryProvider = dirtyProvidersHandler.getSemanticDictionaryProvider();
 
+        Map<Long,Triple<Double, Double, Double>> graphsMap = new HashMap<Long, Triple<Double, Double, Double>>();
         Map<Long, Double> graphMapPositive = new HashMap<Long, Double>();
         Map<Long, Double> graphMapNeutral = new HashMap<Long, Double>();
         Map<Long, Double> graphMapNegative = new HashMap<Long, Double>();

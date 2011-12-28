@@ -24,12 +24,12 @@ public class GrabberRia extends Grabber {
 
     @Override
     public void grab(Date timeLimit) {
-        for (Brand b : dirtyProvidersHandler.getBrandProvider().getAllBrands()) {
+        for (Brand b : handler.getBrandProvider().getAllBrands()) {
             try {
                 ScraperConfiguration config = new ScraperConfiguration(this.config);
                 Scraper scraper = new Scraper(config, ".");
                 scraper.setDebug(true);
-                scraper.addRuntimeListener(new RiaNewsScraperRuntimeListener(dirtyProvidersHandler, timeLimit));
+                scraper.addRuntimeListener(new RiaNewsScraperRuntimeListener(handler, timeLimit));
                 String query = DataTransformator.stringToQueryString(b.getName());
                 scraper.addVariableToContext("riaQueryURL", searchURL + query + "&p="); //"$p" - suffix for result page number
                 scraper.addVariableToContext("riaAbsoluteURL", sourceURL);

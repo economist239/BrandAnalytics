@@ -15,8 +15,8 @@ public class ParserStarter extends Grabber {
     private static final Logger log = Logger.getLogger(ParserStarter.class);
 
     public void grab(Date date) {
-        ParserRSSXML parser = new ParserRSSXML(dirtyProvidersHandler);
-        List<InfoSource> infoSources = dirtyProvidersHandler.getInformationSourceProvider().getAllInfoSources();
+        ParserRSSXML parser = new ParserRSSXML(handler);
+        List<InfoSource> infoSources = handler.getInformationSourceProvider().getAllInfoSources();
         log.info("begin parsing rss");
         for (InfoSource infoSource : infoSources) {
             if (infoSource.getSphereId() != 1) continue;
