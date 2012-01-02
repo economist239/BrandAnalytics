@@ -5,7 +5,7 @@ import ru.brandanalyst.core.model.BrandDictionaryItem;
 import java.util.LinkedList;
 import java.util.List;
 
-public class StringChecker {
+public final class StringChecker {
 
     private StringChecker() {
     }

@@ -10,12 +10,10 @@ import java.util.Set;
  * Time: 9:45 PM
  */
 public class BrandDictionaryItem {
-    private final String brand;
     private final long brandId;
     private Set<String> items;
 
-    public BrandDictionaryItem(String brand, long brandId) {
-        this.brand = brand;
+    public BrandDictionaryItem(long brandId) {
         this.brandId = brandId;
         items = new HashSet<String>();
     }

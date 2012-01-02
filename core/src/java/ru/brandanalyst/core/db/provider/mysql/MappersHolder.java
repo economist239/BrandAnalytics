@@ -16,29 +16,26 @@ import java.sql.SQLException;
  * Time: 11:08 AM
  */
 public final class MappersHolder {
+
+    private MappersHolder() {
+    }
+
     public final static ParameterizedRowMapper<Brand> BRAND_MAPPER = new ParameterizedRowMapper<Brand>() {
         @Override
         public Brand mapRow(ResultSet resultSet, int i) throws SQLException {
-            try {
-                return new Brand(Long.parseLong(resultSet.getString("Id")),
-                        resultSet.getString("Name"),
-                        resultSet.getString("Description"),
-                        resultSet.getString("Website"),
-                        Long.parseLong(resultSet.getString("BranchId")), resultSet.getString("FinamName"));
-            } catch (Exception e) {
-                return new Brand(Long.parseLong(resultSet.getString("Id")),
-                        resultSet.getString("Name"),
-                        resultSet.getString("Description"),
-                        resultSet.getString("Website"), -1, "");
-            }
+            return new Brand(resultSet.getLong("Id"),
+                    resultSet.getString("Name"),
+                    resultSet.getString("Description"),
+                    resultSet.getString("Website"),
+                    resultSet.getLong("BranchId"), resultSet.getString("FinamName"));
         }
     };
 
     public final static ParameterizedRowMapper<InfoSource> INFO_SOURCE_MAPPER = new ParameterizedRowMapper<InfoSource>() {
         @Override
         public InfoSource mapRow(ResultSet resultSet, int i) throws SQLException {
-            return new InfoSource(Long.parseLong(resultSet.getString("Id")),
-                    Long.parseLong(resultSet.getString("TypeId")),
+            return new InfoSource(resultSet.getLong("Id"),
+                    resultSet.getLong("TypeId"),
                     resultSet.getString("Title"),
                     resultSet.getString("Description"),
                     resultSet.getString("Website"),
@@ -49,27 +46,19 @@ public final class MappersHolder {
     public final static ParameterizedRowMapper<Article> ARTICLE_MAPPER = new ParameterizedRowMapper<Article>() {
         @Override
         public Article mapRow(ResultSet resultSet, int i) throws SQLException {
-            try {
-                return new Article(Long.parseLong(resultSet.getString("Id")),
-                        Long.parseLong(resultSet.getString("BrandId")),
-                        Long.parseLong(resultSet.getString("InfosourceId")),
-                        resultSet.getString("Title"), resultSet.getString("Content"),
-                        resultSet.getString("Link"), resultSet.getTimestamp("Tstamp"),
-                        Integer.parseInt(resultSet.getString("NumLikes")));
-            } catch (Exception e) {
-                return new Article(Long.parseLong(resultSet.getString("Id")),
-                        Long.parseLong(resultSet.getString("BrandId")),
-                        Long.parseLong(resultSet.getString("InfosourceId")),
-                        resultSet.getString("Title"), resultSet.getString("Content"),
-                        resultSet.getString("Link"), resultSet.getTimestamp("Tstamp"), -1);
-            }
+            return new Article(resultSet.getLong("Id"),
+                    resultSet.getLong("BrandId"),
+                    resultSet.getLong("InfosourceId"),
+                    resultSet.getString("Title"), resultSet.getString("Content"),
+                    resultSet.getString("Link"), resultSet.getTimestamp("Tstamp"),
+                    resultSet.getInt("NumLikes"));
         }
     };
 
     public final static ParameterizedRowMapper<SemanticDictionaryItem> SEMANTIC_DICTIONARY_MAPPER = new ParameterizedRowMapper<SemanticDictionaryItem>() {
         @Override
         public SemanticDictionaryItem mapRow(ResultSet resultSet, int i) throws SQLException {
-            return new SemanticDictionaryItem(resultSet.getString("Term"), Double.parseDouble(resultSet.getString("SemanticValue")));
+            return new SemanticDictionaryItem(resultSet.getString("Term"), resultSet.getDouble("SemanticValue"));
         }
     };
 }

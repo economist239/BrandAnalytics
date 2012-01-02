@@ -1,11 +1,9 @@
 package ru.brandanalyst.analyzer.util;
 
-import ru.brandanalyst.core.db.provider.mysql.MySQLSemanticDictionaryProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -16,7 +14,10 @@ import java.util.Set;
  * Time: 17:05
  */
 // мало ли что захотим векторизовать
-public class VectorableUtil {
+public final class VectorableUtil {
+
+    private VectorableUtil() {
+    }
 
     public static int countsSubInString(String target, String sub) {
         int count = 0;

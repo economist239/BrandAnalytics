@@ -23,10 +23,10 @@ public abstract class DataTransformator {
         String query = "";
         for (int i = 0; i < str.length(); i++) {
             if ((int) str.charAt(i) > 1000) {
-                query += charToHex(str.charAt(i));
+                query.concat(charToHex(str.charAt(i)));
             }
             if ((int) str.charAt(i) == 32) {
-                query += "+";
+                query.concat("+");
                 continue;
             }
             if ((int) str.charAt(i) < 1000) {

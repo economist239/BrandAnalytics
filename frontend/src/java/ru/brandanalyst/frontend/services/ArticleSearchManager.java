@@ -23,14 +23,10 @@ public class ArticleSearchManager {
     }
 
     public List<SimplyArticleForWeb> getSearchResultByArticle(String query) {
-        try {
-            List<SimplyArticleForWeb> brandList = new ArrayList<SimplyArticleForWeb>();
-            for (Article a : searcher.searchArticleByContent(query)) {
-                brandList.add(new SimplyArticleForWeb(a.getTitle(), a.getId(), TextConverter.firstPhrase(a.getContent()), "", a.getLink()));
-            }
-            return brandList;
-        } catch (Exception e) {
-            return null;
+        List<SimplyArticleForWeb> brandList = new ArrayList<SimplyArticleForWeb>();
+        for (Article a : searcher.searchArticleByContent(query)) {
+            brandList.add(new SimplyArticleForWeb(a.getTitle(), a.getId(), TextConverter.firstPhrase(a.getContent()), "", a.getLink()));
         }
+        return brandList;
     }
 }

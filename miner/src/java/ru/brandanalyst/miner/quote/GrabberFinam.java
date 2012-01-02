@@ -4,6 +4,8 @@ import com.gargoylesoftware.htmlunit.UnexpectedPage;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONException;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.db.provider.interfaces.TickerProvider;
@@ -11,9 +13,11 @@ import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
 import ru.brandanalyst.core.model.TickerPair;
+import ru.brandanalyst.core.util.cortege.Pair;
 import ru.brandanalyst.miner.Grabber;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.Timestamp;
 import java.text.ParseException;
@@ -90,11 +94,20 @@ public class GrabberFinam extends Grabber {
                     graph.addPoint(new SingleDot(new Timestamp(date.getTime()), (Double.parseDouble(st.nextToken()) + Double.parseDouble(st.nextToken())) / 2));
                 }
                 graphProvider.writeGraph(graph, b.getId(), tickerId);
-
-            } catch (Exception e) {
+                webClient.closeAllWindows();
+            } catch (IOException e) {
                 log.error("Error on getting quote for !!!" + finamName, e);
             }
         }
 
+    }
+
+    Pair<String, String> namePair(String finamName) {
+        try {
+            JSONArray a = new JSONArray(finamName);
+            return Pair.of(a.get(0).toString(), a.get(1).toString());
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

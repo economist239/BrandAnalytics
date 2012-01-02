@@ -8,7 +8,6 @@ import ru.brandanalyst.core.model.SemanticDictionaryItem;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.StringTokenizer;
 
 /**
  * Класс для инициализации семантического словаря в БД
@@ -20,7 +19,6 @@ import java.util.StringTokenizer;
  * @version 1.1
  */
 public final class DictionaryInitialyzer {
-    private static StringTokenizer stringTokenizer;
     private static BufferedReader in;
 
     private DictionaryInitialyzer() {

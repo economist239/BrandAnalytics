@@ -1,14 +1,20 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
-import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
+import org.springframework.jdbc.core.RowCallbackHandler;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import org.springframework.jdbc.support.rowset.SqlRowSet;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
 
-import java.sql.Timestamp;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -19,100 +25,100 @@ import java.util.List;
  * this class provides graphs from DB
  */
 public class MySQLGraphProvider implements GraphProvider {
-    private static final Logger log = Logger.getLogger(MySQLGraphProvider.class);
+    private SimpleJdbcTemplate jdbcTemplate;
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    private SimpleJdbcTemplate jdbcTemplate; //
+    @Required
+    public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+        this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
+    }
 
+    @Required
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     @Override
-    @Deprecated
-    public void cleanDataStore() {
-        jdbcTemplate.update("TRUNCATE TABLE Graphs");
-    }
+    public void writeGraph(final Graph graph, final long brandId, final long tickerId) {
+        final Iterator<SingleDot> it = graph.getGraph().iterator();
+        jdbcTemplate.update("INSERT INTO Graphs (BrandId, TickerId, Tstamp, Val) VALUES(?,?,?,?)", new BatchPreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement ps, int i) throws SQLException {
+                SingleDot d = it.next();
+                ps.setLong(1, brandId);
+                ps.setLong(2, tickerId);
+                ps.setTimestamp(3, d.getDate());
+                ps.setDouble(4, d.getValue());
+            }
 
-    @Override
-    public void writeGraph(Graph graph, long brandId, long tickerId) {
-        for (SingleDot d : graph.getGraph()) {
-            writeSingleDot(d, brandId, tickerId);
-        }
-    }
-
-    @Override
-    public void writeSingleDot(SingleDot dot, long brandId, long tickerId) {
-        writeSingleDot(dot.getDate(), dot.getValue(), brandId, tickerId);
-    }
-
-    @Override
-    public void writeSingleDot(Timestamp Tstamp, double value, long brandId, long tickerId) {
-        try {
-            jdbcTemplate.update("INSERT INTO Graphs (BrandId, TickerId, Tstamp, Val) VALUES(?,?,?,?);", brandId, tickerId,
-                    Tstamp, value);
-        } catch (Exception e) {
-            log.error("cannot write dot to db");
-        }
+            @Override
+            public int getBatchSize() {
+                return graph.getGraph().size();
+            }
+        });
     }
 
     @Override
     public Graph getGraphByTickerAndBrand(long brandId, long tickerId) {
-        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId = " + brandId + " And TickerId = " + tickerId);
-
-        Graph graph;
-        try {
-            if (rowSet.next()) {
-                String tickerName = rowSet.getString("TickerName");
-                graph = new Graph(tickerName);
-            } else {
-                log.error("no graph in db");
-                return null;
+        final Graph graph = new Graph();
+        jdbcTemplate.getJdbcOperations().query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId =? AND TickerId=?", new Object[]{brandId, tickerId}, new RowCallbackHandler() {
+            @Override
+            public void processRow(ResultSet rs) throws SQLException {
+                if (rs.isFirst()) {
+                    graph.setTicker(rs.getString("TickerName"));
+                }
+                SingleDot d = new SingleDot(rs.getTimestamp("Tstamp"), rs.getDouble("Val"));
+                graph.addPoint(d);
             }
+        });
 
-            do {
-                Timestamp curTstamp = rowSet.getTimestamp("Tstamp");
-                double curValue = rowSet.getDouble("Val");
-                graph.addPoint(new SingleDot(curTstamp, curValue));
-            } while (rowSet.next());
-            return graph;
-        } catch (Exception e) {
-            log.error("can't get graph from db", e);
-            return null;
-        }
+        return graph;
+    }
+
+    @Override
+    public List<Graph> getGraphByTickerAndBrand(long brandId, List<Long> tickerIds) {
+        final List<Graph> graphList = new ArrayList<Graph>(tickerIds.size());
+        namedParameterJdbcTemplate.query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id"
+                + " WHERE BrandId=:b_id AND TickerID IN :t_ids ORDER BY TickerId",
+                new MapSqlParameterSource("b_id", brandId).addValue("t_ids", tickerIds),
+                new RowCallbackHandler() {
+                    @Override
+                    public void processRow(ResultSet rs) throws SQLException {
+                        String tickerName = rs.getString("TickerName");
+                        Graph g;
+                        if (graphList.size() == 0 || !graphList.get(graphList.size() - 1).getTicker().equals(tickerName)) {
+                            g = new Graph();
+                            g.setTicker(tickerName);
+                            graphList.add(g);
+                        } else {
+                            g = graphList.get(graphList.size() - 1);
+                        }
+                        g.addPoint(new SingleDot(rs.getTimestamp("Tstamp"), rs.getDouble("Val")));
+                    }
+                });
+
+        return graphList;
     }
 
     @Override
     public List<Graph> getGraphsByBrandId(long brandId) {
-
-        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId = " + Long.toString(brandId) + " ORDER BY TickerId");
-
-        List<Graph> graphList = new ArrayList<Graph>();
-
-        try {
-            if (rowSet.next()) {
-                String tickerName = rowSet.getString("TickerName");
-                graphList.add(new Graph(tickerName));
-            } else {
-                //    System.out.println("asdfghjkl;");
-                return null;
-            }
-
-            int curGraph = 0;
-            do {
-                Timestamp curTstamp = rowSet.getTimestamp("Tstamp");
-                double curValue = rowSet.getDouble("Val");
-                String curTicker = rowSet.getString("TickerName");
-                if (curTicker.indexOf(graphList.get(curGraph).getTicker()) != 0) {
-                    Graph graph = new Graph(curTicker);
-                    graphList.add(graph);
-                    curGraph++;
+        final List<Graph> graphList = new ArrayList<Graph>();
+        jdbcTemplate.getJdbcOperations().query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId =? ORDER BY TickerId", new Object[]{brandId}, new RowCallbackHandler() {
+            @Override
+            public void processRow(ResultSet rs) throws SQLException {
+                String tickerName = rs.getString("TickerName");
+                Graph g;
+                if (graphList.size() == 0 || !graphList.get(graphList.size() - 1).getTicker().equals(tickerName)) {
+                    g = new Graph();
+                    g.setTicker(tickerName);
+                    graphList.add(g);
+                } else {
+                    g = graphList.get(graphList.size() - 1);
                 }
-                graphList.get(curGraph).addPoint(new SingleDot(curTstamp, curValue));
-            } while (rowSet.next());
-            return graphList;
-        } catch (Exception e) {
-            log.error("can't get graphs from db", e);
-            return null;
-        }
+                g.addPoint(new SingleDot(rs.getTimestamp("Tstamp"), rs.getDouble("Val")));
+            }
+        });
+
+        return graphList;
     }
 }

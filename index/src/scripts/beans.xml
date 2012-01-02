@@ -6,7 +6,7 @@
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--IMPORT DB-->
-    <import resource="file:./core/src/script/dbhandler_dirty.xml"/>
+    <import resource="../../../core/src/script/dbhandler_dirty.xml"/>
     <!--Indexer conf-->
     <bean id="indexer" class="ru.brandanalyst.indexer.Indexer">
         <property name="directoryBrand" value="index_brand/"/>

@@ -22,16 +22,11 @@ public class BrandSearchManager {
     }
 
     public List<SimplyBrandForWeb> getSearchResultByBrand(String query) {
-
-        try {
-            List<SimplyBrandForWeb> brandList = new ArrayList<SimplyBrandForWeb>();
-            for (Brand b : searcher.searchBrandByDescription(query)) {
-                brandList.add(new SimplyBrandForWeb(b.getId(), b.getName(), b.getDescription(), b.getWebsite()));
-            }
-            return brandList;
-        } catch (Exception e) {
-            return null;
+        List<SimplyBrandForWeb> brandList = new ArrayList<SimplyBrandForWeb>();
+        for (Brand b : searcher.searchBrandByDescription(query)) {
+            brandList.add(new SimplyBrandForWeb(b.getId(), b.getName(), b.getDescription(), b.getWebsite()));
         }
+        return brandList;
     }
 
 }

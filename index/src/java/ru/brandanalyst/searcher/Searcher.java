@@ -66,20 +66,25 @@ public class Searcher {
      * @throws ParseException
      * @throws IOException
      */
-    public List<Brand> searchBrandByDescription(String query) throws ParseException, IOException {
+    public List<Brand> searchBrandByDescription(String query) {
+        try {
+            Analyzer analyzer; // your can change version
+            analyzer = new RussianAnalyzer(Version.LUCENE_34);
+            QueryParser parser = new QueryParser(Version.LUCENE_34, "Description", analyzer);
+            Query search = parser.parse(query);
 
-        Analyzer analyzer; // your can change version
-        analyzer = new RussianAnalyzer(Version.LUCENE_34);
-        QueryParser parser = new QueryParser(Version.LUCENE_34, "Description", analyzer);
-        Query search = parser.parse(query);
-
-        ScoreDoc[] hits = indexSearcherBrand.search(search, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
-        List<Brand> lst = new ArrayList<Brand>();
-        for (int i = 0; i < hits.length; i++) {
-            Document doc = indexSearcherBrand.doc(hits[i].doc);
-            lst.add(brandMap(doc));
+            ScoreDoc[] hits = indexSearcherBrand.search(search, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
+            List<Brand> lst = new ArrayList<Brand>();
+            for (int i = 0; i < hits.length; i++) {
+                Document doc = indexSearcherBrand.doc(hits[i].doc);
+                lst.add(brandMap(doc));
+            }
+            return lst;
+        } catch (IOException e) {
+            throw new RuntimeException("index access failed", e);
+        } catch (ParseException e) {
+            throw new RuntimeException("invalid query", e);
         }
-        return lst;
     }
 
     /**
@@ -88,20 +93,25 @@ public class Searcher {
      * @throws ParseException
      * @throws IOException
      */
-    public List<Article> searchArticleByContent(String query) throws ParseException, IOException {
+    public List<Article> searchArticleByContent(String query) {
+        try {
+            Analyzer analyzer;
+            analyzer = new RussianAnalyzer(Version.LUCENE_34); // your can change version
+            QueryParser parser = new QueryParser(Version.LUCENE_34, "Content", analyzer);
+            Query search = parser.parse(query);
 
-        Analyzer analyzer;
-        analyzer = new RussianAnalyzer(Version.LUCENE_34); // your can change version
-        QueryParser parser = new QueryParser(Version.LUCENE_34, "Content", analyzer);
-        Query search = parser.parse(query);
-
-        ScoreDoc[] hits = indexSearcherArticle.search(search, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
-        List<Article> lst = new ArrayList<Article>();
-        for (int i = 0; i < hits.length; i++) {
-            Document doc = indexSearcherArticle.doc(hits[i].doc);
-            lst.add(articleMap(doc));
+            ScoreDoc[] hits = indexSearcherArticle.search(search, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
+            List<Article> lst = new ArrayList<Article>();
+            for (int i = 0; i < hits.length; i++) {
+                Document doc = indexSearcherArticle.doc(hits[i].doc);
+                lst.add(articleMap(doc));
+            }
+            return lst;
+        } catch (IOException e) {
+            throw new RuntimeException("index access failed", e);
+        } catch (ParseException e) {
+            throw new RuntimeException("invalid query", e);
         }
-        return lst;
     }
 
     private Brand brandMap(Document doc) {

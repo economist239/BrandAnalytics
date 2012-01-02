@@ -2,32 +2,23 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
         "http://www.springframework.org/dtd/spring-beans.dtd">
 
-<beans default-autowire="byName" default-init-method="afterPropertiesSet">
+<beans default-autowire="byName">
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--IMPORT DB-->
-    <import resource="file:./core/src/script/dbhandler_dirty.xml"/>
+    <import resource="../../../core/src/script/dbhandler_dirty.xml"/>
     <!--Miner conf-->
     <bean class="ru.brandanalyst.miner.GrabberHandler">
         <property name="grabberList">
             <list>
-                <!--<bean class="ru.brandanalyst.miner.GrabberWikipedia">
-               <property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>
-               </bean> -->
-                <!--wikibrands.txt;resources/wikibrands.xml-->
-                <!--<bean class="ru.brandanalyst.miner.GrabberTwitter"/>-->
-
-                <!-- <bean class="ru.brandanalyst.miner.GrabberLenta">
-                    <property name="config" value="miner/configs/lentaRu.xml"/>
+                <!--     <bean class="ru.brandanalyst.miner.GrabberWikipedia">
+                    <property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>
                 </bean>-->
-                <!--<bean class="ru.brandanalyst.miner.GrabberRia">
-                    <property name="config" value="miner/configs/riaNews1.xml"/>
-                </bean>-->
+                <bean class="ru.brandanalyst.miner.rss.ParserStarter"/>
+                <bean class="ru.brandanalyst.miner.quote.GrabberFinam"/>
             </list>
         </property>
     </bean>
-    <!--<bean class="ru.brandanalyst.miner.parser.ParserStarter">
-    </bean>-->
-    <bean class="ru.brandanalyst.miner.quote.GrabberFinam"/>
+
 
 </beans>

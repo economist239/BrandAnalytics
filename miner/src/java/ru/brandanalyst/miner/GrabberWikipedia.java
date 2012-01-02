@@ -27,8 +27,8 @@ public class GrabberWikipedia extends Grabber {
             scraper.addVariableToContext("inputFile", linksFile);
             scraper.execute();
             log.info("Wikipedia: succecsful");
-        } catch (Exception exception) {
-            log.error("cannot process Wikipedia");
+        } catch (Exception e) {
+            log.error("cannot process Wikipedia", e);
         }
     }
 }

@@ -23,7 +23,8 @@ create table Brand(
 	Name varchar(100) not null,
 	Description varchar(1000),
 	Website varchar(400),
-	BranchId int
+	BranchId int,
+	FinamName varchar(50)
 );
 
 create table Branch(
@@ -47,7 +48,8 @@ create table InformationSource(
 	TypeId int not null,
 	Title varchar(100) not null,
     Description varchar(1000),
-	Website varchar(100) not null
+	Website varchar(100) not null,
+    RSSSource varchar(100) not null
 );
 
 ALTER TABLE Article ADD CONSTRAINT ForArtileInfroSource

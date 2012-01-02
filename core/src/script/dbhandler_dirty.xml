@@ -27,6 +27,7 @@
 
     <bean id="dirtyGraphProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider">
         <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
+        <property name="namedParameterJdbcTemplate" ref="pureNamedParameterJdbcTemplate"/>
     </bean>
 
     <bean id="dirtyInformationSourceProvider"
@@ -50,6 +51,12 @@
         <property name="password" value="root"/>
         <property name="validationQuery" value="select 1"/>
     </bean>
+
+    <bean id="dirtyNamedParameterJdbcTemplate"
+          class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+        <constructor-arg ref="pureDataSource"/>
+    </bean>
+
     <bean id="dirtyJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
         <constructor-arg ref="dirtyDataSource"/>
     </bean>

@@ -1,4 +1,4 @@
-package ru.brandanalyst.core.util;
+package ru.brandanalyst.core.util.cortege;
 
 /**
  * Created by IntelliJ IDEA.
@@ -7,7 +7,7 @@ package ru.brandanalyst.core.util;
  * Time: 10:24 AM
  */
 public class Triple<A, B, C> {
-   
+
     public final A first;
     public final B second;
     public final C third;
@@ -17,7 +17,7 @@ public class Triple<A, B, C> {
         this.second = second;
         this.third = third;
     }
-    
+
     public static <A, B, C> Triple<A, B, C> of(A first, B second, C third) {
         return new Triple(first, second, third);
     }

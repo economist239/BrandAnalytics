@@ -1,13 +1,10 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
-import org.apache.log4j.Logger;
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.interfaces.SemanticDictionaryProvider;
 import ru.brandanalyst.core.model.SemanticDictionaryItem;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,31 +15,20 @@ import java.util.Set;
  * Time: 9:20 AM
  */
 public class MySQLSemanticDictionaryProvider implements SemanticDictionaryProvider {
-    private static final Logger log = Logger.getLogger(MySQLSemanticDictionaryProvider.class);
     private SimpleJdbcTemplate jdbcTemplate;
 
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @Deprecated
-    public void cleanDataStore() {
-        jdbcTemplate.update("TRUNCATE TABLE SemanticDictionary");
-    }
-
     @Override
     public Set<SemanticDictionaryItem> getSemanticDictionary() {
-        List<SemanticDictionaryItem> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM SemanticDictionary",
-                MappersHolder.SEMANTIC_DICTIONARY_MAPPER);
-        return new HashSet<SemanticDictionaryItem>(list);
+        return new HashSet<SemanticDictionaryItem>(jdbcTemplate.getJdbcOperations().query("SELECT * FROM SemanticDictionary",
+                MappersHolder.SEMANTIC_DICTIONARY_MAPPER));
     }
 
     @Override
     public void setSemanticDictionaryItem(SemanticDictionaryItem item) {
-        try {
-            jdbcTemplate.update("INSERT INTO SemanticDictionary (Term, SemanticValue) VALUES(?,?);", item.getTerm(), item.getSemanticValue());
-        } catch (DataAccessException e) {
-            log.error("cannot wrtie item to db");
-        }
+        jdbcTemplate.update("INSERT INTO SemanticDictionary (Term, SemanticValue) VALUES(?,?)", item.getTerm(), item.getSemanticValue());
     }
 }

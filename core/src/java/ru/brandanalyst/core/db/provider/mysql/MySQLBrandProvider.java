@@ -8,62 +8,62 @@ package ru.brandanalyst.core.db.provider.mysql;
  * this class provides brands from DB
  */
 
-import org.apache.log4j.Logger;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.model.Brand;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Iterator;
 import java.util.List;
 
 public class MySQLBrandProvider implements BrandProvider {
-    private static final Logger log = Logger.getLogger(MySQLBrandProvider.class);
-
-    private SimpleJdbcTemplate jdbcTemplate; //
+    private SimpleJdbcTemplate jdbcTemplate;
 
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @Deprecated
-    public void cleanDataStore() {
-        jdbcTemplate.update("TRUNCATE TABLE Brand");
-    }
-
     @Override
     public void writeBrandToDataStore(Brand brand) {
-        try {
-            jdbcTemplate.update("INSERT INTO Brand (Name, Description, Website, BranchId, FinamName) VALUES(?,?,?,?,?);", brand.getName(),
-                    brand.getDescription(), brand.getWebsite(), brand.getBranchId(), brand.getFinamName());
-        } catch (Exception e) {
-            log.error("cannot wrtie brand to db");
-        }
+        jdbcTemplate.update("INSERT INTO Brand (Name, Description, Website, BranchId, FinamName) VALUES(?,?,?,?,?)", brand.getName(),
+                brand.getDescription(), brand.getWebsite(), brand.getBranchId(), brand.getFinamName());
     }
 
     @Override
-    public void writeListOfBrandsToDataStore(List<Brand> brands) {
-        for (Brand b : brands) {
-            writeBrandToDataStore(b);
-        }
+    public void writeListOfBrandsToDataStore(final List<Brand> brands) {
+        final Iterator<Brand> it = brands.iterator();
+        jdbcTemplate.getJdbcOperations().batchUpdate("INSERT INTO Brand (Name, Description, Website, BranchId, FinamName) VALUES(?,?,?,?,?)", new BatchPreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement ps, int i) throws SQLException {
+                Brand b = it.next();
+                ps.setString(1, b.getName());
+                ps.setString(2, b.getDescription());
+                ps.setString(3, b.getWebsite());
+                ps.setLong(4, b.getBranchId());
+                ps.setString(5, b.getFinamName());
+            }
+
+            @Override
+            public int getBatchSize() {
+                return brands.size();
+            }
+        });
     }
 
     @Override
     public Brand getBrandByName(String name) {
-        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Name = " +
-                name, MappersHolder.BRAND_MAPPER);
-        return list.get(0);
+        return jdbcTemplate.query("SELECT * FROM Brand WHERE Name =?", MappersHolder.BRAND_MAPPER, name).get(0);
     }
 
     @Override
     public Brand getBrandById(long brandId) {
-        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand WHERE Id = " +
-                brandId, MappersHolder.BRAND_MAPPER);
-        return list.get(0);
+        return jdbcTemplate.query("SELECT * FROM Brand WHERE Id=?", MappersHolder.BRAND_MAPPER, brandId).get(0);
     }
 
     @Override
     public List<Brand> getAllBrands() {
-        List<Brand> list = jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand",
-                MappersHolder.BRAND_MAPPER);
-        return list;
+        return jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand", MappersHolder.BRAND_MAPPER);
     }
 }

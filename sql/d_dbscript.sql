@@ -24,7 +24,7 @@ create table Brand(
 	Description varchar(1000),
 	Website varchar(400),
 	BranchId int,
-	FinamName varchar(50) default ""
+	FinamName varchar(50)
 );
 
 create table Branch(
@@ -37,7 +37,7 @@ create table Article(
 	BrandId int,
 	InfoSourceId int not null,
 	Title varchar(500),
-	Content text not null,
+	Content longtext not null,
 	Link varchar(500),
 	NumLikes int,
 	Tstamp timestamp
@@ -49,7 +49,7 @@ create table InformationSource(
 	Title varchar(100) not null,
     Description varchar(1000),
 	Website varchar(100) not null,
-	RSSSource varchar(100)
+	RSSSource varchar(100) not null
 );
 
 create table BrandDictionary(
@@ -82,10 +82,6 @@ ALTER TABLE Graphs ADD CONSTRAINT ForGraphsTicker
 FOREIGN KEY (TickerId)
 REFERENCES Ticker(Id);
 
-ALTER TABLE BrandDictionary ADD CONSTRAINT ForDictionaryBrand
-FOREIGN KEY (BrandId)
-REFERENCES Brand(Id);
-
 INSERT INTO Branch (Name) VALUES("IT: программное обеспечение");
 INSERT INTO Branch (Name) VALUES("мобильная связь");
 INSERT INTO Branch (Name) VALUES("IT: железо");
@@ -108,13 +104,13 @@ INSERT INTO Ticker (TickerName) VALUES("котировки");
 INSERT INTO Ticker (TickerName) VALUES("экспоненциальное сглаживание котировок");
 INSERT INTO Ticker (TickerName) VALUES("сезонная декомозиция котировок");
 
-INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Microsoft","Operation Systems","http://microsoft.com",0);
-INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Apple","iCorporation","http://apple.com",0);
-INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Google","Searcher","http://google.com",0);
-INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Yota","wimax","http://yota.ru",0);
-INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Яндекс","Searcher","http://yandex.ru",0);
-INSERT INTO Brand (Name,Description,WebSite,BranchId,FinamName) VALUES ("M-VIDEO","Shop","http://mvideo.ru",0,"М.видео");
-INSERT INTO Brand (Name,Description,WebSite,BranchId,FinamName) VALUES ("MTS","Mobile","http://mts.ru",0,"МТС-ао");
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Microsoft","Operation Systems","http://microsoft.com",1);
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Apple","iCorporation","http://apple.com",1);
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Google","Searcher","http://google.com",1);
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Yota","wimax","http://yota.ru",1);
+INSERT INTO Brand (Name,Description,WebSite,BranchId) VALUES ("Яндекс","Searcher","http://yandex.ru",1);
+INSERT INTO Brand (Name,Description,WebSite,BranchId,FinamName) VALUES ("M-VIDEO","Shop","http://mvideo.ru",1,"М.видео");
+INSERT INTO Brand (Name,Description,WebSite,BranchId,FinamName) VALUES ("MTS","Mobile","http://mts.ru",1,"МТС-ао");
 
 
 INSERT INTO BrandDictionary (BrandId,Term) VALUES (5,"yandex");

@@ -1,14 +1,15 @@
 package ru.brandanalyst.frontend.yalets;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.core.xml.Xmler;
+import org.json.JSONArray;
+import org.json.JSONException;
+import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
+import ru.brandanalyst.core.model.Graph;
+import ru.brandanalyst.core.util.Batch;
 
-import javax.swing.*;
-import java.awt.image.BufferedImage;
-import java.io.*;
-
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,16 +18,26 @@ import java.io.*;
  * Time: 9:11 AM
  */
 public class GetGraphsYalet extends AbstractDbYalet {
-    public void process(InternalRequest req, InternalResponse res) {
+    public void process(InternalRequest req, final InternalResponse res) {
+        try {
+            final long brandId = req.getLongParameter("brand-id");
+            JSONArray graphsIds = new JSONArray(req.getParameter("graph-ids"));
 
-        long graphGroupId = req.getLongParameter("group-id");
-        /*     try {
-            OutputStream os = res.getOutputStream();
-            os.write("{\"key\": \"value\"}".getBytes());
-        } catch (IOException e) {
+            final GraphProvider provider = providersHandler.getGraphProvider();
+            Batch<Long> batch = new Batch<Long>() {
+                @Override
+                public void handle(List<Long> longs) {
+                    for (Graph g : provider.getGraphByTickerAndBrand(brandId, longs)) {
+                        res.add(Xmler.tag("graph", g));
+                    }
+                }
+            };
+
+            for (int i = 0; i < graphsIds.length(); i++) {
+                batch.submit(Long.parseLong(graphsIds.get(i).toString()));
+            }
+        } catch (JSONException e) {
             res.add(Xmler.tag("error"));
-        }*/
-        String str = "{\"key\": \"value\"}";
-        res.add(Xmler.tag("mytag", str));
+        }
     }
 }

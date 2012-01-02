@@ -5,6 +5,7 @@ import org.jetbrains.annotations.Nullable;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.helpers.AttributesImpl;
+import ru.brandanalyst.core.util.Jsonable;
 
 import java.util.*;
 
@@ -138,6 +139,10 @@ public class Xmler {
      */
     public static Tag tag(final Tagable tagable) {
         return tagable == null ? EMPTY_TAG : tagable.asTag();
+    }
+
+    public static Tag tag(final String name, final Jsonable givenValue) {
+        return tag(name, givenValue.asJson().toString());
     }
 
     /**

@@ -5,9 +5,6 @@ import ru.brandanalyst.core.model.Brand;
 import java.util.List;
 
 public interface BrandProvider {
-    @Deprecated
-    public void cleanDataStore();
-
     public void writeBrandToDataStore(Brand brand);
 
     public void writeListOfBrandsToDataStore(List<Brand> brands);

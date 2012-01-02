@@ -1,11 +1,12 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
-import org.apache.log4j.Logger;
+import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import org.springframework.jdbc.support.rowset.SqlRowSet;
 import ru.brandanalyst.core.db.provider.interfaces.TickerProvider;
 import ru.brandanalyst.core.model.TickerPair;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -16,9 +17,7 @@ import java.util.List;
  * Time: 2:46 PM
  */
 public class MySQLTickerProvider implements TickerProvider {
-    private static final Logger log = Logger.getLogger(MySQLGraphProvider.class);
-
-    private SimpleJdbcTemplate jdbcTemplate; //
+    private SimpleJdbcTemplate jdbcTemplate;
 
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -26,16 +25,16 @@ public class MySQLTickerProvider implements TickerProvider {
 
     @Override
     public List<TickerPair> getTickers() {
+        final List<TickerPair> tickers = new LinkedList();
 
-        SqlRowSet rowSet = jdbcTemplate.getJdbcOperations().queryForRowSet("SELECT * FROM Ticker ORDER BY Id");
-
-        List<TickerPair> tickers = new LinkedList();
-
-        while (rowSet.next()) {
-            String name = rowSet.getString("TickerName");
-            Long id = rowSet.getLong("Id");
-            tickers.add(new TickerPair(name, id));
-        }
+        jdbcTemplate.getJdbcOperations().query("SELECT * FROM Ticker ORDER BY Id", new RowCallbackHandler() {
+            @Override
+            public void processRow(ResultSet rs) throws SQLException {
+                String name = rs.getString("TickerName");
+                Long id = rs.getLong("Id");
+                tickers.add(new TickerPair(name, id));
+            }
+        });
         return tickers;
     }
 }
