@@ -64,6 +64,6 @@ public class MySQLBrandProvider implements BrandProvider {
 
     @Override
     public List<Brand> getAllBrands() {
-        return jdbcTemplate.getJdbcOperations().query("SELECT * FROM Brand", MappersHolder.BRAND_MAPPER);
+        return jdbcTemplate.query("SELECT * FROM Brand", MappersHolder.BRAND_MAPPER);
     }
 }

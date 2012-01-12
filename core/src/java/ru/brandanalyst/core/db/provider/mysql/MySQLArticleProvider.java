@@ -85,7 +85,7 @@ public class MySQLArticleProvider implements ArticleProvider {
     }
 
     public List<Article> getAllArticles() {
-        return jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article", MappersHolder.ARTICLE_MAPPER);
+        return jdbcTemplate.query("SELECT * FROM Article", MappersHolder.ARTICLE_MAPPER);
     }
 
     public List<Article> getTopArticles(long brandId, int topSize) {

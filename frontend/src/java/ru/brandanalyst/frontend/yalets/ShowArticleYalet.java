@@ -16,16 +16,9 @@ import ru.brandanalyst.frontend.services.ArticleManager;
 public class ShowArticleYalet extends AbstractDbYalet {
 
     public void process(InternalRequest req, InternalResponse res) {
-
         long articleId = req.getLongParameter("id");
-
         ArticleManager manager = new ArticleManager(providersHandler);
         WideArticleForWeb article = manager.getArticle(articleId);
-        if (article != null) {
-            res.add(article);
-        } else {
-            Xmler.Tag ans = Xmler.tag("error", "Трололо");
-            res.add(ans);
-        }
+        res.add(article);
     }
 }

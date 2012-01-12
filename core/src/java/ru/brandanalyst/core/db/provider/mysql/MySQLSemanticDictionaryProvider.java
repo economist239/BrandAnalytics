@@ -23,7 +23,7 @@ public class MySQLSemanticDictionaryProvider implements SemanticDictionaryProvid
 
     @Override
     public Set<SemanticDictionaryItem> getSemanticDictionary() {
-        return new HashSet<SemanticDictionaryItem>(jdbcTemplate.getJdbcOperations().query("SELECT * FROM SemanticDictionary",
+        return new HashSet<SemanticDictionaryItem>(jdbcTemplate.query("SELECT * FROM SemanticDictionary",
                 MappersHolder.SEMANTIC_DICTIONARY_MAPPER));
     }
 

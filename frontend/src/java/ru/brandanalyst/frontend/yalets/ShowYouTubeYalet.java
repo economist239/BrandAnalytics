@@ -12,9 +12,7 @@ import ru.brandanalyst.frontend.services.YouTubeManager;
  */
 public class ShowYouTubeYalet extends AbstractDbYalet {
     public void process(InternalRequest req, InternalResponse res) {
-
         long brandId = req.getLongParameter("id");
-
         YouTubeManager manager = new YouTubeManager(providersHandler);
         res.add(manager.getVideosByBrandId(brandId));
     }

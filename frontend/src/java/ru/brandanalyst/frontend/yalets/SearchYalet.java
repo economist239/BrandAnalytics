@@ -34,41 +34,26 @@ public class SearchYalet implements Yalet {
     public void process(InternalRequest req, InternalResponse res) {
         String query = req.getParameter("query");
         String queryType = req.getParameter("query_type");
-
         if (query.isEmpty()) {
-            Xmler.Tag ans = Xmler.tag("answer", "Пустой запрос. Query: " + query);
+            Xmler.Tag ans = Xmler.tag("answer", "Пустой запрос");
             res.add(ans);
             return;
         }
 
         if (queryType != null) {
             List<SimplyArticleForWeb> articleIssuance = articleSearchManager.getSearchResultByArticle(query);
-            if (articleIssuance != null) {
-                if (articleIssuance.size() != 0) {
-                    res.add(articleIssuance);
-                } else {
-                    Xmler.Tag ans = Xmler.tag("answer", "Ничего не найдено. Query by articles: " + query);
-                    res.add(ans);
-                }
-            } else {
-                Xmler.Tag ans = Xmler.tag("answer", "Убейтесь, все сломалось, ничего не работает или слишком сложный запрос. Query by articles: " + query);
-                res.add(ans);
+            if (articleIssuance.size() != 0) {
+                res.add(articleIssuance);
+                return;
             }
         } else {
             List<SimplyBrandForWeb> brandIssuance = brandSearchManager.getSearchResultByBrand(query);
-
-            if (brandIssuance != null) {
-                if (brandIssuance.size() != 0) {
-                    res.add(brandIssuance);
-                } else {
-                    Xmler.Tag ans = Xmler.tag("answer", "Ничего не найдено. Query by brands: " + query);
-                    res.add(ans);
-                }
-            } else {
-                Xmler.Tag ans = Xmler.tag("answer", "Убейтесь, все сломалось, ничего не работает или слишком сложный запрос. Query by brands: " + query);
-                res.add(ans);
+            if (brandIssuance.size() != 0) {
+                res.add(brandIssuance);
+                return;
             }
         }
+        res.add(Xmler.tag("answer", "error, try to change your query"));
     }
 
 }

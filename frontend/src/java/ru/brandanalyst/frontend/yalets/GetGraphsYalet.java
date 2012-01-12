@@ -37,7 +37,8 @@ public class GetGraphsYalet extends AbstractDbYalet {
                 batch.submit(Long.parseLong(graphsIds.get(i).toString()));
             }
         } catch (JSONException e) {
-            res.add(Xmler.tag("error"));
+            res.add("{error : \"error\"}");
+            throw new RuntimeException("can't get graphs",e);
         }
     }
 }
