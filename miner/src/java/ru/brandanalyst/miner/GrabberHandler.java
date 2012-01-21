@@ -32,9 +32,9 @@ public class GrabberHandler implements InitializingBean {
         Date now = new Date();
         BufferedReader bufferedReader;
         try {
-            bufferedReader = new BufferedReader(new FileReader("miner/config/miner.cfg"));
+            bufferedReader = new BufferedReader(new FileReader("miner/configs/miner.cfg"));
             String date = bufferedReader.readLine().substring(0, DATE_STRING_LENGTH);
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyy-MM-dd HH:mm:ss");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             timeLimit = dateFormat.parse(date);
             bufferedReader.close();
         } catch (Exception e) {

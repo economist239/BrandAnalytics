@@ -6,8 +6,8 @@
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--DB CONFIG-->
-    <import resource="../../../core/src/script/dbhandler_pure.xml"/>
-    <import resource="../../../core/src/script/dbhandler_dirty.xml"/>
+    <import resource="classpath:dbhandler_pure.xml"/>
+    <import resource="classpath:dbhandler_dirty.xml"/>
     <!--AnalyzerProcesser conf-->
     <bean id="analyzerProcessor" class="ru.brandanalyst.analyzer.AnalyzerProcesser"
           lazy-init="false">
