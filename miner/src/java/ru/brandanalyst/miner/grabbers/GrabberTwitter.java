@@ -1,6 +1,7 @@
 package ru.brandanalyst.miner.grabbers;
 
 import org.apache.log4j.Logger;
+import org.springframework.dao.DataAccessException;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandDictionaryProvider;
 import ru.brandanalyst.core.model.Article;
@@ -76,8 +77,13 @@ public class GrabberTwitter extends Grabber {
                         removeDuplicates(resultTweets, dictionary).entrySet().iterator();
                 while (resultIterator.hasNext()) {
                     Map.Entry<String, TweetInfo> next = resultIterator.next();
-                    articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
-                            "", "", next.getKey(), getSimpleTime(next.getValue().time), next.getValue().numLikes));
+                    try{
+                        articleProvider.writeArticleToDataStore(new Article(-1, b.getId(), 2,
+                                "", next.getKey(), "", getSimpleTime(next.getValue().time), next.getValue().numLikes));
+                    } catch (DataAccessException e){
+                        log.debug("May be this is cause of error: " + next.getKey());
+                        log.error("", e);
+                    }
                 }
 
             }

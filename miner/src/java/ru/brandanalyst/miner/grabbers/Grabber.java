@@ -1,5 +1,6 @@
 package ru.brandanalyst.miner.grabbers;
 
+import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 
 import java.util.Date;
@@ -14,10 +15,12 @@ public abstract class Grabber {
 
     public abstract void grab(Date timeLimit);
 
+    @Required
     public void setDirtyProvidersHandler(ProvidersHandler handler) {
         this.handler = handler;
     }
 
+    @Required
     public void setConfig(String config) {
         this.config = config;
     }

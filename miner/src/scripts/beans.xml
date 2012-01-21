@@ -16,8 +16,20 @@
                 <!--     <bean class="ru.brandanalyst.miner.grabbers.GrabberWikipedia">
                     <property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>
                 </bean>-->
-                <bean class="ru.brandanalyst.miner.rss.ParserStarter"/>
-                <bean class="ru.brandanalyst.miner.quote.GrabberFinam"/>
+                <!--<bean class="ru.brandanalyst.miner.rss.ParserStarter"/>-->
+                <!--<bean class="ru.brandanalyst.miner.quote.GrabberFinam"/>-->
+                <!--<bean class="ru.brandanalyst.miner.grabbers.GrabberTwitter"/>-->
+                <!--<bean class="ru.brandanalyst.miner.grabbers.GrabberRia">
+                    <property name="config" value="./miner/config/riaNews1.xml"/>
+                </bean>-->
+                <!--<bean class="ru.brandanalyst.miner.grabbers.GrabberFontanka">
+                    <property name="config" value="./miner/config/fontankaNews1.xml"/>
+                </bean>-->
+
+                <bean class="ru.brandanalyst.miner.grabbers.GrabberLenta">
+                    <property name="config" value="./miner/config/lentaRu.xml"/>
+                </bean>
+
             </list>
         </property>
     </bean>

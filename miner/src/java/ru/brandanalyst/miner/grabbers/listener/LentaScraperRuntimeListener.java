@@ -110,8 +110,13 @@ public class LentaScraperRuntimeListener implements ScraperRuntimeListener {
             log.info("Lenta: " + ++i + " article added... title = " + articleTitle);
         }
         if ("empty".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
-            Integer countOfArticles = Integer.parseInt(scraper.getContext().get("countOfArticles").toString());
-            int maxPage = countOfArticles / 25;
+            String temp = scraper.getContext().get("countOfArticles").toString();
+            int countOfArticles = 0;
+            if(!temp.isEmpty()){
+                countOfArticles = Integer.parseInt(temp);
+            }
+            final int ARTICLES_ON_PAGE = 25;
+            int maxPage = countOfArticles / ARTICLES_ON_PAGE;
             scraper.addVariableToContext("maxPage", maxPage);
         }
     }
