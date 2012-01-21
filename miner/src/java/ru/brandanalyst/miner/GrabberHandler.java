@@ -18,9 +18,9 @@ import java.util.List;
  */
 public class GrabberHandler implements InitializingBean {
     private static final Logger log = Logger.getLogger(GrabberHandler.class);
-    private static final String path = "miner/config/miner.cfg";
-    private static final String pattern = "yyyy-MM-dd HH:mm:ss";
-    private static final int DATE_STRING_LENGTH = pattern.length();
+    private static final String PATH = "miner/config/miner.cfg";
+    private static final String PATTERN = "yyyy-MM-dd HH:mm:ss";
+    private static final int DATE_STRING_LENGTH = PATTERN.length();
 
 
     private List<Grabber> grabberList;
@@ -36,9 +36,9 @@ public class GrabberHandler implements InitializingBean {
         Date now = new Date();
         BufferedReader bufferedReader = null;
         try {
-            bufferedReader = new BufferedReader(new FileReader(path));
+            bufferedReader = new BufferedReader(new FileReader(PATH));
             String date = bufferedReader.readLine().substring(0, DATE_STRING_LENGTH);
-            SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
+            SimpleDateFormat dateFormat = new SimpleDateFormat(PATTERN);
             timeLimit = dateFormat.parse(date);
             bufferedReader.close();
         } catch (Exception e) {
@@ -48,7 +48,7 @@ public class GrabberHandler implements InitializingBean {
                 try {
                     bufferedReader.close();
                 } catch (IOException e) {
-                    log.error("", e);
+                    log.error(e);
                 }
             }
         }
@@ -62,10 +62,10 @@ public class GrabberHandler implements InitializingBean {
 
         PrintWriter pw = null;
         try {
-            pw = new PrintWriter(new File(path));
-            SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
+            pw = new PrintWriter(new File(PATH));
+            SimpleDateFormat dateFormat = new SimpleDateFormat(PATTERN);
             pw.write(dateFormat.format(now));
-            log.debug(path + " have changed");
+            log.debug(PATH + " have changed");
         } catch (FileNotFoundException e) {
             log.error("error in date writtnig");
         } finally {
