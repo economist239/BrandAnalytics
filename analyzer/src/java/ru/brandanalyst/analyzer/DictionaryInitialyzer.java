@@ -31,8 +31,8 @@ public final class DictionaryInitialyzer {
      */
     public static void main(String[] args) throws IOException {
         BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName("com.global.jdbc.Driver");
-        dataSource.setUrl("jdbc:global://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8");
         dataSource.setUsername("root");
         dataSource.setPassword("root");
         dataSource.setValidationQuery("select 1");

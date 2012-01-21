@@ -20,7 +20,6 @@ public abstract class Grabber {
         this.handler = handler;
     }
 
-    @Required
     public void setConfig(String config) {
         this.config = config;
     }
