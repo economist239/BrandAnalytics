@@ -13,9 +13,9 @@
     <orderEntry type="module" module-name="assessor-tool" />
     <orderEntry type="module" module-name="miner" />
     <orderEntry type="module" module-name="analyzer" />
-    <orderEntry type="module" module-name="core" />
     <orderEntry type="module" module-name="index" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="module" module-name="core" />
   </component>
   <component name="org.twodividedbyzero.idea.findbugs">
     <option name="_basePreferences">

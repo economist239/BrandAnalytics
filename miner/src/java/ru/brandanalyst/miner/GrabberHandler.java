@@ -18,7 +18,10 @@ import java.util.List;
  */
 public class GrabberHandler implements InitializingBean {
     private static final Logger log = Logger.getLogger(GrabberHandler.class);
-    private static final int DATE_STRING_LENGTH = 19;
+    private static final String path = "miner/config/miner.cfg";
+    private static final String pattern = "yyyy-MM-dd HH:mm:ss";
+    private static final int DATE_STRING_LENGTH = pattern.length();
+
 
     private List<Grabber> grabberList;
 
@@ -31,15 +34,23 @@ public class GrabberHandler implements InitializingBean {
     public void afterPropertiesSet() {
         Date timeLimit;
         Date now = new Date();
-        BufferedReader bufferedReader;
+        BufferedReader bufferedReader = null;
         try {
-            bufferedReader = new BufferedReader(new FileReader("miner/configs/miner.cfg"));
+            bufferedReader = new BufferedReader(new FileReader(path));
             String date = bufferedReader.readLine().substring(0, DATE_STRING_LENGTH);
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
             timeLimit = dateFormat.parse(date);
             bufferedReader.close();
         } catch (Exception e) {
             throw new RuntimeException("invalid file with date", e);
+        } finally {
+            if (bufferedReader != null) {
+                try {
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    log.error("", e);
+                }
+            }
         }
 
         log.info("miner started...");
@@ -49,13 +60,17 @@ public class GrabberHandler implements InitializingBean {
             }
         }
 
-        PrintWriter pw;
+        PrintWriter pw = null;
         try {
-            pw = new PrintWriter(new File("miner/config/miner.cfg"));
-            pw.write(now.toString());
-            pw.close();
+            pw = new PrintWriter(new File(path));
+            SimpleDateFormat dateFormat = new SimpleDateFormat(pattern);
+            pw.write(dateFormat.format(now));
+            log.debug(path + " have changed");
         } catch (FileNotFoundException e) {
             log.error("error in date writtnig");
+        } finally {
+            if (pw != null)
+                pw.close();
         }
         log.info("miner finished.");
     }

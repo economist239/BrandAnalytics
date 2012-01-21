@@ -7,6 +7,8 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--IMPORT DB-->
     <import resource="classpath:dbhandler_dirty.xml"/>
+    <import resource="classpath:dbhandler_pure.xml"/>
+
     <!--Miner conf-->
     <bean class="ru.brandanalyst.miner.GrabberHandler">
         <property name="grabberList">
