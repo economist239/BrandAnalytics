@@ -27,7 +27,7 @@
 
     <bean id="dirtyGraphProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider">
         <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
-        <property name="namedParameterJdbcTemplate" ref="pureNamedParameterJdbcTemplate"/>
+        <property name="namedParameterJdbcTemplate" ref="dirtyNamedParameterJdbcTemplate"/>
     </bean>
 
     <bean id="dirtyInformationSourceProvider"
@@ -54,7 +54,7 @@
 
     <bean id="dirtyNamedParameterJdbcTemplate"
           class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
-        <constructor-arg ref="pureDataSource"/>
+        <constructor-arg ref="dirtyDataSource"/>
     </bean>
 
     <bean id="dirtyJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
