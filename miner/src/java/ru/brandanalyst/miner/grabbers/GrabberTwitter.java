@@ -1,4 +1,4 @@
-package ru.brandanalyst.miner;
+package ru.brandanalyst.miner.grabbers;
 
 import org.apache.log4j.Logger;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;

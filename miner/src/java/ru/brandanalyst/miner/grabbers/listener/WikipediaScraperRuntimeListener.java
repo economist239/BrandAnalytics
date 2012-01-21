@@ -1,4 +1,4 @@
-package ru.brandanalyst.miner.listener;
+package ru.brandanalyst.miner.grabbers.listener;
 
 import org.apache.log4j.Logger;
 import org.webharvest.runtime.Scraper;

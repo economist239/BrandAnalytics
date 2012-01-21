@@ -7,8 +7,8 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 
     <!--Miner conf-->
-    <bean id="grabberTwitter" class="ru.brandanalyst.miner.GrabberTwitter"/>
-    <bean id="grabberRia" class="ru.brandanalyst.miner.GrabberRia">
+    <bean id="grabberTwitter" class="ru.brandanalyst.miner.grabbers.GrabberTwitter"/>
+    <bean id="grabberRia" class="ru.brandanalyst.miner.grabbers.GrabberRia">
         <property name="config" value="./miner/configs/riaNews1.xml"/>
     </bean>
 

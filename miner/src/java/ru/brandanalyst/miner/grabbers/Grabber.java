@@ -1,4 +1,4 @@
-package ru.brandanalyst.miner;
+package ru.brandanalyst.miner.grabbers;
 
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 

@@ -2,6 +2,7 @@ package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
+import ru.brandanalyst.miner.grabbers.Grabber;
 
 import java.io.*;
 import java.text.SimpleDateFormat;

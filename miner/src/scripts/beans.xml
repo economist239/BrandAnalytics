@@ -11,7 +11,7 @@
     <bean class="ru.brandanalyst.miner.GrabberHandler">
         <property name="grabberList">
             <list>
-                <!--     <bean class="ru.brandanalyst.miner.GrabberWikipedia">
+                <!--     <bean class="ru.brandanalyst.miner.grabbers.GrabberWikipedia">
                     <property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>
                 </bean>-->
                 <bean class="ru.brandanalyst.miner.rss.ParserStarter"/>

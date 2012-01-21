@@ -7,6 +7,8 @@ import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
+import ru.brandanalyst.miner.grabbers.GrabberRia;
+import ru.brandanalyst.miner.grabbers.GrabberTwitter;
 import ru.brandanalyst.miner.util.StringChecker;
 
 import java.util.Date;

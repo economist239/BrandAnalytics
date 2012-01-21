@@ -14,7 +14,7 @@ import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
 import ru.brandanalyst.core.model.TickerPair;
 import ru.brandanalyst.core.util.cortege.Pair;
-import ru.brandanalyst.miner.Grabber;
+import ru.brandanalyst.miner.grabbers.Grabber;
 
 import java.io.BufferedReader;
 import java.io.IOException;

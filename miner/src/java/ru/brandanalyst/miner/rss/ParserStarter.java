@@ -5,7 +5,7 @@ import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.InfoSource;
 import ru.brandanalyst.core.util.Batch;
-import ru.brandanalyst.miner.Grabber;
+import ru.brandanalyst.miner.grabbers.Grabber;
 
 import java.util.Date;
 import java.util.List;

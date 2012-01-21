@@ -1,10 +1,10 @@
-package ru.brandanalyst.miner;
+package ru.brandanalyst.miner.grabbers;
 
 import org.apache.log4j.Logger;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
 import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.miner.listener.RiaNewsScraperRuntimeListener;
+import ru.brandanalyst.miner.grabbers.listener.RiaNewsScraperRuntimeListener;
 import ru.brandanalyst.miner.util.DataTransformator;
 
 import java.util.Date;
