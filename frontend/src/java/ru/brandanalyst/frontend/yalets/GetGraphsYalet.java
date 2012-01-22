@@ -2,14 +2,17 @@ package ru.brandanalyst.frontend.yalets;
 
 import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
-import net.sf.xfresh.core.xml.Xmler;
-import org.json.JSONArray;
+import net.sf.xfresh.core.SelfWriter;
+import org.apache.log4j.Logger;
 import org.json.JSONException;
-import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
+import org.json.JSONObject;
+import org.xml.sax.ContentHandler;
+import org.xml.sax.SAXException;
+import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
-import ru.brandanalyst.core.util.Batch;
+import ru.brandanalyst.core.util.Jsonable;
 
-import java.util.List;
+import static net.sf.xfresh.util.XmlUtil.text;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,27 +21,41 @@ import java.util.List;
  * Time: 9:11 AM
  */
 public class GetGraphsYalet extends AbstractDbYalet {
-    public void process(InternalRequest req, final InternalResponse res) {
-        try {
-            final long brandId = req.getLongParameter("brand-id");
-            JSONArray graphsIds = new JSONArray(req.getParameter("graph-ids"));
+    private static final Logger log = Logger.getLogger(GetGraphsYalet.class);
 
-            final GraphProvider provider = providersHandler.getGraphProvider();
-            Batch<Long> batch = new Batch<Long>() {
-                @Override
-                public void handle(List<Long> longs) {
-                    for (Graph g : provider.getGraphByTickerAndBrand(brandId, longs)) {
-                        res.add(Xmler.tag("graph", g));
-                    }
-                }
-            };
+    public void process(final InternalRequest req, final InternalResponse res) {
+        log.debug("Incoming");
+        final long brandId = req.getLongParameter("brand");
+        final long tickerId = req.getLongParameter("ticker");
 
-            for (int i = 0; i < graphsIds.length(); i++) {
-                batch.submit(Long.parseLong(graphsIds.get(i).toString()));
+        final Graph graph = providersHandler.getGraphProvider().getGraphByTickerAndBrand(brandId, tickerId);
+        final Brand brand = providersHandler.getBrandProvider().getBrandById(brandId);
+        res.add(new Chart(graph, brand));
+    }
+    private static class Chart implements Jsonable, SelfWriter{
+        public final Graph graph;
+        public final Brand brand;
+        public Chart(final Graph graph,final Brand brand){
+            this.graph = graph;
+            this.brand = brand;
+        }
+
+        @Override
+        public JSONObject asJson() {
+            try {
+                return new JSONObject().put("brand", brand.asJson()).put("chart", graph.asJson());
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
             }
-        } catch (JSONException e) {
-            res.add("{error : \"error\"}");
-            throw new RuntimeException("can't get graphs",e);
+        }
+
+        @Override
+        public void writeTo(ContentHandler handler) {
+            try {
+                text(handler, asJson().toString());
+            } catch (SAXException e) {
+                log.error("Error json creating", e);
+            }
         }
     }
 }

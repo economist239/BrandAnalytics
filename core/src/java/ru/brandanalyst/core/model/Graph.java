@@ -5,9 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import ru.brandanalyst.core.util.Jsonable;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -52,10 +50,14 @@ public class Graph implements Jsonable {
 
     @Override
     public JSONObject asJson() {
+        //count millisecs in sec
+        final long COUNT = 1000;
         try {
             JSONArray da = new JSONArray();
-            for (SingleDot d : graph) {
-                da.put(new JSONArray().put(d.getDate().getTime()).put(d.getValue()));
+            Set<SingleDot> sortedGraph = new TreeSet<SingleDot>(graph);
+
+            for (SingleDot d : sortedGraph) {
+                da.put(new JSONArray().put(d.getDate().getTime() / COUNT).put(d.getValue()));
             }
             return new JSONObject().put("ticker", ticker).put("graph", da);
         } catch (JSONException e) {

@@ -41,7 +41,8 @@ public class MySQLGraphProvider implements GraphProvider {
     @Override
     public void writeGraph(final Graph graph, final long brandId, final long tickerId) {
         final Iterator<SingleDot> it = graph.getGraph().iterator();
-        jdbcTemplate.update("INSERT INTO Graphs (BrandId, TickerId, Tstamp, Val) VALUES(?,?,?,?)", new BatchPreparedStatementSetter() {
+
+        jdbcTemplate.getJdbcOperations().batchUpdate("INSERT INTO Graphs (BrandId, TickerId, Tstamp, Val) VALUES(?,?,?,?)", new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement ps, int i) throws SQLException {
                 SingleDot d = it.next();

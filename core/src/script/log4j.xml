@@ -15,8 +15,8 @@
         </layout>
     </appender>
     <logger name="net.sf.xfresh" additivity="false">
-        <level value="INFO"/>
-        <appender-ref ref="file"/>
+        <level value="ERROR"/>
+        <appender-ref ref="console"/>
     </logger>
     <logger name="ru.brandanalyst" additivity="false">
         <level value="DEBUG"/>

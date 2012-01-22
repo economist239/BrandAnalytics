@@ -9,10 +9,67 @@
     </xsl:template>
 
     <xsl:template name="head">
-        <script src="raphael/raphael.js"></script>
-        <script src="raphael/popup.js"></script>
-        <script src="raphael/jquery.js"></script>
-        <script src="raphael/analytics.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            function parameter( name )
+            {
+            name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+            var regexS = "[\\?&amp;]"+name+"=([^&amp;#]*)";
+            var regex = new RegExp( regexS );
+            var results = regex.exec( window.location.href );
+            if( results == null )
+            return "";
+            else
+            return results[1];
+            }
+
+            function plotGraph(data){
+            var data=jQuery.parseJSON( data );
+
+            window.chart = new Highcharts.StockChart({
+            chart : {
+            renderTo : 'chartContainer'
+            },
+            rangeSelector : {
+            selected : 1
+            },
+            title : {
+            text : data.brand.brand
+            },
+            series : [{
+            name : 'Упоминаний',
+            data : data.chart.graph,
+            tooltip: {
+            yDecimals: 2
+            }
+            }]
+            });
+
+            };
+
+            function getGraph(){
+            var ticker = document.getElementById("graph-select").value;
+
+            <!--alert(ticker);-->
+            <!--alert(parameter("id"));-->
+            $.ajax({
+            url: '/get-graphs.xml',
+            dataType : "xml",
+
+            data : { "brand" : parameter("id"), "ticker" : ticker},
+
+            success: function (xml) {
+            $(xml).find('data').each(function() {
+                var data = $(this).text();
+                plotGraph(data);
+            });
+            }
+
+            });
+            };
+
+
+        </script>
     </xsl:template>
 
     <xsl:template match="page/data[@id='wideBrandInfo']" mode="show">
@@ -37,21 +94,11 @@
         <h3>
             Анализ
         </h3>
-        <script>
-            function func(){
-            var val = document.getElementById("graph-select").value;
-            if(document.location.href.indexOf("&amp;") == -1) {
-            return parent.location.href = document.location.href +"&amp;ticker_id=" + val;
-            } else {
-            return parent.location.href = document.location.href.substring(0, document.location.href.indexOf("ticker"))
-            +"ticker_id=" + val ;
-            }
-            }
+        <script type="text/javascript">
+            getGraph();
         </script>
 
         <xsl:for-each select="collection[2]">
-
-
             <select id="graph-select">
                 <xsl:for-each select="ticker-pair">   <!--id,name-->
                     <option size="60">
@@ -60,41 +107,18 @@
                         </xsl:attribute>
                         <xsl:value-of select="name"/>
                     </option>
-
                 </xsl:for-each>
             </select>
-
-            <button class="btn primary" type="submit" value="посмотреть" onclick="func()">посмотреть</button>
-
+            <button class="btn primary" type="submit" value="посмотреть" onclick="getGraph()">посмотреть</button>
         </xsl:for-each>
 
+        <script type="text/javascript">
+            window.onload=getGraph();
+        </script>
+        <script type="text/javascript" src="highstock/js/highstock.js"></script>
+        <script type="text/javascript" src="highstock/js/modules/exporting.js"></script>
+        <div id="chartContainer" style="height: 500px; min-width: 500px"/>
 
-        <xsl:for-each select="graph-for-web">
-            <h5>
-                <xsl:value-of select="name"/>
-            </h5>
-            <table id="data">
-                <tfoot>
-                    <tr>
-                        <xsl:for-each select="date/string">
-                            <th>
-                                <xsl:value-of select="text()"/>
-                            </th>
-                        </xsl:for-each>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    <tr>
-                        <xsl:for-each select="value/double">
-                            <td>
-                                <xsl:value-of select="text()"/>
-                            </td>
-                        </xsl:for-each>
-                    </tr>
-                </tbody>
-            </table>
-            <div id="holder" class="1"></div>
-        </xsl:for-each>
         <hr/>
         <script>
             function youtubePage(){
@@ -137,5 +161,4 @@
             </xsl:for-each>
         </table>
     </xsl:template>
-
 </xsl:stylesheet>

@@ -1,5 +1,9 @@
 package ru.brandanalyst.core.model;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+import ru.brandanalyst.core.util.Jsonable;
+
 /**
  * Модель бренда
  * Created by IntelliJ IDEA.
@@ -7,7 +11,7 @@ package ru.brandanalyst.core.model;
  * Date: 09.10.11
  * Time: 17:15
  */
-public class Brand {
+public class Brand implements Jsonable{
     private long id;
     private long branchId;
     private String name;
@@ -75,5 +79,14 @@ public class Brand {
 
     public void setBranch(long branchId) {
         this.branchId = branchId;
+    }
+
+    @Override
+    public JSONObject asJson() {
+        try {
+            return new JSONObject().put("brand", name);
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

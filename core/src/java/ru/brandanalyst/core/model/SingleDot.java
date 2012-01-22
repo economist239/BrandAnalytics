@@ -9,7 +9,7 @@ import java.sql.Timestamp;
  * Time: 7:22 PM
  * general model of one dot
  */
-public class SingleDot {
+public class SingleDot implements Comparable<SingleDot>{
     private final Timestamp date;
     private final double value;
 
@@ -24,5 +24,10 @@ public class SingleDot {
 
     public Timestamp getDate() {
         return date;
+    }
+
+    @Override
+    public int compareTo(SingleDot o) {
+        return this.getDate().compareTo(o.getDate());
     }
 }
