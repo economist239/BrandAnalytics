@@ -15,6 +15,13 @@
         <property name="url" value="${urlPure}"/>
         <property name="username" value="${username}"/>
         <property name="password" value="${password}"/>
-    <!--<property name="validationQuery" value="select 1"/>-->
+        <property name="host" value="${host}"/>
+        <property name="user" value="${user}"/>
+        <property name="pass" value="${pass}"/>
+        <property name="port" value="${port}"/>
+        <property name="tunnelLocalPort" value="${tunnelLocalPort}"/>
+        <property name="tunnelRemotePort" value="${tunnelRemotePort}"/>
+        <property name="tunnelRemoteHost" value="${tunnelRemoteHost}"/>
+        <!--<property name="validationQuery" value="select 1"/>-->
     </bean>
 </beans>
