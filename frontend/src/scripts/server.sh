@@ -2,11 +2,10 @@
 
 LANG=ru_RU.UTF8
 
-case $1 in
+CP1=lib/*/*.jar
+CP2=lib/*.jar
 
-start)
-
-    java -cp $( echo lib/*.jar . | sed 's/ /:/g') \
+    java -cp $( echo $CP1 + $CP2 . | sed 's/ /:/g') \
         -Dfile.encoding=UTF8 \
         -Dorg.apache.commons.logging.LogFactory=org.apache.commons.logging.impl.Log4jFactory \
         -Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl \
@@ -15,12 +14,3 @@ start)
         net.sf.xfresh.util.Starter fontend-beans.xml &
 
     echo "brand-analytics started..."
-
-stop)
-
-    killall java
-    echo "stopped."
-
-restart)
-
-asec

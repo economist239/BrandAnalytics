@@ -2,15 +2,14 @@
 <project name="BrandAnalytic" default="all" basedir=".">
 
     <path id="libs">
-        <fileset dir="${lib.dir}" includes="**/*.jar"/>
-        <fileset dir="${dist.dir}" includes="**/*.jar"/>
+        <fileset dir="${dist.dir}"/>
     </path>
 
     <property name="src.frontend.dir" location="${project.dir}/frontend/src/java/"/>
     <pathconvert pathsep=" " property="libs_manifest" refid="libs"/>
 
     <target name="all">
-
+        <mkdir dir="${classes.dir}"/>
         <!--class-файлы в папку build/classes-->
         <javac srcdir="${src.frontend.dir}"
                destdir="${build.dir}/classes"
@@ -21,18 +20,23 @@
             <classpath refid="libs"/>
         </javac>
 
+        <copy todir="${classes.dir}" overwrite="true">
+            <fileset dir="${project.dir}/frontend/src/scripts" includes="**/*.*"/>
+            <fileset dir="${project.dir}/frontend/src/web" includes="**/*.*"/>
+        </copy>
+
+        <copy todir="${build.dir}" overwrite="true">
+            <fileset dir="${project.dir}/frontend/src/scripts" includes="*.sh"/>
+        </copy>
         <!--собирается архив с классом, у которого есть метод main в папку dist-->
-        <jar destfile="${dist.dir}/frontend.jar" basedir="${classes.dir}" includes="ru/brandanalyst/frontend/**/*.*">
+        <jar destfile="${dist.dir}/frontend.jar" basedir="${classes.dir}" includes="*.*">
             <manifest>
                 <attribute name="Built-By" value="frontend: build.xml"/>
                 <attribute name="Class-Path" value="${libs_manifest}/"/>
             </manifest>
         </jar>
 
-        <mkdir dir="${build.dir}/frontend"/>
-        <copy todir="${build.dir}/frontend" overwrite="true">
-            <fileset dir="${project.dir}/frontend" includes="**/*.*" excludes="**/*.java build.xml *.iml server.sh"/>
-        </copy>
+        <delete dir="${classes.dir}"/>
         <echo>frontend building complete</echo>
     </target>
 

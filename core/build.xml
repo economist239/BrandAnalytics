@@ -12,6 +12,7 @@
 
     <target name="all">
 
+        <mkdir dir="${classes.dir}"/>
         <!--class-файлы создаются в папку build/classes-->
         <javac srcdir="${src.core.dir}"
                destdir="${build.dir}/classes"
@@ -26,7 +27,7 @@
             <fileset dir="${project.dir}/core/src/script" includes="**/*.*"/>
         </copy>
         <!--собирается архив с классом, у которого есть метод main в папку dist-->
-        <jar destfile="${dist.dir}/core.jar" basedir="${classes.dir}">
+        <jar destfile="${dist.dir}/brand-analytics-core.jar" basedir="${classes.dir}">
             <manifest>
                 <attribute name="Built-By" value="core: build.xml"/>
                 <attribute name="Main-Class" value="net.sf.xfresh.util.Starter"/>
