@@ -49,7 +49,7 @@ create table InformationSource(
 	Title varchar(100) not null,
     Description varchar(1000),
 	Website varchar(100) not null,
-    RSSSource varchar(100) not null
+    RSSSource varchar(100)
 );
 
 ALTER TABLE Article ADD CONSTRAINT ForArtileInfroSource

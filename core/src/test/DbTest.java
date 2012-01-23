@@ -59,6 +59,7 @@ public class DbTest extends AbstractDependencyInjectionSpringContextTests {
         l.add(new Brand(-1, "1", "2", "2", 1, ""));
         l.add(new Brand(-1, "2", "1", "1", 1, ""));
         dirtyBrandProvider.writeListOfBrandsToDataStore(l);
+        Assert.assertTrue(dirtyBrandProvider.getAllBrands().size() > 0);
     }
 
     public void testGraph() {
