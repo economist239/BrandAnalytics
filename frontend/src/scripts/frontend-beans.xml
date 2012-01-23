@@ -16,10 +16,10 @@
         <property name="handlers">
             <list>
                 <bean class="net.sf.xfresh.jetty.YaletXmlPageHandler">
-                    <property name="resourceBase" value="./frontend/src/web"/>
+                    <property name="resourceBase" value="./web"/>
                 </bean>
                 <bean class="org.mortbay.jetty.handler.ResourceHandler">
-                    <property name="resourceBase" value="./frontend/src/web"/>
+                    <property name="resourceBase" value="./web"/>
                 </bean>
             </list>
         </property>

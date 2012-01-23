@@ -2,7 +2,7 @@
 <project name="BrandAnalytic" default="all" basedir=".">
 
     <path id="libs">
-        <fileset dir="${dist.dir}"/>
+        <fileset dir="${dist.dir}" includes="**/*.jar"/>
     </path>
 
     <property name="src.frontend.dir" location="${project.dir}/frontend/src/java/"/>
@@ -12,7 +12,7 @@
         <mkdir dir="${classes.dir}"/>
         <!--class-файлы в папку build/classes-->
         <javac srcdir="${src.frontend.dir}"
-               destdir="${build.dir}/classes"
+               destdir="${classes.dir}"
                debug="true"
                deprecation="true"
                optimize="false"
@@ -20,16 +20,20 @@
             <classpath refid="libs"/>
         </javac>
 
-        <copy todir="${classes.dir}" overwrite="true">
+        <copy todir="${dist.dir}" overwrite="true">
             <fileset dir="${project.dir}/frontend/src/scripts" includes="**/*.*"/>
-            <fileset dir="${project.dir}/frontend/src/web" includes="**/*.*"/>
+        </copy>
+
+        <mkdir dir="${build.dir}/web"/>
+        <copy todir="${build.dir}/web" overwrite="true">
+            <fileset dir="${project.dir}/frontend/src/web"/>
         </copy>
 
         <copy todir="${build.dir}" overwrite="true">
-            <fileset dir="${project.dir}/frontend/src/scripts" includes="*.sh"/>
+            <fileset dir="${project.dir}/frontend/src/scripts"/>
         </copy>
         <!--собирается архив с классом, у которого есть метод main в папку dist-->
-        <jar destfile="${dist.dir}/frontend.jar" basedir="${classes.dir}" includes="*.*">
+        <jar destfile="${dist.dir}/brand-analytics-frontend.jar" basedir="${classes.dir}">
             <manifest>
                 <attribute name="Built-By" value="frontend: build.xml"/>
                 <attribute name="Class-Path" value="${libs_manifest}/"/>
