@@ -31,7 +31,7 @@
 
         <mkdir dir="${build.dir}/frontend"/>
         <copy todir="${build.dir}/frontend" overwrite="true">
-            <fileset dir="${project.dir}/frontend" includes="**/*.*" excludes="**/*.java build.xml *.iml"/>
+            <fileset dir="${project.dir}/frontend" includes="**/*.*" excludes="**/*.java build.xml *.iml server.sh"/>
         </copy>
         <echo>frontend building complete</echo>
     </target>

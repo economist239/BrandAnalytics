@@ -6,7 +6,7 @@
     <property name="lib.dir" location="${project.dir}/lib"/>
     <property name="build.dir" location="${project.dir}/build"/>
     <property name="classes.dir" location="${build.dir}/classes"/>
-    <property name="dist.dir" location="${build.dir}/dist"/>
+    <property name="dist.dir" location="${build.dir}/lib"/>
     <!--пути к вложенным билд файлам-->
     <property name="core.build" location="${project.dir}/core/build.xml"/>
     <property name="miner.build" location="${project.dir}/miner/build.xml"/>
