@@ -44,13 +44,7 @@
         <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
     </bean>
     <!--DB conf-->
-    <bean id="dirtyDataSource" destroy-method="close" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="false">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/BAdirty?useUnicode=true&amp;characterEncoding=utf8"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
-        <property name="validationQuery" value="select 1"/>
-    </bean>
+    <import resource="classpath:dirtybean.xml"/>
 
     <bean id="dirtyNamedParameterJdbcTemplate"
           class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">

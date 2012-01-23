@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName" default-init-method="afterPropertiesSet">
+    <bean id="configProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:mysql.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!--DB conf-->
+    <bean id="dirtyDataSource" destroy-method="close" class="${dataSourceClass}" lazy-init="false">
+    <!--    <property name="driverClassName" value="com.mysql.jdbc.Driver"/> -->
+    <property name="url" value="${urlDirty}"/>
+    <property name="username" value="${username}"/>
+    <property name="password" value="${password}"/>
+    <!--<property name="validationQuery" value="select 1"/>-->
+    </bean>
+</beans>
