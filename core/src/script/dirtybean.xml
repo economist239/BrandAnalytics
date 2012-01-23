@@ -10,18 +10,18 @@
         </property>
     </bean>
     <!--DB conf-->
-    <bean id="dirtyDataSource" destroy-method="close" class="${dataSourceClass}" lazy-init="false">
-    <!--    <property name="driverClassName" value="com.mysql.jdbc.Driver"/> -->
-        <property name="url" value="${urlDirty}"/>
+    <bean id="dirtyDataSource" destroy-method="close" class="ru.brandanalyst.core.db.provider.mysql.SSHTunnelDataSource" lazy-init="false">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="${url-dirty}"/>
         <property name="username" value="${username}"/>
         <property name="password" value="${password}"/>
         <property name="host" value="${host}"/>
-        <property name="user" value="${user}"/>
-        <property name="pass" value="${pass}"/>
+        <property name="sshUsername" value="${ssh-username}"/>
+        <property name="sshPassword" value="${ssh-password}"/>
         <property name="port" value="${port}"/>
-        <property name="tunnelLocalPort" value="${tunnelLocalPort}"/>
-        <property name="tunnelRemotePort" value="${tunnelRemotePort}"/>
-        <property name="tunnelRemoteHost" value="${tunnelRemoteHost}"/>
-        <!--<property name="validationQuery" value="select 1"/>-->
+        <property name="tunnelLocalPort" value="${tunnel-local-port}"/>
+        <property name="tunnelRemotePort" value="${tunnel-remote-port}"/>
+        <property name="tunnelRemoteHost" value="${tunnel-remote-host}"/>
+        <property name="validationQuery" value="select 1"/>
     </bean>
 </beans>
