@@ -20,10 +20,6 @@
             <classpath refid="libs"/>
         </javac>
 
-        <copy todir="${dist.dir}" overwrite="true">
-            <fileset dir="${project.dir}/frontend/src/scripts" includes="**/*.*"/>
-        </copy>
-
         <mkdir dir="${build.dir}/web"/>
         <copy todir="${build.dir}/web" overwrite="true">
             <fileset dir="${project.dir}/frontend/src/web"/>

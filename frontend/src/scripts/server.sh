@@ -1,5 +1,11 @@
 #!/bin/sh
 
+
+
+case "$1" in
+
+start)
+
 LANG=ru_RU.UTF8
 
 CP1=lib/*/*.jar
@@ -13,4 +19,11 @@ CP2=lib/*.jar
         -Xmx512m -Xms128m -XX:+UseConcMarkSweepGC -XX:+HeapDumpOnOutOfMemoryError \
         net.sf.xfresh.util.Starter frontend-beans.xml &
 
-    echo "brand-analytics started..."
+;;
+stop)
+
+killall java
+
+;;
+
+esac
