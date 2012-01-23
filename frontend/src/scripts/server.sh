@@ -11,7 +11,7 @@ start() {
 
     if [ -s $PID ]; then
         echo already started.
-        exit
+        return
     fi
 
     java -cp $( echo $CP1 + $CP2 . | sed 's/ /:/g') \
@@ -29,10 +29,10 @@ start() {
 stop() {
      if [ ! -s $PID ]; then
          echo already stopped.
-         exit
+         return
      fi
 
-     start-stop-daemon --quiet --retry 10 --stop --pidfile $PID 1>/dev/null 2>&1
+     kill $(cat $PID)
      rm $PID
      echo server stoped
 }
