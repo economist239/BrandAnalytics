@@ -8,6 +8,7 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.TimerTask;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,22 +17,27 @@ import java.util.List;
  * Time: 11:47 AM
  * container of grabbes that process all grabbers
  */
-public class GrabberHandler implements InitializingBean {
+public class GrabberHandler extends TimerTask {
+
+
     private static final Logger log = Logger.getLogger(GrabberHandler.class);
     private static final String PATH = "miner/config/miner.cfg";
     private static final String PATTERN = "yyyy-MM-dd HH:mm:ss";
     private static final int DATE_STRING_LENGTH = PATTERN.length();
 
-
+    private long period;
     private List<Grabber> grabberList;
 
+    public void setPeriod(long period) {
+        this.period = period;
+    }
 
     public void setGrabberList(List<Grabber> grabberList) {
         this.grabberList = grabberList;
     }
 
     @Override
-    public void afterPropertiesSet() {
+    public void run() {
         Date timeLimit;
         Date now = new Date();
         BufferedReader bufferedReader = null;
@@ -72,6 +78,5 @@ public class GrabberHandler implements InitializingBean {
             if (pw != null)
                 pw.close();
         }
-        log.info("miner finished.");
     }
 }

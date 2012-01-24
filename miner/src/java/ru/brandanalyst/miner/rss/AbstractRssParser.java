@@ -7,6 +7,7 @@ import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.core.util.Batch;
 
 import java.util.List;
+import java.util.TimerTask;
 
 /**
  * Created by IntelliJ IDEA.
