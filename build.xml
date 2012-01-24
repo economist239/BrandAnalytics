@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="BrandAnalytics" default="all" basedir=".">
+<project name="BrandAnalytics" default="frontend" basedir=".">
 
     <!--main paths defenition-->
     <property name="project.dir" location="."/>
     <property name="lib.dir" location="${project.dir}/lib"/>
+    <property name="tars.dir" location="${project.dir}/build-tars"/>
     <property name="build.dir" location="${project.dir}/build"/>
     <property name="classes.dir" location="${build.dir}/classes"/>
     <property name="dist.dir" location="${build.dir}/lib"/>
@@ -14,86 +15,45 @@
     <property name="frontend.build" location="${project.dir}/frontend/build.xml"/>
     <property name="analyzer.build" location="${project.dir}/analyzer/build.xml"/>
 
-    <!-- classpath -->
+    <!-- lib holder -->
     <path id="libs">
         <fileset dir="lib" includes="**/*.jar"/>
         <fileset dir="${classes.dir}" includes="**/*.class"/>
     </path>
 
-    <!--создание папок-->
     <target name="init">
+        <delete dir="${build.dir}"/>
         <mkdir dir="${build.dir}"/>
-        <mkdir dir="${classes.dir}"/>
+        <mkdir dir="${tars.dir}"/>
         <mkdir dir="${dist.dir}"/>
+        <tstamp>
+            <format property="TODAY" pattern="d-MMMM-yyyy" locale="en,UK"/>
+        </tstamp>
     </target>
 
-    <!--далее по всем таргетам вызываются вложенные билдеры-->
     <target name="core" depends="init">
         <ant antfile="${core.build}"/>
     </target>
 
-    <target name="index" depends="core">
+    <!--server includes indexer-->
+    <target name="frontend" depends="core">
         <ant antfile="${index.build}"/>
-    </target>
-
-    <target name="frontend" depends="index">
         <ant antfile="${frontend.build}"/>
+        <tar destfile="${tars.dir}/${TODAY}-SERVER.tar" basedir="${build.dir}"/>
     </target>
 
     <target name="miner" depends="core">
         <ant antfile="${miner.build}"/>
+        <tar destfile="${tars.dir}/${TODAY}-MINER.tar" basedir="${build.dir}"/>
     </target>
 
     <target name="analyzer" depends="core">
         <ant antfile="${analyzer.build}"/>
+        <tar destfile="${tars.dir}/${TODAY}-ANALYZER.tar" basedir="${build.dir}"/>
     </target>
 
-    <!--по умолчанию вызывается этот таргет (тут пара строчек лишние, но так понятнее)-->
-    <target name="all" depends="init">
-        <antcall target="core"/>
-        <antcall target="index"/>
-        <antcall target="frontend"/>
-        <antcall target="miner"/>
-        <antcall target="analyzer"/>
-        <antcall target="checkstyle"/>
-        <antcall target="findbugs"/>
-    </target>
-
-    <!--для запуска различных модулей испольются следующие таргеты-->
-    <target name="run_index">
-        <java dir="${build.dir}" jar="${dist.dir}/core.jar" fork="true">
-            <jvmarg value="-Xms64m"/>
-            <jvmarg value="-Xmx1750m"/>
-            <arg value="/index/src/scripts/beans.xml"/>
-        </java>
-    </target>
-
-    <target name="run_miner">
-        <java dir="${build.dir}" jar="${dist.dir}/core.jar" fork="true">
-            <jvmarg value="-Xms64m"/>
-            <jvmarg value="-Xmx1750m"/>
-            <arg value="/miner/src/scripts/beans.xml"/>
-        </java>
-    </target>
-
-    <target name="run_frontend">
-        <java dir="${build.dir}" jar="${dist.dir}/core.jar" fork="true">
-            <jvmarg value="-Xms64m"/>
-            <jvmarg value="-Xmx1750m"/>
-            <arg value="/frontend/src/scripts/beans.xml"/>
-        </java>
-    </target>
-
-    <target name="run_analyzer">
-        <java dir="${build.dir}" jar="${dist.dir}/core.jar" fork="true">
-            <jvmarg value="-Xms64m"/>
-            <jvmarg value="-Xmx1750m"/>
-            <arg value="/analyzer/src/scripts/beans.xml"/>
-        </java>
-    </target>
-
+    <!--not building targets-->
     <target name="checkstyle">
-
         <delete file="checkstyle_report.xml"/>
         <delete file="checkstyle_report.htm"/>
 
@@ -146,8 +106,6 @@
     </target>
 
     <target name="javadoc">
-
-
         <fileset id="sources" dir="${project.dir}" includes="**/*.jar"/>
 
         <javadoc
@@ -164,7 +122,6 @@
                 <exclude name="**/xfresh/**/*.java"/>
             </fileset>
         </javadoc>
-
     </target>
 </project>
 

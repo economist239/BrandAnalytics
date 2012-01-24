@@ -23,7 +23,7 @@
         </javac>
 
         <copy todir="${build.dir}" overwrite="true">
-            <fileset dir="${project.dir}/index/src/scripts" includes="**/*.*"/>
+            <fileset dir="${project.dir}/index/src/scripts"/>
         </copy>
         <!--собирается архив с классом, у которого есть метод main в папку dist-->
         <jar destfile="${dist.dir}/brand-analytics-index.jar" basedir="${classes.dir}">
@@ -34,7 +34,7 @@
         </jar>
 
         <delete dir="${classes.dir}"/>
-        <echo>core building complete</echo>
+        <echo>index building complete</echo>
     </target>
 
 </project>

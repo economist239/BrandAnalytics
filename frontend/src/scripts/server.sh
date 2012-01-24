@@ -1,7 +1,7 @@
 #!/bin/sh
 
-LOG=brandanalytics.log
-PID=brandanalytics.pid
+LOG=brand-analytics-server.log
+PID=brand-analytics-server.pid
 
 start() {
     LANG=ru_RU.UTF8
