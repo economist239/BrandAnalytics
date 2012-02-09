@@ -3,7 +3,7 @@ package ru.brandanalyst.frontend.services;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.simple.SimplyArticleForWeb;
 import ru.brandanalyst.core.util.TextConverter;
-import ru.brandanalyst.searcher.Searcher;
+import ru.brandanalyst.core.searcher.Searcher;
 
 import java.util.ArrayList;
 import java.util.List;

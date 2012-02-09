@@ -18,7 +18,7 @@ public class ParserStarter extends Grabber {
     private static final Logger log = Logger.getLogger(ParserStarter.class);
 
     public void grab(Date date) {
-        AbstractRssParser parser = new RssParser2(handler);
+        AbstractRssParser.setDictionary(handler.getBrandDictionaryProvider().getDictionary());
         List<InfoSource> infoSources = handler.getInformationSourceProvider().getAllInfoSources();
         final ArticleProvider articleProvider = handler.getArticleProvider();
         Batch<Article> batch = new Batch<Article>() {
@@ -34,13 +34,7 @@ public class ParserStarter extends Grabber {
             if (infoSource.getSphereId() != 1) continue;
             String rssSource = infoSource.getRssSource();
             if (rssSource.isEmpty()) continue;
-
-            try {
-                parser.parse(rssSource, infoSource.getId(), batch);
-                log.info("rss parsed succesful " + rssSource);
-            } catch (Exception e) {
-                log.error("cannot read rss " + rssSource, e);
-            }
+            new Thread(new HorrorParser(rssSource, infoSource.getId(), batch)).start();
         }
 
         log.info("End parsing rss");

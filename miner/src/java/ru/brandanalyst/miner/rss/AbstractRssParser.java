@@ -1,13 +1,15 @@
 package ru.brandanalyst.miner.rss;
 
 import org.apache.log4j.Logger;
+import org.horrabin.horrorss.RssChannelBean;
+import org.horrabin.horrorss.RssImageBean;
+import org.horrabin.horrorss.RssItemBean;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.core.util.Batch;
 
-import java.util.List;
-import java.util.TimerTask;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,14 +17,32 @@ import java.util.TimerTask;
  * Date: 12/30/11
  * Time: 10:35 AM
  */
-public abstract class AbstractRssParser {
+public abstract class AbstractRssParser implements Runnable {
     protected static final int NUM_LIKES = 0;
     protected static final Logger log = Logger.getLogger(AbstractRssParser.class);
-    protected List<BrandDictionaryItem> dictionary;
+    protected static List<BrandDictionaryItem> dictionary = new ArrayList<BrandDictionaryItem>();
+    protected final String url;
+    protected final long sourceId;
+    protected final Batch<Article> batch;
 
-    public AbstractRssParser(ProvidersHandler providersHandler) {
-        dictionary = providersHandler.getBrandDictionaryProvider().getDictionary();
+    public static void setDictionary(List<BrandDictionaryItem> dictionary) {
+        AbstractRssParser.dictionary = dictionary;
     }
 
-    abstract void parse(String url, long sourceId, Batch<Article> batch) throws Exception;
+    public AbstractRssParser(String url, long sourceId, Batch<Article> batch) {
+        this.url = url;
+        this.sourceId = sourceId;
+        this.batch = batch;
+    }
+
+    protected abstract void parse() throws Exception;
+
+    @Override
+    public void run() {
+        try {
+            parse();
+        } catch (Exception e) {
+            log.error("error while processing " + url, e);
+        }
+    }
 }

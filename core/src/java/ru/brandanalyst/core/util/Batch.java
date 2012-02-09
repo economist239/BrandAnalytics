@@ -17,7 +17,7 @@ public abstract class Batch<T> {
         batchList = new ArrayList<T>(BATCH_SIZE);
     }
 
-    public void submit(T element) {
+    public synchronized void submit(T element) {
         batchList.add(element);
         if (batchList.size() == BATCH_SIZE) {
             handle(batchList);
