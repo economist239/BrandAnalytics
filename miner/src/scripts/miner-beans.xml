@@ -13,7 +13,7 @@
         </property>
     </bean>
     <!--Scheduler-->
-    <bean id="grabberTask" class="org.springframework.scheduling.timer.ScheduledTimerTask" lazy-init="false">
+    <bean id="rssGrabberTask" class="org.springframework.scheduling.timer.ScheduledTimerTask" lazy-init="false">
         <property name="delay" value="${start-delay}"/>
         <property name="period" value="${rss-period}"/>
         <property name="timerTask" ref="grabberHandler"/>
@@ -22,7 +22,7 @@
     <bean class="org.springframework.scheduling.timer.TimerFactoryBean">
         <property name="scheduledTimerTasks">
             <list>
-                <ref local="grabberTask"/>
+                <ref local="rssGrabberTask"/>
             </list>
         </property>
     </bean>
@@ -35,23 +35,7 @@
         <property name="period" value="${rss-period}"/>
         <property name="grabberList">
             <list>
-                <!--     <bean class="ru.brandanalyst.miner.grabbers.GrabberWikipedia">
-                    <property name="config" value="./miner/configs/wikibrands.txt;./miner/configs/wikibrands.xml"/>
-                </bean>-->
-                <!--<bean class="ru.brandanalyst.miner.rss.ParserStarter"/>-->
-                <!--<bean class="ru.brandanalyst.miner.quote.GrabberFinam"/>-->
-                <!--<bean class="ru.brandanalyst.miner.grabbers.GrabberTwitter"/>-->
-                <!--<bean class="ru.brandanalyst.miner.grabbers.GrabberRia">
-                    <property name="config" value="./miner/config/riaNews1.xml"/>
-                </bean>-->
-                <!--<bean class="ru.brandanalyst.miner.grabbers.GrabberFontanka">
-                    <property name="config" value="./miner/config/fontankaNews1.xml"/>
-                </bean>-->
-
-                <!--<bean class="ru.brandanalyst.miner.grabbers.GrabberLenta">
-                    <property name="config" value="./miner/config/lentaRu.xml"/>
-                </bean>
--->
+                <bean class="ru.brandanalyst.miner.grabbers.GrabberTwitter"/>
             </list>
         </property>
     </bean>

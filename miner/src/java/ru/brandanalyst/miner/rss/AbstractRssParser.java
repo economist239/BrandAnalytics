@@ -24,5 +24,5 @@ public abstract class AbstractRssParser {
         dictionary = providersHandler.getBrandDictionaryProvider().getDictionary();
     }
 
-    abstract void parse(String url, long sourceId, Batch<Article> batch);
+    abstract void parse(String url, long sourceId, Batch<Article> batch) throws Exception;
 }

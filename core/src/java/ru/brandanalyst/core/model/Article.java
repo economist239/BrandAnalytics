@@ -119,4 +119,31 @@ public class Article {
     public int getNumLikes() {
         return numLikes;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        
+        if (!(o instanceof Article)) {
+            return false;    
+        }
+        
+        Article that = (Article) o;
+        return that.content.equals(this.content) && that.brandId == this.brandId 
+                && that.title.equals(this.title) && that.tstamp.equals(this.tstamp)
+                && that.sourceId == this.sourceId;
+        
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = content.hashCode();
+        hash += 31 * title.hashCode() + 7;
+        hash += 31 * brandId + 7;
+        hash += 31 * sourceId + 7;
+        hash += 31 * tstamp.hashCode() + 7;
+        return hash;
+    }
 }

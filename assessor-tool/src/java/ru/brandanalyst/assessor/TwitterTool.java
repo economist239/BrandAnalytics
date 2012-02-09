@@ -50,6 +50,4 @@ public final class TwitterTool {
             System.out.println("ты тупой?");
         }
     }
-
-
 }

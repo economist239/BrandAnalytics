@@ -7,6 +7,6 @@
     <xsl:template name="main">
         <h4>Бренд Аналитик - инновация настоящего, парадигма будущего.</h4>
         <br/>
-        <img src="CaptainObvious.jpeg" width="400" height="400"/>
+        <img src="captain-obvious.jpeg" width="400" height="400"/>
     </xsl:template>
 </xsl:stylesheet>

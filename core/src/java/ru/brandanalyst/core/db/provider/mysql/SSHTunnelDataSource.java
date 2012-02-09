@@ -93,6 +93,7 @@ public class SSHTunnelDataSource extends BasicDataSource implements Initializing
                 session.setPortForwardingL(tunnelLocalPort, tunnelRemoteHost, tunnelRemotePort);
             } catch (Exception e) {
                 log.error("Ошибка при построении соединения", e);
+                System.exit(1);
             }
         }
     }

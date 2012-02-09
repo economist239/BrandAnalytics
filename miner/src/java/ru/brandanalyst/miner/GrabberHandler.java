@@ -21,9 +21,6 @@ public class GrabberHandler extends TimerTask {
 
 
     private static final Logger log = Logger.getLogger(GrabberHandler.class);
-    private static final String PATH = "miner/config/miner.cfg";
-    private static final String PATTERN = "yyyy-MM-dd HH:mm:ss";
-    private static final int DATE_STRING_LENGTH = PATTERN.length();
 
     private long period;
     private List<Grabber> grabberList;
@@ -38,45 +35,11 @@ public class GrabberHandler extends TimerTask {
 
     @Override
     public void run() {
-        Date timeLimit;
-        Date now = new Date();
-        BufferedReader bufferedReader = null;
-        try {
-            bufferedReader = new BufferedReader(new FileReader(PATH));
-            String date = bufferedReader.readLine().substring(0, DATE_STRING_LENGTH);
-            SimpleDateFormat dateFormat = new SimpleDateFormat(PATTERN);
-            timeLimit = dateFormat.parse(date);
-            bufferedReader.close();
-        } catch (Exception e) {
-            throw new RuntimeException("invalid file with date", e);
-        } finally {
-            if (bufferedReader != null) {
-                try {
-                    bufferedReader.close();
-                } catch (IOException e) {
-                    log.error(e);
-                }
-            }
-        }
-
         log.info("miner started...");
         if (grabberList != null) {
             for (Grabber g : grabberList) {
-                g.grab(timeLimit);
+                g.grab(new Date());
             }
-        }
-
-        PrintWriter pw = null;
-        try {
-            pw = new PrintWriter(new File(PATH));
-            SimpleDateFormat dateFormat = new SimpleDateFormat(PATTERN);
-            pw.write(dateFormat.format(now));
-            log.debug(PATH + " have changed");
-        } catch (FileNotFoundException e) {
-            log.error("error in date writtnig");
-        } finally {
-            if (pw != null)
-                pw.close();
         }
     }
 }

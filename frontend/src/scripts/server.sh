@@ -19,7 +19,7 @@ start() {
         -Dorg.apache.commons.logging.LogFactory=org.apache.commons.logging.impl.Log4jFactory \
         -Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl \
         -showversion -server -Xverify:none \
-        -Xmx512m -Xms128m -XX:+UseConcMarkSweepGC -XX:+HeapDumpOnOutOfMemoryError \
+        -Xmx175m -Xms128m -XX:+UseConcMarkSweepGC -XX:+HeapDumpOnOutOfMemoryError \
          net.sf.xfresh.util.Starter frontend-beans.xml >> $LOG 2>&1 &
 
     echo $! > $PID

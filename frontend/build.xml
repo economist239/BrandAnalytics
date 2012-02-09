@@ -22,7 +22,7 @@
 
         <mkdir dir="${build.dir}/web"/>
         <copy todir="${build.dir}/web" overwrite="true">
-            <fileset dir="${project.dir}/frontend/src/web"/>
+            <fileset dir="${project.dir}/web"/>
         </copy>
 
         <copy todir="${build.dir}" overwrite="true">
