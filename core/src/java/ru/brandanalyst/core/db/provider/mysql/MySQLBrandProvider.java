@@ -8,6 +8,7 @@ package ru.brandanalyst.core.db.provider.mysql;
  * this class provides brands from DB
  */
 
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
@@ -21,6 +22,7 @@ import java.util.List;
 public class MySQLBrandProvider implements BrandProvider {
     private SimpleJdbcTemplate jdbcTemplate;
 
+    @Required
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }

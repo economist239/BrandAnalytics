@@ -26,6 +26,7 @@ public class MySQLArticleProvider implements ArticleProvider {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    @Override
     public void writeArticleToDataStore(Article article) {
 
         if (article.getContent().length() > MAX_ARTICLE_LENGHT) {
@@ -35,6 +36,7 @@ public class MySQLArticleProvider implements ArticleProvider {
                 article.getBrandId(), article.getTitle(), article.getContent(), article.getLink(), article.getNumLikes(), article.getTstamp());
     }
 
+    @Override
     public void writeListOfArticlesToDataStore(final List<Article> articles) {
         final Iterator<Article> it = articles.iterator();
         jdbcTemplate.getJdbcOperations().batchUpdate("INSERT INTO Article (InfoSourceId, BrandId, Title, Content, Link, NumLikes, Tstamp) VALUES(?, ?, ?, ?, ?, ?, ?);", new BatchPreparedStatementSetter() {
@@ -57,46 +59,53 @@ public class MySQLArticleProvider implements ArticleProvider {
         });
     }
 
+    @Override
     public Article getArticleBySourceId(long sourceId) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE InfosourceId=?",
                 MappersHolder.ARTICLE_MAPPER, sourceId).get(0);
     }
 
-
+    @Override
     public List<Article> getAllArticlesBySourceId(long sourceId) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE InfosourceId=?",
                 MappersHolder.ARTICLE_MAPPER, sourceId);
     }
 
+    @Override
     public Article getArticleById(long articleId) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE Id=?",
                 MappersHolder.ARTICLE_MAPPER, articleId).get(0);
     }
 
+    @Override
     public List<Article> getAllArticlesByBrand(long brandId) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE BrandId=?",
                 MappersHolder.ARTICLE_MAPPER, brandId);
     }
 
+    @Override
     public List<Article> getAllOfficialArticlesByBrand(long brandId) {
         return jdbcTemplate.query("SELECT * FROM Article "
                 + "INNER JOIN InformationSource ON InfoSourceId = InformationSource.Id WHERE BrandId=? "
                 + " AND InformationSource.TypeId = 1", MappersHolder.ARTICLE_MAPPER, brandId);
     }
 
+    @Override
     public List<Article> getAllArticles() {
         return jdbcTemplate.query("SELECT * FROM Article", MappersHolder.ARTICLE_MAPPER);
     }
 
+    @Override
     public List<Article> getArticlesWithCondition(String whereClause) {
         return jdbcTemplate.query("SELECT * FROM Article " + whereClause, MappersHolder.ARTICLE_MAPPER);
     }
-    
+
+    @Override
     public List<Article> getTopArticles(long brandId, int topSize) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE brandId=? "
                 + " ORDER BY Tstamp DESC LIMIT ?", MappersHolder.ARTICLE_MAPPER, brandId, topSize);
     }
-
+    @Override
     public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE BrandId =? AND SourceId=?",
                 MappersHolder.ARTICLE_MAPPER, brandId, sourceId);
@@ -106,6 +115,7 @@ public class MySQLArticleProvider implements ArticleProvider {
     *
     * only for dirty db!!
      */
+    @Override
     public List<Article> getOnlyNotAnalyzedArticles() {
         return jdbcTemplate.query("SELECT * FROM Article WHERE Analyzed=0", MappersHolder.ARTICLE_MAPPER);
     }
@@ -114,6 +124,7 @@ public class MySQLArticleProvider implements ArticleProvider {
     *
     * only for dirty db!!
      */
+    @Override
     public void setAnalyzed(final List<Long> ids) {
         final Iterator<Long> it = ids.iterator();
         jdbcTemplate.getJdbcOperations().batchUpdate("UPDATE Article SET Analyzed=1 WHERE Id=?", new BatchPreparedStatementSetter() {

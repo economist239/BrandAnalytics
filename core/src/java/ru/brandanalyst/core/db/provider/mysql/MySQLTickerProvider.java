@@ -1,5 +1,6 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.RowCallbackHandler;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.interfaces.TickerProvider;
@@ -19,6 +20,7 @@ import java.util.List;
 public class MySQLTickerProvider implements TickerProvider {
     private SimpleJdbcTemplate jdbcTemplate;
 
+    @Required
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }

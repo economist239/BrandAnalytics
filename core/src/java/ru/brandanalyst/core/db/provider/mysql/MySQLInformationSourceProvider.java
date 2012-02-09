@@ -1,5 +1,6 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.interfaces.InformationSourceProvider;
 import ru.brandanalyst.core.model.InfoSource;
@@ -15,6 +16,7 @@ import java.util.List;
 public class MySQLInformationSourceProvider implements InformationSourceProvider {
     private SimpleJdbcTemplate jdbcTemplate;
 
+    @Required
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
