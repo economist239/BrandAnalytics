@@ -13,7 +13,7 @@ public abstract class Grabber {
     protected ProvidersHandler handler;
     protected String config;
 
-    public abstract void grab(Date timeLimit);
+    public abstract void grab();
 
     @Required
     public void setDirtyProvidersHandler(ProvidersHandler handler) {

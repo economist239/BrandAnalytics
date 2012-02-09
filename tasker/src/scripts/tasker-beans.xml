@@ -17,4 +17,11 @@
     <import resource="analyzer-tasker-beans.xml"/>
     <import resource="miner-tasker-beans.xml"/>
 
+    <bean class="org.springframework.scheduling.timer.TimerFactoryBean">
+        <property name="scheduledTimerTasks">
+            <list>
+                <ref bean="rssGrabberTask"/>
+            </list>
+        </property>
+    </bean>
 </beans>

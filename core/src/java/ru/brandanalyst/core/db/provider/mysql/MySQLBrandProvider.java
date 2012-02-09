@@ -28,7 +28,7 @@ public class MySQLBrandProvider implements BrandProvider {
     @Override
     public void writeBrandToDataStore(Brand brand) {
         jdbcTemplate.update("INSERT INTO Brand (Name, Description, Website, BranchId, FinamName) VALUES(?,?,?,?,?)", brand.getName(),
-                brand.getDescription(), brand.getWebsite(), brand.getBranchId(), brand.getFinamName());
+                brand.getDescription(), brand.getWebsite(), brand.getBranchId(), brand.getParams());
     }
 
     @Override
@@ -42,7 +42,7 @@ public class MySQLBrandProvider implements BrandProvider {
                 ps.setString(2, b.getDescription());
                 ps.setString(3, b.getWebsite());
                 ps.setLong(4, b.getBranchId());
-                ps.setString(5, b.getFinamName());
+                ps.setString(5, b.getParams().toString());
             }
 
             @Override

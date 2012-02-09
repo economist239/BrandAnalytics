@@ -17,6 +17,10 @@ public class GrabberWikipedia extends Grabber {
     private static final Logger log = Logger.getLogger(GrabberWikipedia.class);
 
     @Override
+    public void grab() {
+        grab(new Date());
+    }
+
     public void grab(Date timeLimit) {
         try {
             String linksFile = config.substring(0, config.indexOf(';'));

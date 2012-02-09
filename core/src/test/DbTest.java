@@ -22,7 +22,7 @@ import java.util.List;
  * User: dima
  * Date: 1/21/12
  * Time: 7:01 PM
- * To change this template use File | Settings | File Templates.
+ * To change this template use File | Params | File Templates.
  */
 public class DbTest extends AbstractDependencyInjectionSpringContextTests {
 

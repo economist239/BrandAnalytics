@@ -17,7 +17,7 @@ import java.util.List;
 public class ParserStarter extends Grabber {
     private static final Logger log = Logger.getLogger(ParserStarter.class);
 
-    public void grab(Date date) {
+    public void grab() {
         AbstractRssParser.setDictionary(handler.getBrandDictionaryProvider().getDictionary());
         List<InfoSource> infoSources = handler.getInformationSourceProvider().getAllInfoSources();
         final ArticleProvider articleProvider = handler.getArticleProvider();

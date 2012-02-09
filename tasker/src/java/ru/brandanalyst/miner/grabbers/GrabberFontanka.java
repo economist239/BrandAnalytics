@@ -23,6 +23,10 @@ public class GrabberFontanka extends Grabber {
     private static final String appendix = "/fontanka/";
 
     @Override
+    public void grab() {
+        grab(new Date());
+    }
+    
     public void grab(Date timeLimit) {
         GregorianCalendar time = new GregorianCalendar();
         for (int i = 0; i < SEARCH_DAYS; i++) {

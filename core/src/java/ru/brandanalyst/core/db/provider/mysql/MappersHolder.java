@@ -1,10 +1,7 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
-import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.core.model.InfoSource;
-import ru.brandanalyst.core.model.SemanticDictionaryItem;
+import ru.brandanalyst.core.model.*;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -27,7 +24,7 @@ public final class MappersHolder {
                     resultSet.getString("Name"),
                     resultSet.getString("Description"),
                     resultSet.getString("Website"),
-                    resultSet.getLong("BranchId"), resultSet.getString("FinamName"));
+                    resultSet.getLong("BranchId"), Params.parseFromString(resultSet.getString("JsonParams")));
         }
     };
 

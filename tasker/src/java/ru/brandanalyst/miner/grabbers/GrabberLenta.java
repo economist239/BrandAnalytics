@@ -17,6 +17,10 @@ public class GrabberLenta extends Grabber {
     private static final String sourceURL = "http://lenta.ru";
 
     @Override
+    public void grab() {
+        grab(new Date());
+    }
+
     public void grab(Date timeLimit) {
         for (Brand b : handler.getBrandProvider().getAllBrands()) {
             try {

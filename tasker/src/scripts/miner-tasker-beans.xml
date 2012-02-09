@@ -10,20 +10,12 @@
         <property name="timerTask" ref="grabberHandler"/>
     </bean>
 
-    <bean class="org.springframework.scheduling.timer.TimerFactoryBean">
-        <property name="scheduledTimerTasks">
-            <list>
-                <ref local="rssGrabberTask"/>
-            </list>
-        </property>
-    </bean>
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--IMPORT DB-->
     <import resource="classpath:dbhandler_dirty.xml"/>
     <!--Miner conf-->
     <bean id="grabberHandler" class="ru.brandanalyst.miner.GrabberHandler">
-        <property name="period" value="${rss-period}"/>
         <property name="grabberList">
             <list>
                 <bean class="ru.brandanalyst.miner.grabbers.GrabberTwitter"/>

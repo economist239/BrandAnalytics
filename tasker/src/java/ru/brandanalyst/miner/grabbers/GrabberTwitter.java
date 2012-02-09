@@ -21,6 +21,10 @@ public class GrabberTwitter extends Grabber {
     private static final int ISSUANCE_SIZE = 15000;
     private static final int PAGE_SIZE = 1000;
 
+    public void grab() {
+        grab(new Date());
+    }
+
     public void grab(Date timeLimit) {
         log.info("Twitter grabber started...");
         Twitter twitter = new TwitterFactory().getInstance();

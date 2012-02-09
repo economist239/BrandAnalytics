@@ -26,8 +26,6 @@
     </profiles>
 
     <build>
-        <sourceDirectory>src/java</sourceDirectory>
-        <testSourceDirectory>src/test</testSourceDirectory>
         <resources>
             <resource>
                 <directory>${basedir}/src/script</directory>

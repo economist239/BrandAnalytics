@@ -39,7 +39,7 @@ public class GrabberFinam extends Grabber {
     private final static String SOURCE_URL = "http://www.finam.ru/analysis/export/default.asp";
     private final static String TICKER_NAME = "котировки";
 
-    public void grab(Date date) {
+    public void grab() {
         tickerProvider = handler.getTickerProvider();
         brandProvider = handler.getBrandProvider();
         graphProvider = handler.getGraphProvider();
@@ -48,8 +48,14 @@ public class GrabberFinam extends Grabber {
     private void grab(Integer beginDay, Integer beginMonth, Integer beginYear) {
         List<Brand> brands = brandProvider.getAllBrands();
         for (Brand b : brands) {
-            String finamName = b.getFinamName();
+            //TODO THIS CORRECTLY WORKED
+            String finamName = ":";
             if (finamName.isEmpty()) continue;
+
+            String[] splittedFinameName = finamName.split(";");
+            String quoteName = splittedFinameName[1];
+            String prefix = splittedFinameName[0];
+
             log.info("Getting quote for " + finamName);
             try {
                 WebClient webClient = new WebClient();
@@ -58,7 +64,7 @@ public class GrabberFinam extends Grabber {
                 HtmlSelect period = form.getSelectByName("p");
                 period.setSelectedAttribute("8", true);
                 HtmlSelect brandChoose = form.getSelectByName("em");
-                brandChoose.setSelectedAttribute(brandChoose.getOptionByText(finamName).getValueAttribute(), true);
+                brandChoose.setSelectedAttribute(brandChoose.getOptionByText(quoteName).getValueAttribute(), true);
                 HtmlSelect month = form.getSelectByName("mf");
                 month.setSelectedAttribute(beginMonth.toString(), true);
                 HtmlInput day = form.getInputByName("df");

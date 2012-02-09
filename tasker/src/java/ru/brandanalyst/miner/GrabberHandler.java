@@ -1,6 +1,7 @@
 package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.miner.grabbers.Grabber;
 
 import java.util.Date;
@@ -19,13 +20,9 @@ public class GrabberHandler extends TimerTask {
 
     private static final Logger log = Logger.getLogger(GrabberHandler.class);
 
-    private long period;
     private List<Grabber> grabberList;
 
-    public void setPeriod(long period) {
-        this.period = period;
-    }
-
+    @Required
     public void setGrabberList(List<Grabber> grabberList) {
         this.grabberList = grabberList;
     }
@@ -33,10 +30,8 @@ public class GrabberHandler extends TimerTask {
     @Override
     public void run() {
         log.info("miner started...");
-        if (grabberList != null) {
-            for (Grabber g : grabberList) {
-                g.grab(new Date());
-            }
+        for (Grabber g : grabberList) {
+            g.grab();
         }
     }
 }
