@@ -24,7 +24,7 @@ create table Brand(
 	Description varchar(1000),
 	Website varchar(400),
 	BranchId int,
-	JsonParams varchar(400)
+	JsonParams varchar(400) not null
 );
 
 create table Branch(
