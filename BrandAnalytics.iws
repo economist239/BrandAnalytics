@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4582dae-84d6-4fe8-88ba-bd6439fff288" name="New changelist" comment="new miner conf">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Params.java" />
+    <list default="true" id="e4582dae-84d6-4fe8-88ba-bd6439fff288" name="New changelist" comment="not null in sql">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLBrandProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLBrandProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/DbTest.java" afterPath="$PROJECT_DIR$/core/src/test/DbTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/ArticleProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/ArticleProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/d_dbscript.sql" afterPath="$PROJECT_DIR$/sql/d_dbscript.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/p_dbscript.sql" afterPath="$PROJECT_DIR$/sql/p_dbscript.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/GrabberHandler.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/GrabberHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/Grabber.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/Grabber.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberFontanka.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberFontanka.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberLenta.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberLenta.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberRia.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberRia.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberTwitter.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberTwitter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberWikipedia.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberWikipedia.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/quote/GrabberFinam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/ParserStarter.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/ParserStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/scripts/miner-tasker-beans.xml" afterPath="$PROJECT_DIR$/tasker/src/scripts/miner-tasker-beans.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml" afterPath="$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -124,19 +108,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MappersHolder.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MappersHolder.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="908" selection-end="908" vertical-scroll-proportion="0.20363636">
+            <state line="28" column="0" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Article.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java">
+      <file leaf-file-name="d_dbscript.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sql/d_dbscript.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0">
+            <state line="43" column="33" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MySQLArticleProvider.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="117" column="50" selection-start="4712" selection-end="4712" vertical-scroll-proportion="0.5112782">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArticleProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/ArticleProvider.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="47" selection-start="1123" selection-end="1123" vertical-scroll-proportion="-11.454545">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JdbcOperations.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/spring/spring-jdbc.jar!/org/springframework/jdbc/core/JdbcOperations.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="109" column="80" selection-start="8676" selection-end="8676" vertical-scroll-proportion="-8.04">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractInterruptibleBatchPreparedStatementSetter.class" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/spring/spring-jdbc.jar!/org/springframework/jdbc/core/support/AbstractInterruptibleBatchPreparedStatementSetter.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="22" selection-start="184" selection-end="184" vertical-scroll-proportion="-2.4">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="p_dbscript.sql" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sql/p_dbscript.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="27" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -146,30 +177,6 @@
         <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="60" column="22" selection-start="1386" selection-end="1386" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="miner-tasker-beans.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tasker/src/scripts/miner-tasker-beans.xml">
-          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="80" selection-start="287" selection-end="287" vertical-scroll-proportion="-0.63829786">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tasker-beans.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml">
-          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="41" selection-start="945" selection-end="945" vertical-scroll-proportion="-5.0425534">
               <folding />
             </state>
           </provider>
@@ -194,9 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberLenta.java" />
-        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberRia.java" />
-        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberTwitter.java" />
         <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberWikipedia.java" />
         <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/ParserStarter.java" />
         <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/GrabberHandler.java" />
@@ -208,8 +212,11 @@
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLBrandProvider.java" />
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Params.java" />
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java" />
-        <option value="$PROJECT_DIR$/sql/d_dbscript.sql" />
         <option value="$PROJECT_DIR$/sql/p_dbscript.sql" />
+        <option value="$PROJECT_DIR$/sql/d_dbscript.sql" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/IterablePreparedStatementSetter.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/ArticleProvider.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" />
       </list>
     </option>
   </component>
@@ -545,6 +552,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -654,6 +693,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mysql" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="provider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="interfaces" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1299,10 +1372,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="822" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5206259" sideWeight="0.0" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31294453" sideWeight="0.0" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28876245" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15097402" sideWeight="0.75624084" order="0" side_tool="false" content_ui="tabs" />
@@ -1315,7 +1388,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23376623" sideWeight="0.70554763" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32954547" sideWeight="0.63535035" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32753405" sideWeight="0.6864536" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26055196" sideWeight="0.4793741" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26055196" sideWeight="0.68705547" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32752612" sideWeight="0.9193303" order="2" side_tool="false" content_ui="tabs" x="0" y="24" width="1366" height="744" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1362,7 +1435,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="new miner conf" />
+    <option name="LAST_COMMIT_MESSAGE" value="not null in sql" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1375,8 +1448,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="1. small fixes to all&#10;2. DB refactored to batch reading and writing&#10;3. rss parsing with feed4j&#10;4. building don't work now&#10;5. workable sql scripts&#10;6. reorganization of exceptions&#10;&#10;" />
-    <MESSAGE value="miner changed" />
     <MESSAGE value="grabber's bugs deleted, but not all" />
     <MESSAGE value="deleted annotation in grabber, changed mysql driver in analyzer" />
     <MESSAGE value="graph test added" />
@@ -1400,6 +1471,8 @@
     <MESSAGE value="tasker" />
     <MESSAGE value="new workable rss parser" />
     <MESSAGE value="new miner conf" />
+    <MESSAGE value="1. finamName deleted 2. grabber ref" />
+    <MESSAGE value="not null in sql" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1452,64 +1525,6 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/ParserStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="76" selection-start="596" selection-end="596" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/GrabberHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="20" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/Grabber.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="22" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/spring/spring-context.jar!/org/springframework/scheduling/timer/ScheduledTimerTask.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="-0.18939394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/script/dbhandler_pure.xml">
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/scripts/miner-tasker-beans.xml">
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="80" selection-start="287" selection-end="287" vertical-scroll-proportion="-0.63829786">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml">
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="41" selection-start="945" selection-end="945" vertical-scroll-proportion="-5.0425534">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jetbrains/annotations.jar!/org/jetbrains/annotations/NotNull.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="18" selection-start="482" selection-end="482" vertical-scroll-proportion="0.2651515">
@@ -1538,27 +1553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLBrandProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="56" selection-start="1801" selection-end="1801" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/p_dbscript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="25" selection-start="618" selection-end="618" vertical-scroll-proportion="0.60842437">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/d_dbscript.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="25" selection-start="621" selection-end="621" vertical-scroll-proportion="0.2574103">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Params.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="27" selection-start="695" selection-end="695" vertical-scroll-proportion="0.2874618">
@@ -1570,7 +1564,79 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="908" selection-end="908" vertical-scroll-proportion="0.20363636">
+        <state line="28" column="0" selection-start="908" selection-end="908" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/p_dbscript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="27" selection-start="620" selection-end="620" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/d_dbscript.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="33" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring/spring-jdbc.jar!/org/springframework/jdbc/core/PreparedStatementSetter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="171" selection-end="171" vertical-scroll-proportion="0.15503876">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring/spring-jdbc.jar!/org/springframework/jdbc/core/BatchPreparedStatementSetter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="171" selection-end="171" vertical-scroll-proportion="0.14669926">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring/spring-jdbc.jar!/org/springframework/jdbc/core/simple/SimpleJdbcOperations.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="17" selection-start="178" selection-end="178" vertical-scroll-proportion="0.15151516">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring/spring-jdbc.jar!/org/springframework/jdbc/core/JdbcOperations.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="80" selection-start="8676" selection-end="8676" vertical-scroll-proportion="-8.04">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/spring/spring-jdbc.jar!/org/springframework/jdbc/core/support/AbstractInterruptibleBatchPreparedStatementSetter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="22" selection-start="184" selection-end="184" vertical-scroll-proportion="-2.4">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLBrandProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="56" selection-start="1801" selection-end="1801" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/ArticleProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="47" selection-start="1123" selection-end="1123" vertical-scroll-proportion="-11.454545">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="50" selection-start="4712" selection-end="4712" vertical-scroll-proportion="0.5112782">
           <folding />
         </state>
       </provider>

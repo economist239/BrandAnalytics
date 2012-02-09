@@ -1,5 +1,6 @@
 package ru.brandanalyst.core.db.provider.interfaces;
 
+import ru.brandanalyst.core.db.provider.mysql.MappersHolder;
 import ru.brandanalyst.core.model.Article;
 
 import java.util.List;
@@ -7,27 +8,37 @@ import java.util.List;
 public interface ArticleProvider {
     int MAX_ARTICLE_LENGHT = 30000;
 
-    public void writeArticleToDataStore(Article article);
+    void writeArticleToDataStore(Article article);
 
-    public void writeListOfArticlesToDataStore(List<Article> articles);
+    void writeListOfArticlesToDataStore(List<Article> articles);
 
-    public Article getArticleBySourceId(long sourceId);
+    Article getArticleBySourceId(long sourceId);
 
 
-    public List<Article> getAllArticlesBySourceId(long sourceId);
+    List<Article> getAllArticlesBySourceId(long sourceId);
 
-    public Article getArticleById(long articleId);
+    Article getArticleById(long articleId);
 
-    public List<Article> getAllArticlesByBrand(long brandId);
+    List<Article> getAllArticlesByBrand(long brandId);
 
-    public List<Article> getAllOfficialArticlesByBrand(long brandId);
+    List<Article> getAllOfficialArticlesByBrand(long brandId);
 
-    public List<Article> getAllArticles();
+    List<Article> getAllArticles();
 
-    /**
+    List<Article> getArticlesWithCondition(String whereClause);
+
+    /*
      * возращает указанное количество самых свежих новостей по данном бренду
      */
-    public List<Article> getTopArticles(long brandId, int topSize);
+    List<Article> getTopArticles(long brandId, int topSize);
 
-    public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId);
+    List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId);
+
+    /*
+    *
+    * only for dirty db!!
+    */
+    void setAnalyzed(final List<Long> ids);
+
+    List<Article> getOnlyNotAnalyzedArticles();
 }

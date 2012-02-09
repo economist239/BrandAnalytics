@@ -40,7 +40,8 @@ create table Article(
 	Content longtext not null,
 	Link varchar(500),
 	NumLikes int,
-	Tstamp timestamp
+	Tstamp timestamp,
+	Analyzed tinyint(1) default 0
 );
 
 create table InformationSource(

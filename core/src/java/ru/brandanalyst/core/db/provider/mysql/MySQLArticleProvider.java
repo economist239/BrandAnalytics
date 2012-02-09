@@ -88,6 +88,10 @@ public class MySQLArticleProvider implements ArticleProvider {
         return jdbcTemplate.query("SELECT * FROM Article", MappersHolder.ARTICLE_MAPPER);
     }
 
+    public List<Article> getArticlesWithCondition(String whereClause) {
+        return jdbcTemplate.query("SELECT * FROM Article " + whereClause, MappersHolder.ARTICLE_MAPPER);
+    }
+    
     public List<Article> getTopArticles(long brandId, int topSize) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE brandId=? "
                 + " ORDER BY Tstamp DESC LIMIT ?", MappersHolder.ARTICLE_MAPPER, brandId, topSize);
@@ -96,5 +100,32 @@ public class MySQLArticleProvider implements ArticleProvider {
     public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE BrandId =? AND SourceId=?",
                 MappersHolder.ARTICLE_MAPPER, brandId, sourceId);
+    }
+
+    /*
+    *
+    * only for dirty db!!
+     */
+    public List<Article> getOnlyNotAnalyzedArticles() {
+        return jdbcTemplate.query("SELECT * FROM Article WHERE Analyzed=0", MappersHolder.ARTICLE_MAPPER);
+    }
+
+    /*
+    *
+    * only for dirty db!!
+     */
+    public void setAnalyzed(final List<Long> ids) {
+        final Iterator<Long> it = ids.iterator();
+        jdbcTemplate.getJdbcOperations().batchUpdate("UPDATE Article SET Analyzed=1 WHERE Id=?", new BatchPreparedStatementSetter() {
+            @Override
+            public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
+                preparedStatement.setLong(1, it.next());
+            }
+
+            @Override
+            public int getBatchSize() {
+                return ids.size();
+            }
+        });
     }
 }
