@@ -1,11 +1,8 @@
 package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.InitializingBean;
 import ru.brandanalyst.miner.grabbers.Grabber;
 
-import java.io.*;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.TimerTask;

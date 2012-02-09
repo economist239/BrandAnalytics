@@ -3,15 +3,6 @@
         "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans default-autowire="byName">
-
-    <bean id="schedulerProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>classpath:scheduler.properties</value>
-                <value>classpath:mysql.properties</value>
-            </list>
-        </property>
-    </bean>
     <!--Scheduler-->
     <bean id="rssGrabberTask" class="org.springframework.scheduling.timer.ScheduledTimerTask" lazy-init="false">
         <property name="delay" value="${start-delay}"/>

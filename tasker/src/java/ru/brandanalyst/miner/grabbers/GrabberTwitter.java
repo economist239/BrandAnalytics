@@ -1,19 +1,13 @@
 package ru.brandanalyst.miner.grabbers;
 
 import org.apache.log4j.Logger;
-import org.springframework.dao.DataAccessException;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
-import ru.brandanalyst.core.db.provider.interfaces.BrandDictionaryProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.core.model.BrandDictionaryItem;
-import ru.brandanalyst.miner.util.StringChecker;
 import twitter4j.*;
 
 import java.sql.Timestamp;
 import java.util.*;
-
-import static ru.brandanalyst.core.time.TimeProperties.SINGLE_DAY;
 
 /**
  * Created by IntelliJ IDEA.

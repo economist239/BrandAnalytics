@@ -3,7 +3,18 @@
         "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans default-autowire="byName">
+    <bean id="schedulerProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:schedule.properties</value>
+                <value>classpath:mysql.properties</value>
+            </list>
+        </property>
+    </bean>
     <import resource="dbhandler_dirty.xml"/>
     <import resource="dbhandler_pure.xml"/>
     <import resource="indexer-tasker-beans.xml"/>
+    <import resource="analyzer-tasker-beans.xml"/>
+    <import resource="miner-tasker-beans.xml"/>
+
 </beans>

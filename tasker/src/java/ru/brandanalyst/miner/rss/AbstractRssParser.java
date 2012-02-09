@@ -1,10 +1,6 @@
 package ru.brandanalyst.miner.rss;
 
 import org.apache.log4j.Logger;
-import org.horrabin.horrorss.RssChannelBean;
-import org.horrabin.horrorss.RssImageBean;
-import org.horrabin.horrorss.RssItemBean;
-import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.core.util.Batch;
