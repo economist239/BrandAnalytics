@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
 import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.miner.AbstractGrabberTask;
 import ru.brandanalyst.miner.grabbers.listener.RiaNewsScraperRuntimeListener;
 import ru.brandanalyst.miner.util.DataTransformator;
 
@@ -15,9 +16,9 @@ import java.util.Date;
  * Date: 23.10.11
  * Time: 11:29
  */
-public class GrabberRia extends Grabber {
+public class GrabberTaskRia extends AbstractGrabberTask {
 
-    private static final Logger log = Logger.getLogger(GrabberRia.class);
+    private static final Logger log = Logger.getLogger(GrabberTaskRia.class);
 
     private static final String searchURL = "http://ria.ru/search/?query=";
     private static final String sourceURL = "http://ria.ru";

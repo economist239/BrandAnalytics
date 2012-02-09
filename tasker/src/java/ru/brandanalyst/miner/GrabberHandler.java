@@ -2,35 +2,30 @@ package ru.brandanalyst.miner;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Required;
-import ru.brandanalyst.miner.grabbers.Grabber;
+import ru.brandanalyst.common.scheduler.AbstractDelayedTimerTask;
 
-import java.util.Date;
 import java.util.List;
-import java.util.TimerTask;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Dmitry Batkovich
- * Date: 10/14/11
- * Time: 11:47 AM
- * container of grabbes that process all grabbers
+ * User: dima
+ * Date: 2/9/12
  */
-public class GrabberHandler extends TimerTask {
-
-
+@Deprecated
+public class GrabberHandler extends AbstractDelayedTimerTask {
     private static final Logger log = Logger.getLogger(GrabberHandler.class);
 
-    private List<Grabber> grabberList;
+    private List<AbstractGrabberTask> grabberTaskList;
 
     @Required
-    public void setGrabberList(List<Grabber> grabberList) {
-        this.grabberList = grabberList;
+    public void setGrabberTaskList(List<AbstractGrabberTask> grabberTaskList) {
+        this.grabberTaskList = grabberTaskList;
     }
 
     @Override
-    public void run() {
+    public void runTask() {
         log.info("miner started...");
-        for (Grabber g : grabberList) {
+        for (AbstractGrabberTask g : grabberTaskList) {
             g.grab();
         }
     }

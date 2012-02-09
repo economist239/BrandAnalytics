@@ -14,7 +14,7 @@ import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
 import ru.brandanalyst.core.model.TickerPair;
 import ru.brandanalyst.core.util.cortege.Pair;
-import ru.brandanalyst.miner.grabbers.Grabber;
+import ru.brandanalyst.miner.AbstractGrabberTask;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,8 +30,8 @@ import java.util.StringTokenizer;
  * @author OlegPan
  *         This class grabbs information about quotes
  */
-public class GrabberFinam extends Grabber {
-    private static final Logger log = Logger.getLogger(GrabberFinam.class);
+public class GrabberTaskFinam extends AbstractGrabberTask {
+    private static final Logger log = Logger.getLogger(GrabberTaskFinam.class);
 
     protected GraphProvider graphProvider;
     protected BrandProvider brandProvider;
@@ -39,7 +39,7 @@ public class GrabberFinam extends Grabber {
     private final static String SOURCE_URL = "http://www.finam.ru/analysis/export/default.asp";
     private final static String TICKER_NAME = "котировки";
 
-    public void grab() {
+    protected void grab() {
         tickerProvider = handler.getTickerProvider();
         brandProvider = handler.getBrandProvider();
         graphProvider = handler.getGraphProvider();

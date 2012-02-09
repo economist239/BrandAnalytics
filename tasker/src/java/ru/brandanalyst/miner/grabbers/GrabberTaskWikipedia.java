@@ -3,6 +3,7 @@ package ru.brandanalyst.miner.grabbers;
 import org.apache.log4j.Logger;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
+import ru.brandanalyst.miner.AbstractGrabberTask;
 import ru.brandanalyst.miner.grabbers.listener.WikipediaScraperRuntimeListener;
 
 import java.util.Date;
@@ -13,8 +14,8 @@ import java.util.Date;
  * Date: 10/26/11
  * Time: 10:02 AM
  */
-public class GrabberWikipedia extends Grabber {
-    private static final Logger log = Logger.getLogger(GrabberWikipedia.class);
+public class GrabberTaskWikipedia extends AbstractGrabberTask {
+    private static final Logger log = Logger.getLogger(GrabberTaskWikipedia.class);
 
     @Override
     public void grab() {

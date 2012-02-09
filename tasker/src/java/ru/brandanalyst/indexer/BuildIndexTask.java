@@ -8,6 +8,7 @@ import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.Version;
 import org.springframework.beans.factory.annotation.Required;
+import ru.brandanalyst.common.scheduler.AbstractDelayedTimerTask;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
@@ -25,7 +26,7 @@ import java.util.TimerTask;
  * Date: 2/9/12
  * Time: 3:03 PM
  */
-public class BuildIndexTask extends TimerTask {
+public class BuildIndexTask extends AbstractDelayedTimerTask {
     private static final Logger log = Logger.getLogger(BuildIndexTask.class);
 
     private String directoryBrand;
@@ -51,7 +52,7 @@ public class BuildIndexTask extends TimerTask {
      * Основной метод, в котором вызывается индексеры
      */
     @Override
-    public void run() { // method initialize IndexWriter
+    public void runTask() { // method initialize IndexWriter
         try {
             SimpleFSDirectory indexDirectoryBrand = new SimpleFSDirectory(new File(directoryBrand));
             IndexWriter brandwriter = new IndexWriter(indexDirectoryBrand, new RussianAnalyzer(Version.LUCENE_34), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index

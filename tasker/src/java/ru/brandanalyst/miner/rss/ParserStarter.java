@@ -5,19 +5,18 @@ import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.InfoSource;
 import ru.brandanalyst.core.util.Batch;
-import ru.brandanalyst.miner.grabbers.Grabber;
+import ru.brandanalyst.miner.AbstractGrabberTask;
 
-import java.util.Date;
 import java.util.List;
 
 /**
  * @author OlegPan
  *         This class defines what rss channels will be used for information retrieving
  */
-public class ParserStarter extends Grabber {
+public class ParserStarter extends AbstractGrabberTask {
     private static final Logger log = Logger.getLogger(ParserStarter.class);
 
-    public void grab() {
+    protected void grab() {
         AbstractRssParser.setDictionary(handler.getBrandDictionaryProvider().getDictionary());
         List<InfoSource> infoSources = handler.getInformationSourceProvider().getAllInfoSources();
         final ArticleProvider articleProvider = handler.getArticleProvider();

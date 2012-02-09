@@ -4,10 +4,8 @@
 
 <beans default-autowire="byName">
     <!--Scheduler-->
-    <bean id="rssGrabberTask" class="org.springframework.scheduling.timer.ScheduledTimerTask" lazy-init="false">
-        <property name="delay" value="${start-delay}"/>
+    <bean id="rssGrabberTask" class="ru.brandanalyst.miner.rss.ParserStarter" lazy-init="false">
         <property name="period" value="${rss-period}"/>
-        <property name="timerTask" ref="grabberHandler"/>
     </bean>
 
     <!--Spring helpers-->
@@ -15,13 +13,13 @@
     <!--IMPORT DB-->
     <import resource="classpath:dbhandler_dirty.xml"/>
     <!--Miner conf-->
-    <bean id="grabberHandler" class="ru.brandanalyst.miner.GrabberHandler">
-        <property name="grabberList">
+<!--    <bean id="grabberHandler" class="ru.brandanalyst.miner.GrabberHandler">
+        <property name="grabberTaskList">
             <list>
-                <bean class="ru.brandanalyst.miner.grabbers.GrabberTwitter"/>
+                <bean class="ru.brandanalyst.miner.grabbers.GrabberTaskTwitter"/>
             </list>
         </property>
-    </bean>
+    </bean>-->
 
 
 </beans>

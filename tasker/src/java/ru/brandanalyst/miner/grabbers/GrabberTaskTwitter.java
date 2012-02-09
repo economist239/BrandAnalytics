@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.miner.AbstractGrabberTask;
 import twitter4j.*;
 
 import java.sql.Timestamp;
@@ -15,8 +16,8 @@ import java.util.*;
  * Date: 10.10.11
  * Time: 14:14
  */
-public class GrabberTwitter extends Grabber {
-    private static final Logger log = Logger.getLogger(GrabberTwitter.class);
+public class GrabberTaskTwitter extends AbstractGrabberTask {
+    private static final Logger log = Logger.getLogger(GrabberTaskTwitter.class);
 
     private static final int ISSUANCE_SIZE = 15000;
     private static final int PAGE_SIZE = 1000;

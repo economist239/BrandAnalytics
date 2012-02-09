@@ -4,13 +4,14 @@ import org.apache.log4j.Logger;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
 import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.miner.AbstractGrabberTask;
 import ru.brandanalyst.miner.grabbers.listener.LentaScraperRuntimeListener;
 import ru.brandanalyst.miner.util.DataTransformator;
 
 import java.util.Date;
 
-public class GrabberLenta extends Grabber {
-    private static final Logger log = Logger.getLogger(GrabberLenta.class);
+public class GrabberTaskLenta extends AbstractGrabberTask {
+    private static final Logger log = Logger.getLogger(GrabberTaskLenta.class);
 
     private static final String beginSearchURL = "http://lenta.ru/search/?query=";
     private static final String endSearchURL = "http://lenta.ru/search/?query=";

@@ -3,6 +3,7 @@ package ru.brandanalyst.miner.grabbers;
 import org.apache.log4j.Logger;
 import org.webharvest.definition.ScraperConfiguration;
 import org.webharvest.runtime.Scraper;
+import ru.brandanalyst.miner.AbstractGrabberTask;
 import ru.brandanalyst.miner.grabbers.listener.FontankaScraperRuntimeListener;
 
 import java.util.Date;
@@ -14,9 +15,9 @@ import java.util.GregorianCalendar;
  * Date: 10/26/11
  * Time: 4:13 AM
  */
-public class GrabberFontanka extends Grabber {
+public class GrabberTaskFontanka extends AbstractGrabberTask {
     private static final int SEARCH_DAYS = 30;
-    private static final Logger log = Logger.getLogger(GrabberFontanka.class);
+    private static final Logger log = Logger.getLogger(GrabberTaskFontanka.class);
 
     private static final String endURL = "/news.html";
     private static final String sourceURL = "http://fontanka.ru";
