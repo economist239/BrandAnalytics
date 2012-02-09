@@ -2,19 +2,17 @@
 <project name="BrandAnalytic" default="all" basedir=".">
 
     <path id="libs">
-        <fileset dir="${lib.dir}" includes="**/*.jar"/>
         <fileset dir="${dist.dir}" includes="**/*.jar"/>
     </path>
 
-    <property name="src.analyzer.dir" location="${project.dir}/analyzer/src/java/"/>
+    <property name="src.tasker.dir" location="${project.dir}/tasker/src/java/"/>
     <pathconvert pathsep=" " property="libs_manifest" refid="libs"/>
 
     <target name="all">
-
         <mkdir dir="${classes.dir}"/>
         <!--class-файлы в папку build/classes-->
-        <javac srcdir="${src.analyzer.dir}"
-               destdir="${build.dir}/classes"
+        <javac srcdir="${src.tasker.dir}"
+               destdir="${classes.dir}"
                debug="true"
                deprecation="true"
                optimize="false"
@@ -23,18 +21,26 @@
         </javac>
 
         <copy todir="${build.dir}" overwrite="true">
-            <fileset dir="${project.dir}/analyzer/src/scripts"/>
+            <fileset dir="${project.dir}/tasker/src/scripts"/>
         </copy>
         <!--собирается архив с классом, у которого есть метод main в папку dist-->
-        <jar destfile="${dist.dir}/brand-analytics-analyzer.jar" basedir="${classes.dir}">
+        <jar destfile="${dist.dir}/brand-analytics-tasker.jar" basedir="${classes.dir}">
             <manifest>
-                <attribute name="Built-By" value="analyzer: build.xml"/>
+                <attribute name="Built-By" value="tasker: build.xml"/>
                 <attribute name="Class-Path" value="${libs_manifest}/"/>
             </manifest>
         </jar>
 
         <delete dir="${classes.dir}"/>
-        <echo>analyzer building complete</echo>
+        <echo>frontend building complete</echo>
+    </target>
+
+    <target name="run">
+        <java dir="${build.dir}" jar="${dist.dir}/core.jar" fork="true">
+            <jvmarg value="-Xms64m"/>
+            <jvmarg value="-Xmx1750m"/>
+            <arg value="/frontend/src/scripts/beans.xml"/>
+        </java>
     </target>
 
 </project>

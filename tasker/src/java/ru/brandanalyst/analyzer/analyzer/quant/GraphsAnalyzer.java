@@ -1,4 +1,4 @@
-package ru.brandanalyst.analyzer.analyzers;
+package ru.brandanalyst.analyzer.analyzer.quant;
 
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;

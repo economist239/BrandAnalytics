@@ -7,7 +7,7 @@ import org.apache.lucene.document.Field;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.Version;
-import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
@@ -17,32 +17,32 @@ import ru.brandanalyst.core.model.Brand;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.TimerTask;
 
 /**
- * Класс индексирующий бренды и новости одновременно (!!!)
  * Created by IntelliJ IDEA.
- * User: Nikolaj Karpov
- * Date: 10.10.11
- * Time: 22:55
+ * User: dima
+ * Date: 2/9/12
+ * Time: 3:03 PM
  */
-public class Indexer implements InitializingBean {
+public class BuildIndexTask extends TimerTask {
+    private static final Logger log = Logger.getLogger(BuildIndexTask.class);
 
-    private static final Logger log = Logger.getLogger(Indexer.class);
-
-    private IndexWriter brandwriter;
-    private IndexWriter articlewriter;
     private String directoryBrand;
     private String directoryArticle;
     private ProvidersHandler providersHandler;
 
+    @Required
     public void setProvidersHandler(ProvidersHandler providersHandler) {
         this.providersHandler = providersHandler;
     }
 
+    @Required
     public void setDirectoryBrand(String directoryBrand) {
         this.directoryBrand = directoryBrand;
     }
 
+    @Required
     public void setDirectoryArticle(String directoryArticle) {
         this.directoryArticle = directoryArticle;
     }
@@ -50,12 +50,13 @@ public class Indexer implements InitializingBean {
     /**
      * Основной метод, в котором вызывается индексеры
      */
-    public void afterPropertiesSet() { // method initialize IndexWriter
+    @Override
+    public void run() { // method initialize IndexWriter
         try {
             SimpleFSDirectory indexDirectoryBrand = new SimpleFSDirectory(new File(directoryBrand));
-            brandwriter = new IndexWriter(indexDirectoryBrand, new RussianAnalyzer(Version.LUCENE_34), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
+            IndexWriter brandwriter = new IndexWriter(indexDirectoryBrand, new RussianAnalyzer(Version.LUCENE_34), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
             SimpleFSDirectory indexDirectoryArticle = new SimpleFSDirectory(new File(directoryArticle));
-            articlewriter = new IndexWriter(indexDirectoryArticle, new RussianAnalyzer(Version.LUCENE_34), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
+            IndexWriter articlewriter = new IndexWriter(indexDirectoryArticle, new RussianAnalyzer(Version.LUCENE_34), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
 
             brandIndex(brandwriter);
             articleIndex(articlewriter);
@@ -74,11 +75,9 @@ public class Indexer implements InitializingBean {
      * индексация новостей
      */
     private void articleIndex(IndexWriter writer) {
-
         log.info("indexing articles");
         ArticleProvider provider = providersHandler.getArticleProvider();
         List<Article> list = provider.getAllArticles();
-
         try {
             for (Article item : list) { //add to pre'index all brand's
                 Document doc = createDocument(item);
@@ -141,7 +140,4 @@ public class Indexer implements InitializingBean {
         doc.add(new Field("BranchId", Long.toString(b.getBranchId()), Field.Store.YES, Field.Index.NOT_ANALYZED));
         return doc;
     }
-
-
 }
-

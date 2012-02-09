@@ -9,12 +9,12 @@
     <import resource="classpath:dbhandler_pure.xml"/>
     <import resource="classpath:dbhandler_dirty.xml"/>
     <!--AnalyzerProcesser conf-->
-    <bean id="analyzerProcessor" class="ru.brandanalyst.analyzer.AnalyzerProcesser"
+    <bean id="analyzerProcessor" class="ru.brandanalyst.analyzer.MainAnalyzingTask"
           lazy-init="false">
         <property name="analyzers">
             <list>
-                <bean class="ru.brandanalyst.analyzer.analyzers.GraphsAnalyzer"/>
-                <bean class="ru.brandanalyst.analyzer.analyzers.GraphsAnalyzer"/>
+                <bean class="ru.brandanalyst.analyzer.analyzer.quant.GraphsAnalyzer"/>
+                <bean class="ru.brandanalyst.analyzer.analyzer.quant.GraphsAnalyzer"/>
             </list>
         </property>
     </bean>

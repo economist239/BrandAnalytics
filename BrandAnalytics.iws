@@ -2,94 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4582dae-84d6-4fe8-88ba-bd6439fff288" name="New changelist" comment="new web folder + bootstrap2">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/rss/FeedParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/rss/RssParser2.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/3rd-party/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/graphs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/index-test.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/showbrand.xsl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/test.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/web/raphael/analytics.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/web/raphael/jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/web/raphael/popup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/web/raphael/raphael.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/web/raphael/test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/frontend/src/web/showbrand.xsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/rss/RssParser.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/CaptainObvious.jpeg" afterPath="$PROJECT_DIR$/web/captain-obvious.jpeg" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/LICENSE" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/LICENSE" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/Makefile" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/Makefile" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/README.md" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/README.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/bootstrap.css" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/bootstrap.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/bootstrap.min.css" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-alerts.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-alerts.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-dropdown.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-dropdown.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-modal.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-modal.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-popover.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-popover.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-scrollspy.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-scrollspy.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-tabs.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-tabs.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/bootstrap-twipsy.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-twipsy.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/index.html" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/index.html" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-alerts.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-alerts.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-dropdown.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-dropdown.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-modal.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-modal.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-popover.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-popover.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-scrollspy.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-scrollspy.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-tabs.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-tabs.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/unit/bootstrap-twipsy.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-twipsy.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/vendor/qunit.css" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/vendor/qunit.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/js/tests/vendor/qunit.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/vendor/qunit.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/bootstrap.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/bootstrap.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/forms.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/forms.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/mixins.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/mixins.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/patterns.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/patterns.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/reset.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/reset.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/scaffolding.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/scaffolding.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/tables.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/tables.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/type.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/type.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/bootstrap/lib/variables.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/variables.less" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/common.xsl" afterPath="$PROJECT_DIR$/web/common.xsl" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/get-graphs.xml" afterPath="$PROJECT_DIR$/web/get-graphs.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/adapters/mootools-adapter.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/mootools-adapter.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/adapters/mootools-adapter.src.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/mootools-adapter.src.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/adapters/prototype-adapter.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/prototype-adapter.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/adapters/prototype-adapter.src.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/prototype-adapter.src.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/highstock.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/highstock.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/highstock.src.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/highstock.src.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/modules/exporting.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/modules/exporting.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/modules/exporting.src.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/modules/exporting.src.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/themes/dark-blue.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/dark-blue.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/themes/dark-green.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/dark-green.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/themes/gray.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/gray.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/themes/grid.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/grid.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/highstock/js/themes/skies.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/skies.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/index.xml" afterPath="$PROJECT_DIR$/web/index.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/index.xsl" afterPath="$PROJECT_DIR$/web/index.xsl" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/search.xml" afterPath="$PROJECT_DIR$/web/search.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/search.xsl" afterPath="$PROJECT_DIR$/web/search.xsl" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/showarticle.xml" afterPath="$PROJECT_DIR$/web/showarticle.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/showarticle.xsl" afterPath="$PROJECT_DIR$/web/showarticle.xsl" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/showbrand.xml" afterPath="$PROJECT_DIR$/web/showbrand.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/showyoutube.xml" afterPath="$PROJECT_DIR$/web/showyoutube.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/frontend/src/web/showyoutube.xsl" afterPath="$PROJECT_DIR$/web/showyoutube.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/config/miner.cfg" afterPath="$PROJECT_DIR$/miner/config/miner.cfg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/searcher/Searcher.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tasker/build.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/MainAnalyzingTask.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/indexer/BuildIndexTask.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tasker/src/scripts/analyzer-tasker-beans.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tasker/src/scripts/indexer-tasker-beans.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tasker/src/scripts/tasker.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tasker/tasker.iml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyzer/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/AnalyzerProcesser.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyzer/src/scripts/analyzer-beans.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyzer/src/scripts/analyzer.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/analyzer/src/test/Test.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index/build.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index/index.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index/src/java/ru/brandanalyst/indexer/Indexer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index/src/java/ru/brandanalyst/searcher/Searcher.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index/src/scripts/indexer-beans.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index/src/scripts/indexer.sh" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/AbstractAnalyzer.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/AbstractAnalyzer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/GraphsAnalyzer.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/GraphsAnalyzer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/analyzers/TweetsAnalyzer.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/TweetsAnalyzer.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/util/VectorableUtil.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/util/VectorableUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.ipr" afterPath="$PROJECT_DIR$/BrandAnalytics.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/analyzer/analyzer.iml" afterPath="$PROJECT_DIR$/analyzer/analyzer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assessor-tool/src/java/ru/brandanalyst/assessor/TwitterTool.java" afterPath="$PROJECT_DIR$/assessor-tool/src/java/ru/brandanalyst/assessor/TwitterTool.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.xml" afterPath="$PROJECT_DIR$/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/SSHTunnelDataSource.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/SSHTunnelDataSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/build.xml" afterPath="$PROJECT_DIR$/frontend/build.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/scripts/server.sh" afterPath="$PROJECT_DIR$/frontend/src/scripts/server.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/miner.iml" afterPath="$PROJECT_DIR$/miner/miner.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberHandler.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/GrabberHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/grabbers/GrabberTwitter.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/grabbers/GrabberTwitter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/rss/AbstractRssParser.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/rss/AbstractRssParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/rss/ParserStarter.java" afterPath="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/rss/ParserStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/scripts/miner-beans.xml" afterPath="$PROJECT_DIR$/miner/src/scripts/miner-beans.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/miner/src/scripts/scheduler.properties" afterPath="$PROJECT_DIR$/miner/src/scripts/scheduler.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml" afterPath="$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -174,17 +114,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="prototype-adapter.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/prototype-adapter.js">
+      <file leaf-file-name="TweetsAnalyzer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/TweetsAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="21" column="13" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="highstock.src.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/3rd-party/highstock/js/highstock.src.js">
+      <file leaf-file-name="DictionaryInitialyzer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/DictionaryInitialyzer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="19" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="54" selection-start="912" selection-end="912" vertical-scroll-proportion="-1.9097222">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="34" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tasker.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/scripts/tasker.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="42" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mysql.properties" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/script/mysql.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -193,66 +169,36 @@
         </entry>
       </file>
       <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/miner/build.xml">
+        <entry file="file://$PROJECT_DIR$/frontend/build.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="13" column="19" selection-start="473" selection-end="473" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GrabberFontanka.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/grabbers/GrabberFontanka.java">
+      <file leaf-file-name="server.sh" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/scripts/server.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="13" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0">
+            <state line="54" column="24" selection-start="0" selection-end="974" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GrabberTwitter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/grabbers/GrabberTwitter.java">
+      <file leaf-file-name="analyzer-tasker-beans.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/scripts/analyzer-tasker-beans.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="56" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.0">
+            <state line="11" column="82" selection-start="559" selection-end="559" vertical-scroll-proportion="-6.6">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mysql.properties" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/script/mysql.properties">
+      <file leaf-file-name="VectorableUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/util/VectorableUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="47" selection-start="139" selection-end="139" vertical-scroll-proportion="0.047468353">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SSHTunnelDataSource.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/SSHTunnelDataSource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="63" selection-start="2752" selection-end="2752" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySQLArticleProvider.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="0" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="miner-beans.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/miner/src/scripts/miner-beans.xml">
-          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="74" selection-start="1570" selection-end="1570" vertical-scroll-proportion="0.0">
+            <state line="16" column="19" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -277,22 +223,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/frontend/src/web/showbrand.xsl" />
-        <option value="$PROJECT_DIR$/frontend/src/web/index.xsl" />
-        <option value="$PROJECT_DIR$/build/server.sh" />
-        <option value="$PROJECT_DIR$/frontend/src/web/common.xsl" />
-        <option value="$PROJECT_DIR$/frontend/src/scripts/server.sh" />
-        <option value="$PROJECT_DIR$/frontend/build.xml" />
-        <option value="$PROJECT_DIR$/web/showbrand.xsl" />
-        <option value="$PROJECT_DIR$/web/graphs.js" />
-        <option value="$PROJECT_DIR$/web/common.xsl" />
-        <option value="$PROJECT_DIR$/web/test.html" />
-        <option value="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/web/index-test.html" />
-        <option value="$PROJECT_DIR$/miner/src/scripts/miner-beans.xml" />
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/SSHTunnelDataSource.java" />
         <option value="$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/grabbers/GrabberTwitter.java" />
         <option value="$PROJECT_DIR$/core/src/script/mysql.properties" />
+        <option value="$PROJECT_DIR$/miner/src/scripts/miner-beans.xml" />
+        <option value="$PROJECT_DIR$/index/src/java/ru/brandanalyst/indexer/Indexer.java" />
+        <option value="$PROJECT_DIR$/index/src/scripts/indexer-beans.xml" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/searcher/Searcher.java" />
+        <option value="$PROJECT_DIR$/tasker/src/scripts/indexer-teasker-beans.xml" />
+        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/indexer/BuildIndexTask.java" />
+        <option value="$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml" />
+        <option value="$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml" />
+        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/MainAnalyzingTask.java" />
+        <option value="$PROJECT_DIR$/tasker/src/scripts/analyzer-tasker-beans.xml" />
+        <option value="$PROJECT_DIR$/tasker/src/scripts/tasker.sh" />
+        <option value="$PROJECT_DIR$/tasker/build.xml" />
+        <option value="$PROJECT_DIR$/build.xml" />
       </list>
     </option>
   </component>
@@ -993,15 +939,15 @@
       <item index="0" class="java.lang.String" itemvalue="JUnit.DbTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.DbTest.testGraph" />
       <item index="2" class="java.lang.String" itemvalue="JUnit.DbTest.testBrand" />
-      <item index="3" class="java.lang.String" itemvalue="Application.FeedParser" />
-      <item index="4" class="java.lang.String" itemvalue="Application.FrontendStarter" />
-      <item index="5" class="java.lang.String" itemvalue="Application.IndexerStarter" />
-      <item index="6" class="java.lang.String" itemvalue="Application.MinerStarter" />
-      <item index="7" class="java.lang.String" itemvalue="Application.AnalyzerStarter" />
-      <item index="8" class="java.lang.String" itemvalue="Application.DictionaryInitialyzer" />
-      <item index="9" class="java.lang.String" itemvalue="Application.TwitterWrapperToFile" />
-      <item index="10" class="java.lang.String" itemvalue="Application.TwitterTool" />
-      <item index="11" class="java.lang.String" itemvalue="JUnit.MinerGrabbersTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.FrontendStarter" />
+      <item index="4" class="java.lang.String" itemvalue="Application.IndexerStarter" />
+      <item index="5" class="java.lang.String" itemvalue="Application.MinerStarter" />
+      <item index="6" class="java.lang.String" itemvalue="Application.AnalyzerStarter" />
+      <item index="7" class="java.lang.String" itemvalue="Application.DictionaryInitialyzer" />
+      <item index="8" class="java.lang.String" itemvalue="Application.TwitterWrapperToFile" />
+      <item index="9" class="java.lang.String" itemvalue="Application.TwitterTool" />
+      <item index="10" class="java.lang.String" itemvalue="JUnit.MinerGrabbersTest" />
+      <item index="11" class="java.lang.String" itemvalue="Application.FeedParser" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -1061,8 +1007,9 @@
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3641115" sideWeight="0.0" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1620209" sideWeight="0.0" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2891986" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15097402" sideWeight="0.75624084" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34223706" sideWeight="0.49675325" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35596028" sideWeight="0.49756494" order="7" side_tool="true" content_ui="tabs" />
@@ -1073,7 +1020,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23376623" sideWeight="0.70554763" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32954547" sideWeight="0.63535035" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32753405" sideWeight="0.6864536" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26055196" sideWeight="0.6358885" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26055196" sideWeight="0.8379791" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32752612" sideWeight="0.9193303" order="2" side_tool="false" content_ui="tabs" x="0" y="24" width="1366" height="744" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1081,7 +1028,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35561877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1211,89 +1157,125 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/css/bootstrap.css">
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/searcher/Searcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="915" column="16" selection-start="17539" selection-end="17539" vertical-scroll-proportion="0.0" />
+        <state line="136" column="5" selection-start="4795" selection-end="4795" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2534#2541#0" expanded="true" />
+            <element signature="e#3597#3606#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/img/glyphicons-halflings.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/img/glyphicons-halflings-white.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/js/bootstrap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="338" column="89" selection-start="9913" selection-end="9913" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/prototype-adapter.src.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/twitter4j-core-2.2.4.jar!/twitter4j/TwitterFactory.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="29" selection-start="813" selection-end="813" vertical-scroll-proportion="0.57178843" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/twitter4j-core-2.2.4.jar!/twitter4j/Tweet.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="45" selection-start="179" selection-end="179" vertical-scroll-proportion="0.13605443" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/prototype-adapter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/3rd-party/highstock/js/highstock.src.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/build.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/grabbers/GrabberFontanka.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="418" selection-end="418" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/java/ru/brandanalyst/miner/grabbers/GrabberTwitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="56" selection-start="1515" selection-end="1515" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/SSHTunnelDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="63" selection-start="2752" selection-end="2752" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="914" selection-end="914" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/miner/src/scripts/miner-beans.xml">
+    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml">
       <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="74" selection-start="1570" selection-end="1570" vertical-scroll-proportion="0.0">
+        <state line="57" column="52" selection-start="2524" selection-end="2524" vertical-scroll-proportion="-17.40909">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/SearchYalet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="13" selection-start="615" selection-end="615" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/MainAnalyzingTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="54" selection-start="624" selection-end="624" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/GraphsAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="13" selection-start="704" selection-end="704" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/AbstractAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/TweetsAnalyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="13" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/util/VectorableUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="19" selection-start="367" selection-end="367" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/scripts/analyzer-tasker-beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="82" selection-start="559" selection-end="559" vertical-scroll-proportion="-6.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer/DictionaryInitialyzer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="19" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/server.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="24" selection-start="0" selection-end="974" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/scripts/tasker.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="42" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/script/mysql.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="47" selection-start="139" selection-end="139" vertical-scroll-proportion="0.047468353">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="19" selection-start="473" selection-end="473" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="34" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="54" selection-start="912" selection-end="912" vertical-scroll-proportion="-1.9097222">
           <folding />
         </state>
       </provider>

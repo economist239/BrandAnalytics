@@ -1,4 +1,4 @@
-package ru.brandanalyst.analyzer.analyzers;
+package ru.brandanalyst.analyzer.analyzer.quant;
 
 import org.apache.log4j.Logger;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;

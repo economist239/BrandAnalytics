@@ -1,23 +1,20 @@
 package ru.brandanalyst.analyzer;
 
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Required;
-import ru.brandanalyst.analyzer.analyzers.AbstractAnalyzer;
+import ru.brandanalyst.analyzer.analyzer.quant.AbstractAnalyzer;
 
 import java.util.List;
+import java.util.TimerTask;
 
 /**
- * Класс, в котором выполняется весь анализ
  * Created by IntelliJ IDEA.
- * User: Nikolaj Karpov
- * Date: 23.10.11
- * Time: 21:10
- *
- * @version 1.0
+ * User: dima
+ * Date: 2/9/12
+ * Time: 3:27 PM
  */
-public class AnalyzerProcesser implements InitializingBean {
-    private static final Logger log = Logger.getLogger(AnalyzerProcesser.class);
+public class MainAnalyzingTask extends TimerTask {
+    private static final Logger log = Logger.getLogger(MainAnalyzingTask.class);
     private List<AbstractAnalyzer> analyzers;
 
     @Required
@@ -25,7 +22,8 @@ public class AnalyzerProcesser implements InitializingBean {
         this.analyzers = analyzers;
     }
 
-    public final void afterPropertiesSet() {
+    @Override
+    public final void run() {
         log.info("analyzing started...");
 
         for (AbstractAnalyzer a : analyzers) {
@@ -34,5 +32,4 @@ public class AnalyzerProcesser implements InitializingBean {
 
         log.info("analyzing finished succesful");
     }
-
 }

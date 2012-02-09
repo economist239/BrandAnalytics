@@ -1,4 +1,4 @@
-package ru.brandanalyst.searcher;
+package ru.brandanalyst.core.searcher;
 
 import org.apache.log4j.Logger;
 import org.apache.lucene.analysis.Analyzer;
@@ -21,11 +21,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Класс, предоставляющий поиск по брендам и новостям
  * Created by IntelliJ IDEA.
- * User: Nikolaj Karpov
- * Date: 11.10.11
- * Time: 12:24
+ * User: dima
+ * Date: 2/9/12
+ * Time: 3:20 PM
  */
 public class Searcher {
     private static final Logger log = Logger.getLogger(Searcher.class);
@@ -63,7 +62,7 @@ public class Searcher {
     /**
      * Поиск по брендам на основе их описания
      *
-     * @throws ParseException
+     * @throws org.apache.lucene.queryParser.ParseException
      * @throws IOException
      */
     public List<Brand> searchBrandByDescription(String query) {

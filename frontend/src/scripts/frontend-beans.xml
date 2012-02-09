@@ -55,7 +55,7 @@
 
     <bean id="articleSearchManager" class="ru.brandanalyst.frontend.services.ArticleSearchManager"/>
 
-    <bean id="searcher" class="ru.brandanalyst.searcher.Searcher">
+    <bean id="searcher" class="ru.brandanalyst.core.searcher.Searcher">
         <property name="indexDirBrand" value="index_brand/"/>
         <property name="indexDirArticle" value="index_article/"/>
     </bean>

@@ -13,7 +13,7 @@
     <property name="miner.build" location="${project.dir}/miner/build.xml"/>
     <property name="index.build" location="${project.dir}/index/build.xml"/>
     <property name="frontend.build" location="${project.dir}/frontend/build.xml"/>
-    <property name="analyzer.build" location="${project.dir}/analyzer/build.xml"/>
+    <property name="tasker.build" location="${project.dir}/tasker/build.xml"/>
 
     <property file="build.properties" />
 
@@ -39,7 +39,6 @@
 
     <!--server includes indexer-->
     <target name="frontend" depends="core">
-        <ant antfile="${index.build}"/>
         <ant antfile="${frontend.build}"/>
         <tar destfile="${tars.dir}/${TODAY}-SERVER.tar" basedir="${build.dir}"/>
     </target>
@@ -50,14 +49,20 @@
         </scp>
     </target>
 
+    <target name="tasker" depends="core">
+        <ant antfile="${tasker.build}"/>
+        <tar destfile="${tars.dir}/${TODAY}-TASKER.tar" basedir="${build.dir}"/>
+    </target>
+
+    <target name="tasker-install" depends="tasker">
+        <scp todir="${username}:${password}@${host}:/tasker/">
+            <fileset dir="tars.dir" includes="*SERVER.tar"/>
+        </scp>
+    </target>
+
     <target name="miner" depends="core">
         <ant antfile="${miner.build}"/>
         <tar destfile="${tars.dir}/${TODAY}-MINER.tar" basedir="${build.dir}"/>
-    </target>
-
-    <target name="analyzer" depends="core">
-        <ant antfile="${analyzer.build}"/>
-        <tar destfile="${tars.dir}/${TODAY}-ANALYZER.tar" basedir="${build.dir}"/>
     </target>
 
     <!--not building targets-->
