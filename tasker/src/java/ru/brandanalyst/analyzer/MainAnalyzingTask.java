@@ -24,7 +24,7 @@ public class MainAnalyzingTask extends AbstractDelayedTimerTask {
     }
 
     @Override
-    public final void runTask() {
+    protected final void runTask() {
         log.info("analyzing started...");
 
         for (AbstractAnalyzer a : analyzers) {

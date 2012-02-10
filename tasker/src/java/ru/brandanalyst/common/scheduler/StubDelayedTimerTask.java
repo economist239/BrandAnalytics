@@ -7,7 +7,7 @@ package ru.brandanalyst.common.scheduler;
  */
 public class StubDelayedTimerTask extends AbstractDelayedTimerTask {
     @Override
-    public void runTask() {
+    protected void runTask() {
         throw new RuntimeException();
     }
 }

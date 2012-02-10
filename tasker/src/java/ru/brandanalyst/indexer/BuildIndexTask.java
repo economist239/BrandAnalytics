@@ -52,7 +52,7 @@ public class BuildIndexTask extends AbstractDelayedTimerTask {
      * Основной метод, в котором вызывается индексеры
      */
     @Override
-    public void runTask() { // method initialize IndexWriter
+    protected void runTask() { // method initialize IndexWriter
         try {
             SimpleFSDirectory indexDirectoryBrand = new SimpleFSDirectory(new File(directoryBrand));
             IndexWriter brandwriter = new IndexWriter(indexDirectoryBrand, new RussianAnalyzer(Version.LUCENE_34), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index

@@ -27,5 +27,5 @@ public abstract class AbstractDelayedTimerTask extends ScheduledTimerTask {
  
     }
     
-    public abstract void runTask();
+    protected abstract void runTask();
 }

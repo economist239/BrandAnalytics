@@ -26,7 +26,7 @@ public abstract class AbstractGrabberTask extends AbstractDelayedTimerTask {
     }
 
     @Override
-    public void runTask() {
+    protected void runTask() {
         grab();
     }
 }
