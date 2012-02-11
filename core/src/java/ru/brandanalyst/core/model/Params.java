@@ -34,7 +34,9 @@ public class Params {
         try {
             return new Params(new JSONObject(input));
         } catch (JSONException e) {
-            throw new RuntimeException(e);
+        // временное
+            return empty();
+        //    throw new RuntimeException(e);
         }
     }
 

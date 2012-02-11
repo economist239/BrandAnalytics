@@ -13,6 +13,7 @@ import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.Version;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
+import ru.brandanalyst.core.model.Params;
 
 import java.io.File;
 import java.io.IOException;
@@ -119,7 +120,7 @@ public class Searcher {
                 doc.get("Name"),
                 doc.get("Description"),
                 doc.get("Website"),
-                Long.parseLong(doc.get("BranchId")), ""
+                Long.parseLong(doc.get("BranchId")), Params.empty()
         );
     }
 

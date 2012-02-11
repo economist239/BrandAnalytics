@@ -9,6 +9,7 @@ import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
 import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
+import ru.brandanalyst.core.model.Params;
 import ru.brandanalyst.core.model.SingleDot;
 
 import java.sql.Timestamp;
@@ -56,8 +57,8 @@ public class DbTest extends AbstractDependencyInjectionSpringContextTests {
 
     public void testBrand() {
         List<Brand> l = new LinkedList<Brand>();
-        l.add(new Brand(-1, "1", "2", "2", 1, ""));
-        l.add(new Brand(-1, "2", "1", "1", 1, ""));
+        l.add(new Brand(-1, "1", "2", "2", 1, Params.empty()));
+        l.add(new Brand(-1, "2", "1", "1", 1, Params.empty()));
         dirtyBrandProvider.writeListOfBrandsToDataStore(l);
         Assert.assertTrue(dirtyBrandProvider.getAllBrands().size() > 0);
     }

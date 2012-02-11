@@ -39,22 +39,23 @@
     <bean id="singleYaletProcessor" class="net.sf.xfresh.core.impl.DefaultSingleYaletProcessor"/>
 
     <!--Yalets-->
-    <bean id="showLeftMenuYalet" class="ru.brandanalyst.frontend.yalets.ShowLeftMenuYalet"/>
+    <bean id="getBrandsYalet" class="ru.brandanalyst.frontend.yalets.GetBrandsYalet"/>
 
-    <bean id="wideBrandInfoYalet" class="ru.brandanalyst.frontend.yalets.WideBrandInfoYalet"/>
+    <bean id="getBrandYalet" class="ru.brandanalyst.frontend.yalets.GetBrandYalet"/>
 
     <bean id="searchYalet" class="ru.brandanalyst.frontend.yalets.SearchYalet"/>
 
-    <bean id="showArticleYalet" class="ru.brandanalyst.frontend.yalets.ShowArticleYalet"/>
+    <bean id="getArticleForWebYalet" class="ru.brandanalyst.frontend.yalets.GetArticleForWebYalet"/>
 
     <bean id="showYouTubeYalet" class="ru.brandanalyst.frontend.yalets.ShowYouTubeYalet"/>
 
     <bean id="getGraphsYalet" class="ru.brandanalyst.frontend.yalets.GetGraphsYalet"/>
+
+    <bean id="getTickersYalet" class="ru.brandanalyst.frontend.yalets.GetTickersYalet"/>
+
+    <bean id="getArticlesForBrandYalet" class="ru.brandanalyst.frontend.yalets.GetArticlesForBrandYalet"/>
+
     <!--Searcher conf-->
-    <bean id="brandSearchManager" class="ru.brandanalyst.frontend.services.BrandSearchManager"/>
-
-    <bean id="articleSearchManager" class="ru.brandanalyst.frontend.services.ArticleSearchManager"/>
-
     <bean id="searcher" class="ru.brandanalyst.core.searcher.Searcher">
         <property name="indexDirBrand" value="index_brand/"/>
         <property name="indexDirArticle" value="index_article/"/>

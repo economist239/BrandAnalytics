@@ -1,4 +1,6 @@
-package ru.brandanalyst.core.model.simple;
+package ru.brandanalyst.core.model;
+
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -7,23 +9,23 @@ package ru.brandanalyst.core.model.simple;
  * Time: 12:20 AM
  * wide model of article for web
  */
-public final class WideArticleForWeb {
+public final class ArticleForWeb {
     private final String link;
     private final String title;
     private final String content;
     private final String sourceName;
     private final String sourceLink;
-    private final String time;
+    private final Date time;
 
     private static final int TIME_STRING_LENGTH = 10;
 
-    public WideArticleForWeb(String link, String title, String content, String sourceName, String sourceLink, String time) {
+    public ArticleForWeb(String link, String title, String content, String sourceName, String sourceLink, Date time) {
         this.link = link;
         this.title = title;
         this.content = content;
         this.sourceName = sourceName;
         this.sourceLink = sourceLink;
-        this.time = time.substring(0, TIME_STRING_LENGTH);
+        this.time = time;
     }
 
     public String getLink() {
@@ -46,7 +48,7 @@ public final class WideArticleForWeb {
         return sourceLink;
     }
 
-    public String getTime() {
+    public Date getTime() {
         return time;
     }
 }

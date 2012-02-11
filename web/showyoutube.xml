@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="showyoutube.xsl"?>
 <page>
-    <yalet id="showLeftMenu"/>
+    <yalet id="getBrand"/>
+
     <yalet id="showYouTube"/>
 </page>

@@ -2,6 +2,7 @@ package ru.brandanalyst.core.db.provider.interfaces;
 
 import ru.brandanalyst.core.db.provider.mysql.MappersHolder;
 import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.model.ArticleForWeb;
 
 import java.util.List;
 
@@ -14,10 +15,11 @@ public interface ArticleProvider {
 
     Article getArticleBySourceId(long sourceId);
 
-
     List<Article> getAllArticlesBySourceId(long sourceId);
 
     Article getArticleById(long articleId);
+
+    ArticleForWeb getArticleForWebById(long articleId);
 
     List<Article> getAllArticlesByBrand(long brandId);
 

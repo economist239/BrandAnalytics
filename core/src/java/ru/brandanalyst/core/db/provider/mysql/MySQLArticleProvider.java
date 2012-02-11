@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.model.ArticleForWeb;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -61,8 +62,8 @@ public class MySQLArticleProvider implements ArticleProvider {
 
     @Override
     public Article getArticleBySourceId(long sourceId) {
-        return jdbcTemplate.query("SELECT * FROM Article WHERE InfosourceId=?",
-                MappersHolder.ARTICLE_MAPPER, sourceId).get(0);
+        return jdbcTemplate.queryForObject("SELECT * FROM Article WHERE InfosourceId=?",
+                MappersHolder.ARTICLE_MAPPER, sourceId);
     }
 
     @Override
@@ -73,8 +74,14 @@ public class MySQLArticleProvider implements ArticleProvider {
 
     @Override
     public Article getArticleById(long articleId) {
-        return jdbcTemplate.query("SELECT * FROM Article WHERE Id=?",
-                MappersHolder.ARTICLE_MAPPER, articleId).get(0);
+        return jdbcTemplate.queryForObject("SELECT * FROM Article WHERE Id=?",
+                MappersHolder.ARTICLE_MAPPER, articleId);
+    }
+
+    @Override
+    public ArticleForWeb getArticleForWebById(long articleId) {
+        return jdbcTemplate.queryForObject("SELECT * FROM Article a, InformationSource s WHERE a.Id=? AND a.InfoSourceId=s.Id",
+                MappersHolder.ARTICLE_FOR_WEB_MAPPER, articleId);
     }
 
     @Override
@@ -103,7 +110,7 @@ public class MySQLArticleProvider implements ArticleProvider {
     @Override
     public List<Article> getTopArticles(long brandId, int topSize) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE brandId=? "
-                + " ORDER BY Tstamp DESC LIMIT ?", MappersHolder.ARTICLE_MAPPER, brandId, topSize);
+                + " ORDER BY Tstamp DESC LIMIT ?", MappersHolder.ARTICLE_WITH_SHORT_CONTENT_MAPPER, brandId, topSize);
     }
     @Override
     public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId) {

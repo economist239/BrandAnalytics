@@ -2,6 +2,7 @@ package ru.brandanalyst.core.db.provider.mysql;
 
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import ru.brandanalyst.core.model.*;
+import ru.brandanalyst.core.util.TextConverter;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,6 +41,15 @@ public final class MappersHolder {
         }
     };
 
+    public final static ParameterizedRowMapper<ArticleForWeb> ARTICLE_FOR_WEB_MAPPER = new ParameterizedRowMapper<ArticleForWeb>() {
+        @Override
+        public ArticleForWeb mapRow(ResultSet resultSet, int i) throws SQLException {
+            return new ArticleForWeb(resultSet.getString("Link"), resultSet.getString("a.Title"),
+                    resultSet.getString("Content"), resultSet.getString("s.Title"),
+                    resultSet.getString("Website"), resultSet.getDate("Tstamp"));
+        }
+    };
+
     public final static ParameterizedRowMapper<Article> ARTICLE_MAPPER = new ParameterizedRowMapper<Article>() {
         @Override
         public Article mapRow(ResultSet resultSet, int i) throws SQLException {
@@ -47,6 +57,18 @@ public final class MappersHolder {
                     resultSet.getLong("BrandId"),
                     resultSet.getLong("InfosourceId"),
                     resultSet.getString("Title"), resultSet.getString("Content"),
+                    resultSet.getString("Link"), resultSet.getTimestamp("Tstamp"),
+                    resultSet.getInt("NumLikes"));
+        }
+    };
+
+    public final static ParameterizedRowMapper<Article> ARTICLE_WITH_SHORT_CONTENT_MAPPER = new ParameterizedRowMapper<Article>() {
+        @Override
+        public Article mapRow(ResultSet resultSet, int i) throws SQLException {
+            return new Article(resultSet.getLong("Id"),
+                    resultSet.getLong("BrandId"),
+                    resultSet.getLong("InfosourceId"),
+                    resultSet.getString("Title"), TextConverter.firstPhrase(resultSet.getString("Content")),
                     resultSet.getString("Link"), resultSet.getTimestamp("Tstamp"),
                     resultSet.getInt("NumLikes"));
         }
