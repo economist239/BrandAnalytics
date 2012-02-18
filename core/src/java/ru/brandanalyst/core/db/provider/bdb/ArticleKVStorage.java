@@ -3,6 +3,10 @@ package ru.brandanalyst.core.db.provider.bdb;
 import com.sleepycat.je.Environment;
 import com.sleepycat.je.EnvironmentConfig;
 import com.sleepycat.persist.*;
+import com.sleepycat.persist.model.Entity;
+import com.sleepycat.persist.model.PrimaryKey;
+import com.sleepycat.persist.model.Relationship;
+import com.sleepycat.persist.model.SecondaryKey;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.annotation.Required;
@@ -30,8 +34,8 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
     private final EntityStore storage;
     private final Environment env;
     private boolean eraseDataAfterVisit;
-    private final PrimaryIndex<Long, Article> pi;
-    private final SecondaryIndex<Long, Long, Article> si;
+    private final PrimaryIndex<String, ArticleEntity> pi;
+    private final SecondaryIndex<Long, String, ArticleEntity> si;
 
     public ArticleKVStorage(String pathName) {
         File path = new File(pathName);
@@ -58,8 +62,8 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
         env = new Environment(path, envConfig);
         storage = new EntityStore(env, STORE_NAME, storeConfig);
 
-        pi = storage.getPrimaryIndex(Long.class, Article.class);
-        si = storage.getSecondaryIndex(pi, Long.class, "brand-id-type");
+        pi = storage.getPrimaryIndex(String.class, ArticleEntity.class);
+        si = storage.getSecondaryIndex(pi, Long.class, "brandId");
     }
 
     @Required
@@ -69,13 +73,13 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
 
     @Override
     public void writeArticleToDataStore(Article article) {
-        pi.putNoReturn(article);
+        pi.putNoReturn(new ArticleEntity(article));
     }
 
     @Override
     public void writeListOfArticlesToDataStore(List<Article> articles) {
         for (Article a : articles) {
-            pi.putNoReturn(a);
+            pi.putNoReturn(new ArticleEntity(a));
         }
     }
 
@@ -91,7 +95,7 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
 
     @Override
     public Article getArticleById(long articleId) {
-        return pi.get(articleId);
+        throw new UnsupportedOperationException("unsupported operation in DBD STORAGE");
     }
 
     @Override
@@ -147,11 +151,10 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
 
     @Override
     public void visitArticles(EntityVisitor<Article> visitor) {
-        EntityCursor<Article> cursor = pi.entities();
-        for (int i = 0; i < cursor.count(); i++) {
-            visitor.visitEntity(cursor.next());
-        }
-
+        EntityCursor<ArticleEntity> cursor = pi.entities();
+//        for (int i = 0; i < cursor.count(); i++) {
+            visitor.visitEntity(cursor.next().getArticle());
+  //      }
         /*   if (eraseDataAfterVisit) {
             EntityCursor<Long> keys = pi.keys();
             for (int i = 0; i < keys.count(); i++) {
