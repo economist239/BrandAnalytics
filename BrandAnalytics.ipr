@@ -403,7 +403,6 @@
         <root url="file://$PROJECT_DIR$/lib" />
         <root url="file://$PROJECT_DIR$/lib/saxon" />
         <root url="file://$PROJECT_DIR$/lib/jakarta-commons" />
-        <root url="file://$PROJECT_DIR$/lib/httpclient" />
         <root url="file://$PROJECT_DIR$/lib/webharvest" />
         <root url="file://$PROJECT_DIR$/lib/rhino" />
         <root url="file://$PROJECT_DIR$/lib/spring" />
@@ -413,6 +412,7 @@
         <root url="file://$PROJECT_DIR$/lib/htmlunit" />
         <root url="file://$PROJECT_DIR$/lib" />
         <root url="file://$PROJECT_DIR$/lib/weka" />
+        <root url="file://$PROJECT_DIR$/lib/xstream" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
@@ -421,7 +421,6 @@
       <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/htmlunit" recursive="false" />
-      <jarDirectory url="file://$PROJECT_DIR$/lib/httpclient" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/jakarta-commons" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/jetbrains" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/jetty" recursive="false" />
@@ -433,6 +432,7 @@
       <jarDirectory url="file://$PROJECT_DIR$/lib/webharvest" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/weka" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/xalan" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/xstream" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/weka" recursive="false" type="SOURCES" />
     </library>
   </component>

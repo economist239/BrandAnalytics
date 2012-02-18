@@ -1,12 +1,10 @@
+package ru.brandanalyst;
+
 import org.junit.*;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider;
-import ru.brandanalyst.core.db.provider.mysql.MySQLBrandProvider;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.Params;
