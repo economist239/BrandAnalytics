@@ -8,12 +8,16 @@ import ru.brandanalyst.core.util.Batch;
 import ru.brandanalyst.miner.AbstractGrabberTask;
 
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * @author OlegPan
  *         This class defines what rss channels will be used for information retrieving
  */
 public class ParserStarter extends AbstractGrabberTask {
+    private static final int POOL_SIZE = 10;
     private static final Logger log = Logger.getLogger(ParserStarter.class);
 
     protected void grab() {
@@ -29,11 +33,13 @@ public class ParserStarter extends AbstractGrabberTask {
 
         log.info("begin parsing rss");
 
+        ExecutorService service = Executors.newFixedThreadPool(POOL_SIZE);
+
         for (InfoSource infoSource : infoSources) {
             if (infoSource.getSphereId() != 1) continue;
             String rssSource = infoSource.getRssSource();
             if (rssSource.isEmpty()) continue;
-            new Thread(new HorrorParser(rssSource, infoSource.getId(), batch)).start();
+            service.submit(new HorrorParser(rssSource, infoSource.getId(), batch));
         }
 
         log.info("End parsing rss");

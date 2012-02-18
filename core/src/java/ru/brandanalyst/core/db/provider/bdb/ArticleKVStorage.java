@@ -1,17 +1,17 @@
-package ru.brandanalyst.core.db.provider;
+package ru.brandanalyst.core.db.provider.bdb;
 
 import com.sleepycat.je.Environment;
 import com.sleepycat.je.EnvironmentConfig;
 import com.sleepycat.persist.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.DisposableBean;
-import ru.brandanalyst.core.black.magic.Processer;
+import org.springframework.beans.factory.annotation.Required;
+import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.ArticleForWeb;
 
 import java.io.File;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -23,11 +23,13 @@ import java.util.List;
  * key-value storage for mined articles
  */
 public class ArticleKVStorage extends ArticleProvider implements DisposableBean {
+
     private final static int BATCH_SIZE = 1024;
     private final static Logger log = Logger.getLogger(ArticleKVStorage.class);
     private static final String STORE_NAME = "brand-analytics";
     private final EntityStore storage;
     private final Environment env;
+    private boolean eraseDataAfterVisit;
     private final PrimaryIndex<Long, Article> pi;
     private final SecondaryIndex<Long, Long, Article> si;
 
@@ -58,6 +60,11 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
 
         pi = storage.getPrimaryIndex(Long.class, Article.class);
         si = storage.getSecondaryIndex(pi, Long.class, "brand-id-type");
+    }
+
+    @Required
+    public void setEraseDataAfterVisit(boolean eraseDataAfterVisit) {
+        this.eraseDataAfterVisit = eraseDataAfterVisit;
     }
 
     @Override
@@ -138,17 +145,18 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
         return null;
     }
 
-    public void writeArticles(List<Article> data) {
-        for (Article a : data) {
-            pi.putNoReturn(a);
-        }
-    }
-
     @Override
     public void visitArticles(EntityVisitor<Article> visitor) {
         EntityCursor<Article> cursor = pi.entities();
         for (int i = 0; i < cursor.count(); i++) {
             visitor.visitEntity(cursor.next());
         }
+
+        /*   if (eraseDataAfterVisit) {
+            EntityCursor<Long> keys = pi.keys();
+            for (int i = 0; i < keys.count(); i++) {
+                pi.delete(keys.next());
+            }
+        }*/
     }
 }

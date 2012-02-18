@@ -13,8 +13,8 @@
         <property name="tickerProvider" ref="dirtyTickerProvider"/>
     </bean>
     <!--PROVIDERS-->
-    <bean id="dirtyArticleProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider">
-        <property name="jdbcTemplate" ref="dirtyJdbcTemplate"/>
+    <bean id="dirtyArticleProvider" class="ru.brandanalyst.core.db.provider.bdb.ArticleKVStorage">
+        <constructor-arg value="~/berkley-storage"/>
     </bean>
 
     <bean id="dirtyBrandDictionaryProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLBrandDictionaryProvider">
