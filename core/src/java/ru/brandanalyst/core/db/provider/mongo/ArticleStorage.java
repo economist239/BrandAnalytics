@@ -1,6 +1,7 @@
 package ru.brandanalyst.core.db.provider.mongo;
 
 import com.mongodb.*;
+import org.springframework.beans.factory.DisposableBean;
 import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
@@ -17,7 +18,7 @@ import java.util.List;
  * Date: 2/19/12
  * Time: 7:35 PM
  */
-public class ArticleStorage extends ArticleProvider {
+public class ArticleStorage extends ArticleProvider implements DisposableBean {
     private final static int BATCH_SIZE = 1024;
     private final static String DB_NAME = "ba-dirty";
     private final static String COLLECTION_NAME = "article-collection";
@@ -149,5 +150,10 @@ public class ArticleStorage extends ArticleProvider {
     @Override
     public List<Article> getOnlyNotAnalyzedArticles() {
         throw new UnsupportedOperationException("unsupported method in MONGO DB");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        mongo.close();
     }
 }
