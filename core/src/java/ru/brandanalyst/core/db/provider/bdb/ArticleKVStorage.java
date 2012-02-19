@@ -26,6 +26,7 @@ import java.util.List;
  * <p/>
  * key-value storage for mined articles
  */
+@Deprecated
 public class ArticleKVStorage extends ArticleProvider implements DisposableBean {
 
     private final static int BATCH_SIZE = 1024;

@@ -16,6 +16,7 @@ import java.sql.Timestamp;
  * Date: 2/18/12
  * Time: 5:39 PM
  */
+@Deprecated
 @Entity
 public class ArticleEntity {
     @PrimaryKey
