@@ -38,7 +38,6 @@ public class YaletXmlPageHandler extends AbstractHandler {
                        final HttpServletResponse httpServletResponse,
                        final int i) throws IOException, ServletException {
         Request baseRequest = Request.getRequest(httpServletRequest);
-
         if (baseRequest.isHandled()) {
             return;
         }

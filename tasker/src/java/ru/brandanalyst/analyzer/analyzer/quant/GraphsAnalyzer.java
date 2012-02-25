@@ -1,5 +1,6 @@
 package ru.brandanalyst.analyzer.analyzer.quant;
 
+import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
@@ -21,11 +22,24 @@ import java.util.Map;
  *
  * @version 1.0
  */
-public class GraphsAnalyzer extends AbstractAnalyzer {
+public class GraphsAnalyzer implements AbstractAnalyzer {
 
-    public void analyze() {
+    private GraphProvider graphProvider;
 
-        log.info("graph analyzing started...");
+    @Override
+    public void init(ProvidersHandler pureProvedrsHandler) {
+        graphProvider = pureProvedrsHandler.getGraphProvider();
+    }
+
+    @Override
+    public void onStart() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void analyze(Article article) {
+
+    /* //   log.info("graph analyzing started...");
         BrandProvider dirtyBrandProvider = dirtyProvidersHandler.getBrandProvider();
         BrandProvider pureBrandProvider = pureProvidersHandler.getBrandProvider();
         ArticleProvider dirtyArticleProvider = dirtyProvidersHandler.getArticleProvider();
@@ -57,6 +71,11 @@ public class GraphsAnalyzer extends AbstractAnalyzer {
 
             pureGraphProvider.writeGraph(graph, b.getId(), 1);
         }
-        log.info("graph analazing finished succesful");
+       // log.info("graph analazing finished succesful");*/
+    }
+
+    @Override
+    public void flush() {
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 }

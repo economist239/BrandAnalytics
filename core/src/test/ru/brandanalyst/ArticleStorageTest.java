@@ -6,7 +6,6 @@ import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.bdb.ArticleKVStorage;
 import ru.brandanalyst.core.model.Article;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 /**
@@ -19,11 +18,11 @@ public class ArticleStorageTest {
 
     //remove directory after test
     @Test
-    public void testBdbStorage() {
+    public void testBdbStorage() throws Exception {
         ArticleKVStorage storage = new ArticleKVStorage("~/bdb-test/");
-        storage.writeArticleToDataStore(new Article(1L, 1L, "", "", "", new Timestamp(1L), 1));
-        storage.writeArticleToDataStore(new Article(2L, 2L, "", "", "", new Timestamp(2L), 2));
-        storage.writeArticleToDataStore(new Article(3L, 3L, "", "", "", new Timestamp(3L), 3));
+        storage.writeArticleToDataStore(new Article(1L, 1L, "title1", "content1", "3", new Timestamp(1L), 1));
+        storage.writeArticleToDataStore(new Article(2L, 2L, "title2", "content2", "4", new Timestamp(2L), 2));
+        storage.writeArticleToDataStore(new Article(3L, 3L, "title3", "content3", "1", new Timestamp(3L), 3));
 
         storage.visitArticles(new EntityVisitor<Article>() {
             @Override
@@ -31,6 +30,9 @@ public class ArticleStorageTest {
                 System.out.println(e.getBrandId());
             }
         });
+
+        storage.destroy();
+
     }
 
 
