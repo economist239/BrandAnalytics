@@ -2,6 +2,7 @@ package ru.brandanalyst.analyzer.analyzer.quant;
 
 import org.apache.log4j.Logger;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
+import ru.brandanalyst.core.model.Article;
 
 /**
  * Created by IntelliJ IDEA.
@@ -9,19 +10,10 @@ import ru.brandanalyst.core.db.provider.ProvidersHandler;
  * Date: 12/10/11
  * Time: 10:30 PM
  */
-public abstract class AbstractAnalyzer {
-    protected static final Logger log = Logger.getLogger(AbstractAnalyzer.class);
+public interface AbstractAnalyzer {
+    void init(ProvidersHandler pureProvedrsHandler);
 
-    protected ProvidersHandler dirtyProvidersHandler;
-    protected ProvidersHandler pureProvidersHandler;
+    void analyze(Article article);
 
-    public void setDirtyProvidersHandler(ProvidersHandler dirtyProvidersHandler) {
-        this.dirtyProvidersHandler = dirtyProvidersHandler;
-    }
-
-    public void setPureProvidersHandler(ProvidersHandler pureProvidersHandler) {
-        this.pureProvidersHandler = pureProvidersHandler;
-    }
-
-    public abstract void analyze();
+    void flush();
 }
