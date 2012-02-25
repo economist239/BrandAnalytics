@@ -64,12 +64,12 @@ public class BrandDictionaryReader extends AbstractTest {
         }
     }
 
-    /*public void testReadBrandItem() throws IOException {
+    public void testReadBrandItem() throws IOException {
         List<BrandDictionaryItem> items = read(IOUtils.toString(new FileReader(file)));
         for (BrandDictionaryItem item : items) {
             System.out.println(item.getItems());
         }
-    }*/
+    }
 
     // rename to testWriteBrandItem
     public void testWriteBrandItem() throws IOException {

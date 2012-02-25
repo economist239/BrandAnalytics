@@ -17,8 +17,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class TopsyTwitter {
     private static final Logger log = Logger.getLogger(TopsyTwitter.class);
@@ -38,9 +37,9 @@ public class TopsyTwitter {
         String last = "d";
         boolean isEmpty = false;
         TopsyItem topsyItem = new TopsyItem(query);
+        int count = 1;
         while (!isEmpty && topsyItem.tweets.size() < maxCount) {
-            int count = 1;
-            String url = String.format("http://topsy.com/s/%s/tweet?om=ca&page=%d&window=%s", URLEncoder.encode(query, "UTF-8"), count, last);
+            String url = String.format("http://topsy.com/s/%s/tweet?allow_lang=ru&page=%d&window=%s", URLEncoder.encode(query, "UTF-8"), count++, last);
             TagNode tagNode = XmlProvider.getTagNode(new URL(url));
             Object found[] = tagNode.evaluateXPath("//DIV[@class='list']/DIV/DIV/DIV/SPAN");
             if (found.length == 0) {
@@ -56,7 +55,7 @@ public class TopsyTwitter {
 
     private static class TopsyItem {
         public final String query;
-        public final List<String> tweets = new ArrayList<String>();
+        public final Collection<String> tweets = new LinkedHashSet<String>();
 
         public TopsyItem(String query) {
             this.query = query;
@@ -65,6 +64,7 @@ public class TopsyTwitter {
 
     public static void main(String[] args) throws XPatherException, IOException {
         String companies[] = {
+                "google",
                 "Сбербанк",
                 "Газпром",
                 "ВТБ",
@@ -87,12 +87,16 @@ public class TopsyTwitter {
                 "ОГК - 3"
         };
 
-        log.info();
+        log.info("Mining topsy started");
         List<TopsyItem> companiesTweets = new ArrayList<TopsyItem>();
         for (String company : companies) {
+            log.info("Company now: " + company) ;
             TopsyItem topsyItem = new TopsyTwitter().getTweets(company);
             companiesTweets.add(topsyItem);
+            log.info("Company done; " + company + " Found: " + topsyItem.tweets.size());
         }
+        log.info("Mining topsy ended");
+
         XStream xStream = new XStream();
         xStream.toXML(companiesTweets, new FileWriter("tweets.xml"));
     }

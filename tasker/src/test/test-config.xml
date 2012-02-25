@@ -3,12 +3,9 @@
         "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans default-autowire="byName" default-init-method="afterPropertiesSet">
-    <import resource="classpath:dbhandler_dirty.xml"/>
+    <!--<import resource="classpath:dbhandler_dirty.xml"/>
 
-    <alias name="dirtyProvidersHandler" alias="providersHandler" />
+    <alias name="dirtyProvidersHandler" alias="providersHandler" />-->
 
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
-    <bean name="file" class="java.lang.String">
-        <constructor-arg value="src/test/brandItems.xml"/>
-    </bean>
 </beans>
