@@ -52,7 +52,7 @@ public class MainAnalyzingTask extends AbstractDelayedTimerTask implements Initi
 
         dirtyProvidersHandler.getArticleProvider().visitArticles(new EntityVisitor<Article>() {
             @Override
-            public void visitEntity(Article e) {
+            public void visitEntity(final Article e) {
                 for (AbstractAnalyzer a : analyzers) {
                     a.analyze(e);
                 }

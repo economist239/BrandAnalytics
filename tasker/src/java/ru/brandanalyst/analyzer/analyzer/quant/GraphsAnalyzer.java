@@ -24,7 +24,10 @@ import java.util.Map;
  */
 public class GraphsAnalyzer implements AbstractAnalyzer {
 
+    public static final int REFERENCES_TICKER_ID = 1;
     private GraphProvider graphProvider;
+
+    private Map<Long, Graph> graphDepot;
 
     @Override
     public void init(ProvidersHandler pureProvedrsHandler) {
@@ -33,49 +36,28 @@ public class GraphsAnalyzer implements AbstractAnalyzer {
 
     @Override
     public void onStart() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        graphDepot = new HashMap<Long, Graph>();
     }
 
     @Override
     public void analyze(Article article) {
+        long brandId = article.getBrandId();
 
-    /* //   log.info("graph analyzing started...");
-        BrandProvider dirtyBrandProvider = dirtyProvidersHandler.getBrandProvider();
-        BrandProvider pureBrandProvider = pureProvidersHandler.getBrandProvider();
-        ArticleProvider dirtyArticleProvider = dirtyProvidersHandler.getArticleProvider();
-        ArticleProvider pureArticleProvider = pureProvidersHandler.getArticleProvider();
-        GraphProvider pureGraphProvider = pureProvidersHandler.getGraphProvider();
-
-        Map<Long, Double> graphMap = new HashMap<Long, Double>(); //out of memory
-
-        //counting value
-        for (Brand b : dirtyBrandProvider.getAllBrands()) {
-            pureBrandProvider.writeBrandToDataStore(b); //it shouldn't be here
-
-            for (Article a : dirtyArticleProvider.getAllOfficialArticlesByBrand(b.getId())) {
-
-                Timestamp timestamp = a.getTstamp();
-                if (graphMap.containsKey(timestamp.getTime())) {
-                    graphMap.put(timestamp.getTime(), graphMap.get(timestamp.getTime()) + 1.0);
-                } else {
-                    graphMap.put(timestamp.getTime(), 1.0);
-                }
-
-                pureArticleProvider.writeArticleToDataStore(a);
-            }
-            //map to graph
-            Graph graph = new Graph("");
-            for (Long time : graphMap.keySet()) {
-                graph.addPoint(new SingleDot(new Timestamp(time), graphMap.get(time)));
-            }
-
-            pureGraphProvider.writeGraph(graph, b.getId(), 1);
+        if (graphDepot.containsKey(brandId)) {
+            Graph graph = graphDepot.get(brandId);
+            graph.addPoint(article.getTstamp(), 1);
+        } else {
+            Graph graph = new Graph();
+            graph.addPoint(article.getTstamp(), 1);
+            graphDepot.put(brandId, graph);
         }
-       // log.info("graph analazing finished succesful");*/
     }
 
     @Override
     public void flush() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        for (Map.Entry<Long, Graph> e: graphDepot.entrySet()) {
+            graphProvider.writeGraph(e.getValue(), e.getKey(), REFERENCES_TICKER_ID);
+        }
+        graphDepot.clear();
     }
 }
