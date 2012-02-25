@@ -24,15 +24,22 @@ import java.util.Map;
  */
 public class GraphsAnalyzer implements AbstractAnalyzer {
 
+    private GraphProvider graphProvider;
+
     @Override
     public void init(ProvidersHandler pureProvedrsHandler) {
+        graphProvider = pureProvedrsHandler.getGraphProvider();
+    }
+
+    @Override
+    public void onStart() {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
     public void analyze(Article article) {
 
-        log.info("graph analyzing started...");
+    /* //   log.info("graph analyzing started...");
         BrandProvider dirtyBrandProvider = dirtyProvidersHandler.getBrandProvider();
         BrandProvider pureBrandProvider = pureProvidersHandler.getBrandProvider();
         ArticleProvider dirtyArticleProvider = dirtyProvidersHandler.getArticleProvider();
@@ -64,7 +71,7 @@ public class GraphsAnalyzer implements AbstractAnalyzer {
 
             pureGraphProvider.writeGraph(graph, b.getId(), 1);
         }
-        log.info("graph analazing finished succesful");
+       // log.info("graph analazing finished succesful");*/
     }
 
     @Override

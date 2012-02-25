@@ -11,6 +11,11 @@ import ru.brandanalyst.core.model.Article;
  */
 public abstract class StubAnalyzer implements AbstractAnalyzer {
     @Override
+    public void onStart() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
     public void init(ProvidersHandler pureProvedrsHandler) {
         //To change body of implemented methods use File | Settings | File Templates.
     }
