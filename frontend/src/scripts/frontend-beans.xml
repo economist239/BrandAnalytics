@@ -61,6 +61,7 @@
 
     <bean id="getLatestMentionsYalet" class="ru.brandanalyst.frontend.yalets.GetLatestMentionsYalet"/>
 
+
     <!--Searcher conf-->
     <bean id="searcher" class="ru.brandanalyst.core.searcher.Searcher">
         <property name="indexDirBrand" value="index_brand/"/>

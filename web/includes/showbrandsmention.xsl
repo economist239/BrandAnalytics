@@ -4,7 +4,8 @@
 
     <xsl:template name="mentions-bad" match="page/data[@id='getLatestMentions']/collection">
         <script type="text/javascript" src="3rd-paty/jquery.tablesorter.js"></script>
-        <table class="table table-bordered span4" id="up-lead">
+        <div class="span4">
+        <table class="table table-bordered" id="up-lead">
             <thead>	<tr><th>Лидеры роста</th></tr></thead>
             <tbody>
                 <xsl:for-each select="mention">
@@ -25,13 +26,14 @@
                         </tr>
                     </xsl:if>
                 </xsl:for-each>
-                <tr class="collapseController">
-                   <td> <xsl:text>Collapse it!</xsl:text> </td>
-                </tr>
             </tbody>
-
         </table>
-        <table class="table table-bordered span4" id="down-lead">
+            <button class="btn collapseController" type="submit" table-target="#up-lead">
+                Collapse uppers!
+            </button>
+        </div>
+        <div class="span4">
+        <table class="table table-bordered" id="down-lead">
             <thead><tr><th>Лидеры падения</th></tr></thead>
             <tbody>
                 <xsl:for-each select="mention">
@@ -54,6 +56,12 @@
                 </xsl:for-each>
             </tbody>
         </table>
+
+        <button class="btn collapseController" type="submit" table-target="#down-lead">
+            Collapse downers!
+        </button>
+        </div>
+
     </xsl:template>
     
     

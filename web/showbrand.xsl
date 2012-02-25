@@ -5,23 +5,9 @@
 
     <xsl:template name="head">
         <script type="text/javascript" src="3rd-party/jquery.js"></script>
-        <!--<script type="text/javascript" src="graphs.js"/>-->  <!-- эта зараза почему-то мешает работае bootstrap.js, i don't get it-->
+        <!--<script type="text/javascript" src="graphs.js"/>-->  <!-- эта зараза почему-то мешает работать bootstrap.js, i don't get it-->
         <script type="text/javascript" src="3rd-party/highstock/js/modules/exporting.js"/>
         <script type="text/javascript" src="3rd-party/bootstrap2/bootstrap/js/bootstrap.js"/>
-        <!--<script type="text/javascript" src="3rd-party/getElementsBySelector.js"/>
-        <script type="text/javascript">
-            this.currentBrand = 1;//maybe it's better not load new page after selecting another brand, but just toggle(hide/show)
-            function showBrandsByBranch(var branchId){
-                if(branchId=='0'){
-                    document.getElementsBySelector(" select[@id='brand-select'] option").style.display='block';
-                }
-                else{
-                    document.getElementsBySelector(" select[@id='brand-select'] option").style.display='none';
-                    document.getElementsBySelector(" select[@id='brand-select'] option").getElementsBySelector(" *[@branch-id==" + branchId + "]").style.display='block';
-                }
-                document.getElementsBySelector(" select[@id='brand-select'] option").style.display='none';
-            }
-        </script> -->
         <script type="text/javascript">
             $(document).ready(function(){
             $("li#branch-select li").click(function(){
@@ -70,12 +56,12 @@
             <ul class="dropdown-menu">
                 <xsl:for-each select="brand">
                     <li>
+                        <xsl:attribute name="branch-id">
+                            <xsl:value-of select="@branch-id"/>
+                        </xsl:attribute>
                         <a>
                             <xsl:attribute name="href">
                                 <xsl:text>showbrand.xml?id=</xsl:text><xsl:value-of select="@id"/>
-                            </xsl:attribute>
-                            <xsl:attribute name="branch-id">
-                                <xsl:value-of select="@branch-id"/>
                             </xsl:attribute>
                             <xsl:value-of select="name"/>
                         </a>

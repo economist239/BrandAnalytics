@@ -62,19 +62,20 @@
                     jQuery(locator+ ":gt(5)").css("display","none");
                 }
             }
-            function makeCollapsable(tableLoc){
-                var maxRows = 5;
+            function makeCollapsable(tableLoc,maxRows){
                 var locator = tableLoc + " > tbody tr";
                 var rowsNum = jQuery(locator).size();
                 if(rowsNum > maxRows){
-                    jQuery(locator+ ":gt(5)").attr("class","collapsable");
+                    jQuery(locator + ":gt(" + maxRows + ")").attr("class","collapsable");
                 }
             }
 
             jQuery(document).ready(function(){
-                makeCollapsable("table#down-lead");
-                jQuery("tr.collapseController").click(function(){
-                    jQuery("tr.collapsable").toggle();
+                makeCollapsable("table#down-lead",3);
+                makeCollapsable("table#up-lead",3);
+                jQuery(".collapseController").click(function(){
+                    var loc = jQuery(this).attr("table-target");
+                    jQuery(loc + " tr.collapsable").toggle();
                 })
             })
         </script>
@@ -104,13 +105,13 @@
                 <tr><th><xsl:text>Новости</xsl:text></th></tr>
             </thead>
             <tbody>
-                <xsl:apply-templates select="page/data[@id='showArticle']" mode="show"/>
+                <xsl:apply-templates select="page/data[@id='getNewestArticles']/collection" mode="show"/>
             </tbody>
         </table>
     </xsl:template>
 
-    <xsl:template match="page/data[@id='showArticle']" mode="show">
-        <xsl:for-each select="wide-article-for-web">
+    <xsl:template match="page/data[@id='getNewestArticles']/collection" mode="show">
+        <xsl:for-each select="article">
             <tr><td>
                 <h3>
                     <a>
@@ -126,7 +127,7 @@
                 <div align="right">
                     <p>
                         Дата публикации:
-                        <xsl:value-of select="time"/>
+                        <xsl:value-of select="tstamp/@hours"/>:<xsl:value-of select="tstamp/@minutes"/>:<xsl:value-of select="tstamp/@seconds"/>
                     </p>
                 </div>
             </td></tr>

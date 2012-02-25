@@ -1,102 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4582dae-84d6-4fe8-88ba-bd6439fff288" name="New changelist" comment="some annotations">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/MentionProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLMentionProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Mention.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/includes/showbrandsmention.xsl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/includes/temp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/LICENSE" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/Makefile" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/README.md" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/bootstrap.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/bootstrap.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/forms.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/forms.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/mixins.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/mixins.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/patterns.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/patterns.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/reset.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/reset.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/scaffolding.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/scaffolding.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/tables.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/tables.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/type.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/type.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/variables.less" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/lib/variables.less" />
+    <list default="true" id="e4582dae-84d6-4fe8-88ba-bd6439fff288" name="New changelist" comment="core part &#10;new Mention class and his providers&#10;some changes int Article providers">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetBranchesYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetBrandYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetLatestMentionsYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetNewestArticlesYalet.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/3rd-party/crawler.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ProvidersHandler.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ProvidersHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/bdb/ArticleKVStorage.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/bdb/ArticleKVStorage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/ArticleProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/ArticleProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/BrandDictionaryProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/BrandDictionaryProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/BrandProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/BrandProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/GraphProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/GraphProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/InformationSourceProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/InformationSourceProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/SemanticDictionaryProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/SemanticDictionaryProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/TickerProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/TickerProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLBrandDictionaryProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLBrandDictionaryProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLBrandProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLBrandProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLGraphProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLGraphProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLInformationSourceProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLInformationSourceProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLSemanticDictionaryProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLSemanticDictionaryProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLTickerProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLTickerProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/SSHTunnelDataSource.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/SSHTunnelDataSource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Graph.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Graph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/script/dbhandler_dirty.xml" afterPath="$PROJECT_DIR$/core/src/script/dbhandler_dirty.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/script/dbhandler_pure.xml" afterPath="$PROJECT_DIR$/core/src/script/dbhandler_pure.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml" afterPath="$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/css/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/css/bootstrap-responsive.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/css/bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/css/bootstrap-responsive.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap2/bootstrap/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/bootstrap.css" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/bootstrap.min.css" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-alerts.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-alerts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-dropdown.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-dropdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-modal.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-modal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-popover.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-popover.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-scrollspy.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-scrollspy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-tabs.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-tabs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-twipsy.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/bootstrap-twipsy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/index.html" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/index.html" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-alerts.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-alerts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-dropdown.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-dropdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-modal.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-modal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-popover.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-popover.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-scrollspy.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-scrollspy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-tabs.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-tabs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-twipsy.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/unit/bootstrap-twipsy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/vendor/qunit.css" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/vendor/qunit.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/vendor/qunit.js" afterPath="$PROJECT_DIR$/web/3rd-party/bootstrap/js/tests/vendor/qunit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/mootools-adapter.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/mootools-adapter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/mootools-adapter.src.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/mootools-adapter.src.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/prototype-adapter.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/prototype-adapter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/prototype-adapter.src.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/adapters/prototype-adapter.src.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/highstock.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/highstock.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/highstock.src.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/highstock.src.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/modules/exporting.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/modules/exporting.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/modules/exporting.src.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/modules/exporting.src.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/dark-blue.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/dark-blue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/dark-green.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/dark-green.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/gray.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/gray.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/grid.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/grid.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/skies.js" afterPath="$PROJECT_DIR$/web/3rd-party/highstock/js/themes/skies.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/3rd-party/jquery.js" afterPath="$PROJECT_DIR$/web/3rd-party/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/common.xsl" afterPath="$PROJECT_DIR$/web/common.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/get-graphs.xml" afterPath="$PROJECT_DIR$/web/get-graphs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/graphs.js" afterPath="$PROJECT_DIR$/web/graphs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index-test.html" afterPath="$PROJECT_DIR$/web/index-test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.html" afterPath="$PROJECT_DIR$/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/includes/showbrandsmention.xsl" afterPath="$PROJECT_DIR$/web/includes/showbrandsmention.xsl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.xml" afterPath="$PROJECT_DIR$/web/index.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.xsl" afterPath="$PROJECT_DIR$/web/index.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/search.xml" afterPath="$PROJECT_DIR$/web/search.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/search.xsl" afterPath="$PROJECT_DIR$/web/search.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/showarticle.xml" afterPath="$PROJECT_DIR$/web/showarticle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/showarticle.xsl" afterPath="$PROJECT_DIR$/web/showarticle.xsl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/showbrand.xml" afterPath="$PROJECT_DIR$/web/showbrand.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/showbrand.xsl" afterPath="$PROJECT_DIR$/web/showbrand.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/showyoutube.xml" afterPath="$PROJECT_DIR$/web/showyoutube.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/showyoutube.xsl" afterPath="$PROJECT_DIR$/web/showyoutube.xsl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/test.html" afterPath="$PROJECT_DIR$/web/test.html" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -126,21 +43,6 @@
     <groupTables value="false" />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints>
-      <breakpoint url="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetBrandYalet.java" line="14" class="ru.brandanalyst.frontend.yalets.GetBrandYalet" package="ru.brandanalyst.frontend.yalets">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -181,10 +83,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.xsl" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/index.xsl">
+      <file leaf-file-name="GetArticlesForBrandYalet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetArticlesForBrandYalet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="47" selection-start="2931" selection-end="2931" vertical-scroll-proportion="0.9225513">
+            <state line="14" column="13" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetArticleForWebYalet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetArticleForWebYalet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="13" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetBrandsYalet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetBrandsYalet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="13" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetGraphsYalet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetGraphsYalet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="13" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -193,25 +122,25 @@
       <file leaf-file-name="showbrand.xsl" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/showbrand.xsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="8" selection-start="257" selection-end="323" vertical-scroll-proportion="-4.08">
+            <state line="27" column="37" selection-start="1301" selection-end="1311" vertical-scroll-proportion="-10.76">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="common.xsl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/common.xsl">
+      <file leaf-file-name="index.xsl" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/index.xsl">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="29" selection-start="3928" selection-end="3928" vertical-scroll-proportion="-13.48">
+            <state line="8" column="61" selection-start="386" selection-end="393" vertical-scroll-proportion="-4.72">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="temp.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/includes/temp.js">
+      <file leaf-file-name="get-graphs.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/get-graphs.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="33" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -220,34 +149,25 @@
       <file leaf-file-name="index.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/index.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="6" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showbrandsmention.xsl" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/includes/showbrandsmention.xsl">
+      <file leaf-file-name="showbrand.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/showbrand.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="45" selection-start="1371" selection-end="1389" vertical-scroll-proportion="0.0">
+            <state line="12" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Brand.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
+      <file leaf-file-name="frontend-beans.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dirtybean.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/script/dirtybean.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="63" column="0" selection-start="2740" selection-end="2740" vertical-scroll-proportion="0.7372449">
               <folding />
             </state>
           </provider>
@@ -272,22 +192,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ProvidersHandler.java" />
-        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetLatestGraphYalet.java" />
-        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetLatestMentionYalet.java" />
-        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetLatestMentionsYalet.java" />
-        <option value="$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml" />
-        <option value="$PROJECT_DIR$/web/index.xml" />
-        <option value="$PROJECT_DIR$/core/src/script/dbhandler_pure.xml" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/ArticleProvider.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mongo/ArticleStorage.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/bdb/ArticleKVStorage.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/util/TextConverter.java" />
         <option value="$PROJECT_DIR$/core/src/script/dbhandler_dirty.xml" />
-        <option value="$PROJECT_DIR$/web/showbrandsmention.xsl" />
+        <option value="$PROJECT_DIR$/core/src/script/dbhandler_pure.xml" />
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Mention.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/ProvidersHandler.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java" />
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLMentionProvider.java" />
-        <option value="$PROJECT_DIR$/web/common.xsl" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/MentionProvider.java" />
         <option value="$PROJECT_DIR$/web/showbrand.xsl" />
-        <option value="$PROJECT_DIR$/web/includes/temp.js" />
-        <option value="$PROJECT_DIR$/web/includes/showbrandsmention.xsl" />
-        <option value="$PROJECT_DIR$/web/index.xsl" />
+        <option value="$PROJECT_DIR$/web/index.xml" />
+        <option value="$PROJECT_DIR$/web/showbrand.xml" />
+        <option value="$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml" />
       </list>
     </option>
   </component>
@@ -497,7 +417,183 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yalets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="script" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -559,14 +655,14 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Project" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="129" />
-    <property name="OverrideImplement.combined" value="true" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="146" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="recentsLimit" value="5" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="143" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../AndBenuaBus" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="147" />
@@ -583,16 +679,16 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -613,6 +709,121 @@
       <recent name="ru.brandanalyst.mapper" />
       <recent name="ru.brandanalyst.storage.provider" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree">
+    <UpdateInfo date="Moments ago" ActionInfo="_Update">
+      <UpdatedFiles>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated from server" />
+          <option name="myStatusName" value="Changed on server" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CHANGED_ON_SERVER" />
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Updated" />
+            <option name="myStatusName" value="Changed" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="UPDATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mongo/ArticleStorage.java</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/SSHTunnelDataSource.java</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/core/src/test/ru/brandanalyst/ArticleStorageTest.java</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/GraphsAnalyzer.java</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/listener/WikipediaScraperRuntimeListener.java</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tasker/src/scripts/analyzer-tasker-beans.xml</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tasker/src/scripts/indexer-tasker-beans.xml</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tasker/src/scripts/miner-tasker-beans.xml</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/tasker/src/test/test-config.xml</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Created" />
+            <option name="myStatusName" value="Created" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="CREATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/lib/jtidy-r938.jar</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Deleted" />
+            <option name="myStatusName" value="Deleted" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="true" />
+            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Restored" />
+            <option name="myStatusName" value="Will be restored" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="RESTORED" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Modified" />
+          <option name="myStatusName" value="Modified" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MODIFIED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Skipped" />
+          <option name="myStatusName" value="Skipped" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SKIPPED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with conflicts" />
+          <option name="myStatusName" value="Will be merged with conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with tree conflicts" />
+          <option name="myStatusName" value="Merged with tree conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged" />
+          <option name="myStatusName" value="Will be merged" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Not in repository" />
+          <option name="myStatusName" value="Not in repository" />
+          <option name="mySupportsDeletion" value="true" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UNKNOWN" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally added" />
+          <option name="myStatusName" value="Locally added" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_ADDED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally removed" />
+          <option name="myStatusName" value="Locally removed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_REMOVED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Switched" />
+          <option name="myStatusName" value="Switched" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SWITCHED" />
+        </FILE-GROUP>
+      </UpdatedFiles>
+    </UpdateInfo>
   </component>
   <component name="RunManager" selected="Application.FrontendStarter">
     <configuration default="false" name="DbTest.testGraph" type="JUnit" factoryName="JUnit" temporary="true">
@@ -793,24 +1004,6 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
     <configuration default="true" type="XSLT" factoryName="XSLT">
       <option name="myOutputFile" />
       <option name="myOpenOutputFile" value="false" />
@@ -825,6 +1018,24 @@
       <OutputType value="CONSOLE" save-to-file="false" />
       <FileType name="XML" />
       <JdkChoice value="FROM_MODULE" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -1122,22 +1333,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1288" height="778" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.59814817" sideWeight="0.0" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5953846" sideWeight="0.0" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28615385" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15097402" sideWeight="0.75624084" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34223706" sideWeight="0.49675325" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35596028" sideWeight="0.49756494" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873377" sideWeight="0.22350994" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23186344" sideWeight="0.0" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32923076" sideWeight="0.0" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23076923" sideWeight="0.0" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3276923" sideWeight="0.0" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32594937" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23376623" sideWeight="0.70554763" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32954547" sideWeight="0.63535035" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32753405" sideWeight="0.6864536" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26136363" sideWeight="0.7723077" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2276923" sideWeight="0.9193303" order="2" side_tool="false" content_ui="tabs" x="0" y="24" width="1366" height="744" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27353895" sideWeight="0.67230767" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3276923" sideWeight="0.9193303" order="2" side_tool="false" content_ui="tabs" x="0" y="24" width="1366" height="744" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -1145,7 +1357,6 @@
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28615385" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1185,7 +1396,7 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="core part &#10;new Mention class and his providers&#10;some changes int Article providers" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1198,7 +1409,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="trash deleted" />
     <MESSAGE value="Newlibs" />
     <MESSAGE value="ssh tunnel" />
     <MESSAGE value="New changelist" />
@@ -1223,6 +1433,7 @@
     <MESSAGE value="abstractDelayedTimerTask" />
     <MESSAGE value="timer task" />
     <MESSAGE value="readme" />
+    <MESSAGE value="core part &#10;new Mention class and his providers&#10;some changes int Article providers" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1275,102 +1486,114 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/src/script/dbhandler_pure.xml">
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLBrandProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="66" selection-start="1750" selection-end="1750" vertical-scroll-proportion="0.24277456" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/script/dbhandler_dirty.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="70" selection-start="2022" selection-end="2022" vertical-scroll-proportion="0.76635516" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="11" selection-start="1715" selection-end="1715" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/script/dirtybean.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Mention.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="44" selection-start="1796" selection-end="1796" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/showyoutube.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/search.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="13" selection-start="1418" selection-end="1418" vertical-scroll-proportion="0.8368">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/showarticle.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="17" selection-start="1566" selection-end="1566" vertical-scroll-proportion="0.8368">
+        <state line="21" column="13" selection-start="614" selection-end="614" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLMentionProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="85" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/common.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="29" selection-start="3928" selection-end="3928" vertical-scroll-proportion="-13.48">
+        <state line="32" column="7" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/includes/temp.js">
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/MentionProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="33" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="291" selection-end="291" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/BrandProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="17" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/script/dbhandler_pure.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="9" selection-start="97" selection-end="97" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/AbstractDbYalet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="254" selection-end="254" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetArticlesForBrandYalet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetArticleForWebYalet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="284" selection-end="284" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetBrandsYalet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="275" selection-end="275" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/GetGraphsYalet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="13" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/showbrand.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="8" selection-start="257" selection-end="323" vertical-scroll-proportion="-4.08">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/includes/showbrandsmention.xsl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="45" selection-start="1371" selection-end="1389" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="27" column="37" selection-start="1301" selection-end="1311" vertical-scroll-proportion="-10.76">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/index.xsl">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="47" selection-start="2931" selection-end="2931" vertical-scroll-proportion="0.9225513">
+        <state line="8" column="61" selection-start="386" selection-end="393" vertical-scroll-proportion="-4.72">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/get-graphs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/showbrand.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/scripts/frontend-beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="0" selection-start="2740" selection-end="2740" vertical-scroll-proportion="0.7372449">
           <folding />
         </state>
       </provider>
