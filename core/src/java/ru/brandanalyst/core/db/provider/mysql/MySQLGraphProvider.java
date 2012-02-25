@@ -13,6 +13,7 @@ import ru.brandanalyst.core.model.SingleDot;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -32,6 +33,7 @@ public class MySQLGraphProvider implements GraphProvider {
     public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
+
 
     @Required
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {

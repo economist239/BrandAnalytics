@@ -6,6 +6,8 @@
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--DB CONFIG-->
+    <import resource="classpath:dbhandler_pure.xml"/>
+    <alias alias="providersHandler" name="pureProvidersHandler"/>
     <!--Jetty beans-->
     <bean id="serverInitializer" class="net.sf.xfresh.jetty.JettyServerInitializer">
         <property name="port" value="8083"/>
@@ -39,10 +41,13 @@
     <!--Yalets-->
     <bean id="getBrandsYalet" class="ru.brandanalyst.frontend.yalets.GetBrandsYalet"/>
 
+    <bean id="getBrandYalet" class="ru.brandanalyst.frontend.yalets.GetBrandYalet"/>
 
     <bean id="searchYalet" class="ru.brandanalyst.frontend.yalets.SearchYalet"/>
 
     <bean id="getArticleForWebYalet" class="ru.brandanalyst.frontend.yalets.GetArticleForWebYalet"/>
+
+    <bean id="getNewestArticlesYalet" class="ru.brandanalyst.frontend.yalets.GetNewestArticlesYalet"/>
 
     <bean id="showYouTubeYalet" class="ru.brandanalyst.frontend.yalets.ShowYouTubeYalet"/>
 
@@ -51,6 +56,10 @@
     <bean id="getTickersYalet" class="ru.brandanalyst.frontend.yalets.GetTickersYalet"/>
 
     <bean id="getArticlesForBrandYalet" class="ru.brandanalyst.frontend.yalets.GetArticlesForBrandYalet"/>
+
+    <bean id="getBranchesYalet" class="ru.brandanalyst.frontend.yalets.GetBranchesYalet"/>
+
+    <bean id="getLatestMentionsYalet" class="ru.brandanalyst.frontend.yalets.GetLatestMentionsYalet"/>
 
     <!--Searcher conf-->
     <bean id="searcher" class="ru.brandanalyst.core.searcher.Searcher">

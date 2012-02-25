@@ -6,8 +6,10 @@
     <bean id="pureProvidersHandler" class="ru.brandanalyst.core.db.provider.ProvidersHandler">
         <property name="articleProvider" ref="pureArticleProvider"/>
         <property name="brandProvider" ref="pureBrandProvider"/>
+        <property name="branchesProvider" ref="pureBranchesProvider"/>
         <property name="brandDictionaryProvider" ref="pureBrandDictionaryProvider"/>
         <property name="graphProvider" ref="pureGraphProvider"/>
+        <property name="mentionProvider" ref="pureMentionProvider"/>
         <property name="informationSourceProvider" ref="pureInformationSourceProvider"/>
         <property name="semanticDictionaryProvider" ref="pureSemanticDictionaryProvider"/>
         <property name="tickerProvider" ref="pureTickerProvider"/>
@@ -25,9 +27,18 @@
         <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
     </bean>
 
+    <bean id="pureBranchesProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLBranchesProvider">
+            <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
+    </bean>
+
     <bean id="pureGraphProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider">
         <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
         <property name="namedParameterJdbcTemplate" ref="pureNamedParameterJdbcTemplate"/>
+    </bean>
+
+    <bean id="pureMentionProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLMentionProvider">
+            <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
+            <property name="namedParameterJdbcTemplate" ref="pureNamedParameterJdbcTemplate"/>
     </bean>
 
     <bean id="pureInformationSourceProvider"

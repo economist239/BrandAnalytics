@@ -8,6 +8,7 @@
         <property name="brandProvider" ref="dirtyBrandProvider"/>
         <property name="brandDictionaryProvider" ref="dirtyBrandDictionaryProvider"/>
         <property name="graphProvider" ref="dirtyGraphProvider"/>
+        <property name="mentionProvider" ref="dirtyMentionProvider"/>
         <property name="informationSourceProvider" ref="dirtyInformationSourceProvider"/>
         <property name="semanticDictionaryProvider" ref="dirtySemanticDictionaryProvider"/>
         <property name="tickerProvider" ref="dirtyTickerProvider"/>

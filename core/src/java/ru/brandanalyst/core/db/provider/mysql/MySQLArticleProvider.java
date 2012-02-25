@@ -2,16 +2,12 @@ package ru.brandanalyst.core.db.provider.mysql;
 
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
-import org.springframework.jdbc.core.RowCallbackHandler;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
-import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.ArticleForWeb;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.List;
@@ -23,7 +19,7 @@ import java.util.List;
  * Date: 09.10.11
  * Time: 22:07
  */
-public class MySQLArticleProvider extends ArticleProvider {
+public class MySQLArticleProvider implements ArticleProvider {
     private SimpleJdbcTemplate jdbcTemplate;
 
     @Required
@@ -62,16 +58,6 @@ public class MySQLArticleProvider extends ArticleProvider {
                 return articles.size();
             }
         });
-    }
-
-    @Override
-    public void visitArticles(final EntityVisitor<Article> visitor) {
-         jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article", new RowCallbackHandler() {
-             @Override
-             public void processRow(ResultSet rs) throws SQLException {
-                visitor.visitEntity(MappersHolder.ARTICLE_MAPPER.mapRow(rs, 0));
-             }
-         });
     }
 
     @Override
@@ -126,6 +112,13 @@ public class MySQLArticleProvider extends ArticleProvider {
         return jdbcTemplate.query("SELECT * FROM Article WHERE brandId=? "
                 + " ORDER BY Tstamp DESC LIMIT ?", MappersHolder.ARTICLE_WITH_SHORT_CONTENT_MAPPER, brandId, topSize);
     }
+
+    @Override
+    public List<Article> getTopArticles(int topSize) {
+        return jdbcTemplate.query("SELECT * FROM Article ORDER BY Tstamp DESC LIMIT ?"
+                , MappersHolder.ARTICLE_WITH_SHORT_CONTENT_MAPPER, topSize);
+    }
+
     @Override
     public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE BrandId =? AND SourceId=?",

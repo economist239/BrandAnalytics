@@ -3,6 +3,8 @@
 <page>
     <yalet id="getBrands"/>
 
+    <yalet id="getBranches"/>
+
     <yalet id="getBrand"/>
 
     <yalet id="getTickers"/>
