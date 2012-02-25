@@ -6,8 +6,6 @@
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--DB CONFIG-->
-    <import resource="classpath:dbhandler_pure.xml"/>
-    <import resource="classpath:dbhandler_dirty.xml"/>
     <!--AnalyzerProcesser conf-->
 <!--    <bean id="analyzerProcessor" class="ru.brandanalyst.analyzer.MainAnalyzingTask"
           lazy-init="false">
