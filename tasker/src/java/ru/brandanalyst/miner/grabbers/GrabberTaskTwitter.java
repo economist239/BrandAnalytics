@@ -27,7 +27,7 @@ public class GrabberTaskTwitter extends AbstractGrabberTask {
     }
 
     public void grab(Date timeLimit) {
-        log.info("Twitter grabber started...");
+        log.info("ITwitter grabber started...");
         Twitter twitter = new TwitterFactory().getInstance();
 
         List<Brand> brandList = handler.getBrandProvider().getAllBrands();

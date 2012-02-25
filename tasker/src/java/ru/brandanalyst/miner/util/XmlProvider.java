@@ -1,4 +1,4 @@
-package ru.brandanalyst.util;
+package ru.brandanalyst.miner.util;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
