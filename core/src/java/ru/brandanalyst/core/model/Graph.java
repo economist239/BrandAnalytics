@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import ru.brandanalyst.core.util.Jsonable;
+import ru.brandanalyst.core.util.Time;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -58,6 +59,7 @@ public class Graph implements Jsonable {
     }
 
     public void addPoint(Timestamp date, double value) {
+        date = Time.getSimpleDate(date);
         if (graph.containsKey(date)) {
             graph.put(date, graph.get(date) + value);
         }
