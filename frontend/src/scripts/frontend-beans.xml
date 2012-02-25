@@ -6,8 +6,6 @@
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--DB CONFIG-->
-    <import resource="classpath:dbhandler_pure.xml"/>
-    <alias alias="providersHandler" name="pureProvidersHandler"/>
     <!--Jetty beans-->
     <bean id="serverInitializer" class="net.sf.xfresh.jetty.JettyServerInitializer">
         <property name="port" value="8083"/>
@@ -41,7 +39,6 @@
     <!--Yalets-->
     <bean id="getBrandsYalet" class="ru.brandanalyst.frontend.yalets.GetBrandsYalet"/>
 
-    <bean id="getBrandYalet" class="ru.brandanalyst.frontend.yalets.GetBrandYalet"/>
 
     <bean id="searchYalet" class="ru.brandanalyst.frontend.yalets.SearchYalet"/>
 

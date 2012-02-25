@@ -17,6 +17,7 @@ import ru.brandanalyst.core.model.ArticleForWeb;
 
 import java.io.File;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,7 +35,6 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
     private static final String STORE_NAME = "brand-analytics";
     private final EntityStore storage;
     private final Environment env;
-    private boolean eraseDataAfterVisit;
     private final PrimaryIndex<String, ArticleEntity> pi;
     private final SecondaryIndex<Long, String, ArticleEntity> si;
 
@@ -65,11 +65,6 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
 
         pi = storage.getPrimaryIndex(String.class, ArticleEntity.class);
         si = storage.getSecondaryIndex(pi, Long.class, "brandId");
-    }
-
-    @Required
-    public void setEraseDataAfterVisit(boolean eraseDataAfterVisit) {
-        this.eraseDataAfterVisit = eraseDataAfterVisit;
     }
 
     @Override
@@ -141,8 +136,8 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
 
     @Override
     public void destroy() throws Exception {
-        storage.close();
         env.close();
+        storage.close();
     }
 
     @Override
@@ -152,6 +147,12 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
 
     @Override
     public void visitArticles(EntityVisitor<Article> visitor) {
+
+        for (Map.Entry<String, ArticleEntity> e: pi.map().entrySet()) {
+            System.out.println(e.getKey() + "  :  " + e.getValue().getArticle().getContent());
+        }
+
+        System.out.println();
         EntityCursor<ArticleEntity> cursor = pi.entities();
 //        for (int i = 0; i < cursor.count(); i++) {
             visitor.visitEntity(cursor.next().getArticle());
