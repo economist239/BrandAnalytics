@@ -99,9 +99,9 @@ public class WikipediaScraperRuntimeListener implements ScraperRuntimeListener {
             String brandDescription2 = ((Variable) scraper.getContext().get("brandDescription2")).toString();
             String brandDescription = getDescription(brandDescription1, brandDescription2);
 
-           /* Brand brand = new Brand(-1, brandName, brandDescription, brandWebsite, 1, "");
+            Brand brand = new Brand(-1, brandName, brandDescription, brandWebsite, 1, null);
 
-            brandProvider.writeBrandToDataStore(brand);*/
+            brandProvider.writeBrandToDataStore(brand);
             log.info("Wikipedia: brand added...name = " + brandName);
         }
     }

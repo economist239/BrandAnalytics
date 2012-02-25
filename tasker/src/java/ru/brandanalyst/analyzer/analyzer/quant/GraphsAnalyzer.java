@@ -42,7 +42,6 @@ public class GraphsAnalyzer implements AbstractAnalyzer {
     @Override
     public void analyze(Article article) {
         long brandId = article.getBrandId();
-
         if (graphDepot.containsKey(brandId)) {
             Graph graph = graphDepot.get(brandId);
             graph.addPoint(article.getTstamp(), 1);
