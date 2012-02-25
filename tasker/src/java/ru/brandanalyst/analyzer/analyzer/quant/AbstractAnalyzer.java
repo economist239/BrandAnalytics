@@ -13,7 +13,7 @@ import ru.brandanalyst.core.model.Article;
 public interface AbstractAnalyzer {
     void init(ProvidersHandler pureProvedrsHandler);
 
-    void analyze(Article article);
+    void analyze(final Article article);
 
     void flush();
 }

@@ -8,6 +8,6 @@ package ru.brandanalyst.core.db.provider;
  */
 public interface EntityVisitor<T> {
 
-    void visitEntity(T e);
+    void visitEntity(final T e);
 
 }
