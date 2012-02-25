@@ -8,5 +8,7 @@
     <alias name="dirtyProvidersHandler" alias="providersHandler" />-->
 
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+    <!--<bean name="twitter" class="ru.brandanalyst.miner.twitter.impl.SimpleTwitter"/>-->
     <bean name="twitter" class="ru.brandanalyst.miner.twitter.impl.TopsyTwitter"/>
+
 </beans>

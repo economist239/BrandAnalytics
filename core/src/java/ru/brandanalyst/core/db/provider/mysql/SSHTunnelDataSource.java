@@ -89,6 +89,7 @@ public class SSHTunnelDataSource extends BasicDataSource implements Initializing
 
                 log.info("Открытие ssh соединения");
                 session.connect();
+                log.info("Tunnel status: " + session.isConnected());
                 log.info("Устанавливаем туннель");
                 session.setPortForwardingL(tunnelLocalPort, tunnelRemoteHost, tunnelRemotePort);
             } catch (Exception e) {
