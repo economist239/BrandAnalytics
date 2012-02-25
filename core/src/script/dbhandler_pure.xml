@@ -14,6 +14,7 @@
         <property name="semanticDictionaryProvider" ref="pureSemanticDictionaryProvider"/>
         <property name="tickerProvider" ref="pureTickerProvider"/>
     </bean>
+
     <!--PROVIDERS-->
     <bean id="pureArticleProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider">
         <property name="jdbcTemplate" ref="pureJdbcTemplate"/>

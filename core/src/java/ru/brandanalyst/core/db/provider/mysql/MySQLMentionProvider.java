@@ -31,7 +31,6 @@ public class MySQLMentionProvider implements MentionProvider{
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
-
     @Required
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;

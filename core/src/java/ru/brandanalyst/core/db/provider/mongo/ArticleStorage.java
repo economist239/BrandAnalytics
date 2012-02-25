@@ -27,6 +27,8 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
     private final DB db;
     private final DBCollection coll;
 
+
+
     public ArticleStorage(String host, int port) {
         try {
             mongo = new Mongo(host, port);
@@ -137,6 +139,11 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
 
     @Override
     public List<Article> getTopArticles(long brandId, int topSize) {
+        throw new UnsupportedOperationException("unsupported method in MONGO DB");
+    }
+
+    @Override
+    public List<Article> getTopArticles(int topSize) {
         throw new UnsupportedOperationException("unsupported method in MONGO DB");
     }
 

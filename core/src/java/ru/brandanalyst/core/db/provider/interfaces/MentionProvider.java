@@ -13,4 +13,5 @@ import java.util.List;
 public interface MentionProvider {
 
     public List<Mention> getLatestMentions();
+
 }

@@ -16,6 +16,7 @@ import java.sql.SQLException;
 public final class MappersHolder {
 
     private MappersHolder() {
+
     }
 
     public final static ParameterizedRowMapper<Brand> BRAND_MAPPER = new ParameterizedRowMapper<Brand>() {

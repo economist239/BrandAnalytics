@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
+ * Упоминание о бренде
  * Created by IntelliJ IDEA.
  * User: alexsen
  * Date: 23.02.12
