@@ -1,4 +1,4 @@
-package ru.brandanalyst.util;
+package ru.brandanalyst.miner.util;
 
 /*
  *  Date: 21.02.12
