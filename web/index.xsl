@@ -22,7 +22,7 @@
     </xsl:template>
     <xsl:template name="run">
         <div class="marquee" id="mycrawler" align="center" style="-khtml-border-radius:10px">
-            <p>Running text line. Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233;</p>
+            <p><a style="padding:0px 10px;" color="blue">Лидеры роста:</a> Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233;</p>
         </div>
         <script type="text/javascript">
             marqueeInit({

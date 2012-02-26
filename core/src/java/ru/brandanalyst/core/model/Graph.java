@@ -17,7 +17,6 @@ import java.util.*;
  * general model of graph
  */
 public class Graph implements Jsonable {
-    //private List<SingleDot> graph;
     private Map<Timestamp, Double> graph;
     private String ticker;
 
@@ -62,6 +61,8 @@ public class Graph implements Jsonable {
         date = Time.getSimpleDate(date);
         if (graph.containsKey(date)) {
             graph.put(date, graph.get(date) + value);
+        } else {
+            graph.put(date, value);
         }
     }
 

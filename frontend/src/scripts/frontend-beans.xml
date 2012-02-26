@@ -3,6 +3,14 @@
         "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans default-autowire="byName" default-init-method="getReadyForSearch">
+    <bean id="frontendProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:ba.properties</value>
+                <value>classpath:mysql.properties</value>
+            </list>
+        </property>
+    </bean>
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--DB CONFIG-->
@@ -60,6 +68,11 @@
     <bean id="getBranchesYalet" class="ru.brandanalyst.frontend.yalets.GetBranchesYalet"/>
 
     <bean id="getLatestMentionsYalet" class="ru.brandanalyst.frontend.yalets.GetLatestMentionsYalet"/>
+
+    <bean id="getRunningLineYalet" class="ru.brandanalyst.frontend.yalets.GetRunningLineYalet">
+        <property name="runningLineFile" value="${running-file-path}"/>
+    </bean>
+
 
 
     <!--Searcher conf-->
