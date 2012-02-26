@@ -14,6 +14,9 @@ import java.util.List;
  * Time: 9:59
  * To change this template use File | Settings | File Templates.
  */
+
+
+//TODO DO THIS IN ENUMERATION
 public class MySQLBranchesProvider implements BranchesProvider {
     private SimpleJdbcTemplate jdbcTemplate;
 
