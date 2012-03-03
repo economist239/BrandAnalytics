@@ -73,6 +73,7 @@
         <property name="runningLineFile" value="${running-file-path}"/>
     </bean>
 
+    <bean id="getInformationSourcesYalet" class="ru.brandanalyst.frontend.yalets.GetInformationSourcesYalet"/>
 
 
     <!--Searcher conf-->
