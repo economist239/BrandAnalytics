@@ -115,7 +115,7 @@ public class Article {
 
     public String getTime() {
         return new StringBuilder().append(tstamp.getDay()).append(".")
-                .append(tstamp.getMonth()).append(".").append(tstamp.getYear()).toString();
+                .append(tstamp.getMonth()).append(".").append(tstamp.getYear() + 1900).toString();
     }
 
     /**
