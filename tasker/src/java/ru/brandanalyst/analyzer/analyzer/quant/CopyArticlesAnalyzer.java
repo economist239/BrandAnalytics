@@ -11,10 +11,9 @@ import java.util.List;
  * @author daddy-bear
  *         Date: 03.03.12
  */
-public class CopyArticlesAnalyzer implements AbstractAnalyzer {
+public class CopyArticlesAnalyzer extends StubAnalyzer {
     Batch<Article> copyBatch;
-    
-    
+
     @Override
     public void init(ProvidersHandler pureProvedrsHandler) {
         final ArticleProvider articleProvider = pureProvedrsHandler.getArticleProvider();
@@ -27,17 +26,12 @@ public class CopyArticlesAnalyzer implements AbstractAnalyzer {
     }
 
     @Override
-    public void onStart() {
-        //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    @Override
     public void analyze(Article article) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        copyBatch.submit(article);
     }
 
     @Override
     public void flush() {
-        //To change body of implemented methods use File | Settings | File Templates.
+        copyBatch.flush();
     }
 }
