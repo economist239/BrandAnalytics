@@ -11,11 +11,10 @@
             </list>
         </property>
     </bean>
-    <import resource="dbhandler_dirty.xml"/>
-    <import resource="dbhandler_pure.xml"/>
-    <import resource="indexer-tasker-beans.xml"/>
-    <import resource="analyzer-tasker-beans.xml"/>
-    <import resource="miner-tasker-beans.xml"/>
+    <import resource="classpath:dbhandler_pure.xml"/>
+    <import resource="classpath:indexer-tasker-beans.xml"/>
+    <import resource="classpath:analyzer-tasker-beans.xml"/>
+    <import resource="classpath:miner-tasker-beans.xml"/>
 
     <bean class="org.springframework.scheduling.timer.TimerFactoryBean">
         <property name="scheduledTimerTasks">

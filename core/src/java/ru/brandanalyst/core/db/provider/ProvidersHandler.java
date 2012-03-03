@@ -39,6 +39,14 @@ public class ProvidersHandler {
         return tickerProvider;
     }
 
+    public BranchesProvider getBranchesProvider() {
+        return branchesProvider;
+    }
+
+    public MentionProvider getMentionProvider() {
+        return mentionProvider;
+    }
+
     @Required
     public void setArticleProvider(ArticleProvider articleProvider) {
         this.articleProvider = articleProvider;
@@ -74,12 +82,24 @@ public class ProvidersHandler {
         this.tickerProvider = tickerProvider;
     }
 
+    @Required
+    public void setBranchesProvider(BranchesProvider branchesProvider) {
+        this.branchesProvider = branchesProvider;
+    }
+
+    @Required
+    public void setMentionProvider(MentionProvider mentionProvider) {
+        this.mentionProvider = mentionProvider;
+    }
+
+
     private ArticleProvider articleProvider;
     private BrandProvider brandProvider;
     private BrandDictionaryProvider brandDictionaryProvider;
     private GraphProvider graphProvider;
+    private MentionProvider mentionProvider;
     private InformationSourceProvider informationSourceProvider;
     private SemanticDictionaryProvider semanticDictionaryProvider;
     private TickerProvider tickerProvider;
-
+    private BranchesProvider branchesProvider;
 }

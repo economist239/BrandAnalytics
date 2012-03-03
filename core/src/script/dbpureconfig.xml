@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
-        "http://www.springframework.org/dtd/spring-beans.dtd">
-<beans default-autowire="byName" default-init-method="afterPropertiesSet">
-    <import resource="classpath:purebean.xml"/>
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
-        <constructor-arg ref="dataSource"/>
-    </bean>
-</beans>

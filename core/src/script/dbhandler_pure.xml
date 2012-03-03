@@ -3,15 +3,37 @@
         "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans default-autowire="byName" default-init-method="afterPropertiesSet">
 
-    <bean id="pureProvidersHandler" class="ru.brandanalyst.core.db.provider.ProvidersHandler">
-        <property name="articleProvider" ref="pureArticleProvider"/>
+    <bean id="dirtyProvidersHandler" class="ru.brandanalyst.core.db.provider.ProvidersHandler">
+        <property name="articleProvider" ref="dirtyArticleProvider"/>
         <property name="brandProvider" ref="pureBrandProvider"/>
+        <property name="branchesProvider" ref="pureBranchesProvider"/>
         <property name="brandDictionaryProvider" ref="pureBrandDictionaryProvider"/>
         <property name="graphProvider" ref="pureGraphProvider"/>
+        <property name="mentionProvider" ref="pureMentionProvider"/>
         <property name="informationSourceProvider" ref="pureInformationSourceProvider"/>
         <property name="semanticDictionaryProvider" ref="pureSemanticDictionaryProvider"/>
         <property name="tickerProvider" ref="pureTickerProvider"/>
     </bean>
+
+    <bean id="pureProvidersHandler" class="ru.brandanalyst.core.db.provider.ProvidersHandler">
+        <property name="articleProvider" ref="pureArticleProvider"/>
+        <property name="brandProvider" ref="pureBrandProvider"/>
+        <property name="branchesProvider" ref="pureBranchesProvider"/>
+        <property name="brandDictionaryProvider" ref="pureBrandDictionaryProvider"/>
+        <property name="graphProvider" ref="pureGraphProvider"/>
+        <property name="mentionProvider" ref="pureMentionProvider"/>
+        <property name="informationSourceProvider" ref="pureInformationSourceProvider"/>
+        <property name="semanticDictionaryProvider" ref="pureSemanticDictionaryProvider"/>
+        <property name="tickerProvider" ref="pureTickerProvider"/>
+    </bean>
+
+
+    <!--MONGO-->
+    <bean id="dirtyArticleProvider" class="ru.brandanalyst.core.db.provider.mongo.ArticleStorage">
+        <constructor-arg value="localhost"/>
+        <constructor-arg value="27017"/>
+    </bean>
+
     <!--PROVIDERS-->
     <bean id="pureArticleProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLArticleProvider">
         <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
@@ -25,9 +47,18 @@
         <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
     </bean>
 
+    <bean id="pureBranchesProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLBranchesProvider">
+            <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
+    </bean>
+
     <bean id="pureGraphProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider">
         <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
         <property name="namedParameterJdbcTemplate" ref="pureNamedParameterJdbcTemplate"/>
+    </bean>
+
+    <bean id="pureMentionProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLMentionProvider">
+            <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
+            <property name="namedParameterJdbcTemplate" ref="pureNamedParameterJdbcTemplate"/>
     </bean>
 
     <bean id="pureInformationSourceProvider"

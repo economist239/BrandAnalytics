@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.interfaces.InformationSourceProvider;
 import ru.brandanalyst.core.model.InfoSource;
+import ru.brandanalyst.core.model.InformationSourceType;
 
 import java.util.List;
 
@@ -31,5 +32,11 @@ public class MySQLInformationSourceProvider implements InformationSourceProvider
     public List<InfoSource> getAllInfoSources() {
         return jdbcTemplate.query("SELECT * FROM InformationSource",
                 MappersHolder.INFO_SOURCE_MAPPER);
+    }
+
+    @Override
+    public List<InfoSource> getAllInfoSources(InformationSourceType type) {
+        return jdbcTemplate.query("SELECT * FROM InformationSource WHERE TypeId=?",
+                MappersHolder.INFO_SOURCE_MAPPER, type.getCode());
     }
 }

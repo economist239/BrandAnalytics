@@ -13,4 +13,6 @@ public interface GraphProvider {
     public List<Graph> getGraphByTickerAndBrand(long brandId, List<Long> tickerIds);
 
     public List<Graph> getGraphsByBrandId(long brandId);
+
+
 }

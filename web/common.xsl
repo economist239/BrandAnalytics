@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-    <!-- <xsl:output method="html" indent="yes" encoding="UTF-8"/>         -->
-
 
     <xsl:output method="html" doctype-system="http://www.w3.org/TR/html4/strict.dtd"
                 doctype-public="-//W3C//DTD HTML 4.01//EN" indent="yes"/>
@@ -21,30 +19,36 @@
                 <link href="3rd-party/bootstrap2/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
                 <style type="text/css">
                     body {
-                    padding-top: 30px;
+                    padding-top: 35px;
                     }
                 </style>
+
             </head>
             <body>
                 <div class="navbar navbar-fixed-top" data-scrollspy="scrollspy">
                     <div class="navbar-inner">
                         <div class="container">
-                            <a class="brand" href="index.xml">Brand Analytics</a>
+                            <h4><a class="brand" href="index.xml">Brand Analytic</a></h4>
                             <div class="nav-collapse">
                                 <ul class="nav">
-                                    <li class="active" valign="center">
-                                        <p>Инновация настоящего. Парадигма будущего.
-                                        </p>
-                                    </li>
+                                    <li id="navbar_about"><a href="index.xml">О проекте</a></li>
+                                    <li id="navbar_main"><a href="index.xml">Главная</a></li>
+                                    <li id="navbar_analysis"><a href="showbrand.xml?id=1">Анализ</a></li>
+                                    <li id="navbar_sources"><a href="showsources.xml">Источники информации</a></li>
                                 </ul>
+
+                                <form class="navbar-search pull-right" id="form-search" method="get" action="/search.xml">
+                                    <input type="text" class="search-query" placeholder="поиск по брендам" name="query"/>
+                                </form>
                             </div>
+
                         </div>
                     </div>
                 </div>
-
                 <div class="container">
-                <div class="page-header" align="center">
-                    <xsl:call-template name="find"/>
+                <xsl:call-template name="run"/>
+                <div class="page-header" align="center"  style="padding-top:50px">
+                    <!--<xsl:call-template name="find"/>-->
                 </div>
                 <div class="row show-grid">
                     <div class="span3">
@@ -55,18 +59,10 @@
                     </div>
                 </div>
                 </div>
+
+
             </body>
         </html>
-    </xsl:template>
-
-    <xsl:template name="find">
-        <form class="well form-search" name="1" method="get" action="/search.xml" align="center">
-            <input class="input-medium search-query" type="text" name="query" size="50"/>
-            <input class="btn" type="submit" value="поиск"/>
-            <!--      <input type="checkbox" name="query_type" value="news"/>
-                  <span>искать по новостям</span>
-            -->
-        </form>
     </xsl:template>
 
     <xsl:template name="leftmenu">
@@ -90,5 +86,5 @@
             </xsl:for-each>
         </ul>
     </xsl:template>
-
+    <xsl:template name="run"/>
 </xsl:stylesheet>

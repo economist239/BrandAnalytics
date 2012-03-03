@@ -22,9 +22,12 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
     private final static int BATCH_SIZE = 1024;
     private final static String DB_NAME = "ba-dirty";
     private final static String COLLECTION_NAME = "article-collection";
+    public static final String MONGO_ID = "_id";
     private final Mongo mongo;
     private final DB db;
     private final DBCollection coll;
+
+
 
     public ArticleStorage(String host, int port) {
         try {
@@ -128,12 +131,19 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
     public void visitArticles(EntityVisitor<Article> visitor) {
         DBCursor cursor = coll.find().batchSize(BATCH_SIZE);
         while (cursor.hasNext()) {
-            visitor.visitEntity(unwrap(cursor.next()));
+            DBObject next = cursor.next();
+            visitor.visitEntity(unwrap(next));
         }
+        coll.drop();
     }
 
     @Override
     public List<Article> getTopArticles(long brandId, int topSize) {
+        throw new UnsupportedOperationException("unsupported method in MONGO DB");
+    }
+
+    @Override
+    public List<Article> getTopArticles(int topSize) {
         throw new UnsupportedOperationException("unsupported method in MONGO DB");
     }
 

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="byName">
+    <bean id="pureProvidersHandler" class="ru.brandanalyst.core.db.provider.ProvidersHandler">
+        <property name="articleProvider" ref="pureArticleProvider"/>
+        <property name="brandProvider" ref="pureBrandProvider"/>
+        <property name="branchesProvider" ref="pureBranchesProvider"/>
+        <property name="brandDictionaryProvider" ref="pureBrandDictionaryProvider"/>
+        <property name="graphProvider" ref="pureGraphProvider"/>
+        <property name="mentionProvider" ref="pureMentionProvider"/>
+        <property name="informationSourceProvider" ref="pureInformationSourceProvider"/>
+        <property name="semanticDictionaryProvider" ref="pureSemanticDictionaryProvider"/>
+        <property name="tickerProvider" ref="pureTickerProvider"/>
+    </bean>
+    <bean id="dirtyProvidersHandler" class="ru.brandanalyst.core.db.provider.ProvidersHandler">
+        <property name="articleProvider" ref="pureArticleProvider"/>
+        <property name="brandProvider" ref="pureBrandProvider"/>
+        <property name="branchesProvider" ref="pureBranchesProvider"/>
+        <property name="brandDictionaryProvider" ref="pureBrandDictionaryProvider"/>
+        <property name="graphProvider" ref="pureGraphProvider"/>
+        <property name="mentionProvider" ref="pureMentionProvider"/>
+        <property name="informationSourceProvider" ref="pureInformationSourceProvider"/>
+        <property name="semanticDictionaryProvider" ref="pureSemanticDictionaryProvider"/>
+        <property name="tickerProvider" ref="pureTickerProvider"/>
+    </bean>
+
+    <!--PROVIDERS-->
+    <bean id="pureArticleProvider" class="ru.brandanalyst.db.InMemoryArticleProvider"/>
+    <bean id="pureBrandDictionaryProvider" class="ru.brandanalyst.db.InMemoryBrandDictionaryProvider"/>
+    <bean id="pureBrandProvider" class="ru.brandanalyst.db.InMemoryBrandProvider"/>
+    <bean id="pureBranchesProvider" class="ru.brandanalyst.db.InMemoryBranchesProvider"/>
+    <bean id="pureGraphProvider" class="ru.brandanalyst.db.InMemoryGraphProvider"/>
+    <bean id="pureMentionProvider" class="ru.brandanalyst.db.InMemoryMentionProvider"/>
+    <bean id="pureInformationSourceProvider" class="ru.brandanalyst.db.InMemoryInfoSourceProvider"/>
+    <bean id="pureSemanticDictionaryProvider" class="ru.brandanalyst.db.InMemorySemanticDictionaryProvider"/>
+    <bean id="pureTickerProvider" class="ru.brandanalyst.db.InMemoryTickerProvider"/>
+</beans>

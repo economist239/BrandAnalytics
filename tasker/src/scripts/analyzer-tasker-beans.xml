@@ -6,28 +6,14 @@
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--DB CONFIG-->
-    <import resource="classpath:dbhandler_pure.xml"/>
-    <import resource="classpath:dbhandler_dirty.xml"/>
     <!--AnalyzerProcesser conf-->
-    <bean id="analyzerProcessor" class="ru.brandanalyst.analyzer.MainAnalyzingTask"
-          lazy-init="false">
+    <bean id="analyzerProcessor" class="ru.brandanalyst.analyzer.MainAnalyzingTask">
+        <property name="period" value="${analyzer-period}"/>
         <property name="analyzers">
             <list>
-                <bean class="ru.brandanalyst.analyzer.analyzer.quant.GraphsAnalyzer"/>
-                <bean class="ru.brandanalyst.analyzer.analyzer.quant.GraphsAnalyzer"/>
+                <bean class="ru.brandanalyst.analyzer.analyzer.quant.CopyArticlesAnalyzer"/>
             </list>
         </property>
     </bean>
     <!--DB configuration-->
-    <import resource="classpath:dirtybean.xml"/>
-
-    <bean id="dirtyJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
-        <constructor-arg ref="dirtyDataSource"/>
-    </bean>
-
-    <import resource="classpath:purebean.xml"/>
-
-    <bean id="pureJdbcTemplate" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate" lazy-init="false">
-        <constructor-arg ref="pureDataSource"/>
-    </bean>
 </beans>

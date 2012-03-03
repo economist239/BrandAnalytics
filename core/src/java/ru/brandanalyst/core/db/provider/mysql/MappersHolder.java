@@ -16,6 +16,7 @@ import java.sql.SQLException;
 public final class MappersHolder {
 
     private MappersHolder() {
+
     }
 
     public final static ParameterizedRowMapper<Brand> BRAND_MAPPER = new ParameterizedRowMapper<Brand>() {
@@ -78,6 +79,14 @@ public final class MappersHolder {
         @Override
         public SemanticDictionaryItem mapRow(ResultSet resultSet, int i) throws SQLException {
             return new SemanticDictionaryItem(resultSet.getString("Term"), resultSet.getDouble("SemanticValue"));
+        }
+    };
+    
+    public final static ParameterizedRowMapper<Branch> BRANCH_MAPPER = new ParameterizedRowMapper<Branch>() {
+        @Override
+        public Branch mapRow(ResultSet resultSet, int i) throws SQLException {
+            return new Branch(resultSet.getInt("Id"),
+                    resultSet.getString("Name"));
         }
     };
 }

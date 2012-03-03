@@ -126,6 +126,13 @@ public class MySQLArticleProvider extends ArticleProvider {
         return jdbcTemplate.query("SELECT * FROM Article WHERE brandId=? "
                 + " ORDER BY Tstamp DESC LIMIT ?", MappersHolder.ARTICLE_WITH_SHORT_CONTENT_MAPPER, brandId, topSize);
     }
+
+    @Override
+    public List<Article> getTopArticles(int topSize) {
+        return jdbcTemplate.query("SELECT * FROM Article ORDER BY Tstamp DESC LIMIT ?"
+                , MappersHolder.ARTICLE_WITH_SHORT_CONTENT_MAPPER, topSize);
+    }
+
     @Override
     public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId) {
         return jdbcTemplate.query("SELECT * FROM Article WHERE BrandId =? AND SourceId=?",

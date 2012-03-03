@@ -120,6 +120,11 @@ public class ArticleKVStorage extends ArticleProvider implements DisposableBean 
     }
 
     @Override
+    public List<Article> getTopArticles(int topSize) {
+        throw new UnsupportedOperationException("unsupported method in MONGO DB");
+    }
+
+    @Override
     public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId) {
         throw new UnsupportedOperationException("unsupported operation in DBD STORAGE");
     }
