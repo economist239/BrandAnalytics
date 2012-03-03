@@ -2,6 +2,7 @@ package ru.brandanalyst.db;
 
 import ru.brandanalyst.core.db.provider.interfaces.InformationSourceProvider;
 import ru.brandanalyst.core.model.InfoSource;
+import ru.brandanalyst.core.model.InformationSourceType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,11 @@ public class InMemoryInfoSourceProvider implements InformationSourceProvider {
 
     @Override
     public List<InfoSource> getAllInfoSources() {
+        return new ArrayList<InfoSource>(depot);
+    }
+
+    @Override
+    public List<InfoSource> getAllInfoSources(InformationSourceType type) {
         return new ArrayList<InfoSource>(depot);
     }
 }

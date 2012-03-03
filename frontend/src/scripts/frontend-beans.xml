@@ -69,6 +69,8 @@
 
     <bean id="getLatestMentionsYalet" class="ru.brandanalyst.frontend.yalets.GetLatestMentionsYalet"/>
 
+    <bean id="getOfficialInfoSourcesYalet" class="ru.brandanalyst.frontend.yalets.GetOfficialInfoSourcesYalet"/>
+
     <bean id="getRunningLineYalet" class="ru.brandanalyst.frontend.yalets.GetRunningLineYalet">
         <property name="runningLineFile" value="${running-file-path}"/>
     </bean>
