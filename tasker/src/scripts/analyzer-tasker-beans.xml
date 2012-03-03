@@ -7,8 +7,8 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--DB CONFIG-->
     <!--AnalyzerProcesser conf-->
-    <bean id="analyzerProcessor" class="ru.brandanalyst.analyzer.MainAnalyzingTask"
-          lazy-init="false">
+    <bean id="analyzerProcessor" class="ru.brandanalyst.analyzer.MainAnalyzingTask">
+        <property name="period" value="${analyzer-period}"/>
         <property name="analyzers">
             <list>
                 <bean class="ru.brandanalyst.analyzer.analyzer.quant.CopyArticlesAnalyzer"/>
