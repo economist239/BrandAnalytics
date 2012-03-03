@@ -7,14 +7,13 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--DB CONFIG-->
     <!--AnalyzerProcesser conf-->
-<!--    <bean id="analyzerProcessor" class="ru.brandanalyst.analyzer.MainAnalyzingTask"
+    <bean id="analyzerProcessor" class="ru.brandanalyst.analyzer.MainAnalyzingTask"
           lazy-init="false">
         <property name="analyzers">
             <list>
-                <bean class="ru.brandanalyst.analyzer.analyzer.quant.GraphsAnalyzer"/>
-                <bean class="ru.brandanalyst.analyzer.analyzer.quant.GraphsAnalyzer"/>
+                <bean class="ru.brandanalyst.analyzer.analyzer.quant.CopyArticlesAnalyzer"/>
             </list>
         </property>
-    </bean>-->
+    </bean>
     <!--DB configuration-->
 </beans>
