@@ -5,5 +5,7 @@
 
     <yalet id="getLatestMentions"/>
 
+    <yalet id="getInformationSources"/>
+
 </page>
 

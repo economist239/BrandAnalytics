@@ -32,11 +32,13 @@
                             <div class="nav-collapse">
                                 <ul class="nav">
                                     <li id="navbar_about"><a href="index.xml">О проекте</a></li>
+                                    <li id="navbar_main"><a href="index.xml">Главная</a></li>
                                     <li id="navbar_analysis"><a href="showbrand.xml?id=1">Анализ</a></li>
-                                    <li id="navbar_smth"><a href="#contact">Yes, we can!</a></li>
+                                    <li id="navbar_sources"><a href="showsources.xml">Источники информации</a></li>
                                 </ul>
-                                <form class="navbar-search pull-right">
-                                    <input type="text" class="search-query" placeholder="Поиск по брендам"/>
+
+                                <form class="navbar-search pull-right" id="form-search" method="get" action="/search.xml">
+                                    <input type="text" class="search-query" placeholder="поиск по брендам" name="query"/>
                                 </form>
                             </div>
 
@@ -44,8 +46,8 @@
                     </div>
                 </div>
                 <div class="container">
-                 <xsl:call-template name="run"/>
-                <div class="page-header" align="center">
+                <xsl:call-template name="run"/>
+                <div class="page-header" align="center"  style="padding-top:50px">
                     <!--<xsl:call-template name="find"/>-->
                 </div>
                 <div class="row show-grid">
@@ -62,13 +64,6 @@
             </body>
         </html>
     </xsl:template>
-
-    <!--<xsl:template name="find">
-        <form class="well form-search" name="1" method="get" action="/search.xml" align="center">
-            <input class="input-large search-query pull-left" type="text" name="query" size="50" placeholder="Интересует конкретный бренд?"/>
-            <input class="btn pull-left" type="submit" value="найти"/>
-        </form>
-    </xsl:template>-->
 
     <xsl:template name="leftmenu">
         <xsl:apply-templates select="page/data[@id='showLeftMenu' ]" mode="show"/>

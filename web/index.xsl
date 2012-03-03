@@ -3,6 +3,9 @@
     <xsl:import href="common.xsl"/>
     <!--<xsl:output method="html" indent="yes" encoding="UTF-8"/>-->
 
+    <!--Variables -->
+    <xsl:variable name="official-sources-type-id">1</xsl:variable>
+    <xsl:variable name="public-sources-type-id">0</xsl:variable>
 
     <xsl:template name="head">
         <script type="text/javascript" src="3rd-party/jquery.js"></script>
@@ -41,7 +44,7 @@
             });
         </script>
         <script type="text/javascript">
-            document.getElementById("navbar_about").setAttribute("class", "active");
+            document.getElementById("navbar_main").setAttribute("class", "active");
         </script>
         <script type="text/javascript">
             function hideUp(){
@@ -86,10 +89,15 @@
         <br/>
         <img src="captain-obvious.jpeg" width="400" height="400"/> -->
         <span align="right" id="a">Рейтинги упоминаемости по источнику
+            <!--<xsl:apply-templates select="page/data[@id='getInformationSources']/collection"/>-->
             <select class="input-small">
-                <option>по всем</option>
-                <option>Яндекс Новости  </option>
-                <option>РИА Новости </option>
+                <option info-source-id="0"><xsl:text>все вместе</xsl:text></option>
+                <option info-source-id="$official-sources-type-id">
+                    <xsl:text>Официальные источники</xsl:text>
+                </option>
+                <option info-source-id="$public-sources-type-id">
+                    <xsl:text>Публичные источники</xsl:text>
+                </option>
             </select>
         </span>
 
@@ -100,7 +108,7 @@
     <xsl:include href="includes/showbrandsmention.xsl"/>
 
     <xsl:template name="leftmenu">
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
                 <tr><th><xsl:text>Новости</xsl:text></th></tr>
             </thead>
@@ -113,25 +121,39 @@
     <xsl:template match="page/data[@id='getNewestArticles']/collection" mode="show">
         <xsl:for-each select="article">
             <tr><td>
-                <h3>
+                <h4>
                     <a>
                         <xsl:attribute name="href">
                             <xsl:value-of select="link"/>
                         </xsl:attribute>
                         <xsl:value-of select="title"/>
                     </a>
-                </h3>
+                </h4>
                 <p>
                     <xsl:value-of select="content"/>
                 </p>
                 <div align="right">
                     <p>
                         Дата публикации:
-                        <xsl:value-of select="time"/>
+                        <xsl:value-of select="tstamp/@hours"/>:<xsl:value-of select="tstamp/@minutes"/>:<xsl:value-of select="tstamp/@seconds"/>
                     </p>
                 </div>
             </td></tr>
         </xsl:for-each>
     </xsl:template>
+    
+    <!--<xsl:template name="info-sources" match="page/data[@id='getInformationSources']/collection">
+        <select class="input-small">
+            <option info-source-id="0"><xsl:text>все вместе</xsl:text></option>
+            <xsl:for-each select="info-source">
+                <option>
+                    <xsl:attribute name="info-source-id">
+                        <xsl:value-of select="@id"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="title"/>
+                </option>
+            </xsl:for-each>
+        </select>
+    </xsl:template>  -->
 
 </xsl:stylesheet>
