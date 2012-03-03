@@ -113,6 +113,11 @@ public class Article {
         return tstamp;
     }
 
+    public String getTime() {
+        return new StringBuilder().append(tstamp.getDay()).append(".")
+                .append(tstamp.getMonth()).append(".").append(tstamp.getYear()).toString();
+    }
+
     /**
      * @return количество лайков
      */

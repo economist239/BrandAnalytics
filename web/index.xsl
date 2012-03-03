@@ -127,7 +127,7 @@
                 <div align="right">
                     <p>
                         Дата публикации:
-                        <xsl:value-of select="tstamp/@hours"/>:<xsl:value-of select="tstamp/@minutes"/>:<xsl:value-of select="tstamp/@seconds"/>
+                        <xsl:value-of select="time"/>
                     </p>
                 </div>
             </td></tr>
