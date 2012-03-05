@@ -12,7 +12,5 @@ public interface SVM extends Serializable {
     public void train();
     public double classifyInstance(final Instance instance);
     public Instances classify(final Instances unlabeled);
-    // save to file and load from file
-//    public void save();
-//    public SVM load();
+    public void save(final String dir);
 }

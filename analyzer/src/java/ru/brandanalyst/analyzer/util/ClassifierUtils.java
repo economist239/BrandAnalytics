@@ -1,5 +1,6 @@
 package ru.brandanalyst.analyzer.util;
 
+import ru.brandanalyst.analyzer.classifiers.SVMClassifier;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
@@ -124,6 +125,29 @@ public class ClassifierUtils {
             log.info("Couldn't read semantic dictionary info from file: " + path);
             return null;
         }
+    }
+
+    public SVMClassifier loadSVMClassifier(String filePath) {
+        final File file = new File(filePath);
+        log.info("Loading SVM classifier from file: " + filePath);
+        ObjectInputStream objectInputStream = null;
+        try {
+            objectInputStream = new ObjectInputStream(new FileInputStream(file));
+            return (SVMClassifier) objectInputStream.readObject();
+        } catch (IOException e) {
+            log.info("Error: " + e.toString());
+        } catch (ClassNotFoundException e) {
+            log.info("Error: " + e.toString());
+        } finally {
+            try {
+                if (objectInputStream != null) {
+                    objectInputStream.close();
+                }
+            } catch (IOException e) {
+                log.info("Error: " + e.toString());
+            }
+        }
+        return null;
     }
 
     public static enum Type {

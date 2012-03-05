@@ -6,6 +6,7 @@ import weka.core.Instance;
 import weka.core.Instances;
 import wlsvm.WLSVM;
 
+import java.io.*;
 import java.util.logging.Logger;
 
 /**
@@ -58,6 +59,25 @@ public class SVMClassifier implements SVM {
             labeled.instance(i).setClassValue(classLabel);
         }
         return labeled;
+    }
+
+    @Override
+    public void save(String dir) {
+        final String filename = this.getName() + "_" + System.currentTimeMillis();
+        final File file = new File(dir, filename);
+//        log.info("Saving" + this.getName() + "(filename: " + file.getName() + ")");
+        try {
+            final ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
+            try {
+                objectOutputStream.writeObject(this);
+//                return filename;
+            } finally {
+                objectOutputStream.close();
+            }
+        } catch (IOException e) {
+            log.info("Error: " + e.toString());
+//            return null;
+        }
     }
 
     public String getName() {
