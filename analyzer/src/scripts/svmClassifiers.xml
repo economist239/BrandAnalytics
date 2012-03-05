@@ -4,16 +4,12 @@
 
 <beans>
     <bean id="svmNegative" class="ru.brandanalyst.analyzer.classifiers.SVMClassifier">
-        <property name="classifier" ref="classifier"/>
-        <property name="trainingFileName" value="analyzer/samples/negativeSamples"/>
+        <property name="trainingFileName" value="analyzer/samples/samples"/>
         <property name="type" value="SVM_NEGATIVE"/>
     </bean>
 
     <bean id="svmPositive" class="ru.brandanalyst.analyzer.classifiers.SVMClassifier">
-        <property name="classifier" ref="classifier"/>
-        <property name="trainingFileName" value="analyzer/samples/positiveSamples"/>
+        <property name="trainingFileName" value="analyzer/samples/samples"/>
         <property name="type" value="SVM_POSITIVE"/>
     </bean>
-
-    <bean id="classifier" class="wlsvm.WLSVM"/>
 </beans>

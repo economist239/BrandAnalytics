@@ -10,7 +10,7 @@ import java.util.List;
  **/
 
 public class Su {
-    private static final char[] punctuation = {' ', '.', ',', '!', '?', ':', ';', '_', '/', '\\', '\'', '\"', '|', '`', '(', ')', '[', ']'};
+    private static final char[] punctuation = {' ', '.', ',', '!', '?', ':', ';', '_', '/', '\\', '\'', '\"', '|', '`', '(', ')', '[', ']', '\n'};
 
     private static boolean isPunctuation(final char c) {
         for (final char p : punctuation) {
@@ -33,6 +33,17 @@ public class Su {
                 continue;
             }
             res = res.concat(String.valueOf(c));
+        }
+        if (!res.isEmpty()) {
+            result.add(res);
+        }
+        return result;
+    }
+
+    public static List<String> allToLowerCase(final List<String> words) {
+        final List<String> result = new ArrayList<String>();
+        for (final String word : words) {
+            result.add(word.toLowerCase());
         }
         return result;
     }

@@ -13,15 +13,11 @@ import java.util.logging.Logger;
  */
 public class SVMClassifier implements SVM {
     private static final Logger log = Logger.getLogger(SVMClassifier.class.getName());
+    private static final long serialVersionUID = -6362247777972157008L;
 
-    private WLSVM classifier;
+    private WLSVM classifier = new WLSVM();
     private String trainingFileName;
     private ClassifierUtils.Type type;
-
-    @Required
-    public void setClassifier(final WLSVM classifier) {
-        this.classifier = classifier;
-    }
 
     @Required
     public void setTrainingFileName(final String fileName) {
@@ -35,7 +31,8 @@ public class SVMClassifier implements SVM {
 
     @Override
     public void train() {
-        final Instances labeled = ClassifierUtils.getInstances(trainingFileName);
+        final boolean positive = this.type == ClassifierUtils.Type.SVM_POSITIVE;
+        final Instances labeled = ClassifierUtils.getInstances(trainingFileName, positive);
         try {
             this.classifier.buildClassifier(labeled);
         } catch (Exception e) {
@@ -46,7 +43,7 @@ public class SVMClassifier implements SVM {
     @Override
     public double classifyInstance(final Instance instance) {
         try {
-            return this.classifier.classifyInstance(instance);
+            return this.classifier.classifyInstance(instance);          // 0.0 = neutral, 1.0 = emotional
         } catch (Exception e) {
             log.info("Couldn't classify instance: " + instance.toString());
             return 0.0;
