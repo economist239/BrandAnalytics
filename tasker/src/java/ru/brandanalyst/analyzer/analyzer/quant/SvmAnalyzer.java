@@ -12,7 +12,7 @@ import ru.brandanalyst.core.model.Graph;
 public class SvmAnalyzer implements AbstractAnalyzer{
 
     @Override
-    public void init(ProvidersHandler pureProvedrsHandler) {
+    public void init(ProvidersHandler pureProvidersHandler) {
 
     }
 

@@ -20,9 +20,8 @@ public class ClassifierUtils {
 
     public static Instances getInstances(final String fileName, final boolean positive) {
         final List<String> dictionary = new ArrayList<String>();
-        // TODO: specify paths to positive and bad dictionaries
-        dictionary.addAll(getDictionary("/home/mikhaylova/BrandAnalytics/analyzer/dictionary/positive.txt"));
-        dictionary.addAll(getDictionary("/home/mikhaylova/BrandAnalytics/analyzer/dictionary/negative.txt"));
+        dictionary.addAll(getDictionary("analyzer/dictionary/positive.txt"));
+        dictionary.addAll(getDictionary("analyzer/dictionary/negative.txt"));
 
         final String classifierName = positive ? "positive" : "negative";
         final FastVector featureVector = buildFeatureVector(dictionary);
