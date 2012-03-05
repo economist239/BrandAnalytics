@@ -39,7 +39,7 @@ public class TopsyTwitter implements ITwitter {
     }
 
     public TwitterResultItem getPopularTweets(String query) throws ITwitterException {
-        String last = "d";
+        String last = "w";
         boolean isEmpty = false;
         TwitterResultItem topsyItem = new TwitterResultItem(query);
         int count = 1;

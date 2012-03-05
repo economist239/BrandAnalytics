@@ -1,4 +1,5 @@
 import com.thoughtworks.xstream.XStream;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import ru.brandanalyst.AbstractTest;
@@ -7,10 +8,11 @@ import ru.brandanalyst.miner.twitter.ITwitterException;
 import ru.brandanalyst.miner.twitter.impl.SimpleTwitter;
 import ru.brandanalyst.miner.twitter.impl.TopsyTwitter;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static ru.brandanalyst.miner.twitter.ITwitter.TwitterResultItem;
 
@@ -18,52 +20,53 @@ import static ru.brandanalyst.miner.twitter.ITwitter.TwitterResultItem;
 /**
  * @author Vanslov Evgeny (evans@yandex-team.ru)
  */
-public class TwitterTest extends AbstractTest{
+public class TwitterTest extends AbstractTest {
     private static final Log log = LogFactory.getLog(TwitterTest.class);
 
     protected ITwitter twitter;
 
     private String configLocations[] = {"test-config.xml"};
+
     @Override
     protected String[] getConfigLocations() {
         return configLocations;
     }
-    public void testTwitter() throws ITwitterException, IOException {
-        String companies[] = {
-                "google",
-                /*"Сбербанк",
-                "Газпром",
-                "ВТБ",
-                "Роснефть",
-                "ЛУКОЙЛ",
-                "НорНикель",
-                "РусГидро",
-                "НЛМК",
-                "НОВАТЭК",
-                "Сургутнефтегаз",
-                "Татнефть",
-                "МТС",
-                "Полюс-Золото",
-                "Полиметалл",
-                "Газпрнефть",
-                "Акрон",
-                "Автоваз",
-                "Соллерс",
-                "КАМАЗ",
-                "ОГК - 3"*/
-        };
 
-        log.info("Mining topsy started");
-        List<TwitterResultItem> companiesTweets = new ArrayList<TwitterResultItem>();
-        for (String company : companies) {
-            log.info("Company now: " + company);
-            TwitterResultItem topsyItem = twitter.getPopularTweets(company);
-            companiesTweets.add(topsyItem);
-            log.info("Company done; " + company + " Found: " + topsyItem.tweets.size());
-        }
-        log.info("Mining topsy ended");
+    private static class XmlBrandDictionaryItem {
+        public String brandName;
+        public Set<String> aliases = new HashSet<String>();
+    }
+
+    public void testTwitter() throws ITwitterException, IOException {
 
         XStream xStream = new XStream();
-        xStream.toXML(companiesTweets, new FileWriter("tweets.xml"));
+        xStream.alias("item", XmlBrandDictionaryItem.class);
+
+        List<XmlBrandDictionaryItem> companies = (List<XmlBrandDictionaryItem>) xStream.fromXML(new FileInputStream("tasker/src/test/brandItems.xml"));
+
+        List<String> words = (List<String>) xStream.fromXML(new FileInputStream("tasker/src/test/words.xml"));
+        Map<String, List<TwitterResultItem>> map = new HashMap<String, List<TwitterResultItem>>();
+        for (XmlBrandDictionaryItem company : companies) {
+            List<TwitterResultItem> results = getTweets(words, company);
+            map.put(company.brandName, results);
+        }
+        xStream.toXML(map, new FileWriter("weeklytopsytweets.xml"));
+    }
+
+    private List<TwitterResultItem> getTweets(List<String> words, XmlBrandDictionaryItem company) throws ITwitterException {
+        List<TwitterResultItem> results = new ArrayList<TwitterResultItem>();
+        System.out.println("Company now: " + company.brandName);
+        for (String word : words) {
+            TwitterResultItem topsyItem = twitter.getPopularTweets(company.brandName + " " + word);
+            results.add(topsyItem);
+
+        }
+        for (String alias : company.aliases) {
+            for (String word : words) {
+                TwitterResultItem topsyItem = twitter.getPopularTweets(alias + " " + word);
+                results.add(topsyItem);
+            }
+        }
+        return results;
     }
 }

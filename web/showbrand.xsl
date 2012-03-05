@@ -4,8 +4,9 @@
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
 
     <xsl:template name="head">
+        <script type="text/javascript" src="graphs.js"/><!-- эта зараза почему-то мешает работать bootstrap.js, i don't get it-->
         <script type="text/javascript" src="3rd-party/jquery.js"></script>
-        <!--<script type="text/javascript" src="graphs.js"/>-->  <!-- эта зараза почему-то мешает работать bootstrap.js, i don't get it-->
+
         <script type="text/javascript" src="3rd-party/highstock/js/modules/exporting.js"/>
         <script type="text/javascript" src="3rd-party/bootstrap2/bootstrap/js/bootstrap.js"/>
         <script type="text/javascript">
@@ -22,13 +23,14 @@
             })
             })
         </script>
+
     </xsl:template>
 
     <xsl:template name="main">
         <script type="text/javascript">
             document.getElementById("navbar_analysis").setAttribute("class", "active");
         </script>
-        <div class="row pull-right">
+        <div class="pull-right">
             <ul class="nav nav-pills">
                 <xsl:apply-templates select="page/data[@id='getBranches']/collection" mode="select"/>
                 <xsl:apply-templates select="page/data[@id='getBrands']/collection" mode="select"/>
@@ -39,7 +41,7 @@
                 <xsl:apply-templates select="page/data[@id='getBrand']/brand" mode="show"/>
             </div>
             <div class="tab-pane" id="news">
-                <xsl:apply-templates select="page/data[@id='wideBrandInfo']/collection[1]" mode="show"/>
+                <xsl:apply-templates select="page/data[@id='getArticlesForBrand']/collection" mode="show"/>
             </div>
             <div class="tab-pane" id="analyse">
                 <xsl:apply-templates select="page/data[@id='getTickers']/collection" mode="show"/>
@@ -99,11 +101,6 @@
                             <xsl:attribute name="href">
                                 <xsl:text>#</xsl:text>
                             </xsl:attribute>
-                            <!--
-                            <xsl:attribute name="onclick">
-                                <xsl:text>showBrandsByBranch(</xsl:text><xsl:value-of select="@id"/><xsl:text>);</xsl:text>
-                            </xsl:attribute>
-                             -->
                             <xsl:attribute name="id">
                                 <xsl:value-of select="@id"/>
                             </xsl:attribute>
@@ -154,27 +151,32 @@
         <div id="chartContainer" style="height: 500px; min-width: 500px"/>
     </xsl:template>
 
-    <xsl:template match="page/data[@id='wideBrandInfo']/collection[1]" mode="show">
-        <h3>Последние новости</h3>
-        <table class="zebra-striped">
-            <xsl:for-each select="simply-article-for-web">
-                <div class="span5">
-                    <th valign="top">
-                        <a>
-                            <xsl:attribute name="href">showarticle.xml?id=<xsl:value-of select="@id"/>
-                            </xsl:attribute>
-                            <xsl:value-of select="name"/>
-                        </a>
-                        <br/>
-                        <xsl:value-of select="short-content"/>
-                    </th>
+    <xsl:template match="page/data[@id='getArticlesForBrand']/collection" mode="show">
+    <table class="table table-striped">
+        <xsl:for-each select="article">
+            <tr><td>
+                <h4>
+                    <a>
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="link"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="title"/>
+                    </a>
+                </h4>
+                <p>
+                    <xsl:value-of select="content"/>
+                </p>
+                <div align="right">
+                    <p>
+                        Дата публикации:
+                        <xsl:value-of select="tstamp/@hours"/>:<xsl:value-of select="tstamp/@minutes"/>:<xsl:value-of select="tstamp/@seconds"/>
+                    </p>
                 </div>
-                <xsl:if test="position() mod 3 = 0">
-                    <tr/>
-                </xsl:if>
-            </xsl:for-each>
-        </table>
+            </td></tr>
+        </xsl:for-each>
+    </table>
     </xsl:template>
+
 
     <xsl:template name="leftmenu">
         <ul class="nav nav-tabs nav-stacked">

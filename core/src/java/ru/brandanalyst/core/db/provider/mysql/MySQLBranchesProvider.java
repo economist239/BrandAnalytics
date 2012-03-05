@@ -12,7 +12,6 @@ import java.util.List;
  * User: Obus
  * Date: 18.02.12
  * Time: 9:59
- * To change this template use File | Settings | File Templates.
  */
 
 
