@@ -15,6 +15,7 @@ import ru.brandanalyst.miner.util.StringChecker;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -79,7 +80,7 @@ public class FontankaScraperRuntimeListener implements ScraperRuntimeListener {
         if ("body".equalsIgnoreCase(baseProcessor.getElementDef().getShortElementName())) {
             try {
                 Variable newsTitle = (Variable) scraper.getContext().get("newsTitle");
-                List<Long> brandIds = StringChecker.hasTerm(dictionary, newsTitle.toString());
+                Collection<Long> brandIds = StringChecker.hasTerm(dictionary, newsTitle.toString());
                 if (brandIds.isEmpty()) return;
 
                 Variable newsText = (Variable) scraper.getContext().get("newsFullText");

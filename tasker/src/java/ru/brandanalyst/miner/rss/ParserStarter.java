@@ -8,9 +8,9 @@ import ru.brandanalyst.core.util.Batch;
 import ru.brandanalyst.miner.AbstractGrabberTask;
 
 import java.util.List;
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author OlegPan
@@ -19,6 +19,7 @@ import java.util.concurrent.Executors;
 public class ParserStarter extends AbstractGrabberTask {
     private static final int POOL_SIZE = 10;
     private static final Logger log = Logger.getLogger(ParserStarter.class);
+    private final long maxWaitingTime = 100000;
 
     protected void grab() {
         AbstractRssParser.setDictionary(handler.getBrandDictionaryProvider().getDictionary());
@@ -36,13 +37,20 @@ public class ParserStarter extends AbstractGrabberTask {
         ExecutorService service = Executors.newFixedThreadPool(POOL_SIZE);
 
         for (InfoSource infoSource : infoSources) {
-            if (infoSource.getSphereId() != 1) continue;
             String rssSource = infoSource.getRssSource();
             if (rssSource.isEmpty()) continue;
             service.submit(new HorrorParser(rssSource, infoSource.getId(), batch));
         }
 
-        log.info("End parsing rss");
+        service.shutdown();
+        try {
+            while(!service.awaitTermination(1, TimeUnit.HOURS))
+                ;
+        } catch (InterruptedException e) {
+            log.error("Interrupted", e);
+            throw new RuntimeException(e);
+        }
         batch.flush();
+        log.info("End parsing rss");
     }
 }

@@ -416,6 +416,7 @@
         <root url="file://$PROJECT_DIR$/lib" />
         <root url="file://$PROJECT_DIR$/lib/weka" />
         <root url="file://$PROJECT_DIR$/lib/xstream" />
+        <root url="file://$PROJECT_DIR$/lib/twitterapime" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
@@ -432,6 +433,7 @@
       <jarDirectory url="file://$PROJECT_DIR$/lib/rhino" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/saxon" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/spring" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/twitterapime" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/webharvest" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/weka" recursive="false" />
       <jarDirectory url="file://$PROJECT_DIR$/lib/xalan" recursive="false" />

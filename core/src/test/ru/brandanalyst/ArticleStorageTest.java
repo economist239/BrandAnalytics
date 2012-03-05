@@ -55,4 +55,14 @@ public class ArticleStorageTest {
 
     }
 
+    @Test
+    public void testShow() throws Exception {
+        ArticleStorage storage = new ArticleStorage("localhost", 27017);
+        storage.seeArticles(new EntityVisitor<Article>() {
+            @Override
+            public void visitEntity(Article e) {
+                System.out.println(e.getSourceId() + " " + e.getBrandId() + " " + e.getTitle() );
+            }
+        });
+    }
 }

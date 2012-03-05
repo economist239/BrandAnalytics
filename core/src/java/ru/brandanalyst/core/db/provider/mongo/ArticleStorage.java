@@ -129,12 +129,16 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
 
     @Override
     public void visitArticles(EntityVisitor<Article> visitor) {
+        seeArticles(visitor);
+        coll.drop();
+    }
+
+    public void seeArticles(EntityVisitor<Article> visitor) {
         DBCursor cursor = coll.find().batchSize(BATCH_SIZE);
         while (cursor.hasNext()) {
             DBObject next = cursor.next();
             visitor.visitEntity(unwrap(next));
         }
-        coll.drop();
     }
 
     @Override
@@ -166,4 +170,6 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
     public void destroy() throws Exception {
         mongo.close();
     }
+
+
 }

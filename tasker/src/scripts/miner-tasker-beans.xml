@@ -12,13 +12,12 @@
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--IMPORT DB-->
     <!--Miner conf-->
-<!--    <bean id="grabberHandler" class="ru.brandanalyst.miner.GrabberHandler">
+    <!--<bean id="grabberHandler" class="ru.brandanalyst.miner.GrabberHandler">
         <property name="grabberTaskList">
             <list>
-                <bean class="ru.brandanalyst.miner.grabbers.GrabberTaskTwitter"/>
             </list>
         </property>
-    </bean>-->
-
+    </bean>
+-->
 
 </beans>

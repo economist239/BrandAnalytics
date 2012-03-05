@@ -1,20 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
-  <component name="FacetManager">
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset1" name="My Fileset" removed="false">
-          <file>file://$MODULE_DIR$/src/scripts/frontend-beans.xml</file>
-          <file>file://$MODULE_DIR$/../core/src/script/dbdirtyconfig.xml</file>
-          <file>file://$MODULE_DIR$/../core/src/script/dbhandler_dirty.xml</file>
-          <file>file://$MODULE_DIR$/../core/src/script/dbhandler_pure.xml</file>
-          <file>file://$MODULE_DIR$/../core/src/script/dbpureconfig.xml</file>
-          <file>file://$MODULE_DIR$/../index/src/scripts/indexer-beans.xml</file>
-          <file>jar://$MODULE_DIR$/../lib/spring/spring-jdbc.jar!/org/springframework/jdbc/support/sql-error-codes.xml</file>
-        </fileset>
-      </configuration>
-    </facet>
-  </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">

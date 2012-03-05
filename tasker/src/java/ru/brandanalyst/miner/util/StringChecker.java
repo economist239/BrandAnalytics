@@ -2,16 +2,18 @@ package ru.brandanalyst.miner.util;
 
 import ru.brandanalyst.core.model.BrandDictionaryItem;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public final class StringChecker {
 
     private StringChecker() {
     }
 
-    public static List<Long> hasTerm(List<BrandDictionaryItem> brandItems, String title) { //O(nl^2)
-        List<Long> result = new LinkedList<Long>();
+    public static Set<Long> hasTerm(List<BrandDictionaryItem> brandItems, String title) { //O(nl^2)
+        Set<Long> result = new HashSet<Long>();
 
         for (BrandDictionaryItem brandItem : brandItems) {
             if (hasTerm(brandItem, title)) {
