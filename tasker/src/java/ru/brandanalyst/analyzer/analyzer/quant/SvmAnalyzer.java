@@ -9,7 +9,7 @@ import ru.brandanalyst.core.model.Graph;
  * @author daddy-bear
  *         Date: 03.03.12
  */
-public class SvmAnalyzer implements AbstractAnalyzer{
+public class SvmAnalyzer implements AbstractAnalyzer {
 
     @Override
     public void init(ProvidersHandler pureProvidersHandler) {
@@ -23,7 +23,7 @@ public class SvmAnalyzer implements AbstractAnalyzer{
 
     @Override
     public void analyze(Article article) {
-                
+    // TODO: article to Instance object, create method in ClassifierUtils.java
     }
 
     @Override
