@@ -6,7 +6,10 @@ import weka.core.Instance;
 import weka.core.Instances;
 import wlsvm.WLSVM;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.logging.Logger;
 
 /**

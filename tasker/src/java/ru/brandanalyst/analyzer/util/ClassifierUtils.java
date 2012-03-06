@@ -16,45 +16,29 @@ import java.util.logging.Logger;
  * Alexandra Mikhaylova mikhaylova@yandex-team.ru
  */
 public class ClassifierUtils {
+    private static final List<String> dictionary = new ArrayList<String>();
     private static final Logger log = Logger.getLogger(ClassifierUtils.class.getName());
 
     public static Instances getInstances(final String fileName, final boolean positive) {
-        final List<String> dictionary = new ArrayList<String>();
-        dictionary.addAll(getDictionary("analyzer/dictionary/positive.txt"));
-        dictionary.addAll(getDictionary("analyzer/dictionary/negative.txt"));
+        dictionary.addAll(getDictionary("tasker/dictionary/positive.txt"));
+        dictionary.addAll(getDictionary("tasker/dictionary/negative.txt"));
 
         final String classifierName = positive ? "positive" : "negative";
         final FastVector featureVector = buildFeatureVector(dictionary);
 
         Instances instances = new Instances(classifierName, featureVector, 0); // initial capacity 0
 
-        final int n = featureVector.size(); // the last is class label
+//        final int n = featureVector.size(); // the last is the class label
         try {
             FileReader fr = new FileReader(fileName);
             BufferedReader reader = new BufferedReader(fr);
             String s;
             s = reader.readLine(); // this is a KOSTYL. We need it because of the bad training set. :(
             while ((s = reader.readLine()) != null) {
-                double[] attrValues = new double[n];
                 if (!s.contains(";;")) {   // this is one more KOSTYL. Our training set is still bad.
                     continue;
                 }
-                String t = s.substring(0, s.indexOf(";;"));
-                final int label = t.charAt(0) == '+' ? 1 : Integer.parseInt(t);
-                final String tweet = s.substring(s.indexOf(";;") + 2);
-                final List<String> tweetWords = Su.splitOnPunctuation(tweet);
-                int i = 0;
-                for (final String word : dictionary) {
-                    int count = count(word, Su.allToLowerCase(tweetWords));
-                    attrValues[i] = count;
-                    i ++;
-                }
-
-                attrValues = normalizeVector(attrValues);
-
-                final String cls = (positive && (label == 1)) || (!positive && (label == -1)) ? "yes" : "no";
-                attrValues[i] = instances.attribute(n - 1).indexOfValue(cls);
-                instances.add(new Instance(1.0, attrValues)); // all instances have the same weight 1.0
+                instances.add(createTrainingInstance(s, positive));
             }
 
             instances.setClassIndex(instances.numAttributes() - 1);
@@ -63,6 +47,39 @@ public class ClassifierUtils {
             log.info("Couldn't read training info from file: " + fileName);
             return null;
         }
+    }
+
+    public static Instance createTrainingInstance(final String s, final boolean positive) {
+        String t = s.substring(0, s.indexOf(";;"));
+        final int label = t.charAt(0) == '+' ? 1 : Integer.parseInt(t);
+        final String tweet = s.substring(s.indexOf(";;") + 2);
+        double[] attrValues = getAttrValues(tweet, dictionary.size() + 1);
+
+        final String cls = (positive && (label == 1)) || (!positive && (label == -1)) ? "yes" : "no";
+        final Instance instance = new Instance(1.0, attrValues); // all instances have the same weight 1.0
+        instance.setClassValue(cls);
+        return instance;
+    }
+
+    public static Instance createInstance(final String s) {
+        double[] attrValues = getAttrValues(s, dictionary.size() + 1);
+        attrValues[attrValues.length - 1] = 0.0;
+        final Instance instance = new Instance(1.0, attrValues);
+        return instance;
+    }
+
+    public static double[] getAttrValues(final String text, final int length) { // the last is the class index (might be empty)
+        double attrValues[] = new double[length];
+        final List<String> words = Su.splitOnPunctuation(text);
+        int i = 0;
+        for (final String word : dictionary) {
+            int count = count(word, Su.allToLowerCase(words));
+            attrValues[i] = count;
+            i++;
+        }
+        attrValues[length - 1] = 0.0; // we may not know the class
+        attrValues = normalizeVector(attrValues);
+        return attrValues;
     }
 
     public static FastVector buildFeatureVector(final List<String> dictionary) {

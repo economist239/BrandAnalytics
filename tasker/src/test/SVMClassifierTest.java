@@ -7,7 +7,7 @@ import ru.brandanalyst.analyzer.util.ClassifierUtils;
  */
 public class SVMClassifierTest extends AbstractDependencyInjectionSpringContextTests {
     public void testClassifiers() {
-        String trainingFileName = "analyzer/samples/samples";
+        String trainingFileName = "tasker/samples/samples";
         String dir = "svmclassifiers";
 
         SVMClassifier classifierNegative = new SVMClassifier();

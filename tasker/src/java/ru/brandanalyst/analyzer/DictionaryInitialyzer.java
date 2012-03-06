@@ -27,7 +27,7 @@ public final class DictionaryInitialyzer {
     /**
      * метод инициализирует семантический словарь в БД
      *
-     * @throws IOException
+     * @throws java.io.IOException
      */
     public static void main(String[] args) throws IOException {
         BasicDataSource dataSource = new BasicDataSource();
