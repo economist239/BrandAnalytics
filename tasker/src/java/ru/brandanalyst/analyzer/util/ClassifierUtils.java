@@ -89,8 +89,8 @@ public class ClassifierUtils {
         }
         // class: emotional (good / bad) or not emotional (= neutral)
         FastVector labels = new FastVector();
-        labels.addElement("yes");
-        labels.addElement("no");
+        labels.addElement("yes");     // yes = 0.0
+        labels.addElement("no");      // no = 1.0
         Attribute cls = new Attribute("class", labels);
         featureVector.addElement(cls);
         return featureVector;
@@ -143,7 +143,7 @@ public class ClassifierUtils {
         }
     }
 
-    public SVMClassifier loadSVMClassifier(String filePath) {
+    public static SVMClassifier loadSVMClassifier(String filePath) {
         final File file = new File(filePath);
         log.info("Loading SVM classifier from file: " + filePath);
         ObjectInputStream objectInputStream = null;

@@ -66,7 +66,7 @@ public class SVMClassifier implements SVM {
 
     @Override
     public void save(String dir) {
-        final String filename = this.getName() + "_" + System.currentTimeMillis();
+        final String filename = this.getName();
         final File file = new File(dir, filename);
 //        log.info("Saving" + this.getName() + "(filename: " + file.getName() + ")");
         try {
