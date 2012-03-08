@@ -32,6 +32,10 @@ public final class Cf {
         return new LinkedList<T>();
     }
 
+    public static <T> Set<T> newSet() {
+        return newHashSet();
+    }
+    
     public static <T> Set<T> newHashSet() {
         return new HashSet<T>();
     }
@@ -48,7 +52,15 @@ public final class Cf {
         return new TreeSet<T>(comparator);
     }
 
+    public static <K, V> Map<K, V> newMap() {
+        return newHashMap();
+    }
+    
     public static <K, V> Map<K, V> newHashMap() {
         return new HashMap<K, V>();
+    }
+
+    public static <K, V> Map<K, V> newLinkedHashMap() {
+        return new LinkedHashMap<K, V>();
     }
 }
