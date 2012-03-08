@@ -167,7 +167,17 @@ public class ClassifierUtils {
     }
 
     public static enum Type {
-        SVM_NEGATIVE,
-        SVM_POSITIVE
+        SVM_NEGATIVE("svmNegative"),
+        SVM_POSITIVE("svmPositive");
+        
+        private final String name;
+
+        private Type(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
     }
 }

@@ -66,7 +66,7 @@ public class SVMClassifier implements SVM {
 
     @Override
     public void save(String dir) {
-        final String filename = this.getName();
+        final String filename = this.type.getName();
         final File file = new File(dir, filename);
 //        log.info("Saving" + this.getName() + "(filename: " + file.getName() + ")");
         try {
@@ -81,9 +81,5 @@ public class SVMClassifier implements SVM {
             log.info("Error: " + e.toString());
 //            return null;
         }
-    }
-
-    public String getName() {
-        return this.type == ClassifierUtils.Type.SVM_NEGATIVE ? "svmNegative" : "svmPositive";
     }
 }
