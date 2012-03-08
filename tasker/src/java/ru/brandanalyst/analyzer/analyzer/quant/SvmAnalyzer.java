@@ -16,7 +16,8 @@ import java.util.Map;
  *         Date: 03.03.12
  */
 public class SvmAnalyzer implements AbstractAnalyzer {
-    public static final int REFERENCES_TICKER_ID = 1;
+    private static final int NEGATIVE_SVM_TICKER_ID = 2;
+    private static final int POSITIVE_SVM_TICKER_ID = 3;
     private SVMClassifier classifierNegative;
     private SVMClassifier classifierPositive;
     private GraphProvider graphProvider;
@@ -71,12 +72,12 @@ public class SvmAnalyzer implements AbstractAnalyzer {
     @Override
     public void flush() {
         for (Map.Entry<Long, Graph> e: graphDepotNegative.entrySet()) {
-            graphProvider.writeGraph(e.getValue(), e.getKey(), REFERENCES_TICKER_ID);
+            graphProvider.writeGraph(e.getValue(), e.getKey(), NEGATIVE_SVM_TICKER_ID);
         }
         graphDepotNegative.clear();
 
         for (Map.Entry<Long, Graph> e: graphDepotPositive.entrySet()) {
-            graphProvider.writeGraph(e.getValue(), e.getKey(), REFERENCES_TICKER_ID);
+            graphProvider.writeGraph(e.getValue(), e.getKey(), POSITIVE_SVM_TICKER_ID);
         }
         graphDepotPositive.clear();
     }

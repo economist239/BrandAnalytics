@@ -4,11 +4,12 @@
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
 
     <xsl:template name="head">
-        <script type="text/javascript" src="graphs.js"/><!-- эта зараза почему-то мешает работать bootstrap.js, i don't get it-->
-        <script type="text/javascript" src="3rd-party/jquery.js"></script>
-
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="3rd-party/highstock/js/highstock.js"/>
         <script type="text/javascript" src="3rd-party/highstock/js/modules/exporting.js"/>
         <script type="text/javascript" src="3rd-party/bootstrap2/bootstrap/js/bootstrap.js"/>
+        <script type="text/javascript" src="graphs.js"/><!-- эта зараза почему-то мешает работать bootstrap.js, i don't get it-->
+
         <script type="text/javascript">
             $(document).ready(function(){
             $("li#branch-select li").click(function(){
@@ -26,16 +27,21 @@
 
     </xsl:template>
 
-    <xsl:template name="main">
-        <script type="text/javascript">
-            document.getElementById("navbar_analysis").setAttribute("class", "active");
-        </script>
+    <xsl:template name="header">
+        <h1 align="left"><xsl:value-of select="page/data[@id='getBrand']/brand/name"/></h1>
         <div class="pull-right">
             <ul class="nav nav-pills">
                 <xsl:apply-templates select="page/data[@id='getBranches']/collection" mode="select"/>
                 <xsl:apply-templates select="page/data[@id='getBrands']/collection" mode="select"/>
             </ul>
         </div>
+    </xsl:template>
+    
+    <xsl:template name="main">
+        <script type="text/javascript">
+            document.getElementById("navbar_analysis").setAttribute("class", "active");
+        </script>
+
         <div class="tab-content">
             <div class="tab-pane active" id="info">
                 <xsl:apply-templates select="page/data[@id='getBrand']/brand" mode="show"/>

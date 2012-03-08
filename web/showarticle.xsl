@@ -41,4 +41,6 @@
         </xsl:for-each>
     </xsl:template>
 
+    <xsl:template name="header"></xsl:template>
+
 </xsl:stylesheet>

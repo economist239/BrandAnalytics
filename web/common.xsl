@@ -47,8 +47,8 @@
                 </div>
                 <div class="container">
                 <xsl:call-template name="run"/>
-                <div class="page-header" align="center"  style="padding-top:50px">
-                    <!--<xsl:call-template name="find"/>-->
+                <div class="page-header" style="padding-top:50px">
+                    <xsl:call-template name="header"/>
                 </div>
                 <div class="row show-grid">
                     <div class="span3">

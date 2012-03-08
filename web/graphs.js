@@ -7,7 +7,8 @@
 var DEFAULT_TICKER = 1;
 
 $(document).ready(function () {
-    getGraph(DEFAULT_TICKER);
+    //alert(ticker);
+    getGraph(1);
 });
 
 
@@ -53,7 +54,6 @@ function getGraph() {
 }
 
 function getGraph(tickerId) {
-    alert(ticker);
     $.ajax({
         url:'/get-graphs.xml',
         dataType:"xml",

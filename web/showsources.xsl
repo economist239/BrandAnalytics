@@ -135,4 +135,7 @@
             <li id="tab_some"><a href="#some" data-toggle="tab"><del>Метод агрегации</del>  I'm watching you</a></li>
         </ul>
     </xsl:template>
+
+    <xsl:template name="header"></xsl:template>
+
 </xsl:stylesheet>
