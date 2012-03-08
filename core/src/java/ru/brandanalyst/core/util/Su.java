@@ -1,4 +1,4 @@
-package ru.brandanalyst.analyzer.util;
+package ru.brandanalyst.core.util;
 
 import java.util.ArrayList;
 import java.util.List;
