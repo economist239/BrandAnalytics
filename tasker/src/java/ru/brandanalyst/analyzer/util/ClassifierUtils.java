@@ -1,6 +1,7 @@
 package ru.brandanalyst.analyzer.util;
 
 import ru.brandanalyst.analyzer.classifiers.SVMClassifier;
+import ru.brandanalyst.core.util.Su;
 import weka.core.Attribute;
 import weka.core.FastVector;
 import weka.core.Instance;
@@ -30,8 +31,7 @@ public class ClassifierUtils {
 
 //        final int n = featureVector.size(); // the last is the class label
         try {
-            FileReader fr = new FileReader(fileName);
-            BufferedReader reader = new BufferedReader(fr);
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
             String s;
             s = reader.readLine(); // this is a KOSTYL. We need it because of the bad training set. :(
             while ((s = reader.readLine()) != null) {
@@ -40,12 +40,11 @@ public class ClassifierUtils {
                 }
                 instances.add(createTrainingInstance(s, positive));
             }
-
+            reader.close();
             instances.setClassIndex(instances.numAttributes() - 1);
             return instances;
         } catch (IOException e) {
-            log.info("Couldn't read training info from file: " + fileName);
-            return null;
+            throw new RuntimeException("Couldn't read training info from file: " + fileName);
         }
     }
 
