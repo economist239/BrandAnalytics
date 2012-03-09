@@ -13,7 +13,7 @@ import java.util.TimerTask;
  * requires to set only period
  */
 public abstract class AbstractDelayedTimerTask extends ScheduledTimerTask {
-    private static final long DEFAULT_DELAY = 0;
+    private static final long DEFAULT_DELAY = 10000;
 
     protected AbstractDelayedTimerTask() {
         super();
