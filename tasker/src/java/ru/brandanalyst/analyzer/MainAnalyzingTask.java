@@ -49,6 +49,10 @@ public class MainAnalyzingTask extends AbstractDelayedTimerTask implements Initi
     protected final void runTask() {
         log.info("analyzing started...");
 
+        for (AbstractAnalyzer a : analyzers) {
+            a.onStart();
+        }
+
         dirtyProvidersHandler.getArticleProvider().visitArticles(new EntityVisitor<Article>() {
             @Override
             public void visitEntity(final Article e) {
