@@ -32,7 +32,7 @@ public class MySQLBrandDictionaryProvider implements BrandDictionaryProvider {
         jdbcTemplate.getJdbcOperations().query("SELECT BrandId, Brand.Name, Term FROM BrandDictionary INNER JOIN Brand ON BrandId = Brand.Id WHERE BrandId =?", new Object[]{brandId}, new RowCallbackHandler() {
             @Override
             public void processRow(ResultSet rs) throws SQLException {
-                dictItem.addItem(rs.getString("Term"));
+                dictItem.addItem(rs.getString("Term").toLowerCase());
             }
         });
 
@@ -53,7 +53,7 @@ public class MySQLBrandDictionaryProvider implements BrandDictionaryProvider {
                 } else {
                     item = dictionary.get(dictionary.size() - 1);
                 }
-                item.addItem(rs.getString("Term"));
+                item.addItem(rs.getString("Term").toLowerCase());
                 dictionary.add(item);
             }
         });
