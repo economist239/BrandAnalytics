@@ -25,19 +25,19 @@ import java.util.List;
  */
 public class DbTest extends AbstractDependencyInjectionSpringContextTests {
 
-    private ArticleProvider dirtyArticleProvider;
+    private ArticleProvider pureArticleProvider;
     private BrandProvider dirtyBrandProvider;
     private GraphProvider dirtyGraphProvider;
 
-    public void setDirtyArticleProvider(ArticleProvider dirtyArticleProvider) {
-        this.dirtyArticleProvider = dirtyArticleProvider;
+    public void setPureArticleProvider(ArticleProvider pureArticleProvider) {
+        this.pureArticleProvider = pureArticleProvider;
     }
 
-    public void setDirtyGraphProvider(GraphProvider dirtyGraphProvider) {
+    public void setPureGraphProvider(GraphProvider dirtyGraphProvider) {
         this.dirtyGraphProvider = dirtyGraphProvider;
     }
 
-    public void setDirtyBrandProvider(BrandProvider dirtyBrandProvider) {
+    public void setPureBrandProvider(BrandProvider dirtyBrandProvider) {
         this.dirtyBrandProvider = dirtyBrandProvider;
     }
 
@@ -49,7 +49,7 @@ public class DbTest extends AbstractDependencyInjectionSpringContextTests {
     @Override
     protected String[] getConfigLocations() {
         return new String[]{
-                "classpath:dbhandler_dirty.xml"
+                "classpath:dbhandler_pure.xml"
         };
     }
 
