@@ -10,7 +10,6 @@ import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.model.Article;
 
 import java.util.List;
-import java.util.TimerTask;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,7 +20,7 @@ import java.util.TimerTask;
 public class MainAnalyzingTask extends AbstractDelayedTimerTask implements InitializingBean {
     private static final Logger log = Logger.getLogger(MainAnalyzingTask.class);
     private ProvidersHandler dirtyProvidersHandler;
-    private ProvidersHandler pureProvidersHanler;
+    private ProvidersHandler pureProvidersHandler;
     private List<AbstractAnalyzer> analyzers;
 
     @Required
@@ -30,8 +29,8 @@ public class MainAnalyzingTask extends AbstractDelayedTimerTask implements Initi
     }
 
     @Required
-    public void setPureProvidersHanler(ProvidersHandler pureProvidersHanler) {
-        this.pureProvidersHanler = pureProvidersHanler;
+    public void setPureProvidersHandler(ProvidersHandler pureProvidersHandler) {
+        this.pureProvidersHandler = pureProvidersHandler;
     }
 
     @Required
@@ -42,7 +41,7 @@ public class MainAnalyzingTask extends AbstractDelayedTimerTask implements Initi
     @Override
     public void afterPropertiesSet() throws Exception {
         for (AbstractAnalyzer a : analyzers) {
-            a.init(pureProvidersHanler);
+            a.init(pureProvidersHandler);
         }
     }
 
