@@ -14,7 +14,7 @@ start() {
         return
     fi
 
-    java -cp $( echo $CP1 + $CP2 . | sed 's/ /:/g') \
+    $JAVA_HOME/bin/java -cp $( echo $CP1 + $CP2 . | sed 's/ /:/g') \
         -Dfile.encoding=UTF8 \
         -Dorg.apache.commons.logging.LogFactory=org.apache.commons.logging.impl.Log4jFactory \
         -Djavax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl \
