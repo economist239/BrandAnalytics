@@ -12,6 +12,8 @@
         <property name="analyzers">
             <list>
                 <bean class="ru.brandanalyst.analyzer.analyzer.quant.CopyArticlesAnalyzer"/>
+                <bean class="ru.brandanalyst.analyzer.analyzer.quant.GraphsAnalyzer"/>
+                <bean class="ru.brandanalyst.analyzer.analyzer.quant.SvmAnalyzer"/>
             </list>
         </property>
     </bean>

@@ -20,6 +20,7 @@
         <property name="scheduledTimerTasks">
             <list>
                 <ref bean="rssGrabberTask"/>
+                <ref bean="analyzerProcessor"/>
             </list>
         </property>
     </bean>
