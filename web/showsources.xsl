@@ -9,7 +9,6 @@
 
     <xsl:template name="head">
         <script type="text/javascript" src="3rd-party/jquery.js"></script>
-        <!--<script type="text/javascript" src="graphs.js"/>-->  <!-- эта зараза почему-то мешает работать bootstrap.js, i don't get it-->
         <script type="text/javascript" src="3rd-party/highstock/js/modules/exporting.js"/>
         <script type="text/javascript" src="3rd-party/bootstrap2/bootstrap/js/bootstrap.js"/>
 

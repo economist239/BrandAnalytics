@@ -49,7 +49,7 @@ function plotGraph(jsonData) {
 
 }
 
-function getGraph() {
+function graph() {
     getGraph($("#graph-select").val());
 }
 

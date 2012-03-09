@@ -8,8 +8,9 @@
         <script type="text/javascript" src="3rd-party/highstock/js/highstock.js"/>
         <script type="text/javascript" src="3rd-party/highstock/js/modules/exporting.js"/>
         <script type="text/javascript" src="3rd-party/bootstrap2/bootstrap/js/bootstrap.js"/>
-        <script type="text/javascript" src="graphs.js"/><!-- эта зараза почему-то мешает работать bootstrap.js, i don't get it-->
-
+        <script type="text/javascript" src="graphs.js"/>
+        <script type="text/javascript" src="show-brand.js"/>
+<!--
         <script type="text/javascript">
             $(document).ready(function(){
             $("li#branch-select li").click(function(){
@@ -24,6 +25,7 @@
             })
             })
         </script>
+-->
 
     </xsl:template>
 
@@ -153,7 +155,7 @@
                     </option>
                 </xsl:for-each>
             </select>
-            <button class="btn primary" type="submit" value="посмотреть" onclick="getGraph()">посмотреть</button>
+            <button class="btn primary" type="submit" value="посмотреть" onclick="graph()">посмотреть</button>
         <div id="chartContainer" style="height: 500px; min-width: 500px"/>
     </xsl:template>
 
