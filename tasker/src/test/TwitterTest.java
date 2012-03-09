@@ -1,15 +1,11 @@
 import com.thoughtworks.xstream.XStream;
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import ru.brandanalyst.AbstractTest;
+import ru.brandanalyst.core.util.test.AbstractTest;
 import ru.brandanalyst.miner.twitter.ITwitter;
 import ru.brandanalyst.miner.twitter.ITwitterException;
-import ru.brandanalyst.miner.twitter.impl.SimpleTwitter;
-import ru.brandanalyst.miner.twitter.impl.TopsyTwitter;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;

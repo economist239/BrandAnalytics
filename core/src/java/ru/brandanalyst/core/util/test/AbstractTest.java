@@ -1,4 +1,4 @@
-package ru.brandanalyst;
+package ru.brandanalyst.core.util.test;
 
 import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 
@@ -6,10 +6,9 @@ import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
  * @author Vanslov Evgeny (evans@yandex-team.ru)
  */
 public class AbstractTest extends AbstractDependencyInjectionSpringContextTests {
-    private String[] configLocations;
+    protected String[] configLocations = new String[]{};
 
-    public AbstractTest(final String... configLocations) {
-        this.configLocations = configLocations.clone();
+    public AbstractTest() {
         setPopulateProtectedVariables(true);
     }
 

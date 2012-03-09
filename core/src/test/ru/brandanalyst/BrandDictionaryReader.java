@@ -5,6 +5,7 @@ import org.apache.commons.io.IOUtils;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
+import ru.brandanalyst.core.util.test.AbstractTest;
 
 import java.io.FileReader;
 import java.io.FileWriter;

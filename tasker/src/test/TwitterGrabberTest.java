@@ -1,22 +1,14 @@
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import ru.brandanalyst.AbstractTest;
-import ru.brandanalyst.core.db.provider.ProvidersHandler;
-import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.core.model.BrandDictionaryItem;
+import ru.brandanalyst.core.util.test.AbstractTest;
 import ru.brandanalyst.miner.twitter.GrabberTaskTwitter;
 import twitter4j.*;
 import twitter4j.auth.AccessToken;
 
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 /**
  * @author Vanslov Evgeny (evans@yandex-team.ru)
  */
-public class TwitterGrabberTest extends AbstractTest{
+public class TwitterGrabberTest extends AbstractTest {
     private static final Log log = LogFactory.getLog(TwitterGrabberTest.class);
     private String configLocations[] = {"test-config.xml"};
 

@@ -16,8 +16,8 @@ public class InMemoryInfoSourceProvider implements InformationSourceProvider {
     private List<InfoSource> depot = new ArrayList<InfoSource>(2);
 
     {
-        depot.add(new InfoSource(1, 1, "1", "1", "1", "1"));
-        depot.add(new InfoSource(2, 2, "2", "2", "2", "2"));
+        depot.add(new InfoSource(1, 1, "1", "1", "1", "./tasker/src/test/ru/brandanalyst/miner/rss/fake-rss.xml"));
+        depot.add(new InfoSource(2, 2, "2", "2", "2", "./tasker/src/test/ru/brandanalyst/miner/rss/fake-rss.xml"));
     }
 
     @Override

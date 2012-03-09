@@ -39,7 +39,6 @@ public class HorrorParser extends AbstractRssParser {
             log.debug("rss parsed" + i++);
             for (RssItemBean item : (List<RssItemBean>) rss.getItems()) {
                 String title = item.getTitle();
-
                 Collection<Long> brandIds = StringChecker.hasTerm(dictionary, title);
                 if (!brandIds.isEmpty()) {
                     String link = item.getLink();
@@ -52,7 +51,7 @@ public class HorrorParser extends AbstractRssParser {
                 }
             }
         } catch (Exception e) {
-            log.error(url);
+            log.error(url, e);
             if(maxCount-- > 0){
                 Thread.sleep(SLEEP_TIME);
                 parse();

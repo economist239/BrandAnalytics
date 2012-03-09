@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-autowire="byName">
+    <!--Scheduler-->
+    <bean id="rssGrabberTask" class="ru.brandanalyst.miner.rss.ParserStarter" lazy-init="false">
+        <property name="period" value="10"/>
+    </bean>
+
+    <!--Spring helpers-->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+
+</beans>

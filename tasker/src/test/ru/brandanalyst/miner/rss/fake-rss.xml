@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom"
+     version="2.0">
+    <channel>
+        <atom:link href="http://sport.ria.ru/export/rss2/sport/index.xml" rel="self" type="application/rss+xml"/>
+        <title>Российское Информационное Агентство "РИА Новости"</title>
+        <link>http://www.ria.ru</link>
+        <description>Российское Информационное Агентство "РИА Новости": достоверность и оперативность</description>
+        <language>ru</language>
+        <copyright>RIA Novosti</copyright>
+        <item>
+            <title>Презентация iPad третьего поколения</title>
+            <link>http://www.ria.ru/trend/_iPad_3_presentation_01032012/</link>
+            <guid>http://www.ria.ru/trend/_iPad_3_presentation_01032012/</guid>
+            <rian:priority xmlns:rian="http://rian.ru"/>
+            <pubDate>Fri, 09 Mar 2012 22:50:13 +0400</pubDate>
+            <description/>
+            <rian:type xmlns:rian="http://rian.ru">story</rian:type>
+            <category>Наука и Технологии</category>
+            <enclosure url="http://img.beta.rian.ru/images/58815/91/588159133.jpg" type="image/jpeg"/>
+            <enclosure url="http://img.beta.rian.ru/images/58817/01/588170187.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Эксперты: маржинальность Apple iPad снизилась с выходом новой модели</title>
+            <link>http://www.ria.ru/technology/20120309/591118553.html</link>
+            <guid>http://www.ria.ru/technology/20120309/591118553.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 22:50:13 +0400</pubDate>
+            <description>Себестоимость производства планшетного компьютера Apple iPad третьего поколения выше, чем у его
+                предшественников в момент выхода на рынок, при этом цена новинки осталась на прежнем уровне,
+                свидетельствует исследование аналитической компании UBM TechInsights.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Технологии</category>
+            <enclosure url="http://img.beta.rian.ru/images/58827/98/588279869.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Реструктуризация долга Греции</title>
+            <link>http://www.ria.ru/trend/_debt_restructuring_Greece_19052011/</link>
+            <guid>http://www.ria.ru/trend/_debt_restructuring_Greece_19052011/</guid>
+            <rian:priority xmlns:rian="http://rian.ru"/>
+            <pubDate>Fri, 09 Mar 2012 22:47:00 +0400</pubDate>
+            <description/>
+            <rian:type xmlns:rian="http://rian.ru">story</rian:type>
+            <category>Экономика</category>
+            <enclosure url="http://img.beta.rian.ru/images/22462/51/224625153.jpg" type="image/jpeg"/>
+            <enclosure url="http://img.beta.rian.ru/images/19206/80/192068051.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Пападимос: реструктуризация долга позволит Греции выйти из кризиса</title>
+            <link>http://www.ria.ru/economy/20120309/591118131.html</link>
+            <guid>http://www.ria.ru/economy/20120309/591118131.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 22:47:00 +0400</pubDate>
+            <description>"Мы довели до конца очень сложную работу. Мы выходим из зыбучих песков последних месяцев и
+                стоим теперь на твердой почве... С уменьшением долга примерно на 105 миллиардов евро мы можем смотреть в
+                будущее с большей уверенностью", - сказал Пападимос в телеобращении к гражданам.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Экономика</category>
+            <enclosure url="http://img.beta.rian.ru/images/48407/82/484078287.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Прокуратура Сербии выдвинула обвинение в подготовке мятежа в 2001 г</title>
+            <link>http://www.ria.ru/world/20120309/591116186.html</link>
+            <guid>http://www.ria.ru/world/20120309/591116186.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 22:30:14 +0400</pubDate>
+            <description>Обвинения выдвинуты в отношении экс-главы "беретов" Милорада Улемека, а также подполковника
+                Звездана Йовановича, высокопоставленных офицеров Душана Маричича, Веселина Лечича, Миче Петраковича,
+                Владимира Потича, Драгослава Крсмановича и Драгиши Радича. Согласно версии прокуратуры, мятеж был
+                организован при участии главы мощной преступной группы "Земунский клан" Душана Спасоевича.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>В мире</category>
+        </item>
+        <item>
+            <title>Полицейских обстреляли в Дагестане, нападавший убит</title>
+            <link>http://www.ria.ru/incidents/20120309/591115924.html</link>
+            <guid>http://www.ria.ru/incidents/20120309/591115924.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 22:27:00 +0400</pubDate>
+            <description>Неизвестный открыл огонь по сотрудникам полиции в Дагестане и был убит, полицейские не
+                пострадали, сообщил РИА Новости источник в правоохранительных органах Дагестана.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Происшествия</category>
+        </item>
+        <item>
+            <title>Руководство ПНА осудило "израильскую эскалацию" в секторе Газа</title>
+            <link>http://www.ria.ru/world/20120309/591114848.html</link>
+            <guid>http://www.ria.ru/world/20120309/591114848.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 22:17:39 +0400</pubDate>
+            <description>Руководство Палестинской национальной администрации (ПНА) в пятницу осудило "израильскую
+                эскалацию", в результате которой погибло два палестинских боевика в секторе Газа.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>В мире</category>
+        </item>
+        <item>
+            <title>Пять соцработников в Греции обвиняются в хищении 6 млн евро</title>
+            <link>http://www.ria.ru/world/20120309/591114632.html</link>
+            <guid>http://www.ria.ru/world/20120309/591114632.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 22:16:00 +0400</pubDate>
+            <description>Пятеро служащих греческого государственного Фонда социального страхования (IKA) обвиняются в
+                хищениях на общую сумму более 6 миллионов евро, сообщила в пятницу греческая полиция.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>В мире</category>
+        </item>
+        <item>
+            <title>ЛАГ не намерена признавать сирийскую оппозицию</title>
+            <link>http://www.ria.ru/arab_sy/20120309/591113717.html</link>
+            <guid>http://www.ria.ru/arab_sy/20120309/591113717.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 22:07:00 +0400</pubDate>
+            <description>Лига арабских государств (ЛАГ) пока не намерена признавать сирийскую оппозицию как законного
+                выразителя интересов народа Сирии. "Мы еще не пришли к общему решению о признании какой-либо организации
+                оппозиции представителем сирийского народа. Такого решения нет", - заявил заместитель генсека ЛАГ Ахмед
+                бен Хелли в интервью Первому каналу египетского телевидения.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Сирия</category>
+            <enclosure url="http://img.beta.rian.ru/images/58404/82/584048250.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Американский музей Гетти вернул Греции три античных экспоната</title>
+            <link>http://www.ria.ru/culture/20120309/591112647.html</link>
+            <guid>http://www.ria.ru/culture/20120309/591112647.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 21:56:00 +0400</pubDate>
+            <description>Музей Гетти из Лос-Анджелеса вернул Греции три античных экспоната, которые были незаконно
+                вывезены из страны десятилетия назад, сообщило в субботу министерство культуры Греции.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Культура и шоу-бизнес</category>
+            <enclosure url="http://img.beta.rian.ru/images/44215/32/442153211.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Общежитие в Новосибирске начнут восстанавливать в субботу</title>
+            <link>http://www.ria.ru/society/20120309/591109587.html</link>
+            <guid>http://www.ria.ru/society/20120309/591109587.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 21:32:00 +0400</pubDate>
+            <description>Специалисты приступят к восстановлению обрушившейся стены общежития в Новосибирске в субботу,
+                сообщает пресс-служба ГУ МЧС по Новосибирской области.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Общество</category>
+        </item>
+        <item>
+            <title>Обама предлагает выделить $1 млрд на инновации в промышленной сфере</title>
+            <link>http://www.ria.ru/world/20120309/591109114.html</link>
+            <guid>http://www.ria.ru/world/20120309/591109114.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 21:28:00 +0400</pubDate>
+            <description>Президент США Барак Обама предлагает инвестировать миллиард долларов в создание сети
+                национальных институтов по инновациям в промышленности.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>В мире</category>
+            <enclosure url="http://img.beta.rian.ru/images/41108/15/411081580.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Обама позвонил Путину, о содержании разговора пока не сообщается</title>
+            <link>http://www.ria.ru/vybor2012_putin/20120309/591108665.html</link>
+            <guid>http://www.ria.ru/vybor2012_putin/20120309/591108665.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 21:24:00 +0400</pubDate>
+            <description>Президент США Барак Обама позвонил премьер-министру РФ Владимиру Путину, сообщают
+                сопровождающие Обаму в штат Виргиния корреспонденты президентского пула со ссылкой на заместителя
+                официального представителя Белого дома Джоша Эрнеста.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Владимир Путин</category>
+            <enclosure url="http://img.beta.rian.ru/images/40544/64/405446465.jpg" type="image/jpeg"/>
+            <enclosure url="http://img.beta.rian.ru/images/58337/52/583375263.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Итоги выборов президента России. Реакция, комментарии</title>
+            <link>http://www.ria.ru/trend/russia_president_election_results_comments_08032012/</link>
+            <guid>http://www.ria.ru/trend/russia_president_election_results_comments_08032012/</guid>
+            <rian:priority xmlns:rian="http://rian.ru"/>
+            <pubDate>Fri, 09 Mar 2012 21:24:00 +0400</pubDate>
+            <description/>
+            <rian:type xmlns:rian="http://rian.ru">story</rian:type>
+            <category>Темы</category>
+            <enclosure url="http://img.beta.rian.ru/images/58452/62/584526206.jpg" type="image/jpeg"/>
+            <enclosure url="http://img.beta.rian.ru/images/58456/57/584565723.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Случаи гибели российских туристов за границей в 2010-2012 годах</title>
+            <link>http://www.ria.ru/spravka/20120309/591108224.html</link>
+            <guid>http://www.ria.ru/spravka/20120309/591108224.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 21:21:20 +0400</pubDate>
+            <description>В ночь на 9 марта во время пожара в 15-этажной гостинице Grand Park Avenue в Бангкоке
+                пострадали пять российских туристов. Людмила Бадера 1972 года рождения была найдена пожарными без
+                сознания и скончалась в больнице в 01.00 мск. Муж погибшей, Игорь Бадера, в тяжелом состоянии был также
+                доставлен в больницу. Еще два россиянина остаются в госпитале. Остальные российские туристы,
+                пострадавшие при пожаре, были выписаны из больниц после того, как получили медицинскую помощь.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Справки</category>
+        </item>
+        <item>
+            <title>Биржи Европы закрылись ростом на позитиве по долгам Греции</title>
+            <link>http://www.ria.ru/economy/20120309/591106407.html</link>
+            <guid>http://www.ria.ru/economy/20120309/591106407.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 21:04:00 +0400</pubDate>
+            <description>Ведущие европейские фондовые индексы завершили последние на текущей неделе торги позитивом на
+                фоне новостей по участию частных кредиторов в списании долгов Греции, а также статистики с рынка труда
+                США, свидетельствуют данные бирж.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Экономика</category>
+            <enclosure url="http://img.beta.rian.ru/images/55393/34/553933414.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Ситуация на мировых фондовых рынках в марте 2012 года</title>
+            <link>http://www.ria.ru/trend/_stock_market_Mart_02032012/</link>
+            <guid>http://www.ria.ru/trend/_stock_market_Mart_02032012/</guid>
+            <rian:priority xmlns:rian="http://rian.ru"/>
+            <pubDate>Fri, 09 Mar 2012 21:04:00 +0400</pubDate>
+            <description/>
+            <rian:type xmlns:rian="http://rian.ru">story</rian:type>
+            <category>Экономика</category>
+            <enclosure url="http://img.beta.rian.ru/images/52233/21/522332164.jpg" type="image/jpeg"/>
+            <enclosure url="http://img.beta.rian.ru/images/15143/12/151431277.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Белый дом: Обама в пятницу поздравит Путина с победой на выборах</title>
+            <link>http://www.ria.ru/vybor2012_putin/20120309/591105820.html</link>
+            <guid>http://www.ria.ru/vybor2012_putin/20120309/591105820.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 20:59:00 +0400</pubDate>
+            <description>Президент США Барак Обама в пятницу поздравит Владимира Путина с победой на президентских
+                выборах в России, сообщил заместитель официального представителя Белого дома Джош Эрнест журналистам,
+                сопровождающим Обаму в поездке в Ричмонд (штат Виргиния).
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Владимир Путин</category>
+            <enclosure url="http://img.beta.rian.ru/images/48739/39/487393984.jpg" type="image/jpeg"/>
+            <enclosure url="http://img.beta.rian.ru/images/58765/51/587655164.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>ООН получит список возможных преступников против человечности в Ливии</title>
+            <link>http://www.ria.ru/arab_ly/20120309/591103785.html</link>
+            <guid>http://www.ria.ru/arab_ly/20120309/591103785.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 20:42:04 +0400</pubDate>
+            <description>Независимая комиссия ООН по Ливии в пятницу подготовила список лиц, подозреваемых в совершении
+                или причастности к преступлениям против человечности на территории страны, сообщает агентство Франс
+                Пресс.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Ливия</category>
+            <enclosure url="http://img.beta.rian.ru/images/35675/85/356758522.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Греция официально ввела принудительные меры по реструктуризации долга</title>
+            <link>http://www.ria.ru/economy/20120309/591104098.html</link>
+            <guid>http://www.ria.ru/economy/20120309/591104098.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">2</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 20:41:00 +0400</pubDate>
+            <description>Введена в действие так называемая норма коллективного действия (CAC) для 177-миллиардного
+                пакета облигаций, выпущенных по греческому праву. Таким образом, с примерно 86% номинала,
+                реструктурировать которые держатели согласились добровольно, участие инвесторов увеличится до 95,7% от
+                номинала обмениваемых облигаций.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Экономика</category>
+            <enclosure url="http://img.beta.rian.ru/images/56147/25/561472508.jpg" type="image/jpeg"/>
+        </item>
+        <item>
+            <title>Погода в Москве в субботу не изменится, а в воскресенье ухудшится</title>
+            <link>http://www.ria.ru/moscow/20120309/591102340.html</link>
+            <guid>http://www.ria.ru/moscow/20120309/591102340.html</guid>
+            <rian:priority xmlns:rian="http://rian.ru">3</rian:priority>
+            <pubDate>Fri, 09 Mar 2012 20:33:05 +0400</pubDate>
+            <description>Погода в Москве в субботу останется без изменений, но уже с воскресенья начнет ухудшаться,
+                рассказал РИА Новости в пятницу ведущий специалист центра Фобос Евгений Тишковец.
+            </description>
+            <rian:type xmlns:rian="http://rian.ru">article</rian:type>
+            <category>Москва</category>
+            <enclosure url="http://img.beta.rian.ru/images/58276/42/582764200.jpg" type="image/jpeg"/>
+        </item>
+    </channel>
+</rss>
