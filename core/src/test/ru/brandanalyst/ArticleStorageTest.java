@@ -43,6 +43,7 @@ public class ArticleStorageTest {
         storage.writeArticleToDataStore(new Article(1L, 1L, "title1", "content1", "3", new Timestamp(1L), 1));
         storage.writeArticleToDataStore(new Article(2L, 2L, "title2", "content2", "4", new Timestamp(2L), 2));
         storage.writeArticleToDataStore(new Article(3L, 3L, "title3", "content3", "1", new Timestamp(3L), 3));
+        storage.writeArticleToDataStore(new Article(3L, 3L, "title3", "content3", "1", new Timestamp(3L), 3));
 
         storage.visitArticles(new EntityVisitor<Article>() {
             @Override

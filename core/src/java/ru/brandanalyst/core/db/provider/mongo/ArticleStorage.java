@@ -49,6 +49,7 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
 
     private static DBObject wrap(Article a) {
         BasicDBObject object = new BasicDBObject();
+        object.put(MONGO_ID, a.hashCode());
         object.put("id", a.getId());
         object.put("brand-id", a.getBrandId());
         object.put("source-id", a.getSourceId());
