@@ -5,7 +5,6 @@ package ru.brandanalyst.core.model;
  * User: Obus
  * Date: 18.02.12
  * Time: 9:56
- * To change this template use File | Settings | File Templates.
  */
 public class Branch {
     private int id;

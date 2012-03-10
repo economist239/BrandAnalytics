@@ -4,6 +4,8 @@ import com.gargoylesoftware.htmlunit.UnexpectedPage;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.*;
 import org.apache.log4j.Logger;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
 import org.json.JSONArray;
 import org.json.JSONException;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
@@ -97,7 +99,7 @@ public class GrabberTaskFinam extends AbstractGrabberTask {
                     }
                     st.nextToken();
                     st.nextToken();
-                    graph.addPoint(new SingleDot(new Timestamp(date.getTime()), (Double.parseDouble(st.nextToken()) + Double.parseDouble(st.nextToken())) / 2));
+                    graph.addPoint(new SingleDot(new LocalDate(date.getTime()), (Double.parseDouble(st.nextToken()) + Double.parseDouble(st.nextToken())) / 2));
                 }
                 graphProvider.writeGraph(graph, b.getId(), tickerId);
                 webClient.closeAllWindows();

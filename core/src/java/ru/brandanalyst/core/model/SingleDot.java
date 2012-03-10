@@ -1,5 +1,7 @@
 package ru.brandanalyst.core.model;
 
+import org.joda.time.LocalDate;
+
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -11,10 +13,10 @@ import java.util.Date;
  * general model of one dot
  */
 public class SingleDot implements Comparable<SingleDot>{
-    private final Date date;
+    private final LocalDate date;
     private final double value;
 
-    public SingleDot(Date date, double value) {
+    public SingleDot(LocalDate date, double value) {
         this.date = date;
         this.value = value;
     }
@@ -23,7 +25,7 @@ public class SingleDot implements Comparable<SingleDot>{
         return value;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 

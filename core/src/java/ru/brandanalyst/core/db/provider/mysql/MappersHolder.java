@@ -1,5 +1,8 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import ru.brandanalyst.core.model.*;
 import ru.brandanalyst.core.util.TextConverter;
@@ -47,7 +50,7 @@ public final class MappersHolder {
         public ArticleForWeb mapRow(ResultSet resultSet, int i) throws SQLException {
             return new ArticleForWeb(resultSet.getString("Link"), resultSet.getString("a.Title"),
                     resultSet.getString("Content"), resultSet.getString("s.Title"),
-                    resultSet.getString("Website"), resultSet.getDate("Tstamp"));
+                    resultSet.getString("Website"), new LocalDateTime(resultSet.getDate("Tstamp").getTime()));
         }
     };
 
@@ -58,7 +61,7 @@ public final class MappersHolder {
                     resultSet.getLong("BrandId"),
                     resultSet.getLong("InfosourceId"),
                     resultSet.getString("Title"), resultSet.getString("Content"),
-                    resultSet.getString("Link"), resultSet.getDate("Tstamp"),
+                    resultSet.getString("Link"), new LocalDateTime(resultSet.getDate("Tstamp").getTime()),
                     resultSet.getInt("NumLikes"));
         }
     };
@@ -70,7 +73,7 @@ public final class MappersHolder {
                     resultSet.getLong("BrandId"),
                     resultSet.getLong("InfosourceId"),
                     resultSet.getString("Title"), TextConverter.firstPhrase(resultSet.getString("Content")),
-                    resultSet.getString("Link"), resultSet.getDate("Tstamp"),
+                    resultSet.getString("Link"), new LocalDateTime(resultSet.getDate("Tstamp")),
                     resultSet.getInt("NumLikes"));
         }
     };
@@ -93,7 +96,7 @@ public final class MappersHolder {
     public final static ParameterizedRowMapper<Mention> MENTION_MAPPER = new ParameterizedRowMapper<Mention>() {
         @Override
         public Mention mapRow(ResultSet rs, int i) throws SQLException {
-            return new Mention(new SingleDot(rs.getDate("Tstamp"), rs.getDouble("Val")),
+            return new Mention(new SingleDot(new LocalDate(rs.getDate("Tstamp")), rs.getDouble("Val")),
                     rs.getString("TickerName"), rs.getString("Name"), rs.getInt("TickerId"), rs.getInt("BrandId"));
         }
     };

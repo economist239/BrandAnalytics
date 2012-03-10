@@ -1,5 +1,8 @@
 package ru.brandanalyst.core.model;
 
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
+
 import java.util.Date;
 
 /**
@@ -15,11 +18,11 @@ public final class ArticleForWeb {
     private final String content;
     private final String sourceName;
     private final String sourceLink;
-    private final Date time;
+    private final LocalDateTime time;
 
     private static final int TIME_STRING_LENGTH = 10;
 
-    public ArticleForWeb(String link, String title, String content, String sourceName, String sourceLink, Date time) {
+    public ArticleForWeb(String link, String title, String content, String sourceName, String sourceLink, LocalDateTime time) {
         this.link = link;
         this.title = title;
         this.content = content;
@@ -48,7 +51,7 @@ public final class ArticleForWeb {
         return sourceLink;
     }
 
-    public Date getTime() {
+    public LocalDateTime getTime() {
         return time;
     }
 }

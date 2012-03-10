@@ -120,7 +120,7 @@ public class BuildIndexTask extends AbstractDelayedTimerTask {
         doc.add(new Field("BrandId", Long.toString(a.getSourceId()), Field.Store.YES, Field.Index.NOT_ANALYZED));
         doc.add(new Field("NumLikes", Long.toString(a.getNumLikes()), Field.Store.YES, Field.Index.NOT_ANALYZED));
         doc.add(new Field("Link", a.getLink(), Field.Store.YES, Field.Index.ANALYZED));
-        doc.add(new Field("Tstamp", Long.toString(a.getTstamp().getTime()), Field.Store.YES, Field.Index.ANALYZED));
+        doc.add(new Field("Tstamp", Long.toString(a.getTstamp().toDate().getTime()), Field.Store.YES, Field.Index.ANALYZED));
         doc.add(new Field("Content", a.getContent(), Field.Store.YES, Field.Index.ANALYZED));
         doc.add(new Field("Title", a.getTitle(), Field.Store.YES, Field.Index.ANALYZED));
 

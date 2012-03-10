@@ -49,10 +49,10 @@ public class SvmAnalyzer implements AbstractAnalyzer {
         if (positive == 0.0) {
             if (graphDepotPositive.containsKey(brandId)) {
                 Graph graph = graphDepotPositive.get(brandId);
-                graph.addPoint(article.getTstamp(), 1);
+                graph.addPoint(article.getTstamp().toLocalDate(), 1);
             } else {
                 Graph graph = new Graph();
-                graph.addPoint(article.getTstamp(), 1);
+                graph.addPoint(article.getTstamp().toLocalDate(), 1);
                 graphDepotPositive.put(brandId, graph);
             }
         }
@@ -60,10 +60,10 @@ public class SvmAnalyzer implements AbstractAnalyzer {
         if (negative == 0.0) {
             if (graphDepotNegative.containsKey(brandId)) {
                 Graph graph = graphDepotNegative.get(brandId);
-                graph.addPoint(article.getTstamp(), 1);
+                graph.addPoint(article.getTstamp().toLocalDate(), 1);
             } else {
                 Graph graph = new Graph();
-                graph.addPoint(article.getTstamp(), 1);
+                graph.addPoint(article.getTstamp().toLocalDate(), 1);
                 graphDepotNegative.put(brandId, graph);
             }
         }

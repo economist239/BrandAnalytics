@@ -1,5 +1,6 @@
 package ru.brandanalyst.db;
 
+import org.joda.time.LocalDateTime;
 import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
@@ -19,11 +20,11 @@ public class InMemoryArticleProvider extends ArticleProvider {
     private final List<Article> depot = new ArrayList<Article>();
     
     {
-        depot.add(new Article(1,1,1,"11","11","http:/11",new Timestamp(1), 1));
-        depot.add(new Article(2,2,2,"22","22","http:/22",new Timestamp(2), 1));
-        depot.add(new Article(3,1,2,"12","12","http:/13",new Timestamp(3), 1));
-        depot.add(new Article(4,2,2,"22","22","http:/22",new Timestamp(4), 1));
-        depot.add(new Article(5,1,1,"11","11","http:/11",new Timestamp(5), 1));
+        depot.add(new Article(1,1,1,"11","11","http:/11",new LocalDateTime(1), 1));
+        depot.add(new Article(2,2,2,"22","22","http:/22",new LocalDateTime(2), 1));
+        depot.add(new Article(3,1,2,"12","12","http:/13",new LocalDateTime(3), 1));
+        depot.add(new Article(4,2,2,"22","22","http:/22",new LocalDateTime(4), 1));
+        depot.add(new Article(5,1,1,"11","11","http:/11",new LocalDateTime(5), 1));
         key = 5;
     }
     

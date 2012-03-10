@@ -54,7 +54,7 @@ public class MySQLArticleProvider extends ArticleProvider {
                 ps.setString(4, a.getContent());
                 ps.setString(5, a.getLink());
                 ps.setInt(6, a.getNumLikes());
-                ps.setDate(7, new java.sql.Date(a.getTstamp().getTime()));
+                ps.setDate(7, new java.sql.Date(a.getTstamp().toDate().getTime()));
             }
 
             @Override

@@ -1,5 +1,6 @@
 package ru.brandanalyst.analyzer.analyzer.quant;
 
+import org.joda.time.LocalDate;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
@@ -44,10 +45,10 @@ public class GraphsAnalyzer implements AbstractAnalyzer {
         long brandId = article.getBrandId();
         if (graphDepot.containsKey(brandId)) {
             Graph graph = graphDepot.get(brandId);
-            graph.addPoint(article.getTstamp(), 1);
+            graph.addPoint(article.getTstamp().toLocalDate(), 1);
         } else {
             Graph graph = new Graph();
-            graph.addPoint(article.getTstamp(), 1);
+            graph.addPoint(article.getTstamp().toLocalDate(), 1);
             graphDepot.put(brandId, graph);
         }
     }

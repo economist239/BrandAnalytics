@@ -1,5 +1,6 @@
 package ru.brandanalyst.core.model;
 
+import org.joda.time.LocalDate;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,7 +18,7 @@ import java.util.*;
  * general model of graph
  */
 public class Graph implements Jsonable {
-    private Map<Date, Double> graph;
+    private Map<LocalDate, Double> graph;
     private String ticker;
 
     public Graph() {
@@ -25,7 +26,7 @@ public class Graph implements Jsonable {
     }
 
     public Graph(List<SingleDot> graph) {
-        this.graph = new HashMap<Date, Double>();
+        this.graph = new HashMap<LocalDate, Double>();
         for (SingleDot d: graph) {
             this.graph.put(d.getDate(), d.getValue());
         }
@@ -37,13 +38,13 @@ public class Graph implements Jsonable {
     }
 
     public Graph(String ticker) {
-        graph = new HashMap<Date, Double>();
+        graph = new HashMap<LocalDate, Double>();
         this.ticker = ticker;
     }
 
     public List<SingleDot> getGraph() {
         List<SingleDot> g = new ArrayList<SingleDot>(graph.size());
-        for (Map.Entry<Date, Double> d: graph.entrySet()) {
+        for (Map.Entry<LocalDate, Double> d: graph.entrySet()) {
             g.add(new SingleDot(d.getKey(), d.getValue()));
         }
         return g;
@@ -57,8 +58,7 @@ public class Graph implements Jsonable {
         addPoint(dot.getDate(), dot.getValue());
     }
 
-    public void addPoint(Date date, double value) {
-        date = Time.getSimpleDate(date);
+    public void addPoint(LocalDate date, double value) {
         if (graph.containsKey(date)) {
             graph.put(date, graph.get(date) + value);
         } else {
@@ -75,7 +75,7 @@ public class Graph implements Jsonable {
             Set<SingleDot> sortedGraph = new TreeSet<SingleDot>(getGraph());
 
             for (SingleDot d : sortedGraph) {
-                da.put(new JSONArray().put(d.getDate().getTime() / COUNT).put(d.getValue()));
+                da.put(new JSONArray().put(d.getDate().toDate().getTime() / COUNT).put(d.getValue()));
             }
             return new JSONObject().put("ticker", ticker).put("graph", da);
         } catch (JSONException e) {

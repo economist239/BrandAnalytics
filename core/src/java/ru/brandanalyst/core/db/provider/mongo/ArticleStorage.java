@@ -1,6 +1,7 @@
 package ru.brandanalyst.core.db.provider.mongo;
 
 import com.mongodb.*;
+import org.joda.time.LocalDateTime;
 import org.springframework.beans.factory.DisposableBean;
 import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
@@ -10,6 +11,7 @@ import ru.brandanalyst.core.model.ArticleForWeb;
 import java.net.UnknownHostException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -57,7 +59,7 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
         object.put("content", a.getContent());
         object.put("link", a.getLink());
         object.put("num-likes", a.getNumLikes());
-        object.put("tstamp", a.getTstamp().getTime());
+        object.put("tstamp", a.getTstamp().toDate().getTime());
         return object;
     }
 
@@ -73,7 +75,7 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
         return new Article(Long.parseLong(object.get("id").toString()), Long.parseLong(object.get("brand-id").toString()),
                 Long.parseLong(object.get("source-id").toString()), object.get("title").toString(),
                 object.get("content").toString(), object.get("link").toString(),
-                new Timestamp(Long.parseLong(object.get("tstamp").toString())), Integer.parseInt(object.get("num-likes").toString()));
+                new LocalDateTime(Long.parseLong(object.get("tstamp").toString())), Integer.parseInt(object.get("num-likes").toString()));
 
     }
 

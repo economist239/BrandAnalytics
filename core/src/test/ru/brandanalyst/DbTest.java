@@ -1,5 +1,7 @@
 package ru.brandanalyst;
 
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
 import org.junit.*;
 import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
@@ -63,9 +65,9 @@ public class DbTest extends AbstractDependencyInjectionSpringContextTests {
 
     public void testGraph() {
         Graph graph = new Graph(Arrays.asList(
-                new SingleDot(new Timestamp(new Date().getTime()), 4),
-                new SingleDot(new Timestamp(new Date().getTime() + 10), 5),
-                new SingleDot(new Timestamp(new Date().getTime() + 20), 67)));
+                new SingleDot(new LocalDate(new Date().getTime()), 4),
+                new SingleDot(new LocalDate(new Date().getTime() + 10), 5),
+                new SingleDot(new LocalDate(new Date().getTime() + 20), 67)));
         dirtyGraphProvider.writeGraph(graph, 1, 1);
     }
 }

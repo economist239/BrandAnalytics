@@ -11,6 +11,7 @@ import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.Version;
+import org.joda.time.LocalDateTime;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Params;
@@ -132,7 +133,7 @@ public class Searcher {
                 doc.get("Title"),
                 doc.get("Content"),
                 doc.get("Link"),
-                new Timestamp(Long.parseLong(doc.get("Tstamp"))),
+                new LocalDateTime(Long.parseLong(doc.get("Tstamp"))),
                 Integer.parseInt(doc.get("NumLikes"))
         );
     }

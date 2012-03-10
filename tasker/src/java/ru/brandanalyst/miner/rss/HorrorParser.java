@@ -2,6 +2,7 @@ package ru.brandanalyst.miner.rss;
 
 import org.horrabin.horrorss.RssItemBean;
 import org.horrabin.horrorss.RssParser;
+import org.joda.time.LocalDateTime;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.util.Batch;
 import ru.brandanalyst.core.util.Time;
@@ -48,7 +49,7 @@ public class HorrorParser extends AbstractRssParser {
                     String date = item.getPubDate();
                     for (Long id : brandIds) {
                         log.debug("Article added: " + title);
-                        batch.submit(new Article(id, sourceId, title, desc, link, Time.getSimpleDate(FORMATTER.parse(date)), NUM_LIKES));
+                        batch.submit(new Article(id, sourceId, title, desc, link, new LocalDateTime(FORMATTER.parse(date)), NUM_LIKES));
                     }
                 }
             }

@@ -1,5 +1,6 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
+import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.RowCallbackHandler;
@@ -57,11 +58,11 @@ public class MySQLGraphProvider implements GraphProvider {
                 SingleDot d = it.next();
                 ps.setLong(1, brandId);
                 ps.setLong(2, tickerId);
-                ps.setDate(3, new java.sql.Date(d.getDate().getTime()));
+                ps.setDate(3, new java.sql.Date(d.getDate().toDate().getTime()));
                 ps.setDouble(4, d.getValue());
                 ps.setLong(5, brandId);
                 ps.setLong(6, tickerId);
-                ps.setDate(7, new java.sql.Date(d.getDate().getTime()));
+                ps.setDate(7, new java.sql.Date(d.getDate().toDate().getTime()));
             }
 
             @Override
@@ -96,7 +97,7 @@ public class MySQLGraphProvider implements GraphProvider {
                 if (rs.isFirst()) {
                     graph.setTicker(rs.getString("TickerName"));
                 }
-                SingleDot d = new SingleDot(rs.getTimestamp("Tstamp"), rs.getDouble("Val"));
+                SingleDot d = new SingleDot(new LocalDate(rs.getDate("Tstamp")), rs.getDouble("Val"));
                 graph.addPoint(d);
             }
         });
@@ -122,7 +123,7 @@ public class MySQLGraphProvider implements GraphProvider {
                         } else {
                             g = graphList.get(graphList.size() - 1);
                         }
-                        g.addPoint(new SingleDot(rs.getDate("Tstamp"), rs.getDouble("Val")));
+                        g.addPoint(new SingleDot(new LocalDate(rs.getDate("Tstamp")), rs.getDouble("Val")));
                     }
                 });
 
@@ -144,7 +145,7 @@ public class MySQLGraphProvider implements GraphProvider {
                 } else {
                     g = graphList.get(graphList.size() - 1);
                 }
-                g.addPoint(new SingleDot(rs.getTimestamp("Tstamp"), rs.getDouble("Val")));
+                g.addPoint(new SingleDot(new LocalDate(rs.getTimestamp("Tstamp")), rs.getDouble("Val")));
             }
         });
 
