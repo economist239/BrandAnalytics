@@ -11,7 +11,7 @@ import ru.brandanalyst.core.model.Article;
  * Time: 10:30 PM
  */
 public interface AbstractAnalyzer {
-    void init(ProvidersHandler pureProvedrsHandler);
+    void init(ProvidersHandler pureProvidersHandler);
 
     void onStart();
 

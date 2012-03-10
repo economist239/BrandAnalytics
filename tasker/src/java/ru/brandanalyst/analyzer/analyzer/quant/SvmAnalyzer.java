@@ -16,10 +16,14 @@ import java.util.Map;
  *         Date: 03.03.12
  */
 public class SvmAnalyzer implements AbstractAnalyzer {
-    private static final int NEGATIVE_SVM_TICKER_ID = 2;
-    private static final int POSITIVE_SVM_TICKER_ID = 3;
+    // according to table Ticker in ba_dirty and ba_pure
+    private static final int NEGATIVE_SVM_TICKER_ID = 4;
+    private static final int NEUTRAL_SVM_TICKER_ID = 3;  // TODO: add graph for neutral references !
+    private static final int POSITIVE_SVM_TICKER_ID = 2;
+
     private SVMClassifier classifierNegative;
     private SVMClassifier classifierPositive;
+
     private GraphProvider graphProvider;
 
     private Map<Long, Graph> graphDepotPositive;
