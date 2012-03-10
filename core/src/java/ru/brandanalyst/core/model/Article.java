@@ -1,6 +1,8 @@
 package ru.brandanalyst.core.model;
 
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -11,6 +13,9 @@ import java.util.Date;
  * Time: 20:32
  */
 public class Article {
+    public static final String DATE_FORMAT = "dd MMM yyyy";
+    private static final DateFormat FORMATTER = new SimpleDateFormat(DATE_FORMAT);
+
     private long id;
     private long brandId;
     private long sourceId;
@@ -110,6 +115,10 @@ public class Article {
     /**
      * @return дата статьи
      */
+    public String getDate() {
+        return FORMATTER.format(tstamp);
+    }
+    
     public Date getTstamp() {
         return tstamp;
     }
