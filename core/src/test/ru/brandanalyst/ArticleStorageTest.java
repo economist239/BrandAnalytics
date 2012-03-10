@@ -6,8 +6,10 @@ import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.bdb.ArticleKVStorage;
 import ru.brandanalyst.core.db.provider.mongo.ArticleStorage;
 import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.util.Cf;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -59,11 +61,14 @@ public class ArticleStorageTest {
     @Test
     public void testShow() throws Exception {
         ArticleStorage storage = new ArticleStorage("localhost", 27017);
+        final List<Integer> counter = Cf.newList();
         storage.seeArticles(new EntityVisitor<Article>() {
             @Override
             public void visitEntity(Article e) {
+                counter.add(1);
                 System.out.println(e.getSourceId() + " " + e.getBrandId() + " " + e.getTitle() );
             }
         });
+        System.out.println("articles count: " + counter.size());
     }
 }
