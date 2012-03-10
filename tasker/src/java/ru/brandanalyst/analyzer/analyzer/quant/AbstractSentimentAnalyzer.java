@@ -57,10 +57,10 @@ public abstract class AbstractSentimentAnalyzer implements AbstractAnalyzer {
     protected void addPointToGraph(final Article article, final long brandId, final Map<Long, Graph> graphDepot) {
         if (graphDepot.containsKey(brandId)) {
             Graph graph = graphDepot.get(brandId);
-            graph.addPoint(article.getTstamp(), 1);
+            graph.addPoint(article.getTstamp().toLocalDate(), 1);
         } else {
             Graph graph = new Graph();
-            graph.addPoint(article.getTstamp(), 1);
+            graph.addPoint(article.getTstamp().toLocalDate(), 1);
             graphDepot.put(brandId, graph);
         }
     }
