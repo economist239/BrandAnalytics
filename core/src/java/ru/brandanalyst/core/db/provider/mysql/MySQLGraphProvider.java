@@ -57,11 +57,11 @@ public class MySQLGraphProvider implements GraphProvider {
                 SingleDot d = it.next();
                 ps.setLong(1, brandId);
                 ps.setLong(2, tickerId);
-                ps.setTimestamp(3, d.getDate());
+                ps.setDate(3, new java.sql.Date(d.getDate().getTime()));
                 ps.setDouble(4, d.getValue());
                 ps.setLong(5, brandId);
                 ps.setLong(6, tickerId);
-                ps.setTimestamp(7, d.getDate());
+                ps.setDate(7, new java.sql.Date(d.getDate().getTime()));
             }
 
             @Override
@@ -122,7 +122,7 @@ public class MySQLGraphProvider implements GraphProvider {
                         } else {
                             g = graphList.get(graphList.size() - 1);
                         }
-                        g.addPoint(new SingleDot(rs.getTimestamp("Tstamp"), rs.getDouble("Val")));
+                        g.addPoint(new SingleDot(rs.getDate("Tstamp"), rs.getDouble("Val")));
                     }
                 });
 

@@ -13,7 +13,7 @@ public class Time {
     private Time() {
     }
 
-    public static Timestamp getSimpleDate(final Timestamp date) {
-        return new Timestamp(new Date(date.getYear(), date.getMonth(), date.getDay()).getTime());
+    public static Date getSimpleDate(final Date date) {
+        return new Date(date.getYear(), date.getMonth(), date.getDay());
     }
 }

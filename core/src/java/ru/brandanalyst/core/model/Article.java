@@ -1,6 +1,7 @@
 package ru.brandanalyst.core.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Модель новостной статьи
@@ -16,7 +17,7 @@ public class Article {
     private String title;
     private String content;
     private String link;
-    private Timestamp tstamp;
+    private Date tstamp;
     private int numLikes;
 
     /**
@@ -29,7 +30,7 @@ public class Article {
      * @param tstamp   время публикования
      * @param numLikes количество лайков
      */
-    public Article(long id, long brandId, long sourceId, String title, String content, String link, Timestamp tstamp, int numLikes) {
+    public Article(long id, long brandId, long sourceId, String title, String content, String link, Date tstamp, int numLikes) {
         this.id = id;
         this.sourceId = sourceId;
         this.title = title;
@@ -49,7 +50,7 @@ public class Article {
      * @param tstamp   время публикования
      * @param numLikes количество лайков
      */
-    public Article(long brandId, long sourceId, String title, String content, String link, Timestamp tstamp, int numLikes) {
+    public Article(long brandId, long sourceId, String title, String content, String link, Date tstamp, int numLikes) {
         this.id = (long) -1;
         this.sourceId = sourceId;
         this.title = title;
@@ -109,7 +110,7 @@ public class Article {
     /**
      * @return дата статьи
      */
-    public Timestamp getTstamp() {
+    public Date getTstamp() {
         return tstamp;
     }
 

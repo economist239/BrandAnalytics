@@ -58,7 +58,7 @@ public final class MappersHolder {
                     resultSet.getLong("BrandId"),
                     resultSet.getLong("InfosourceId"),
                     resultSet.getString("Title"), resultSet.getString("Content"),
-                    resultSet.getString("Link"), resultSet.getTimestamp("Tstamp"),
+                    resultSet.getString("Link"), resultSet.getDate("Tstamp"),
                     resultSet.getInt("NumLikes"));
         }
     };
@@ -70,7 +70,7 @@ public final class MappersHolder {
                     resultSet.getLong("BrandId"),
                     resultSet.getLong("InfosourceId"),
                     resultSet.getString("Title"), TextConverter.firstPhrase(resultSet.getString("Content")),
-                    resultSet.getString("Link"), resultSet.getTimestamp("Tstamp"),
+                    resultSet.getString("Link"), resultSet.getDate("Tstamp"),
                     resultSet.getInt("NumLikes"));
         }
     };

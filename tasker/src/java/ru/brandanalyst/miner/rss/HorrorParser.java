@@ -4,6 +4,7 @@ import org.horrabin.horrorss.RssItemBean;
 import org.horrabin.horrorss.RssParser;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.util.Batch;
+import ru.brandanalyst.core.util.Time;
 import ru.brandanalyst.miner.util.StringChecker;
 
 import java.sql.Timestamp;
@@ -47,7 +48,7 @@ public class HorrorParser extends AbstractRssParser {
                     String date = item.getPubDate();
                     for (Long id : brandIds) {
                         log.debug("Article added: " + title);
-                        batch.submit(new Article(id, sourceId, title, desc, link, new Timestamp(formatDate(FORMATTER.parse(date)).getTime()), NUM_LIKES));
+                        batch.submit(new Article(id, sourceId, title, desc, link, Time.getSimpleDate(FORMATTER.parse(date)), NUM_LIKES));
                     }
                 }
             }
@@ -58,9 +59,5 @@ public class HorrorParser extends AbstractRssParser {
                 parse();
             }
         }
-    }
-    
-    public static Date formatDate(Date in) {
-        return new Date(in.getYear(), in.getMonth(), in.getDay());
     }
 }

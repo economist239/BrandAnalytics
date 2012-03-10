@@ -1,6 +1,7 @@
 package ru.brandanalyst.core.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,10 +11,10 @@ import java.sql.Timestamp;
  * general model of one dot
  */
 public class SingleDot implements Comparable<SingleDot>{
-    private final Timestamp date;
+    private final Date date;
     private final double value;
 
-    public SingleDot(Timestamp date, double value) {
+    public SingleDot(Date date, double value) {
         this.date = date;
         this.value = value;
     }
@@ -22,7 +23,7 @@ public class SingleDot implements Comparable<SingleDot>{
         return value;
     }
 
-    public Timestamp getDate() {
+    public Date getDate() {
         return date;
     }
 

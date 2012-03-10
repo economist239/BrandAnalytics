@@ -17,7 +17,7 @@ import java.util.*;
  * general model of graph
  */
 public class Graph implements Jsonable {
-    private Map<Timestamp, Double> graph;
+    private Map<Date, Double> graph;
     private String ticker;
 
     public Graph() {
@@ -25,7 +25,7 @@ public class Graph implements Jsonable {
     }
 
     public Graph(List<SingleDot> graph) {
-        this.graph = new HashMap<Timestamp, Double>();
+        this.graph = new HashMap<Date, Double>();
         for (SingleDot d: graph) {
             this.graph.put(d.getDate(), d.getValue());
         }
@@ -37,13 +37,13 @@ public class Graph implements Jsonable {
     }
 
     public Graph(String ticker) {
-        graph = new HashMap<Timestamp, Double>();
+        graph = new HashMap<Date, Double>();
         this.ticker = ticker;
     }
 
     public List<SingleDot> getGraph() {
         List<SingleDot> g = new ArrayList<SingleDot>(graph.size());
-        for (Map.Entry<Timestamp, Double> d: graph.entrySet()) {
+        for (Map.Entry<Date, Double> d: graph.entrySet()) {
             g.add(new SingleDot(d.getKey(), d.getValue()));
         }
         return g;
@@ -57,7 +57,7 @@ public class Graph implements Jsonable {
         addPoint(dot.getDate(), dot.getValue());
     }
 
-    public void addPoint(Timestamp date, double value) {
+    public void addPoint(Date date, double value) {
         date = Time.getSimpleDate(date);
         if (graph.containsKey(date)) {
             graph.put(date, graph.get(date) + value);
