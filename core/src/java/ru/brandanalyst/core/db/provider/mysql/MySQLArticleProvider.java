@@ -49,7 +49,7 @@ public class MySQLArticleProvider extends ArticleProvider {
             public void setValues(PreparedStatement ps, int i) throws SQLException {
                 Article a = it.next();
                 ps.setLong(1, a.getSourceId());
-                ps.setLong(2, a.getId());
+                ps.setLong(2, a.getBrandId());
                 ps.setString(3, a.getTitle());
                 ps.setString(4, a.getContent());
                 ps.setString(5, a.getLink());
