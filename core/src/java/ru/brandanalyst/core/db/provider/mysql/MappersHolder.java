@@ -89,4 +89,12 @@ public final class MappersHolder {
                     resultSet.getString("Name"));
         }
     };
+
+    public final static ParameterizedRowMapper<Mention> MENTION_MAPPER = new ParameterizedRowMapper<Mention>() {
+        @Override
+        public Mention mapRow(ResultSet rs, int i) throws SQLException {
+            return new Mention(new SingleDot(rs.getDate("Tstamp"), rs.getDouble("Val")),
+                    rs.getString("TickerName"), rs.getString("Name"), rs.getInt("TickerId"), rs.getInt("BrandId"));
+        }
+    };
 }

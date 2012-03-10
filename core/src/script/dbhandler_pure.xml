@@ -58,7 +58,6 @@
 
     <bean id="pureMentionProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLMentionProvider">
             <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
-            <property name="namedParameterJdbcTemplate" ref="pureNamedParameterJdbcTemplate"/>
     </bean>
 
     <bean id="pureInformationSourceProvider"

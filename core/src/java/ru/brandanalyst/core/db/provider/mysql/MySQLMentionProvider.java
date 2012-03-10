@@ -21,43 +21,21 @@ import java.util.List;
  * Date: 23.02.12
  * Time: 20:44
  */
-public class MySQLMentionProvider implements MentionProvider{
-    
+public class MySQLMentionProvider implements MentionProvider {
     private SimpleJdbcTemplate jdbcTemplate;
-    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-
-    @Required
-    public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
-        this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
-    }
 
     @Required
     public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
-    
+
     @Override
     public List<Mention> getLatestMentions() {
-        final List<Mention> mentionList = new ArrayList<Mention>();
-        namedParameterJdbcTemplate.query(
+        return jdbcTemplate.query(
                 "SELECT * FROM Graphs"
-                + " INNER JOIN Ticker ON TickerId = Ticker.Id"
-                + " INNER JOIN Brand ON BrandId = Brand.Id"
-                + " AND Tstamp = (SELECT MAX(Tstamp) FROM Graphs) ORDER BY TickerId DESC",
-                new MapSqlParameterSource(),
-                new RowCallbackHandler() {
-                    @Override
-                    public void processRow(ResultSet rs) throws SQLException {
-                        String tickerName = rs.getString("TickerName");
-                        int tickerId = rs.getInt("TickerId");
-                        int brandId = rs.getInt("BrandId");
-                        String brand = rs.getString("Name");
-                        SingleDot dot = new SingleDot(null,rs.getDouble("Val"));
-                        Mention m = new Mention(dot,tickerName,brand,tickerId,brandId);
-                        mentionList.add(m);
-                    }
-                });
-
-        return mentionList;
+                        + " INNER JOIN Ticker ON TickerId = Ticker.Id"
+                        + " INNER JOIN Brand ON BrandId = Brand.Id"
+                        + " AND Tstamp = (SELECT MAX(Tstamp) FROM Graphs) ORDER BY TickerId DESC",
+                MappersHolder.MENTION_MAPPER);
     }
 }
