@@ -17,8 +17,8 @@ public class SvmAnalyzer extends AbstractSentimentAnalyzer {
     @Override
     public void init(ProvidersHandler pureProvidersHandler) {
         super.init(pureProvidersHandler);
-        classifierNegative = ClassifierUtils.loadSVMClassifier("svmclassifiers/svmNegative");
-        classifierPositive = ClassifierUtils.loadSVMClassifier("svmclassifiers/svmPositive");
+        classifierNegative = ClassifierUtils.loadSVMClassifier("svmNegative");
+        classifierPositive = ClassifierUtils.loadSVMClassifier("svmPositive");
     }
 
     @Override
