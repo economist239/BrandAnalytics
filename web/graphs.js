@@ -67,3 +67,14 @@ function getGraph(tickerId) {
 
     });
 }
+
+/*
+//this code for testing. please, don't delete this
+function getGraph(tickerId) {
+
+    var jsonData = '{"chart":{"graph":[[1325365200,472],[1325451600,16],[1328130000,3],[1330722000,1],[1330808400,16],[1330981200,16]],"ticker":"Всего упоминаний в новостях"},"brand":{"brand":"Газпром"}}';
+//    var data = $.parseJSON(jsonData);
+
+    plotGraph(jsonData);
+}
+*/

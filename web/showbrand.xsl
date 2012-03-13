@@ -5,7 +5,8 @@
 
     <xsl:template name="head">
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="3rd-party/highstock/js/highstock.js"/>
+        <script type="text/javascript" src="3rd-party/highstock-1.1.4/js/highstock.js"/>
+
         <script type="text/javascript" src="3rd-party/highstock/js/modules/exporting.js"/>
         <script type="text/javascript" src="3rd-party/bootstrap2/bootstrap/js/bootstrap.js"/>
         <script type="text/javascript" src="graphs.js"/>
@@ -38,7 +39,7 @@
             </ul>
         </div>
     </xsl:template>
-    
+
     <xsl:template name="main">
         <script type="text/javascript">
             document.getElementById("navbar_analysis").setAttribute("class", "active");
@@ -141,7 +142,7 @@
                     <br/>
                 </p>
             </div>
-    </xsl:template> 
+    </xsl:template>
 
     <xsl:template match="page/data[@id='getTickers']/collection" mode="show">
         <h3><xsl:text>Анализ</xsl:text></h3>

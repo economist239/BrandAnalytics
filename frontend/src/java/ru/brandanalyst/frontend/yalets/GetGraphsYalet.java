@@ -24,13 +24,14 @@ public class GetGraphsYalet extends AbstractDbYalet {
     private static final Logger log = Logger.getLogger(GetGraphsYalet.class);
 
     public void process(final InternalRequest req, final InternalResponse res) {
-        log.debug("Incoming");
         final long brandId = req.getLongParameter("brand");
         final long tickerId = req.getLongParameter("ticker");
 
         final Graph graph = providersHandler.getGraphProvider().getGraphByTickerAndBrand(brandId, tickerId);
         final Brand brand = providersHandler.getBrandProvider().getBrandById(brandId);
-        res.add(new Chart(graph, brand));
+        Chart chart = new Chart(graph, brand);
+        res.add(chart);
+        log.debug(chart.asJson().toString());
     }
     private static class Chart implements Jsonable, SelfWriter{
         public final Graph graph;
