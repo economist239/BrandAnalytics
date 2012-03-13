@@ -41,7 +41,7 @@ public class DefaultSingleYaletProcessor implements SingleYaletProcessor {
     public void processYalet(final String yaletId, final String yaletType, final ContentHandler handler, final InternalRequest request, final InternalResponse response) throws SAXException {
         final Yalet yalet = yaletResolver.findYalet(yaletId);
 
-        log.info("Starting process yalet => {" + yaletId + "}\n type = " + yaletType);
+        log.info("Starting process yalet => {" + yaletId + "} type = " + yaletType);
         final long startTime = System.currentTimeMillis();
         try {
             yalet.process(request, response);

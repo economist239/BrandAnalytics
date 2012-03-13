@@ -7,8 +7,8 @@
 var DEFAULT_TICKER = 1;
 
 $(document).ready(function () {
-    //alert(ticker);
-    getGraph(1);
+    getGraph(DEFAULT_TICKER);
+//    getGraphTest();
 });
 
 
@@ -28,13 +28,18 @@ function plotGraph(jsonData) {
 
     window.chart = new Highcharts.StockChart({
         chart:{
-            renderTo:'chartContainer'
+            renderTo:'chartContainer',
         },
-        rangeSelector:{
-            selected:1
+        //to change range selector see data-grouping example
+        rangeSelector: {
+            selected: 1
         },
+
         title:{
             text:data.brand.brand
+        },
+        yAxis: {
+            min: 0
         },
         series:[
             {
@@ -45,6 +50,8 @@ function plotGraph(jsonData) {
                 }
             }
         ]
+        //see flags general
+        //see styled scroll bar
     });
 
 }
@@ -68,13 +75,12 @@ function getGraph(tickerId) {
     });
 }
 
-/*
+
 //this code for testing. please, don't delete this
-function getGraph(tickerId) {
-
+function getGraphTest() {
     var jsonData = '{"chart":{"graph":[[1325365200,472],[1325451600,16],[1328130000,3],[1330722000,1],[1330808400,16],[1330981200,16]],"ticker":"Всего упоминаний в новостях"},"brand":{"brand":"Газпром"}}';
-//    var data = $.parseJSON(jsonData);
-
     plotGraph(jsonData);
 }
-*/
+
+
+

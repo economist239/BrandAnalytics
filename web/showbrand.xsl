@@ -7,7 +7,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="3rd-party/highstock-1.1.4/js/highstock.js"/>
 
-        <script type="text/javascript" src="3rd-party/highstock/js/modules/exporting.js"/>
+        <script type="text/javascript" src="3rd-party/highstock-1.1.4/js/modules/exporting.js"/>
         <script type="text/javascript" src="3rd-party/bootstrap2/bootstrap/js/bootstrap.js"/>
         <script type="text/javascript" src="graphs.js"/>
         <script type="text/javascript" src="show-brand.js"/>
@@ -157,7 +157,7 @@
                 </xsl:for-each>
             </select>
             <button class="btn primary" type="submit" value="посмотреть" onclick="graph()">посмотреть</button>
-        <div id="chartContainer" style="height: 500px; min-width: 500px"/>
+        <div id="chartContainer" />
     </xsl:template>
 
     <xsl:template match="page/data[@id='getArticlesForBrand']/collection" mode="show">
