@@ -17,7 +17,7 @@ import java.sql.SQLException;
  */
 public class SSHTunnelDataSource extends BasicDataSource implements InitializingBean {
     private static final Logger log = Logger.getLogger(SSHTunnelDataSource.class);
-
+    private static boolean isConnected = false;
     protected JSch jsch;
     protected Session session;
     protected String host;
@@ -78,24 +78,27 @@ public class SSHTunnelDataSource extends BasicDataSource implements Initializing
     @Override
     public void afterPropertiesSet() {
         jsch = new JSch();
-        if (null == session || !session.isConnected()) {
-            try {
-                session = jsch.getSession(sshUsername, host, port);
-                session.setPassword(sshPassword);
+        if(!isConnected){
+            if (null == session || !session.isConnected()) {
+                try {
+                    session = jsch.getSession(sshUsername, host, port);
+                    session.setPassword(sshPassword);
 
-                java.util.Properties config = new java.util.Properties();
-                config.put("StrictHostKeyChecking", "no");
-                session.setConfig(config);
+                    java.util.Properties config = new java.util.Properties();
+                    config.put("StrictHostKeyChecking", "no");
+                    session.setConfig(config);
 
-                log.info("Открытие ssh соединения");
-                session.connect();
-                log.info("Tunnel status: " + session.isConnected());
-                log.info("Устанавливаем туннель");
-                session.setPortForwardingL(tunnelLocalPort, tunnelRemoteHost, tunnelRemotePort);
-            } catch (Exception e) {
-                log.error("Ошибка при построении соединения", e);
-                System.exit(1);
+                    log.info("Открытие ssh соединения");
+                    session.connect();
+                    log.info("Tunnel status: " + session.isConnected());
+                    log.info("Устанавливаем туннель");
+                    session.setPortForwardingL(tunnelLocalPort, tunnelRemoteHost, tunnelRemotePort);
+                } catch (Exception e) {
+                    log.error("Ошибка при построении соединения", e);
+                    System.exit(1);
+                }
             }
+            isConnected = true;
         }
     }
 }

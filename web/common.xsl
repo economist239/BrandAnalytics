@@ -87,4 +87,5 @@
         </ul>
     </xsl:template>
     <xsl:template name="run"/>
+    <xsl:template name="header"/>
 </xsl:stylesheet>

@@ -9,35 +9,30 @@
 
         <script type="text/javascript" src="3rd-party/highstock-1.1.4/js/modules/exporting.js"/>
         <script type="text/javascript" src="3rd-party/bootstrap2/bootstrap/js/bootstrap.js"/>
-        <script type="text/javascript" src="graphs.js"/>
-        <script type="text/javascript" src="show-brand.js"/>
-<!--
-        <script type="text/javascript">
-            $(document).ready(function(){
-            $("li#branch-select li").click(function(){
-                var branchId = $(this).children("a").attr("id");
-                if(branchId=="0"){
-                    $("li#brand-select li").css("display","block");
-                }
-                else{
-                    $("li#brand-select li").css("display","none");
-                    $("li#brand-select li[branch-id=" + branchId + "]").css("display","block");
-                }
-            })
-            })
-        </script>
--->
+        <script type="text/javascript" src="includes/js/graphs.js"/>
+        <script type="text/javascript" src="includes/js/show-brand.js"/>
+        <style type="text/css">
+            .smth-large{
+              padding: 9px 14px;
+              font-size: 15px;
+              line-height: normal;
+              -webkit-border-radius: 5px;
+              -moz-border-radius: 5px;
+              border-radius: 5px;
+            }
+        </style>
 
     </xsl:template>
 
     <xsl:template name="header">
-        <h1 align="left"><xsl:value-of select="page/data[@id='getBrand']/brand/name"/></h1>
         <div class="pull-right">
             <ul class="nav nav-pills">
                 <xsl:apply-templates select="page/data[@id='getBranches']/collection" mode="select"/>
                 <xsl:apply-templates select="page/data[@id='getBrands']/collection" mode="select"/>
             </ul>
         </div>
+        <h1 align="left"><xsl:value-of select="page/data[@id='getBrand']/brand/name"/></h1>
+
     </xsl:template>
 
     <xsl:template name="main">
@@ -55,13 +50,16 @@
             <div class="tab-pane" id="analyse">
                 <xsl:apply-templates select="page/data[@id='getTickers']/collection" mode="show"/>
             </div>
+            <div class="tab-pane" id="compare">
+                <xsl:apply-templates select="page/data[@id='getTickers']/collection" mode="show"/>
+            </div>
         </div>
     </xsl:template>
 
     <xsl:template name="brands-select" match="page/data[@id='getBrands']/collection" mode="select">
-        <li id="brand-select" class="dropdown">
+        <li id="brand-select" class="dropdown smth-large">
             <a class="dropdown-toggle" href="#brand-select" data-toggle="dropdown">
-                <xsl:text>Брэнд</xsl:text>
+            <xsl:text>Брэнд</xsl:text>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
@@ -98,7 +96,7 @@
         </xsl:template>-->
 
     <xsl:template match="page/data[@id='getBranches']/collection" mode="select">
-        <li id="branch-select" class="dropdown">
+        <li id="branch-select" class="dropdown smth-large">
             <a class="dropdown-toggle" href="#branch-select" data-toggle="dropdown">
                 <xsl:text>Отрасли</xsl:text>
                 <b class="caret"></b>
@@ -126,7 +124,6 @@
 
     <xsl:template match="page/data[@id='getBrand']/brand" mode="show">
             <div class="content">
-                <h3>
                     <br/>
                     <a>
                         <xsl:attribute name="href">
@@ -134,7 +131,6 @@
                         </xsl:attribute>
                         <xsl:value-of select="name"/>
                     </a>
-                </h3>
                 <p>
                     <b><xsl:text>О компании:</xsl:text></b>
                     <br/>
@@ -142,13 +138,24 @@
                     <br/>
                 </p>
             </div>
-    </xsl:template>
+    </xsl:template> 
 
     <xsl:template match="page/data[@id='getTickers']/collection" mode="show">
         <h3><xsl:text>Анализ</xsl:text></h3>
+            <div class="btn-group" data-toggle="buttons-checkbox" id="graph-select">
+                <xsl:for-each select="ticker-pair">
+                    <button class="btn">
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="@id"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="name"/>
+                    </button>
+                </xsl:for-each>
+            </div>
+            <!--
             <select id="graph-select">
-                <xsl:for-each select="ticker-pair">   <!--id,name-->
-                    <option size="60">
+                <xsl:for-each select="ticker-pair">
+                    <option>
                         <xsl:attribute name="value">
                             <xsl:value-of select="@id"/>
                         </xsl:attribute>
@@ -156,8 +163,9 @@
                     </option>
                 </xsl:for-each>
             </select>
-            <button class="btn primary" type="submit" value="посмотреть" onclick="graph()">посмотреть</button>
-        <div id="chartContainer" />
+            -->
+            <button class="btn primary" type="submit" value="посмотреть" onclick="javascript: BAgetGraph();">посмотреть</button>
+        <div id="chartContainer" style="height: 500px; min-width: 500px"/>
     </xsl:template>
 
     <xsl:template match="page/data[@id='getArticlesForBrand']/collection" mode="show">

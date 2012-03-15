@@ -3,13 +3,11 @@
     <xsl:import href="common.xsl"/>
     <!--<xsl:output method="html" indent="yes" encoding="UTF-8"/>-->
 
-    <!--Variables -->
-    <xsl:variable name="official-sources-type-id">1</xsl:variable>
-    <xsl:variable name="public-sources-type-id">0</xsl:variable>
 
     <xsl:template name="head">
         <script type="text/javascript" src="3rd-party/jquery.js"></script>
         <script type="text/javascript" src="3rd-party/crawler.js"/>
+        <script type="text/javascript" src="includes/js/index.js"/>
         <style type="text/css">
             .redcolor{
             color:red;
@@ -27,70 +25,17 @@
         <div class="marquee" id="mycrawler" align="center" style="-khtml-border-radius:10px">
             <p><a style="padding:0px 10px;" color="blue">Лидеры роста:</a> Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233;</p>
         </div>
-        <script type="text/javascript">
-            marqueeInit({
-            uniqueid: 'mycrawler',
-            style: {
-            'width': '700px',
-            'background': 'lightgrey',
-            'border': '0px solid #CC3300'
-            },
-            inc: 6,
-            mouse: 'cursor driven',
-            moveatleast: 2,
-            neutral: 150,
 
-            savedirection: true
-            });
-        </script>
-        <script type="text/javascript">
-            document.getElementById("navbar_main").setAttribute("class", "active");
-        </script>
-        <script type="text/javascript">
-            function hideUp(){
-                var tableLoc = "table#up-lead";
-                var maxRows = 5;
-                var locator = tableLoc + " > tbody tr";
-                var rowsNum = jQuery(locator).size();
-                if(rowsNum > maxRows){
-                    jQuery(locator+ ":gt(5)").css("display","none");
-                }
-            }
-            function hideDown(){
-                var tableLoc = "table#down-lead";
-                var maxRows = 5;
-                var locator = tableLoc + " > tbody tr";
-                var rowsNum = jQuery(locator).size();
-                if(rowsNum > maxRows){
-                    jQuery(locator+ ":gt(5)").css("display","none");
-                }
-            }
-            function makeCollapsable(tableLoc,maxRows){
-                var locator = tableLoc + " > tbody tr";
-                var rowsNum = jQuery(locator).size();
-                if(rowsNum > maxRows){
-                    jQuery(locator + ":gt(" + maxRows + ")").attr("class","collapsable");
-                }
-            }
-
-            jQuery(document).ready(function(){
-                makeCollapsable("table#down-lead",3);
-                makeCollapsable("table#up-lead",3);
-                jQuery(".collapseController").click(function(){
-                    var loc = jQuery(this).attr("table-target");
-                    jQuery(loc + " tr.collapsable").toggle();
-                })
-            })
-        </script>
 
     </xsl:template>
     <xsl:template name="main"><!--
         <h4>Бренд Аналитик - инновация настоящего, парадигма будущего.</h4>
         <br/>
         <img src="captain-obvious.jpeg" width="400" height="400"/> -->
+
         <span align="right" id="a">Рейтинги упоминаемости по источнику
             <!--<xsl:apply-templates select="page/data[@id='getInformationSources']/collection"/>-->
-            <select class="input-small">
+            <select class="input-large">
                 <option info-source-id="0"><xsl:text>все вместе</xsl:text></option>
                 <option info-source-id="$official-sources-type-id">
                     <xsl:text>Официальные источники</xsl:text>

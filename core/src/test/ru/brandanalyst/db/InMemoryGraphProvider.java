@@ -1,9 +1,14 @@
 package ru.brandanalyst.db;
 
+import org.joda.time.LocalDate;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.model.Graph;
+import ru.brandanalyst.core.model.SingleDot;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -19,16 +24,39 @@ public class InMemoryGraphProvider implements GraphProvider {
 
     @Override
     public Graph getGraphByTickerAndBrand(long brandId, long tickerId) {
-        return new Graph();
+        return getRandomGraphByBrandId(brandId);    
     }
 
     @Override
     public List<Graph> getGraphByTickerAndBrand(long brandId, List<Long> tickerIds) {
-        return new ArrayList<Graph>();
+        ArrayList<Graph> result = new ArrayList<Graph>();
+        for(int i = 0; i < tickerIds.size(); ++ i){
+            result.add(getRandomGraphByBrandId(brandId));
+        }
+        return result;
     }
 
     @Override
     public List<Graph> getGraphsByBrandId(long brandId) {
-        return new ArrayList<Graph>();
+        ArrayList<Graph> result = new ArrayList<Graph>();
+        for(int i = 0; i < 4; ++ i){
+            result.add(getRandomGraphByBrandId(brandId));
+        }
+        return result;
+    }
+    
+    private Graph getRandomGraphByBrandId(long brandId){
+        int N = 100;
+        Graph result = new Graph();
+        List<SingleDot> values = new ArrayList<SingleDot>(N);
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DATE, -N);
+        for(int i = 0; i < N; ++ i){
+            double value = brandId + Math.random();
+            values.add(new SingleDot(new LocalDate(calendar.getTimeInMillis()),value));
+            calendar.add(Calendar.DATE,1);
+        }
+        
+        return result;
     }
 }

@@ -4,43 +4,16 @@
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
 
     <!--Variables -->
-    <xsl:variable name="official-sources-type-id">1</xsl:variable>
+<!--    <xsl:variable name="official-sources-type-id">1</xsl:variable>
     <xsl:variable name="public-sources-type-id">0</xsl:variable>
-
+    -->
     <xsl:template name="head">
         <script type="text/javascript" src="3rd-party/jquery.js"></script>
-        <script type="text/javascript" src="3rd-party/highstock/js/modules/exporting.js"/>
         <script type="text/javascript" src="3rd-party/bootstrap2/bootstrap/js/bootstrap.js"/>
-
     </xsl:template>
 
     <xsl:template name="main">
-        <script type="text/javascript">
-            document.getElementById("navbar_sources").setAttribute("class", "active");
-        </script>
-        <script type="text/javascript">
-            function hideInfoSourcesBySphereId(sphereId){
-                jQuery("tr.info-source-row[sphere-id=" + sphereId + "]").css("display","none")
-            }
-            function showInfoSourcesBySphereId(sphereId){
-                jQuery("tr.info-source-row[sphere-id=" + sphereId + "]").css("display","table-row")
-            }
-            jQuery(document).ready(function(){
-            hideInfoSourcesBySphereId(<xsl:value-of select="$official-sources-type-id"/>)
-            showInfoSourcesBySphereId(<xsl:value-of select="$public-sources-type-id"/>)
-            })
-
-            jQuery(document).ready(
-            jQuery("#tab_public-sources").click(function(){
-            hideInfoSourcesBySphereId(<xsl:value-of select="$official-sources-type-id"/>)
-            showInfoSourcesBySphereId(<xsl:value-of select="$public-sources-type-id"/>)
-            }))
-            jQuery(document).ready(
-            jQuery("#tab_official-sources").click(function(){
-            hideInfoSourcesBySphereId(<xsl:value-of select="$public-sources-type-id"/>)
-            showInfoSourcesBySphereId(<xsl:value-of select="$official-sources-type-id"/>)
-            }))
-        </script>
+        <script type="text/javascript" src="includes/js/showsources.js"></script>
 
         <div class="tab-content">
             <div class="tab-pane active" id="official-sources">
@@ -89,12 +62,12 @@
     </xsl:template>
 
     <xsl:template name="show-sources" match="page/data[@id='getInformationSources']/collection" mode="show">
-            <table class="table table-striped">
+
+        <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Пе</th>
-                        <th>ре</th>
-                        <th>чень</th>
+                        <th>Название</th>
+                        <th>Сайт</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -112,13 +85,10 @@
                             <td>
                                 <a>
                                     <xsl:attribute name="href">
-                                        <xsl:text>http://</xsl:text><xsl:value-of select="website"/>
+                                        <xsl:value-of select="website"/>
                                     </xsl:attribute>
                                     <xsl:value-of select="website"/>
                                 </a>
-                            </td>
-                            <td>
-                                <xsl:value-of select="description"/>
                             </td>
                         </tr>
                     </xsl:for-each>
@@ -129,7 +99,7 @@
     <xsl:template name="leftmenu">
         <ul class="nav nav-tabs nav-stacked">
             <li id="tab_companies"><a href="#companies" data-toggle="tab">Компании</a></li>
-            <li id="tab_official-sources"><a href="#official-sources" data-toggle="tab">Официальные источники</a></li>
+            <li id="tab_official-sources" class="active"><a href="#official-sources" data-toggle="tab">Официальные источники</a></li>
             <li id="tab_public-sources"><a href="#public-sources" data-toggle="tab">Публичные источники</a></li>
             <li id="tab_some"><a href="#some" data-toggle="tab"><del>Метод агрегации</del>  I'm watching you</a></li>
         </ul>
