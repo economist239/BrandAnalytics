@@ -21,8 +21,13 @@
         </javac>
 
         <copy todir="${build.dir}" overwrite="true">
+            <fileset dir="${project.dir}/tasker/svmclassifiers"/>
+        </copy>
+
+        <copy todir="${build.dir}" overwrite="true">
             <fileset dir="${project.dir}/tasker/src/scripts"/>
         </copy>
+
         <!--собирается архив с классом, у которого есть метод main в папку dist-->
         <jar destfile="${dist.dir}/brand-analytics-tasker.jar" basedir="${classes.dir}">
             <manifest>

@@ -16,7 +16,7 @@ public abstract class StubAnalyzer implements AbstractAnalyzer {
     }
 
     @Override
-    public void init(ProvidersHandler pureProvedrsHandler) {
+    public void init(ProvidersHandler pureProvidersHandler) {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 

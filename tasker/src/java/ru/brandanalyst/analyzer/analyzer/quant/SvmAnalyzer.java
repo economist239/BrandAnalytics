@@ -3,39 +3,22 @@ package ru.brandanalyst.analyzer.analyzer.quant;
 import ru.brandanalyst.analyzer.classifiers.SVMClassifier;
 import ru.brandanalyst.analyzer.util.ClassifierUtils;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
-import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.core.model.Graph;
 import weka.core.Instance;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author daddy-bear
  *         Date: 03.03.12
  */
-public class SvmAnalyzer implements AbstractAnalyzer {
-    private static final int NEGATIVE_SVM_TICKER_ID = 2;
-    private static final int POSITIVE_SVM_TICKER_ID = 3;
+public class SvmAnalyzer extends AbstractSentimentAnalyzer {
     private SVMClassifier classifierNegative;
     private SVMClassifier classifierPositive;
-    private GraphProvider graphProvider;
-
-    private Map<Long, Graph> graphDepotPositive;
-    private Map<Long, Graph> graphDepotNegative;
 
     @Override
     public void init(ProvidersHandler pureProvidersHandler) {
-        graphProvider = pureProvidersHandler.getGraphProvider();
-        classifierNegative = ClassifierUtils.loadSVMClassifier("svmclassifiers/svmNegative");
-        classifierPositive = ClassifierUtils.loadSVMClassifier("svmclassifiers/svmPositive");
-    }
-
-    @Override
-    public void onStart() {
-        graphDepotNegative = new HashMap<Long, Graph>();
-        graphDepotPositive = new HashMap<Long, Graph>();
+        super.init(pureProvidersHandler);
+        classifierNegative = ClassifierUtils.loadSVMClassifier("svmNegative");
+        classifierPositive = ClassifierUtils.loadSVMClassifier("svmPositive");
     }
 
     @Override
@@ -45,40 +28,17 @@ public class SvmAnalyzer implements AbstractAnalyzer {
         final Instance instance = ClassifierUtils.createInstance(tweet);
 
         // Attention! yes = 0.0, no = 1.0
-        double positive = classifierPositive.classifyInstance(instance);
+        double positive = this.classifierPositive.classifyInstance(instance);
         if (positive == 0.0) {
-            if (graphDepotPositive.containsKey(brandId)) {
-                Graph graph = graphDepotPositive.get(brandId);
-                graph.addPoint(article.getTstamp().toLocalDate(), 1);
-            } else {
-                Graph graph = new Graph();
-                graph.addPoint(article.getTstamp().toLocalDate(), 1);
-                graphDepotPositive.put(brandId, graph);
-            }
+            addPointToGraph(article, brandId, this.graphDepotPositive);
+        } else {
+            addPointToGraph(article, brandId, this.graphDepotNeutral);
         }
-        double negative = classifierNegative.classifyInstance(instance);
+        double negative = this.classifierNegative.classifyInstance(instance);
         if (negative == 0.0) {
-            if (graphDepotNegative.containsKey(brandId)) {
-                Graph graph = graphDepotNegative.get(brandId);
-                graph.addPoint(article.getTstamp().toLocalDate(), 1);
-            } else {
-                Graph graph = new Graph();
-                graph.addPoint(article.getTstamp().toLocalDate(), 1);
-                graphDepotNegative.put(brandId, graph);
-            }
+            addPointToGraph(article, brandId, this.graphDepotNegative);
+        } else {
+            addPointToGraph(article, brandId, this.graphDepotNeutral);
         }
-    }
-
-    @Override
-    public void flush() {
-        for (Map.Entry<Long, Graph> e: graphDepotNegative.entrySet()) {
-            graphProvider.writeGraph(e.getValue(), e.getKey(), NEGATIVE_SVM_TICKER_ID);
-        }
-        graphDepotNegative.clear();
-
-        for (Map.Entry<Long, Graph> e: graphDepotPositive.entrySet()) {
-            graphProvider.writeGraph(e.getValue(), e.getKey(), POSITIVE_SVM_TICKER_ID);
-        }
-        graphDepotPositive.clear();
     }
 }

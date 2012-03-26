@@ -150,10 +150,6 @@ public class DefaultSaxHandler implements SaxHandler {
             final Class<?> valueClass = valueInfo.getClazz();
             if (isAttribute(valueClass)) {
                 final String name = toStandart(property.getKey());
-                System.out.println(attributes);
-                System.out.println(name);
-                System.out.println(valueInfo);
-
                 attributes.addAttribute("", name, name, XmlUtil.NULL_TYPE, valueInfo.getValue().toString());
             }
         }

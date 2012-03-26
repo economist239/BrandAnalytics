@@ -17,8 +17,8 @@ public class CopyArticlesAnalyzer extends StubAnalyzer {
     Batch<Article> copyBatch;
 
     @Override
-    public void init(ProvidersHandler pureProvedrsHandler) {
-        final ArticleProvider articleProvider = pureProvedrsHandler.getArticleProvider();
+    public void init(ProvidersHandler pureProvidersHandler) {
+        final ArticleProvider articleProvider = pureProvidersHandler.getArticleProvider();
         copyBatch = new Batch<Article>() {
             @Override
             public void handle(List<Article> articles) {

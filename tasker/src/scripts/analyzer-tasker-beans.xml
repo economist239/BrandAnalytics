@@ -14,6 +14,7 @@
                 <bean class="ru.brandanalyst.analyzer.analyzer.quant.CopyArticlesAnalyzer"/>
                 <bean class="ru.brandanalyst.analyzer.analyzer.quant.GraphsAnalyzer"/>
                 <bean class="ru.brandanalyst.analyzer.analyzer.quant.SvmAnalyzer"/>
+                <bean class="ru.brandanalyst.analyzer.analyzer.quant.RandomAnalyzer"/>
             </list>
         </property>
     </bean>

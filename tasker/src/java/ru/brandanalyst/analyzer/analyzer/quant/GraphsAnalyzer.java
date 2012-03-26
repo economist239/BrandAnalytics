@@ -31,8 +31,8 @@ public class GraphsAnalyzer implements AbstractAnalyzer {
     private Map<Long, Graph> graphDepot;
 
     @Override
-    public void init(ProvidersHandler pureProvedrsHandler) {
-        graphProvider = pureProvedrsHandler.getGraphProvider();
+    public void init(ProvidersHandler pureProvidersHandler) {
+        graphProvider = pureProvidersHandler.getGraphProvider();
     }
 
     @Override
