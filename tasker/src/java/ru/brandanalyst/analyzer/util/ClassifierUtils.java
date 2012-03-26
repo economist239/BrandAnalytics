@@ -1,5 +1,6 @@
 package ru.brandanalyst.analyzer.util;
 
+import org.apache.log4j.Logger;
 import ru.brandanalyst.analyzer.classifiers.SVMClassifier;
 import ru.brandanalyst.core.util.Su;
 import weka.core.Attribute;
@@ -11,14 +12,13 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Alexandra Mikhaylova mikhaylova@yandex-team.ru
  */
 public class ClassifierUtils {
     private static final List<String> dictionary = new ArrayList<String>();
-    private static final Logger log = Logger.getLogger(ClassifierUtils.class.getName());
+    private static final Logger log = Logger.getLogger(ClassifierUtils.class);
 
     public static Instances getInstances(final String fileName, final boolean positive) {
         dictionary.addAll(getDictionary("tasker/dictionary/positive.txt"));

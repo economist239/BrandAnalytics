@@ -38,7 +38,7 @@ public abstract class AbstractRssParser implements Runnable {
         try {
             parse();
         } catch (Exception e) {
-            log.error("error while processing " + url, e);
+            log.error("error while processing " + url);
         }
     }
 }
