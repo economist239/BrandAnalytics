@@ -1,12 +1,14 @@
 package ru.brandanalyst.miner.rss;
 
+import org.apache.commons.lang.StringUtils;
 import org.junit.Assert;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.core.util.Batch;
 import ru.brandanalyst.core.util.test.AbstractTest;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -43,5 +45,11 @@ public class RssTest extends AbstractTest {
         HorrorParser parser = new HorrorParser("./tasker/src/test/ru/brandanalyst/miner/rss/fake-rss.xml", 1, b);
         parser.parse();
         b.flush();
+    }
+
+    public void testDateParsing() throws Exception {
+        String date = StringUtils.escape("Tue, 17 Apr 2012 09:24:00 +0400");
+        DateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz");
+        System.out.print(dateFormat.parse(date));
     }
 }
