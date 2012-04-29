@@ -18,6 +18,9 @@ public class ArticleContentPostProcessor extends ArticlePostProcessor {
         }
         if (entity.getContent() != null && entity.getTitle() != null && !(entity.getContent().isEmpty()) && !(entity.getTitle().isEmpty())) {
 
+            //TODO
+
+            return entity;
         }
         return null;
     }
