@@ -14,7 +14,11 @@ public abstract class Batch<T> {
     private List<T> batchList;
 
     public Batch() {
-        batchList = new ArrayList<T>(BATCH_SIZE);
+        this(BATCH_SIZE);
+    }
+
+    public Batch(final int size) {
+        batchList = new ArrayList<T>(size);
     }
 
     public synchronized void submit(T element) {

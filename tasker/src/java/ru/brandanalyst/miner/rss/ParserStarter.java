@@ -24,7 +24,7 @@ public class ParserStarter extends AbstractGrabberTask {
         AbstractRssParser.setDictionary(handler.getBrandDictionaryProvider().getDictionary());
         List<InfoSource> infoSources = handler.getInformationSourceProvider().getAllInfoSources();
         final ArticleProvider articleProvider = handler.getArticleProvider();
-        Batch<Article> batch = new Batch<Article>() {
+        Batch<Article> batch = new Batch<Article>(10) {
             @Override
             public void handle(List<Article> articles) {
                 articleProvider.writeListOfArticlesToDataStore(articles);
