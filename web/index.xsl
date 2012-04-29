@@ -23,8 +23,8 @@
     </xsl:template>
     <xsl:template name="run">
         <div class="marquee" id="mycrawler" align="center" style="-khtml-border-radius:10px">
-            <p><a style="padding:0px 10px;" color="blue">Лидеры роста:</a> Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233;</p>
-        </div>
+     <!--       <p><a style="padding:0px 10px;" color="blue">Лидеры роста:</a> Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233;</p>
+     -->   </div>
 
 
     </xsl:template>
@@ -53,14 +53,9 @@
     <xsl:include href="includes/show-brands-mention.xsl"/>
 
     <xsl:template name="leftmenu">
-        <table class="table">
-            <thead>
-                <tr><th><xsl:text>Новости</xsl:text></th></tr>
-            </thead>
-            <tbody>
+                <tr><th><h3><xsl:text>Новости</xsl:text></h3></th></tr>
+                <br/><br/>
                 <xsl:apply-templates select="page/data[@id='getNewestArticles']/collection" mode="show"/>
-            </tbody>
-        </table>
     </xsl:template>
 
     <xsl:template match="page/data[@id='getNewestArticles']/collection" mode="show">
