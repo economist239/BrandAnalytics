@@ -12,6 +12,8 @@ import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.store.SimpleFSDirectory;
 import org.apache.lucene.util.Version;
 import org.joda.time.LocalDateTime;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Params;
@@ -28,44 +30,36 @@ import java.util.List;
  * Date: 2/9/12
  * Time: 3:20 PM
  */
-public class Searcher {
-    private static final Logger log = Logger.getLogger(Searcher.class);
-
+public class Searcher implements InitializingBean {
     /**
      * максимальное количество документов, которые заполняют выдачу
      */
-    private final int MAX_DOC = 1000;
+    private static final int MAX_DOC = 1000;
 
     private String indexDirBrand;
     private String indexDirArticle;
     private IndexSearcher indexSearcherBrand;
     private IndexSearcher indexSearcherArticle;
 
+    @Required
     public void setIndexDirBrand(String indexDirBrand) {
         this.indexDirBrand = indexDirBrand;
     }
 
+    @Required
     public void setIndexDirArticle(String indexDirArticle) {
         this.indexDirArticle = indexDirArticle;
     }
 
-    /**
-     * Метод, создающий соединение с индексами
-     */
-    public void getReadyForSearch() {
-        try {
-            indexSearcherBrand = new IndexSearcher(new SimpleFSDirectory(new File(indexDirBrand)));
-            indexSearcherArticle = new IndexSearcher(new SimpleFSDirectory(new File(indexDirArticle)));
-        } catch (IOException e) {
-            log.info("Must create index before use UI");
-        }
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        indexSearcherBrand = new IndexSearcher(new SimpleFSDirectory(new File(indexDirBrand)));
+        indexSearcherArticle = new IndexSearcher(new SimpleFSDirectory(new File(indexDirArticle)));
     }
 
     /**
      * Поиск по брендам на основе их описания
      *
-     * @throws org.apache.lucene.queryParser.ParseException
-     * @throws IOException
      */
     public List<Brand> searchBrandByDescription(String query) {
         try {
@@ -76,8 +70,8 @@ public class Searcher {
 
             ScoreDoc[] hits = indexSearcherBrand.search(search, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
             List<Brand> lst = new ArrayList<Brand>();
-            for (int i = 0; i < hits.length; i++) {
-                Document doc = indexSearcherBrand.doc(hits[i].doc);
+            for (ScoreDoc hit : hits) {
+                Document doc = indexSearcherBrand.doc(hit.doc);
                 lst.add(brandMap(doc));
             }
             return lst;
@@ -91,8 +85,6 @@ public class Searcher {
     /**
      * Поиск по новостям на основе их содержания
      *
-     * @throws ParseException
-     * @throws IOException
      */
     public List<Article> searchArticleByContent(String query) {
         try {
@@ -103,8 +95,8 @@ public class Searcher {
 
             ScoreDoc[] hits = indexSearcherArticle.search(search, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
             List<Article> lst = new ArrayList<Article>();
-            for (int i = 0; i < hits.length; i++) {
-                Document doc = indexSearcherArticle.doc(hits[i].doc);
+            for (ScoreDoc hit : hits) {
+                Document doc = indexSearcherArticle.doc(hit.doc);
                 lst.add(articleMap(doc));
             }
             return lst;

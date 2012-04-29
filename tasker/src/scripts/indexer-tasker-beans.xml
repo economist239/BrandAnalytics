@@ -10,6 +10,6 @@
     <bean id="indexer" class="ru.brandanalyst.indexer.BuildIndexTask">
         <property name="directoryBrand" value="index_brand/"/>
         <property name="directoryArticle" value="index_article/"/>
-        <property name="providersHandler" ref="dirtyProvidersHandler"/>
+        <property name="providersHandler" ref="pureProvidersHandler"/>
     </bean>
 </beans>
