@@ -50,7 +50,7 @@
         <xsl:apply-templates select="page/data[@id='getLatestMentions']/collection"/>
         </div>
     </xsl:template>
-    <xsl:include href="includes/showbrandsmention.xsl"/>
+    <xsl:include href="includes/show-brands-mention.xsl"/>
 
     <xsl:template name="leftmenu">
         <table class="table">
