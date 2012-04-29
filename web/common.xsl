@@ -39,6 +39,7 @@
 
                                 <form class="navbar-search pull-right" id="form-search" method="get" action="/search.xml">
                                     <input type="text" class="search-query" placeholder="поиск по брендам" name="query"/>
+                                <!--    <input type="submit" value="искать"/>   -->
                                 </form>
                             </div>
 

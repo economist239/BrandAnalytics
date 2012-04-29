@@ -33,7 +33,7 @@ public class SearchYalet implements Yalet {
             return;
         }
 
-        if (queryType != null) {
+        if (queryType == null) {
             res.add(searcher.searchBrandByDescription(query));
         } else {
             res.add(searcher.searchArticleByContent(query));

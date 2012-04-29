@@ -6,7 +6,7 @@
 
     <xsl:template name="head">
         <script type="text/javascript" src="3rd-party/jquery.js"></script>
-        <script type="text/javascript" src="3rd-party/crawler.js"/>
+        <!--<script type="text/javascript" src="3rd-party/crawler.js"/>   -->
         <script type="text/javascript" src="includes/js/index.js"/>
         <style type="text/css">
             .redcolor{
