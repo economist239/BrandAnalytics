@@ -3,16 +3,17 @@ package ru.brandanalyst.core.db.provider.mongo;
 import com.mongodb.*;
 import org.joda.time.LocalDateTime;
 import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.ArticleForWeb;
+import ru.brandanalyst.core.util.Cf;
 
-import java.net.UnknownHostException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,25 +21,41 @@ import java.util.List;
  * Date: 2/19/12
  * Time: 7:35 PM
  */
-public class ArticleStorage extends ArticleProvider implements DisposableBean {
+public class ArticleStorage extends ArticleProvider implements InitializingBean, DisposableBean {
     private final static int BATCH_SIZE = 1024;
-    private final static String DB_NAME = "ba-dirty";
-    private final static String COLLECTION_NAME = "article-collection";
     public static final String MONGO_ID = "_id";
-    private final Mongo mongo;
-    private final DB db;
-    private final DBCollection coll;
+    private Mongo mongo;
+    private DBCollection coll;
+    private String host;
+    private int port;
+    private String dbName;
+    private String collectionName;
 
+    @Required
+    public void setHost(String host) {
+        this.host = host;
+    }
 
+    @Required
+    public void setPort(int port) {
+        this.port = port;
+    }
 
-    public ArticleStorage(String host, int port) {
-        try {
-            mongo = new Mongo(host, port);
-            db = mongo.getDB(DB_NAME);
-            coll = db.getCollection(COLLECTION_NAME);
-        } catch (UnknownHostException e) {
-            throw new RuntimeException(e);
-        }
+    @Required
+    public void setDbName(String dbName) {
+        this.dbName = dbName;
+    }
+
+    @Required
+    public void setCollectionName(String collectionName) {
+        this.collectionName = collectionName;
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        mongo = new Mongo(host, port);
+        DB db = mongo.getDB(dbName);
+        coll = db.getCollection(collectionName);
     }
 
     private static List<DBObject> wrap(List<Article> articles) {
@@ -95,6 +112,16 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
     }
 
     @Override
+    public List<Article> getAllOfficialArticlesByBrand(long brandId) {
+        throw new UnsupportedOperationException("unsupported method in MONGO DB");
+    }
+
+    @Override
+    public List<Article> getArticlesWithCondition(String whereClause) {
+        throw new UnsupportedOperationException("unsupported method in MONGO DB");
+    }
+
+    @Override
     public List<Article> getAllArticlesBySourceId(long sourceId) {
         throw new UnsupportedOperationException("unsupported method in MONGO DB");
 
@@ -116,32 +143,30 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
     }
 
     @Override
-    public List<Article> getAllOfficialArticlesByBrand(long brandId) {
-        throw new UnsupportedOperationException("unsupported method in MONGO DB");
-    }
-
-    @Override
     public List<Article> getAllArticles() {
         throw new UnsupportedOperationException("unsupported method in MONGO DB");
     }
 
     @Override
-    public List<Article> getArticlesWithCondition(String whereClause) {
-        throw new UnsupportedOperationException("unsupported method in MONGO DB");
-    }
-
-    @Override
     public void visitArticles(EntityVisitor<Article> visitor) {
-        seeArticles(visitor);
-        coll.drop();
-    }
-
-    public void seeArticles(EntityVisitor<Article> visitor) {
         DBCursor cursor = coll.find().batchSize(BATCH_SIZE);
+        BasicDBObject delete = new BasicDBObject();
+        
+        List<Object> list = Cf.newList();
+
         while (cursor.hasNext()) {
             DBObject next = cursor.next();
+            list.add(next.get(MONGO_ID));
             visitor.visitEntity(unwrap(next));
         }
+
+        delete.append(MONGO_ID, list);
+
+        System.out.println(list.size());
+        System.out.println(coll.remove(delete));
+        System.out.println(coll.find().size());
+        //System.out.println(coll.remove(batchToDelete).getError());
+        //TODO this realy works??
     }
 
     @Override

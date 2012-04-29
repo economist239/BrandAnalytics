@@ -42,16 +42,6 @@ public class InMemoryArticleProvider extends ArticleProvider {
     }
 
     @Override
-    public Article getArticleBySourceId(long sourceId) {
-        for (Article a: depot) {
-            if (a.getSourceId() == sourceId) {
-                return a;
-            }
-        } 
-        return null;
-    }
-
-    @Override
     public List<Article> getAllArticlesBySourceId(long sourceId) {
         final List<Article> as = new ArrayList<Article>();
         for (Article a: depot) {
@@ -85,18 +75,8 @@ public class InMemoryArticleProvider extends ArticleProvider {
     }
 
     @Override
-    public List<Article> getAllOfficialArticlesByBrand(long brandId) {
-        return getAllArticlesByBrand(brandId);
-    }
-
-    @Override
     public List<Article> getAllArticles() {
         return new ArrayList<Article>(depot);
-    }
-
-    @Override
-    public List<Article> getArticlesWithCondition(String whereClause) {
-        return getAllArticles();
     }
 
     @Override
@@ -139,15 +119,5 @@ public class InMemoryArticleProvider extends ArticleProvider {
             }
         }
         return as;
-    }
-
-    @Override
-    public void setAnalyzed(List<Long> ids) {
-
-    }
-
-    @Override
-    public List<Article> getOnlyNotAnalyzedArticles() {
-        return depot;
     }
 }
