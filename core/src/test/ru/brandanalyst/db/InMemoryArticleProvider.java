@@ -133,7 +133,6 @@ public class InMemoryArticleProvider extends ArticleProvider {
     @Override
     public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId) {
         final List<Article> as = new ArrayList<Article>();
-        int count = 0;
         for (Article a: depot) {
             if (a.getBrandId() == brandId && a.getSourceId() == sourceId) {
                 as.add(a);

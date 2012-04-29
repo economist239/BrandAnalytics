@@ -138,33 +138,4 @@ public class MySQLArticleProvider extends ArticleProvider {
         return jdbcTemplate.query("SELECT * FROM Article WHERE BrandId =? AND SourceId=?",
                 MappersHolder.ARTICLE_MAPPER, brandId, sourceId);
     }
-
-    /*
-    *
-    * only for dirty db!!
-     */
-    @Override
-    public List<Article> getOnlyNotAnalyzedArticles() {
-        return jdbcTemplate.query("SELECT * FROM Article WHERE Analyzed=0", MappersHolder.ARTICLE_MAPPER);
-    }
-
-    /*
-    *
-    * only for dirty db!!
-     */
-    @Override
-    public void setAnalyzed(final List<Long> ids) {
-        final Iterator<Long> it = ids.iterator();
-        jdbcTemplate.getJdbcOperations().batchUpdate("UPDATE Article SET Analyzed=1 WHERE Id=?", new BatchPreparedStatementSetter() {
-            @Override
-            public void setValues(PreparedStatement preparedStatement, int i) throws SQLException {
-                preparedStatement.setLong(1, it.next());
-            }
-
-            @Override
-            public int getBatchSize() {
-                return ids.size();
-            }
-        });
-    }
 }

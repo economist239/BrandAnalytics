@@ -160,16 +160,6 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
     }
 
     @Override
-    public void setAnalyzed(List<Long> ids) {
-        throw new UnsupportedOperationException("unsupported method in MONGO DB");
-    }
-
-    @Override
-    public List<Article> getOnlyNotAnalyzedArticles() {
-        throw new UnsupportedOperationException("unsupported method in MONGO DB");
-    }
-
-    @Override
     public void destroy() throws Exception {
         mongo.close();
     }

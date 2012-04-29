@@ -39,14 +39,4 @@ public abstract class ArticleProvider {
     public abstract List<Article> getTopArticles(int topSize);
 
     public abstract List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId);
-
-    /*
-    *
-    * only for dirty db!!
-    */
-    public abstract void setAnalyzed(final List<Long> ids);
-
-
-
-    public abstract List<Article> getOnlyNotAnalyzedArticles();
 }
