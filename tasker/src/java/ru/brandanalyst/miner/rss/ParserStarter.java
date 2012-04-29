@@ -19,7 +19,6 @@ import java.util.concurrent.TimeUnit;
 public class ParserStarter extends AbstractGrabberTask {
     private static final int POOL_SIZE = 10;
     private static final Logger log = Logger.getLogger(ParserStarter.class);
-    private final long maxWaitingTime = 100000;
 
     protected void grab() {
         AbstractRssParser.setDictionary(handler.getBrandDictionaryProvider().getDictionary());
