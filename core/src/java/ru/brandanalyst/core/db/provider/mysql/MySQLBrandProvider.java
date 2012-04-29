@@ -27,6 +27,7 @@ public class MySQLBrandProvider implements BrandProvider {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+
     @Override
     public void writeBrandToDataStore(Brand brand) {
         jdbcTemplate.update("INSERT INTO Brand (Name, Description, Website, BranchId, FinamName) VALUES(?,?,?,?,?)", brand.getName(),
