@@ -4,6 +4,7 @@ import org.apache.log4j.Logger;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.ru.RussianAnalyzer;
 import org.apache.lucene.document.Document;
+import org.apache.lucene.queryParser.MultiFieldQueryParser;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
@@ -65,10 +66,11 @@ public class Searcher implements InitializingBean {
         try {
             Analyzer analyzer; // your can change version
             analyzer = new RussianAnalyzer(Version.LUCENE_34);
-            QueryParser parser = new QueryParser(Version.LUCENE_34, "Description", analyzer);
-            Query search = parser.parse(query);
+            QueryParser descriptionQueryParser = new MultiFieldQueryParser(Version.LUCENE_34, new String[]{"Name","Description"}, analyzer);
 
-            ScoreDoc[] hits = indexSearcherBrand.search(search, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
+            Query descriptionQuery = descriptionQueryParser.parse(query);
+
+            ScoreDoc[] hits = indexSearcherBrand.search(descriptionQuery, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
             List<Brand> lst = new ArrayList<Brand>();
             for (ScoreDoc hit : hits) {
                 Document doc = indexSearcherBrand.doc(hit.doc);
@@ -90,10 +92,10 @@ public class Searcher implements InitializingBean {
         try {
             Analyzer analyzer;
             analyzer = new RussianAnalyzer(Version.LUCENE_34); // your can change version
-            QueryParser parser = new QueryParser(Version.LUCENE_34, "Content", analyzer);
-            Query search = parser.parse(query);
+            QueryParser contentParser = new QueryParser(Version.LUCENE_34, "Content", analyzer);
+            Query contentQuery = contentParser.parse(query);
 
-            ScoreDoc[] hits = indexSearcherArticle.search(search, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
+            ScoreDoc[] hits = indexSearcherArticle.search(contentQuery, null, MAX_DOC).scoreDocs; // you maybe change null on filter;
             List<Article> lst = new ArrayList<Article>();
             for (ScoreDoc hit : hits) {
                 Document doc = indexSearcherArticle.doc(hit.doc);
