@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class CopyArticlesAnalyzer extends StubAnalyzer {
     private final static Logger log = Logger.getLogger(CopyArticlesAnalyzer.class);
-    Batch<Article> copyBatch;
+    private Batch<Article> copyBatch;
 
     @Override
     public void init(ProvidersHandler pureProvidersHandler) {
