@@ -117,9 +117,9 @@ public class Article {
     /**
      * @return дата статьи
      */
-    public String getDate() {
-        return FORMATTER.format(tstamp);
-    }
+//    public String getDate() {
+//        return FORMATTER.format(tstamp);
+//    }
     
     public LocalDateTime getTstamp() {
         return tstamp;
