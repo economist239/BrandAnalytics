@@ -28,9 +28,9 @@
                 </xsl:for-each>
             </tbody>
         </table>
-            <button class="btn collapseController" type="submit" table-target="#up-lead">
+            <!--<button class="btn collapseController" type="submit" table-target="#up-lead">
                 Collapse uppers!
-            </button>
+            </button>-->
         </div>
         <div class="span4">
         <table class="table table-striped" id="down-lead">
@@ -56,10 +56,10 @@
                 </xsl:for-each>
             </tbody>
         </table>
-
+      <!--
         <button class="btn collapseController" type="submit" table-target="#down-lead">
             Collapse downers!
-        </button>
+        </button>  -->
         </div>
 
     </xsl:template>
