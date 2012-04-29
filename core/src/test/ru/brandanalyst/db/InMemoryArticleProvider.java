@@ -27,7 +27,22 @@ public class InMemoryArticleProvider extends ArticleProvider {
         depot.add(new Article(5,1,1,"11","11","http:/11",new LocalDateTime(5), 1));
         key = 5;
     }
-    
+
+    @Override
+    public Article getArticleBySourceId(long sourceId) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public List<Article> getAllOfficialArticlesByBrand(long brandId) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public List<Article> getArticlesWithCondition(String whereClause) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
     @Override
     public void writeArticleToDataStore(Article article) {
         depot.add(new Article(++key, article.getBrandId(), article.getSourceId(), article.getTitle(), 

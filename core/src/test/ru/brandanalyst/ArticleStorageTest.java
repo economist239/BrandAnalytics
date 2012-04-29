@@ -38,7 +38,7 @@ public class ArticleStorageTest {
         storage.visitArticles(new EntityVisitor<Article>() {
             @Override
             public void visitEntity(Article e) {
-             //   System.out.println(e.getBrandId());
+                System.out.println(e.getBrandId());
             }
         });
 

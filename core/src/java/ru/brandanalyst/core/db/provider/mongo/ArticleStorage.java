@@ -150,23 +150,15 @@ public class ArticleStorage extends ArticleProvider implements InitializingBean,
     @Override
     public void visitArticles(EntityVisitor<Article> visitor) {
         DBCursor cursor = coll.find().batchSize(BATCH_SIZE);
-        BasicDBObject delete = new BasicDBObject();
-        
+
         List<Object> list = Cf.newList();
 
         while (cursor.hasNext()) {
             DBObject next = cursor.next();
             list.add(next.get(MONGO_ID));
             visitor.visitEntity(unwrap(next));
+            coll.remove(next);
         }
-
-        delete.append(MONGO_ID, list);
-
-        System.out.println(list.size());
-        System.out.println(coll.remove(delete));
-        System.out.println(coll.find().size());
-        //System.out.println(coll.remove(batchToDelete).getError());
-        //TODO this realy works??
     }
 
     @Override
