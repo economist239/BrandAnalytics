@@ -68,14 +68,12 @@ public class Graph implements Jsonable {
 
     @Override
     public JSONObject asJson() {
-        //count millisecs in sec
-        final long COUNT = 1000;
         try {
             JSONArray da = new JSONArray();
             Set<SingleDot> sortedGraph = new TreeSet<SingleDot>(getGraph());
 
             for (SingleDot d : sortedGraph) {
-                da.put(new JSONArray().put(d.getDate().toDate().getTime() / COUNT).put(d.getValue()));
+                da.put(new JSONArray().put(d.getDate().toDate().getTime()).put(d.getValue()));
             }
             return new JSONObject().put("ticker", ticker).put("graph", da);
         } catch (JSONException e) {

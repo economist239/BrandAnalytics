@@ -92,7 +92,6 @@ public class ProvidersHandler {
         this.mentionProvider = mentionProvider;
     }
 
-
     private ArticleProvider articleProvider;
     private BrandProvider brandProvider;
     private BrandDictionaryProvider brandDictionaryProvider;
