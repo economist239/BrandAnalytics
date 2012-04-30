@@ -1,5 +1,7 @@
 package ru.brandanalyst.core.util;
 
+import org.apache.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,6 +12,8 @@ import java.util.List;
  * Time: 8:41 PM
  */
 public abstract class Batch<T> {
+    private final static Logger log = Logger.getLogger(Batch.class);
+
     private final static int BATCH_SIZE = 1024;
     private List<T> batchList;
 
@@ -30,6 +34,7 @@ public abstract class Batch<T> {
     }
 
     public void flush() {
+        log.info("[Batch] flushed");
         if (batchList.size() != 0) {
             handle(batchList);
         }

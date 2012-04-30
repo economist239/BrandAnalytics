@@ -26,7 +26,7 @@ public class HorrorParser extends AbstractRssParser {
     private long maxCount = 15;
     private static final long SLEEP_TIME = 10000;
 
-    public HorrorParser(String url, long sourceId, Batch<Article> batch) {
+    public HorrorParser(final String url, final long sourceId, final Batch<Article> batch) {
         super(url, sourceId, batch);
     }
     

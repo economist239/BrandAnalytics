@@ -30,7 +30,7 @@
 
     <!--MONGO-->
     <bean id="dirtyArticleProvider" class="ru.brandanalyst.core.db.provider.mongo.ArticleStorage">
-        <property name="host" value="localhost"/>
+        <property name="host" value="83.69.226.97"/>
         <property name="port" value="27017"/>
         <property name="dbName" value="ba"/>
         <property name="collectionName" value="articles"/>
