@@ -9,6 +9,7 @@ import java.util.List;
 
 public abstract class ArticleProvider {
     protected final static int MAX_ARTICLE_LENGHT = 30000;
+    protected final static int MAX_TITLE_LENGTH = 400;
 
     public abstract void writeArticleToDataStore(Article article);
 
