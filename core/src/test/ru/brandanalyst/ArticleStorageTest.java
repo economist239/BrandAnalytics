@@ -30,10 +30,22 @@ public class ArticleStorageTest {
         storage.setHost("localhost");
         storage.setPort(27017);
         storage.afterPropertiesSet();
-        storage.writeArticleToDataStore(new Article(1L, 1L, "title1", "content1", "3", new LocalDateTime(), 1));
-        storage.writeArticleToDataStore(new Article(2L, 2L, "title2", "content2", "4", new LocalDateTime(), 2));
-        storage.writeArticleToDataStore(new Article(3L, 3L, "title3", "content3", "1", new LocalDateTime(), 3));
-        storage.writeArticleToDataStore(new Article(3L, 3L, "title3", "content3", "1", new LocalDateTime(), 3));
+
+        List<Article> s = Cf.newArrayList();
+        s.add(new Article(55L, 1L, "title1", "content1", "3", new LocalDateTime(), 1));
+        s.add(new Article(2L, 2L, "title2", "content2", "4", new LocalDateTime(), 2));
+        s.add(new Article(3L, 3L, "title3", "content3", "1", new LocalDateTime(), 3));
+        s.add(new Article(3L, 3L, "title3", "content3", "1", new LocalDateTime(), 3));
+
+        storage.writeListOfArticlesToDataStore(s);
+
+        s = Cf.newArrayList();
+        s.add(new Article(56L, 1L, "title1", "content1", "3", new LocalDateTime(), 1));
+        s.add(new Article(2L, 2L, "title2", "content2", "4", new LocalDateTime(), 2));
+        s.add(new Article(3L, 3L, "title3", "content3", "1", new LocalDateTime(), 3));
+        s.add(new Article(3L, 3L, "title3", "content3", "1", new LocalDateTime(), 3));
+
+        storage.writeListOfArticlesToDataStore(s);
 
         storage.visitArticles(new EntityVisitor<Article>() {
             @Override

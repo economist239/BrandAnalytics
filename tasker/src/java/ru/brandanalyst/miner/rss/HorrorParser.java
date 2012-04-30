@@ -50,19 +50,18 @@ public class HorrorParser extends AbstractRssParser {
                     for (Long id : brandIds) {
                         try {
                             final Article article = new Article(id, sourceId, title, desc, link, new LocalDateTime(FORMATTER.parse(StringUtils.escape(date))), NUM_LIKES);
-                            System.out.println(article.getContent() + "\n" + article.getTitle());
                             if (article.getContent() != null && article.getTitle() != null && !(article.getContent().isEmpty()) && !(article.getTitle().isEmpty())) {
                                 log.debug("Article added: " + title);
-                                batch.submit(new Article(id, sourceId, title, desc, link, new LocalDateTime(FORMATTER.parse(StringUtils.escape(date))), NUM_LIKES));
+                                batch.submit(new Article(id, sourceId, StringUtils.escape(title), StringUtils.escape(desc), link, new LocalDateTime(FORMATTER.parse(StringUtils.escape(date))), NUM_LIKES));
                             }
                         } catch (ParseException ignored) {
-                            log.error(ignored.getMessage(), ignored);
+
                         }
                     }
                 }
             }
         } catch (Exception e) {
-            log.error(url, e);
+            log.warn(url);
             if (maxCount-- > 0) {
                 Thread.sleep(SLEEP_TIME);
                 parse();

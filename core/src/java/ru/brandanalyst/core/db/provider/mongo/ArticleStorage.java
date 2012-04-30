@@ -1,6 +1,7 @@
 package ru.brandanalyst.core.db.provider.mongo;
 
 import com.mongodb.*;
+import org.apache.log4j.Logger;
 import org.joda.time.LocalDateTime;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
@@ -22,6 +23,7 @@ import java.util.Map;
  * Time: 7:35 PM
  */
 public class ArticleStorage extends ArticleProvider implements InitializingBean, DisposableBean {
+    private final static Logger log = Logger.getLogger(ArticleStorage.class);
     private final static int BATCH_SIZE = 1024;
     public static final String MONGO_ID = "_id";
     private Mongo mongo;
@@ -103,7 +105,8 @@ public class ArticleStorage extends ArticleProvider implements InitializingBean,
 
     @Override
     public void writeListOfArticlesToDataStore(List<Article> articles) {
-        coll.insert(wrap(articles));
+        WriteResult wr = coll.insert(wrap(articles));
+        log.info("writed " + articles.size() + " articles with error code - " + wr.getError());
     }
 
     @Override
@@ -151,11 +154,9 @@ public class ArticleStorage extends ArticleProvider implements InitializingBean,
     public void visitArticles(EntityVisitor<Article> visitor) {
         DBCursor cursor = coll.find().batchSize(BATCH_SIZE);
 
-        List<Object> list = Cf.newList();
 
         while (cursor.hasNext()) {
             DBObject next = cursor.next();
-            list.add(next.get(MONGO_ID));
             visitor.visitEntity(unwrap(next));
             coll.remove(next);
         }

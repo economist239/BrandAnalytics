@@ -155,7 +155,10 @@ public class Article {
         hash += 31 * title.hashCode() + 7;
         hash += 31 * brandId + 7;
         hash += 31 * sourceId + 7;
-        hash += 31 * tstamp.hashCode() + 7;
+        hash += 31 * tstamp.getDayOfMonth() + 7;
+        hash += 31 * tstamp.getMonthOfYear() + 7;
+        hash += 31 * tstamp.getYearOfEra() + 7;
+
         return hash;
     }
 }
