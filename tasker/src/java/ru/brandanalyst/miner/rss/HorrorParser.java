@@ -7,6 +7,7 @@ import org.joda.time.LocalDateTime;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.util.Batch;
 import ru.brandanalyst.core.util.BrandAnalyticsLocale;
+import ru.brandanalyst.core.util.SimpleTextCleaner;
 import ru.brandanalyst.miner.util.StringChecker;
 
 import java.text.DateFormat;
@@ -52,10 +53,10 @@ public class HorrorParser extends AbstractRssParser {
                             final Article article = new Article(id, sourceId, title, desc, link, new LocalDateTime(FORMATTER.parse(StringUtils.escape(date))), NUM_LIKES);
                             if (article.getContent() != null && article.getTitle() != null && !(article.getContent().isEmpty()) && !(article.getTitle().isEmpty())) {
                                 log.debug("Article added: " + title);
-                                batch.submit(new Article(id, sourceId, StringUtils.escape(title), StringUtils.escape(desc), link, new LocalDateTime(FORMATTER.parse(StringUtils.escape(date))), NUM_LIKES));
+                                batch.submit(new Article(id, sourceId, SimpleTextCleaner.clean(title), SimpleTextCleaner.clean(desc), link, new LocalDateTime(FORMATTER.parse(date)), NUM_LIKES));
                             }
                         } catch (ParseException ignored) {
-
+                            log.error(ignored);
                         }
                     }
                 }
