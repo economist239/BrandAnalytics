@@ -49,8 +49,8 @@ public class MySQLArticleProvider extends ArticleProvider {
                 Article a = it.next();
                 ps.setLong(1, a.getSourceId());
                 ps.setLong(2, a.getBrandId());
-                ps.setString(3, a.getTitle().substring(0, MAX_TITLE_LENGTH));
-                ps.setString(4, a.getContent().substring(0, MAX_ARTICLE_LENGHT));
+                ps.setString(3, a.getTitle().substring(0, Math.min(MAX_ARTICLE_LENGHT, a.getTitle().length() - 1)));
+                ps.setString(4, a.getContent().substring(0, Math.min(MAX_ARTICLE_LENGHT, a.getContent().length() - 1)));
                 ps.setString(5, a.getLink());
                 ps.setInt(6, a.getNumLikes());
                 ps.setDate(7, new java.sql.Date(a.getTstamp().toDate().getTime()));
