@@ -21,7 +21,7 @@
         </javac>
 
         <copy todir="${build.dir}" overwrite="true">
-            <fileset dir="${project.dir}/tasker/svmclassifiers"/>
+            <fileset dir="${project.dir}/classifiers"/>
         </copy>
 
         <copy todir="${build.dir}" overwrite="true">
