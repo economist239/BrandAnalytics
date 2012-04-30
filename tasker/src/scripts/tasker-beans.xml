@@ -8,6 +8,7 @@
             <list>
                 <value>classpath:schedule.properties</value>
                 <value>classpath:mysql.properties</value>
+                <value>classpath:monitoring.properties</value>
             </list>
         </property>
     </bean>

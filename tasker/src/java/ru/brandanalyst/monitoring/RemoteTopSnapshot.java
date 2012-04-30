@@ -26,6 +26,12 @@ public class RemoteTopSnapshot {
     private int port = DEFAULT_PORT;
     private String username;
     private String password;
+    private String description;
+
+    @Required
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     @Required
     public void setHost(String host) {
