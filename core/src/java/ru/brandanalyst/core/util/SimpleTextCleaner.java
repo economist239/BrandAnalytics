@@ -1,7 +1,5 @@
 package ru.brandanalyst.core.util;
 
-import org.junit.Test;
-
 /**
  * User: daddy-bear
  * Date: 30.04.12
@@ -12,6 +10,14 @@ public class SimpleTextCleaner {
     private SimpleTextCleaner() {}
 
     public static String clean(final String input) {
+        return cleanQuot(cleanHtml(input));
+    }
+
+    public static String cleanHtml(final String input) {
         return input.replaceAll("<[^>]+>", "");
+    }
+
+    public static String cleanQuot(final String input) {
+        return input.replaceAll("\\&quot;", "\"");
     }
 }
