@@ -10,13 +10,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 /**
  * Alexandra Mikhaylova mikhaylova@yandex-team.ru
  */
 public class SVMClassifier implements SVM {
-    private static final Logger log = Logger.getLogger(SVMClassifier.class.getName());
+    private static final Logger log = Logger.getLogger(SVMClassifier.class);
     private static final long serialVersionUID = -6362247777972157008L;
 
     private WLSVM classifier = new WLSVM();

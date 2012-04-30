@@ -1,5 +1,6 @@
 package ru.brandanalyst.analyzer.analyzer.quant;
 
+import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.analyzer.classifiers.SVMClassifier;
 import ru.brandanalyst.analyzer.util.ClassifierUtils;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
@@ -13,12 +14,24 @@ import weka.core.Instance;
 public class SvmAnalyzer extends AbstractSentimentAnalyzer {
     private SVMClassifier classifierNegative;
     private SVMClassifier classifierPositive;
+    private String classifierNegativeFileName;
+    private String classifierPositiveFileName;
+
+    @Required
+    public void setClassifierNegativeFileName(final String fileName) {
+        this.classifierNegativeFileName = fileName;
+    }
+
+    @Required
+    public void setClassifierPositiveFileName(final String fileName) {
+        this.classifierPositiveFileName = fileName;
+    }
 
     @Override
     public void init(ProvidersHandler pureProvidersHandler) {
         super.init(pureProvidersHandler);
-        classifierNegative = ClassifierUtils.loadSVMClassifier("svmNegative");
-        classifierPositive = ClassifierUtils.loadSVMClassifier("svmPositive");
+        classifierNegative = ClassifierUtils.loadSVMClassifier(this.classifierNegativeFileName);
+        classifierPositive = ClassifierUtils.loadSVMClassifier(this.classifierPositiveFileName);
     }
 
     @Override

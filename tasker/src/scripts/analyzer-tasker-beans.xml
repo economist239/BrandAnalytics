@@ -13,7 +13,10 @@
             <list>
                 <bean class="ru.brandanalyst.analyzer.analyzer.quant.CopyArticlesAnalyzer"/>
                 <bean class="ru.brandanalyst.analyzer.analyzer.quant.GraphsAnalyzer"/>
-                <bean class="ru.brandanalyst.analyzer.analyzer.quant.SvmAnalyzer"/>
+                <bean class="ru.brandanalyst.analyzer.analyzer.quant.SvmAnalyzer">
+                    <property name="classifierNegativeFileName" value="svmNegative"/>
+                    <property name="classifierPositiveFileName" value="svmPositive"/>
+                </bean>
                 <bean class="ru.brandanalyst.analyzer.analyzer.quant.RandomAnalyzer"/>
             </list>
         </property>
