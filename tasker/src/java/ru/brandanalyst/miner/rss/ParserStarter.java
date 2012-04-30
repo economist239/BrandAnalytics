@@ -27,7 +27,11 @@ public class ParserStarter extends AbstractGrabberTask {
         Batch<Article> batch = new Batch<Article>(10) {
             @Override
             public void handle(final List<Article> articles) {
-                articleProvider.writeListOfArticlesToDataStore(articles);
+                try {
+                    articleProvider.writeListOfArticlesToDataStore(articles);
+                } catch (Throwable e) {
+                    log.error("!!!1111", e);
+                }
             }
         };
 
