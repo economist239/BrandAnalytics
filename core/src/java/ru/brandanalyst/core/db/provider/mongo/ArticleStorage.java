@@ -68,7 +68,7 @@ public class ArticleStorage extends ArticleProvider implements InitializingBean,
 
     private static DBObject wrap(Article a) {
         BasicDBObject object = new BasicDBObject();
-        object.put(MONGO_ID, a.hashCode());
+        object.put(MONGO_ID, a.hashCode() + a.getBrandId() + a.getTitle());
         object.put("id", a.getId());
         object.put("brand-id", a.getBrandId());
         object.put("source-id", a.getSourceId());
@@ -104,8 +104,11 @@ public class ArticleStorage extends ArticleProvider implements InitializingBean,
 
     @Override
     public void writeListOfArticlesToDataStore(List<Article> articles) {
-        WriteResult wr = coll.insert(wrap(articles));
-        log.info("writed " + articles.size() + " articles with error code - " + wr.getError());
+        //WriteResult wr = coll.insert(wrap(articles), WriteConcern.FSYNC_SAFE);
+        for (Article a: articles) {
+            coll.insert(wrap(a));
+        }
+        log.info("writed " + articles.size());
     }
 
     @Override
@@ -153,12 +156,13 @@ public class ArticleStorage extends ArticleProvider implements InitializingBean,
     public void visitArticles(EntityVisitor<Article> visitor) {
         DBCursor cursor = coll.find(QueryBuilder.start().put("analyzed").is(0).get()).batchSize(BATCH_SIZE);
 
-
         while (cursor.hasNext()) {
             DBObject next = cursor.next();
             visitor.visitEntity(unwrap(next));
             //next.put("analyzed", 1);
-            coll.update(next, new BasicDBObject("analyzed", 1));
+            //System.out.println(next);
+            next.put("analyzed", 1);
+            coll.update(QueryBuilder.start().put(MONGO_ID).is(next.get(MONGO_ID)).get(), next);
             //coll.remove(next);
         }
     }
