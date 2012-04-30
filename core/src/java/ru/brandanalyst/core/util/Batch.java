@@ -15,6 +15,8 @@ public abstract class Batch<T> {
     private final static Logger log = Logger.getLogger(Batch.class);
 
     private final static int BATCH_SIZE = 1024;
+
+    private final int batchSize;
     private List<T> batchList;
 
     public Batch() {
@@ -22,12 +24,15 @@ public abstract class Batch<T> {
     }
 
     public Batch(final int size) {
+        batchSize = size;
         batchList = new ArrayList<T>(size);
     }
 
     public synchronized void submit(T element) {
         batchList.add(element);
-        if (batchList.size() == BATCH_SIZE) {
+        log.info("[Batch] submitted");
+        if (batchList.size() == batchSize) {
+            log.info("[Batch] handling");
             handle(batchList);
             batchList.clear();
         }
