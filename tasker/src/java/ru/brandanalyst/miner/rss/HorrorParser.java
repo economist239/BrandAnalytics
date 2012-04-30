@@ -6,9 +6,11 @@ import org.horrabin.horrorss.RssParser;
 import org.joda.time.LocalDateTime;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.util.Batch;
+import ru.brandanalyst.core.util.BrandAnalyticsLocale;
 import ru.brandanalyst.miner.util.StringChecker;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.List;
@@ -21,7 +23,7 @@ import java.util.List;
  */
 public class HorrorParser extends AbstractRssParser {
     private static final String DATE_FORMAT = "EEE, dd MMM yyyy HH:mm:ss zzz";
-    private static final DateFormat FORMATTER = new SimpleDateFormat(DATE_FORMAT);
+    private static final DateFormat FORMATTER = new SimpleDateFormat(DATE_FORMAT, BrandAnalyticsLocale.RU);
 
     private long maxCount = 15;
     private static final long SLEEP_TIME = 10000;
@@ -29,8 +31,9 @@ public class HorrorParser extends AbstractRssParser {
     public HorrorParser(final String url, final long sourceId, final Batch<Article> batch) {
         super(url, sourceId, batch);
     }
-    
+
     private static int i = 0;
+
     @Override
     protected void parse() throws Exception {
         try {
@@ -45,17 +48,22 @@ public class HorrorParser extends AbstractRssParser {
                     String desc = item.getDescription();
                     String date = item.getPubDate();
                     for (Long id : brandIds) {
-                        log.debug("Article added: " + title);
-                        final Article article = new Article(id, sourceId, title, desc, link, new LocalDateTime(FORMATTER.parse(StringUtils.escape(date))), NUM_LIKES);
-                        if (article.getContent() != null && article.getTitle() != null && !(article.getContent().isEmpty()) && !(article.getTitle().isEmpty())) {
-                            batch.submit(new Article(id, sourceId, title, desc, link, new LocalDateTime(FORMATTER.parse(StringUtils.escape(date))), NUM_LIKES));
+                        try {
+                            final Article article = new Article(id, sourceId, title, desc, link, new LocalDateTime(FORMATTER.parse(StringUtils.escape(date))), NUM_LIKES);
+                            System.out.println(article.getContent() + "\n" + article.getTitle());
+                            if (article.getContent() != null && article.getTitle() != null && !(article.getContent().isEmpty()) && !(article.getTitle().isEmpty())) {
+                                log.debug("Article added: " + title);
+                                batch.submit(new Article(id, sourceId, title, desc, link, new LocalDateTime(FORMATTER.parse(StringUtils.escape(date))), NUM_LIKES));
+                            }
+                        } catch (ParseException ignored) {
+                            log.error(ignored.getMessage(), ignored);
                         }
                     }
                 }
             }
         } catch (Exception e) {
-            log.error(url);
-            if(maxCount-- > 0){
+            log.error(url, e);
+            if (maxCount-- > 0) {
                 Thread.sleep(SLEEP_TIME);
                 parse();
             }
