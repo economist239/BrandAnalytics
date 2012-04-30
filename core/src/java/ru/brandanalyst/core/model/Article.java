@@ -138,7 +138,7 @@ public class Article {
             return true;
         }
         
-        if (!(o instanceof Article)) {
+        if (o == null && !(o instanceof Article)) {
             return false;    
         }
         
