@@ -42,6 +42,7 @@ public class ParserStarter extends AbstractGrabberTask {
         }
 
         service.shutdown();
+        log.info("[ParserStarter] waiting for other extractor threads");
         try {
             while(!service.awaitTermination(1, TimeUnit.HOURS))
                 ;
@@ -49,7 +50,8 @@ public class ParserStarter extends AbstractGrabberTask {
             log.error("Interrupted", e);
             throw new RuntimeException(e);
         }
+        log.info("[ParserStarter] waiting stopped");
         batch.flush();
-        log.info("End parsing rss");
+        log.info("[ParseStarter] end parsing rss");
     }
 }
