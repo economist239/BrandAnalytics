@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-autowire="byName">
+    <!--Scheduler-->
+    <bean id="mailingMonitor" class="ru.brandanalyst.monitoring.MailingMonitor" lazy-init="false">
+        <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
+        <property name="period" value="${monitoring-period}"/>
+    </bean>
+
+
+    <bean id="mongoRemoteTopSnapshot" class="ru.brandanalyst.monitoring.RemoteTopSnapshot">
+        <property name="host" value="${mongo.remote.host}"/>
+        <property name="username" value="${mongo.remote.username}"/>
+        <property name="password" value="${mongo.remote.password}"/>
+    </bean>
+
+
+    <!--Spring helpers-->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+
+</beans>
