@@ -2,9 +2,6 @@ package ru.brandanalyst.core.model;
 
 import org.joda.time.LocalDate;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
@@ -12,7 +9,7 @@ import java.util.Date;
  * Time: 7:22 PM
  * general model of one dot
  */
-public class SingleDot implements Comparable<SingleDot>{
+public class SingleDot implements Comparable<SingleDot> {
     private final LocalDate date;
     private final double value;
 

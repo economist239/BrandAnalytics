@@ -31,7 +31,7 @@ public class MailingMonitor extends AbstractDelayedTimerTask {
     protected void runTask() {
         final StringBuilder sb = new StringBuilder();
 
-        for (RemoteTopSnapshot s: remoteTopSnapshots) {
+        for (RemoteTopSnapshot s : remoteTopSnapshots) {
             sb.append(s.buildSnapshot()).append("\n\n---\n\n");
         }
 

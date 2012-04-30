@@ -10,11 +10,9 @@ import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.ArticleForWeb;
-import ru.brandanalyst.core.util.Cf;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -79,6 +77,7 @@ public class ArticleStorage extends ArticleProvider implements InitializingBean,
         object.put("link", a.getLink());
         object.put("num-likes", a.getNumLikes());
         object.put("tstamp", a.getTstamp().toDate().getTime());
+        object.put("analyzed", 0);
         return object;
     }
 
@@ -152,13 +151,15 @@ public class ArticleStorage extends ArticleProvider implements InitializingBean,
 
     @Override
     public void visitArticles(EntityVisitor<Article> visitor) {
-        DBCursor cursor = coll.find().batchSize(BATCH_SIZE);
+        DBCursor cursor = coll.find(QueryBuilder.start().put("analyzed").is(0).get()).batchSize(BATCH_SIZE);
 
 
         while (cursor.hasNext()) {
             DBObject next = cursor.next();
             visitor.visitEntity(unwrap(next));
-            coll.remove(next);
+            //next.put("analyzed", 1);
+            coll.update(next, new BasicDBObject("analyzed", 1));
+            //coll.remove(next);
         }
     }
 

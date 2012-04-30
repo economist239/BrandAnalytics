@@ -57,7 +57,7 @@ public class SVMClassifier implements SVM {
     @Override
     public Instances classify(final Instances unlabeled) {
         Instances labeled = new Instances(unlabeled);
-        for (int i = 0; i < unlabeled.numInstances(); i ++) {
+        for (int i = 0; i < unlabeled.numInstances(); i++) {
             final double classLabel = classifyInstance(unlabeled.instance(i));
             labeled.instance(i).setClassValue(classLabel);
         }

@@ -4,7 +4,6 @@ import ru.brandanalyst.core.db.provider.interfaces.BranchesProvider;
 import ru.brandanalyst.core.model.Branch;
 import ru.brandanalyst.core.util.Cf;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

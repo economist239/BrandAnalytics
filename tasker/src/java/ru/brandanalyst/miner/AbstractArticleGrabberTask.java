@@ -2,7 +2,6 @@ package ru.brandanalyst.miner;
 
 import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.core.util.Batch;
 import ru.brandanalyst.miner.processor.ArticlePostProcessor;
 
 import java.util.List;
@@ -32,7 +31,7 @@ public abstract class AbstractArticleGrabberTask extends AbstractGrabberTask {
     }
 
     private Article postProcessing(Article article) {
-        for (ArticlePostProcessor pp: postProcessors) {
+        for (ArticlePostProcessor pp : postProcessors) {
             article = pp.process(article);
         }
         return article;

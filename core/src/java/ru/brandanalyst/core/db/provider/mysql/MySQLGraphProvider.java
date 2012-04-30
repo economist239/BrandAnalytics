@@ -14,7 +14,6 @@ import ru.brandanalyst.core.model.SingleDot;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -44,7 +43,7 @@ public class MySQLGraphProvider implements GraphProvider {
 
     private final static String NEW_SQL = "REPLACE INTO Graphs SELECT ?, ?, ?, (COALESCE(SUM(val), 0) + ?) AS val FROM Graphs " +
             "WHERE brandId = ? and tickerId= ? AND Tstamp= ?";
-    
+
     //
     // говномускулькод
     //

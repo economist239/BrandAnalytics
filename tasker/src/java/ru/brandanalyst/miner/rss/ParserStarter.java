@@ -28,9 +28,9 @@ public class ParserStarter extends AbstractGrabberTask {
             @Override
             public void handle(final List<Article> articles) {
                 //try {
-                    articleProvider.writeListOfArticlesToDataStore(articles);
+                articleProvider.writeListOfArticlesToDataStore(articles);
                 //} catch (Throwable e) {
-                    //sometimes you have no such method exception here
+                //sometimes you have no such method exception here
                 //    log.error("", e);
                 //}
             }
@@ -49,7 +49,7 @@ public class ParserStarter extends AbstractGrabberTask {
         service.shutdown();
         log.info("[ParserStarter] waiting for other extractor threads");
         try {
-            while(!service.awaitTermination(1, TimeUnit.HOURS))
+            while (!service.awaitTermination(1, TimeUnit.HOURS))
                 ;
         } catch (InterruptedException e) {
             log.error("Interrupted", e);

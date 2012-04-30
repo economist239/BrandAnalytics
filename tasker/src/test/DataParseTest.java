@@ -1,11 +1,7 @@
 import junit.framework.TestCase;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import ru.brandanalyst.core.util.BrandAnalyticsLocale;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Locale;
 
 /**
  * User: daddy-bear

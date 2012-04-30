@@ -1,18 +1,10 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
 import org.springframework.beans.factory.annotation.Required;
-import org.springframework.jdbc.core.RowCallbackHandler;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.interfaces.MentionProvider;
-import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.Mention;
-import ru.brandanalyst.core.model.SingleDot;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

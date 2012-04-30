@@ -3,7 +3,6 @@ package ru.brandanalyst.core.db.provider.mysql;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.RowCallbackHandler;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
@@ -66,12 +65,12 @@ public class MySQLArticleProvider extends ArticleProvider {
 
     @Override
     public void visitArticles(final EntityVisitor<Article> visitor) {
-         jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article", new RowCallbackHandler() {
-             @Override
-             public void processRow(ResultSet rs) throws SQLException {
+        jdbcTemplate.getJdbcOperations().query("SELECT * FROM Article", new RowCallbackHandler() {
+            @Override
+            public void processRow(ResultSet rs) throws SQLException {
                 visitor.visitEntity(MappersHolder.ARTICLE_MAPPER.mapRow(rs, 0));
-             }
-         });
+            }
+        });
     }
 
     @Override

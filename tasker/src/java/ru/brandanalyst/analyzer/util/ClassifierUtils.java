@@ -101,7 +101,7 @@ public class ClassifierUtils {
             return vector;
         }
         double[] normalized = new double[vector.length];
-        for (int i = 0; i < vector.length; i ++) {
+        for (int i = 0; i < vector.length; i++) {
             normalized[i] = vector[i] / sqrSum;
         }
         return normalized;
@@ -119,7 +119,7 @@ public class ClassifierUtils {
         int count = 0;
         for (final String tweetWord : tweetWords) {
             if (word.equals(tweetWord)) {
-                count ++;
+                count++;
             }
         }
         return count;
@@ -135,6 +135,7 @@ public class ClassifierUtils {
                 result.add(s);
             }
             Collections.sort(result);
+            reader.close();
             return result;
         } catch (IOException e) {
             log.info("Couldn't read semantic dictionary info from file: " + path);
@@ -168,7 +169,7 @@ public class ClassifierUtils {
     public static enum Type {
         SVM_NEGATIVE("svmNegative"),
         SVM_POSITIVE("svmPositive");
-        
+
         private final String name;
 
         private Type(String name) {

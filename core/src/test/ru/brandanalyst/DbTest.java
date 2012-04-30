@@ -1,8 +1,7 @@
 package ru.brandanalyst;
 
 import org.joda.time.LocalDate;
-import org.joda.time.LocalDateTime;
-import org.junit.*;
+import org.junit.Assert;
 import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
@@ -12,7 +11,6 @@ import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.Params;
 import ru.brandanalyst.core.model.SingleDot;
 
-import java.sql.Timestamp;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.LinkedList;

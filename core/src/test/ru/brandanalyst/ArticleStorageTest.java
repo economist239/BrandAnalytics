@@ -8,7 +8,6 @@ import ru.brandanalyst.core.db.provider.mongo.ArticleStorage;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.util.Cf;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 /**

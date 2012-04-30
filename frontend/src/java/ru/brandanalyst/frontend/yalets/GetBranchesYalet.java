@@ -10,7 +10,7 @@ import net.sf.xfresh.core.InternalResponse;
  * Time: 19:48
  * To change this template use File | Settings | File Templates.
  */
-public class GetBranchesYalet extends AbstractDbYalet{
+public class GetBranchesYalet extends AbstractDbYalet {
     @Override
     public void process(InternalRequest req, InternalResponse res) {
         res.add(providersHandler.getBranchesProvider().getAllBranches());

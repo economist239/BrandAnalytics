@@ -8,7 +8,8 @@ import java.util.*;
  */
 public final class Cf {
 
-    private Cf() {}
+    private Cf() {
+    }
 
     public static <T> List<T> newList() {
         return new ArrayList<T>();
@@ -23,7 +24,7 @@ public final class Cf {
         Collections.addAll(list, es);
         return list;
     }
-    
+
     public static <T> List<T> newArrayList() {
         return newList();
     }
@@ -35,7 +36,7 @@ public final class Cf {
     public static <T> Set<T> newSet() {
         return newHashSet();
     }
-    
+
     public static <T> Set<T> newHashSet() {
         return new HashSet<T>();
     }
@@ -43,11 +44,11 @@ public final class Cf {
     public static <T> Set<T> newLinkedHashSet() {
         return new LinkedHashSet<T>();
     }
-    
+
     public static <T> Set<T> newTreeSet() {
         return new TreeSet<T>();
     }
-    
+
     public static <T> Set<T> newTreeSet(Comparator<T> comparator) {
         return new TreeSet<T>(comparator);
     }
@@ -55,7 +56,7 @@ public final class Cf {
     public static <K, V> Map<K, V> newMap() {
         return newHashMap();
     }
-    
+
     public static <K, V> Map<K, V> newHashMap() {
         return new HashMap<K, V>();
     }

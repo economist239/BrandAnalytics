@@ -4,8 +4,6 @@ import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.common.scheduler.AbstractDelayedTimerTask;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
 
-import java.util.Date;
-
 /**
  * @author Александр
  *         main single grabber class

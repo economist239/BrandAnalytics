@@ -64,7 +64,7 @@ public class RemoteTopSnapshot {
 
             session.connect();
 
-            ChannelExec channelExec = (ChannelExec)session.openChannel("exec");
+            ChannelExec channelExec = (ChannelExec) session.openChannel("exec");
             channelExec.setCommand("top");
             channelExec.connect();
             channelExec.start();

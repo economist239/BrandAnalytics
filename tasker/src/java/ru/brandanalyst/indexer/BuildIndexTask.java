@@ -18,7 +18,6 @@ import ru.brandanalyst.core.model.Brand;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.TimerTask;
 
 /**
  * Created by IntelliJ IDEA.

@@ -14,5 +14,6 @@ public class GetNewestArticlesYalet extends AbstractDbYalet {
     public void process(InternalRequest req, InternalResponse res) {
         res.add(providersHandler.getArticleProvider().getTopArticles(OUTPUT_SIZE));
     }
+
     private static final int OUTPUT_SIZE = 5;
 }

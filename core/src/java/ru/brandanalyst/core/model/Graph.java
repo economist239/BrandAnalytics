@@ -5,9 +5,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import ru.brandanalyst.core.util.Jsonable;
-import ru.brandanalyst.core.util.Time;
 
-import java.sql.Timestamp;
 import java.util.*;
 
 /**
@@ -18,7 +16,7 @@ import java.util.*;
  * general model of graph
  */
 public class Graph implements Jsonable {
-    private Map<LocalDate, Double> graph;
+    private final Map<LocalDate, Double> graph;
     private String ticker;
 
     public Graph() {
@@ -27,7 +25,7 @@ public class Graph implements Jsonable {
 
     public Graph(List<SingleDot> graph) {
         this.graph = new HashMap<LocalDate, Double>();
-        for (SingleDot d: graph) {
+        for (SingleDot d : graph) {
             this.graph.put(d.getDate(), d.getValue());
         }
         this.ticker = "no ticker";
@@ -44,7 +42,7 @@ public class Graph implements Jsonable {
 
     public List<SingleDot> getGraph() {
         List<SingleDot> g = new ArrayList<SingleDot>(graph.size());
-        for (Map.Entry<LocalDate, Double> d: graph.entrySet()) {
+        for (Map.Entry<LocalDate, Double> d : graph.entrySet()) {
             g.add(new SingleDot(d.getKey(), d.getValue()));
         }
         return g;

@@ -5,7 +5,8 @@ import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.core.util.Batch;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.

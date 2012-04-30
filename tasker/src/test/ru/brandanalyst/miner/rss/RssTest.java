@@ -23,7 +23,7 @@ public class RssTest extends AbstractTest {
     protected ParserStarter rssGrabberTask;
 
     {
-        configLocations = new String[] {
+        configLocations = new String[]{
                 "classpath:ru/brandanalyst/miner/rss/test-rss-config.xml",
                 "classpath:ru/brandanalyst/db/db-test-config.xml"
         };
@@ -32,7 +32,7 @@ public class RssTest extends AbstractTest {
     public void testSimpleRss() {
         rssGrabberTask.grab();
     }
-    
+
     public void testRss() throws Exception {
         HorrorParser.setDictionary(dirtyProvidersHandler.getBrandDictionaryProvider().getDictionary());
 

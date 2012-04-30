@@ -9,6 +9,6 @@ public interface InformationSourceProvider {
     public InfoSource getInfoSourceById(long id);
 
     public List<InfoSource> getAllInfoSources();
-    
+
     public List<InfoSource> getAllInfoSources(InformationSourceType type);
 }

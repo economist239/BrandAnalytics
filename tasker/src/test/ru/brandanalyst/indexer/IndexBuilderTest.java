@@ -19,7 +19,7 @@ public class IndexBuilderTest extends AbstractDependencyInjectionSpringContextTe
 
     @Override
     protected String[] getConfigLocations() {
-        return new String[] {"classpath:indexer-tasker-beans.xml", "classpath:dbhandler_pure.xml"};
+        return new String[]{"classpath:indexer-tasker-beans.xml", "classpath:dbhandler_pure.xml"};
     }
 
     public void testBuildIndex() {

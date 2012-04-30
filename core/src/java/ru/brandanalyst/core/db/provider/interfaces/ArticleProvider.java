@@ -1,7 +1,6 @@
 package ru.brandanalyst.core.db.provider.interfaces;
 
 import ru.brandanalyst.core.db.provider.EntityVisitor;
-import ru.brandanalyst.core.db.provider.mysql.MappersHolder;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.ArticleForWeb;
 
@@ -32,9 +31,10 @@ public abstract class ArticleProvider {
     public abstract List<Article> getArticlesWithCondition(String whereClause);
 
     public abstract void visitArticles(EntityVisitor<Article> visitor);
+
     /*
-     * возращает указанное количество самых свежих новостей по данном бренду
-     */
+    * возращает указанное количество самых свежих новостей по данном бренду
+    */
     public abstract List<Article> getTopArticles(long brandId, int topSize);
 
     public abstract List<Article> getTopArticles(int topSize);

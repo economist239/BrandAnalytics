@@ -21,7 +21,7 @@ public class MySQLBranchesProvider implements BranchesProvider {
 
     @Override
     public List<Branch> getAllBranches() {
-        return jdbcTemplate.query("SELECT * FROM Branch",MappersHolder.BRANCH_MAPPER);
+        return jdbcTemplate.query("SELECT * FROM Branch", MappersHolder.BRANCH_MAPPER);
     }
 
     @Required

@@ -78,7 +78,7 @@ public class SSHTunnelDataSource extends BasicDataSource implements Initializing
     @Override
     public void afterPropertiesSet() {
         jsch = new JSch();
-        if(!isConnected){
+        if (!isConnected) {
             if (null == session || !session.isConnected()) {
                 try {
                     session = jsch.getSession(sshUsername, host, port);

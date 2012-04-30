@@ -33,14 +33,14 @@ public class InMemoryBrandProvider implements BrandProvider {
 
     @Override
     public void writeListOfBrandsToDataStore(List<Brand> brands) {
-        for (Brand b: brands) {
+        for (Brand b : brands) {
             writeBrandToDataStore(b);
         }
     }
 
     @Override
     public Brand getBrandByName(String name) {
-        for (Brand b: depot) {
+        for (Brand b : depot) {
             if (b.getName().equals(name)) {
                 return b;
             }
@@ -50,7 +50,7 @@ public class InMemoryBrandProvider implements BrandProvider {
 
     @Override
     public Brand getBrandById(long brandId) {
-        for (Brand b: depot) {
+        for (Brand b : depot) {
             if (b.getId() == brandId) {
                 return b;
             }

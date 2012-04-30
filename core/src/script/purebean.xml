@@ -10,7 +10,8 @@
         </property>
     </bean>
     <!--DB conf-->
-    <bean id="pureDataSource" destroy-method="close" class="ru.brandanalyst.core.db.provider.mysql.SSHTunnelDataSource" lazy-init="false">
+    <bean id="pureDataSource" destroy-method="close" class="ru.brandanalyst.core.db.provider.mysql.SSHTunnelDataSource"
+          lazy-init="false">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="${url-pure}"/>
         <property name="username" value="${username}"/>

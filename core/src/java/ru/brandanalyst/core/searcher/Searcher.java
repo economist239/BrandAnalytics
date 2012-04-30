@@ -1,6 +1,5 @@
 package ru.brandanalyst.core.searcher;
 
-import org.apache.log4j.Logger;
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.ru.RussianAnalyzer;
 import org.apache.lucene.document.Document;
@@ -21,7 +20,6 @@ import ru.brandanalyst.core.model.Params;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,13 +58,12 @@ public class Searcher implements InitializingBean {
 
     /**
      * Поиск по брендам на основе их описания
-     *
      */
     public List<Brand> searchBrandByDescription(String query) {
         try {
             Analyzer analyzer; // your can change version
             analyzer = new RussianAnalyzer(Version.LUCENE_34);
-            QueryParser descriptionQueryParser = new MultiFieldQueryParser(Version.LUCENE_34, new String[]{"Name","Description"}, analyzer);
+            QueryParser descriptionQueryParser = new MultiFieldQueryParser(Version.LUCENE_34, new String[]{"Name", "Description"}, analyzer);
 
             Query descriptionQuery = descriptionQueryParser.parse(query);
 
@@ -86,7 +83,6 @@ public class Searcher implements InitializingBean {
 
     /**
      * Поиск по новостям на основе их содержания
-     *
      */
     public List<Article> searchArticleByContent(String query) {
         try {

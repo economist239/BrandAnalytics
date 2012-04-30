@@ -1,7 +1,8 @@
 package ru.brandanalyst.analyzer.analyzer.quant;
 
-import java.util.Random;
 import ru.brandanalyst.core.model.Article;
+
+import java.util.Random;
 
 /**
  * Alexandra Mikhaylova mikhaylova@yandex-team.ru

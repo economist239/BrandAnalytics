@@ -9,7 +9,7 @@ import net.sf.xfresh.core.InternalResponse;
  * Date: 18.02.12
  * Time: 18:03
  */
-public class GetLatestMentionsYalet extends AbstractDbYalet{
+public class GetLatestMentionsYalet extends AbstractDbYalet {
 
     @Override
     public void process(InternalRequest req, InternalResponse res) {

@@ -10,7 +10,7 @@ package ru.brandanalyst.core.util;
 public abstract class TextConverter {
     public static String firstPhrase(String text) {
         int p = text.indexOf(". ");
-        if(p<0) return text;
+        if (p < 0) return text;
         return text.substring(0, p) + "...";
     }
 }

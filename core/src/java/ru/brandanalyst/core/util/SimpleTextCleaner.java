@@ -7,7 +7,8 @@ package ru.brandanalyst.core.util;
  */
 public class SimpleTextCleaner {
 
-    private SimpleTextCleaner() {}
+    private SimpleTextCleaner() {
+    }
 
     public static String clean(final String input) {
         return cleanQuot(cleanHtml(input));

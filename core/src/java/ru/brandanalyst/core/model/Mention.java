@@ -1,13 +1,8 @@
 package ru.brandanalyst.core.model;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import ru.brandanalyst.core.util.Jsonable;
-
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * Упоминание о бренде
@@ -77,10 +72,10 @@ public class Mention implements Jsonable {
         final long COUNT = 1000;
         try {
             return new JSONObject()
-                    .put("ticker-id",tickerId)
+                    .put("ticker-id", tickerId)
                     .put("ticker", ticker)
-                    .put("num", (int)dot.getValue())
-                    .put("brand-id",brandId)
+                    .put("num", (int) dot.getValue())
+                    .put("brand-id", brandId)
                     .put("brand", brand);
         } catch (JSONException e) {
             throw new RuntimeException(e);

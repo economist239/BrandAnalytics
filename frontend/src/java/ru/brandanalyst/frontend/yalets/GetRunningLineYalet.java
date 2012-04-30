@@ -14,7 +14,7 @@ import java.io.IOException;
  * User: dima
  * Date: 2/26/12
  * Time: 1:34 PM
- *
+ * <p/>
  * reading running line from file (it's more fast then sql and more simple than cache)
  */
 public class GetRunningLineYalet implements Yalet {

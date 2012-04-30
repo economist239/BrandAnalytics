@@ -50,7 +50,7 @@
     </bean>
 
     <bean id="pureBranchesProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLBranchesProvider">
-            <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
+        <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
     </bean>
 
     <bean id="pureGraphProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLGraphProvider">
@@ -59,7 +59,7 @@
     </bean>
 
     <bean id="pureMentionProvider" class="ru.brandanalyst.core.db.provider.mysql.MySQLMentionProvider">
-            <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
+        <property name="jdbcTemplate" ref="pureJdbcTemplate"/>
     </bean>
 
     <bean id="pureInformationSourceProvider"
