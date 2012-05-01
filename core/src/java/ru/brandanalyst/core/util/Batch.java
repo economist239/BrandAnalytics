@@ -42,6 +42,7 @@ public abstract class Batch<T> {
         log.info("[Batch] flushed");
         if (batchList.size() != 0) {
             handle(batchList);
+            batchList.clear();
         }
     }
 
