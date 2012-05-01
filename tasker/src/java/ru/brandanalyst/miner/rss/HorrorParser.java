@@ -1,13 +1,12 @@
 package ru.brandanalyst.miner.rss;
 
-import org.apache.commons.lang.StringUtils;
 import org.horrabin.horrorss.RssItemBean;
 import org.horrabin.horrorss.RssParser;
 import org.joda.time.LocalDateTime;
 import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.util.ArticleCleaner;
 import ru.brandanalyst.core.util.Batch;
 import ru.brandanalyst.core.util.BrandAnalyticsLocale;
-import ru.brandanalyst.core.util.SimpleTextCleaner;
 import ru.brandanalyst.miner.util.StringChecker;
 
 import java.text.DateFormat;
@@ -50,7 +49,7 @@ public class HorrorParser extends AbstractRssParser {
                     String date = item.getPubDate();
                     for (Long id : brandIds) {
                         try {
-                            final Article article = new Article(id, sourceId, SimpleTextCleaner.clean(title), SimpleTextCleaner.clean(desc), link, new LocalDateTime(FORMATTER.parse(date)), NUM_LIKES);
+                            final Article article = new Article(id, sourceId, ArticleCleaner.cleanArticle(title), ArticleCleaner.cleanArticle(desc), link, new LocalDateTime(FORMATTER.parse(date)), NUM_LIKES);
                             if (article.getContent() != null && article.getTitle() != null && !(article.getContent().isEmpty()) && !(article.getTitle().isEmpty())) {
                                 log.debug("Article added: " + title);
                                 batch.submit(article);
