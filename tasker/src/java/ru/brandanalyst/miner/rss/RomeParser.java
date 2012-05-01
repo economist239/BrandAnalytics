@@ -24,9 +24,6 @@ import java.util.List;
  * Time: 9:22
  */
 public class RomeParser extends AbstractRssParser {
-    private static final String DATE_FORMAT = "EEE, dd MMM yyyy HH:mm:ss zzz";
-    private static final DateFormat FORMATTER = new SimpleDateFormat(DATE_FORMAT, BrandAnalyticsLocale.RU);
-
     private long maxCount = 15;
     private static final long SLEEP_TIME = 10000;
 
