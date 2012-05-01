@@ -43,7 +43,7 @@ public class ParserStarter extends AbstractGrabberTask {
         for (InfoSource infoSource : infoSources) {
             String rssSource = infoSource.getRssSource();
             if (rssSource.isEmpty()) continue;
-            service.submit(new HorrorParser(rssSource, infoSource.getId(), batch));
+            service.submit(new RomeParser(rssSource, infoSource.getId(), batch));
         }
 
         service.shutdown();
