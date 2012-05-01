@@ -40,7 +40,7 @@ public class SVMClassifier implements SVM {
         try {
             this.classifier.buildClassifier(labeled);
         } catch (Exception e) {
-            log.info("Couldn't build SVM classifier");
+            log.error("Error: couldn't build SVM classifier! Got following exception: " + e.toString());
         }
     }
 
@@ -49,7 +49,7 @@ public class SVMClassifier implements SVM {
         try {
             return this.classifier.classifyInstance(instance);          // 0.0 = neutral, 1.0 = emotional
         } catch (Exception e) {
-            log.info("Couldn't classify instance: " + instance.toString());
+            log.error("Error: couldn't classify instance: " + instance.toString() + " !\tGot following exception: " + e.toString());
             return 0.0;
         }
     }
@@ -78,7 +78,7 @@ public class SVMClassifier implements SVM {
                 objectOutputStream.close();
             }
         } catch (IOException e) {
-            log.info("Error: " + e.toString());
+            log.error("Error during serialization: " + e.toString());
 //            return null;
         }
     }

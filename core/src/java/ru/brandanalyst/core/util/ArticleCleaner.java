@@ -16,7 +16,7 @@ public class ArticleCleaner {
         try {
             return extractor.getText(article);
         } catch (BoilerpipeProcessingException e) {
-            log.info("Error: " + e.toString() + "! Article has not been cleaned!");
+            log.error("Error: " + e.toString() + "! Article has not been cleaned!");
             return article;
         }
     }
