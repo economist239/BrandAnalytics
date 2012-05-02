@@ -40,7 +40,6 @@ public class HorrorParser extends AbstractRssParser {
         try {
             RssParser rss = new RssParser(url);
             rss.parse();
-            log.debug("rss parsed" + i++);
             for (RssItemBean item : (List<RssItemBean>) rss.getItems()) {
                 String title = item.getTitle();
                 Collection<Long> brandIds = StringChecker.hasTerm(dictionary, title);
@@ -61,6 +60,7 @@ public class HorrorParser extends AbstractRssParser {
                     }
                 }
             }
+            log.debug("rss parsed" + i++);
         } catch (Exception e) {
             log.warn(url);
             if (maxCount-- > 0) {
