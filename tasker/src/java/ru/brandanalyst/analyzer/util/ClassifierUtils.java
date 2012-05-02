@@ -142,7 +142,7 @@ public class ClassifierUtils {
             reader.close();
             return result;
         } catch (IOException e) {
-            log.info("Couldn't read semantic dictionary info from file: " + path);
+            log.error("Error: couldn't read semantic dictionary info from file: " + path + " !\tGot following exception: " + e.toString());
             return null;
         }
     }
@@ -155,16 +155,16 @@ public class ClassifierUtils {
             objectInputStream = new ObjectInputStream(new FileInputStream(file));
             return (SVMClassifier) objectInputStream.readObject();
         } catch (IOException e) {
-            log.info("Error: " + e.toString());
+            log.error("Error during deserialization: " + e.toString());
         } catch (ClassNotFoundException e) {
-            log.info("Error: " + e.toString());
+            log.error("Error during deserialization: " + e.toString());
         } finally {
             try {
                 if (objectInputStream != null) {
                     objectInputStream.close();
                 }
             } catch (IOException e) {
-                log.info("Error: " + e.toString());
+                log.error("Error during deserialization: " + e.toString());
             }
         }
         return null;

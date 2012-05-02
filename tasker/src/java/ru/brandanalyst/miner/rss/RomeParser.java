@@ -6,14 +6,11 @@ import com.sun.syndication.io.SyndFeedInput;
 import com.sun.syndication.io.XmlReader;
 import org.joda.time.LocalDateTime;
 import ru.brandanalyst.core.model.Article;
+import ru.brandanalyst.core.util.ArticleCleaner;
 import ru.brandanalyst.core.util.Batch;
-import ru.brandanalyst.core.util.BrandAnalyticsLocale;
-import ru.brandanalyst.core.util.SimpleTextCleaner;
 import ru.brandanalyst.miner.util.StringChecker;
 
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -46,7 +43,7 @@ public class RomeParser extends AbstractRssParser {
                     String desc = (e.getDescription() == null) ? "" : e.getDescription().getValue();
                     Date date = e.getPublishedDate();
                     for (Long id : brandIds) {
-                        final Article article = new Article(id, sourceId, SimpleTextCleaner.clean(title), SimpleTextCleaner.clean(desc), link, new LocalDateTime(date), NUM_LIKES);
+                        final Article article = new Article(id, sourceId, ArticleCleaner.cleanArticle(title), ArticleCleaner.cleanArticle(desc), link, new LocalDateTime(date), NUM_LIKES);
                         if (article.getContent() != null && article.getTitle() != null && !(article.getContent().isEmpty()) && !(article.getTitle().isEmpty())) {
                             log.debug("Article added: " + article.getTitle());
                             batch.submit(article);

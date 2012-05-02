@@ -10,13 +10,13 @@ import de.l3s.boilerpipe.extractors.ArticleExtractor;
  */
 public class ArticleCleaner {
     private static final Logger log = Logger.getLogger(ArticleCleaner.class);
+    private static final BoilerpipeExtractor extractor = new ArticleExtractor();
 
     public static String cleanArticle(final String article) {
-        final BoilerpipeExtractor extractor = new ArticleExtractor();
         try {
             return extractor.getText(article);
         } catch (BoilerpipeProcessingException e) {
-            log.info("Error: " + e.toString() + "! Article has not been cleaned!");
+            log.error("Error: " + e.toString() + "! Article has not been cleaned!");
             return article;
         }
     }
