@@ -68,7 +68,7 @@ public class ArticleStorage extends ArticleProvider implements InitializingBean,
 
     private static DBObject wrap(Article a) {
         BasicDBObject object = new BasicDBObject();
-        object.put(MONGO_ID, /*a.hashCode() +*/ a.getBrandId() + a.getTitle());
+        object.put(MONGO_ID, /*a.hashCode() +*/ a.getBrandId() + a.getTitle() + a.getSourceId());
         object.put("id", a.getId());
         object.put("brand-id", a.getBrandId());
         object.put("source-id", a.getSourceId());
