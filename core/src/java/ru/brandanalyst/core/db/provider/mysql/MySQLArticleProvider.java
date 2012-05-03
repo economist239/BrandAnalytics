@@ -1,5 +1,6 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
+import org.hamcrest.StringDescription;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.RowCallbackHandler;
@@ -16,8 +17,6 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * Класс, предоставляющий доступ к новостям в БД
- * Created by IntelliJ IDEA.
  * User: Dmitry Batkovich
  * Date: 09.10.11
  * Time: 22:07
@@ -46,11 +45,15 @@ public class MySQLArticleProvider extends ArticleProvider {
         jdbcTemplate.getJdbcOperations().batchUpdate("INSERT INTO Article (InfoSourceId, BrandId, Title, Content, Link, NumLikes, Tstamp) VALUES(?, ?, ?, ?, ?, ?, ?);", new BatchPreparedStatementSetter() {
             @Override
             public void setValues(PreparedStatement ps, int i) throws SQLException {
-                Article a = it.next();
+                final Article a = it.next();
                 ps.setLong(1, a.getSourceId());
                 ps.setLong(2, a.getBrandId());
-                ps.setString(3, a.getTitle().substring(0, Math.min(MAX_ARTICLE_LENGHT, a.getTitle().length() - 1)));
-                ps.setString(4, a.getContent().substring(0, Math.min(MAX_ARTICLE_LENGHT, a.getContent().length() - 1)));
+
+                final String title = a.getTitle();
+                ps.setString(3, (title.length() > MAX_TITLE_LENGTH ? title.substring(0, MAX_TITLE_LENGTH) : title));
+
+                final String content = a.getContent();
+                ps.setString(4, (content.length() > MAX_ARTICLE_LENGHT ? content.substring(0, MAX_ARTICLE_LENGHT) : content));
                 ps.setString(5, a.getLink());
                 ps.setInt(6, a.getNumLikes());
                 ps.setDate(7, new java.sql.Date(a.getTstamp().toDate().getTime()));
