@@ -8,6 +8,7 @@ import ru.brandanalyst.core.model.SingleDot;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 
 /**
  * User: dima
@@ -56,5 +57,10 @@ public class InMemoryGraphProvider implements GraphProvider {
         }
 
         return result;
+    }
+
+    @Override
+    public Map<Long, Graph> getGraphsByTickerId(long tickerId) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.model.Graph;
 import ru.brandanalyst.core.model.SingleDot;
+import ru.brandanalyst.core.util.Cf;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,6 +18,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by IntelliJ IDEA.
@@ -108,7 +110,7 @@ public class MySQLGraphProvider implements GraphProvider {
     public List<Graph> getGraphByTickerAndBrand(long brandId, List<Long> tickerIds) {
         final List<Graph> graphList = new ArrayList<Graph>(tickerIds.size());
         namedParameterJdbcTemplate.query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id"
-                + " WHERE BrandId=:b_id AND TickerID IN :t_ids ORDER BY TickerId",
+                + " WHERE BrandId=:b_id AND TickerId IN :t_ids ORDER BY TickerId",
                 new MapSqlParameterSource("b_id", brandId).addValue("t_ids", tickerIds),
                 new RowCallbackHandler() {
                     @Override
@@ -149,5 +151,32 @@ public class MySQLGraphProvider implements GraphProvider {
         });
 
         return graphList;
+    }
+
+    @Override
+    public Map<Long, Graph> getGraphsByTickerId(final long tickerId) {
+        final Map<Long, Graph> graphMap = Cf.newHashMap();
+
+        jdbcTemplate.getJdbcOperations().query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id"
+                + " WHERE TickerId=? ORDER BY BrandId", new Object[]{tickerId},
+                new RowCallbackHandler() {
+                    @Override
+                    public void processRow(ResultSet rs) throws SQLException {
+                        final String tickerName = rs.getString("TickerName");
+                        final long brandId = rs.getLong("BrandId");
+
+                        final Graph g;
+                        if (graphMap.containsKey(brandId)) {
+                            g = graphMap.get(brandId);
+                        } else {
+                            g = new Graph();
+                            g.setTicker(tickerName);
+                            graphMap.put(brandId, g);
+                        }
+                        g.addPoint(new SingleDot(new LocalDate(rs.getDate("Tstamp")), rs.getDouble("Val")));
+                    }
+                });
+
+        return graphMap;
     }
 }

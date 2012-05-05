@@ -102,9 +102,18 @@ public class ArticleStorage extends ArticleProvider implements InitializingBean,
         coll.insert(wrap(article));
     }
 
+
+    /*
+    * <p>
+    *     writing batch of article to mongo db (not batch writing)
+    * </p>
+    *
+    *
+     */
     @Override
     public void writeListOfArticlesToDataStore(List<Article> articles) {
         //WriteResult wr = coll.insert(wrap(articles), WriteConcern.FSYNC_SAFE);
+        //batch writing was removed because we have exception if _id duplicated
         for (Article a: articles) {
             coll.insert(wrap(a));
         }
