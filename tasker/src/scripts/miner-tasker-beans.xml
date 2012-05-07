@@ -8,6 +8,9 @@
         <property name="period" value="${rss-period}"/>
     </bean>
 
+    <bean id="finamGrabberTask" class="ru.brandanalyst.miner.quote.GrabberTaskFinam" lazy-init="false">
+        <property name="period" value="${quote-period}"/>
+    </bean>
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
     <!--IMPORT DB-->

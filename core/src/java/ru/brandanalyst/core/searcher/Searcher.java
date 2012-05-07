@@ -111,7 +111,7 @@ public class Searcher implements InitializingBean {
                 doc.get("Name"),
                 doc.get("Description"),
                 doc.get("Website"),
-                Long.parseLong(doc.get("BranchId")), Params.empty()
+                Long.parseLong(doc.get("BranchId")), Params.empty("")
         );
     }
 

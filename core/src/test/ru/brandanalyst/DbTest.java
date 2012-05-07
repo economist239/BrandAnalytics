@@ -55,8 +55,8 @@ public class DbTest extends AbstractDependencyInjectionSpringContextTests {
 
     public void testBrand() {
         List<Brand> l = new LinkedList<Brand>();
-        l.add(new Brand(-1, "1", "2", "2", 1, Params.empty()));
-        l.add(new Brand(-1, "2", "1", "1", 1, Params.empty()));
+        l.add(new Brand(-1, "1", "2", "2", 1, Params.empty("")));
+        l.add(new Brand(-1, "2", "1", "1", 1, Params.empty("")));
         dirtyBrandProvider.writeListOfBrandsToDataStore(l);
         Assert.assertTrue(dirtyBrandProvider.getAllBrands().size() > 0);
     }

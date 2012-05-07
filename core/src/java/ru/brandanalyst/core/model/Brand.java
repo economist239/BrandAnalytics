@@ -34,7 +34,7 @@ public class Brand implements Jsonable {
         this.description = description;
         this.website = website;
         this.branchId = -1;
-        this.params = Params.empty();
+        this.params = Params.empty("");
     }
 
     public long getId() {

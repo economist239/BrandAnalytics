@@ -20,6 +20,7 @@
     <bean class="org.springframework.scheduling.timer.TimerFactoryBean">
         <property name="scheduledTimerTasks">
             <list>
+                <ref bean="finamGrabberTask"/>
                 <ref bean="rssGrabberTask"/>
                 <ref bean="analyzerProcessor"/>
             </list>
