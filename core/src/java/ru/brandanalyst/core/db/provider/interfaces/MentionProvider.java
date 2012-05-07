@@ -1,5 +1,7 @@
 package ru.brandanalyst.core.db.provider.interfaces;
 
+import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
 import ru.brandanalyst.core.model.Mention;
 
 import java.util.List;
@@ -13,5 +15,7 @@ import java.util.List;
 public interface MentionProvider {
 
     public List<Mention> getLatestMentions();
+
+    public List<Mention> getMentionsFrom(LocalDate date);
 
 }

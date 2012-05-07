@@ -20,10 +20,10 @@ public class Mention implements Jsonable {
     private SingleDot dot;
     private String ticker;
     private String brand;
-    private int tickerId;
-    private int brandId;
+    private long tickerId;
+    private long brandId;
 
-    public Mention(SingleDot dot, String ticker, String brand, int tickerId, int brandId) {
+    public Mention(SingleDot dot, String ticker, String brand, long tickerId, long brandId) {
         this.dot = dot;
         this.ticker = ticker;
         this.brand = brand;
@@ -31,7 +31,15 @@ public class Mention implements Jsonable {
         this.brandId = brandId;
     }
 
-    public int getBrandId() {
+    public Mention(SingleDot dot, TickerPair ticker, Brand brand) {
+        this.dot = dot;
+        this.ticker = ticker.getName();
+        this.brand = brand.getName();
+        this.tickerId = ticker.getId();
+        this.brandId = brand.getId();
+    }
+
+    public long getBrandId() {
         return brandId;
     }
 
@@ -63,7 +71,7 @@ public class Mention implements Jsonable {
         this.brand = brand;
     }
 
-    public int getTickerId() {
+    public long getTickerId() {
         return tickerId;
     }
 

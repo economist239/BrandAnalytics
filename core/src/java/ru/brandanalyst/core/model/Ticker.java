@@ -24,4 +24,12 @@ public enum Ticker {
         }
         throw new IllegalArgumentException("no tiker with id: " + id);
     }
+
+    public String getName(){
+        return name;
+    }
+
+    public long getId(){
+        return id;
+    }
 }

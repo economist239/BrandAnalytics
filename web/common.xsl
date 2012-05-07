@@ -15,8 +15,8 @@
                 <title>
                     <xsl:text>Brand Analytics</xsl:text>
                 </title>
-                <link href="3rd-party/bootstrap2/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-                <link href="3rd-party/bootstrap2/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"/>
+                <link href="3rd-party/bootstrap2/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="3rd-party/bootstrap2/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"/>
                 <style type="text/css">
                     body {
                     padding-top: 35px;
@@ -27,7 +27,7 @@
             <body>
                 <div class="navbar navbar-fixed-top" data-scrollspy="scrollspy">
                     <div class="navbar-inner">
-                        <div class="container">
+                        <div class="container-fluid">
                             <h4><a class="brand" href="index.xml">Brand Analytic</a></h4>
                             <div class="nav-collapse">
                                 <ul class="nav">
@@ -45,12 +45,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container-fluid">
                 <xsl:call-template name="run"/>
                 <div class="page-header" style="padding-top:50px">
                     <xsl:call-template name="header"/>
                 </div>
-                <div class="row show-grid">
+                <div class="row-fluid show-grid">
                     <div class="span3">
                         <xsl:call-template name="leftmenu"/>
                     </div>

@@ -63,7 +63,7 @@ create table SemanticDictionary(
     SemanticValue double not null
 );
 
-ALTER TABLE Article ADD CONSTRAINT ForArtileInfroSource
+ALTER TABLE Article ADD CONSTRAINT ForArticleInfoSource
 FOREIGN KEY (InfoSourceId)
 REFERENCES InformationSource(Id);
 

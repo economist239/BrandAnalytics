@@ -9,7 +9,7 @@
         <script type="text/javascript" src="3rd-party/crawler.js"/>
         <script type="text/javascript" src="includes/js/index.js"/>
         <style type="text/css">
-            .redcolor{
+            .aredcolor{
             color:red;
             }
             .greencolor{
@@ -23,7 +23,7 @@
     </xsl:template>
     <xsl:template name="run">
         <div class="marquee" id="mycrawler" align="center" style="-khtml-border-radius:10px">
-            <p><a style="padding:0px 10px;" color="blue">Лидеры роста:</a> Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233;</p>
+            <p><a style="padding:0px 10px;" color="white">Лидеры роста:</a> Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233;</p>
         </div>
 
 
@@ -33,7 +33,7 @@
         <br/>
         <img src="captain-obvious.jpeg" width="400" height="400"/> -->
 
-        <span align="right" id="a">Рейтинги упоминаемости по источнику
+        <span id="a" style="margin:0 auto">Рейтинги упоминаемости по источнику
             <!--<xsl:apply-templates select="page/data[@id='getInformationSources']/collection"/>-->
             <select class="input-large">
                 <option info-source-id="0"><xsl:text>все вместе</xsl:text></option>
