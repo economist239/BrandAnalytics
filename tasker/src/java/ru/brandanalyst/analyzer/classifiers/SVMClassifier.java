@@ -10,13 +10,13 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 /**
  * Alexandra Mikhaylova mikhaylova@yandex-team.ru
  */
 public class SVMClassifier implements SVM {
-    private static final Logger log = Logger.getLogger(SVMClassifier.class.getName());
+    private static final Logger log = Logger.getLogger(SVMClassifier.class);
     private static final long serialVersionUID = -6362247777972157008L;
 
     private WLSVM classifier = new WLSVM();
@@ -40,7 +40,7 @@ public class SVMClassifier implements SVM {
         try {
             this.classifier.buildClassifier(labeled);
         } catch (Exception e) {
-            log.info("Couldn't build SVM classifier");
+            log.error("Error: couldn't build SVM classifier! Got following exception: " + e.toString());
         }
     }
 
@@ -49,7 +49,7 @@ public class SVMClassifier implements SVM {
         try {
             return this.classifier.classifyInstance(instance);          // 0.0 = neutral, 1.0 = emotional
         } catch (Exception e) {
-            log.info("Couldn't classify instance: " + instance.toString());
+            log.error("Error: couldn't classify instance: " + instance.toString() + " !\tGot following exception: " + e.toString());
             return 0.0;
         }
     }
@@ -57,7 +57,7 @@ public class SVMClassifier implements SVM {
     @Override
     public Instances classify(final Instances unlabeled) {
         Instances labeled = new Instances(unlabeled);
-        for (int i = 0; i < unlabeled.numInstances(); i ++) {
+        for (int i = 0; i < unlabeled.numInstances(); i++) {
             final double classLabel = classifyInstance(unlabeled.instance(i));
             labeled.instance(i).setClassValue(classLabel);
         }
@@ -78,7 +78,7 @@ public class SVMClassifier implements SVM {
                 objectOutputStream.close();
             }
         } catch (IOException e) {
-            log.info("Error: " + e.toString());
+            log.error("Error during serialization: " + e.toString());
 //            return null;
         }
     }

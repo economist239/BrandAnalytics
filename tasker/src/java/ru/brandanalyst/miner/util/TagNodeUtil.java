@@ -11,10 +11,10 @@ package ru.brandanalyst.miner.util;
 import org.htmlcleaner.TagNode;
 
 public class TagNodeUtil {
-    public static String getText(TagNode tagNode){
+    public static String getText(TagNode tagNode) {
         StringBuilder sb = new StringBuilder();
         sb.append(tagNode.getText());
-        for(TagNode childNode : tagNode.getChildTags()){
+        for (TagNode childNode : tagNode.getChildTags()) {
             sb.append(getText(childNode));
         }
         return sb.toString();

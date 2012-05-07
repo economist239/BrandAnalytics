@@ -5,7 +5,8 @@ import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.BrandDictionaryItem;
 import ru.brandanalyst.core.util.Batch;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,7 +39,7 @@ public abstract class AbstractRssParser implements Runnable {
         try {
             parse();
         } catch (Exception e) {
-            log.error("error while processing " + url, e);
+            log.error("error while processing " + url);
         }
     }
 }

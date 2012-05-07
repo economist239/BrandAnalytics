@@ -34,6 +34,7 @@ public class BrandDictionaryReader extends AbstractTest {
         }
         return item;
     }
+
     @Override
     protected String[] getConfigLocations() {
         return configLocations;
@@ -49,10 +50,10 @@ public class BrandDictionaryReader extends AbstractTest {
         XStream xStream = generateXStream();
         return (List<XmlBrandDictionaryItem>) xStream.fromXML(content);
     }
-    
-    public List<BrandDictionaryItem> read(String content){
+
+    public List<BrandDictionaryItem> read(String content) {
         List<BrandDictionaryItem> items = new ArrayList<BrandDictionaryItem>();
-        for(XmlBrandDictionaryItem item : readXmlItems(content)){
+        for (XmlBrandDictionaryItem item : readXmlItems(content)) {
             items.add(toBrandDictionaryItem(item));
         }
         return items;

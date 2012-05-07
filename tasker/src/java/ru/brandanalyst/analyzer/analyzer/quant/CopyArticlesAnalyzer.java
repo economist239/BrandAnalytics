@@ -14,7 +14,7 @@ import java.util.List;
  */
 public class CopyArticlesAnalyzer extends StubAnalyzer {
     private final static Logger log = Logger.getLogger(CopyArticlesAnalyzer.class);
-    Batch<Article> copyBatch;
+    private Batch<Article> copyBatch;
 
     @Override
     public void init(ProvidersHandler pureProvidersHandler) {
@@ -30,12 +30,18 @@ public class CopyArticlesAnalyzer extends StubAnalyzer {
     @Override
     public void analyze(Article article) {
         log.info("submit artilce");
-        copyBatch.submit(article);
+        if (check(article)) {
+            copyBatch.submit(article);
+        }
     }
 
     @Override
     public void flush() {
         copyBatch.flush();
         log.info("CopyArticlesAnalyzer finished succesful");
+    }
+
+    private static boolean check(Article article) {
+        return article.getContent() != null && article.getTitle() != null && !(article.getContent().isEmpty()) && !(article.getTitle().isEmpty());
     }
 }

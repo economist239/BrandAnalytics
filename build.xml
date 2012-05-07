@@ -15,7 +15,7 @@
     <property name="frontend.build" location="${project.dir}/frontend/build.xml"/>
     <property name="tasker.build" location="${project.dir}/tasker/build.xml"/>
 
-    <property file="build.properties" />
+    <property file="build.properties"/>
 
     <!-- lib holder -->
     <path id="libs">
@@ -112,7 +112,7 @@
         <findbugs home="${lib.dir}/findbugs/"
                   output="html"
                   outputFile="findbugs_report.html">
-            <auxClasspath refid="libs"/>
+            <auxClasspath refid="${build.dir}/lib"/>
             <sourcePath path="${project.dir}"/>
             <class location="${build.dir}/"/>
         </findbugs>

@@ -11,7 +11,7 @@
     </xsl:template>
 
     <xsl:template match="page/data[@id='search']/collection" mode="show">
-        <xsl:for-each select="simply-brand-for-web">
+        <xsl:for-each select="brand">
             <h2>
                 <a>
                     <xsl:attribute name="href">showbrand.xml?id=<xsl:value-of select="@id"/>
@@ -40,6 +40,6 @@
         </h4>
     </xsl:template>
 
-    <xsl:template name="header"></xsl:template>
-
+<!--    <xsl:template name="header"></xsl:template>
+    -->
 </xsl:stylesheet>

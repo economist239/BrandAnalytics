@@ -11,38 +11,46 @@ import org.json.JSONObject;
  * Date: 2/9/12
  * Time: 8:27 PM
  */
+@Deprecated
 public class Params {
     private final static String SPLITTER = ":";
-    private JSONObject json;
+    private final JSONObject json;
+    private final String rawParams;
 
-    private Params() {
+    private Params(final String rawParams) {
         json = new JSONObject();
+        this.rawParams = rawParams;
     }
 
-    private Params(JSONObject json) {
+    private Params(final JSONObject json, final String rawParams) {
         this.json = json;
+        this.rawParams = rawParams;
     }
 
-    public static Params empty() {
-        return new Params();
+    public static Params empty(final String rawParams) {
+        return new Params(rawParams);
     }
 
     public static Params parseFromString(@NotNull String input) {
         if (input.isEmpty()) {
-            return empty();
+            return empty(input);
         }
         try {
-            return new Params(new JSONObject(input));
+            return new Params(new JSONObject(input), input);
         } catch (JSONException e) {
-        // временное
-            return empty();
-        //    throw new RuntimeException(e);
+            // временное
+            return empty(input);
+            //    throw new RuntimeException(e);
         }
     }
 
     @Override
     public String toString() {
         return json.toString();
+    }
+
+    public String getRawParams() {
+        return rawParams;
     }
 
     /*

@@ -14,33 +14,19 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4582dae-84d6-4fe8-88ba-bd6439fff288" name="New changelist" comment="to lower case">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/bdb/ArticleEntity.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/bdb/ArticleKVStorage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/time/TimeProperties.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberTaskTwitter.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/twitter/GrabberTaskTwitter.java" afterPath="" />
+    <list default="true" id="e4582dae-84d6-4fe8-88ba-bd6439fff288" name="New changelist" comment="style checked duplicates deleted in mongo">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.ipr" afterPath="$PROJECT_DIR$/BrandAnalytics.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BrandAnalytics.iws" afterPath="$PROJECT_DIR$/BrandAnalytics.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mongo/ArticleStorage.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mongo/ArticleStorage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLGraphProvider.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLGraphProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Article.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/ArticleForWeb.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/ArticleForWeb.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Branch.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Branch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Graph.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Graph.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/SingleDot.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/SingleDot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Params.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Params.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/searcher/Searcher.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/searcher/Searcher.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/util/Time.java" afterPath="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/util/Time.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/ru/brandanalyst/ArticleStorageTest.java" afterPath="$PROJECT_DIR$/core/src/test/ru/brandanalyst/ArticleStorageTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/ru/brandanalyst/DbTest.java" afterPath="$PROJECT_DIR$/core/src/test/ru/brandanalyst/DbTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryArticleProvider.java" afterPath="$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryArticleProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/GraphsAnalyzer.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/GraphsAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/SvmAnalyzer.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/SvmAnalyzer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/indexer/BuildIndexTask.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/indexer/BuildIndexTask.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryBrandProvider.java" afterPath="$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryBrandProvider.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rest-brand-analytics/rest-brand-analytics.iml" afterPath="$PROJECT_DIR$/rest-brand-analytics/rest-brand-analytics.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/quote/GrabberTaskFinam.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/quote/GrabberTaskFinam.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/HorrorParser.java" afterPath="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/HorrorParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.xsl" afterPath="$PROJECT_DIR$/web/index.xsl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/scripts/miner-tasker-beans.xml" afterPath="$PROJECT_DIR$/tasker/src/scripts/miner-tasker-beans.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/scripts/schedule.properties" afterPath="$PROJECT_DIR$/tasker/src/scripts/schedule.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml" afterPath="$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml" />
     </list>
     <ignored path="BrandAnalytics.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -110,82 +96,106 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TagNodeUtil.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/util/TagNodeUtil.java">
+      <file leaf-file-name="miner-tasker-beans.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/scripts/miner-tasker-beans.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="13" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
+            <state line="6" column="4" selection-start="211" selection-end="211" vertical-scroll-proportion="-1.0851064">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="indexer-tasker-beans.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/scripts/indexer-tasker-beans.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="analyzer-tasker-beans.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/scripts/analyzer-tasker-beans.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="4" selection-start="372" selection-end="372" vertical-scroll-proportion="-2.2765958">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="monitoring-tasker-beans.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/scripts/monitoring-tasker-beans.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tasker-beans.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="25" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.6221663">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GrabberTaskFinam.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/quote/GrabberTaskFinam.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="63" column="42" selection-start="2286" selection-end="2286" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XmlProvider.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/util/XmlProvider.java">
+      <file leaf-file-name="HorrorParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/HorrorParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
+            <state line="23" column="13" selection-start="638" selection-end="638" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArticleStorageTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/ArticleStorageTest.java">
+      <file leaf-file-name="AbstractRssParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/AbstractRssParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0">
+            <state line="27" column="6" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrandDictionaryReader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/BrandDictionaryReader.java">
+      <file leaf-file-name="ParserStarter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/ParserStarter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="13" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0">
+            <state line="18" column="13" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InMemoryArticleProvider.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryArticleProvider.java">
+      <file leaf-file-name="GraphProvider.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/GraphProvider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="75" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InMemoryBranchesProvider.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryBranchesProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InMemoryGraphProvider.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryGraphProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InMemoryInfoSourceProvider.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryInfoSourceProvider.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="332" selection-end="332" vertical-scroll-proportion="0.7297297">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DbTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/DbTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="45" selection-start="2022" selection-end="2022" vertical-scroll-proportion="0.0">
+            <state line="9" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -200,32 +210,34 @@
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
-      <array>
+      <list>
         <option value="vans239" />
-      </array>
+      </list>
     </option>
-    <option name="CHECKOUT_INCLUDE_TAGS" value="false" />
-    <option name="UPDATE_CHANGES_POLICY" value="STASH" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Graph.java" />
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mongo/ArticleStorage.java" />
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MappersHolder.java" />
-        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/GraphsAnalyzer.java" />
-        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/analyzer/quant/SvmAnalyzer.java" />
-        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/indexer/BuildIndexTask.java" />
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/util/Time.java" />
-        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/HorrorParser.java" />
+        <option value="$PROJECT_DIR$/frontend/src/java/ru/brandanalyst/frontend/yalets/cached/CachedGetLatestMentionsYalet.java" />
+        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/analyzer/mention/MentionGeneratorTask.java" />
+        <option value="$PROJECT_DIR$/rest-brand-analytics/src/scala/MainRouter.scala" />
+        <option value="$PROJECT_DIR$/rest-brand-analytics/src/scala/ru/brandanalyst/rest/MainRouter.scala" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/util/Starter.java" />
+        <option value="$PROJECT_DIR$/rest-brand-analytics/src/scala/ru/brandanalyst/rest/CxDefaultHandler.scala" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Params.java" />
+        <option value="$PROJECT_DIR$/tasker/src/scripts/schedule.properties" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/model/Brand.java" />
         <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/searcher/Searcher.java" />
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLArticleProvider.java" />
-        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLGraphProvider.java" />
-        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/grabbers/GrabberTaskTwitter.java" />
-        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/quote/GrabberTaskFinam.java" />
-        <option value="$PROJECT_DIR$/core/src/test/ru/brandanalyst/ArticleStorageTest.java" />
+        <option value="$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryBrandProvider.java" />
         <option value="$PROJECT_DIR$/core/src/test/ru/brandanalyst/DbTest.java" />
-        <option value="$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryArticleProvider.java" />
+        <option value="$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLGraphProvider.java" />
+        <option value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/quote/GrabberTaskFinam.java" />
+        <option value="$PROJECT_DIR$/tasker/src/scripts/miner-tasker-beans.xml" />
+        <option value="$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml" />
       </list>
     </option>
   </component>
@@ -303,8 +315,8 @@
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1280" />
-    <option name="height" value="822" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -355,26 +367,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="assessor-tool">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -443,15 +435,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="brandanalyst" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miner" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -491,175 +475,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="frontend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="brandanalyst" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="brandanalyst" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="tasker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -671,7 +487,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="brandanalyst" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -685,7 +505,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="tasker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -694,6 +514,126 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="brandanalyst" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rss" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="brandanalyst" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="quote" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="brandanalyst" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="miner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="processor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest-brand-analytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BrandAnalytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest-brand-analytics" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rest" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -707,24 +647,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="BrandAnalytics" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="analyzer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            <PATH_ELEMENT USER_OBJECT="assessor-tool">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -735,14 +675,14 @@
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="129" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="146" />
-    <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="146" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="143" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="143" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="last_opened_file_path" value="$USER_HOME$/AndBenuaBus" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="147" />
@@ -759,16 +699,17 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/tasker/src/java/ru/brandanalyst" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.10121457" />
     <property name="MemberChooser.copyJavadoc" value="false" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -784,95 +725,31 @@
       <recent name="$PROJECT_DIR$/analyzer/src/scripts" />
       <recent name="$PROJECT_DIR$/analyzer/src/java/ru/brandanalyst/analyzer" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/rest-brand-analytics/src/scala/ru/brandanalyst/rest" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.brandanalyst" />
       <recent name="ru.brandanalyst.assessor" />
       <recent name="ru.brandanalyst.miner" />
       <recent name="ru.brandanalyst.storage.mapper" />
       <recent name="ru.brandanalyst.mapper" />
-      <recent name="ru.brandanalyst.storage.provider" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FrontendStarter">
-    <configuration default="false" name="FeedParser" type="Application" factoryName="Application" temporary="true">
+  <component name="RunManager" selected="Application.TaskerStarter">
+    <configuration default="false" name="ArticleStorageTest.testShow" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="ru.brandanalyst.miner.rss.*" />
+          <option name="PATTERN" value="ru.brandanalyst.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="ru.brandanalyst.miner.rss.FeedParser" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="\frontend\src\scripts\beans.xml" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="BrandAnalytics" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="AbstractRssParser" type="Application" factoryName="Application" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.brandanalyst.miner.rss.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="ru.brandanalyst.miner.rss.AbstractRssParser" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="\frontend\src\scripts\beans.xml" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="BrandAnalytics" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="DbTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="core" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="ru.brandanalyst" />
-      <option name="MAIN_CLASS_NAME" value="ru.brandanalyst.DbTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="RssTest.testRss" type="JUnit" factoryName="JUnit" temporary="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.brandanalyst.miner.rss.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="tasker" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="ru.brandanalyst.miner.rss" />
-      <option name="MAIN_CLASS_NAME" value="ru.brandanalyst.miner.rss.RssTest" />
-      <option name="METHOD_NAME" value="testRss" />
+      <option name="MAIN_CLASS_NAME" value="ru.brandanalyst.ArticleStorageTest" />
+      <option name="METHOD_NAME" value="testShow" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -888,7 +765,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="ArticleStorageTest.testShow" type="JUnit" factoryName="JUnit" temporary="true">
+    <configuration default="false" name="ArticleStorageTest.testMongoStorage" type="JUnit" factoryName="JUnit" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="ru.brandanalyst.*" />
@@ -900,7 +777,86 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="ru.brandanalyst" />
       <option name="MAIN_CLASS_NAME" value="ru.brandanalyst.ArticleStorageTest" />
-      <option name="METHOD_NAME" value="testShow" />
+      <option name="METHOD_NAME" value="testMongoStorage" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="IndexBuilderTest.testBuildIndex" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.brandanalyst.indexer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="tasker" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.brandanalyst.indexer" />
+      <option name="MAIN_CLASS_NAME" value="ru.brandanalyst.indexer.IndexBuilderTest" />
+      <option name="METHOD_NAME" value="testBuildIndex" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="DataParseTest.testDate" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="tasker" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="DataParseTest" />
+      <option name="METHOD_NAME" value="testDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="SimpleTextCleaner.thisMustBeTested" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.brandanalyst.core.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="core" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="ru.brandanalyst.core.util" />
+      <option name="MAIN_CLASS_NAME" value="ru.brandanalyst.core.util.SimpleTextCleaner" />
+      <option name="METHOD_NAME" value="thisMustBeTested" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
       <option name="PARAMETERS" />
@@ -946,11 +902,14 @@
         </option>
         <option name="myRunnerParameters">
           <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
             <option name="goals">
               <list />
             </option>
-            <option name="profiles">
-              <set />
+            <option name="profilesMap">
+              <map />
             </option>
             <option name="workingDirPath" value="" />
           </MavenRunnerParameters>
@@ -977,29 +936,17 @@
         <option name="PhingTarget" enabled="false" />
       </method>
     </configuration>
-    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" adl_options="" air_descriptor_path="" air_program_params="" air_publisher_id="" air_root_dir_path="" air_run_mode="AppDescriptor" browser_family="FIREFOX" class_name="" debugger_sdk="Module SDK" html_or_swf_file_path="" launcher_type="OSDefault" main_class_name="" method_name="" module_name="" output_log_level="" package_name="" player_path="/usr/bin/flashplayerdebugger" port="0" run_mode="HtmlOrSwfFile" run_trusted="false" scope="Class" socket_policy_port="0" url_to_launch="http://">
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-        <option name="PhingTarget" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="XSLT" factoryName="XSLT">
-      <option name="myOutputFile" />
-      <option name="myOpenOutputFile" value="false" />
-      <option name="myOpenInBrowser" value="false" />
-      <option name="mySmartErrorHandling" value="true" />
-      <option name="myRunnerPort" value="34873" />
-      <option name="myVmArguments" />
-      <option name="myWorkingDirectory" />
-      <option name="myModule" />
-      <option name="myJdk" />
-      <parameters />
-      <OutputType value="CONSOLE" save-to-file="false" />
-      <FileType name="XML" />
-      <JdkChoice value="FROM_MODULE" />
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" class_name="" method_name="" output_log_level="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browserFamily" value="FIREFOX" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="playerPath" value="/Applications/Flash Player Debugger.app" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -1115,18 +1062,18 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="MinerStarter" type="Application" factoryName="Application">
+    <configuration default="false" name="TaskerStarter" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="net.sf.xfresh.util.Starter" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="/miner/src/scripts/miner-beans.xml" />
+      <option name="PROGRAM_PARAMETERS" value="/tasker/src/scripts/tasker-beans.xml" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="miner" />
+      <module name="tasker" />
       <envs />
       <RunnerSettings RunnerId="Cover" />
       <RunnerSettings RunnerId="Debug">
@@ -1250,19 +1197,19 @@
       <method />
     </configuration>
     <list size="13">
-      <item index="0" class="java.lang.String" itemvalue="Application.FeedParser" />
-      <item index="1" class="java.lang.String" itemvalue="Application.AbstractRssParser" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DbTest" />
-      <item index="3" class="java.lang.String" itemvalue="Application.FrontendStarter" />
-      <item index="4" class="java.lang.String" itemvalue="Application.IndexerStarter" />
-      <item index="5" class="java.lang.String" itemvalue="Application.MinerStarter" />
-      <item index="6" class="java.lang.String" itemvalue="Application.AnalyzerStarter" />
-      <item index="7" class="java.lang.String" itemvalue="Application.DictionaryInitialyzer" />
-      <item index="8" class="java.lang.String" itemvalue="Application.TwitterWrapperToFile" />
-      <item index="9" class="java.lang.String" itemvalue="Application.TwitterTool" />
-      <item index="10" class="java.lang.String" itemvalue="JUnit.MinerGrabbersTest" />
-      <item index="11" class="java.lang.String" itemvalue="JUnit.RssTest.testRss" />
-      <item index="12" class="java.lang.String" itemvalue="JUnit.ArticleStorageTest.testShow" />
+      <item index="0" class="java.lang.String" itemvalue="Application.FrontendStarter" />
+      <item index="1" class="java.lang.String" itemvalue="Application.IndexerStarter" />
+      <item index="2" class="java.lang.String" itemvalue="Application.TaskerStarter" />
+      <item index="3" class="java.lang.String" itemvalue="Application.AnalyzerStarter" />
+      <item index="4" class="java.lang.String" itemvalue="Application.DictionaryInitialyzer" />
+      <item index="5" class="java.lang.String" itemvalue="Application.TwitterWrapperToFile" />
+      <item index="6" class="java.lang.String" itemvalue="Application.TwitterTool" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.ArticleStorageTest.testShow" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.MinerGrabbersTest" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.ArticleStorageTest.testMongoStorage" />
+      <item index="10" class="java.lang.String" itemvalue="JUnit.IndexBuilderTest.testBuildIndex" />
+      <item index="11" class="java.lang.String" itemvalue="JUnit.DataParseTest.testDate" />
+      <item index="12" class="java.lang.String" itemvalue="JUnit.SimpleTextCleaner.thisMustBeTested" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -1270,7 +1217,7 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500">
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
     <option name="mySSHConnectionTimeout" value="30000" />
@@ -1294,7 +1241,183 @@
       <created>1317843081453</created>
       <updated>1327315345152</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="checking broken articles">
+      <created>1335716563720</created>
+      <updated>1335716563720</updated>
+    </task>
+    <task id="LOCAL-00003" summary="mongo deleting old documents">
+      <created>1335717626030</created>
+      <updated>1335717626030</updated>
+    </task>
+    <task id="LOCAL-00004" summary="old classes deleted">
+      <created>1335717683340</created>
+      <updated>1335717683340</updated>
+    </task>
+    <task id="LOCAL-00005" summary="post processors">
+      <created>1335718761141</created>
+      <updated>1335718761141</updated>
+    </task>
+    <task id="LOCAL-00006" summary="some logic in postprocessing">
+      <created>1335719573932</created>
+      <updated>1335719573932</updated>
+    </task>
+    <task id="LOCAL-00007" summary="bugfix">
+      <created>1335720203802</created>
+      <updated>1335720203802</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactoring">
+      <created>1335720539523</created>
+      <updated>1335720539523</updated>
+    </task>
+    <task id="LOCAL-00009" summary="index page fixing">
+      <created>1335721229235</created>
+      <updated>1335721229235</updated>
+    </task>
+    <task id="LOCAL-00010" summary="indexer works">
+      <created>1335726237457</created>
+      <updated>1335726237457</updated>
+    </task>
+    <task id="LOCAL-00011" summary="searcher by brands works">
+      <created>1335727649297</created>
+      <updated>1335727649297</updated>
+    </task>
+    <task id="LOCAL-00012" summary="multifield query parser in lucene">
+      <created>1335728199234</created>
+      <updated>1335728199234</updated>
+    </task>
+    <task id="LOCAL-00013" summary="some fixes">
+      <created>1335728532606</created>
+      <updated>1335728532606</updated>
+    </task>
+    <task id="LOCAL-00014" summary="btns deleted">
+      <created>1335728723435</created>
+      <updated>1335728723435</updated>
+    </task>
+    <task id="LOCAL-00015" summary="graph view fixing">
+      <created>1335729413218</created>
+      <updated>1335729413218</updated>
+    </task>
+    <task id="LOCAL-00016" summary="one hack">
+      <created>1335729686519</created>
+      <updated>1335729686519</updated>
+    </task>
+    <task id="LOCAL-00017" summary="change mongo host from localhost">
+      <created>1335760954047</created>
+      <updated>1335760954047</updated>
+    </task>
+    <task id="LOCAL-00018" summary="batch logging">
+      <created>1335761639263</created>
+      <updated>1335761639263</updated>
+    </task>
+    <task id="LOCAL-00019" summary="date parsing fix">
+      <created>1335768928032</created>
+      <updated>1335768928032</updated>
+    </task>
+    <task id="LOCAL-00020" summary="hashcode fix">
+      <created>1335770057851</created>
+      <updated>1335770057851</updated>
+    </task>
+    <task id="LOCAL-00021" summary="minor">
+      <created>1335770299472</created>
+      <updated>1335770299472</updated>
+    </task>
+    <task id="LOCAL-00022" summary="logging">
+      <created>1335771235115</created>
+      <updated>1335771235115</updated>
+    </task>
+    <task id="LOCAL-00023" summary="deleted">
+      <created>1335771295895</created>
+      <updated>1335771295895</updated>
+    </task>
+    <task id="LOCAL-00024" summary="to lower case">
+      <created>1335771746875</created>
+      <updated>1335771746884</updated>
+    </task>
+    <task id="LOCAL-00025" summary="script fixed">
+      <created>1335772744648</created>
+      <updated>1335772744648</updated>
+    </task>
+    <task id="LOCAL-00026" summary="monitorings">
+      <created>1335775781403</created>
+      <updated>1335775781403</updated>
+    </task>
+    <task id="LOCAL-00027" summary="monitoring">
+      <created>1335777158899</created>
+      <updated>1335777158899</updated>
+    </task>
+    <task id="LOCAL-00028" summary="simple text cleaner">
+      <created>1335779261465</created>
+      <updated>1335779261465</updated>
+    </task>
+    <task id="LOCAL-00029" summary="simple text cleaner">
+      <created>1335779633703</created>
+      <updated>1335779633703</updated>
+    </task>
+    <task id="LOCAL-00030" summary="some">
+      <created>1335779974897</created>
+      <updated>1335779974897</updated>
+    </task>
+    <task id="LOCAL-00031" summary="style checked duplicates deleted in mongo">
+      <created>1335799681102</created>
+      <updated>1335799681102</updated>
+    </task>
+    <task id="LOCAL-00032" summary="fix">
+      <created>1335810671992</created>
+      <updated>1335810671992</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fix">
+      <created>1335821415739</created>
+      <updated>1335821415739</updated>
+    </task>
+    <task id="LOCAL-00034" summary="fix">
+      <created>1335845188272</created>
+      <updated>1335845188272</updated>
+    </task>
+    <task id="LOCAL-00035" summary="changed">
+      <created>1335845263267</created>
+      <updated>1335845263267</updated>
+    </task>
+    <task id="LOCAL-00036" summary="new rss">
+      <created>1335852587178</created>
+      <updated>1335852587178</updated>
+    </task>
+    <task id="LOCAL-00037" summary="rome parser">
+      <created>1335860555424</created>
+      <updated>1335860555425</updated>
+    </task>
+    <task id="LOCAL-00038" summary="some">
+      <created>1335985157480</created>
+      <updated>1335985157480</updated>
+    </task>
+    <task id="LOCAL-00039" summary="index">
+      <created>1335985317188</created>
+      <updated>1335985317188</updated>
+    </task>
+    <task id="LOCAL-00040" summary="bugfix">
+      <created>1336058226870</created>
+      <updated>1336058226870</updated>
+    </task>
+    <task id="LOCAL-00041" summary="hashcode changed">
+      <created>1336058344805</created>
+      <updated>1336058344805</updated>
+    </task>
+    <task id="LOCAL-00042" summary="some">
+      <created>1336189414524</created>
+      <updated>1336189414524</updated>
+    </task>
+    <task id="LOCAL-00043" summary="some">
+      <created>1336189647774</created>
+      <updated>1336189647774</updated>
+    </task>
+    <task id="LOCAL-00044" summary="cx">
+      <created>1336190017198</created>
+      <updated>1336190017198</updated>
+    </task>
+    <task id="LOCAL-00045" summary="new starter">
+      <created>1336416723905</created>
+      <updated>1336416723905</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1318,34 +1441,38 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="822" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.6358464" sideWeight="0.0" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32958803" sideWeight="0.0" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15097402" sideWeight="0.75624084" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.670412" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30670926" sideWeight="0.49675325" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35596028" sideWeight="0.49756494" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32873377" sideWeight="0.22350994" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23003195" sideWeight="0.0" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3257468" sideWeight="0.0" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32594937" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23376623" sideWeight="0.70554763" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32954547" sideWeight="0.63535035" order="7" side_tool="false" content_ui="combo" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32753405" sideWeight="0.6864536" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26585367" sideWeight="0.36415362" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40682787" sideWeight="0.9193303" order="2" side_tool="false" content_ui="tabs" x="0" y="24" width="1366" height="744" />
-      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Kotlin" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32978722" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32958803" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22971286" sideWeight="0.0" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="IvyIDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52684146" sideWeight="0.0" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3258427" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23376623" sideWeight="0.70554763" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32753405" sideWeight="0.6864536" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.32954547" sideWeight="0.63535035" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3297414" sideWeight="0.670412" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39325842" sideWeight="0.9193303" order="2" side_tool="false" content_ui="tabs" x="0" y="24" width="1366" height="744" />
+      <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CheckStyle" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2859425" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28589264" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1383,8 +1510,11 @@
     <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="CREATE_PATCH_EXPAND_DETAILS_DEFAULT" value="true" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="dates on morda" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="new starter" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1397,31 +1527,31 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="tasker" />
-    <MESSAGE value="new workable rss parser" />
-    <MESSAGE value="new miner conf" />
-    <MESSAGE value="1. finamName deleted 2. grabber ref" />
-    <MESSAGE value="not null in sql" />
-    <MESSAGE value="new row for dirty database" />
-    <MESSAGE value="some annotations" />
-    <MESSAGE value="abstractDelayedTimerTask" />
-    <MESSAGE value="timer task" />
-    <MESSAGE value="readme" />
-    <MESSAGE value="core part &#10;new Mention class and his providers&#10;some changes int Article providers" />
-    <MESSAGE value="Tools for Weka SVM Classifier serialization # 1" />
-    <MESSAGE value="Tools for Weka SVM Classifier serialization completed.&#10;Learned positive and negative classifiers added to directory BrandAnalytics/svmclassifiers." />
-    <MESSAGE value="Small refactoring in building classifiers (SVMClassifierTest.java)" />
-    <MESSAGE value="Project structure changed: module analyzer deleted, everything moved to module tasker." />
-    <MESSAGE value="analyzer bugfix" />
-    <MESSAGE value="rss test" />
+    <MESSAGE value="graph view fixing" />
+    <MESSAGE value="one hack" />
+    <MESSAGE value="change mongo host from localhost" />
+    <MESSAGE value="batch logging" />
+    <MESSAGE value="date parsing fix" />
+    <MESSAGE value="hashcode fix" />
+    <MESSAGE value="minor" />
+    <MESSAGE value="logging" />
+    <MESSAGE value="deleted" />
     <MESSAGE value="to lower case" />
+    <MESSAGE value="script fixed" />
+    <MESSAGE value="monitorings" />
+    <MESSAGE value="monitoring" />
+    <MESSAGE value="simple text cleaner" />
+    <MESSAGE value="style checked duplicates deleted in mongo" />
     <MESSAGE value="fix" />
-    <MESSAGE value="timestamp -&gt; date" />
-    <MESSAGE value="rss miner worked" />
-    <MESSAGE value="big bug fix" />
-    <MESSAGE value="debug&#10;" />
-    <MESSAGE value="good code in mention provider" />
-    <MESSAGE value="dates on morda" />
+    <MESSAGE value="changed" />
+    <MESSAGE value="new rss" />
+    <MESSAGE value="rome parser" />
+    <MESSAGE value="index" />
+    <MESSAGE value="bugfix" />
+    <MESSAGE value="hashcode changed" />
+    <MESSAGE value="some" />
+    <MESSAGE value="cx" />
+    <MESSAGE value="new starter" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1473,110 +1603,151 @@
       <expanded value="true" />
     </buildFile>
   </component>
+  <component name="atlassian-ide-plugin-workspace">
+    <option name="bambooConfiguration">
+      <BambooWorkspaceConfiguration>
+        <option name="view">
+          <BambooViewConfigurationBean />
+        </option>
+      </BambooWorkspaceConfiguration>
+    </option>
+    <option name="defaultCredentials">
+      <UserCfgBean />
+    </option>
+  </component>
+  <component name="atlassian-ide-plugin-workspace-issues">
+    <option name="view">
+      <JiraViewConfigurationBean>
+        <option name="viewFilterId" value="" />
+      </JiraViewConfigurationBean>
+    </option>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/indexer/BuildIndexTask.java">
+    <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryBrandProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="13" selection-start="941" selection-end="941" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/quote/GrabberTaskFinam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="56" selection-start="4592" selection-end="4592" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/twitter/impl/SimpleTwitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/twitter/impl/TopsyTwitter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="13" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/util/LentaDataTransformator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="22" selection-start="156" selection-end="156" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/util/StringChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="19" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/util/TagNodeUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="185" selection-end="185" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/util/XmlProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/ArticleStorageTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="141" selection-end="141" vertical-scroll-proportion="0.0">
+        <state line="23" column="73" selection-start="790" selection-end="790" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/DbTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="45" selection-start="2022" selection-end="2022" vertical-scroll-proportion="0.0">
+        <state line="58" column="60" selection-start="1857" selection-end="1857" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/BrandDictionaryReader.java">
+    <entry file="file://$PROJECT_DIR$/tasker/src/scripts/schedule.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0">
+        <state line="7" column="0" selection-start="102" selection-end="114" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryArticleProvider.java">
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mongo/ArticleStorage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="75" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0">
+        <state line="167" column="0" selection-start="5487" selection-end="5487" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryBranchesProvider.java">
+    <entry file="file://$PROJECT_DIR$/tasker/src/scripts/monitoring-tasker-beans.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="299" selection-end="299" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/mysql/MySQLGraphProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="0" selection-start="2518" selection-end="2518" vertical-scroll-proportion="0.6691542">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryGraphProvider.java">
+    <entry file="file://$PROJECT_DIR$/core/src/java/ru/brandanalyst/core/db/provider/interfaces/GraphProvider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0">
+        <state line="9" column="0" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/test/ru/brandanalyst/db/InMemoryInfoSourceProvider.java">
+    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/HorrorParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="13" selection-start="332" selection-end="332" vertical-scroll-proportion="0.7297297">
+        <state line="23" column="13" selection-start="638" selection-end="638" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/AbstractRssParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="6" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/rss/ParserStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="13" selection-start="590" selection-end="590" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/joda-time-2.0.jar!/org/joda/time/LocalDate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="15" selection-start="3389" selection-end="3389" vertical-scroll-proportion="0.35492957">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/java/ru/brandanalyst/miner/quote/GrabberTaskFinam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="42" selection-start="2286" selection-end="2286" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/scripts/miner-tasker-beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="4" selection-start="211" selection-end="211" vertical-scroll-proportion="-1.0851064">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/scripts/indexer-tasker-beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/scripts/analyzer-tasker-beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="4" selection-start="372" selection-end="372" vertical-scroll-proportion="-2.2765958">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasker/src/scripts/tasker-beans.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="25" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.6221663">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
       </provider>
     </entry>
   </component>
@@ -1596,7 +1767,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Spring</last-edited>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1631,11 +1802,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>tasker</last-edited>
+          <last-edited>rest-brand-analytics</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.10121457" />
               </list>
             </option>
           </splitter-proportions>
@@ -1659,7 +1830,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.10121457" />
               </list>
             </option>
           </splitter-proportions>

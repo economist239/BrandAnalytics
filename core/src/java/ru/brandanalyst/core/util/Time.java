@@ -1,8 +1,5 @@
 package ru.brandanalyst.core.util;
 
-import org.joda.time.DateTime;
-import org.joda.time.LocalDate;
-
 import java.util.Date;
 
 /**

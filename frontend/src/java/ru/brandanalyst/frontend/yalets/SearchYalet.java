@@ -4,6 +4,7 @@ import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
 import net.sf.xfresh.core.Yalet;
 import net.sf.xfresh.core.xml.Xmler;
+import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.core.searcher.Searcher;
 
 /**
@@ -17,6 +18,7 @@ public class SearchYalet implements Yalet {
 
     private Searcher searcher;
 
+    @Required
     public void setSearcher(Searcher searcher) {
         this.searcher = searcher;
     }
@@ -31,7 +33,7 @@ public class SearchYalet implements Yalet {
             return;
         }
 
-        if (queryType != null) {
+        if (queryType == null) {
             res.add(searcher.searchBrandByDescription(query));
         } else {
             res.add(searcher.searchArticleByContent(query));

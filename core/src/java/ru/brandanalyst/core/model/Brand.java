@@ -11,7 +11,7 @@ import ru.brandanalyst.core.util.Jsonable;
  * Date: 09.10.11
  * Time: 17:15
  */
-public class Brand implements Jsonable{
+public class Brand implements Jsonable {
     private long id;
     private long branchId;
     private String name;
@@ -34,7 +34,7 @@ public class Brand implements Jsonable{
         this.description = description;
         this.website = website;
         this.branchId = -1;
-        this.params = Params.empty();
+        this.params = Params.empty("");
     }
 
     public long getId() {

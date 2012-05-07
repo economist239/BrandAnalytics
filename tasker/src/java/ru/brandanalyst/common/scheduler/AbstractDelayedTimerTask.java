@@ -2,14 +2,12 @@ package ru.brandanalyst.common.scheduler;
 
 import org.springframework.scheduling.timer.ScheduledTimerTask;
 
-import java.util.TimerTask;
-
 /**
  * Created by IntelliJ IDEA.
  * User: dima
  * Date: 2/9/12
  * Time: 10:14 PM
- *
+ * <p/>
  * requires to set only period
  */
 public abstract class AbstractDelayedTimerTask extends ScheduledTimerTask {
@@ -24,8 +22,8 @@ public abstract class AbstractDelayedTimerTask extends ScheduledTimerTask {
                 runTask();
             }
         });
- 
+
     }
-    
+
     protected abstract void runTask();
 }

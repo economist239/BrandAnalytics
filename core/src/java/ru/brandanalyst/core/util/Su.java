@@ -5,9 +5,9 @@ import java.util.List;
 
 /**
  * Alexandra Mikhaylova mikhaylova@yandex-team.ru
- *
+ * <p/>
  * String utils
- **/
+ */
 
 public class Su {
     private static final char[] punctuation = {' ', '.', ',', '!', '?', ':', ';', '_', '/', '\\', '\'', '\"', '|', '`', '(', ')', '[', ']', '\n'};

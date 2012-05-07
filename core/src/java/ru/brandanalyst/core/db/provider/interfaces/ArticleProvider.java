@@ -1,7 +1,6 @@
 package ru.brandanalyst.core.db.provider.interfaces;
 
 import ru.brandanalyst.core.db.provider.EntityVisitor;
-import ru.brandanalyst.core.db.provider.mysql.MappersHolder;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.ArticleForWeb;
 
@@ -9,6 +8,7 @@ import java.util.List;
 
 public abstract class ArticleProvider {
     protected final static int MAX_ARTICLE_LENGHT = 30000;
+    protected final static int MAX_TITLE_LENGTH = 400;
 
     public abstract void writeArticleToDataStore(Article article);
 
@@ -31,22 +31,13 @@ public abstract class ArticleProvider {
     public abstract List<Article> getArticlesWithCondition(String whereClause);
 
     public abstract void visitArticles(EntityVisitor<Article> visitor);
+
     /*
-     * возращает указанное количество самых свежих новостей по данном бренду
-     */
+    * возращает указанное количество самых свежих новостей по данном бренду
+    */
     public abstract List<Article> getTopArticles(long brandId, int topSize);
 
     public abstract List<Article> getTopArticles(int topSize);
 
     public abstract List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId);
-
-    /*
-    *
-    * only for dirty db!!
-    */
-    public abstract void setAnalyzed(final List<Long> ids);
-
-
-
-    public abstract List<Article> getOnlyNotAnalyzedArticles();
 }

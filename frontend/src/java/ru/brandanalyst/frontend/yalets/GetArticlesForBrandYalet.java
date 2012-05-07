@@ -2,9 +2,6 @@ package ru.brandanalyst.frontend.yalets;
 
 import net.sf.xfresh.core.InternalRequest;
 import net.sf.xfresh.core.InternalResponse;
-import ru.brandanalyst.core.model.Article;
-
-import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.

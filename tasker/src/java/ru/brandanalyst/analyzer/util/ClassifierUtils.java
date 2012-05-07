@@ -1,5 +1,6 @@
 package ru.brandanalyst.analyzer.util;
 
+import org.apache.log4j.Logger;
 import ru.brandanalyst.analyzer.classifiers.SVMClassifier;
 import ru.brandanalyst.core.util.Su;
 import weka.core.Attribute;
@@ -11,25 +12,24 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Logger;
 
 /**
  * Alexandra Mikhaylova mikhaylova@yandex-team.ru
  */
 public class ClassifierUtils {
     private static final List<String> dictionary = new ArrayList<String>();
-    private static final Logger log = Logger.getLogger(ClassifierUtils.class.getName());
+    private static final Logger log = Logger.getLogger(ClassifierUtils.class);
 
-    public static Instances getInstances(final String fileName, final boolean positive) {
+    public static Instances getInstances(final String fileName, final boolean positive) {   // on learning stage
+        // TODO: maybe it's possible to make code of this method look better... Nevertheless, it does work!
         dictionary.addAll(getDictionary("tasker/dictionary/positive.txt"));
         dictionary.addAll(getDictionary("tasker/dictionary/negative.txt"));
 
         final String classifierName = positive ? "positive" : "negative";
         final FastVector featureVector = buildFeatureVector(dictionary);
 
-        Instances instances = new Instances(classifierName, featureVector, 0); // initial capacity 0
-
-//        final int n = featureVector.size(); // the last is the class label
+        Instances instances = new Instances(classifierName, featureVector, 0);
+        instances.setClassIndex(featureVector.size() - 1);
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
             String s;
@@ -38,17 +38,17 @@ public class ClassifierUtils {
                 if (!s.contains(";;")) {   // this is one more KOSTYL. Our training set is still bad.
                     continue;
                 }
-                instances.add(createTrainingInstance(s, positive));
+                instances.add(createTrainingInstance(s, positive, instances));
             }
             reader.close();
-            instances.setClassIndex(instances.numAttributes() - 1);
+            dictionary.clear(); // very bad code. TODO: think how to do it better - without a static dictionary
             return instances;
         } catch (IOException e) {
             throw new RuntimeException("Couldn't read training info from file: " + fileName);
         }
     }
 
-    public static Instance createTrainingInstance(final String s, final boolean positive) {
+    public static Instance createTrainingInstance(final String s, final boolean positive, Instances dataset) {
         String t = s.substring(0, s.indexOf(";;"));
         final int label = t.charAt(0) == '+' ? 1 : Integer.parseInt(t);
         final String tweet = s.substring(s.indexOf(";;") + 2);
@@ -56,6 +56,7 @@ public class ClassifierUtils {
 
         final String cls = (positive && (label == 1)) || (!positive && (label == -1)) ? "yes" : "no";
         final Instance instance = new Instance(1.0, attrValues); // all instances have the same weight 1.0
+        instance.setDataset(dataset);
         instance.setClassValue(cls);
         return instance;
     }
@@ -101,7 +102,7 @@ public class ClassifierUtils {
             return vector;
         }
         double[] normalized = new double[vector.length];
-        for (int i = 0; i < vector.length; i ++) {
+        for (int i = 0; i < vector.length; i++) {
             normalized[i] = vector[i] / sqrSum;
         }
         return normalized;
@@ -118,8 +119,8 @@ public class ClassifierUtils {
     public static int count(final String word, final List<String> tweetWords) {
         int count = 0;
         for (final String tweetWord : tweetWords) {
-            if (word.equals(tweetWord)) {
-                count ++;
+            if (tweetWord.contains(word)) {
+                count++;
             }
         }
         return count;
@@ -132,12 +133,16 @@ public class ClassifierUtils {
             BufferedReader reader = new BufferedReader(fr);
             String s;
             while ((s = reader.readLine()) != null) {
-                result.add(s);
+                // TODO: CLEAN dictionaries and remove this kostyl
+                if (!result.contains(s)) {
+                    result.add(s);
+                }
             }
             Collections.sort(result);
+            reader.close();
             return result;
         } catch (IOException e) {
-            log.info("Couldn't read semantic dictionary info from file: " + path);
+            log.error("Error: couldn't read semantic dictionary info from file: " + path + " !\tGot following exception: " + e.toString());
             return null;
         }
     }
@@ -150,16 +155,16 @@ public class ClassifierUtils {
             objectInputStream = new ObjectInputStream(new FileInputStream(file));
             return (SVMClassifier) objectInputStream.readObject();
         } catch (IOException e) {
-            log.info("Error: " + e.toString());
+            log.error("Error during deserialization: " + e.toString());
         } catch (ClassNotFoundException e) {
-            log.info("Error: " + e.toString());
+            log.error("Error during deserialization: " + e.toString());
         } finally {
             try {
                 if (objectInputStream != null) {
                     objectInputStream.close();
                 }
             } catch (IOException e) {
-                log.info("Error: " + e.toString());
+                log.error("Error during deserialization: " + e.toString());
             }
         }
         return null;
@@ -168,7 +173,7 @@ public class ClassifierUtils {
     public static enum Type {
         SVM_NEGATIVE("svmNegative"),
         SVM_POSITIVE("svmPositive");
-        
+
         private final String name;
 
         private Type(String name) {

@@ -7,7 +7,7 @@ package ru.brandanalyst.core.model;
  */
 public enum Ticker {
     NEWS_REFERENCES("упоминания в новостях", 1);
-    
+
     private final String name;
     private final long id;
 
@@ -15,9 +15,9 @@ public enum Ticker {
         this.name = name;
         this.id = id;
     }
-    
+
     public static Ticker getById(long id) {
-        for (Ticker t: values()) {
+        for (Ticker t : values()) {
             if (t.id == id) {
                 return t;
             }

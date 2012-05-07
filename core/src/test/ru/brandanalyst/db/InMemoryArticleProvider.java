@@ -6,7 +6,6 @@ import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.ArticleForWeb;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,43 +17,48 @@ import java.util.List;
 public class InMemoryArticleProvider extends ArticleProvider {
     private int key;
     private final List<Article> depot = new ArrayList<Article>();
-    
+
     {
-        depot.add(new Article(1,1,1,"11","11","http:/11",new LocalDateTime(1), 1));
-        depot.add(new Article(2,2,2,"22","22","http:/22",new LocalDateTime(2), 1));
-        depot.add(new Article(3,1,2,"12","12","http:/13",new LocalDateTime(3), 1));
-        depot.add(new Article(4,2,2,"22","22","http:/22",new LocalDateTime(4), 1));
-        depot.add(new Article(5,1,1,"11","11","http:/11",new LocalDateTime(5), 1));
+        depot.add(new Article(1, 1, 1, "11", "11", "http:/11", new LocalDateTime(1), 1));
+        depot.add(new Article(2, 2, 2, "22", "22", "http:/22", new LocalDateTime(2), 1));
+        depot.add(new Article(3, 1, 2, "12", "12", "http:/13", new LocalDateTime(3), 1));
+        depot.add(new Article(4, 2, 2, "22", "22", "http:/22", new LocalDateTime(4), 1));
+        depot.add(new Article(5, 1, 1, "11", "11", "http:/11", new LocalDateTime(5), 1));
         key = 5;
     }
-    
+
+    @Override
+    public Article getArticleBySourceId(long sourceId) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public List<Article> getAllOfficialArticlesByBrand(long brandId) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public List<Article> getArticlesWithCondition(String whereClause) {
+        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
     @Override
     public void writeArticleToDataStore(Article article) {
-        depot.add(new Article(++key, article.getBrandId(), article.getSourceId(), article.getTitle(), 
+        depot.add(new Article(++key, article.getBrandId(), article.getSourceId(), article.getTitle(),
                 article.getContent(), article.getLink(), article.getTstamp(), article.getNumLikes()));
     }
 
     @Override
     public void writeListOfArticlesToDataStore(List<Article> articles) {
-        for (Article a: articles) {
+        for (Article a : articles) {
             writeArticleToDataStore(a);
         }
     }
 
     @Override
-    public Article getArticleBySourceId(long sourceId) {
-        for (Article a: depot) {
-            if (a.getSourceId() == sourceId) {
-                return a;
-            }
-        } 
-        return null;
-    }
-
-    @Override
     public List<Article> getAllArticlesBySourceId(long sourceId) {
         final List<Article> as = new ArrayList<Article>();
-        for (Article a: depot) {
+        for (Article a : depot) {
             if (a.getSourceId() == sourceId) {
                 as.add(a);
             }
@@ -70,13 +74,13 @@ public class InMemoryArticleProvider extends ArticleProvider {
     @Override
     public ArticleForWeb getArticleForWebById(long articleId) {
         Article a = depot.get((int) articleId);
-        return new ArticleForWeb(a.getLink(), a.getTitle(), a.getContent(), "asd", "asd", a.getTstamp());       
+        return new ArticleForWeb(a.getLink(), a.getTitle(), a.getContent(), "asd", "asd", a.getTstamp());
     }
 
     @Override
     public List<Article> getAllArticlesByBrand(long brandId) {
         final List<Article> as = new ArrayList<Article>();
-        for (Article a: depot) {
+        for (Article a : depot) {
             if (a.getBrandId() == brandId) {
                 as.add(a);
             }
@@ -85,32 +89,22 @@ public class InMemoryArticleProvider extends ArticleProvider {
     }
 
     @Override
-    public List<Article> getAllOfficialArticlesByBrand(long brandId) {
-        return getAllArticlesByBrand(brandId);
-    }
-
-    @Override
     public List<Article> getAllArticles() {
         return new ArrayList<Article>(depot);
     }
 
     @Override
-    public List<Article> getArticlesWithCondition(String whereClause) {
-        return getAllArticles();
-    }
-
-    @Override
     public void visitArticles(EntityVisitor<Article> visitor) {
-        for(Article a: depot) {
+        for (Article a : depot) {
             visitor.visitEntity(a);
-        } 
+        }
     }
 
     @Override
     public List<Article> getTopArticles(long brandId, int topSize) {
         final List<Article> as = new ArrayList<Article>();
         int count = 0;
-        for (Article a: depot) {
+        for (Article a : depot) {
             if (a.getBrandId() == brandId && ++count < topSize) {
                 as.add(a);
             }
@@ -122,7 +116,7 @@ public class InMemoryArticleProvider extends ArticleProvider {
     public List<Article> getTopArticles(int topSize) {
         final List<Article> as = new ArrayList<Article>();
         int count = 0;
-        for (Article a: depot) {
+        for (Article a : depot) {
             if (++count < topSize) {
                 as.add(a);
             }
@@ -133,22 +127,11 @@ public class InMemoryArticleProvider extends ArticleProvider {
     @Override
     public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId) {
         final List<Article> as = new ArrayList<Article>();
-        int count = 0;
-        for (Article a: depot) {
+        for (Article a : depot) {
             if (a.getBrandId() == brandId && a.getSourceId() == sourceId) {
                 as.add(a);
             }
         }
         return as;
-    }
-
-    @Override
-    public void setAnalyzed(List<Long> ids) {
-
-    }
-
-    @Override
-    public List<Article> getOnlyNotAnalyzedArticles() {
-        return depot;
     }
 }

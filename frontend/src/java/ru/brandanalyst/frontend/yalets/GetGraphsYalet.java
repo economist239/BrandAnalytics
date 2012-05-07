@@ -32,7 +32,7 @@ public class GetGraphsYalet extends AbstractDbYalet {
         final long brandId = req.getLongParameter("brand");
         final String[] tickerIds = req.getParameters("ticker");
         List<Chart> charts = new ArrayList<Chart>();
-        for(String tickerId : tickerIds){
+        for (String tickerId : tickerIds) {
             final Graph graph = providersHandler.getGraphProvider().getGraphByTickerAndBrand(brandId, Long.parseLong(tickerId));
             final Brand brand = providersHandler.getBrandProvider().getBrandById(brandId);
             charts.add(new Chart(graph, brand));
@@ -40,8 +40,8 @@ public class GetGraphsYalet extends AbstractDbYalet {
         Charts c = new Charts(charts);
         res.add(c);
     }
-    
-    private static class Charts implements  Jsonable,SelfWriter{
+
+    private static class Charts implements Jsonable, SelfWriter {
         private List<Chart> charts;
 
         private Charts(List<Chart> charts) {
@@ -52,9 +52,9 @@ public class GetGraphsYalet extends AbstractDbYalet {
         public JSONObject asJson() {
             try {
                 JSONArray array = new JSONArray();
-                int i=0;
-                for(Chart c : charts){
-                    array.put(i++,c.asJson());
+                int i = 0;
+                for (Chart c : charts) {
+                    array.put(i++, c.asJson());
                 }
                 return new JSONObject().put("charts", array);
             } catch (JSONException e) {
@@ -71,11 +71,12 @@ public class GetGraphsYalet extends AbstractDbYalet {
             }
         }
     }
-    
-    private static class Chart implements Jsonable, SelfWriter{
+
+    private static class Chart implements Jsonable, SelfWriter {
         public final Graph graph;
         public final Brand brand;
-        public Chart(final Graph graph,final Brand brand){
+
+        public Chart(final Graph graph, final Brand brand) {
             this.graph = graph;
             this.brand = brand;
         }

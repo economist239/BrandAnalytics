@@ -23,7 +23,7 @@ public class Xmler {
             //do nothing
         }
     };
-    
+
     public static final Tag ERROR_TAG = Xmler.tag("error", "error");
 
     public static final Tag[] EMPTY_TAG_ARRAY = {};

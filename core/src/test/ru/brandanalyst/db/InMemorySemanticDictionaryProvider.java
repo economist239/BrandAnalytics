@@ -13,7 +13,7 @@ import java.util.Set;
  */
 public class InMemorySemanticDictionaryProvider implements SemanticDictionaryProvider {
     Set<SemanticDictionaryItem> depot = new HashSet<SemanticDictionaryItem>();
-    
+
     @Override
     public void setSemanticDictionaryItem(SemanticDictionaryItem item) {
         depot.add(item);

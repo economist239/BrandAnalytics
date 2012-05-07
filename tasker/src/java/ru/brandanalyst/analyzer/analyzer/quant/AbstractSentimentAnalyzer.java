@@ -5,7 +5,6 @@ import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Graph;
 
-import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,17 +37,17 @@ public abstract class AbstractSentimentAnalyzer implements AbstractAnalyzer {
 
     @Override
     public void flush() {
-        for (Map.Entry<Long, Graph> e: this.graphDepotPositive.entrySet()) {
+        for (Map.Entry<Long, Graph> e : this.graphDepotPositive.entrySet()) {
             this.graphProvider.writeGraph(e.getValue(), e.getKey(), POSITIVE_SVM_TICKER_ID);
         }
         this.graphDepotPositive.clear();
 
-        for (Map.Entry<Long, Graph> e: this.graphDepotNeutral.entrySet()) {
+        for (Map.Entry<Long, Graph> e : this.graphDepotNeutral.entrySet()) {
             this.graphProvider.writeGraph(e.getValue(), e.getKey(), NEUTRAL_SVM_TICKER_ID);
         }
         this.graphDepotNeutral.clear();
 
-        for (Map.Entry<Long, Graph> e: this.graphDepotNegative.entrySet()) {
+        for (Map.Entry<Long, Graph> e : this.graphDepotNegative.entrySet()) {
             this.graphProvider.writeGraph(e.getValue(), e.getKey(), NEGATIVE_SVM_TICKER_ID);
         }
         this.graphDepotNegative.clear();

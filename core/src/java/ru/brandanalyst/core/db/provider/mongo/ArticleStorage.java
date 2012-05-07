@@ -1,17 +1,17 @@
 package ru.brandanalyst.core.db.provider.mongo;
 
 import com.mongodb.*;
+import org.apache.log4j.Logger;
 import org.joda.time.LocalDateTime;
 import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.core.db.provider.EntityVisitor;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.ArticleForWeb;
 
-import java.net.UnknownHostException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,25 +20,42 @@ import java.util.List;
  * Date: 2/19/12
  * Time: 7:35 PM
  */
-public class ArticleStorage extends ArticleProvider implements DisposableBean {
+public class ArticleStorage extends ArticleProvider implements InitializingBean, DisposableBean {
+    private final static Logger log = Logger.getLogger(ArticleStorage.class);
     private final static int BATCH_SIZE = 1024;
-    private final static String DB_NAME = "ba-dirty";
-    private final static String COLLECTION_NAME = "article-collection";
     public static final String MONGO_ID = "_id";
-    private final Mongo mongo;
-    private final DB db;
-    private final DBCollection coll;
+    private Mongo mongo;
+    private DBCollection coll;
+    private String host;
+    private int port;
+    private String dbName;
+    private String collectionName;
 
+    @Required
+    public void setHost(String host) {
+        this.host = host;
+    }
 
+    @Required
+    public void setPort(int port) {
+        this.port = port;
+    }
 
-    public ArticleStorage(String host, int port) {
-        try {
-            mongo = new Mongo(host, port);
-            db = mongo.getDB(DB_NAME);
-            coll = db.getCollection(COLLECTION_NAME);
-        } catch (UnknownHostException e) {
-            throw new RuntimeException(e);
-        }
+    @Required
+    public void setDbName(String dbName) {
+        this.dbName = dbName;
+    }
+
+    @Required
+    public void setCollectionName(String collectionName) {
+        this.collectionName = collectionName;
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        mongo = new Mongo(host, port);
+        DB db = mongo.getDB(dbName);
+        coll = db.getCollection(collectionName);
     }
 
     private static List<DBObject> wrap(List<Article> articles) {
@@ -51,7 +68,7 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
 
     private static DBObject wrap(Article a) {
         BasicDBObject object = new BasicDBObject();
-        object.put(MONGO_ID, a.hashCode());
+        object.put(MONGO_ID, /*a.hashCode() +*/ a.getBrandId() + a.getTitle() + a.getSourceId());
         object.put("id", a.getId());
         object.put("brand-id", a.getBrandId());
         object.put("source-id", a.getSourceId());
@@ -60,6 +77,7 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
         object.put("link", a.getLink());
         object.put("num-likes", a.getNumLikes());
         object.put("tstamp", a.getTstamp().toDate().getTime());
+        object.put("analyzed", 0);
         return object;
     }
 
@@ -84,13 +102,36 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
         coll.insert(wrap(article));
     }
 
+
+    /*
+    * <p>
+    *     writing batch of article to mongo db (not batch writing)
+    * </p>
+    *
+    *
+     */
     @Override
     public void writeListOfArticlesToDataStore(List<Article> articles) {
-        coll.insert(wrap(articles));
+        //WriteResult wr = coll.insert(wrap(articles), WriteConcern.FSYNC_SAFE);
+        //batch writing was removed because we have exception if _id duplicated
+        for (Article a: articles) {
+            coll.insert(wrap(a));
+        }
+        log.info("writed " + articles.size());
     }
 
     @Override
     public Article getArticleBySourceId(long sourceId) {
+        throw new UnsupportedOperationException("unsupported method in MONGO DB");
+    }
+
+    @Override
+    public List<Article> getAllOfficialArticlesByBrand(long brandId) {
+        throw new UnsupportedOperationException("unsupported method in MONGO DB");
+    }
+
+    @Override
+    public List<Article> getArticlesWithCondition(String whereClause) {
         throw new UnsupportedOperationException("unsupported method in MONGO DB");
     }
 
@@ -116,31 +157,22 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
     }
 
     @Override
-    public List<Article> getAllOfficialArticlesByBrand(long brandId) {
-        throw new UnsupportedOperationException("unsupported method in MONGO DB");
-    }
-
-    @Override
     public List<Article> getAllArticles() {
         throw new UnsupportedOperationException("unsupported method in MONGO DB");
     }
 
     @Override
-    public List<Article> getArticlesWithCondition(String whereClause) {
-        throw new UnsupportedOperationException("unsupported method in MONGO DB");
-    }
-
-    @Override
     public void visitArticles(EntityVisitor<Article> visitor) {
-        seeArticles(visitor);
-        coll.drop();
-    }
+        DBCursor cursor = coll.find(QueryBuilder.start().put("analyzed").is(0).get()).batchSize(BATCH_SIZE);
 
-    public void seeArticles(EntityVisitor<Article> visitor) {
-        DBCursor cursor = coll.find().batchSize(BATCH_SIZE);
         while (cursor.hasNext()) {
             DBObject next = cursor.next();
             visitor.visitEntity(unwrap(next));
+            //next.put("analyzed", 1);
+            //System.out.println(next);
+            next.put("analyzed", 1);
+            coll.update(QueryBuilder.start().put(MONGO_ID).is(next.get(MONGO_ID)).get(), next);
+            //coll.remove(next);
         }
     }
 
@@ -156,16 +188,6 @@ public class ArticleStorage extends ArticleProvider implements DisposableBean {
 
     @Override
     public List<Article> getAllArticlesByBrandAndSource(long brandId, long sourceId) {
-        throw new UnsupportedOperationException("unsupported method in MONGO DB");
-    }
-
-    @Override
-    public void setAnalyzed(List<Long> ids) {
-        throw new UnsupportedOperationException("unsupported method in MONGO DB");
-    }
-
-    @Override
-    public List<Article> getOnlyNotAnalyzedArticles() {
         throw new UnsupportedOperationException("unsupported method in MONGO DB");
     }
 

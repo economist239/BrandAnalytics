@@ -1,16 +1,10 @@
 package ru.brandanalyst.analyzer.analyzer.quant;
 
-import org.joda.time.LocalDate;
 import ru.brandanalyst.core.db.provider.ProvidersHandler;
-import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
-import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.model.Article;
-import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Graph;
-import ru.brandanalyst.core.model.SingleDot;
 
-import java.sql.Timestamp;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,7 +49,7 @@ public class GraphsAnalyzer implements AbstractAnalyzer {
 
     @Override
     public void flush() {
-        for (Map.Entry<Long, Graph> e: graphDepot.entrySet()) {
+        for (Map.Entry<Long, Graph> e : graphDepot.entrySet()) {
             graphProvider.writeGraph(e.getValue(), e.getKey(), REFERENCES_TICKER_ID);
         }
         graphDepot.clear();

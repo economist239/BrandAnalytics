@@ -17,11 +17,11 @@ public class InMemoryBrandProvider implements BrandProvider {
     List<Brand> depot = new ArrayList<Brand>();
 
     {
-        depot.add(new Brand(1, "Apple", "1", "1", 1, Params.empty()));
-        depot.add(new Brand(2, "Microsoft", "2", "2", 2, Params.empty()));
-        depot.add(new Brand(3, "Газпром", "3", "3", 1, Params.empty()));
-        depot.add(new Brand(4, "Уралсиб", "4", "4", 2, Params.empty()));
-        depot.add(new Brand(5, "Burger King", "5", "5", 1, Params.empty()));
+        depot.add(new Brand(1, "Apple", "1", "1", 1, Params.empty("")));
+        depot.add(new Brand(2, "Microsoft", "2", "2", 2, Params.empty("")));
+        depot.add(new Brand(3, "Газпром", "3", "3", 1, Params.empty("")));
+        depot.add(new Brand(4, "Уралсиб", "4", "4", 2, Params.empty("")));
+        depot.add(new Brand(5, "Burger King", "5", "5", 1, Params.empty("")));
         key = 5;
 
     }
@@ -33,14 +33,14 @@ public class InMemoryBrandProvider implements BrandProvider {
 
     @Override
     public void writeListOfBrandsToDataStore(List<Brand> brands) {
-        for (Brand b: brands) {
+        for (Brand b : brands) {
             writeBrandToDataStore(b);
         }
     }
 
     @Override
     public Brand getBrandByName(String name) {
-        for (Brand b: depot) {
+        for (Brand b : depot) {
             if (b.getName().equals(name)) {
                 return b;
             }
@@ -50,7 +50,7 @@ public class InMemoryBrandProvider implements BrandProvider {
 
     @Override
     public Brand getBrandById(long brandId) {
-        for (Brand b: depot) {
+        for (Brand b : depot) {
             if (b.getId() == brandId) {
                 return b;
             }
