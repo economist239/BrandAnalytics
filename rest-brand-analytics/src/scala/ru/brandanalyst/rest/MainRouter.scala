@@ -7,7 +7,9 @@ import ru.circumflex.web._
  */
 
 class MainRouter extends Router {
-  get("/") = {
+
+  get("/") = forward("/index.html")
+  get("/index.html") = {
     ftl("/index.html.ftl")
   }
 }
