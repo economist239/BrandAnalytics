@@ -30,53 +30,43 @@ function BAplotGraph(jsonData) {
         for(var j in data.charts[i].chart.graph){
             temp.push(data.charts[i].chart.graph[j])
         }
-        tSeries.push({name:("test" + i + j),data:temp});
+        tSeries.push({name:data.charts[i].chart.ticker,data:temp});
     }
 
     window.chart = new Highcharts.StockChart({
-        chart:{
-            renderTo:'chartContainer',
-            type:'line',
-            marginRight: 130,
-            marginBottom: 25
-        },
-        rangeSelector:{
-            selected:1
-        },
-        title:{
-            text:'blablabla'
-        },
-        plotOptions: {
-            line: {
-                dataLabels: {
-                    enabled: true
-                },
-                enableMouseTracking: true
-            }
-        },
-        tooltip: {
-            enabled: true,
-            formatter: function() {
-                return '<b>'+ this.series.name +'</b><br/>'+
-                    this.x +': '+ this.y ;
-            }
-        },
-        series: tSeries/*[
-            {
-                name:'Упоминаний',
-                data:data.chart.graph,
-                tooltip:{
-                    yDecimals:2
-                }
-            }   *
-        ]        */
-    });
+         chart: {
+        		        renderTo: 'chartContainer'
+        		    },
+
+        		    rangeSelector: {
+        		        selected: 4
+        		    },
+
+        		    yAxis: {
+        		    	labels: {
+        		    		formatter: function() {
+        		    			return (this.value > 0 ? '+' : '') + this.value;
+        		    		}
+        		    	},
+        		    	plotLines: [{
+        		    		value: 0,
+        		    		width: 2,
+        		    		color: 'silver'
+        		    	}]
+        		    },
+        		    tooltip: {
+        		    	pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> <br/>',
+        		    	valueDecimals: 2
+        		    },
+
+        		    series: tSeries
+        		});
 
 }
 
 function BAgetGraph() {
     var tickerIds = {}
-    $("#graph-select button").each(function(index){
+    $("#graph-select button.active").each(function(index){
         var b = 0;
         var cur = $(this).attr("value");
         for(var i in tickerIds){
