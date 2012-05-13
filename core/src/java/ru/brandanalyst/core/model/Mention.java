@@ -81,8 +81,6 @@ public class Mention implements Jsonable {
 
     @Override
     public JSONObject asJson() {
-        //count millisecs in sec
-        final long COUNT = 1000;
         try {
             return new JSONObject()
                     .put("ticker-id",tickerId)

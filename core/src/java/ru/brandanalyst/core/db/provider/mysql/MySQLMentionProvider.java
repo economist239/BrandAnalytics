@@ -34,12 +34,25 @@ public class MySQLMentionProvider implements MentionProvider{
 
     @Override
     public List<Mention> getLatestMentions(){
+
+        //TODO
+        //TODO -  это не код, а упячка
+
+        //TODO для этого есть сеттеры
         MySQLBrandProvider brandProvider = new MySQLBrandProvider();
+        //TODO для этого есть сеттеры
         brandProvider.setJdbcTemplate(jdbcTemplate);
+        //TODO - раз сходили в базу
         List<Brand> brands = brandProvider.getAllBrands();
+        //TODO для этого есть сеттеры
         MySQLTickerProvider provider = new MySQLTickerProvider();
+        //TODO для этого есть сеттеры
         provider.setJdbcTemplate(jdbcTemplate);
+        //TODO - два сходили в базу
         List<TickerPair> tickers = provider.getTickers();
+
+        //TODO всю логику по подсчету либеров роста и падения вынести в таскер и сделать отдельную табличку подо все,где будут только актуальные упоминания
+        //ToDO три сходили в базу - три раза - много за раз, есть джоины
         MentionsCalculator calc = new MentionsCalculator(brands,tickers,this);
         List<Mention> result = new ArrayList<Mention>();
         for(TickerPair t : tickers){

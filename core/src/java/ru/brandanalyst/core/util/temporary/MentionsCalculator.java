@@ -15,7 +15,12 @@ import java.util.*;
  * Date: 5/7/12
  * Time: 6:31 PM
  */
+//TODO адъ
+//вынести всю логику в таскер
+//форматирование кода !!!!
 public class MentionsCalculator{
+    //TODO пол]я должны иметь модификатор final
+    //зачем протектед????
     protected List<Brand> brands;
     protected List<TickerPair> tickers;
     protected List<Mention> allMentions;
@@ -29,6 +34,7 @@ public class MentionsCalculator{
         this.allMentions = mentionProvider.getMentionsFrom(new LocalDate(currentDate.toDate().getTime() - 2*TIME_PERIOD));
     }
 
+    //Pair<List, List> - ? может  Map использовать?
     public Pair<List<Mention>, List<Mention>> getRulesAndLosersByTicker(TickerPair t){
         List<Pair<Mention, Mention>> lpm = groupAllMentions(getMentionsByTicker(allMentions,t),t);
         List<Mention> converted = convert(lpm);
@@ -37,6 +43,7 @@ public class MentionsCalculator{
         return new Pair<List<Mention>, List<Mention>>(rulers,losers);
     }
 
+    //аналогично
     protected List<Pair<Mention, Mention>> groupAllMentions(List<Mention> all,TickerPair t){
         LocalDate barrier = new LocalDate(currentDate.toDate().getTime() - TIME_PERIOD);
         List<Mention> mBefore = new ArrayList<Mention>();
@@ -157,6 +164,7 @@ public class MentionsCalculator{
         }
     };
 
+    //TODO переменные то внизу, то  вверху, все должно быть вверху
     protected static final long TIME_PERIOD = 10000000;
     protected static final int RESULT_AMOUNT = 5;
     protected LocalDate currentDate;
