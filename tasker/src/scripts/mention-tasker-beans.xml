@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+        "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-autowire="byName">
+    <!--Spring helpers-->
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+    <!--DB CONFIG-->
+    <!--AnalyzerProcesser conf-->
+    <bean id="mentionProcessor" class="ru.brandanalyst.analyzer.mention.MentionGeneratorTask">
+        <property name="period" value="${analyzer-period}"/>
+        <property name="providersHandler" ref="pureProvidersHandler"/>
+    </bean>
+</beans>
