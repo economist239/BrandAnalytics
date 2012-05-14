@@ -8,7 +8,9 @@
             <table class="table table-striped" id="up-lead">
                 <thead>
                     <tr>
-                        <th>Лидеры роста</th>
+                        <th>
+                            <div align="right">Лидеры роста</div>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -38,7 +40,9 @@
             <table class="table table-striped" id="down-lead">
                 <thead>
                     <tr>
-                        <th>Лидеры падения</th>
+                        <th>
+                            <div align="right">Лидеры падения</div>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>

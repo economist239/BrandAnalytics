@@ -107,12 +107,6 @@
             <li id="tab_public-sources">
                 <a href="#public-sources" data-toggle="tab">Публичные источники</a>
             </li>
-            <li id="tab_some">
-                <a href="#some" data-toggle="tab">
-                    <del>Метод агрегации</del>
-                    I'm watching you
-                </a>
-            </li>
         </ul>
     </xsl:template>
 

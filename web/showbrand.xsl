@@ -13,12 +13,12 @@
         <script type="text/javascript" src="includes/js/show-brand.js"/>
         <style type="text/css">
             .smth-large{
-              padding: 9px 14px;
-              font-size: 15px;
-              line-height: normal;
-              -webkit-border-radius: 5px;
-              -moz-border-radius: 5px;
-              border-radius: 5px;
+            padding: 9px 14px;
+            font-size: 15px;
+            line-height: normal;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
             }
         </style>
 
@@ -31,7 +31,9 @@
                 <xsl:apply-templates select="page/data[@id='getBrands']/collection" mode="select"/>
             </ul>
         </div>
-        <h1 align="left"><xsl:value-of select="page/data[@id='getBrand']/brand/name"/></h1>
+        <h1 align="left">
+            <xsl:value-of select="page/data[@id='getBrand']/brand/name"/>
+        </h1>
 
     </xsl:template>
 
@@ -59,7 +61,7 @@
     <xsl:template name="brands-select" match="page/data[@id='getBrands']/collection" mode="select">
         <li id="brand-select" class="dropdown smth-large">
             <a class="dropdown-toggle" href="#brand-select" data-toggle="dropdown">
-            <xsl:text>Брэнд</xsl:text>
+                <xsl:text>Брэнд</xsl:text>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
@@ -116,92 +118,95 @@
                     </li>
                 </xsl:for-each>
                 <li class="divider"></li>
-                <li><a href="#" id="0">Все</a></li>
+                <li>
+                    <a href="#" id="0">Все</a>
+                </li>
             </ul>
         </li>
 
     </xsl:template>
 
     <xsl:template match="page/data[@id='getBrand']/brand" mode="show">
-            <div class="content">
-                    <br/>
-                    <a>
-                        <xsl:attribute name="href">
-                            <xsl:value-of select="website"/>
-                        </xsl:attribute>
-                        <xsl:value-of select="name"/>
-                    </a>
-                <p>
-                    <b><xsl:text>О компании:</xsl:text></b>
-                    <br/>
-                    <xsl:value-of select="description"/>
-                    <br/>
-                </p>
-            </div>
-    </xsl:template> 
+        <div class="content">
+            <br/>
+            <a>
+                <xsl:attribute name="href">
+                    <xsl:value-of select="website"/>
+                </xsl:attribute>
+                <xsl:value-of select="name"/>
+            </a>
+            <p>
+                <b>
+                    <xsl:text>О компании:</xsl:text>
+                </b>
+                <br/>
+                <xsl:value-of select="description"/>
+                <br/>
+            </p>
+        </div>
+    </xsl:template>
 
     <xsl:template match="page/data[@id='getTickers']/collection" mode="show">
-        <h3><xsl:text>Анализ</xsl:text></h3>
-            <div class="btn-group" data-toggle="buttons-checkbox" id="graph-select">
-                <xsl:for-each select="ticker-pair">
-                    <button class="btn">
-                        <xsl:attribute name="value">
-                            <xsl:value-of select="@id"/>
-                        </xsl:attribute>
-                        <xsl:value-of select="name"/>
-                    </button>
-                </xsl:for-each>
-            </div>
-            <!--
-            <select id="graph-select">
-                <xsl:for-each select="ticker-pair">
-                    <option>
-                        <xsl:attribute name="value">
-                            <xsl:value-of select="@id"/>
-                        </xsl:attribute>
-                        <xsl:value-of select="name"/>
-                    </option>
-                </xsl:for-each>
-            </select>
-            -->
-            <button class="btn primary" type="submit" value="посмотреть" onclick="javascript: BAgetGraph();">посмотреть</button>
+        <h3>
+            <xsl:text>Анализ</xsl:text>
+        </h3>
+        <div class="btn-group" data-toggle="buttons-checkbox" id="graph-select">
+            <xsl:for-each select="ticker-pair">
+                <button class="btn">
+                    <xsl:attribute name="value">
+                        <xsl:value-of select="@id"/>
+                    </xsl:attribute>
+                    <xsl:value-of select="name"/>
+                </button>
+            </xsl:for-each>
+        </div>
+        <button class="btn primary" type="submit" value="посмотреть" onclick="javascript: BAgetGraph();">посмотреть
+        </button>
         <div id="chartContainer" style="height: 500px; min-width: 500px"/>
     </xsl:template>
 
     <xsl:template match="page/data[@id='getArticlesForBrand']/collection" mode="show">
-    <table class="table table-striped">
-        <xsl:for-each select="article">
-            <tr><td>
-                <h4>
-                    <a>
-                        <xsl:attribute name="href">
-                            <xsl:value-of select="link"/>
-                        </xsl:attribute>
-                        <xsl:value-of select="title"/>
-                    </a>
-                </h4>
-                <p>
-                    <xsl:value-of select="content"/>
-                </p>
-                <div align="right">
-                    <p>
-                        Дата публикации:
-                        <xsl:value-of select="date"/>
-                    </p>
-                </div>
-            </td></tr>
-        </xsl:for-each>
-    </table>
+        <table class="table table-striped">
+            <xsl:for-each select="article">
+                <tr>
+                    <td>
+                        <h4>
+                            <a>
+                                <xsl:attribute name="href">
+                                    <xsl:value-of select="link"/>
+                                </xsl:attribute>
+                                <xsl:value-of select="title"/>
+                            </a>
+                        </h4>
+                        <p>
+                            <xsl:value-of select="content"/>
+                        </p>
+                        <div align="right">
+                            <p>
+                                Дата публикации:
+                                <xsl:value-of select="date"/>
+                            </p>
+                        </div>
+                    </td>
+                </tr>
+            </xsl:for-each>
+        </table>
     </xsl:template>
 
 
     <xsl:template name="leftmenu">
         <ul class="nav nav-tabs nav-stacked">
-            <li id="tab_info" class="active"><a href="#info" data-toggle="tab">О компании</a></li>
-            <li id="tab_news"><a href="#news" data-toggle="tab">Новости</a></li>
-            <li id="tab_analyse"><a href="#analyse" data-toggle="tab">Анализ</a></li>
-            <li id="tab_compare"><a href="#compare" data-toggle="tab">Сравнение</a></li>
-            <li id="tab_review"><a href="#review" data-toggle="tab">Обзор</a></li>
+            <li id="tab_info" class="active">
+                <a href="#info" data-toggle="tab">О компании</a>
+            </li>
+            <li id="tab_news">
+                <a href="#news" data-toggle="tab">Новости</a>
+            </li>
+            <li id="tab_analyse">
+                <a href="#analyse" data-toggle="tab">Анализ</a>
+            </li>
+            <!--  <li id="tab_compare"><a href="#compare" data-toggle="tab">Сравнение</a></li>
+        <li id="tab_review"><a href="#review" data-toggle="tab">Обзор</a></li> -->
         </ul>
     </xsl:template>
 </xsl:stylesheet>
