@@ -12,10 +12,12 @@ import java.util.List;
  * Date: 23.02.12
  * Time: 20:42
  */
-public interface MentionProvider {
+public interface MentionProvider{
 
     public List<Mention> getLatestMentions();
 
     public List<Mention> getMentionsFrom(LocalDate date);
+
+    public void writeListOfMentionsToDataStore(final List<Mention> mentions);
 
 }

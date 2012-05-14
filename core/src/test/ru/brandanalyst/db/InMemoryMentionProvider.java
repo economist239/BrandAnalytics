@@ -12,14 +12,19 @@ import java.util.List;
  * Date: 2/26/12
  * Time: 6:36 PM
  */
-public class InMemoryMentionProvider implements MentionProvider {
+public class InMemoryMentionProvider implements MentionProvider{
     @Override
-    public List<Mention> getLatestMentions() {
+    public List<Mention> getLatestMentions(){
         return new ArrayList<Mention>();
     }
 
     @Override
     public List<Mention> getMentionsFrom(LocalDate date){
         return new ArrayList<Mention>();
+    }
+
+    @Override
+    public void writeListOfMentionsToDataStore(List<Mention> mentions){
+        //To change body of implemented methods use File | Settings | File Templates.
     }
 }

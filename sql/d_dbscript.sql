@@ -63,6 +63,13 @@ create table SemanticDictionary(
     SemanticValue double not null
 );
 
+create table Mention(
+    BrandName varchar(100) no
+    TickerId int not null,
+    Tstamp timestamp not null,
+    Val double not null
+);
+
 ALTER TABLE Article ADD CONSTRAINT ForArticleInfoSource
 FOREIGN KEY (InfoSourceId)
 REFERENCES InformationSource(Id);
@@ -80,6 +87,10 @@ FOREIGN KEY (BrandId)
 REFERENCES Brand(Id);
 
 ALTER TABLE Graphs ADD CONSTRAINT ForGraphsTicker
+FOREIGN KEY (TickerId)
+REFERENCES Ticker(Id);
+
+ALTER TABLE Mention ADD CONSTRAINT ForMentionTicker
 FOREIGN KEY (TickerId)
 REFERENCES Ticker(Id);
 

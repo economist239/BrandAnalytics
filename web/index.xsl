@@ -23,7 +23,11 @@
     </xsl:template>
     <xsl:template name="run">
         <div class="marquee" id="mycrawler" align="center" style="-khtml-border-radius:10px">
-            <p><a style="padding:0px 10px;" color="blue">Лидеры роста:</a> Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233;</p>
+            <p>
+                <a style="padding:0px 10px;" color="blue">Лидеры роста:</a>
+                Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233; Smth: +5;
+                Anth: -1233; Smth: +5; Anth: -1233; Smth: +5; Anth: -1233;
+            </p>
         </div>
 
 
@@ -33,8 +37,11 @@
         <br/>
         <img src="captain-obvious.jpeg" width="400" height="400"/> -->
 
-        <span align="right" id="a">Рейтинги упоминаемости по источнику
-            <!--<xsl:apply-templates select="page/data[@id='getInformationSources']/collection"/>-->
+        <div class="row">
+            <div class="span4 offset2" align="center" id="a">
+                <h5>Рейтинги упоминаемости по источнику</h5>
+            </div>
+            <!--<xsl:apply-templates select="page/data[@id='getInformationSources']/collection"/>
             <select class="input-large">
                 <option info-source-id="0"><xsl:text>все вместе</xsl:text></option>
                 <option info-source-id="$official-sources-type-id">
@@ -43,19 +50,23 @@
                 <option info-source-id="$public-sources-type-id">
                     <xsl:text>Публичные источники</xsl:text>
                 </option>
-            </select>
-        </span>
+            </select>     -->
+        </div>
 
-        <div>
-        <xsl:apply-templates select="page/data[@id='getLatestMentions']/collection"/>
+        <div class="row">
+            <xsl:apply-templates select="page/data[@id='getLatestMentions']/collection"/>
         </div>
     </xsl:template>
-    <xsl:include href="includes/showbrandsmention.xsl"/>
+    <xsl:include href="includes/show-brands-mention.xsl"/>
 
     <xsl:template name="leftmenu">
         <table class="table">
             <thead>
-                <tr><th><xsl:text>Новости</xsl:text></th></tr>
+                <tr>
+                    <th>
+                        <xsl:text>Новости</xsl:text>
+                    </th>
+                </tr>
             </thead>
             <tbody>
                 <xsl:apply-templates select="page/data[@id='getNewestArticles']/collection" mode="show"/>
@@ -65,41 +76,43 @@
 
     <xsl:template match="page/data[@id='getNewestArticles']/collection" mode="show">
         <xsl:for-each select="article">
-            <tr><td>
-                <h4>
-                    <a>
-                        <xsl:attribute name="href">
-                            <xsl:value-of select="link"/>
-                        </xsl:attribute>
-                        <xsl:value-of select="title"/>
-                    </a>
-                </h4>
-                <p>
-                    <xsl:value-of select="content"/>
-                </p>
-                <div align="right">
+            <tr>
+                <td>
+                    <h4>
+                        <a>
+                            <xsl:attribute name="href">
+                                <xsl:value-of select="link"/>
+                            </xsl:attribute>
+                            <xsl:value-of select="title"/>
+                        </a>
+                    </h4>
                     <p>
-                        Дата публикации:
-                        <xsl:value-of select="date"/>
+                        <xsl:value-of select="content"/>
                     </p>
-                </div>
-            </td></tr>
+                    <div align="right">
+                        <p>
+                            Дата публикации:
+                            <xsl:value-of select="date"/>
+                        </p>
+                    </div>
+                </td>
+            </tr>
         </xsl:for-each>
     </xsl:template>
-    
+
     <!--<xsl:template name="info-sources" match="page/data[@id='getInformationSources']/collection">
-        <select class="input-small">
-            <option info-source-id="0"><xsl:text>все вместе</xsl:text></option>
-            <xsl:for-each select="info-source">
-                <option>
-                    <xsl:attribute name="info-source-id">
-                        <xsl:value-of select="@id"/>
-                    </xsl:attribute>
-                    <xsl:value-of select="title"/>
-                </option>
-            </xsl:for-each>
-        </select>
-    </xsl:template>  -->
+      <select class="input-small">
+          <option info-source-id="0"><xsl:text>все вместе</xsl:text></option>
+          <xsl:for-each select="info-source">
+              <option>
+                  <xsl:attribute name="info-source-id">
+                      <xsl:value-of select="@id"/>
+                  </xsl:attribute>
+                  <xsl:value-of select="title"/>
+              </option>
+          </xsl:for-each>
+      </select>
+  </xsl:template>  -->
 
     <xsl:template name="header"></xsl:template>
 </xsl:stylesheet>

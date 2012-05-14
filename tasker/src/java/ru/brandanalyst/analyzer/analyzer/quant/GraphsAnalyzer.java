@@ -4,6 +4,7 @@ import ru.brandanalyst.core.db.provider.ProvidersHandler;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Graph;
+import ru.brandanalyst.core.model.InformationSourceType;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,7 +18,7 @@ import java.util.Map;
  *
  * @version 1.0
  */
-public class GraphsAnalyzer implements AbstractAnalyzer {
+public class GraphsAnalyzer implements AbstractAnalyzer{
 
     public static final int REFERENCES_TICKER_ID = 1;
     private GraphProvider graphProvider;
@@ -25,22 +26,22 @@ public class GraphsAnalyzer implements AbstractAnalyzer {
     private Map<Long, Graph> graphDepot;
 
     @Override
-    public void init(ProvidersHandler pureProvidersHandler) {
+    public void init(ProvidersHandler pureProvidersHandler){
         graphProvider = pureProvidersHandler.getGraphProvider();
     }
 
     @Override
-    public void onStart() {
+    public void onStart(){
         graphDepot = new HashMap<Long, Graph>();
     }
 
     @Override
-    public void analyze(Article article) {
+    public void analyze(Article article){
         long brandId = article.getBrandId();
-        if (graphDepot.containsKey(brandId)) {
+        if(graphDepot.containsKey(brandId)){
             Graph graph = graphDepot.get(brandId);
             graph.addPoint(article.getTstamp().toLocalDate(), 1);
-        } else {
+        } else{
             Graph graph = new Graph();
             graph.addPoint(article.getTstamp().toLocalDate(), 1);
             graphDepot.put(brandId, graph);
@@ -48,8 +49,8 @@ public class GraphsAnalyzer implements AbstractAnalyzer {
     }
 
     @Override
-    public void flush() {
-        for (Map.Entry<Long, Graph> e : graphDepot.entrySet()) {
+    public void flush(){
+        for(Map.Entry<Long, Graph> e : graphDepot.entrySet()){
             graphProvider.writeGraph(e.getValue(), e.getKey(), REFERENCES_TICKER_ID);
         }
         graphDepot.clear();

@@ -15,15 +15,15 @@ import java.sql.SQLException;
  * Date: 12/17/11
  * Time: 11:08 AM
  */
-public final class MappersHolder {
+public final class MappersHolder{
 
-    private MappersHolder() {
+    private MappersHolder(){
 
     }
 
-    public final static ParameterizedRowMapper<Brand> BRAND_MAPPER = new ParameterizedRowMapper<Brand>() {
+    public final static ParameterizedRowMapper<Brand> BRAND_MAPPER = new ParameterizedRowMapper<Brand>(){
         @Override
-        public Brand mapRow(ResultSet resultSet, int i) throws SQLException {
+        public Brand mapRow(ResultSet resultSet, int i) throws SQLException{
             return new Brand(resultSet.getLong("Id"),
                     resultSet.getString("Name"),
                     resultSet.getString("Description"),
@@ -32,9 +32,9 @@ public final class MappersHolder {
         }
     };
 
-    public final static ParameterizedRowMapper<InfoSource> INFO_SOURCE_MAPPER = new ParameterizedRowMapper<InfoSource>() {
+    public final static ParameterizedRowMapper<InfoSource> INFO_SOURCE_MAPPER = new ParameterizedRowMapper<InfoSource>(){
         @Override
-        public InfoSource mapRow(ResultSet resultSet, int i) throws SQLException {
+        public InfoSource mapRow(ResultSet resultSet, int i) throws SQLException{
             return new InfoSource(resultSet.getLong("Id"),
                     resultSet.getLong("TypeId"),
                     resultSet.getString("Title"),
@@ -44,18 +44,18 @@ public final class MappersHolder {
         }
     };
 
-    public final static ParameterizedRowMapper<ArticleForWeb> ARTICLE_FOR_WEB_MAPPER = new ParameterizedRowMapper<ArticleForWeb>() {
+    public final static ParameterizedRowMapper<ArticleForWeb> ARTICLE_FOR_WEB_MAPPER = new ParameterizedRowMapper<ArticleForWeb>(){
         @Override
-        public ArticleForWeb mapRow(ResultSet resultSet, int i) throws SQLException {
+        public ArticleForWeb mapRow(ResultSet resultSet, int i) throws SQLException{
             return new ArticleForWeb(resultSet.getString("Link"), resultSet.getString("a.Title"),
                     resultSet.getString("Content"), resultSet.getString("s.Title"),
                     resultSet.getString("Website"), new LocalDateTime(resultSet.getDate("Tstamp").getTime()));
         }
     };
 
-    public final static ParameterizedRowMapper<Article> ARTICLE_MAPPER = new ParameterizedRowMapper<Article>() {
+    public final static ParameterizedRowMapper<Article> ARTICLE_MAPPER = new ParameterizedRowMapper<Article>(){
         @Override
-        public Article mapRow(ResultSet resultSet, int i) throws SQLException {
+        public Article mapRow(ResultSet resultSet, int i) throws SQLException{
             return new Article(resultSet.getLong("Id"),
                     resultSet.getLong("BrandId"),
                     resultSet.getLong("InfosourceId"),
@@ -65,9 +65,9 @@ public final class MappersHolder {
         }
     };
 
-    public final static ParameterizedRowMapper<Article> ARTICLE_WITH_SHORT_CONTENT_MAPPER = new ParameterizedRowMapper<Article>() {
+    public final static ParameterizedRowMapper<Article> ARTICLE_WITH_SHORT_CONTENT_MAPPER = new ParameterizedRowMapper<Article>(){
         @Override
-        public Article mapRow(ResultSet resultSet, int i) throws SQLException {
+        public Article mapRow(ResultSet resultSet, int i) throws SQLException{
             return new Article(resultSet.getLong("Id"),
                     resultSet.getLong("BrandId"),
                     resultSet.getLong("InfosourceId"),
@@ -77,26 +77,26 @@ public final class MappersHolder {
         }
     };
 
-    public final static ParameterizedRowMapper<SemanticDictionaryItem> SEMANTIC_DICTIONARY_MAPPER = new ParameterizedRowMapper<SemanticDictionaryItem>() {
+    public final static ParameterizedRowMapper<SemanticDictionaryItem> SEMANTIC_DICTIONARY_MAPPER = new ParameterizedRowMapper<SemanticDictionaryItem>(){
         @Override
-        public SemanticDictionaryItem mapRow(ResultSet resultSet, int i) throws SQLException {
+        public SemanticDictionaryItem mapRow(ResultSet resultSet, int i) throws SQLException{
             return new SemanticDictionaryItem(resultSet.getString("Term"), resultSet.getDouble("SemanticValue"));
         }
     };
 
-    public final static ParameterizedRowMapper<Branch> BRANCH_MAPPER = new ParameterizedRowMapper<Branch>() {
+    public final static ParameterizedRowMapper<Branch> BRANCH_MAPPER = new ParameterizedRowMapper<Branch>(){
         @Override
-        public Branch mapRow(ResultSet resultSet, int i) throws SQLException {
+        public Branch mapRow(ResultSet resultSet, int i) throws SQLException{
             return new Branch(resultSet.getInt("Id"),
                     resultSet.getString("Name"));
         }
     };
 
-    public final static ParameterizedRowMapper<Mention> MENTION_MAPPER = new ParameterizedRowMapper<Mention>() {
+    public final static ParameterizedRowMapper<Mention> MENTION_MAPPER = new ParameterizedRowMapper<Mention>(){
         @Override
-        public Mention mapRow(ResultSet rs, int i) throws SQLException {
+        public Mention mapRow(ResultSet rs, int i) throws SQLException{
             return new Mention(new SingleDot(new LocalDate(rs.getDate("Tstamp")), rs.getDouble("Val")),
-                    rs.getString("TickerName"), rs.getString("Name"), rs.getInt("TickerId"), rs.getInt("BrandId"));
+                    rs.getInt("TickerId"), rs.getString("BrandName"));
         }
     };
 }

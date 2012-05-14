@@ -4,7 +4,7 @@
     <xsl:output method="html" indent="yes" encoding="UTF-8"/>
 
     <!--Variables -->
-<!--    <xsl:variable name="official-sources-type-id">1</xsl:variable>
+    <!--    <xsl:variable name="official-sources-type-id">1</xsl:variable>
     <xsl:variable name="public-sources-type-id">0</xsl:variable>
     -->
     <xsl:template name="head">
@@ -64,44 +64,55 @@
     <xsl:template name="show-sources" match="page/data[@id='getInformationSources']/collection" mode="show">
 
         <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Название</th>
-                        <th>Сайт</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <xsl:for-each select="info-source">
-                        <tr class="info-source-row" style="display:table-row">
-                            <xsl:attribute name="sphere-id">
-                                <xsl:value-of select="@sphere-id"/>
-                            </xsl:attribute>
-                            <xsl:attribute name="source-id">
-                                <xsl:value-of select="@id"/>
-                            </xsl:attribute>
-                            <td>
-                                <xsl:value-of select="title"/>
-                            </td>
-                            <td>
-                                <a>
-                                    <xsl:attribute name="href">
-                                        <xsl:value-of select="website"/>
-                                    </xsl:attribute>
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Сайт</th>
+                </tr>
+            </thead>
+            <tbody>
+                <xsl:for-each select="info-source">
+                    <tr class="info-source-row" style="display:table-row">
+                        <xsl:attribute name="sphere-id">
+                            <xsl:value-of select="@sphere-id"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="source-id">
+                            <xsl:value-of select="@id"/>
+                        </xsl:attribute>
+                        <td>
+                            <xsl:value-of select="title"/>
+                        </td>
+                        <td>
+                            <a>
+                                <xsl:attribute name="href">
                                     <xsl:value-of select="website"/>
-                                </a>
-                            </td>
-                        </tr>
-                    </xsl:for-each>
-                </tbody>
-            </table>
-        </xsl:template>
+                                </xsl:attribute>
+                                <xsl:value-of select="website"/>
+                            </a>
+                        </td>
+                    </tr>
+                </xsl:for-each>
+            </tbody>
+        </table>
+    </xsl:template>
 
     <xsl:template name="leftmenu">
         <ul class="nav nav-tabs nav-stacked">
-            <li id="tab_companies"><a href="#companies" data-toggle="tab">Компании</a></li>
-            <li id="tab_official-sources" class="active"><a href="#official-sources" data-toggle="tab">Официальные источники</a></li>
-            <li id="tab_public-sources"><a href="#public-sources" data-toggle="tab">Публичные источники</a></li>
-            <li id="tab_some"><a href="#some" data-toggle="tab"><del>Метод агрегации</del>  I'm watching you</a></li>
+            <li id="tab_companies">
+                <a href="#companies" data-toggle="tab">Компании</a>
+            </li>
+            <li id="tab_official-sources">
+                <a href="#official-sources" data-toggle="tab">Официальные источники</a>
+            </li>
+            <li id="tab_public-sources">
+                <a href="#public-sources" data-toggle="tab">Публичные источники</a>
+            </li>
+            <li id="tab_some">
+                <a href="#some" data-toggle="tab">
+                    <del>Метод агрегации</del>
+                    I'm watching you
+                </a>
+            </li>
         </ul>
     </xsl:template>
 
