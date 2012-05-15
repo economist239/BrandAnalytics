@@ -17,6 +17,7 @@ import org.springframework.beans.factory.annotation.Required;
 import ru.brandanalyst.core.model.Article;
 import ru.brandanalyst.core.model.Brand;
 import ru.brandanalyst.core.model.Params;
+import ru.brandanalyst.core.util.Cf;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,24 +37,24 @@ public class Searcher implements InitializingBean {
     private static final int MAX_DOC = 1000;
 
     private String indexDirBrand;
-    private String indexDirArticle;
+    //private String indexDirArticle;
     private IndexSearcher indexSearcherBrand;
-    private IndexSearcher indexSearcherArticle;
+    //private IndexSearcher indexSearcherArticle;
 
     @Required
     public void setIndexDirBrand(String indexDirBrand) {
         this.indexDirBrand = indexDirBrand;
     }
 
-    @Required
-    public void setIndexDirArticle(String indexDirArticle) {
-        this.indexDirArticle = indexDirArticle;
-    }
+    //@Required
+    //public void setIndexDirArticle(String indexDirArticle) {
+    //    this.indexDirArticle = indexDirArticle;
+    //}
 
     @Override
     public void afterPropertiesSet() throws Exception {
         indexSearcherBrand = new IndexSearcher(new SimpleFSDirectory(new File(indexDirBrand)));
-        indexSearcherArticle = new IndexSearcher(new SimpleFSDirectory(new File(indexDirArticle)));
+    //    indexSearcherArticle = new IndexSearcher(new SimpleFSDirectory(new File(indexDirArticle)));
     }
 
     /**
@@ -85,7 +86,7 @@ public class Searcher implements InitializingBean {
      * Поиск по новостям на основе их содержания
      */
     public List<Article> searchArticleByContent(String query) {
-        try {
+    /*    try {
             Analyzer analyzer;
             analyzer = new RussianAnalyzer(Version.LUCENE_34); // your can change version
             QueryParser contentParser = new QueryParser(Version.LUCENE_34, "Content", analyzer);
@@ -102,10 +103,10 @@ public class Searcher implements InitializingBean {
             throw new RuntimeException("index access failed", e);
         } catch (ParseException e) {
             throw new RuntimeException("invalid query", e);
-        }
+        } */return Cf.newArrayList();
     }
 
-    private Brand brandMap(Document doc) {
+    private static Brand brandMap(Document doc) {
         return new Brand(
                 Long.parseLong(doc.get("Id")),
                 doc.get("Name"),
@@ -115,7 +116,7 @@ public class Searcher implements InitializingBean {
         );
     }
 
-    private Article articleMap(Document doc) {
+    private static Article articleMap(Document doc) {
         return new Article(
                 Long.parseLong(doc.get("Id")),
                 Long.parseLong(doc.get("BrandId")),
@@ -126,5 +127,6 @@ public class Searcher implements InitializingBean {
                 new LocalDateTime(Long.parseLong(doc.get("Tstamp"))),
                 Integer.parseInt(doc.get("NumLikes"))
         );
+
     }
 }

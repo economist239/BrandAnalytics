@@ -22,10 +22,10 @@
     <bean class="org.springframework.scheduling.timer.TimerFactoryBean">
         <property name="scheduledTimerTasks">
             <list>
-                <!--  <ref bean="finamGrabberTask"/>
-              <ref bean="rssGrabberTask"/>
-              <ref bean="analyzerProcessor"/> -->
-                <ref bean="mentionProcessor"/>
+                <ref bean="finamGrabberTask"/>
+                <ref bean="rssGrabberTask"/>
+                <ref bean="analyzerProcessor"/>
+                <!--<ref bean="mentionProcessor"/>-->
             </list>
         </property>
     </bean>

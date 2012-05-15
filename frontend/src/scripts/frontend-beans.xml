@@ -13,6 +13,14 @@
     </bean>
     <!--Spring helpers-->
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+
+
+
+    <bean id="indexBuilder" class="ru.brandanalyst.core.tmp.index.IndexBuilder">
+        <property name="directoryBrand" value="index_brand/"/>
+        <property name="directoryArticle" value="index_article/"/>
+        <property name="providersHandler" ref="providersHandler"/>
+    </bean>
     <!--DB CONFIG-->
     <import resource="classpath:dbhandler_pure.xml"/>
     <alias alias="providersHandler" name="pureProvidersHandler"/>
@@ -79,7 +87,7 @@
     <!--Searcher conf-->
     <bean id="searcher" class="ru.brandanalyst.core.searcher.Searcher">
         <property name="indexDirBrand" value="index_brand/"/>
-        <property name="indexDirArticle" value="index_article/"/>
+        <!--<property name="indexDirArticle" value="index_article/"/>-->
     </bean>
 
 </beans>
