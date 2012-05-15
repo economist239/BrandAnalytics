@@ -52,15 +52,15 @@ public class IndexBuilder implements InitializingBean {
         try {
             SimpleFSDirectory indexDirectoryBrand = new SimpleFSDirectory(new File(directoryBrand));
             IndexWriter brandwriter = new IndexWriter(indexDirectoryBrand, new RussianAnalyzer(Version.LUCENE_34), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
-            SimpleFSDirectory indexDirectoryArticle = new SimpleFSDirectory(new File(directoryArticle));
-            IndexWriter articlewriter = new IndexWriter(indexDirectoryArticle, new RussianAnalyzer(Version.LUCENE_34), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
+            //SimpleFSDirectory indexDirectoryArticle = new SimpleFSDirectory(new File(directoryArticle));
+            //IndexWriter articlewriter = new IndexWriter(indexDirectoryArticle, new RussianAnalyzer(Version.LUCENE_34), IndexWriter.MaxFieldLength.UNLIMITED); //create pre'index
 
             brandIndex(brandwriter);
-            articleIndex(articlewriter);
+            //articleIndex(articlewriter);
 
-            articlewriter.optimize();
+            //articlewriter.optimize();
             brandwriter.optimize();
-            articlewriter.close();
+            //articlewriter.close();
             brandwriter.close();
             log.info("Index created.");
         } catch (IOException e) {
