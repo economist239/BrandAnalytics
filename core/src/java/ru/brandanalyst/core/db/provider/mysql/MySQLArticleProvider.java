@@ -1,6 +1,7 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
 import org.hamcrest.StringDescription;
+import org.joda.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.RowCallbackHandler;
@@ -56,7 +57,7 @@ public class MySQLArticleProvider extends ArticleProvider {
                 ps.setString(4, (content.length() > MAX_ARTICLE_LENGHT ? content.substring(0, MAX_ARTICLE_LENGHT) : content));
                 ps.setString(5, a.getLink());
                 ps.setInt(6, a.getNumLikes());
-                ps.setDate(7, new java.sql.Date(a.getTstamp().toDate().getTime()));
+                ps.setDate(7, new java.sql.Date(2012, a.getTstamp().getMonthOfYear(), a.getTstamp().getDayOfMonth()));
             }
 
             @Override
