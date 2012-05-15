@@ -28,17 +28,29 @@
                 <div class="navbar navbar-fixed-top" data-scrollspy="scrollspy">
                     <div class="navbar-inner">
                         <div class="container-fluid">
-                            <h4><a class="brand" href="index.xml">Brand Analytic</a></h4>
+                            <h4>
+                                <a class="brand" href="index.xml">Brand Analytic</a>
+                            </h4>
                             <div class="nav-collapse">
                                 <ul class="nav">
-                                    <li id="navbar_about"><a href="index.xml">О проекте</a></li>
-                                    <li id="navbar_main"><a href="index.xml">Главная</a></li>
-                                    <li id="navbar_analysis"><a href="showbrand.xml?id=1">Анализ</a></li>
-                                    <li id="navbar_sources"><a href="showsources.xml">Источники информации</a></li>
+                                    <li id="navbar_about">
+                                        <a href="index.xml">О проекте</a>
+                                    </li>
+                                    <li id="navbar_main">
+                                        <a href="index.xml">Главная</a>
+                                    </li>
+                                    <li id="navbar_analysis">
+                                        <a href="showbrand.xml?id=1">Анализ</a>
+                                    </li>
+                                    <li id="navbar_sources">
+                                        <a href="showsources.xml">Источники информации</a>
+                                    </li>
                                 </ul>
 
-                                <form class="navbar-search pull-right" id="form-search" method="get" action="/search.xml">
-                                    <input type="text" class="search-query" placeholder="поиск по брендам" name="query"/>
+                                <form class="navbar-search pull-right" id="form-search" method="get"
+                                      action="/search.xml">
+                                    <input type="text" class="search-query" placeholder="поиск по брендам"
+                                           name="query"/>
                                 </form>
                             </div>
 
@@ -46,18 +58,18 @@
                     </div>
                 </div>
                 <div class="container-fluid">
-                <xsl:call-template name="run"/>
-                <div class="page-header" style="padding-top:50px">
-                    <xsl:call-template name="header"/>
-                </div>
-                <div class="row-fluid show-grid">
-                    <div class="span3">
-                        <xsl:call-template name="leftmenu"/>
+                    <xsl:call-template name="run"/>
+                    <div class="page-header" style="padding-top:50px">
+                        <xsl:call-template name="header"/>
                     </div>
-                    <div class="span9">
-                        <xsl:call-template name="main"/>
+                    <div class="row-fluid show-grid">
+                        <div class="span3">
+                            <xsl:call-template name="leftmenu"/>
+                        </div>
+                        <div class="span9">
+                            <xsl:call-template name="main"/>
+                        </div>
                     </div>
-                </div>
                 </div>
 
 

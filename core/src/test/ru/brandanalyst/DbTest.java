@@ -6,10 +6,7 @@ import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 import ru.brandanalyst.core.db.provider.interfaces.ArticleProvider;
 import ru.brandanalyst.core.db.provider.interfaces.BrandProvider;
 import ru.brandanalyst.core.db.provider.interfaces.GraphProvider;
-import ru.brandanalyst.core.model.Brand;
-import ru.brandanalyst.core.model.Graph;
-import ru.brandanalyst.core.model.Params;
-import ru.brandanalyst.core.model.SingleDot;
+import ru.brandanalyst.core.model.*;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -23,37 +20,37 @@ import java.util.List;
  * Time: 7:01 PM
  * To change this template use File | Params | File Templates.
  */
-public class DbTest extends AbstractDependencyInjectionSpringContextTests {
+public class DbTest extends AbstractDependencyInjectionSpringContextTests{
 
     private ArticleProvider pureArticleProvider;
     private BrandProvider dirtyBrandProvider;
     private GraphProvider dirtyGraphProvider;
 
-    public void setPureArticleProvider(ArticleProvider pureArticleProvider) {
+    public void setPureArticleProvider(ArticleProvider pureArticleProvider){
         this.pureArticleProvider = pureArticleProvider;
     }
 
-    public void setPureGraphProvider(GraphProvider dirtyGraphProvider) {
+    public void setPureGraphProvider(GraphProvider dirtyGraphProvider){
         this.dirtyGraphProvider = dirtyGraphProvider;
     }
 
-    public void setPureBrandProvider(BrandProvider dirtyBrandProvider) {
+    public void setPureBrandProvider(BrandProvider dirtyBrandProvider){
         this.dirtyBrandProvider = dirtyBrandProvider;
     }
 
-    public DbTest() {
+    public DbTest(){
         super();
         setAutowireMode(AUTOWIRE_BY_NAME);
     }
 
     @Override
-    protected String[] getConfigLocations() {
+    protected String[] getConfigLocations(){
         return new String[]{
                 "classpath:dbhandler_pure.xml"
         };
     }
 
-    public void testBrand() {
+    public void testBrand(){
         List<Brand> l = new LinkedList<Brand>();
         l.add(new Brand(-1, "1", "2", "2", 1, Params.empty("")));
         l.add(new Brand(-1, "2", "1", "1", 1, Params.empty("")));
@@ -61,7 +58,7 @@ public class DbTest extends AbstractDependencyInjectionSpringContextTests {
         Assert.assertTrue(dirtyBrandProvider.getAllBrands().size() > 0);
     }
 
-    public void testGraph() {
+    public void testGraph(){
         Graph graph = new Graph(Arrays.asList(
                 new SingleDot(new LocalDate(new Date().getTime()), 4),
                 new SingleDot(new LocalDate(new Date().getTime() + 10), 5),

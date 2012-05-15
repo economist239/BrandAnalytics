@@ -16,17 +16,17 @@ import java.util.concurrent.TimeUnit;
  * @author OlegPan
  *         This class defines what rss channels will be used for information retrieving
  */
-public class ParserStarter extends AbstractGrabberTask {
+public class ParserStarter extends AbstractGrabberTask{
     private static final int POOL_SIZE = 10;
     private static final Logger log = Logger.getLogger(ParserStarter.class);
 
-    protected void grab() {
+    protected void grab(){
         AbstractRssParser.setDictionary(handler.getBrandDictionaryProvider().getDictionary());
         List<InfoSource> infoSources = handler.getInformationSourceProvider().getAllInfoSources();
         final ArticleProvider articleProvider = handler.getArticleProvider();
-        Batch<Article> batch = new Batch<Article>(10) {
+        Batch<Article> batch = new Batch<Article>(10){
             @Override
-            public void handle(final List<Article> articles) {
+            public void handle(final List<Article> articles){
                 //try {
                 articleProvider.writeListOfArticlesToDataStore(articles);
                 //} catch (Throwable e) {
@@ -40,23 +40,23 @@ public class ParserStarter extends AbstractGrabberTask {
 
         ExecutorService service = Executors.newFixedThreadPool(POOL_SIZE);
 
-        for (InfoSource infoSource : infoSources) {
+        for(InfoSource infoSource : infoSources){
             String rssSource = infoSource.getRssSource();
-            if (rssSource.isEmpty()) continue;
+            if(rssSource.isEmpty()) continue;
             service.submit(new RomeParser(rssSource, infoSource.getId(), batch));
         }
 
         service.shutdown();
         log.info("[ParserStarter] waiting for other extractor threads");
-        try {
-            while (!service.awaitTermination(1, TimeUnit.HOURS))
+        try{
+            while(!service.awaitTermination(1, TimeUnit.HOURS))
                 ;
-        } catch (InterruptedException e) {
+        } catch(InterruptedException e){
             log.error("Interrupted", e);
             throw new RuntimeException(e);
         }
         log.info("[ParserStarter] waiting stopped");
         batch.flush();
-        log.info("[ParseStarter] end parsing rss");
+        log.info("[ParserStarter] end parsing rss");
     }
 }

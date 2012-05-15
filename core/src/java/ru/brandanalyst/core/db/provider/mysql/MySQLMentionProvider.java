@@ -1,21 +1,15 @@
 package ru.brandanalyst.core.db.provider.mysql;
 
-import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Required;
-import org.springframework.jdbc.core.RowCallbackHandler;
-import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
 import ru.brandanalyst.core.db.provider.interfaces.MentionProvider;
-import ru.brandanalyst.core.db.provider.interfaces.TickerProvider;
 import ru.brandanalyst.core.model.*;
-import ru.brandanalyst.core.util.cortege.Pair;
-import ru.brandanalyst.core.util.temporary.MentionsCalculator;
 
-import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -33,41 +27,42 @@ public class MySQLMentionProvider implements MentionProvider{
     }
 
     @Override
+    public void writeListOfMentionsToDataStore(final List<Mention> mentions){
+        final Iterator<Mention> it = mentions.iterator();
+        jdbcTemplate.getJdbcOperations().batchUpdate(
+                "INSERT INTO Mention (BrandName, TickerId,Tstamp, Val) VALUES(?,?,?,?)",
+                new BatchPreparedStatementSetter(){
+                    @Override
+                    public void setValues(PreparedStatement ps, int i) throws SQLException{
+                        Mention m = it.next();
+                        ps.setString(1, m.getBrandName());
+                        ps.setLong(2, m.getTickerId());
+                        ps.setDate(3, new java.sql.Date(m.getDot().getDate().toDate().getTime()));
+                        ps.setDouble(4, m.getDot().getValue());
+                    }
+
+                    @Override
+                    public int getBatchSize(){
+                        return mentions.size();
+                    }
+                }
+        );
+    }
+
+    @Override
     public List<Mention> getLatestMentions(){
 
-        //TODO
-        //TODO -  это не код, а упячка
-
-        //TODO для этого есть сеттеры
-        MySQLBrandProvider brandProvider = new MySQLBrandProvider();
-        //TODO для этого есть сеттеры
-        brandProvider.setJdbcTemplate(jdbcTemplate);
-        //TODO - раз сходили в базу
-        List<Brand> brands = brandProvider.getAllBrands();
-        //TODO для этого есть сеттеры
-        MySQLTickerProvider provider = new MySQLTickerProvider();
-        //TODO для этого есть сеттеры
-        provider.setJdbcTemplate(jdbcTemplate);
-        //TODO - два сходили в базу
-        List<TickerPair> tickers = provider.getTickers();
-
-        //TODO всю логику по подсчету либеров роста и падения вынести в таскер и сделать отдельную табличку подо все,где будут только актуальные упоминания
-        //ToDO три сходили в базу - три раза - много за раз, есть джоины
-        MentionsCalculator calc = new MentionsCalculator(brands,tickers,this);
-        List<Mention> result = new ArrayList<Mention>();
-        for(TickerPair t : tickers){
-            Pair<List<Mention>,List<Mention>> mentions = calc.getRulesAndLosersByTicker(t);
-            result.addAll(mentions.first);
-            result.addAll(mentions.second);
-        }
-
-        return result;
+        return jdbcTemplate.query(
+                "SELECT * FROM Mention"
+                        + " WHERE Tstamp = (SELECT MAX(Tstamp) FROM Mention)",
+                MappersHolder.MENTION_MAPPER
+        );
     }
 
     @Override
     public List<Mention> getMentionsFrom(LocalDate date){
         return jdbcTemplate.query(
-                "SELECT * FROM Graphs"
+                "SELECT * FROM Mention"
                         + " INNER JOIN Ticker ON TickerId = Ticker.Id"
                         + " INNER JOIN Brand ON BrandId = Brand.Id"
                         + " AND Tstamp > ?",

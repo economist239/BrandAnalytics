@@ -27,18 +27,18 @@ import java.util.Map;
  * Time: 7:54 PM
  * this class provides graphs from DB
  */
-public class MySQLGraphProvider implements GraphProvider {
+public class MySQLGraphProvider implements GraphProvider{
     private SimpleJdbcTemplate jdbcTemplate;
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
     @Required
-    public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate) {
+    public void setNamedParameterJdbcTemplate(NamedParameterJdbcTemplate namedParameterJdbcTemplate){
         this.namedParameterJdbcTemplate = namedParameterJdbcTemplate;
     }
 
 
     @Required
-    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate) {
+    public void setJdbcTemplate(SimpleJdbcTemplate jdbcTemplate){
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -50,12 +50,12 @@ public class MySQLGraphProvider implements GraphProvider {
     // говномускулькод
     //
     @Override
-    public void writeGraph(final Graph graph, final long brandId, final long tickerId) {
+    public void writeGraph(final Graph graph, final long brandId, final long tickerId){
         final Iterator<SingleDot> it = graph.getGraph().iterator();
 
-        jdbcTemplate.getJdbcOperations().batchUpdate(NEW_SQL, new BatchPreparedStatementSetter() {
+        jdbcTemplate.getJdbcOperations().batchUpdate(NEW_SQL, new BatchPreparedStatementSetter(){
             @Override
-            public void setValues(PreparedStatement ps, int i) throws SQLException {
+            public void setValues(PreparedStatement ps, int i) throws SQLException{
                 SingleDot d = it.next();
                 ps.setLong(1, brandId);
                 ps.setLong(2, tickerId);
@@ -67,7 +67,7 @@ public class MySQLGraphProvider implements GraphProvider {
             }
 
             @Override
-            public int getBatchSize() {
+            public int getBatchSize(){
                 return graph.getGraph().size();
             }
         });
@@ -90,12 +90,12 @@ public class MySQLGraphProvider implements GraphProvider {
     }
 
     @Override
-    public Graph getGraphByTickerAndBrand(long brandId, long tickerId) {
+    public Graph getGraphByTickerAndBrand(long brandId, long tickerId){
         final Graph graph = new Graph();
-        jdbcTemplate.getJdbcOperations().query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId =? AND TickerId=?", new Object[]{brandId, tickerId}, new RowCallbackHandler() {
+        jdbcTemplate.getJdbcOperations().query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId =? AND TickerId=?", new Object[]{brandId, tickerId}, new RowCallbackHandler(){
             @Override
-            public void processRow(ResultSet rs) throws SQLException {
-                if (rs.isFirst()) {
+            public void processRow(ResultSet rs) throws SQLException{
+                if(rs.isFirst()){
                     graph.setTicker(rs.getString("TickerName"));
                 }
                 SingleDot d = new SingleDot(new LocalDate(rs.getDate("Tstamp")), rs.getDouble("Val"));
@@ -107,21 +107,21 @@ public class MySQLGraphProvider implements GraphProvider {
     }
 
     @Override
-    public List<Graph> getGraphByTickerAndBrand(long brandId, List<Long> tickerIds) {
+    public List<Graph> getGraphByTickerAndBrand(long brandId, List<Long> tickerIds){
         final List<Graph> graphList = new ArrayList<Graph>(tickerIds.size());
         namedParameterJdbcTemplate.query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id"
                 + " WHERE BrandId=:b_id AND TickerId IN :t_ids ORDER BY TickerId",
                 new MapSqlParameterSource("b_id", brandId).addValue("t_ids", tickerIds),
-                new RowCallbackHandler() {
+                new RowCallbackHandler(){
                     @Override
-                    public void processRow(ResultSet rs) throws SQLException {
-                        String tickerName = rs.getString("TickerName");
-                        Graph g;
-                        if (graphList.size() == 0 || !graphList.get(graphList.size() - 1).getTicker().equals(tickerName)) {
+                    public void processRow(ResultSet rs) throws SQLException{
+                        final String tickerName = rs.getString("TickerName");
+                        final Graph g;
+                        if(graphList.size() == 0 || !graphList.get(graphList.size() - 1).getTicker().equals(tickerName)){
                             g = new Graph();
                             g.setTicker(tickerName);
                             graphList.add(g);
-                        } else {
+                        } else{
                             g = graphList.get(graphList.size() - 1);
                         }
                         g.addPoint(new SingleDot(new LocalDate(rs.getDate("Tstamp")), rs.getDouble("Val")));
@@ -132,18 +132,18 @@ public class MySQLGraphProvider implements GraphProvider {
     }
 
     @Override
-    public List<Graph> getGraphsByBrandId(long brandId) {
+    public List<Graph> getGraphsByBrandId(long brandId){
         final List<Graph> graphList = new ArrayList<Graph>();
-        jdbcTemplate.getJdbcOperations().query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId =? ORDER BY TickerId", new Object[]{brandId}, new RowCallbackHandler() {
+        jdbcTemplate.getJdbcOperations().query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id WHERE BrandId =? ORDER BY TickerId", new Object[]{brandId}, new RowCallbackHandler(){
             @Override
-            public void processRow(ResultSet rs) throws SQLException {
-                String tickerName = rs.getString("TickerName");
-                Graph g;
-                if (graphList.size() == 0 || !graphList.get(graphList.size() - 1).getTicker().equals(tickerName)) {
+            public void processRow(ResultSet rs) throws SQLException{
+                final String tickerName = rs.getString("TickerName");
+                final Graph g;
+                if(graphList.size() == 0 || !graphList.get(graphList.size() - 1).getTicker().equals(tickerName)){
                     g = new Graph();
                     g.setTicker(tickerName);
                     graphList.add(g);
-                } else {
+                } else{
                     g = graphList.get(graphList.size() - 1);
                 }
                 g.addPoint(new SingleDot(new LocalDate(rs.getTimestamp("Tstamp")), rs.getDouble("Val")));
@@ -154,21 +154,20 @@ public class MySQLGraphProvider implements GraphProvider {
     }
 
     @Override
-    public Map<Long, Graph> getGraphsByTickerId(final long tickerId) {
+    public Map<Long, Graph> getGraphsByTickerId(final long tickerId){
         final Map<Long, Graph> graphMap = Cf.newHashMap();
 
         jdbcTemplate.getJdbcOperations().query("SELECT * FROM Graphs INNER JOIN Ticker ON TickerId = Ticker.Id"
                 + " WHERE TickerId=? ORDER BY BrandId", new Object[]{tickerId},
-                new RowCallbackHandler() {
+                new RowCallbackHandler(){
                     @Override
-                    public void processRow(ResultSet rs) throws SQLException {
+                    public void processRow(ResultSet rs) throws SQLException{
                         final String tickerName = rs.getString("TickerName");
                         final long brandId = rs.getLong("BrandId");
-
                         final Graph g;
-                        if (graphMap.containsKey(brandId)) {
+                        if(graphMap.containsKey(brandId)){
                             g = graphMap.get(brandId);
-                        } else {
+                        } else{
                             g = new Graph();
                             g.setTicker(tickerName);
                             graphMap.put(brandId, g);

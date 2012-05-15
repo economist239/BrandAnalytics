@@ -1,7 +1,7 @@
 document.getElementById("navbar_sources").setAttribute("class", "active");
 
-var officialSourcesId = 0;
-var publicSourcesId = 1;
+var officialSourcesId = 1;
+var publicSourcesId = 0;
 function hideInfoSourcesBySphereId(sphereId){
     jQuery("tr.info-source-row[sphere-id=" + sphereId + "]").css("display","none")
 }
@@ -13,6 +13,7 @@ function showInfoSourcesBySphereId(sphereId){
 jQuery(document).ready(function(){
     hideInfoSourcesBySphereId(  officialSourcesId )
     showInfoSourcesBySphereId(  publicSourcesId )
+    jQuery("#tab_public-sources").attr("class","active");
 })
 
 jQuery(document).ready(

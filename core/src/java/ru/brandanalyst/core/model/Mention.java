@@ -16,79 +16,51 @@ import java.util.TreeSet;
  * Date: 23.02.12
  * Time: 20:36
  */
-public class Mention implements Jsonable {
+public class Mention implements Jsonable{
     private SingleDot dot;
-    private String ticker;
-    private String brand;
     private long tickerId;
-    private long brandId;
+    private String brand;
 
-    public Mention(SingleDot dot, String ticker, String brand, long tickerId, long brandId) {
+    public Mention(SingleDot dot, long tickerId, String brandId){
         this.dot = dot;
-        this.ticker = ticker;
-        this.brand = brand;
         this.tickerId = tickerId;
-        this.brandId = brandId;
+        this.brand = brandId;
     }
 
-    public Mention(SingleDot dot, TickerPair ticker, Brand brand) {
-        this.dot = dot;
-        this.ticker = ticker.getName();
-        this.brand = brand.getName();
-        this.tickerId = ticker.getId();
-        this.brandId = brand.getId();
-    }
-
-    public long getBrandId() {
-        return brandId;
-    }
-
-    public void setBrandId(int brandId) {
-        this.brandId = brandId;
-    }
-
-    public SingleDot getDot() {
+    public SingleDot getDot(){
         return dot;
     }
 
-    public void setDot(SingleDot dot) {
+    public void setDot(SingleDot dot){
         this.dot = dot;
     }
 
-    public String getTicker() {
-        return ticker;
-    }
-
-    public void setTicker(String ticker) {
-        this.ticker = ticker;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public long getTickerId() {
+    public long getTickerId(){
         return tickerId;
     }
 
-    public void setTickerId(int tickerId) {
+    public void setTickerId(long tickerId){
         this.tickerId = tickerId;
     }
 
+    public String getBrandName(){
+        return brand;
+    }
+
+    public void setBrandId(String brandId){
+        this.brand = brandId;
+    }
+
     @Override
-    public JSONObject asJson() {
-        try {
+    public JSONObject asJson(){
+        //count millisecs in sec
+        final long COUNT = 1000;
+        try{
             return new JSONObject()
-                    .put("ticker-id",tickerId)
-                    .put("ticker", ticker)
-                    .put("num", (int)dot.getValue())
-                    .put("brand-id",brandId)
+                    .put("ticker-id", tickerId)
+                    .put("num", (int) dot.getValue())
                     .put("brand", brand);
-        } catch (JSONException e) {
+        } catch(JSONException e){
             throw new RuntimeException(e);
         }
     }

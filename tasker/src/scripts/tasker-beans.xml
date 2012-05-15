@@ -16,13 +16,16 @@
     <import resource="classpath:indexer-tasker-beans.xml"/>
     <import resource="classpath:analyzer-tasker-beans.xml"/>
     <import resource="classpath:miner-tasker-beans.xml"/>
+    <import resource="classpath:mention-tasker-beans.xml"/>
+
 
     <bean class="org.springframework.scheduling.timer.TimerFactoryBean">
         <property name="scheduledTimerTasks">
             <list>
-                <ref bean="finamGrabberTask"/>
-                <ref bean="rssGrabberTask"/>
-                <ref bean="analyzerProcessor"/>
+                <!--  <ref bean="finamGrabberTask"/>
+              <ref bean="rssGrabberTask"/>
+              <ref bean="analyzerProcessor"/> -->
+                <ref bean="mentionProcessor"/>
             </list>
         </property>
     </bean>
