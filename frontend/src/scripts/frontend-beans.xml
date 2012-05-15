@@ -87,7 +87,7 @@
     <!--Searcher conf-->
     <bean id="searcher" class="ru.brandanalyst.core.searcher.Searcher">
         <property name="indexDirBrand" value="index_brand/"/>
-        <property name="indexDirArticle" value="index_article/"/>
+        <!--<property name="indexDirArticle" value="index_article/"/>-->
     </bean>
 
 </beans>
